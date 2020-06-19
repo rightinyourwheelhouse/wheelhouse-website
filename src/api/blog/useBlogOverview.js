@@ -1,0 +1,42 @@
+import { useMemo } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+const query = graphql`
+  query {
+    allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
+      edges {
+        node {
+          id
+          title
+          pubDate
+          link
+          content {
+            encoded
+          }
+          creator
+          enclosure {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const useBlogOverview = (count) => {
+  const {
+    allFeedBlog: { edges },
+  } = useStaticQuery(query);
+
+  const items = useMemo(() => {
+    const nodes = edges.map(({ node }) => ({ ...node }));
+
+    if (count) {
+      return nodes.slice(0, count);
+    }
+
+    return nodes;
+  }, [edges, count]);
+
+  return [items];
+};

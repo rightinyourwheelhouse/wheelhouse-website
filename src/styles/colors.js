@@ -1,5 +1,5 @@
 /* eslint-disable sort-keys */
-const accent = '#DDFFF4';
+const accent = '#2d383c';
 const backgroundPrimary = '#FFFFFF';
 const backgroundSecundary = '#2d383c';
 const error = '#EF6461';

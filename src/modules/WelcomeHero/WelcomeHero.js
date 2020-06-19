@@ -41,7 +41,7 @@ const WelcomeHero = () => (
           {' '}
           of passionate JavaScript developers, eager to exchange our expertise
           to eachother and our customers.
-          <Button colorHover={colors.textPrimary} color={colors.accent}>Meet us</Button>
+          <Button color={colors.accent}>Meet us</Button>
         </div>
       </Stack>
     </Container>

@@ -51,6 +51,7 @@ const ColorSpinner = ({ children, color, colorSelection }) => {
 
     return () => {
       clearInterval(interval);
+      setCurrentColor(allColors[0]);
     };
   }, [isHovering]);
 

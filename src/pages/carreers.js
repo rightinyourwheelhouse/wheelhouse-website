@@ -18,12 +18,12 @@ import navigation from '../data/navigation';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Carreers" />
+    <SEO title="Careers" />
     <NavBar items={navigation} />
 
     <Section>
       <Container>
-        <SubTitle>Carreers</SubTitle>
+        <SubTitle>Careers</SubTitle>
         <h1>
           Our core
           {' '}

@@ -4,7 +4,7 @@ export default [
     title: 'home',
   },
   {
-    href: '/carreers',
-    title: 'carreers',
+    href: '/careers',
+    title: 'careers',
   },
 ];

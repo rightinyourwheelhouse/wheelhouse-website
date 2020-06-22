@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { GlobalStyle } from '../../styles/GlobalStyle';
+import { GlobalStyle } from '../styles/GlobalStyle';
 
-import Footer from '../Footer';
-
-import navigation from '../../data/navigation';
+import Footer from '../components/Footer';
 
 const Layout = ({ children }) => (
   <>

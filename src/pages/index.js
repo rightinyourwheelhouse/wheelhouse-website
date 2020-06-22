@@ -7,11 +7,12 @@ import {
 } from '../components/layoutComponents';
 import Button from '../components/Button';
 import GalleryItem from '../components/GalleryItem';
-import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 import UnalignedGrid from '../components/UnalignedGrid';
+
+import Layout from '../layouts/Default';
 
 import WelcomeHero from '../modules/WelcomeHero';
 import BlogOverview from '../modules/BlogOverview';

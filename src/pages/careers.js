@@ -5,10 +5,11 @@ import {
   Container,
   LightContent,
 } from '../components/layoutComponents';
-import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
+
+import Layout from '../layouts/Default';
 
 import BlogOverview from '../modules/BlogOverview';
 

@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p, p > button {
+  p, p > button, li {
     font-family: ${fonts.family};
     color: ${colors.textPrimary};
     font-size: ${fonts.sizes.default};
@@ -65,6 +65,7 @@ export const GlobalStyle = createGlobalStyle`
   ol {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    padding-left: 30px;
   }
   ul li,
   ol li {
@@ -101,6 +102,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1;
     font-weight: 900;
     margin-top: 0;
+
+    &:not(:first-of-type){
+      margin-top: 3rem;
+    }
 
     @media screen and (min-width: ${breakpoints.small}){
       font-size: 5.6vw;

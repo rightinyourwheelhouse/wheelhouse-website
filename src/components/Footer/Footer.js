@@ -3,6 +3,8 @@ import React, { memo } from 'react';
 import { Container } from '../layoutComponents';
 import Stack from '../Stack';
 
+import Raccoons from '../../images/raccoons.svg';
+
 import { FooterContainer, TwoColumns } from './footer.styles';
 
 const Footer = () => (
@@ -31,6 +33,13 @@ const Footer = () => (
             <a href="https://www.instagram.com/wheelhouse.be/" rel="noopeener noreferrer">Instagram</a>
           </div>
         </TwoColumns>
+        <div>
+          part of
+          {' '}
+          <a className="svg" rel="noreferrer noopener" href="https://www.raccoons.be/">
+            <Raccoons />
+          </a>
+        </div>
       </Stack>
     </Container>
 

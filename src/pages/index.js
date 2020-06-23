@@ -12,7 +12,7 @@ import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 import UnalignedGrid from '../components/UnalignedGrid';
 
-import Layout from '../layouts/Default';
+import Layout from '../layouts/default';
 
 import WelcomeHero from '../modules/WelcomeHero';
 import BlogOverview from '../modules/BlogOverview';

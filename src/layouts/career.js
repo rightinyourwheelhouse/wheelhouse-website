@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 
 import { Section, Container } from '../components/layoutComponents';
 import SubTitle from '../components/SubTitle';
+import NavBar from '../components/NavBar';
 
 import Layout from './Default';
+
+import navigation from '../data/navigation';
 
 const Career = () => {
   console.log('state handlers');
 
   return (
     <Layout>
+      <NavBar items={navigation} />
       <Section>
         <Container>
           <SubTitle>Careers</SubTitle>

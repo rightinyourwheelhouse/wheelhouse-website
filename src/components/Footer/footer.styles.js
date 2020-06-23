@@ -11,8 +11,18 @@ export const FooterContainer = styled.footer`
     display: block;
   }
 
-  .svg {
-    display: inline-block;
+  .part-of-link {
+    display: flex;
+
+    p {
+      /* Override p margins and only have some to the right */
+      margin: 0 8px 0 0;
+    }
+
+    a {
+      /* This aligns the Raccoons logo vertically */
+      line-height: 34px;
+    }
   }
 
   svg {

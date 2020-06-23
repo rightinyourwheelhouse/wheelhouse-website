@@ -33,10 +33,9 @@ const Footer = () => (
             <a href="https://www.instagram.com/wheelhouse.be/" rel="noopeener noreferrer">Instagram</a>
           </div>
         </TwoColumns>
-        <div>
-          part of
-          {' '}
-          <a className="svg" rel="noreferrer noopener" href="https://www.raccoons.be/">
+        <div className="part-of-link">
+          <p>part of</p>
+          <a rel="noreferrer noopener" href="https://www.raccoons.be/">
             <Raccoons />
           </a>
         </div>

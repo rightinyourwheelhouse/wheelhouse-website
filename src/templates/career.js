@@ -5,7 +5,7 @@ import { Section, Container } from '../components/layoutComponents';
 import SubTitle from '../components/SubTitle';
 import NavBar from '../components/NavBar';
 
-import Layout from './Default';
+import Layout from '../layouts/default';
 
 import navigation from '../data/navigation';
 

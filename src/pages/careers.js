@@ -9,9 +9,9 @@ import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 
-import Layout from '../layouts/Default';
+import Layout from '../layouts/default';
 
-import BlogOverview from '../modules/BlogOverview';
+import JobOverview from '../modules/JobOverview';
 
 import colors from '../styles/colors';
 
@@ -24,21 +24,7 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <SubTitle>Careers</SubTitle>
-        <h1>
-          Our core
-          {' '}
-          <br />
-          {' '}
-          foundations
-        </h1>
-      </Container>
-    </Section>
-    <Section background={colors.backgroundSecundary}>
-      <Container>
-        <LightContent>
-          <BlogOverview />
-        </LightContent>
+        <JobOverview />
       </Container>
     </Section>
   </Layout>

@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const LightContent = styled.div`
   color: ${colors.textLight};
 
-  p, a {
+  p, a, li {
     color: currentColor;
   }
 `;

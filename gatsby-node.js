@@ -1,7 +1,4 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const createPages = require('./gatsby/createPages');
+const sourceNodes = require('./gatsby/sourceNodes');
 
-// You can delete this file if you're not using it
+module.exports = { createPages, sourceNodes };

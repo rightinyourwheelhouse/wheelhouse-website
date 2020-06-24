@@ -9,7 +9,7 @@ export default {
     h4: '24px',
     h5: '23px',
     h6: '21px',
-    default: '21px',
+    default: '22px',
     small: '18px',
   },
 };

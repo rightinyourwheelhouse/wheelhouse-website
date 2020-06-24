@@ -16,11 +16,11 @@ export default styled.h1`
   margin-bottom: 16px;
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    font-size: 5.9vw;
+    font-size: 5vw;
   }
 
   @media screen and (min-width: ${breakpoints.large}) {
-    font-size: 5.9vw;
+    font-size: 6rem;
     line-height: 1;
   }
 `;

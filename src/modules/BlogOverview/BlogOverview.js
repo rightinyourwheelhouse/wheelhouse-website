@@ -18,7 +18,7 @@ const BlogOverview = () => {
   return (
     <div>
       <SubTitle>Blog</SubTitle>
-      <h1>Some insight in how we think</h1>
+      <h2>Some insight in how we think</h2>
 
       <Stack space="60px">
         <div>

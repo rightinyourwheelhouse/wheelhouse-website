@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.family};
     color: ${colors.textPrimary};
     font-size: ${fonts.sizes.default};
-    line-height: 120%;
+    line-height: 180%;
     margin-top: 1.5rem;
     margin-bottom: 0;
     font-weight: 400;
@@ -97,9 +97,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5rem;
     text-transform: uppercase;
   }
+
   h1 {
     font-size: 3.242rem;
-    line-height: 1;
+    line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
 
@@ -116,18 +117,23 @@ export const GlobalStyle = createGlobalStyle`
       max-width: 60%;
     }
   }
-  h2 {
-    font-size: 2.828rem;
-    line-height: 1;
-    margin-top: 3rem;
 
-    @media screen and (min-width: ${breakpoints.medium}){
-      font-size: 4.2vw;
-      max-width: 60%;
+  h2 {
+    font-size: 3rem;
+    line-height: 0.9;
+    font-weight: 900;
+    margin-top: 0;
+
+    &:not(:first-of-type){
+      margin-top: 2.8rem;
     }
 
+    @media screen and (min-width: ${breakpoints.small}){
+      font-size: 5.5vw;
+      max-width: 60%;
+    }
     @media screen and (min-width: ${breakpoints.large}){
-      font-size: 3rem;
+      font-size: 4.5rem;
       max-width: 60%;
     }
   }

@@ -29,13 +29,13 @@ const IndexPage = () => (
     <Section>
       <Container>
         <SubTitle>Work</SubTitle>
-        <h1>
+        <h2>
           Projects
           {' '}
           <br />
           {' '}
           we worked on
-        </h1>
+        </h2>
         <UnalignedGrid>
           <GalleryItem
             to="/"

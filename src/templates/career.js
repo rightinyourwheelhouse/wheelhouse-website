@@ -36,7 +36,7 @@ const Career = ({
       <Container>
         <LightContent>
           <SubTitle>career</SubTitle>
-          <h1>Your foundations</h1>
+          <h2>Your foundations</h2>
           <BlogText>
             <div dangerouslySetInnerHTML={{ __html: requirements }} />
           </BlogText>

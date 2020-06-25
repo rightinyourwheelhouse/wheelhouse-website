@@ -1,6 +1,7 @@
 import React, { memo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import classnames from 'classnames';
 
 import { useScrolling } from '../../hooks/useScrolling';
 
@@ -16,9 +17,12 @@ import {
 
 import colors from '../../styles/colors';
 
-const NavBar = ({ baseColor, items }) => {
+import Github from '../../images/github.svg';
+import Wheelhouse from '../../images/wheelhouse.svg';
+
+const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
   const [open, setOpen] = useState(false);
-  const [{ isScrolled }] = useScrolling(500);
+  const [{ isScrolled }] = useScrolling(50);
 
   const toggleMenu = useCallback(() => {
     setOpen((isOpen) => !isOpen);
@@ -26,10 +30,7 @@ const NavBar = ({ baseColor, items }) => {
 
   return (
     <Nav>
-      <Items
-        className={open && 'active'}
-        scrolled={isScrolled}
-      >
+      <Items className={open && 'active'} scrolled={isScrolled}>
         <MenuIcon
           type="MenuIcon"
           onClick={toggleMenu}
@@ -40,12 +41,37 @@ const NavBar = ({ baseColor, items }) => {
           <span className="menu-icon__line menu-icon__line-right" />
         </MenuIcon>
         <ItemsContainer className={open && 'active'}>
-          <ItemsContent>
+          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+            <Item
+              className={classnames({
+                logoInitiallyHidden,
+                'wh-logo': true,
+              })}
+            >
+              <Link to="/">
+                <Wheelhouse />
+              </Link>
+            </Item>
+          </ItemsContent>
+          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+            <Item className="visible-small">
+              <Link to="/">Home</Link>
+            </Item>
             {items.map(({ href, title }) => (
-              <Item key={title} baseColor={baseColor} scrolled={isScrolled}>
+              <Item key={title}>
                 <Link to={href}>{title}</Link>
               </Item>
             ))}
+            <Item>
+              <a
+                href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span>Github</span>
+                <Github />
+              </a>
+            </Item>
           </ItemsContent>
           <Address>
             <div>
@@ -72,11 +98,13 @@ NavBar.propTypes = {
       title: PropTypes.string,
     })
   ),
+  logoInitiallyHidden: PropTypes.bool,
 };
 
 NavBar.defaultProps = {
   baseColor: colors.textPrimary,
   items: [],
+  logoInitiallyHidden: false,
 };
 
 export default memo(NavBar);

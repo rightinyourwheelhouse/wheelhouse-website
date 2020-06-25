@@ -15,6 +15,37 @@ export const Nav = styled.nav`
   }
 `;
 
+export const Item = styled.div`
+  a {
+    font-family: ${fonts.family};
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    font-size: 2.2em;
+    line-height: 120%;
+    padding: 16px 20px 14px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    span {
+      margin-left: 12px;
+    }
+
+    @media screen and (min-width: ${breakpoints.medium}) {
+      color: ${({ scrolled }) => (scrolled ? colors.textPrimary : colors.textLight)};
+      font-size: 1.3rem;
+      line-height: 4.25vw;
+      padding: 16px 0 14px 20px;
+      text-transform: lowercase;
+
+      span {
+        display: none;
+      }
+    }
+  }
+`;
+
 export const ItemsContainer = styled.div`
   height: 0;
   overflow: hidden;
@@ -29,6 +60,9 @@ export const ItemsContainer = styled.div`
     margin-top: 0;
     height: auto;
     flex-direction: row;
+    max-width: 1240px;
+    padding: 0px 1.0875rem;
+    margin: auto;
   }
 
   &.active {
@@ -48,6 +82,7 @@ export const Items = styled.div`
   top: 0;
   left: 0;
   transition: all 0.3s;
+  width: 100%;
 
   @media screen and (min-width: ${breakpoints.medium}) {
     background: ${({ scrolled }) => (scrolled ? colors.textLight : 'transparent')};
@@ -66,17 +101,18 @@ export const Items = styled.div`
     z-index: -1;
     transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
     transform: translateX(0%) translateY(-100%);
+
     @media screen and (min-width: ${breakpoints.medium}) {
       display: none;
     }
   }
 
   &:before {
-    background: rgba(234, 234, 234, 1);
+    background: rgba(255, 255, 255, 1);
   }
 
   &:after {
-    background: rgba(234, 234, 234, 0.7);
+    background: rgba(88, 189, 134, 0.7);
   }
 
   &.active {
@@ -88,38 +124,6 @@ export const Items = styled.div`
     }
     &:after {
       transition-delay: 0.1s;
-    }
-  }
-`;
-
-export const Item = styled.div`
-  a {
-    font-family: ${fonts.family};
-    align-items: center;
-    color: ${({ baseColor }) => baseColor};
-    display: block;
-    font-size: 1.2em;
-    font-weight: 700;
-    line-height: 120%;
-    padding: 16px 20px 14px 0;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    @media screen and (min-width: ${breakpoints.medium}) {
-      color: ${({ scrolled, baseColor }) => (scrolled ? colors.textPrimary : baseColor)};
-      text-transform: lowercase;
-      display: inline-block;
-      padding: 16px 0 14px 20px;
-      font-size: 1.3rem;
-      line-height: 4.25vw;
-    }
-
-    &:hover {
-      color: ${colors.textLink};
-
-      @media screen and (min-width: ${breakpoints.medium}) {
-        color: ${({ scrolled }) => (scrolled ? colors.primary : colors.textLink)};
-      }
     }
   }
 `;
@@ -178,25 +182,96 @@ export const ItemsContent = styled.div`
   @media screen and (min-width: ${breakpoints.medium}) {
     align-items: center;
     flex-direction: row;
-    justify-content: flex-end;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    max-width: 1240px;
-    padding: 0px 1.0875rem;
     width: 100%;
+
+    &:first-of-type {
+      justify-content: flex-start;
+      a {
+        padding-left: 0;
+      }
+    }
+
+    &:nth-of-type(2) {
+      justify-content: flex-end;
+    }
+  }
+
+  ${Item} {
+    &.wh-logo {
+     display: none;
+
+      @media screen and (min-width: ${breakpoints.medium}) {
+        display: unset;
+
+        &.logoInitiallyHidden {
+          display: ${({ scrolled }) => (scrolled ? 'block' : 'none')};
+        }
+      }
+
+      svg {
+        path {
+          fill: ${colors.primary} ;
+
+        }
+      }
+    }
+
+    a {
+      font-weight: 900;
+      color: ${colors.textPrimary};
+
+      @media screen and (min-width: ${breakpoints.medium}) {
+        color: ${({ scrolled, baseColor }) => (scrolled ? colors.textPrimary : baseColor)};
+      }
+
+      svg {
+        line-height: 120%;
+        height: 1.2em;
+        display: block;
+
+        path {
+          fill: ${colors.textPrimary};
+
+          @media screen and (min-width: ${breakpoints.medium}) {
+            fill: ${({ scrolled, baseColor }) => (scrolled ? colors.textPrimary : baseColor)};
+          }
+        }
+      }
+
+      &:hover {
+        color: ${colors.primary};
+
+        svg path {
+          fill: ${colors.primary};
+        }
+
+        @media screen and (min-width: ${breakpoints.medium}) {
+          color: ${({ scrolled }) => (scrolled ? colors.primary : colors.textPrimary)};
+
+          svg path {
+            fill: ${({ scrolled }) => (scrolled ? colors.primary : colors.textPrimary)};
+          }
+        }
+      }
+    }
   }
 `;
 
 export const Address = styled.div`
-  display: flex;
-  margin-top: 59px;
-  flex-direction: column;
   align-items: flex-start;
   align-self: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
   font-weight: 400;
-  width: 80vw;
   margin-top: 54px;
+  margin-top: 59px;
+  padding-top: 30px;
+  width: 80vw;
 
   a {
     font-weight: 300;

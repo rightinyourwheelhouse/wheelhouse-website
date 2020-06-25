@@ -14,7 +14,7 @@ const JobOverview = () => {
   return (
     <div>
       <SubTitle>careers</SubTitle>
-      <h1>Work with us</h1>
+      <h2>Work with us</h2>
 
       <Stack space="60px">
         <div>

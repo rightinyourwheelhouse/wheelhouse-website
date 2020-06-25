@@ -11,20 +11,6 @@ export const FooterContainer = styled.footer`
     display: block;
   }
 
-  .part-of-link {
-    display: flex;
-
-    p {
-      /* Override p margins and only have some to the right */
-      margin: 0 8px 0 0;
-    }
-
-    a {
-      /* This aligns the Raccoons logo vertically */
-      line-height: 34px;
-    }
-  }
-
   svg {
     height: 20px;
     line-height: 20px;
@@ -35,8 +21,23 @@ export const FooterContainer = styled.footer`
   }
 `;
 
+export const RaccoonsBlock = styled.div`
+  display: flex;
+  align-items: center;
+
+  p {
+    /* Override p margins and only have some to the right */
+    margin: 0 8px 0 0;
+  }
+
+  a {
+    /* This aligns the Raccoons logo vertically */
+    line-height: 0;
+  }
+`;
+
 export const TwoColumns = styled.div`
-  @media screen and (min-width: ${breakpoints.small}){
+  @media screen and (min-width: ${breakpoints.small}) {
     display: flex;
     flex-wrap: wrap;
 
@@ -44,7 +45,7 @@ export const TwoColumns = styled.div`
       width: 50%;
     }
 
-    p:first-of-type{
+    p:first-of-type {
       margin-top: 0;
     }
   }

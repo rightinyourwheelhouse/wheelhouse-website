@@ -5,7 +5,7 @@ import Stack from '../Stack';
 
 import Raccoons from '../../images/raccoons.svg';
 
-import { FooterContainer, TwoColumns } from './footer.styles';
+import { FooterContainer, TwoColumns, RaccoonsBlock } from './footer.styles';
 
 const Footer = () => (
   <FooterContainer>
@@ -33,12 +33,12 @@ const Footer = () => (
             <a href="https://www.instagram.com/wheelhouse.be/" rel="noopeener noreferrer">Instagram</a>
           </div>
         </TwoColumns>
-        <div className="part-of-link">
+        <RaccoonsBlock>
           <p>part of</p>
           <a rel="noreferrer noopener" href="https://www.raccoons.be/">
             <Raccoons />
           </a>
-        </div>
+        </RaccoonsBlock>
       </Stack>
     </Container>
 

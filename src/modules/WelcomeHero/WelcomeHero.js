@@ -26,9 +26,7 @@ const WelcomeHero = () => (
           Hi! We&apos;re
           {' '}
           <br />
-          <ColorSpinner>
-            Wheelhouse
-          </ColorSpinner>
+          Wheelhouse
         </DamnBigTitle>
         <div>
           We are a

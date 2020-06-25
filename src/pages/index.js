@@ -11,6 +11,7 @@ import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 import UnalignedGrid from '../components/UnalignedGrid';
+import Onboarding from '../components/Onboarding';
 
 import Layout from '../layouts/default';
 
@@ -71,6 +72,13 @@ const IndexPage = () => (
       <Container>
         <LightContent>
           <BlogOverview />
+        </LightContent>
+      </Container>
+    </Section>
+    <Section background={colors.backgroundDark}>
+      <Container>
+        <LightContent>
+          <Onboarding />
         </LightContent>
       </Container>
     </Section>

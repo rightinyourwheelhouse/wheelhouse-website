@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     {
       options: {
@@ -59,6 +60,7 @@ module.exports = {
   siteMetadata: {
     author: 'Daren M.',
     description: 'Wheelhouse agency - javascript experts',
+    siteUrl: 'https://www.wheelhouse.be',
     title: 'Wheelhouse agency',
   },
 };

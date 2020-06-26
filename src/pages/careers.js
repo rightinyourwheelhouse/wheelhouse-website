@@ -1,25 +1,18 @@
 import React from 'react';
 
-import {
-  Section,
-  Container,
-  LightContent,
-} from '../components/layoutComponents';
+import { Section, Container } from '../components/layoutComponents';
 import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
-import SubTitle from '../components/SubTitle';
 
 import Layout from '../layouts/default';
 
 import JobOverview from '../modules/JobOverview';
 
-import colors from '../styles/colors';
-
 import navigation from '../data/navigation';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Careers" />
+    <SEO title="Working as a javascript expert at Wheelhouse and expand our team" />
     <NavBar items={navigation} />
 
     <Section>

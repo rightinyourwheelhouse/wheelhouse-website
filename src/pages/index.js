@@ -24,7 +24,12 @@ import navigation from '../data/navigation';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <NavBar baseColor={colors.textLight} items={navigation} logoInitiallyHidden />
+    <NavBar
+      baseBackgroundColor={colors.primary}
+      baseColor={colors.textLight}
+      items={navigation}
+      logoInitiallyHidden
+    />
     <WelcomeHero />
     <Section>
       <Container>

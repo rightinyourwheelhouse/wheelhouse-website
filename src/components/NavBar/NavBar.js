@@ -27,7 +27,12 @@ import breakpoints from '../../styles/breakpoints';
 import Github from '../../images/github.svg';
 import Wheelhouse from '../../images/wheelhouse.svg';
 
-const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
+const NavBar = ({
+  baseColor,
+  baseBackgroundColor,
+  items,
+  logoInitiallyHidden,
+}) => {
   const [open, setOpen] = useState(false);
   const [{ isScrolled }] = useScrolling(50);
 
@@ -100,6 +105,7 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
             </Item>
           </ItemsContent>
           <ItemsContent
+            baseBackgroundColor={baseBackgroundColor}
             scrolled={isScrolled}
             foreground={foreground}
             hoverColor={hoverColor}
@@ -147,6 +153,7 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
 };
 
 NavBar.propTypes = {
+  baseBackgroundColor: PropTypes.string,
   baseColor: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -158,6 +165,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
+  baseBackgroundColor: colors.backgroundPrimary,
   baseColor: colors.textPrimary,
   items: [],
   logoInitiallyHidden: false,

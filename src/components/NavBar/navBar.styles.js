@@ -56,7 +56,6 @@ export const ItemsContainer = styled.div`
   height: 100vh;
   flex-direction: column;
 
-
   @media screen and (min-width: ${breakpoints.medium}) {
     margin-top: 0;
     height: auto;
@@ -85,7 +84,6 @@ export const Items = styled.div`
   left: 0;
   transition: all 0.3s;
   width: 100%;
-
 
   @media screen and (min-width: ${breakpoints.medium}) {
     background: ${({ background }) => background};
@@ -227,7 +225,7 @@ export const ItemsContent = styled.div`
 
       span {
         background: ${({ foreground }) => foreground};
-        color: ${({ foreground }) => invertColor(foreground, true)};
+        color: ${({ baseBackgroundColor, scrolled, foreground }) => (scrolled ? invertColor(foreground, true) : baseBackgroundColor)};
       }
 
       svg {

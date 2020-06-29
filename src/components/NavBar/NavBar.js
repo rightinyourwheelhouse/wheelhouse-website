@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import classnames from 'classnames';
 
+import { useJobOverview } from '../../api/job/useJobOverview';
 import { useScrolling } from '../../hooks/useScrolling';
 
 import {
@@ -33,6 +34,7 @@ const NavBar = ({
   items,
   logoInitiallyHidden,
 }) => {
+  const [jobs] = useJobOverview();
   const [open, setOpen] = useState(false);
   const [{ isScrolled }] = useScrolling(50);
 
@@ -120,7 +122,7 @@ const NavBar = ({
             ))}
             <Item>
               <Link to="/careers">
-                <Badge>2</Badge>
+                {jobs.length > 0 && <Badge>{jobs.length}</Badge>}
                 Careers
               </Link>
             </Item>

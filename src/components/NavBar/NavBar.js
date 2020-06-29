@@ -1,4 +1,6 @@
-import React, { memo, useState, useCallback } from 'react';
+import React, {
+  memo, useState, useCallback, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import classnames from 'classnames';
@@ -15,7 +17,12 @@ import {
   ItemsContent,
 } from './navBar.styles';
 
+import Badge from '../Badge';
+
+import { useMedia } from '../../hooks/useMedia';
+
 import colors from '../../styles/colors';
+import breakpoints from '../../styles/breakpoints';
 
 import Github from '../../images/github.svg';
 import Wheelhouse from '../../images/wheelhouse.svg';
@@ -28,9 +35,43 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
     setOpen((isOpen) => !isOpen);
   }, []);
 
+  const desktop = useMedia(
+    [`(min-width: ${breakpoints.medium})`],
+    [true],
+    false
+  );
+
+  const foreground = useMemo(() => {
+    if (!desktop) {
+      return colors.textPrimary;
+    }
+
+    return isScrolled ? colors.textPrimary : baseColor;
+  }, [colors, isScrolled, desktop, baseColor]);
+
+  const background = useMemo(() => {
+    if (!desktop) {
+      return 'none';
+    }
+
+    return isScrolled ? colors.textLight : 'transparent';
+  }, [colors, isScrolled, desktop, baseColor]);
+
+  const hoverColor = useMemo(() => {
+    if (!desktop) {
+      return colors.primary;
+    }
+
+    return isScrolled ? colors.primary : colors.textPrimary;
+  }, [colors, isScrolled, desktop, baseColor]);
+
   return (
     <Nav>
-      <Items className={open && 'active'} scrolled={isScrolled}>
+      <Items
+        className={open && 'active'}
+        background={background}
+        scrolled={isScrolled}
+      >
         <MenuIcon
           type="MenuIcon"
           onClick={toggleMenu}
@@ -41,7 +82,12 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
           <span className="menu-icon__line menu-icon__line-right" />
         </MenuIcon>
         <ItemsContainer className={open && 'active'}>
-          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+          <ItemsContent
+            scrolled={isScrolled}
+            foreground={foreground}
+            baseColor={baseColor}
+            hoverColor={hoverColor}
+          >
             <Item
               className={classnames({
                 logoInitiallyHidden,
@@ -53,7 +99,11 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
               </Link>
             </Item>
           </ItemsContent>
-          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+          <ItemsContent
+            scrolled={isScrolled}
+            foreground={foreground}
+            hoverColor={hoverColor}
+          >
             <Item className="visible-small">
               <Link to="/">Home</Link>
             </Item>
@@ -63,12 +113,18 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
               </Item>
             ))}
             <Item>
+              <Link to="careers">
+                <Badge>2</Badge>
+                Careers
+              </Link>
+            </Item>
+            <Item>
               <a
                 href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <span>Github</span>
+                <span className="label">Github</span>
                 <Github />
               </a>
             </Item>

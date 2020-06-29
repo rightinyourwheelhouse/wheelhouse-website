@@ -113,7 +113,7 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
               </Item>
             ))}
             <Item>
-              <Link to="careers">
+              <Link to="/careers">
                 <Badge>2</Badge>
                 Careers
               </Link>

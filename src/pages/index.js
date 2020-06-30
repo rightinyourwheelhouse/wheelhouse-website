@@ -7,13 +7,13 @@ import {
 } from '../components/layoutComponents';
 import Button from '../components/Button';
 import GalleryItem from '../components/GalleryItem';
-import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 import UnalignedGrid from '../components/UnalignedGrid';
 
 import Layout from '../layouts/default';
 
+import Navigation from '../modules/Navigation';
 import WelcomeHero from '../modules/WelcomeHero';
 import BlogOverview from '../modules/BlogOverview';
 
@@ -24,7 +24,12 @@ import navigation from '../data/navigation';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <NavBar baseColor={colors.textLight} items={navigation} logoInitiallyHidden />
+    <Navigation
+      baseBackgroundColor={colors.primary}
+      baseColor={colors.textLight}
+      items={navigation}
+      logoInitiallyHidden
+    />
     <WelcomeHero />
     <Section>
       <Container>

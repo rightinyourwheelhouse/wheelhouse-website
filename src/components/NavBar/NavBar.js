@@ -1,4 +1,6 @@
-import React, { memo, useState, useCallback } from 'react';
+import React, {
+  memo, useState, useCallback, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import classnames from 'classnames';
@@ -15,22 +17,51 @@ import {
   ItemsContent,
 } from './navBar.styles';
 
+import Badge from '../Badge';
+
+import { useMedia } from '../../hooks/useMedia';
+
 import colors from '../../styles/colors';
+import breakpoints from '../../styles/breakpoints';
 
 import Github from '../../images/github.svg';
 import Wheelhouse from '../../images/wheelhouse.svg';
 
-const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
+const NavBar = ({
+  baseColor,
+  baseBackgroundColor,
+  careerCount,
+  items,
+  logoInitiallyHidden,
+}) => {
   const [open, setOpen] = useState(false);
-  const [{ isScrolled }] = useScrolling(50);
+  const [{ isScrolled }] = useScrolling(100);
 
   const toggleMenu = useCallback(() => {
     setOpen((isOpen) => !isOpen);
   }, []);
 
+  const desktop = useMedia(
+    [`(min-width: ${breakpoints.medium})`],
+    [true],
+    false
+  );
+
+  const background = useMemo(() => {
+    if (!desktop) {
+      return 'none';
+    }
+
+    return isScrolled ? colors.textLight : 'transparent';
+  }, [colors, isScrolled, desktop, baseColor]);
+
   return (
     <Nav>
-      <Items className={open && 'active'} scrolled={isScrolled}>
+      <Items
+        className={open && 'active'}
+        background={background}
+        scrolled={isScrolled}
+      >
         <MenuIcon
           type="MenuIcon"
           onClick={toggleMenu}
@@ -41,7 +72,13 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
           <span className="menu-icon__line menu-icon__line-right" />
         </MenuIcon>
         <ItemsContainer className={open && 'active'}>
-          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+          <ItemsContent
+            className={classnames({
+              scrolled: isScrolled,
+            })}
+            scrolled={isScrolled}
+            baseColor={baseColor}
+          >
             <Item
               className={classnames({
                 logoInitiallyHidden,
@@ -53,7 +90,14 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
               </Link>
             </Item>
           </ItemsContent>
-          <ItemsContent scrolled={isScrolled} baseColor={baseColor}>
+          <ItemsContent
+            baseBackgroundColor={baseBackgroundColor}
+            className={classnames({
+              scrolled: isScrolled,
+            })}
+            scrolled={isScrolled}
+            baseColor={baseColor}
+          >
             <Item className="visible-small">
               <Link to="/">Home</Link>
             </Item>
@@ -63,12 +107,18 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
               </Item>
             ))}
             <Item>
+              <Link to="/careers">
+                {careerCount > 0 && <Badge>{careerCount}</Badge>}
+                Careers
+              </Link>
+            </Item>
+            <Item>
               <a
                 href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <span>Github</span>
+                <span className="label">Github</span>
                 <Github />
               </a>
             </Item>
@@ -91,7 +141,9 @@ const NavBar = ({ baseColor, items, logoInitiallyHidden }) => {
 };
 
 NavBar.propTypes = {
+  baseBackgroundColor: PropTypes.string,
   baseColor: PropTypes.string,
+  careerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   items: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,
@@ -102,7 +154,9 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
+  baseBackgroundColor: colors.backgroundPrimary,
   baseColor: colors.textPrimary,
+  careerCount: 0,
   items: [],
   logoInitiallyHidden: false,
 };

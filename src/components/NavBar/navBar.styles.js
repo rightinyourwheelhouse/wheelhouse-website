@@ -4,8 +4,6 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import breakpoints from '../../styles/breakpoints';
 
-import { invertColor } from '../../utils/color';
-
 export const Nav = styled.nav`
   align-items: center;
   display: flex;
@@ -198,6 +196,38 @@ export const ItemsContent = styled.div`
     &:nth-of-type(2) {
       justify-content: flex-end;
     }
+
+    &.scrolled {
+      ${Item} {
+        a {
+          color: ${colors.textPrimary};
+        }
+
+        span:not(.label) {
+          color: ${colors.textLight};
+          background: ${colors.textPrimary};
+        }
+
+        svg path {
+          fill: ${colors.textPrimary};
+        }
+
+        &:hover {
+          a {
+            color: ${colors.primary};
+          }
+
+          span:not(.label) {
+            color: ${colors.textLight};
+            background: ${colors.primary};
+          }
+
+          svg path {
+            fill: ${colors.primary};
+          }
+        }
+      }
+    }
   }
 
   ${Item} {
@@ -221,11 +251,19 @@ export const ItemsContent = styled.div`
 
     a {
       font-weight: 900;
-      color: ${({ foreground }) => foreground};
+      color: ${colors.textPrimary};
 
-      span {
-        background: ${({ foreground }) => foreground};
-        color: ${({ baseBackgroundColor, scrolled, foreground }) => (scrolled ? invertColor(foreground, true) : baseBackgroundColor)};
+      @media screen and (min-width: ${breakpoints.medium}) {
+        color: ${({ baseColor }) => baseColor};
+      }
+
+      span:not(.label) {
+        color: ${colors.textLight};
+
+        @media screen and (min-width: ${breakpoints.medium}) {
+          color: ${({ baseBackgroundColor }) => baseBackgroundColor};
+          background: ${({ baseColor }) => baseColor};
+        }
       }
 
       svg {
@@ -234,20 +272,28 @@ export const ItemsContent = styled.div`
         display: block;
 
         path {
-          fill: ${({ foreground }) => foreground};
+          fill: ${colors.textPrimary};
+
+          @media screen and (min-width: ${breakpoints.medium}) {
+            fill: ${({ baseColor }) => baseColor};
+          }
         }
       }
 
       &:hover {
-        color: ${({ hoverColor }) => hoverColor};
+        color: ${colors.primary};
 
-        span {
-          background: ${({ hoverColor }) => hoverColor};
-          color: ${({ hoverColor }) => invertColor(hoverColor, true)};
+        @media screen and (min-width: ${breakpoints.medium}) {
+          color: ${colors.textPrimary};
+        }
+
+        span:not(.label) {
+          color: ${({ baseBackgroundColor }) => baseBackgroundColor};
+          background: ${colors.textPrimary};
         }
 
         svg path {
-          fill: ${({ hoverColor }) => hoverColor};
+          fill: ${colors.textPrimary};
         }
       }
     }

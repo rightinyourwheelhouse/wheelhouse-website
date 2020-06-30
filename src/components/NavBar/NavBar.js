@@ -47,28 +47,12 @@ const NavBar = ({
     false
   );
 
-  const foreground = useMemo(() => {
-    if (!desktop) {
-      return colors.textPrimary;
-    }
-
-    return isScrolled ? colors.textPrimary : baseColor;
-  }, [colors, isScrolled, desktop, baseColor]);
-
   const background = useMemo(() => {
     if (!desktop) {
       return 'none';
     }
 
     return isScrolled ? colors.textLight : 'transparent';
-  }, [colors, isScrolled, desktop, baseColor]);
-
-  const hoverColor = useMemo(() => {
-    if (!desktop) {
-      return colors.primary;
-    }
-
-    return isScrolled ? colors.primary : colors.textPrimary;
   }, [colors, isScrolled, desktop, baseColor]);
 
   return (
@@ -89,10 +73,11 @@ const NavBar = ({
         </MenuIcon>
         <ItemsContainer className={open && 'active'}>
           <ItemsContent
+            className={classnames({
+              scrolled: isScrolled,
+            })}
             scrolled={isScrolled}
-            foreground={foreground}
             baseColor={baseColor}
-            hoverColor={hoverColor}
           >
             <Item
               className={classnames({
@@ -107,9 +92,11 @@ const NavBar = ({
           </ItemsContent>
           <ItemsContent
             baseBackgroundColor={baseBackgroundColor}
+            className={classnames({
+              scrolled: isScrolled,
+            })}
             scrolled={isScrolled}
-            foreground={foreground}
-            hoverColor={hoverColor}
+            baseColor={baseColor}
           >
             <Item className="visible-small">
               <Link to="/">Home</Link>

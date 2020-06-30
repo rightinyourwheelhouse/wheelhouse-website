@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Section, Container } from '../components/layoutComponents';
-import NavBar from '../components/NavBar';
 import SEO from '../components/SEO';
 
 import Layout from '../layouts/default';
 
+import Navigation from '../modules/Navigation';
 import JobOverview from '../modules/JobOverview';
 
 import navigation from '../data/navigation';
@@ -13,7 +13,7 @@ import navigation from '../data/navigation';
 const IndexPage = () => (
   <Layout>
     <SEO title="Working as a javascript expert at Wheelhouse and expand our team" />
-    <NavBar items={navigation} />
+    <Navigation items={navigation} />
 
     <Section>
       <Container>

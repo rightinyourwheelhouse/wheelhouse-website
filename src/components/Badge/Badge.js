@@ -13,7 +13,8 @@ const Badge = ({ background, children, color }) => (
 
 Badge.propTypes = {
   background: PropTypes.string,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+    .isRequired,
   color: PropTypes.string,
 };
 

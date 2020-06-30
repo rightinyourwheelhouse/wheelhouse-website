@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import classnames from 'classnames';
 
-import { useJobOverview } from '../../api/job/useJobOverview';
 import { useScrolling } from '../../hooks/useScrolling';
 
 import {
@@ -31,12 +30,12 @@ import Wheelhouse from '../../images/wheelhouse.svg';
 const NavBar = ({
   baseColor,
   baseBackgroundColor,
+  careerCount,
   items,
   logoInitiallyHidden,
 }) => {
-  const [jobs] = useJobOverview();
   const [open, setOpen] = useState(false);
-  const [{ isScrolled }] = useScrolling(50);
+  const [{ isScrolled }] = useScrolling(100);
 
   const toggleMenu = useCallback(() => {
     setOpen((isOpen) => !isOpen);
@@ -122,7 +121,7 @@ const NavBar = ({
             ))}
             <Item>
               <Link to="/careers">
-                {jobs.length > 0 && <Badge>{jobs.length}</Badge>}
+                {careerCount > 0 && <Badge>{careerCount}</Badge>}
                 Careers
               </Link>
             </Item>
@@ -157,6 +156,7 @@ const NavBar = ({
 NavBar.propTypes = {
   baseBackgroundColor: PropTypes.string,
   baseColor: PropTypes.string,
+  careerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   items: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,
@@ -169,6 +169,7 @@ NavBar.propTypes = {
 NavBar.defaultProps = {
   baseBackgroundColor: colors.backgroundPrimary,
   baseColor: colors.textPrimary,
+  careerCount: 0,
   items: [],
   logoInitiallyHidden: false,
 };

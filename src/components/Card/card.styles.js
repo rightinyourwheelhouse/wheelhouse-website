@@ -4,7 +4,8 @@ import breakpoints from '../../styles/breakpoints';
 
 export const CardContainer = styled.div`
   align-items: flex-start;
-  background-color: #f1f1f1;
+  background: ${({ background }) => background};
+  color: ${({ foreground }) => foreground};
   display: flex;
   flex-direction: column;
   padding: 16px 20px 8px 14px;

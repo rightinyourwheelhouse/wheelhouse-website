@@ -2,10 +2,11 @@ import React, { memo } from 'react';
 
 import { Container } from '../layoutComponents';
 import Stack from '../Stack';
+import TwoColumns from '../TwoColumns';
 
 import Raccoons from '../../images/raccoons.svg';
 
-import { FooterContainer, TwoColumns, RaccoonsBlock } from './footer.styles';
+import { FooterContainer, RaccoonsBlock } from './footer.styles';
 
 const Footer = () => (
   <FooterContainer>

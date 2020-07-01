@@ -16,11 +16,11 @@ export default styled.div`
   @media screen and (min-width: ${breakpoints.medium}) {
     flex-direction: row;
 
-    &:first-child {
+    > *:first-child {
       margin-right: 2%;
     }
 
-    &:last-child {
+    > *:last-child {
       margin-left: 2%;
     }
   }

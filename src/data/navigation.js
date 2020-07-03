@@ -1,6 +1,1 @@
-export default [
-  {
-    href: '/careers',
-    title: 'careers',
-  },
-];
+export default [];

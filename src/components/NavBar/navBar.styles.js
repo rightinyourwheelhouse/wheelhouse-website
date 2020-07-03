@@ -33,13 +33,11 @@ export const Item = styled.div`
     }
 
     @media screen and (min-width: ${breakpoints.medium}) {
-      color: ${({ scrolled }) => (scrolled ? colors.textPrimary : colors.textLight)};
       font-size: 1.3rem;
-      line-height: 4.25vw;
       padding: 16px 0 14px 20px;
       text-transform: lowercase;
 
-      span {
+      span.label {
         display: none;
       }
     }
@@ -63,6 +61,7 @@ export const ItemsContainer = styled.div`
     max-width: 1240px;
     padding: 0px 1.0875rem;
     margin: auto;
+    height: 75px;
   }
 
   &.active {
@@ -85,7 +84,7 @@ export const Items = styled.div`
   width: 100%;
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    background: ${({ scrolled }) => (scrolled ? colors.textLight : 'transparent')};
+    background: ${({ background }) => background};
   }
 
   a {
@@ -197,11 +196,43 @@ export const ItemsContent = styled.div`
     &:nth-of-type(2) {
       justify-content: flex-end;
     }
+
+    &.scrolled {
+      ${Item} {
+        a {
+          color: ${colors.textPrimary};
+        }
+
+        span:not(.label) {
+          color: ${colors.textLight};
+          background: ${colors.textPrimary};
+        }
+
+        svg path {
+          fill: ${colors.textPrimary};
+        }
+
+        &:hover {
+          a {
+            color: ${colors.primary};
+          }
+
+          span:not(.label) {
+            color: ${colors.textLight};
+            background: ${colors.primary};
+          }
+
+          svg path {
+            fill: ${colors.primary};
+          }
+        }
+      }
+    }
   }
 
   ${Item} {
     &.wh-logo {
-     display: none;
+      display: none;
 
       @media screen and (min-width: ${breakpoints.medium}) {
         display: unset;
@@ -213,8 +244,7 @@ export const ItemsContent = styled.div`
 
       svg {
         path {
-          fill: ${colors.primary} ;
-
+          fill: ${colors.primary};
         }
       }
     }
@@ -224,7 +254,16 @@ export const ItemsContent = styled.div`
       color: ${colors.textPrimary};
 
       @media screen and (min-width: ${breakpoints.medium}) {
-        color: ${({ scrolled, baseColor }) => (scrolled ? colors.textPrimary : baseColor)};
+        color: ${({ baseColor }) => baseColor};
+      }
+
+      span:not(.label) {
+        color: ${colors.textLight};
+
+        @media screen and (min-width: ${breakpoints.medium}) {
+          color: ${({ baseBackgroundColor }) => baseBackgroundColor};
+          background: ${({ baseColor }) => baseColor};
+        }
       }
 
       svg {
@@ -236,7 +275,7 @@ export const ItemsContent = styled.div`
           fill: ${colors.textPrimary};
 
           @media screen and (min-width: ${breakpoints.medium}) {
-            fill: ${({ scrolled, baseColor }) => (scrolled ? colors.textPrimary : baseColor)};
+            fill: ${({ baseColor }) => baseColor};
           }
         }
       }
@@ -244,16 +283,17 @@ export const ItemsContent = styled.div`
       &:hover {
         color: ${colors.primary};
 
-        svg path {
-          fill: ${colors.primary};
+        @media screen and (min-width: ${breakpoints.medium}) {
+          color: ${colors.textPrimary};
         }
 
-        @media screen and (min-width: ${breakpoints.medium}) {
-          color: ${({ scrolled }) => (scrolled ? colors.primary : colors.textPrimary)};
+        span:not(.label) {
+          color: ${({ baseBackgroundColor }) => baseBackgroundColor};
+          background: ${colors.textPrimary};
+        }
 
-          svg path {
-            fill: ${({ scrolled }) => (scrolled ? colors.primary : colors.textPrimary)};
-          }
+        svg path {
+          fill: ${colors.textPrimary};
         }
       }
     }

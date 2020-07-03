@@ -3,12 +3,18 @@ import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import { Section, Container, LightContent } from '../components/layoutComponents';
+import {
+  Section,
+  Container,
+  LightContent,
+} from '../components/layoutComponents';
 import BlogText from '../components/BlogText';
-import NavBar from '../components/NavBar';
+import SEO from '../components/SEO';
 import SubTitle from '../components/SubTitle';
 
 import Layout from '../layouts/default';
+
+import Navigation from '../modules/Navigation';
 
 import navigation from '../data/navigation';
 
@@ -22,7 +28,12 @@ const Career = ({
   },
 }) => (
   <Layout>
-    <NavBar items={navigation} />
+    <SEO
+      title={`Vacancy ${title} at Wheelhouse ${city}`}
+      description={description}
+    />
+
+    <Navigation items={navigation} />
     <Section>
       <Container>
         <SubTitle>{city}</SubTitle>

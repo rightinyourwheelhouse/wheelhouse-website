@@ -2,7 +2,7 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 
 import Card from './Card';
-import TwoColumns from '../TwoColumns';
+import TwoColumns from '~components/TwoColumns';
 
 export default {
   component: Card,

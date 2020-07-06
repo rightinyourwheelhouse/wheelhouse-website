@@ -7,7 +7,7 @@ import ColorSpinner from '~components/ColorSpinner';
 import MarkWithContent from '~components/MarkWithContent';
 import Stack from '~components/Stack';
 
-import TeamRotation from '../TeamRotation';
+import TeamRotation from '~modules/TeamRotation';
 
 import { WelcomeHeroContainer } from './welcomeHero.styles';
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Mark, Image, TextContainer } from './markWithContent.styles';
 
-import AnimatedCard from '../AnimatedCard';
+import AnimatedCard from '~components/AnimatedCard';
 
 const MarkWithContent = ({
   children,

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { SpinnerContainer } from './colorSpinner.styles';
 
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
 const DEFAULT_COLORS = [
   '#0000E0',

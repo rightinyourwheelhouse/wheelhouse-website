@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
+import colors from '~styles/colors';
+import fonts from '~styles/fonts';
 
 export const GalleryItemContainer = styled.div`
   margin-bottom: 60px;

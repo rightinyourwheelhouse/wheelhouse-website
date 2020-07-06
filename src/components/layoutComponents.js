@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import spacing from '../styles/spacing';
-import colors from '../styles/colors';
+import spacing from '~styles/spacing';
+import colors from '~styles/colors';
 
 export const Container = styled.div`
   margin: 0 auto;

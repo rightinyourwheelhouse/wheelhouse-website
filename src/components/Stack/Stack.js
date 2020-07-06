@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import spacing from '../../styles/spacing';
+import spacing from '~styles/spacing';
 
 export default styled.div`
   display: flex;

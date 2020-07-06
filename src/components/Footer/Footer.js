@@ -17,8 +17,6 @@ const Footer = () => (
           <div>
             <p>
               <a href="mailto:hello@wheelhouse.be">hello@wheelhouse.be</a>
-              {' '}
-              <br />
               <a href="tel:+32479559012">+32479559012</a>
             </p>
             <p>

@@ -68,5 +68,22 @@
         "natural": true
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["~api", "./src/api"],
+        ["~components", "./src/components"],
+        ["~data", "./src/data"],
+        ["~hooks", "./src/hooks"],
+        ["~images", "./src/images"],
+        ["~modules", "./src/modules"],
+        ["~pages", "./src/pages"],
+        ["~styles", "./src/styles"],
+        ["~styles", "./src/styles"],
+        ["~templates", "./src/templates"],
+        ["~utils", "./src/utils"]
+      ]
+    }
   }
 }

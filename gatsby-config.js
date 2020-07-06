@@ -1,5 +1,23 @@
 module.exports = {
   plugins: [
+    {
+      options: {
+        alias: {
+          '~api': 'src/api',
+          '~components': 'src/components',
+          '~data': 'src/data',
+          '~hooks': 'src/hooks',
+          '~images': 'src/images',
+          '~layouts': 'src/layouts',
+          '~modules': 'src/modules',
+          '~pages': 'src/pages',
+          '~styles': 'src/styles',
+          '~templates': 'src/templates',
+          '~utils': 'src/utils',
+        },
+      },
+      resolve: 'gatsby-plugin-alias-imports',
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-styled-components',
     {

@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 
-import { Container } from '../layoutComponents';
-import Stack from '../Stack';
-import TwoColumns from '../TwoColumns';
+import { Container } from '~components/layoutComponents';
+import Stack from '~components/Stack';
+import TwoColumns from '~components/TwoColumns';
 
-import Raccoons from '../../images/raccoons.svg';
+import Raccoons from '~images/raccoons.svg';
 
 import { FooterContainer, RaccoonsBlock } from './footer.styles';
 

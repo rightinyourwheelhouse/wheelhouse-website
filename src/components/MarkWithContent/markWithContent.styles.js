@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import breakpoints from '../../styles/breakpoints';
-import colors from '../../styles/colors';
+import breakpoints from '~styles/breakpoints';
+import colors from '~styles/colors';
 
 export const Mark = styled.mark`
   position: relative;

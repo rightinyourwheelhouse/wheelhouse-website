@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import classnames from 'classnames';
 
-import { useScrolling } from '../../hooks/useScrolling';
+import { useScrolling } from '~hooks/useScrolling';
 
 import {
   Address,
@@ -17,15 +17,15 @@ import {
   ItemsContent,
 } from './navBar.styles';
 
-import Badge from '../Badge';
+import Badge from '~components/Badge';
 
-import { useMedia } from '../../hooks/useMedia';
+import { useMedia } from '~hooks/useMedia';
 
-import colors from '../../styles/colors';
-import breakpoints from '../../styles/breakpoints';
+import colors from '~styles/colors';
+import breakpoints from '~styles/breakpoints';
 
-import Github from '../../images/github.svg';
-import Wheelhouse from '../../images/wheelhouse.svg';
+import Github from '~images/github.svg';
+import Wheelhouse from '~images/wheelhouse.svg';
 
 const NavBar = ({
   baseColor,

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import fonts from '../../styles/fonts';
+import fonts from '~styles/fonts';
 
 const pulse = (color) => keyframes`
  0% {

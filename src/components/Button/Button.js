@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import { ButtonContainer } from './button.styles';
 
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
 const Button = ({
   background,

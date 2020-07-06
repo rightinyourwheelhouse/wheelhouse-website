@@ -1,19 +1,19 @@
 import React, { memo } from 'react';
 
-import { Container } from '../../components/layoutComponents';
-import Button from '../../components/Button';
-import DamnBigTitle from '../../components/text/DamnBigTitle';
-import ColorSpinner from '../../components/ColorSpinner';
-import MarkWithContent from '../../components/MarkWithContent';
-import Stack from '../../components/Stack';
+import { Container } from '~components/layoutComponents';
+import Button from '~components/Button';
+import DamnBigTitle from '~components/text/DamnBigTitle';
+import ColorSpinner from '~components/ColorSpinner';
+import MarkWithContent from '~components/MarkWithContent';
+import Stack from '~components/Stack';
 
 import TeamRotation from '../TeamRotation';
 
 import { WelcomeHeroContainer } from './welcomeHero.styles';
 
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
-import Logo from '../../images/wheelhouse.svg';
+import Logo from '~images/wheelhouse.svg';
 
 const WelcomeHero = () => (
   <WelcomeHeroContainer>

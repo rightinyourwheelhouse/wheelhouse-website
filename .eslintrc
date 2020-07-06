@@ -77,6 +77,7 @@
         ["~data", "./src/data"],
         ["~hooks", "./src/hooks"],
         ["~images", "./src/images"],
+        ["~layouts", "./src/layouts"],
         ["~modules", "./src/modules"],
         ["~pages", "./src/pages"],
         ["~styles", "./src/styles"],

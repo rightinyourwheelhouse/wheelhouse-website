@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-sass',
     {
       options: {
         alias: {
@@ -74,6 +75,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+      resolve: 'gatsby-plugin-netlify-cms',
+    },
+    'gatsby-plugin-netlify',
   ],
   siteMetadata: {
     author: 'Daren M.',

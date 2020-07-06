@@ -1,0 +1,27 @@
+---
+  backend:
+    name: github
+    repo: rightinyourwheelhouse/wheelhouse-website
+  collections:
+    -
+      create: true
+      fields:
+        -
+          label: Path
+          name: path
+        -
+          label: Date
+          name: date
+          widget: datetime
+        -
+          label: Title
+          name: title
+        -
+          label: Body
+          name: body
+          widget: markdown
+      folder: blog
+      label: Blog
+      name: blog
+  media_folder: static/assets
+  public_folder: /assets

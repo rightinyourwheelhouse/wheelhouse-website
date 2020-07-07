@@ -6,7 +6,7 @@ import SEO from '~components/SEO';
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
-import JobOverview from '~modules/JobOverview';
+import TeamOverview from '~modules/TeamOverview';
 
 import navigation from '~data/navigation';
 
@@ -17,7 +17,7 @@ const TeamPage = () => (
 
     <Section>
       <Container>
-        <JobOverview />
+        <TeamOverview />
       </Container>
     </Section>
   </Layout>

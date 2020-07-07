@@ -24,11 +24,5 @@ export const useTeam = () => {
     teamJson: { name, members },
   } = useStaticQuery(query);
 
-  const team = useMemo(() => {
-    const nodes = members.map(({ node }) => ({ ...node }));
-
-    return { members: nodes, name };
-  }, [members]);
-
-  return team;
+  return { members, name };
 };

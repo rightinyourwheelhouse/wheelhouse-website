@@ -1,20 +1,39 @@
 ---
+  # backend:
+  #   name: github
+  #   repo: rightinyourwheelhouse/wheelhouse-website
   backend:
-    name: github
-    repo: rightinyourwheelhouse/wheelhouse-website
+    name: proxy
+    proxy_url: http://localhost:8081/api/v1
+    branch: add-team-page
   collections:
     -
-      create: true
-      fields:
-        -
-          label: Name
-          name: rame
-          widget: string
-        -
-          label: Role
-          name: role
-      folder: team
       label: team
       name: team
+      widget: title
+      slug: "{{title}}"
+      create: false
+      fields:
+        -
+          label: name
+          name: name
+        -
+          label: Members
+          name: members
+          widget: list
+          fields:
+            -
+              create: true
+              label: Name
+              name: name
+            -
+              label: Role
+              name: role
+            -
+              label: image
+              name: image
+              widget: image
+      folder: src/data/team
+      extension: json
   media_folder: static/assets
-  public_folder: /assets
+  public_folder: assets

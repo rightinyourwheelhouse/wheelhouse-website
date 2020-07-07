@@ -1,0 +1,15 @@
+{
+  "name": "wheelhouse",
+  "members": [
+    {
+      "name": "Daren Malfait",
+      "role": "front-end developer",
+      "image": "assets/daren-2.jpg"
+    },
+    {
+      "name": "Rafaël Mindreau",
+      "role": "full-stack developer",
+      "image": "assets/rafael-2.jpg"
+    }
+  ]
+}

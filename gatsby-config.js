@@ -1,5 +1,19 @@
 module.exports = {
   plugins: [
+    {
+      options: {
+        // Path to your Netlify CMS config file
+        cmsConfig: '/static/admin/config.yml',
+      },
+      resolve: 'gatsby-plugin-netlify-cms-paths',
+    },
+    'gatsby-transformer-json',
+    {
+      options: {
+        path: './src/data/',
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
     'gatsby-plugin-sass',
     {
       options: {
@@ -56,6 +70,13 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
+    {
+      options: {
+        name: 'static',
+        path: `${__dirname}/static/`,
       },
       resolve: 'gatsby-source-filesystem',
     },

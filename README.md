@@ -65,6 +65,23 @@ You can see the storybook using:
     npm run storybook
     ```
 
+## Netlify CMS
+
+For using the CMS offline you can use:
+
+    ```shell
+    npx netlify-cms-proxy-server
+    ```
+
+And use the following yaml config:
+
+    ```
+    backend:
+        name: proxy
+        proxy_url: http://localhost:8081/api/v1
+        branch: master # optional, defaults to master
+    ```
+
 ### Deploying storybook
 
     ```shell

@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
@@ -6,6 +5,8 @@ const query = graphql`
     teamJson {
       members {
         name
+        description
+        role
         image {
           id
           childImageSharp {

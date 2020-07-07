@@ -123,6 +123,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
+    margin-bottom: 1rem;
 
     &:not(:first-of-type){
       margin-top: 2.8rem;

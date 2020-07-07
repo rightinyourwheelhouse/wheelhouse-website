@@ -30,6 +30,9 @@
               label: Role
               name: role
             -
+              label: Description
+              name: description
+            -
               label: image
               name: image
               widget: image

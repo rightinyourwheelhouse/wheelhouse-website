@@ -31,15 +31,20 @@ const WelcomeHero = () => (
         <div>
           We are a
           {' '}
-          <MarkWithContent
-            text="team"
-          >
+          <MarkWithContent text="team">
             <TeamRotation />
           </MarkWithContent>
           {' '}
           of passionate JavaScript developers, eager to exchange our expertise
           to eachother and our customers.
-          <Button color={colors.accent}>Meet us</Button>
+          <Button
+            background={colors.accent}
+            color={colors.textLight}
+            colorHover={colors.accent}
+            backgroundHover={colors.backgroundPrimary}
+          >
+            Meet us
+          </Button>
         </div>
       </Stack>
     </Container>

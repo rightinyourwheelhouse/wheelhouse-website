@@ -2,6 +2,21 @@ module.exports = {
   plugins: [
     {
       options: {
+        // Path to your Netlify CMS config file
+        cmsConfig: '/static/admin/config.yml',
+      },
+      resolve: 'gatsby-plugin-netlify-cms-paths',
+    },
+    'gatsby-transformer-json',
+    {
+      options: {
+        path: './src/data/',
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
+    'gatsby-plugin-sass',
+    {
+      options: {
         alias: {
           '~api': 'src/api',
           '~components': 'src/components',
@@ -58,6 +73,13 @@ module.exports = {
       },
       resolve: 'gatsby-source-filesystem',
     },
+    {
+      options: {
+        name: 'static',
+        path: `${__dirname}/static/`,
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -74,6 +96,13 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+      resolve: 'gatsby-plugin-netlify-cms',
+    },
+    'gatsby-plugin-netlify',
   ],
   siteMetadata: {
     author: 'Daren M.',

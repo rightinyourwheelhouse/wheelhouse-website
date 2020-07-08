@@ -1,1 +1,6 @@
-export default [];
+export default [
+  {
+    href: '/team',
+    title: 'team',
+  },
+];

@@ -9,56 +9,47 @@ const pulse = (color) => keyframes`
 `;
 
 export const ButtonContainer = styled.div`
+  --background: ${({ background }) => background};
+  --backgroundHover: ${({ backgroundHover }) => backgroundHover};
+  --foreground: ${({ color }) => color};
+  --foregroundHover: ${({ colorHover }) => colorHover};
+
   > div,
   .btn {
-    background: none;
+    background: var(--background);
     border: none;
-    border-bottom: 4px solid ${({ color }) => color};
-    color: ${({ color }) => color};
+    border-radius: 2px;
+    color: var(--foreground);
     cursor: pointer;
     display: inline-block;
-    font-family: ${fonts.family};
-    font-size: 1.6667rem;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
     font-weight: 700;
-    padding: 0.2em 0.05em;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px 0;
+    font-family: ${fonts.family};
     position: relative;
     text-decoration: none;
     transition-duration: 0.1s;
     transition-timing-function: ease;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: #f76d6d;
-      z-index: -1;
-      transition: all 0.1s cubic-bezier(0, 0.59, 1, 0.26);
-    }
-
     &:hover {
-      color: ${({ colorHover }) => colorHover};
-      animation: 0.6s ${({ color }) => pulse(color)};
-      box-shadow: 0 0 0 0.5em rgba(0, 0, 0, 0);
+      color: var(--foregroundHover);
+      background: var(--backgroundHover);
+      animation: 0.6s ${({ backgroundHover }) => pulse(backgroundHover)};
+      box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
       animation-delay: 0.1s;
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: ${({ color }) => color};
-        z-index: -1;
-        height: auto;
-        opacity: 1;
-      }
     }
+
+    &:focus {
+      background: var(--background);
+      color: var(--foreground);
+      filter: brightness(170%);
+      transition: all 0.3s;
+    }
+  }
   }
 
   &.full {

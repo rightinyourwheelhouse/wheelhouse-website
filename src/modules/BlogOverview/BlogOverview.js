@@ -38,7 +38,10 @@ const BlogOverview = () => {
           <Button
             as={Link}
             to="/"
-            color={colors.primary}
+            color={colors.textLight}
+            colorHover={colors.textPrimary}
+            background={colors.primary}
+            backgroundHover={colors.backgroundPrimary}
           >
             Discover more
           </Button>

@@ -9,6 +9,7 @@ import colors from '~styles/colors';
 
 const Button = ({
   background,
+  backgroundHover,
   children,
   color,
   colorHover,
@@ -20,6 +21,7 @@ const Button = ({
     color={color}
     colorHover={colorHover}
     background={background}
+    backgroundHover={backgroundHover}
     className={classnames({
       full,
     })}
@@ -46,8 +48,9 @@ Button.propTypes = {
 
 Button.defaultProps = {
   as: 'button',
-  background: 'transparent',
-  color: colors.primary,
+  background: colors.primary,
+  backgroundHover: colors.accent,
+  color: colors.textLight,
   colorHover: colors.textLight,
   full: false,
 };

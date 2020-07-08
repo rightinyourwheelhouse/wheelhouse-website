@@ -9,7 +9,7 @@ const TeamCard = ({
 }) => (
   <CardContainer>
     <ImageContainer>
-      <Img fluid={image.childImageSharp.fluid} alt={name} />
+      {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
     </ImageContainer>
     <Caption>
       <strong>{name}</strong>
@@ -20,14 +20,17 @@ const TeamCard = ({
 );
 
 TeamCard.propTypes = {
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   image: PropTypes.shape({
     childImageSharp: PropTypes.shape({
       fluid: PropTypes.shape({}),
     }),
   }).isRequired,
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
+};
+
+TeamCard.defaultProps = {
+  description: '',
 };
 
 export default memo(TeamCard);

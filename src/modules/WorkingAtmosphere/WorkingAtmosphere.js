@@ -5,15 +5,19 @@ import { useWorkingAtmosphereImages } from '~api/images/useWorkingAtmosphereImag
 
 import HorizontalItemList from '~components/HorizontalItemList';
 
+import { WorkingAtmosphereContainer } from './workingAtmosphere.styles';
+
 const WorkingAtmosphere = () => {
   const images = useWorkingAtmosphereImages();
 
   return (
-    <HorizontalItemList>
-      {images.map(({ id, childImageSharp: { fluid } }) => (
-        <Img objectFit="contain" key={id} fluid={fluid} alt="Working atmosphere" />
-      ))}
-    </HorizontalItemList>
+    <WorkingAtmosphereContainer>
+      <HorizontalItemList>
+        {images.map(({ id, childImageSharp: { fluid } }) => (
+          <Img objectFit="contain" key={id} fluid={fluid} alt="Working atmosphere" />
+        ))}
+      </HorizontalItemList>
+    </WorkingAtmosphereContainer>
   );
 };
 

@@ -5,7 +5,9 @@ import { Section, Container, LightContent } from '~components/layoutComponents';
 import BlogText from '~components/BlogText';
 import Button from '~components/Button';
 import SEO from '~components/SEO';
+import Summary from '~components/Summary';
 import SubTitle from '~components/SubTitle';
+import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
 
@@ -54,8 +56,43 @@ const TeamPage = () => (
     <Section background={colors.backgroundSecundary}>
       <Container>
         <LightContent>
-          <JobOverview />
+          <TwoColumns>
+            <div>
+              <Summary
+                title="What we do"
+                items={[
+                  { label: 'Think about UX' },
+                  { label: 'Coach and code' },
+                  { label: 'Love clean code' },
+                  { label: 'Bring added value with design' },
+                  { label: 'Make excisting teams stronger' },
+                  { label: 'Turn spaghetti into code' },
+                ]}
+              />
+            </div>
+            <div>
+              <Summary
+                title="What we don't do"
+                items={[
+                  { disabled: true, label: 'Make false promises' },
+                  { disabled: true, label: 'Give up' },
+                  { disabled: true, label: 'Make plans for world domination' },
+                  { disabled: true, label: 'Quick and dirty' },
+                  { disabled: true, label: 'Prototyping' },
+                  { disabled: true, label: 'Leave unfinished burgers behind' },
+                ]}
+              />
+            </div>
+          </TwoColumns>
         </LightContent>
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
+
+        <JobOverview />
+
       </Container>
     </Section>
   </Layout>

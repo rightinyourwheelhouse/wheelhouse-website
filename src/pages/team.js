@@ -4,9 +4,10 @@ import Link from 'gatsby-link';
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import BlogText from '~components/BlogText';
 import Button from '~components/Button';
+import Card from '~components/Card';
 import SEO from '~components/SEO';
-import Summary from '~components/Summary';
 import SubTitle from '~components/SubTitle';
+import Summary from '~components/Summary';
 import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
@@ -50,6 +51,13 @@ const TeamPage = () => (
     <Section>
       <Container>
         <TeamOverview />
+        <Card>
+          <h2>Do you want to join us?</h2>
+          <p>
+            We improve the quality of our service and solutions by continuously focusing on improvement. We carefully analyse and monitor all projects while training our team in the latest technologies. At Wheelhouse, we help you develop your talents so that you can build a high-quality career path.
+          </p>
+          <Button as={Link} to="/careers">Check our job openings</Button>
+        </Card>
       </Container>
     </Section>
 
@@ -90,9 +98,7 @@ const TeamPage = () => (
 
     <Section>
       <Container>
-
         <JobOverview />
-
       </Container>
     </Section>
   </Layout>

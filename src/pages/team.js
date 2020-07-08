@@ -65,7 +65,7 @@ const TeamPage = () => (
                   { label: 'Coach and code' },
                   { label: 'Love clean code' },
                   { label: 'Bring added value with design' },
-                  { label: 'Make excisting teams stronger' },
+                  { label: 'Make existing teams stronger' },
                   { label: 'Turn spaghetti into code' },
                 ]}
               />

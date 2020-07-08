@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${fonts.sizes.default};
     line-height: 180%;
     margin-top: 1.5rem;
-    margin-bottom: 0;
+    margin-bottom: 30px;
     font-weight: 400;
   }
 

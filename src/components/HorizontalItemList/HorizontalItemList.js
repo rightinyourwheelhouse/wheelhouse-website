@@ -6,8 +6,8 @@ import spacing from '~styles/spacing';
 
 export default styled.div`
   --background: ${({ background }) => background || colors.backgroundPrimary};
-  --height: ${({ height }) => height || '300px'};
-  --itemWidth: ${({ itemWidth }) => itemWidth || 'auto'};
+  --height: ${({ height }) => height || '600px'};
+  --itemWidth: ${({ itemWidth }) => itemWidth || '900px'};
   --space: ${({ space }) => space || spacing.default};
 
   background: var(--background);
@@ -18,7 +18,6 @@ export default styled.div`
   overflow-y: hidden;
   min-width: 100vw;
   max-width: 100%;
-  padding: 5px;
   box-sizing: border-box;
 
   &::-webkit-scrollbar {
@@ -29,10 +28,11 @@ export default styled.div`
     flex: 0 0 var(--itemWidth);
   }
 
-  > img {
+  img, >div {
     height: 100%;
     flex-basis: auto;
     width: auto;
+    min-width: var(--itemWidth);
   }
 
   > * + * {
@@ -40,8 +40,6 @@ export default styled.div`
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    padding: ${spacing.default};
-
     > * + * {
       margin-left: var(--space);
     }

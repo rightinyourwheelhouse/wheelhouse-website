@@ -7,18 +7,18 @@ import {
   Section,
   Container,
   LightContent,
-} from '../components/layoutComponents';
-import BlogText from '../components/BlogText';
-import SEO from '../components/SEO';
-import SubTitle from '../components/SubTitle';
+} from '~components/layoutComponents';
+import BlogText from '~components/BlogText';
+import SEO from '~components/SEO';
+import SubTitle from '~components/SubTitle';
 
-import Layout from '../layouts/default';
+import Layout from '~layouts/default';
 
-import Navigation from '../modules/Navigation';
+import Navigation from '~modules/Navigation';
 
-import navigation from '../data/navigation';
+import navigation from '~data/navigation';
 
-import colors from '../styles/colors';
+import colors from '~styles/colors';
 
 const Career = ({
   data: {

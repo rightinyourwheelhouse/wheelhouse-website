@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
 
-import { isBrowser } from '../../utils/browser';
+import { isBrowser } from '~utils/browser';
 
 const height = isBrowser ? window.innerHeight : 0;
 const width = isBrowser ? window.innerWidth : 0;

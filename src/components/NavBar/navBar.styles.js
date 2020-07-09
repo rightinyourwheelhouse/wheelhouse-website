@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import colors from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import breakpoints from '../../styles/breakpoints';
+import colors from '~styles/colors';
+import fonts from '~styles/fonts';
+import breakpoints from '~styles/breakpoints';
 
 export const Nav = styled.nav`
   align-items: center;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import breakpoints from '../../styles/breakpoints';
+import breakpoints from '~styles/breakpoints';
 
 export const UnalignedGridContainer = styled.div`
   margin-top: 30px;

@@ -4,23 +4,23 @@ import {
   Section,
   Container,
   LightContent,
-} from '../components/layoutComponents';
-import Button from '../components/Button';
-import GalleryItem from '../components/GalleryItem';
-import SEO from '../components/SEO';
-import SubTitle from '../components/SubTitle';
-import UnalignedGrid from '../components/UnalignedGrid';
+} from '~components/layoutComponents';
+import Button from '~components/Button';
+import GalleryItem from '~components/GalleryItem';
+import SEO from '~components/SEO';
+import SubTitle from '~components/SubTitle';
+import UnalignedGrid from '~components/UnalignedGrid';
 import Onboarding from '../components/Onboarding';
 
-import Layout from '../layouts/default';
+import Layout from '~layouts/default';
 
-import Navigation from '../modules/Navigation';
-import WelcomeHero from '../modules/WelcomeHero';
-import BlogOverview from '../modules/BlogOverview';
+import Navigation from '~modules/Navigation';
+import WelcomeHero from '~modules/WelcomeHero';
+import BlogOverview from '~modules/BlogOverview';
 
-import colors from '../styles/colors';
+import colors from '~styles/colors';
 
-import navigation from '../data/navigation';
+import navigation from '~data/navigation';
 
 const IndexPage = () => (
   <Layout>

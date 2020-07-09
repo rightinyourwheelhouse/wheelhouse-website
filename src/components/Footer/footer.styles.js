@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
 export const FooterContainer = styled.footer`
   padding: 120px 0;
@@ -8,6 +8,7 @@ export const FooterContainer = styled.footer`
 
   p {
     margin: 0;
+    margin-bottom: 30px;
   }
 
   a {

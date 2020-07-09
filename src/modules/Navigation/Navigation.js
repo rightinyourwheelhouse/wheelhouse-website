@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
-import NavBar from '../../components/NavBar';
+import NavBar from '~components/NavBar';
 
-import { useJobOverview } from '../../api/job/useJobOverview';
+import { useJobOverview } from '~api/job/useJobOverview';
 
 const Navigation = (props) => {
   const [jobs] = useJobOverview();

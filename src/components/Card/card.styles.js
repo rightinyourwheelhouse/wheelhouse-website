@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import breakpoints from '../../styles/breakpoints';
+import breakpoints from '~styles/breakpoints';
 
 export const CardContainer = styled.div`
   align-items: flex-start;

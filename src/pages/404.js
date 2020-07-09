@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Layout from '../layouts/default';
+import Layout from '~layouts/default';
 
-import { Section, Container } from '../components/layoutComponents';
-import SEO from '../components/SEO';
+import { Section, Container } from '~components/layoutComponents';
+import SEO from '~components/SEO';
 
-import Navigation from '../modules/Navigation';
+import Navigation from '~modules/Navigation';
 
-import navigation from '../data/navigation';
+import navigation from '~data/navigation';
 
 const NotFoundPage = () => (
   <Layout>

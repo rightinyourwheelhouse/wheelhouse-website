@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CardContainer } from './card.styles';
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
 const Card = ({ background, children, foreground }) => (
   <CardContainer background={background} foreground={foreground}>

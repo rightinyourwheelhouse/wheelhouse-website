@@ -1,36 +1,15 @@
 import React, { memo, useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { RotationContainer } from './teamRotation.styles';
 
+import { useTeamRotationImages } from '~api/images/useTeamRotationImages';
+
 const TeamRotation = () => {
   const [index, setIndex] = useState(0);
+  const images = useTeamRotationImages();
 
-  const { allFile } = useStaticQuery(
-    graphql`
-      query {
-        allFile(
-          sort: { fields: name, order: DESC }
-          filter: { relativeDirectory: { eq: "team-rotation" } }
-        ) {
-          edges {
-            node {
-              id
-              name
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-
-  const length = allFile.edges.length - 1;
+  const length = images.length - 1;
   const handleNext = () => {
     if (index === length) {
       return setIndex(0);
@@ -39,7 +18,7 @@ const TeamRotation = () => {
     return setIndex(index + 1);
   };
 
-  const { node } = allFile.edges[index];
+  const { childImageSharp, id, name } = images[index];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,9 +33,9 @@ const TeamRotation = () => {
   return (
     <RotationContainer>
       <Img
-        fluid={node.childImageSharp.fluid}
-        key={node.id}
-        alt={node.name.replace(/-/g, ' ').substring(2)}
+        fluid={childImageSharp.fluid}
+        key={id}
+        alt={name.replace(/-/g, ' ').substring(2)}
       />
     </RotationContainer>
   );

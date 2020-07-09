@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { BadgeContainer } from './badge.styles';
 
-import colors from '../../styles/colors';
+import colors from '~styles/colors';
 
 const Badge = ({ background, children, color }) => (
   <BadgeContainer background={background} color={color}>

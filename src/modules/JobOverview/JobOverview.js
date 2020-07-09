@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import Link from 'gatsby-link';
 
-import SubTitle from '../../components/SubTitle';
-import Stack from '../../components/Stack';
+import SubTitle from '~components/SubTitle';
+import Stack from '~components/Stack';
 
 import { JobItemContainer } from './jobOverview.styles';
 
-import { useJobOverview } from '../../api/job/useJobOverview';
+import { useJobOverview } from '~api/job/useJobOverview';
 
 const JobOverview = () => {
   const [jobItems] = useJobOverview(2);

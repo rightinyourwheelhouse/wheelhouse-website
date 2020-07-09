@@ -28,7 +28,7 @@ const MarkWithContent = ({
   return (
     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <Mark onMouseOver={onHover} onMouseOut={onMouseOut}>
-      {`{ ${text} }`}
+      {`${text}`}
       <Image className={(imageVisible || contentVisible) && 'active'}>
         <AnimatedCard>
           {!hideText && <TextContainer>{text}</TextContainer>}

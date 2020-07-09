@@ -1,38 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import SubTitle from '../../SubTitle';
 import Button from '../../Button';
 
-import colors from '../../../styles/colors';
-
 import { StageContainer } from './Stage.styles';
+
+const Input = styled.input`
+  padding: 10px;
+  margin-bottom: 20px;
+
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 3px #86d5aa;
+  }
+
+  transition: all 0.2s ease-in-out
+`;
 
 const Opening = ({
   advance,
-  position,
+  visible,
 }) => (
-  <StageContainer position={position}>
+  <StageContainer visible={visible}>
     <div>
       <SubTitle>Your name</SubTitle>
       <h2>Tell us who you are!</h2>
     </div>
 
-    <input type="text" placeholder="John Doe" />
+    <Input type="text" placeholder="Your name..." />
 
-    <Button color={colors.primary} onClick={advance}>
+    <Button onClick={advance}>
       Continue...
     </Button>
   </StageContainer>
 );
 
 Opening.propTypes = {
-  position: PropTypes.number,
   advance: PropTypes.func,
+  visible: PropTypes.bool,
 };
 
 Opening.defaultProps = {
-  position: 0,
   advance: () => {},
+  visible: false,
 };
 
 export default Opening;

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const StageContainer = styled.div`
-  position: absolute;
+  margin-bottom: 40px;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
 
-  left: calc(100vw * ${({ position }) => position});
+  transition: opacity 0.2s ease-in-out;
 `;

@@ -1,30 +1,44 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
+
+import {
+  Section,
+  Container,
+  LightContent,
+} from '~components/layoutComponents';
+import colors from '~styles/colors';
 
 import { Conversation } from './Onboarding.styles';
-
 import Opening from './Stages/Opening';
 import Name from './Stages/Name';
 
 export default () => {
-  let stageIndex = 0;
+  const [stageIndex, setStageIndex] = useState(0);
   const stages = [
     { key: 'opening-stage', Component: Opening },
     { key: 'name-stage', Component: Name },
   ];
 
-  const advance = () => {
+  const advance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
-      stageIndex += 1;
+      setStageIndex(stageIndex + 1);
     }
-  };
+  }, [stages, stageIndex]);
 
   const Stages = useMemo(() => stages.map(({ key, Component: Stage }, index) => (
-    <Stage key={key} position={index} />
-  )), [stages]);
+    <Stage key={key} advance={advance} visible={index === stageIndex} />
+  )), [stageIndex, advance]);
 
   return (
-    <Conversation>
-      {Stages}
-    </Conversation>
+    <Section background={colors.backgroundDark}>
+      <Container>
+        <LightContent>
+          <Conversation position={stageIndex}>
+            <div className="scrolling-container">
+              {Stages}
+            </div>
+          </Conversation>
+        </LightContent>
+      </Container>
+    </Section>
   );
 };

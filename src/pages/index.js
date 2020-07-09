@@ -80,13 +80,7 @@ const IndexPage = () => (
         </LightContent>
       </Container>
     </Section>
-    <Section background={colors.backgroundDark}>
-      <Container>
-        <LightContent>
-          <Onboarding />
-        </LightContent>
-      </Container>
-    </Section>
+    <Onboarding />
   </Layout>
 );
 

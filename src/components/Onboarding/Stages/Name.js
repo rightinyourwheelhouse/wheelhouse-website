@@ -34,8 +34,8 @@ const Opening = ({
 }) => (
   <StageContainer visible={visible}>
     <div>
-      <SubTitle>Your name</SubTitle>
-      <h2>Tell us who you are!</h2>
+      <SubTitle>First things first</SubTitle>
+      <h2>Can you tell us your name?</h2>
     </div>
 
     <Input type="text" placeholder="Your name..." />

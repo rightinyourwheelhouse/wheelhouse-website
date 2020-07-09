@@ -7,7 +7,7 @@ export const Conversation = styled.div`
   .scrolling-container {
     position: absolute;
 
-    top: calc(100% * -${({ position }) => position});
+    top: calc((270px + 40px) * -${({ position }) => position});
     transition: top 0.2s ease-in-out;
   }
 `;

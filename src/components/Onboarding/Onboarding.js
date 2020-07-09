@@ -10,11 +10,13 @@ import colors from '~styles/colors';
 import { Conversation } from './Onboarding.styles';
 import Opening from './Stages/Opening';
 import Name from './Stages/Name';
+import Intro from './Stages/Intro';
 
 export default () => {
   const [stageIndex, setStageIndex] = useState(0);
   const stages = [
     { key: 'opening-stage', Component: Opening },
+    { key: 'intro-stage', Component: Intro },
     { key: 'name-stage', Component: Name },
   ];
 

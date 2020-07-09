@@ -33,6 +33,7 @@ const TeamRotation = () => {
   return (
     <RotationContainer>
       <Img
+        loading="eager"
         fluid={childImageSharp.fluid}
         key={id}
         alt={name.replace(/-/g, ' ').substring(2)}

@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import fonts from '~styles/fonts';
+import breakpoints from '~styles/breakpoints';
 
 const pulse = (color) => keyframes`
  0% {
@@ -23,7 +24,7 @@ export const ButtonContainer = styled.div`
     cursor: pointer;
     display: inline-block;
     height: 50px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 50px;
     font-weight: 700;
     align-items: center;
@@ -34,6 +35,10 @@ export const ButtonContainer = styled.div`
     text-decoration: none;
     transition-duration: 0.1s;
     transition-timing-function: ease;
+
+    @media screen and (min-width: ${breakpoints.small}){
+      font-size: 18px;
+    }
 
     &:hover {
       color: var(--foregroundHover);

@@ -16,8 +16,6 @@ import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 
-import navigation from '~data/navigation';
-
 import colors from '~styles/colors';
 
 const Career = ({
@@ -33,7 +31,7 @@ const Career = ({
       description={description}
     />
 
-    <Navigation items={navigation} />
+    <Navigation />
     <Section>
       <Container>
         <SubTitle>{city}</SubTitle>

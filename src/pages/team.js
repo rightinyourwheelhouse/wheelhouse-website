@@ -18,14 +18,12 @@ import TeamOverview from '~modules/TeamOverview';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import WorkingAtmosphereAsymmetric from '~modules/WorkingAtmosphereAsymmetric';
 
-import navigation from '~data/navigation';
-
 import colors from '~styles/colors';
 
 const TeamPage = () => (
   <Layout>
     <SEO title="Wheelhouse consist of these people" />
-    <Navigation items={navigation} />
+    <Navigation />
 
     <Section>
       <Container>

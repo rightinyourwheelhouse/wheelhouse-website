@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 import spacing from '~styles/spacing';
 import colors from '~styles/colors';
+import breakpoints from '~styles/breakpoints';
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: ${({ width }) => width || '1240px'};
-  padding: 0px 1.0875rem;
+  padding: 0px 2.1rem;
   padding-top: 0;
   text-align: ${({ centered }) => (centered ? 'center' : 'left')};
   z-index: 3;
@@ -21,7 +22,9 @@ export const Container = styled.div`
 export const LightContent = styled.div`
   color: ${colors.textLight};
 
-  p, a, li {
+  p,
+  a,
+  li {
     color: currentColor;
   }
 `;
@@ -31,12 +34,17 @@ export const Section = styled.section`
   box-sizing: border-box;
   display: block;
   min-height: 0;
+  padding: ${({ space }) => space || spacing.large} 0;
+
   overflow: ${({ overflow }) => overflow || 'hidden'};
-  padding: ${({ space }) => space || spacing.big} 0;
   position: relative;
 
   > img {
     margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    padding: ${({ space }) => space || spacing.big} 0;
   }
 `;
 

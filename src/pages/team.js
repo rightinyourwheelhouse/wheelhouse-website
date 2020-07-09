@@ -15,7 +15,8 @@ import Layout from '~layouts/default';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
-import WorkingAtmosphere from '~modules/WorkingAtmosphere';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
+import WorkingAtmosphereAsymmetric from '~modules/WorkingAtmosphereAsymmetric';
 
 import navigation from '~data/navigation';
 
@@ -46,7 +47,7 @@ const TeamPage = () => (
       </Container>
     </Section>
 
-    <WorkingAtmosphere />
+    <WorkingAtmosphereHorizontal />
 
     <Section>
       <Container>
@@ -95,12 +96,12 @@ const TeamPage = () => (
         </LightContent>
       </Container>
     </Section>
-
     <Section>
       <Container>
         <JobOverview />
       </Container>
     </Section>
+    <WorkingAtmosphereAsymmetric />
   </Layout>
 );
 

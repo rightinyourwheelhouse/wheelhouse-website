@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { shuffle } from '~utils/array';
+
 const query = graphql`
   query {
     allFile(
@@ -13,7 +15,7 @@ const query = graphql`
           name
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -22,13 +24,21 @@ const query = graphql`
   }
 `;
 
-export const useWorkingAtmosphereImages = () => {
+export const useWorkingAtmosphereImages = (count, shuffled = true) => {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
 
   const images = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node }));
+    let nodes = edges.map(({ node }) => ({ ...node }));
+
+    if (shuffled) {
+      nodes = shuffle(nodes);
+    }
+
+    if (count) {
+      return nodes.slice(0, count);
+    }
 
     return nodes;
   }, [edges]);

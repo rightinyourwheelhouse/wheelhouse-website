@@ -6,7 +6,7 @@ const query = graphql`
       relativePath
       childImageSharp {
         fluid(maxHeight: 300) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

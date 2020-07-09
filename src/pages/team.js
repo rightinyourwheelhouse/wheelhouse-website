@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
-import BlogText from '~components/BlogText';
+import Content from '~components/Content';
 import Button from '~components/Button';
 import Card from '~components/Card';
 import SEO from '~components/SEO';
@@ -28,7 +28,7 @@ const TeamPage = () => (
 
     <Section>
       <Container>
-        <BlogText>
+        <Content>
           <SubTitle>team</SubTitle>
           <h2>Feeling at home</h2>
           <p>
@@ -42,7 +42,7 @@ const TeamPage = () => (
           >
             View open positions
           </Button>
-        </BlogText>
+        </Content>
       </Container>
     </Section>
 

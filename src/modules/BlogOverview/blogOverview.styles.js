@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import colors from '~styles/colors';
 
+export const BlogContainer = styled.div`
+  margin: 32px 0;
+`;
+
 export const BlogItemContainer = styled.div`
   display: block;
   float: left;

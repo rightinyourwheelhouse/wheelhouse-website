@@ -34,6 +34,16 @@ const IndexPage = () => (
     <Section>
       <Container>
         <BlogOverview />
+        <Button
+          as={Link}
+          to="/"
+          color={colors.textLight}
+          colorHover={colors.textLight}
+          background={colors.primary}
+          backgroundHover={colors.accent}
+        >
+          Discover more
+        </Button>
       </Container>
       <Container offset={spacing.large}>
         <Card>

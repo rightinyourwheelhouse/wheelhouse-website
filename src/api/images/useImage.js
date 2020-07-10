@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
   query {
-    allFile {
+    allFile(filter: { relativeDirectory: { eq: "general" } }) {
       edges {
         node {
           relativePath

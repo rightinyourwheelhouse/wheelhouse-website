@@ -6,14 +6,19 @@ import Button from '~components/Button';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
+import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 import WelcomeHero from '~modules/WelcomeHero';
 import BlogOverview from '~modules/BlogOverview';
+import JobOverview from '~modules/JobOverview';
+import OpenSource from '~modules/OpenSource';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 const IndexPage = () => (
   <Layout>
@@ -23,35 +28,62 @@ const IndexPage = () => (
       baseColor={colors.textLight}
       logoInitiallyHidden
     />
+
     <WelcomeHero />
+
+    <Section>
+      <Container>
+        <BlogOverview />
+      </Container>
+      <Container offset={spacing.large}>
+        <Card>
+          <h2>Javascript expertise</h2>
+          <p>Something about our amazing tech stack</p>
+        </Card>
+      </Container>
+    </Section>
+
+    <Section background={colors.backgroundSecundary}>
+      <Container>
+        <LightContent>
+          <OpenSource />
+        </LightContent>
+      </Container>
+    </Section>
+
     <Section>
       <Container>
         <TwoColumns>
           <div>
-            <Image filename="working-atmosphere/working-atmosphere-9.jpg" alt="oppurtunities" />
+            <Image filename="opportunities.jpg" alt="oppurtunities" />
             <h3>Our job opportunities</h3>
             <p>
               We are looking for new colleagues in different disciplines. Might
               you be our next team member?
             </p>
-            <Button as={Link} to="/careers">Careers</Button>
+            <Button as={Link} to="/careers">
+              Careers
+            </Button>
           </div>
           <div>
             <Image filename="wheelhouse.jpg" alt="team" />
             <h3>About</h3>
             <p>
-              We're a bunch of people with a major common javascript passion.
+              We are a bunch of people with a major common javascript passion.
             </p>
-            <Button as={Link} to="/team">Team</Button>
+            <Button as={Link} to="/team">
+              Team
+            </Button>
           </div>
         </TwoColumns>
       </Container>
     </Section>
-    <Section background={colors.backgroundSecundary}>
+
+    <WorkingAtmosphereHorizontal />
+
+    <Section>
       <Container>
-        <LightContent>
-          <BlogOverview />
-        </LightContent>
+        <JobOverview />
       </Container>
     </Section>
   </Layout>

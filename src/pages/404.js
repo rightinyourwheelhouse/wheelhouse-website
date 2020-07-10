@@ -7,12 +7,10 @@ import SEO from '~components/SEO';
 
 import Navigation from '~modules/Navigation';
 
-import navigation from '~data/navigation';
-
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <Navigation items={navigation} />
+    <Navigation />
 
     <Section>
       <Container>

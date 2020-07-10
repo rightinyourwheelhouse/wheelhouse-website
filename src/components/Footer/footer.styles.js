@@ -2,17 +2,61 @@ import styled from 'styled-components';
 
 import colors from '~styles/colors';
 
+export const LinksContainer = styled.div`
+   > span, > a {
+    margin-bottom: 1vw;
+    padding-top: 6px;
+    padding-bottom: 6px;
+   }
+
+   a {
+     font-weight: 700;
+     text-transform: lowercase;
+   }
+`;
+
+export const Title = styled.span`
+   --foreground: ${colors.textLight};
+
+   color: var(--foreground);
+   font-size: .69em;
+   text-transform: uppercase;
+   font-weight: 700;
+   margin-bottom: 1vw;
+   display: block;
+`;
+
 export const FooterContainer = styled.footer`
+  --foreground: ${colors.textLight};
   padding: 120px 0;
   font-size: 21px;
+  background: #000;
+
+  h2 {
+    color: var(--foreground);
+  }
 
   p {
     margin: 0;
     margin-bottom: 30px;
+    color: var(--foreground);
+
+    &.disclaimer{
+      font-size: 0.8em;
+    }
+
+    a {
+      display: inline;
+    }
   }
 
   a {
     display: block;
+    color: var(--foreground);
+
+    &:hover {
+      color: ${colors.primary};
+    }
   }
 
   svg {
@@ -20,7 +64,7 @@ export const FooterContainer = styled.footer`
     line-height: 20px;
 
     g {
-      fill: ${colors.textPrimary};
+      fill: var(--foreground);
     }
   }
 `;

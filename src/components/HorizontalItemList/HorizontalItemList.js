@@ -6,14 +6,15 @@ import spacing from '~styles/spacing';
 
 export default styled.div`
   --background: ${({ background }) => background || colors.backgroundPrimary};
-  --height: ${({ height }) => height || '600px'};
-  --itemWidth: ${({ itemWidth }) => itemWidth || '900px'};
+  --height: ${({ height }) => height || '30vw'};
+  --itemWidth: ${({ itemWidth }) => itemWidth || '45vw'};
   --space: ${({ space }) => space || spacing.default};
 
   background: var(--background);
   display: flex;
   align-items: center;
   height: var(--height);
+  max-height: 900px;
   overflow-x: auto;
   overflow-y: hidden;
   min-width: 100vw;

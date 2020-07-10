@@ -5,9 +5,9 @@ import { useWorkingAtmosphereImages } from '~api/images/useWorkingAtmosphereImag
 
 import HorizontalItemList from '~components/HorizontalItemList';
 
-import { WorkingAtmosphereContainer } from './workingAtmosphere.styles';
+import { WorkingAtmosphereContainer } from './workingAtmosphereHorizontal.styles';
 
-const WorkingAtmosphere = () => {
+const WorkingAtmosphereHorizontal = () => {
   const images = useWorkingAtmosphereImages();
 
   return (
@@ -21,4 +21,4 @@ const WorkingAtmosphere = () => {
   );
 };
 
-export default memo(WorkingAtmosphere);
+export default memo(WorkingAtmosphereHorizontal);

@@ -8,15 +8,13 @@ import {
   Container,
   LightContent,
 } from '~components/layoutComponents';
-import BlogText from '~components/BlogText';
+import Content from '~components/Content';
 import SEO from '~components/SEO';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
-
-import navigation from '~data/navigation';
 
 import colors from '~styles/colors';
 
@@ -33,14 +31,14 @@ const Career = ({
       description={description}
     />
 
-    <Navigation items={navigation} />
+    <Navigation />
     <Section>
       <Container>
         <SubTitle>{city}</SubTitle>
         <h1>{title}</h1>
-        <BlogText>
+        <Content>
           <div dangerouslySetInnerHTML={{ __html: description }} />
-        </BlogText>
+        </Content>
       </Container>
     </Section>
     <Section background={colors.backgroundSecundary}>
@@ -48,9 +46,9 @@ const Career = ({
         <LightContent>
           <SubTitle>career</SubTitle>
           <h2>Your foundations</h2>
-          <BlogText>
+          <Content>
             <div dangerouslySetInnerHTML={{ __html: requirements }} />
-          </BlogText>
+          </Content>
         </LightContent>
       </Container>
     </Section>

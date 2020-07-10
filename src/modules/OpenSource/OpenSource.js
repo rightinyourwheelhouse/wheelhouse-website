@@ -10,7 +10,7 @@ import colors from '~styles/colors';
 
 const OpenSource = () => (
   <OpenSourceContainer>
-    <h2>Do you know this cat?</h2>
+    <h2>Have you seen this cat?</h2>
     <Github />
     <p>
       something about open sourcing the website

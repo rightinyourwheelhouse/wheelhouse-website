@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
-import BlogText from '~components/BlogText';
+import Content from '~components/Content';
 import Button from '~components/Button';
 import Card from '~components/Card';
 import SEO from '~components/SEO';
@@ -15,20 +15,19 @@ import Layout from '~layouts/default';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
-import WorkingAtmosphere from '~modules/WorkingAtmosphere';
-
-import navigation from '~data/navigation';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
+import WorkingAtmosphereAsymmetric from '~modules/WorkingAtmosphereAsymmetric';
 
 import colors from '~styles/colors';
 
 const TeamPage = () => (
   <Layout>
     <SEO title="Wheelhouse consist of these people" />
-    <Navigation items={navigation} />
+    <Navigation />
 
     <Section>
       <Container>
-        <BlogText>
+        <Content>
           <SubTitle>team</SubTitle>
           <h2>Feeling at home</h2>
           <p>
@@ -42,11 +41,11 @@ const TeamPage = () => (
           >
             View open positions
           </Button>
-        </BlogText>
+        </Content>
       </Container>
     </Section>
 
-    <WorkingAtmosphere />
+    <WorkingAtmosphereHorizontal />
 
     <Section>
       <Container>
@@ -95,12 +94,12 @@ const TeamPage = () => (
         </LightContent>
       </Container>
     </Section>
-
     <Section>
       <Container>
         <JobOverview />
       </Container>
     </Section>
+    <WorkingAtmosphereAsymmetric />
   </Layout>
 );
 

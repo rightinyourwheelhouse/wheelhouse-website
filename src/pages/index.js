@@ -20,15 +20,12 @@ import BlogOverview from '~modules/BlogOverview';
 
 import colors from '~styles/colors';
 
-import navigation from '~data/navigation';
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Navigation
       baseBackgroundColor={colors.primary}
       baseColor={colors.textLight}
-      items={navigation}
       logoInitiallyHidden
     />
     <WelcomeHero />

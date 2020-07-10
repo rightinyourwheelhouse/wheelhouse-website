@@ -13,7 +13,7 @@ const query = graphql`
           name
           childImageSharp {
             fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

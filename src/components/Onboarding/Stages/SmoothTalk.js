@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
 
 import { StageContainer } from './Stage.styles';
 
-const DELAY = 4000;
+const DELAY = 2000;
 
 const AnimatedFrame = styled.div`
   @keyframes smooth-talking {
@@ -28,28 +29,17 @@ const AnimatedFrame = styled.div`
 const Opening = ({
   advance,
   visible,
+  metaData,
 }) => {
   const [currentFrame, setCurrentFrame] = useState(0);
-  const frames = [
-    (
-      <AnimatedFrame key="frame-1" delay={DELAY}>
-        <h1>Hi!</h1>
-      </AnimatedFrame>
-    ),
-    (
-      <AnimatedFrame key="frame-2" delay={DELAY}>
-        <h2>We&apos;re very excited to have you here...</h2>
-      </AnimatedFrame>
-    ),
-    (
-      <AnimatedFrame key="frame-3" delay={DELAY}>
-        <h2>And we&apos;re also very excited to tell you more about us.</h2>
-      </AnimatedFrame>
-    ),
-  ];
+  const frames = metaData.map((text) => (
+    <AnimatedFrame key={uuid()} delay={DELAY}>
+      <h1>{text}</h1>
+    </AnimatedFrame>
+  ));
 
   useEffect(() => {
-    if (currentFrame === frames.length - 1) {
+    if (visible && currentFrame === frames.length - 1) {
       const timer = setTimeout(() => {
         advance();
       }, DELAY);
@@ -85,11 +75,13 @@ const Opening = ({
 Opening.propTypes = {
   advance: PropTypes.func,
   visible: PropTypes.bool,
+  metaData: PropTypes.array,
 };
 
 Opening.defaultProps = {
   advance: () => {},
   visible: false,
+  metaData: [],
 };
 
 export default Opening;

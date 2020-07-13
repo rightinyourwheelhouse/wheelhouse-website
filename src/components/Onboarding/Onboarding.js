@@ -1,90 +1,81 @@
 import React, {
-  useMemo,
-  useState,
-  useCallback,
+  useMemo, useState, useCallback, useReducer,
 } from 'react';
 import { v4 as uuid } from 'uuid';
-
-import {
-  Section,
-  Container,
-  LightContent,
-} from '~components/layoutComponents';
-import colors from '~styles/colors';
 
 import { Conversation } from './Onboarding.styles';
 import Opening from './Stages/Opening';
 import Name from './Stages/Name';
 import SmoothTalk from './Stages/SmoothTalk';
 
+import Stage from './_Stage';
+
 const introText = [
   'Hi!',
-  'We\'re very excited to have you here...',
-  'And we\'re also very excited to tell you more about us.',
+  "We're very excited to have you here...",
+  "And we're also very excited to tell you more about us.",
 ];
+
+const initialValues = {};
 
 export default () => {
   const [stageIndex, setStageIndex] = useState(0);
-  const [variables, setVariables] = useState({});
+  const reducer = (state, newState) => ({ ...state, ...newState });
+  const [values, setValues] = useReducer(reducer, initialValues);
 
-  const advancedText = useMemo(() => {
-    const { firstName } = variables;
+  const onAdvancedText = useMemo(() => {
+    const { firstName } = values;
+
     if (firstName) {
       return [
         `Hey there ${firstName}`,
         'This is not an interview, yet 😏',
-        'No seriously, don\'t worry about it 😌',
-        'We\'re just trying to get some information from you...',
+        "No seriously, don't worry about it 😌",
+        "We're just trying to get some information from you...",
         'So we can contact you ASAP!',
       ];
     }
 
     return [];
-  }, [variables]);
+  }, [values]);
 
-  const stages = useMemo(() => ([
-    { key: uuid(), Component: Opening },
-    { key: uuid(), Component: SmoothTalk, metaData: introText },
-    { key: uuid(), Component: Name },
-    { key: uuid(), Component: SmoothTalk, metaData: advancedText },
-  ]), [advancedText, variables]);
+  const stages = useMemo(
+    () => [
+      { Component: Opening, key: uuid() },
+      { Component: SmoothTalk, key: uuid(), metaData: introText },
+      { Component: Name, key: uuid() },
+      { Component: SmoothTalk, key: uuid(), metaData: onAdvancedText },
+    ],
+    [onAdvancedText, values]
+  );
 
-  const updateVariables = useCallback((newVariables) => {
-    Object.keys(newVariables).map((key) => ({ key, value: newVariables[key] })).forEach(({ key, value }) => {
-      const updatedVariables = { ...variables };
-      updateVariables[key] = value;
+  const onValueChange = useCallback(
+    (newValues) => {
+      setValues(newValues);
+    },
+    [values]
+  );
 
-      setVariables(updatedVariables);
-    });
-  }, [variables]);
-
-  const advance = useCallback(() => {
+  const onAdvance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
       setStageIndex(stageIndex + 1);
     }
   }, [stages, stageIndex]);
 
-  const Stages = useMemo(() => stages.map(({ key, Component: Stage, metaData }, index) => (
-    <Stage
-      key={key}
-      advance={advance}
-      visible={index === stageIndex}
-      updateVariables={updateVariables}
-      metaData={metaData}
-    />
-  )), [stageIndex, advance, variables]);
-
   return (
-    <Section background={colors.backgroundDark}>
-      <Container>
-        <LightContent>
-          <Conversation position={stageIndex}>
-            <div className="scrolling-container">
-              {Stages}
-            </div>
-          </Conversation>
-        </LightContent>
-      </Container>
-    </Section>
+    <Conversation position={stageIndex}>
+      <div className="scrolling-container">
+        {stages.map(({ key, Component, metaData }, index) => (
+          <Stage
+            Component={Component}
+            active={index === stageIndex}
+            key={key}
+            metaData={metaData}
+            onAdvance={onAdvance}
+            onValueChange={onValueChange}
+          />
+        ))}
+      </div>
+    </Conversation>
   );
 };

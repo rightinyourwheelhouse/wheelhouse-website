@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { v4 as uuid } from 'uuid';
 
-import { StageContainer } from './Stage.styles';
-
 const DELAY = 2000;
 
 const AnimatedFrame = styled.div`
@@ -26,11 +24,7 @@ const AnimatedFrame = styled.div`
   animation: smooth-talking ${({ delay }) => delay / 1000}s forwards;
 `;
 
-const Opening = ({
-  advance,
-  visible,
-  metaData,
-}) => {
+const Opening = ({ active, metaData, onAdvance }) => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const frames = metaData.map((text) => (
     <AnimatedFrame key={uuid()} delay={DELAY}>
@@ -39,14 +33,14 @@ const Opening = ({
   ));
 
   useEffect(() => {
-    if (visible && currentFrame === frames.length - 1) {
+    if (active && currentFrame === frames.length - 1) {
       const timer = setTimeout(() => {
-        advance();
+        onAdvance();
       }, DELAY);
       return () => clearTimeout(timer);
     }
 
-    if (visible && currentFrame < frames.length - 1) {
+    if (active && currentFrame < frames.length - 1) {
       const timer = setTimeout(() => {
         setCurrentFrame(currentFrame + 1);
       }, DELAY);
@@ -54,34 +48,30 @@ const Opening = ({
     }
 
     return () => {};
-  }, [visible, currentFrame]);
+  }, [active, currentFrame]);
 
   const CurrentFrame = useMemo(() => {
     // We don't want to hide the component when we're done since it otherwise causes weird offset
-    if (visible || currentFrame === frames.length - 1) {
+    if (active || currentFrame === frames.length - 1) {
       return frames[currentFrame];
     }
 
     return ' ';
-  }, [visible, currentFrame]);
+  }, [active, currentFrame]);
 
-  return (
-    <StageContainer visible={visible}>
-      {CurrentFrame}
-    </StageContainer>
-  );
+  return <>{CurrentFrame}</>;
 };
 
 Opening.propTypes = {
-  advance: PropTypes.func,
-  visible: PropTypes.bool,
+  active: PropTypes.bool,
   metaData: PropTypes.array,
+  onAdvance: PropTypes.func,
 };
 
 Opening.defaultProps = {
-  advance: () => {},
-  visible: false,
+  active: false,
   metaData: [],
+  onAdvance: () => {},
 };
 
 export default Opening;

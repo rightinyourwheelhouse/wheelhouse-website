@@ -1,34 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SubTitle from '../../SubTitle';
-import Button from '../../Button';
 
-import { StageContainer } from './Stage.styles';
+import SubTitle from '~components/SubTitle';
+import Button from '~components/Button';
 
-const Opening = ({
-  advance,
-  visible,
-}) => (
-  <StageContainer visible={visible}>
+const Opening = ({ onAdvance }) => (
+  <>
     <div>
       <SubTitle>Get in touch</SubTitle>
       <h2>Play your part in our story</h2>
     </div>
 
-    <Button onClick={advance}>
-      Get in touch
-    </Button>
-  </StageContainer>
+    <Button onClick={onAdvance}>Get in touch</Button>
+  </>
 );
 
 Opening.propTypes = {
-  advance: PropTypes.func,
-  visible: PropTypes.bool,
-};
-
-Opening.defaultProps = {
-  advance: () => {},
-  visible: false,
+  onAdvance: PropTypes.func.isRequired,
 };
 
 export default Opening;

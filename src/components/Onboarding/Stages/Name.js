@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import SubTitle from '~components/SubTitle';
 import Button from '~components/Button';
 
-import { StageContainer } from './Stage.styles';
-
 const Input = styled.input`
   padding: 10px;
   margin-bottom: 20px;
@@ -29,22 +27,21 @@ const Input = styled.input`
 `;
 
 const Opening = ({
-  advance,
-  visible,
-  updateVariables,
+  onAdvance,
+  onValueChange,
 }) => {
   const [name, setName] = useState('');
 
   const saveNameAndAdvance = () => {
-    updateVariables({
+    onValueChange({
       firstName: name,
     });
 
-    advance();
+    onAdvance();
   };
 
   return (
-    <StageContainer visible={visible}>
+    <>
       <div>
         <SubTitle>First things first</SubTitle>
         <h2>Can you tell us your name?</h2>
@@ -55,20 +52,13 @@ const Opening = ({
       <Button onClick={saveNameAndAdvance}>
         Continue...
       </Button>
-    </StageContainer>
+    </>
   );
 };
 
 Opening.propTypes = {
-  advance: PropTypes.func,
-  visible: PropTypes.bool,
-  updateVariables: PropTypes.func,
-};
-
-Opening.defaultProps = {
-  advance: () => {},
-  visible: false,
-  updateVariables: () => {},
+  onAdvance: PropTypes.func.isRequired,
+  onValueChange: PropTypes.func.isRequired,
 };
 
 export default Opening;

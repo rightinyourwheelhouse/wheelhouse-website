@@ -1,5 +1,10 @@
-import React, { memo, useReducer, useCallback, useMemo } from 'react';
+import React, {
+  memo, useReducer, useCallback, useMemo,
+} from 'react';
 import { Onboarding, stages } from '~components/Onboarding';
+
+console.log('stages', stages);
+console.log('Onboarding', Onboarding);
 
 const introText = [
   'Hi!',

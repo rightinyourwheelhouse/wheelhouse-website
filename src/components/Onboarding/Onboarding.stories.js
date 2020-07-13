@@ -1,13 +1,16 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
-
-import Onboarding from './Onboarding';
+import { Onboarding, stages } from '~components/Onboarding';
 
 export default {
   component: Onboarding,
   title: 'Onboarding',
 };
 
-export const Default = () => (
-  <Onboarding space={text('spacing', '16px')} />
-);
+export const Default = () => {
+  const demoStages = [
+    { Component: stages.Name },
+    { Component: stages.Opening },
+  ];
+
+  return <Onboarding stages={demoStages} />;
+};

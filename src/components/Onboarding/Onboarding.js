@@ -1,60 +1,13 @@
-import React, {
-  useMemo, useState, useCallback, useReducer,
-} from 'react';
+import React, { useState, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
+import PropTypes from 'prop-types';
 
-import { Conversation } from './Onboarding.styles';
-import Opening from './Stages/Opening';
-import Name from './Stages/Name';
-import SmoothTalk from './Stages/SmoothTalk';
+import { Conversation, ScrollingContainer } from './Onboarding.styles';
 
 import Stage from './_Stage';
 
-const introText = [
-  'Hi!',
-  "We're very excited to have you here...",
-  "And we're also very excited to tell you more about us.",
-];
-
-const initialValues = {};
-
-export default () => {
+const GeneralOnboarding = ({ onValueChange, stages }) => {
   const [stageIndex, setStageIndex] = useState(0);
-  const reducer = (state, newState) => ({ ...state, ...newState });
-  const [values, setValues] = useReducer(reducer, initialValues);
-
-  const onAdvancedText = useMemo(() => {
-    const { firstName } = values;
-
-    if (firstName) {
-      return [
-        `Hey there ${firstName}`,
-        'This is not an interview, yet 😏',
-        "No seriously, don't worry about it 😌",
-        "We're just trying to get some information from you...",
-        'So we can contact you ASAP!',
-      ];
-    }
-
-    return [];
-  }, [values]);
-
-  const stages = useMemo(
-    () => [
-      { Component: Opening, key: uuid() },
-      { Component: SmoothTalk, key: uuid(), metaData: introText },
-      { Component: Name, key: uuid() },
-      { Component: SmoothTalk, key: uuid(), metaData: onAdvancedText },
-    ],
-    [onAdvancedText, values]
-  );
-
-  const onValueChange = useCallback(
-    (newValues) => {
-      setValues(newValues);
-    },
-    [values]
-  );
 
   const onAdvance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
@@ -63,19 +16,30 @@ export default () => {
   }, [stages, stageIndex]);
 
   return (
-    <Conversation position={stageIndex}>
-      <div className="scrolling-container">
-        {stages.map(({ key, Component, metaData }, index) => (
+    <Conversation>
+      <ScrollingContainer position={stageIndex}>
+        {stages.map(({ Component, metaData }, index) => (
           <Stage
             Component={Component}
             active={index === stageIndex}
-            key={key}
+            key={uuid()}
             metaData={metaData}
             onAdvance={onAdvance}
             onValueChange={onValueChange}
           />
         ))}
-      </div>
+      </ScrollingContainer>
     </Conversation>
   );
 };
+
+GeneralOnboarding.propTypes = {
+  onValueChange: PropTypes.func,
+  stages: PropTypes.array.isRequired,
+};
+
+GeneralOnboarding.defaultProps = {
+  onValueChange: () => {},
+};
+
+export default GeneralOnboarding;

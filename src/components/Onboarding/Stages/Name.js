@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import Button from '~components/Button';
 import SubTitle from '~components/SubTitle';
-import Stack from '~components/Stack';
 
 import InputName from './_InputName';
 

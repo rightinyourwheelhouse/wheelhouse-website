@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const OnboardingContainer = styled.div`
+  position: relative;
+`;
+
 export const Conversation = styled.div`
   min-height: 270px;
   overflow: hidden;

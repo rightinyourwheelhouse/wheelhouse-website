@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 
-import { Conversation, ScrollingContainer } from './Onboarding.styles';
+import { Conversation, ScrollingContainer, OnboardingContainer } from './Onboarding.styles';
 
 import Stage from './_Stage';
 
@@ -16,20 +16,22 @@ const GeneralOnboarding = ({ onValueChange, stages }) => {
   }, [stages, stageIndex]);
 
   return (
-    <Conversation>
-      <ScrollingContainer position={stageIndex}>
-        {stages.map(({ Component, metaData }, index) => (
-          <Stage
-            Component={Component}
-            active={index === stageIndex}
-            key={uuid()}
-            metaData={metaData}
-            onAdvance={onAdvance}
-            onValueChange={onValueChange}
-          />
-        ))}
-      </ScrollingContainer>
-    </Conversation>
+    <OnboardingContainer>
+      <Conversation>
+        <ScrollingContainer position={stageIndex}>
+          {stages.map(({ Component, metaData }, index) => (
+            <Stage
+              Component={Component}
+              active={index === stageIndex}
+              key={uuid()}
+              metaData={metaData}
+              onAdvance={onAdvance}
+              onValueChange={onValueChange}
+            />
+          ))}
+        </ScrollingContainer>
+      </Conversation>
+    </OnboardingContainer>
   );
 };
 

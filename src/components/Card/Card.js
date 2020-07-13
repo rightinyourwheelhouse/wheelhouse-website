@@ -21,7 +21,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  background: '#F1F1F1',
+  background: colors.backgroundTertiary,
   foreground: colors.textPrimary,
 };
 

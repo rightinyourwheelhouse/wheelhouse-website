@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { StageContainer } from './_stage.styles';
+import { StageContainer, StageContent } from './_stage.styles';
 
 const Stage = ({
   Component,

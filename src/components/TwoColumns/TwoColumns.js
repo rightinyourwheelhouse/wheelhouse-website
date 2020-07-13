@@ -9,11 +9,14 @@ export default styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  margin-bottom: ${spacing.default};
 
   > * {
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: ${spacing.large};
+
+    @media screen and (min-width: ${breakpoints.medium}) {
+      margin-bottom: 2%;
+    }
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {

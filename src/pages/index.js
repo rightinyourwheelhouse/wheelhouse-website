@@ -15,6 +15,7 @@ import WelcomeHero from '~modules/WelcomeHero';
 import BlogOverview from '~modules/BlogOverview';
 import JobOverview from '~modules/JobOverview';
 import OpenSource from '~modules/OpenSource';
+import GeneralOnboarding from '~modules/GeneralOnboarding';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
@@ -61,6 +62,12 @@ const IndexPage = () => (
       </Container>
     </Section>
 
+    <Section background={colors.backgroundTertiary}>
+      <Container>
+        <GeneralOnboarding />
+      </Container>
+    </Section>
+
     <Section>
       <Container>
         <TwoColumns>
@@ -86,6 +93,7 @@ const IndexPage = () => (
             </Button>
           </div>
         </TwoColumns>
+
       </Container>
     </Section>
 
@@ -96,6 +104,7 @@ const IndexPage = () => (
         <JobOverview />
       </Container>
     </Section>
+
   </Layout>
 );
 

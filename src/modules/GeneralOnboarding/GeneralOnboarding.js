@@ -3,9 +3,6 @@ import React, {
 } from 'react';
 import { Onboarding, stages } from '~components/Onboarding';
 
-console.log('stages', stages);
-console.log('Onboarding', Onboarding);
-
 const introText = [
   'Hi!',
   "We're very excited to have you here...",
@@ -34,7 +31,6 @@ const GeneralOnboarding = () => {
 
   const onboardingStages = useMemo(
     () => [
-      { Component: stages.Name },
       { Component: stages.Opening },
       { Component: stages.SmoothTalk, metaData: introText },
       { Component: stages.Name },

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
+import spacing from '~styles/spacing';
 
 export default styled.div`
   width: 100%;
@@ -8,6 +9,7 @@ export default styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  margin-bottom: ${spacing.default};
 
   > * {
     width: 100%;

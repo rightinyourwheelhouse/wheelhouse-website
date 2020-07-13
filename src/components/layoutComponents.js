@@ -5,14 +5,22 @@ import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 
 export const Container = styled.div`
+  --offset: ${({ offset }) => offset || 0};
+  --width: ${({ width }) => width || '1240px'};
+  --height: ${({ height }) => height || 0};
+  --centered: ${({ centered }) => (centered ? 'center' : 'left')};
+  --offset: ${({ offset }) => offset || 0};
+  --relative: ${({ relative }) => (relative ? 'relative' : 'inherit')};
+
   margin: 0 auto;
-  max-width: ${({ width }) => width || '1240px'};
+  max-width: var(--width);
   padding: 0px 2.1rem;
   padding-top: 0;
-  text-align: ${({ centered }) => (centered ? 'center' : 'left')};
+  text-align: var(--centered);
   z-index: 3;
-  min-height: ${({ height }) => height || 0};
-  position: ${({ relative }) => (relative ? 'relative' : 'inherit')};
+  min-height: var(--height);
+  position: var(--relative);
+  margin-top: var(--offset);
 
   * {
     color: ${({ color }) => color};
@@ -26,6 +34,12 @@ export const LightContent = styled.div`
   a,
   li {
     color: currentColor;
+  }
+
+  svg {
+    path {
+      fill: currentColor;
+    }
   }
 `;
 

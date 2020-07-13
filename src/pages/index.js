@@ -1,24 +1,24 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-import {
-  Section,
-  Container,
-  LightContent,
-} from '~components/layoutComponents';
+import { Section, Container, LightContent } from '~components/layoutComponents';
 import Button from '~components/Button';
-import GalleryItem from '~components/GalleryItem';
 import SEO from '~components/SEO';
-import SubTitle from '~components/SubTitle';
-import UnalignedGrid from '~components/UnalignedGrid';
-import Onboarding from '../components/Onboarding';
+import TwoColumns from '~components/TwoColumns';
+import Image from '~components/Image';
+import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 import WelcomeHero from '~modules/WelcomeHero';
 import BlogOverview from '~modules/BlogOverview';
+import JobOverview from '~modules/JobOverview';
+import OpenSource from '~modules/OpenSource';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 const IndexPage = () => (
   <Layout>
@@ -28,56 +28,74 @@ const IndexPage = () => (
       baseColor={colors.textLight}
       logoInitiallyHidden
     />
+
     <WelcomeHero />
+
     <Section>
       <Container>
-        <SubTitle>Work</SubTitle>
-        <h2>
-          Projects
-          {' '}
-          <br />
-          {' '}
-          we worked on
-        </h2>
-        <UnalignedGrid>
-          <GalleryItem
-            to="/"
-            image="https://images.unsplash.com/photo-1587613757703-eea60bd69e66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            title="case study x"
-            description="react project for customer x"
-          />
-          <GalleryItem
-            to="/"
-            image="https://images.unsplash.com/photo-1587613757703-eea60bd69e66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            title="case study x"
-            description="react project for customer x"
-          />
-          <GalleryItem
-            to="/"
-            image="https://images.unsplash.com/photo-1587613757703-eea60bd69e66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            title="case study x"
-            description="react project for customer x"
-          />
-          <GalleryItem
-            to="/"
-            image="https://images.unsplash.com/photo-1587613757703-eea60bd69e66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
-            title="case study x"
-            description="react project for customer x"
-          />
-        </UnalignedGrid>
+        <BlogOverview />
+        <Button
+          as={Link}
+          to="/"
+          color={colors.textLight}
+          colorHover={colors.textLight}
+          background={colors.primary}
+          backgroundHover={colors.accent}
+        >
+          Discover more
+        </Button>
       </Container>
-      <Container centered>
-        <Button>See more of this</Button>
+      <Container offset={spacing.large}>
+        <Card>
+          <h2>Javascript expertise</h2>
+          <p>Something about our amazing tech stack</p>
+        </Card>
       </Container>
     </Section>
+
     <Section background={colors.backgroundSecundary}>
       <Container>
         <LightContent>
-          <BlogOverview />
+          <OpenSource />
         </LightContent>
       </Container>
     </Section>
-    <Onboarding />
+
+    <Section>
+      <Container>
+        <TwoColumns>
+          <div>
+            <Image filename="opportunities.jpg" alt="oppurtunities" />
+            <h3>Our job opportunities</h3>
+            <p>
+              We are looking for new colleagues in different disciplines. Might
+              you be our next team member?
+            </p>
+            <Button as={Link} to="/careers">
+              Careers
+            </Button>
+          </div>
+          <div>
+            <Image filename="wheelhouse.jpg" alt="team" />
+            <h3>About</h3>
+            <p>
+              We are a bunch of people with a major common javascript passion.
+            </p>
+            <Button as={Link} to="/team">
+              Team
+            </Button>
+          </div>
+        </TwoColumns>
+      </Container>
+    </Section>
+
+    <WorkingAtmosphereHorizontal />
+
+    <Section>
+      <Container>
+        <JobOverview />
+      </Container>
+    </Section>
   </Layout>
 );
 

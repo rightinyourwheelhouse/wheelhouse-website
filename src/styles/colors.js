@@ -1,8 +1,7 @@
 /* eslint-disable sort-keys */
 const accent = '#2d383c';
 const backgroundPrimary = '#FFFFFF';
-const backgroundSecundary = '#2d383c';
-const backgroundDark = '#111618';
+const backgroundSecundary = '#000';
 const error = '#EF6461';
 const primary = '#58bd86';
 const textInput = '#6d7278';
@@ -18,7 +17,6 @@ export default {
 
   backgroundPrimary,
   backgroundSecundary,
-  backgroundDark,
 
   textInput,
   textLight,

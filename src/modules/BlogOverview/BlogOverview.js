@@ -1,22 +1,18 @@
 import React, { memo } from 'react';
-import Link from 'gatsby-link';
 import readingTime from 'reading-time';
 
 import SubTitle from '~components/SubTitle';
 import Stack from '~components/Stack';
-import Button from '~components/Button';
 
-import { BlogItemContainer } from './blogOverview.styles';
+import { BlogItemContainer, BlogContainer } from './blogOverview.styles';
 
 import { useBlogOverview } from '~api/blog/useBlogOverview';
-
-import colors from '~styles/colors';
 
 const BlogOverview = () => {
   const [blogItems] = useBlogOverview(2);
 
   return (
-    <div>
+    <BlogContainer>
       <SubTitle>Blog</SubTitle>
       <h2>Some insight in how we think</h2>
 
@@ -34,20 +30,8 @@ const BlogOverview = () => {
             );
           })}
         </div>
-        <div>
-          <Button
-            as={Link}
-            to="/"
-            color={colors.textLight}
-            colorHover={colors.textPrimary}
-            background={colors.primary}
-            backgroundHover={colors.backgroundPrimary}
-          >
-            Discover more
-          </Button>
-        </div>
       </Stack>
-    </div>
+    </BlogContainer>
   );
 };
 

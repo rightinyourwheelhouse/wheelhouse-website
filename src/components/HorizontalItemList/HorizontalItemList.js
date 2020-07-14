@@ -8,6 +8,7 @@ export default styled.div`
   --background: ${({ background }) => background || colors.backgroundPrimary};
   --height: ${({ height }) => height || '30vw'};
   --itemWidth: ${({ itemWidth }) => itemWidth || '45vw'};
+  --portraitWidth: ${({ portraitWidth }) => portraitWidth || '35vw'};
   --space: ${({ space }) => space || spacing.default};
 
   background: var(--background);
@@ -27,6 +28,10 @@ export default styled.div`
 
   > * {
     flex: 0 0 var(--itemWidth);
+
+    &.portrait {
+      flex: 0 0 var(--portraitWidth);
+    }
   }
 
   img, >div {
@@ -34,6 +39,10 @@ export default styled.div`
     flex-basis: auto;
     width: auto;
     min-width: var(--itemWidth);
+
+    &.portrait {
+      min-width: var(--portraitWidth);
+    }
   }
 
   > * + * {

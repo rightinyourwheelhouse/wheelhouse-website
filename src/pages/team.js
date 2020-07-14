@@ -16,7 +16,6 @@ import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
-import WorkingAtmosphereAsymmetric from '~modules/WorkingAtmosphereAsymmetric';
 
 import colors from '~styles/colors';
 
@@ -99,7 +98,6 @@ const TeamPage = () => (
         <JobOverview />
       </Container>
     </Section>
-    <WorkingAtmosphereAsymmetric />
   </Layout>
 );
 

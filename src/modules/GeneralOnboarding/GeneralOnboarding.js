@@ -29,12 +29,19 @@ const GeneralOnboarding = () => {
     return [];
   }, [values]);
 
+  const onSubmit = useCallback(
+    () => {
+      console.log('values', values);
+    },
+    [values],
+  );
+
   const onboardingStages = useMemo(
     () => [
       { Component: stages.Opening },
       { Component: stages.SmoothTalk, metaData: introText },
       { Component: stages.Name },
-      { Component: stages.SmoothTalk, metaData: advancedText },
+      { action: onSubmit, Component: stages.SmoothTalk, metaData: advancedText },
     ],
     [advancedText, values]
   );

@@ -19,9 +19,10 @@ const GeneralOnboarding = ({ onValueChange, stages }) => {
     <OnboardingContainer>
       <Conversation>
         <ScrollingContainer position={stageIndex}>
-          {stages.map(({ Component, metaData }, index) => (
+          {stages.map(({ Component, metaData, action }, index) => (
             <Stage
               Component={Component}
+              action={action}
               active={index === stageIndex}
               key={uuid()}
               metaData={metaData}

@@ -1,7 +1,5 @@
 /* eslint-disable no-param-reassign */
-require('dotenv').config();
-
-const getRecruiteeData = require('./helpers/recruitee');
+import getRecruiteeData from './helpers/recruitee';
 
 async function sourceNodes({ actions, createNodeId, createContentDigest }) {
   await getRecruiteeData(actions, createNodeId, createContentDigest);

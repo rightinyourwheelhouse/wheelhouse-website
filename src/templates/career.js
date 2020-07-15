@@ -40,11 +40,13 @@ const Career = ({
     <Section background={colors.backgroundSecundary}>
       <Container>
         <LightContent>
-          <SubTitle>{city}</SubTitle>
-          <h1>{title}</h1>
-          <Content>
-            <div dangerouslySetInnerHTML={{ __html: description }} />
-          </Content>
+          <article>
+            <SubTitle>{city}</SubTitle>
+            <h1>{title}</h1>
+            <Content>
+              <div dangerouslySetInnerHTML={{ __html: description }} />
+            </Content>
+          </article>
         </LightContent>
       </Container>
     </Section>

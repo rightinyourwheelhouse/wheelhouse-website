@@ -14,7 +14,9 @@ import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
+import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 const Blog = ({
   data: {
@@ -50,6 +52,14 @@ const Blog = ({
           <Content>
             <div dangerouslySetInnerHTML={{ __html: encoded }} />
           </Content>
+        </Container>
+      </Section>
+
+      <WorkingAtmosphereHorizontal />
+
+      <Section>
+        <Container>
+          <JobOverview />
         </Container>
       </Section>
     </Layout>

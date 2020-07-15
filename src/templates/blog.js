@@ -26,6 +26,7 @@ const Blog = ({
       creator,
       isoDate,
       title,
+      link,
       content: { encoded },
       image: {
         childImageSharp: { fluid },
@@ -72,6 +73,7 @@ const Blog = ({
           <JobOverview />
         </Container>
       </Section>
+      <link rel="canonical" href={link} />
     </Layout>
   );
 };
@@ -90,6 +92,7 @@ Blog.propTypes = {
         }),
       }),
       isoDate: PropTypes.string,
+      link: PropTypes.string,
       title: PropTypes.string,
     }),
   }).isRequired,
@@ -102,6 +105,7 @@ export const query = graphql`
       creator
       isoDate(formatString: "D MMM YYYY")
       title
+      link
       content {
         encoded
       }

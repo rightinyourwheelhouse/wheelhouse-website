@@ -6,6 +6,7 @@ import { useWorkingAtmosphereImages } from '~api/images/useWorkingAtmosphereImag
 import HorizontalItemList from '~components/HorizontalItemList';
 
 import { WorkingAtmosphereContainer } from './workingAtmosphereHorizontal.styles';
+import { orientationName } from '~utils/image';
 
 const WorkingAtmosphereHorizontal = () => {
   const images = useWorkingAtmosphereImages();
@@ -13,9 +14,18 @@ const WorkingAtmosphereHorizontal = () => {
   return (
     <WorkingAtmosphereContainer>
       <HorizontalItemList>
-        {images.map(({ id, childImageSharp: { fluid } }) => (
-          <Img objectFit="contain" key={id} fluid={fluid} alt="Working atmosphere" />
-        ))}
+        {images.map(({ id, childImageSharp: { fluid } }) => {
+          const { aspectRatio } = fluid;
+
+          return (
+            <Img
+              className={orientationName(aspectRatio)}
+              key={id}
+              fluid={fluid}
+              alt="Working atmosphere"
+            />
+          );
+        })}
       </HorizontalItemList>
     </WorkingAtmosphereContainer>
   );

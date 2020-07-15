@@ -95,6 +95,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 1.5rem;
     margin-bottom: 0;
     line-height: 1.1;
+    text-transform: lowercase;
   }
 
   h1 {

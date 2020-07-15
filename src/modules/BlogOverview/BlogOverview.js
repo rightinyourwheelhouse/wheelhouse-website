@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import readingTime from 'reading-time';
 import Link from 'gatsby-link';
-
-import SubTitle from '~components/SubTitle';
+import PropTypes from 'prop-types';
 import Stack from '~components/Stack';
 
 import { BlogItemContainer, BlogContainer } from './blogOverview.styles';
@@ -11,14 +10,11 @@ import { useBlogOverview } from '~api/blog/useBlogOverview';
 
 import { toKebab } from '~utils/string';
 
-const BlogOverview = () => {
-  const [blogItems] = useBlogOverview(2);
+const BlogOverview = ({ count, current }) => {
+  const [blogItems] = useBlogOverview({ count, current });
 
   return (
     <BlogContainer>
-      <SubTitle>Blog</SubTitle>
-      <h2>Some insight in how we think</h2>
-
       <Stack space="60px">
         <div>
           {blogItems.map(({ title, content: { encoded } }) => {
@@ -38,6 +34,16 @@ const BlogOverview = () => {
       </Stack>
     </BlogContainer>
   );
+};
+
+BlogOverview.propTypes = {
+  count: PropTypes.number,
+  current: PropTypes.string,
+};
+
+BlogOverview.defaultProps = {
+  count: null,
+  current: null,
 };
 
 export default memo(BlogOverview);

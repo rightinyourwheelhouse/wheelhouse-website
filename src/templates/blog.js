@@ -15,12 +15,14 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import JobOverview from '~modules/JobOverview';
+import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 const Blog = ({
   data: {
     feedBlog: {
+      id,
       creator,
       isoDate,
       title,
@@ -55,6 +57,14 @@ const Blog = ({
         </Container>
       </Section>
 
+      <Section>
+        <Container>
+          <SubTitle>Blog</SubTitle>
+          <h2>More blog articles</h2>
+          <BlogOverview current={id} count={2} />
+        </Container>
+      </Section>
+
       <WorkingAtmosphereHorizontal />
 
       <Section>
@@ -73,6 +83,7 @@ Blog.propTypes = {
         encoded: PropTypes.string,
       }),
       creator: PropTypes.string,
+      id: PropTypes.string,
       image: PropTypes.shape({
         childImageSharp: PropTypes.shape({
           fluid: PropTypes.shape({}),
@@ -87,6 +98,7 @@ Blog.propTypes = {
 export const query = graphql`
   query($id: String!) {
     feedBlog(id: { eq: $id }) {
+      id
       creator
       isoDate(formatString: "D MMM YYYY")
       title

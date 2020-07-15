@@ -1,7 +1,7 @@
 import path from 'path';
 import { toKebab } from '../src/utils/string';
 
-async function createPages({ actions: { createPage }, graphql }) {
+export default async function createPages({ actions: { createPage }, graphql }) {
   const { data } = await graphql(`
     query {
       allFeedBlog {
@@ -42,5 +42,3 @@ async function createPages({ actions: { createPage }, graphql }) {
     });
   });
 }
-
-module.exports = createPages;

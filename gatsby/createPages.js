@@ -33,11 +33,11 @@ async function createPages({ actions: { createPage }, graphql }) {
   });
 
   // blog
-  data.allFeedBlog.edges.forEach(({ node: { title } }) => {
+  data.allFeedBlog.edges.forEach(({ node: { id, title } }) => {
     const slug = toKebab(title);
     createPage({
-      component: path.resolve('src/templates/career.js'),
-      context: { slug },
+      component: path.resolve('src/templates/blog.js'),
+      context: { id },
       path: `/blog/${slug}`,
     });
   });

@@ -12,7 +12,7 @@ export const OuterContainer = styled.div`
     width: 100%;
     display: flex;
     align-items: flex-start;
-    flex-direction: row-reverse;
+    flex-direction: row;
     max-width: ${breakpoints.large};
     margin-left: auto;
     margin-right: auto;
@@ -34,26 +34,23 @@ export const ContentContainer = styled.div`
   margin-right: auto;
   padding-right: ${spacing.default};
   padding-left: ${spacing.default};
-  margin-bottom: ${spacing.big};
+  margin-bottom: ${spacing.large};
 
   p {
     color: rgba(0, 0, 0, 0.54);
   }
 
   span {
-    font-size: 18px;
-
-    @media screen and (min-width: ${breakpoints.medium}) {
+    @media screen and (min-width: ${breakpoints.large}) {
       font-size: 1.3vw;
       max-width: 95%;
     }
   }
   h1 {
-    font-size: 33px;
     max-width: 80%;
     margin-bottom: ${spacing.default};
 
-    @media screen and (min-width: ${breakpoints.medium}) {
+    @media screen and (min-width: ${breakpoints.large}) {
       font-size: 3vw;
       max-width: 95%;
     }
@@ -72,6 +69,5 @@ export const ContentContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  margin-bottom: ${spacing.large};
   width: 100%;
 `;

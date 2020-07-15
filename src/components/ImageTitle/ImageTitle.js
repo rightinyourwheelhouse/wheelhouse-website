@@ -5,8 +5,8 @@ import { OuterContainer, ContentContainer, ImageContainer } from './imageTitle.s
 
 const ImageTitle = memo(({ image, children }) => (
   <OuterContainer>
-    {image && <ImageContainer>{image}</ImageContainer>}
     <ContentContainer>{children}</ContentContainer>
+    {image && <ImageContainer>{image}</ImageContainer>}
   </OuterContainer>
 ));
 

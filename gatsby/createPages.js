@@ -1,10 +1,17 @@
-require('dotenv').config();
+import path from 'path';
+import { toKebab } from '../src/utils/string';
 
-const path = require('path');
-
-async function createPages({ actions, graphql }) {
+export default async function createPages({ actions: { createPage }, graphql }) {
   const { data } = await graphql(`
     query {
+      allFeedBlog {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
       allCareer {
         edges {
           node {
@@ -16,13 +23,22 @@ async function createPages({ actions, graphql }) {
     }
   `);
 
+  // Careers
   data.allCareer.edges.forEach(({ node: { slug } }) => {
-    actions.createPage({
+    createPage({
       component: path.resolve('src/templates/career.js'),
       context: { slug },
       path: `/careers/${slug}`,
     });
   });
-}
 
-module.exports = createPages;
+  // blog
+  data.allFeedBlog.edges.forEach(({ node: { id, title } }) => {
+    const slug = toKebab(title);
+    createPage({
+      component: path.resolve('src/templates/blog.js'),
+      context: { id },
+      path: `/blog/${slug}`,
+    });
+  });
+}

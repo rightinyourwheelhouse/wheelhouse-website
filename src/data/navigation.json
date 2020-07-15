@@ -1,5 +1,9 @@
 [
   {
+    "href": "/blog",
+    "title": "blog"
+  },
+  {
     "href": "/team",
     "title": "team"
   }

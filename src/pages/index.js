@@ -6,6 +6,7 @@ import Button from '~components/Button';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
+import SubTitle from '~components/SubTitle';
 import Card from '~components/Card';
 
 import Layout from '~layouts/default';
@@ -33,7 +34,9 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <BlogOverview />
+        <SubTitle>Blog</SubTitle>
+        <h2>Some insight in how we think</h2>
+        <BlogOverview count={2} />
         <Button
           as={Link}
           to="/"

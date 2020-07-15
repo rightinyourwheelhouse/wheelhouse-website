@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 
-async function getRecruiteeData(actions, createNodeId, createContentDigest) {
+export async function getRecruiteeData(actions, createNodeId, createContentDigest) {
   const { createNode } = actions;
 
   const RECRUITEE_API_PATH = 'https://api.recruitee.com/c/raccoons/offers';
@@ -70,5 +70,3 @@ async function getRecruiteeData(actions, createNodeId, createContentDigest) {
     }
   );
 }
-
-module.exports = getRecruiteeData;

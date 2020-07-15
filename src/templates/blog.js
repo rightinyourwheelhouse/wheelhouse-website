@@ -4,6 +4,14 @@ import readingTime from 'reading-time';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+} from 'react-share';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
@@ -18,6 +26,10 @@ import JobOverview from '~modules/JobOverview';
 import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
+
+// import FacebookIcon from '~images/icons/facebook.svg';
+
+const isWindowContext = typeof window !== 'undefined';
 
 const Blog = ({
   data: {
@@ -35,6 +47,7 @@ const Blog = ({
   },
 }) => {
   const { text: time } = readingTime(encoded);
+  const url = isWindowContext && window.location.href;
 
   return (
     <Layout>
@@ -49,7 +62,23 @@ const Blog = ({
         <ImageTitle image={<Img fluid={fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <Info title={creator} description={`${isoDate} · ${time}`} />
+          <Info title={creator} description={`${isoDate} · ${time}`}>
+            <div>
+              <FacebookShareButton url={url}>
+                <FacebookIcon />
+              </FacebookShareButton>
+            </div>
+            <div>
+              <TwitterShareButton url={url}>
+                <TwitterIcon />
+              </TwitterShareButton>
+            </div>
+            <div>
+              <LinkedinShareButton url={url}>
+                <LinkedinIcon />
+              </LinkedinShareButton>
+            </div>
+          </Info>
         </ImageTitle>
         <Container>
           <Content>

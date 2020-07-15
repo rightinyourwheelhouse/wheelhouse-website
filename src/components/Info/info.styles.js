@@ -4,6 +4,23 @@ import colors from '~styles/colors';
 
 export const InfoContainer = styled.div``;
 
+export const InfoContent = styled.div`
+  div {
+    display: inline-block;
+    width: 24px;
+
+    &:not(:last-child){
+      margin-right: 12px;
+    }
+
+    svg {
+      height: 24px;
+      width: 24px;
+      line-height: 24px;
+    }
+  }
+`;
+
 export const Title = styled.span`
   --color: ${colors.textPrimary};
 

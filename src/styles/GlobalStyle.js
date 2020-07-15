@@ -94,13 +94,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.family};
     margin-top: 1.5rem;
     margin-bottom: 0;
-    line-height: 1.5rem;
-    text-transform: uppercase;
+    line-height: 1.1;
   }
 
   h1 {
     font-size: 3.242rem;
-    line-height: 0.9;
+    line-height: 1.1;
     font-weight: 900;
     margin-top: 0;
 
@@ -120,7 +119,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 3rem;
-    line-height: 0.9;
+    line-height: 1.1;
     font-weight: 900;
     margin-top: 0;
     margin-bottom: 1rem;

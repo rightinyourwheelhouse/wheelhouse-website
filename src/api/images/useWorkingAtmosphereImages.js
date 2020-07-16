@@ -14,7 +14,7 @@ const query = graphql`
           id
           name
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1000) {
               aspectRatio
               ...GatsbyImageSharpFluid_withWebp
             }

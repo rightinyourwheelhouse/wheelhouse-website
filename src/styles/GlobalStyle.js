@@ -43,14 +43,11 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.textPrimary};
     font-size: ${fonts.sizes.default};
     line-height: 180%;
-    margin-top: 0;
+    margin-top: 1.5rem;
     margin-bottom: 30px;
     font-weight: 400;
-
-    &:not(:first-child){
-      margin-top: 1.5rem;
-    }
   }
+
 
   p > button {
     background: none;

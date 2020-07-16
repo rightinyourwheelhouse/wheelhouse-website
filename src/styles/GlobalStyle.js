@@ -43,9 +43,13 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.textPrimary};
     font-size: ${fonts.sizes.default};
     line-height: 180%;
-    margin-top: 1.5rem;
+    margin-top: 0;
     margin-bottom: 30px;
     font-weight: 400;
+
+    &:not(:first-child){
+      margin-top: 1.5rem;
+    }
   }
 
   p > button {
@@ -90,12 +94,14 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    /* Change heading typefaces here */
     font-family: ${fonts.family};
-    margin-top: 1.5rem;
     margin-bottom: 0;
     line-height: 1.5rem;
     text-transform: uppercase;
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
   }
 
   h1 {
@@ -110,11 +116,11 @@ export const GlobalStyle = createGlobalStyle`
 
     @media screen and (min-width: ${breakpoints.small}){
       font-size: 6vw;
-      max-width: 60%;
+      max-width: 70%;
     }
     @media screen and (min-width: ${breakpoints.large}){
       font-size: 5rem;
-      max-width: 60%;
+      max-width: 70%;
     }
   }
 

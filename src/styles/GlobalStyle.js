@@ -125,7 +125,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 0;
     margin-bottom: 1rem;
 
-    &:not(:first-of-type){
+    &:not(:first-child){
       margin-top: 2.8rem;
     }
 
@@ -224,5 +224,24 @@ export const GlobalStyle = createGlobalStyle`
 
   .nowrap {
     white-space: nowrap;
+  }
+
+  figcaption {
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0.7;
+  }
+
+  blockquote {
+    box-shadow: rgb(41, 41, 41) 3px 0px 0px 0px inset;
+    padding-left: 23px;
+    margin-left: -20px;
+    font-size: 21px;
+    line-height: 32px;
+    margin-top: 2em;
+
+    em {
+      background-color: rgb(233, 253, 240);
+    }
   }
 `;

@@ -35,6 +35,7 @@ const Career = ({
     <Navigation
       baseBackgroundColor={colors.backgroundSecundary}
       baseColor={colors.textLight}
+      baseHoverColor={colors.primary}
     />
 
     <Section background={colors.backgroundSecundary}>

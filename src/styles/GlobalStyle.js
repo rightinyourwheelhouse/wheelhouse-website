@@ -125,7 +125,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 0;
     margin-bottom: 1rem;
 
-    &:not(:first-child){
+    &:not(:first-of-type){
       margin-top: 2.8rem;
     }
 

@@ -11,11 +11,11 @@ import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
-import Navigation from '~modules/Navigation';
-import WelcomeHero from '~modules/WelcomeHero';
 import BlogOverview from '~modules/BlogOverview';
-import JobOverview from '~modules/JobOverview';
+import Navigation from '~modules/Navigation';
+import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
+import WelcomeHero from '~modules/WelcomeHero';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
@@ -96,7 +96,7 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <JobOverview />
+        <OfficeOverview />
       </Container>
     </Section>
   </Layout>

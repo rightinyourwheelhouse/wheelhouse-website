@@ -7,6 +7,7 @@ export default styled.span`
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 900;
+  margin-bottom: -21px;
 
   @media screen and (min-width: ${breakpoints.medium}) {
     font-size: 1vw;

@@ -31,5 +31,25 @@
       "description": "has a creative front-end mind and likes to cosplay.",
       "image": "assets/aagje-2.jpg"
     }
+  ],
+  "offices": [
+    {
+      "name": "Ghent",
+      "address": "Gaston crommelaan 8, 9000 Ghent",
+      "mail": "hello@wheelhouse.be",
+      "phone": "+32479559012",
+      "description": "Description about the office in Ghent",
+      "howToReach": "## by public transport\n\nSome information on how to reach the office\n\n## by car\n\nsome information how to reach the office by car",
+      "image": "assets/working-atmosphere-00031.jpg"
+    },
+    {
+      "name": "Leuven",
+      "address": "Gaston Geenslaan x, Leuven",
+      "mail": "hello@wheelhouse.be",
+      "phone": "+32479559012",
+      "description": "describe the office in Leuven",
+      "howToReach": "## by public transport\n\nSome information on how to reach the office\n\n## by car\n\nsome information how to reach the office by car",
+      "image": "assets/working-atmosphere-00031.jpg"
+    }
   ]
 }

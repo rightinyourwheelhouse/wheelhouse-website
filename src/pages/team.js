@@ -17,6 +17,7 @@ import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
+import GeneralOnboarding from '~modules/GeneralOnboarding';
 
 import colors from '~styles/colors';
 
@@ -51,11 +52,13 @@ const TeamPage = () => (
       <Container>
         <TeamOverview />
         <Card>
-          <h2>Do you want to join us?</h2>
-          <p>
-            We improve the quality of our service and solutions by continuously focusing on improvement. We carefully analyse and monitor all projects while training our team in the latest technologies. At Wheelhouse, we help you develop your talents so that you can build a high-quality career path.
-          </p>
-          <Button as={Link} to="/careers">Check our job openings</Button>
+          <GeneralOnboarding>
+            <h2>Do you want to join us?</h2>
+            <p>
+              We improve the quality of our service and solutions by continuously focusing on improvement. We carefully analyse and monitor all projects while training our team in the latest technologies. At Wheelhouse, we help you develop your talents so that you can build a high-quality career path.
+            </p>
+          </GeneralOnboarding>
+          {/* <Button as={Link} to="/careers">Check our job openings</Button> */}
         </Card>
       </Container>
     </Section>

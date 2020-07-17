@@ -1,10 +1,9 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
+import { scroller } from 'react-scroll';
 
 import {
-  Conversation,
-  ScrollingContainer,
   OnboardingContainer,
   InitialContentContainer,
 } from './Onboarding.styles';
@@ -46,26 +45,28 @@ const GeneralOnboarding = ({
   const onAdvance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
       setStageIndex(stageIndex + 1);
+
+      scroller.scrollTo('onboarding', {
+        duration: 600,
+        offset: -200,
+        smooth: 'easeInOutQuart',
+      });
     }
   }, [stages, stageIndex]);
 
   return (
-    <OnboardingContainer>
-      <Conversation>
-        <ScrollingContainer position={stageIndex}>
-          {stages.map(({ Component, metaData, action }, index) => (
-            <Stage
-              Component={Component}
-              action={action}
-              active={index === stageIndex}
-              key={uuid()}
-              metaData={metaData}
-              onAdvance={onAdvance}
-              onValueChange={onValueChange}
-            />
-          ))}
-        </ScrollingContainer>
-      </Conversation>
+    <OnboardingContainer name="onboarding">
+      {stages.map(({ Component, metaData, action }, index) => (
+        <Stage
+          Component={Component}
+          action={action}
+          active={index === stageIndex}
+          key={uuid()}
+          metaData={metaData}
+          onAdvance={onAdvance}
+          onValueChange={onValueChange}
+        />
+      ))}
     </OnboardingContainer>
   );
 };

@@ -28,7 +28,7 @@ const Opening = ({ active, metaData, onAdvance }) => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const frames = metaData.map((text) => (
     <AnimatedFrame key={uuid()} delay={DELAY}>
-      <h1>{text}</h1>
+      <h3>{text}</h3>
     </AnimatedFrame>
   ));
 

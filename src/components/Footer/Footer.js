@@ -8,6 +8,7 @@ import TwoColumns from '~components/TwoColumns';
 import Raccoons from '~images/raccoons.svg';
 
 import { useNavigation } from '~api/navigation/useNavigation';
+import { useOfficeOverview } from '~api/office/useOfficeOverview';
 
 import {
   FooterContainer,
@@ -18,6 +19,7 @@ import {
 
 const Footer = () => {
   const navigationItems = useNavigation();
+  const offices = useOfficeOverview();
 
   return (
     <FooterContainer>
@@ -84,11 +86,14 @@ const Footer = () => {
               </TwoColumns>
             </div>
           </TwoColumns>
-          <p>
-            Gaston Geenslaan 11 B4 - 3001 Leuven
-            {' '}
-            <a href="tel:+32479559012">+32479559012</a>
-          </p>
+
+          {offices.map(({ address, phone }) => (
+            <p>
+              {address}
+              {' '}
+              <a href={`tel:${phone}`}>{phone}</a>
+            </p>
+          ))}
           <p className="disclaimer">
             <a href="/">Privacy policy</a>
           </p>

@@ -48,6 +48,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
+
   p > button {
     background: none;
     border: none;
@@ -90,12 +91,14 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    /* Change heading typefaces here */
     font-family: ${fonts.family};
-    margin-top: 1.5rem;
     margin-bottom: 0;
     line-height: 1.5rem;
     text-transform: uppercase;
+
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
   }
 
   h1 {
@@ -110,11 +113,11 @@ export const GlobalStyle = createGlobalStyle`
 
     @media screen and (min-width: ${breakpoints.small}){
       font-size: 6vw;
-      max-width: 60%;
+      max-width: 70%;
     }
     @media screen and (min-width: ${breakpoints.large}){
       font-size: 5rem;
-      max-width: 60%;
+      max-width: 70%;
     }
   }
 

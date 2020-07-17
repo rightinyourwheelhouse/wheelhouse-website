@@ -4,6 +4,14 @@ import { toKebab } from '../src/utils/string';
 export default async function createPages({ actions: { createPage }, graphql }) {
   const { data } = await graphql(`
     query {
+      allOfficesJson {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
       allFeedBlog {
         edges {
           node {
@@ -23,8 +31,21 @@ export default async function createPages({ actions: { createPage }, graphql }) 
     }
   `);
 
+  const { allCareer, allOfficesJson, allFeedBlog } = data;
+
+  // offices
+  allOfficesJson.edges.forEach(({ node: { id, name } }) => {
+    const slug = toKebab(name);
+
+    createPage({
+      component: path.resolve('src/templates/office.js'),
+      context: { id },
+      path: `/offices/${slug}`,
+    });
+  });
+
   // Careers
-  data.allCareer.edges.forEach(({ node: { slug } }) => {
+  allCareer.edges.forEach(({ node: { slug } }) => {
     createPage({
       component: path.resolve('src/templates/career.js'),
       context: { slug },
@@ -33,7 +54,7 @@ export default async function createPages({ actions: { createPage }, graphql }) 
   });
 
   // blog
-  data.allFeedBlog.edges.forEach(({ node: { id, title } }) => {
+  allFeedBlog.edges.forEach(({ node: { id, title } }) => {
     const slug = toKebab(title);
     createPage({
       component: path.resolve('src/templates/blog.js'),

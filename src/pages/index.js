@@ -6,16 +6,17 @@ import Button from '~components/Button';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
+import SubTitle from '~components/SubTitle';
 import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
-import Navigation from '~modules/Navigation';
-import WelcomeHero from '~modules/WelcomeHero';
 import BlogOverview from '~modules/BlogOverview';
-import JobOverview from '~modules/JobOverview';
-import OpenSource from '~modules/OpenSource';
 import GeneralOnboarding from '~modules/GeneralOnboarding';
+import Navigation from '~modules/Navigation';
+import OfficeOverview from '~modules/OfficeOverview';
+import OpenSource from '~modules/OpenSource';
+import WelcomeHero from '~modules/WelcomeHero';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
@@ -34,7 +35,9 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <BlogOverview />
+        <SubTitle>Blog</SubTitle>
+        <h2>Some insight in how we think</h2>
+        <BlogOverview count={2} />
         <Button
           as={Link}
           to="/"
@@ -59,12 +62,6 @@ const IndexPage = () => (
         <LightContent>
           <OpenSource />
         </LightContent>
-      </Container>
-    </Section>
-
-    <Section background={colors.backgroundTertiary}>
-      <Container>
-        <GeneralOnboarding />
       </Container>
     </Section>
 
@@ -93,7 +90,12 @@ const IndexPage = () => (
             </Button>
           </div>
         </TwoColumns>
+      </Container>
+    </Section>
 
+    <Section>
+      <Container>
+        <GeneralOnboarding />
       </Container>
     </Section>
 
@@ -101,10 +103,9 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <JobOverview />
+        <OfficeOverview />
       </Container>
     </Section>
-
   </Layout>
 );
 

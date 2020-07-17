@@ -1,17 +1,20 @@
+import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
   query {
-    teamJson {
-      members {
-        name
-        description
-        role
-        image {
-          id
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid_withWebp
+    allTeamJson {
+      edges {
+        node {
+          name
+          description
+          role
+          image {
+            id
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
@@ -22,8 +25,14 @@ const query = graphql`
 
 export const useTeam = () => {
   const {
-    teamJson: { name, members },
+    allTeamJson: { edges },
   } = useStaticQuery(query);
 
-  return { members, name };
+  const items = useMemo(() => {
+    const nodes = edges.map(({ node }) => ({ ...node }));
+
+    return nodes;
+  }, [edges]);
+
+  return items;
 };

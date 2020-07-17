@@ -1,10 +1,25 @@
-require('dotenv').config();
+import path from 'path';
+import { toKebab } from '../src/utils/string';
 
-const path = require('path');
-
-async function createPages({ actions, graphql }) {
+export default async function createPages({ actions: { createPage }, graphql }) {
   const { data } = await graphql(`
     query {
+      allOfficesJson {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
+      allFeedBlog {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
       allCareer {
         edges {
           node {
@@ -16,13 +31,35 @@ async function createPages({ actions, graphql }) {
     }
   `);
 
-  data.allCareer.edges.forEach(({ node: { slug } }) => {
-    actions.createPage({
+  const { allCareer, allOfficesJson, allFeedBlog } = data;
+
+  // offices
+  allOfficesJson.edges.forEach(({ node: { id, name } }) => {
+    const slug = toKebab(name);
+
+    createPage({
+      component: path.resolve('src/templates/office.js'),
+      context: { id },
+      path: `/offices/${slug}`,
+    });
+  });
+
+  // Careers
+  allCareer.edges.forEach(({ node: { slug } }) => {
+    createPage({
       component: path.resolve('src/templates/career.js'),
       context: { slug },
       path: `/careers/${slug}`,
     });
   });
-}
 
-module.exports = createPages;
+  // blog
+  allFeedBlog.edges.forEach(({ node: { id, title } }) => {
+    const slug = toKebab(title);
+    createPage({
+      component: path.resolve('src/templates/blog.js'),
+      context: { id },
+      path: `/blog/${slug}`,
+    });
+  });
+}

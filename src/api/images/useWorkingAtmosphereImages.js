@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { shuffle } from '~utils/array';
+import { shuffle, mode } from '~utils/array';
 
 const query = graphql`
   query {
@@ -14,7 +14,8 @@ const query = graphql`
           id
           name
           childImageSharp {
-            fluid(maxHeight: 300) {
+            fluid(maxWidth: 1000) {
+              aspectRatio
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -24,13 +25,37 @@ const query = graphql`
   }
 `;
 
-export const useWorkingAtmosphereImages = (count, shuffled = true) => {
+export const useWorkingAtmosphereImages = (
+  count,
+  shuffled = true,
+  fixedAR = false
+) => {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
 
   const images = useMemo(() => {
     let nodes = edges.map(({ node }) => ({ ...node }));
+
+    if (fixedAR) {
+      const mostCommonAspectRatio = mode(
+        nodes.map(
+          ({
+            childImageSharp: {
+              fluid: { aspectRatio },
+            },
+          }) => aspectRatio
+        )
+      );
+
+      nodes = nodes.filter(
+        ({
+          childImageSharp: {
+            fluid: { aspectRatio },
+          },
+        }) => aspectRatio === mostCommonAspectRatio
+      );
+    }
 
     if (shuffled) {
       nodes = shuffle(nodes);

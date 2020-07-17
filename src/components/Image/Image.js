@@ -5,6 +5,8 @@ import styled, { css } from 'styled-components';
 
 import { useImage } from '~api/images/useImage';
 
+import colors from '~styles/colors';
+
 const Image = ({
   alt, filename, bw, ...props
 }) => {
@@ -18,6 +20,8 @@ const Image = ({
     ${bw
     && css`
       filter: grayscale(100%);
+      background-color: ${colors.primary};
+      position: relative;
 
       &:hover {
         filter: none;

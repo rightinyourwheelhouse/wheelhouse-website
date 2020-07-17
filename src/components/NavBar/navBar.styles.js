@@ -284,16 +284,20 @@ export const ItemsContent = styled.div`
         color: ${colors.primary};
 
         @media screen and (min-width: ${breakpoints.medium}) {
-          color: ${colors.textPrimary};
+          color: ${({ baseHoverColor }) => baseHoverColor};
         }
 
         span:not(.label) {
+          background: ${({ baseHoverColor }) => {
+    console.log('baseHoverColor', baseHoverColor);
+
+    return baseHoverColor;
+  }};
           color: ${({ baseBackgroundColor }) => baseBackgroundColor};
-          background: ${colors.textPrimary};
         }
 
         svg path {
-          fill: ${colors.textPrimary};
+          fill: ${({ baseHoverColor }) => baseHoverColor};
         }
       }
     }

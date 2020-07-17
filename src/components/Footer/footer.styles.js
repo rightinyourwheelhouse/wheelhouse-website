@@ -38,11 +38,11 @@ export const FooterContainer = styled.footer`
 
   p {
     margin: 0;
-    margin-bottom: 30px;
     color: var(--foreground);
 
     &.disclaimer{
       font-size: 0.8em;
+      margin-top: 30px;
     }
 
     a {

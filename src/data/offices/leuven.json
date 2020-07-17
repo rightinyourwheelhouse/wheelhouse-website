@@ -1,0 +1,9 @@
+{
+  "name": "Leuven",
+  "address": "Gaston geenslaan x, Leuven",
+  "mail": "hello@wheelhouse.be",
+  "phone": "+32479559012",
+  "description": "describe the office in Leuven",
+  "howToReach": "### by public transport\nSome information on how to reach the office\n### by car\nsome information how to reach the office by car",
+  "image": "assets/leuven.png"
+}

@@ -30,6 +30,7 @@ import Wheelhouse from '~images/wheelhouse.svg';
 const NavBar = ({
   baseColor,
   baseBackgroundColor,
+  baseHoverColor,
   careerCount,
   items,
   logoInitiallyHidden,
@@ -78,6 +79,7 @@ const NavBar = ({
             })}
             scrolled={isScrolled}
             baseColor={baseColor}
+            baseHoverColor={baseHoverColor}
           >
             <Item
               className={classnames({
@@ -97,6 +99,7 @@ const NavBar = ({
             })}
             scrolled={isScrolled}
             baseColor={baseColor}
+            baseHoverColor={baseHoverColor}
           >
             <Item className="visible-small">
               <Link to="/">Home</Link>
@@ -143,6 +146,7 @@ const NavBar = ({
 NavBar.propTypes = {
   baseBackgroundColor: PropTypes.string,
   baseColor: PropTypes.string,
+  baseHoverColor: PropTypes.string,
   careerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -156,6 +160,7 @@ NavBar.propTypes = {
 NavBar.defaultProps = {
   baseBackgroundColor: colors.backgroundPrimary,
   baseColor: colors.textPrimary,
+  baseHoverColor: colors.textPrimary,
   careerCount: 0,
   items: [],
   logoInitiallyHidden: false,

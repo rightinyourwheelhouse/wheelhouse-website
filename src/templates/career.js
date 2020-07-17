@@ -15,6 +15,7 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
+import OpenSource from '~modules/OpenSource';
 
 import colors from '~styles/colors';
 
@@ -31,25 +32,39 @@ const Career = ({
       description={description}
     />
 
-    <Navigation />
-    <Section>
-      <Container>
-        <SubTitle>{city}</SubTitle>
-        <h1>{title}</h1>
-        <Content>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
-        </Content>
-      </Container>
-    </Section>
+    <Navigation
+      baseBackgroundColor={colors.backgroundSecundary}
+      baseColor={colors.textLight}
+      baseHoverColor={colors.primary}
+    />
+
     <Section background={colors.backgroundSecundary}>
       <Container>
         <LightContent>
-          <SubTitle>career</SubTitle>
-          <h2>Your foundations</h2>
-          <Content>
-            <div dangerouslySetInnerHTML={{ __html: requirements }} />
-          </Content>
+          <article>
+            <SubTitle>{city}</SubTitle>
+            <h1>{title}</h1>
+            <Content>
+              <div dangerouslySetInnerHTML={{ __html: description }} />
+            </Content>
+          </article>
         </LightContent>
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
+        <SubTitle>career</SubTitle>
+        <h2>Your foundations</h2>
+        <Content>
+          <div dangerouslySetInnerHTML={{ __html: requirements }} />
+        </Content>
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
+        <OpenSource />
       </Container>
     </Section>
   </Layout>

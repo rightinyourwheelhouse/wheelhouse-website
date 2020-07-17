@@ -8,7 +8,7 @@ import TeamCard from '~components/TeamCard';
 import SubTitle from '~components/SubTitle';
 
 const TeamOverview = () => {
-  const { members } = useTeam();
+  const members = useTeam();
 
   return (
     <div>

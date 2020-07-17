@@ -23,13 +23,13 @@ const query = graphql`
   }
 `;
 
-export const useBlogOverview = (count) => {
+export const useBlogOverview = ({ count, current }) => {
   const {
     allFeedBlog: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node }));
+    const nodes = edges.map(({ node }) => ({ ...node })).filter(({ id }) => id !== current);
 
     if (count) {
       return nodes.slice(0, count);

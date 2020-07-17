@@ -1,0 +1,55 @@
+{
+  "name": "wheelhouse",
+  "members": [
+    {
+      "name": "Olivier De Wit",
+      "role": "Founder",
+      "description": "is founder and only has 9 kids to take care of.",
+      "image": "assets/olivier-2.jpg"
+    },
+    {
+      "name": "Daren Malfait",
+      "role": "front-end developer",
+      "description": "brings front-end to life and tries to stay healthy with sports.",
+      "image": "assets/daren-2.jpg"
+    },
+    {
+      "name": "Rafaël Mindreau",
+      "role": "full-stack developer",
+      "description": "is a developer that does NOT destructure.",
+      "image": "assets/rafael-2.jpg"
+    },
+    {
+      "name": "Roel Goossens",
+      "role": "full-stack developer",
+      "description": "is a full-stack developer and wants harmony in life.",
+      "image": "assets/roel-2.jpg"
+    },
+    {
+      "name": "Aagje Reynders",
+      "role": "front-end developer",
+      "description": "has a creative front-end mind and likes to cosplay.",
+      "image": "assets/aagje-2.jpg"
+    }
+  ],
+  "offices": [
+    {
+      "name": "Ghent",
+      "address": "Gaston crommelaan 8, 9000 Ghent",
+      "mail": "hello@wheelhouse.be",
+      "phone": "+32479559012",
+      "description": "Description about the office in Ghent",
+      "howToReach": "## by public transport\n\nSome information on how to reach the office\n\n## by car\n\nsome information how to reach the office by car",
+      "image": "assets/working-atmosphere-00031.jpg"
+    },
+    {
+      "name": "Leuven",
+      "address": "Gaston Geenslaan x, Leuven",
+      "mail": "hello@wheelhouse.be",
+      "phone": "+32479559012",
+      "description": "describe the office in Leuven",
+      "howToReach": "## by public transport\n\nSome information on how to reach the office\n\n## by car\n\nsome information how to reach the office by car",
+      "image": "assets/working-atmosphere-00031.jpg"
+    }
+  ]
+}

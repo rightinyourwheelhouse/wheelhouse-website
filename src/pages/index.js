@@ -12,7 +12,6 @@ import Card from '~components/Card';
 import Layout from '~layouts/default';
 
 import BlogOverview from '~modules/BlogOverview';
-import GeneralOnboarding from '~modules/GeneralOnboarding';
 import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
@@ -90,15 +89,6 @@ const IndexPage = () => (
             </Button>
           </div>
         </TwoColumns>
-      </Container>
-    </Section>
-
-    <Section>
-      <Container>
-        <GeneralOnboarding>
-          <SubTitle>Get in touch</SubTitle>
-          <h2>Play your part in our story</h2>
-        </GeneralOnboarding>
       </Container>
     </Section>
 

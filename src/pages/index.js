@@ -95,7 +95,10 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <GeneralOnboarding />
+        <GeneralOnboarding>
+          <SubTitle>Get in touch</SubTitle>
+          <h2>Play your part in our story</h2>
+        </GeneralOnboarding>
       </Container>
     </Section>
 

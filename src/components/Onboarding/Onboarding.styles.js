@@ -14,3 +14,7 @@ export const ScrollingContainer = styled.div`
   top: calc((270px + 40px) * -${({ position }) => position});
   transition: top 0.2s ease-in-out;
 `;
+
+export const InitialContentContainer = styled.div`
+  margin-bottom: 30px;
+`;

@@ -1,6 +1,8 @@
 import React, {
   memo, useReducer, useCallback, useMemo,
 } from 'react';
+import PropTypes from 'prop-types';
+
 import { Onboarding, stages } from '~components/Onboarding';
 
 const introText = [
@@ -9,7 +11,7 @@ const introText = [
   "And we're also very excited to tell you more about us.",
 ];
 
-const GeneralOnboarding = () => {
+const GeneralOnboarding = ({ children }) => {
   const reducer = (state, newState) => ({ ...state, ...newState });
   const [values, setValues] = useReducer(reducer, {});
 
@@ -29,19 +31,19 @@ const GeneralOnboarding = () => {
     return [];
   }, [values]);
 
-  const onSubmit = useCallback(
-    () => {
-      console.log('values', values);
-    },
-    [values],
-  );
+  const onSubmit = useCallback(() => {
+    console.log('values', values);
+  }, [values]);
 
   const onboardingStages = useMemo(
     () => [
-      { Component: stages.Opening },
       { Component: stages.SmoothTalk, metaData: introText },
       { Component: stages.Name },
-      { action: onSubmit, Component: stages.SmoothTalk, metaData: advancedText },
+      {
+        Component: stages.SmoothTalk,
+        action: onSubmit,
+        metaData: advancedText,
+      },
     ],
     [advancedText, values]
   );
@@ -53,7 +55,15 @@ const GeneralOnboarding = () => {
     [values]
   );
 
-  return <Onboarding stages={onboardingStages} onValueChange={onValueChange} />;
+  return (
+    <Onboarding stages={onboardingStages} onValueChange={onValueChange}>
+      {children}
+    </Onboarding>
+  );
+};
+
+GeneralOnboarding.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf]).isRequired,
 };
 
 export default memo(GeneralOnboarding);

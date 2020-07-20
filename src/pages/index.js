@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Button from '~components/Button';
+import Content from '~components/Content';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
@@ -11,6 +12,7 @@ import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
+import ApplyForm from '~modules/ApplyForm';
 import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
@@ -31,6 +33,14 @@ const IndexPage = () => (
     />
 
     <WelcomeHero />
+
+    <Section>
+      <Container>
+        <Content>
+          <ApplyForm />
+        </Content>
+      </Container>
+    </Section>
 
     <Section>
       <Container>

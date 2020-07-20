@@ -9,6 +9,5 @@ export default styled.span`
   letter-spacing: 0;
   font-weight: bold;
   line-height: 22px;
-  margin-left: 16px;
   margin-top: 5px;
 `;

@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import { LabelInputContainer } from '../form.styles';
 import { FileUploadContainer, Caption } from './fileUpload.styles';
 
+import ErrorField from '../_ErrorField';
+
 const FileUpload = ({
   error, name, onChange, valid, value, ...props
 }) => {
@@ -57,6 +59,7 @@ const FileUpload = ({
         )}
         <Caption>Max file size is 10MB</Caption>
       </label>
+      {error && <ErrorField>{error}</ErrorField>}
     </FileUploadContainer>
   );
 };

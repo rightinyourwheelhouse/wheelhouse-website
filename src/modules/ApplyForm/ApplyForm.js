@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 
@@ -21,6 +21,7 @@ const ApplyForm = () => {
   } = useFormik({
     initialValues: {
       email: '',
+      file: null,
       name: '',
       phone: '',
     },
@@ -38,6 +39,13 @@ const ApplyForm = () => {
     },
     validationSchema,
   });
+
+  const setFile = useCallback(
+    (files) => {
+      setFieldValue('file', files[0]);
+    },
+    [setFieldValue],
+  );
 
   return (
     <form
@@ -79,16 +87,14 @@ const ApplyForm = () => {
             valid={touched.phone && !errors.phone}
           />
           <FileUpload
-            error={touched.resume && errors.resume}
-            name="resume"
-            id="resume"
-            label="Resume"
-            onChange={(files) => {
-              setFieldValue('resume', files[0]);
-            }}
+            error={touched.file && errors.file}
+            name="file"
+            id="file"
+            label="Your resume"
+            onChange={setFile}
             onBlur={handleBlur}
-            value={values.resume}
-            valid={touched.resume && !errors.resume}
+            value={values.file}
+            valid={touched.file && !errors.file}
           />
         </Stack>
       </Fieldset>

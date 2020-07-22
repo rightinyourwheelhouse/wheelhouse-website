@@ -26,6 +26,7 @@ const ApplyForm = () => {
     touched,
     handleBlur,
     setFieldValue,
+    isSubmitting,
   } = useFormik({
     initialValues: {
       email: '',
@@ -69,6 +70,7 @@ const ApplyForm = () => {
       netlify
     >
       {formState !== SUBMITTED && (
+      <div>
         <Fieldset>
           <Stack>
             <Input
@@ -113,6 +115,9 @@ const ApplyForm = () => {
             />
           </Stack>
         </Fieldset>
+
+        <Button disabled={isSubmitting} type="submit">Submit</Button>
+      </div>
       )}
       {formState === ERROR && (
         <div>
@@ -127,7 +132,6 @@ const ApplyForm = () => {
           </p>
         </div>
       )}
-      <Button type="submit">Submit</Button>
       <Disclaimer>Your data will be used to get in touch with you.</Disclaimer>
     </form>
   );

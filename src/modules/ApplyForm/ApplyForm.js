@@ -34,6 +34,7 @@ const ApplyForm = ({ vacancy }) => {
       file: null,
       name: '',
       phone: '',
+      website: '',
     },
     onSubmit: async (submittedValues, actions) => {
       try {
@@ -103,6 +104,16 @@ const ApplyForm = ({ vacancy }) => {
               onBlur={handleBlur}
               value={values.phone}
               valid={touched.phone && !errors.phone}
+            />
+            <Input
+              error={touched.website && errors.website}
+              name="website"
+              id="website"
+              label="Your website (optional)"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.website}
+              valid={touched.website && !errors.website}
             />
             <FileUpload
               error={touched.file && errors.file}

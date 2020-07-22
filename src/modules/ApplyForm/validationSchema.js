@@ -38,4 +38,10 @@ export default yup.object().shape({
     .string()
     .required()
     .matches(phoneRegExp, 'Seems like you entered a wrong phone number'),
+  website: yup
+    .string()
+    .matches(
+      /^((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+      'You entered a weird looking url'
+    ),
 });

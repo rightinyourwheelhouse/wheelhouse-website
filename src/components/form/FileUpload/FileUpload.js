@@ -35,6 +35,7 @@ const FileUpload = ({
       <label htmlFor={name}>
         {Boolean(value) && (
         <LabelInputContainer
+          padding
           className={classnames({
             active,
             error,

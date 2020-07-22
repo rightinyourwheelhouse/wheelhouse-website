@@ -26,10 +26,11 @@ const ApplyForm = () => {
       phone: '',
     },
     onSubmit: async (submittedValues, actions) => {
-      console.log('submittedValues', submittedValues);
-      await fetch('/', {
-        body: encode({ 'form-name': 'application-form', ...submittedValues }),
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      const data = { 'form-name': 'application-form', ...submittedValues };
+      console.log('data', data);
+
+      fetch('/', {
+        body: encode(data),
         method: 'POST',
       });
 
@@ -51,6 +52,7 @@ const ApplyForm = () => {
   return (
     <form
       name="application-form"
+      method="post"
       onSubmit={handleSubmit}
       data-netlify="true"
       netlify

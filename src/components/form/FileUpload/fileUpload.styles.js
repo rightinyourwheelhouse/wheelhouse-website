@@ -11,7 +11,7 @@ export const FileUploadContainer = styled.div`
     z-index: -99;
   }
 
-  > label  {
+  > label {
     display: flex;
     align-items: center;
 
@@ -25,4 +25,9 @@ export const Caption = styled.div`
   font-size: 16px;
   line-height: 150%;
   opacity: 0.7;
+`;
+
+export const Label = styled.label`
+  font-weight: bold;
+  margin-bottom: 12px;
 `;

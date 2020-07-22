@@ -1,5 +1,6 @@
 import React, { memo, useState, useCallback } from 'react';
 import { useFormik } from 'formik';
+import PropTypes from 'prop-types';
 
 import Stack from '~components/Stack';
 import Button from '~components/Button';
@@ -15,7 +16,7 @@ import { Fieldset, Disclaimer } from './applyForm.styles';
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';
 
-const ApplyForm = () => {
+const ApplyForm = ({ vacancy }) => {
   const [formState, setFormState] = useState(null);
 
   const {
@@ -36,7 +37,7 @@ const ApplyForm = () => {
     },
     onSubmit: async (submittedValues, actions) => {
       try {
-        const data = { 'form-name': 'application-form', ...submittedValues };
+        const data = { 'form-name': 'application-form', ...submittedValues, vacancy };
 
         fetch('/', {
           body: encode(data),
@@ -67,7 +68,7 @@ const ApplyForm = () => {
       method="post"
       onSubmit={handleSubmit}
       data-netlify="true"
-      netlify
+      style={{ paddingTop: '24px' }}
     >
       {formState !== SUBMITTED && (
       <div>
@@ -135,6 +136,14 @@ const ApplyForm = () => {
       <Disclaimer>Your data will be used to get in touch with you.</Disclaimer>
     </form>
   );
+};
+
+ApplyForm.propTypes = {
+  vacancy: PropTypes.string,
+};
+
+ApplyForm.defaultProps = {
+  vacancy: null,
 };
 
 export default memo(ApplyForm);

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { LabelInputContainer } from '../form.styles';
-import { FileUploadContainer, Caption } from './fileUpload.styles';
+import { FileUploadContainer, Caption, Label } from './fileUpload.styles';
 
 import ErrorField from '../_ErrorField';
 
 const FileUpload = ({
-  error, name, onChange, valid, value, ...props
+  error, name, onChange, valid, value, label, ...props
 }) => {
   const [active, setActive] = useState(value && value.length > 0);
 
@@ -24,6 +24,7 @@ const FileUpload = ({
 
   return (
     <FileUploadContainer>
+      <Label>{label}</Label>
       <input
         {...props}
         id={name}

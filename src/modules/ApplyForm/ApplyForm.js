@@ -33,6 +33,7 @@ const ApplyForm = () => {
         method: 'POST',
       });
 
+      console.log('submitted');
       setSubmitted(true);
       actions.resetForm();
       actions.setSubmitting(false);

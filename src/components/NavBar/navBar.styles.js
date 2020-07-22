@@ -288,11 +288,7 @@ export const ItemsContent = styled.div`
         }
 
         span:not(.label) {
-          background: ${({ baseHoverColor }) => {
-    console.log('baseHoverColor', baseHoverColor);
-
-    return baseHoverColor;
-  }};
+          background: ${({ baseHoverColor }) => baseHoverColor};
           color: ${({ baseBackgroundColor }) => baseBackgroundColor};
         }
 

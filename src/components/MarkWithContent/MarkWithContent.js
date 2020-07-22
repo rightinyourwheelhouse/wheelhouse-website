@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 import { Mark, Image, TextContainer } from './markWithContent.styles';
 
-import AnimatedCard from '~components/AnimatedCard';
-
 const MarkWithContent = ({
   children,
   contentVisible,
@@ -30,10 +28,8 @@ const MarkWithContent = ({
     <Mark onMouseOver={onHover} onMouseOut={onMouseOut}>
       {`${text}`}
       <Image className={(imageVisible || contentVisible) && 'active'}>
-        <AnimatedCard>
-          {!hideText && <TextContainer>{text}</TextContainer>}
-          {children}
-        </AnimatedCard>
+        {!hideText && <TextContainer>{text}</TextContainer>}
+        {children}
       </Image>
     </Mark>
   );

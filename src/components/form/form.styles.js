@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import colors from '~styles/colors';
-import spacing from '~styles/spacing';
 
 export const LabelInputContainer = styled.div`
   --width: ${({ width }) => width || '100%'};

@@ -1,5 +1,4 @@
 import React, { memo, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 
 import Stack from '~components/Stack';
@@ -13,11 +12,20 @@ import validationSchema from './validationSchema';
 
 import { Fieldset, Disclaimer } from './applyForm.styles';
 
+const ERROR = 'ERROR';
+const SUBMITTED = 'SUBMITTED';
+
 const ApplyForm = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [formState, setFormState] = useState(null);
 
   const {
-    handleSubmit, handleChange, values, errors, touched, handleBlur, setFieldValue,
+    handleSubmit,
+    handleChange,
+    values,
+    errors,
+    touched,
+    handleBlur,
+    setFieldValue,
   } = useFormik({
     initialValues: {
       email: '',
@@ -26,18 +34,21 @@ const ApplyForm = () => {
       phone: '',
     },
     onSubmit: async (submittedValues, actions) => {
-      const data = { 'form-name': 'application-form', ...submittedValues };
-      console.log('data', data);
+      try {
+        const data = { 'form-name': 'application-form', ...submittedValues };
 
-      fetch('/', {
-        body: encode(data),
-        method: 'POST',
-      });
+        fetch('/', {
+          body: encode(data),
+          method: 'POST',
+        });
 
-      console.log('submitted form');
-      setSubmitted(true);
-      actions.resetForm();
-      actions.setSubmitting(false);
+        setFormState(SUBMITTED);
+        actions.resetForm();
+      } catch (error) {
+        setFormState(ERROR);
+      } finally {
+        actions.setSubmitting(false);
+      }
     },
     validationSchema,
   });
@@ -46,7 +57,7 @@ const ApplyForm = () => {
     (files) => {
       setFieldValue('file', files[0]);
     },
-    [setFieldValue],
+    [setFieldValue]
   );
 
   return (
@@ -57,56 +68,69 @@ const ApplyForm = () => {
       data-netlify="true"
       netlify
     >
-      <Fieldset>
-        <Stack>
-          <Input
-            error={touched.name && errors.name}
-            name="name"
-            id="name"
-            label="Your full name"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.name}
-            valid={touched.name && !errors.name}
-          />
-          <Input
-            error={touched.email && errors.email}
-            name="email"
-            id="email"
-            label="Your email address"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.email}
-            valid={touched.email && !errors.email}
-          />
-          <Input
-            error={touched.phone && errors.phone}
-            name="phone"
-            id="phone"
-            label="Your phone number"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.phone}
-            valid={touched.phone && !errors.phone}
-          />
-          <FileUpload
-            error={touched.file && errors.file}
-            name="file"
-            id="file"
-            label="Your resume"
-            onChange={setFile}
-            onBlur={handleBlur}
-            value={values.file}
-            valid={touched.file && !errors.file}
-          />
-        </Stack>
-      </Fieldset>
+      {formState !== SUBMITTED && (
+        <Fieldset>
+          <Stack>
+            <Input
+              error={touched.name && errors.name}
+              name="name"
+              id="name"
+              label="Your full name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.name}
+              valid={touched.name && !errors.name}
+            />
+            <Input
+              error={touched.email && errors.email}
+              name="email"
+              id="email"
+              label="Your email address"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              valid={touched.email && !errors.email}
+            />
+            <Input
+              error={touched.phone && errors.phone}
+              name="phone"
+              id="phone"
+              label="Your phone number"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.phone}
+              valid={touched.phone && !errors.phone}
+            />
+            <FileUpload
+              error={touched.file && errors.file}
+              name="file"
+              id="file"
+              label="Your resume"
+              onChange={setFile}
+              onBlur={handleBlur}
+              value={values.file}
+              valid={touched.file && !errors.file}
+            />
+          </Stack>
+        </Fieldset>
+      )}
+      {formState === ERROR && (
+        <div>
+          <p>Something went wrong in submitting the form. Please try again.</p>
+        </div>
+      )}
+      {formState === SUBMITTED && (
+        <div>
+          <p>
+            Your application has been submitted. We'll get in touch with you
+            soon.
+          </p>
+        </div>
+      )}
       <Button type="submit">Submit</Button>
       <Disclaimer>Your data will be used to get in touch with you.</Disclaimer>
     </form>
   );
 };
-
-ApplyForm.propTypes = {};
 
 export default memo(ApplyForm);

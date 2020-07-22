@@ -36,5 +36,6 @@ export default yup.object().shape({
     .required(),
   phone: yup
     .string()
+    .required()
     .matches(phoneRegExp, 'Seems like you entered a wrong phone number'),
 });

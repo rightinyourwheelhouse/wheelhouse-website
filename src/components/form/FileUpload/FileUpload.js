@@ -47,6 +47,7 @@ const FileUpload = ({
         )}
         {!value && (
           <LabelInputContainer
+            padding
             className={classnames({
               active,
               error,

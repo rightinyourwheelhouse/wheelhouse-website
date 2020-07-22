@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import spacing from '~styles/spacing';
+
 export const FileUploadContainer = styled.div`
   > input {
     width: 1;

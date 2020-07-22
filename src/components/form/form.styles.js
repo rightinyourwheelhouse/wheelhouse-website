@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 export const LabelInputContainer = styled.div`
   --width: ${({ width }) => width || '100%'};
@@ -8,7 +9,10 @@ export const LabelInputContainer = styled.div`
   --active: ${colors.accent};
   --hover: ${colors.accent};
   --error: ${colors.error};
+  --spacing: 16px;
+  --height: 60px;
 
+  height: var(--height);
   align-items: center;
   background: #ffffff;
   border-radius: 2px;
@@ -18,18 +22,26 @@ export const LabelInputContainer = styled.div`
   color: var(--foreground);
   display: flex;
   font-size: 17px;
-  height: 60px;
   justify-content: flex-start;
   letter-spacing: 0;
   min-width: 100px;
   max-width: var(--width);
   outline: none;
   overflow: hidden;
-  padding: 0 16px;
   position: relative;
   text-align: left;
   transition: all 0.3s ease;
   will-change: transform;
+
+  ${({ padding }) => padding
+    && css`
+      padding: 0 var(--spacing);
+    `};
+
+  input {
+    padding: 0 var(--spacing);
+    height: var(--height);
+  }
 
   &.active {
     border: 2px solid var(--active);

@@ -53,7 +53,6 @@ const ApplyForm = () => {
       name="application-form"
       onSubmit={handleSubmit}
       data-netlify="true"
-      netlify
     >
       <Fieldset>
         <Stack>

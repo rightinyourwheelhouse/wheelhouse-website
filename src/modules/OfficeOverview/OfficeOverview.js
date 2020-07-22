@@ -23,7 +23,7 @@ const OfficeOverview = () => {
           {offices.map(({
             name, address, slug, mail, phone,
           }) => (
-            <Card>
+            <Card key={name}>
               <Link to={`/offices/${slug}`} key={slug}>
                 <h3>{name}</h3>
                 <p>{address}</p>

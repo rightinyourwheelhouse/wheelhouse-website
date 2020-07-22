@@ -28,7 +28,7 @@ const ApplyForm = () => {
     onSubmit: async (submittedValues, actions) => {
       console.log('submittedValues', submittedValues);
       await fetch('/', {
-        body: encode({ 'form-name': 'quote-form', ...submittedValues }),
+        body: encode({ 'form-name': 'application-form', ...submittedValues }),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         method: 'POST',
       });

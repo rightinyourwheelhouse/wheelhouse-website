@@ -31,7 +31,7 @@ const HorizontalItemList = ({
     const { current } = list;
 
     if (!current) {
-      return window.innerWidth;
+      return typeof window !== 'undefined' ? window.innerWidth : 0;
     }
 
     return current.scrollWidth - current.clientWidth;

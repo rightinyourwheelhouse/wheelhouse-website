@@ -31,7 +31,7 @@ const HorizontalItemList = ({
     const { current } = list;
 
     if (!current) {
-      return 0;
+      return window.innerWidth;
     }
 
     return current.scrollWidth - current.clientWidth;
@@ -72,7 +72,6 @@ const HorizontalItemList = ({
     const { current } = list;
 
     setPosition(current.scrollLeft);
-    console.log('current.scrollLeft', current.scrollLeft);
   }, []);
 
   return (

@@ -99,6 +99,9 @@ const Blog = ({
 
       <Section>
         <Container>
+          <SubTitle>careers</SubTitle>
+          <h2>Work with us</h2>
+
           <JobOverview />
         </Container>
       </Section>

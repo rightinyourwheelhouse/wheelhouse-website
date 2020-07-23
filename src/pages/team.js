@@ -96,6 +96,9 @@ const TeamPage = () => (
     </Section>
     <Section>
       <Container>
+        <SubTitle>careers</SubTitle>
+        <h2>Work with us</h2>
+
         <JobOverview />
       </Container>
     </Section>

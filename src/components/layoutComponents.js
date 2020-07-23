@@ -44,13 +44,17 @@ export const LightContent = styled.div`
 `;
 
 export const Section = styled.section`
-  background: ${({ background }) => background || 'transparent'};
+  --background: ${({ background }) => background || 'transparent'};
+  --space: ${({ space }) => space || spacing.large} 0;
+  --overflow: ${({ overflow }) => overflow || 'hidden'};
+
+  background: var(--background);
   box-sizing: border-box;
   display: block;
   min-height: 0;
-  padding: ${({ space }) => space || spacing.large} 0;
+  padding: var(--space);
 
-  overflow: ${({ overflow }) => overflow || 'hidden'};
+  overflow: var(--overflow);
   position: relative;
 
   > img {
@@ -58,7 +62,7 @@ export const Section = styled.section`
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    padding: ${({ space }) => space || spacing.big} 0;
+    padding: var(--space);
   }
 `;
 

@@ -8,6 +8,7 @@ import {
   Container,
   LightContent,
 } from '~components/layoutComponents';
+import Card from '~components/Card';
 import Content from '~components/Content';
 import SEO from '~components/SEO';
 import SubTitle from '~components/SubTitle';
@@ -15,15 +16,18 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import ApplyForm from '~modules/ApplyForm';
+import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import OpenSource from '~modules/OpenSource';
+import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 const Career = ({
   data: {
     career: {
-      city, description, requirements, title,
+      city, description, id, requirements, title,
     },
   },
 }) => (
@@ -63,6 +67,8 @@ const Career = ({
       </Container>
     </Section>
 
+    <WorkingAtmosphereGallery />
+
     <Section>
       <Container>
         <Content>
@@ -73,11 +79,21 @@ const Career = ({
       </Container>
     </Section>
 
+    <Section background={colors.backgroundTertiary}>
+      <Container>
+
+        <SubTitle>careers</SubTitle>
+        <h2>Other career opportunities</h2>
+
+        <JobOverview current={id} />
+      </Container>
+    </Section>
     <Section>
       <Container>
         <OpenSource />
       </Container>
     </Section>
+    <Section />
   </Layout>
 );
 
@@ -86,6 +102,7 @@ Career.propTypes = {
     career: PropTypes.shape({
       city: PropTypes.string,
       description: PropTypes.string,
+      id: PropTypes.string,
       requirements: PropTypes.string,
       title: PropTypes.string,
     }),
@@ -95,6 +112,7 @@ Career.propTypes = {
 export const query = graphql`
   query($slug: String!) {
     career(slug: { eq: $slug }) {
+      id
       city
       description
       requirements

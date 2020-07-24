@@ -17,27 +17,31 @@ export const ButtonContainer = styled.div`
 
   > div,
   .btn {
+
+    align-items: center;
     background: var(--background);
-    border: none;
-    border-radius: 2px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
     color: var(--foreground);
     cursor: pointer;
     display: inline-block;
-    height: 50px;
-    font-size: 14px;
-    line-height: 50px;
-    font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    padding: 0 25px 0;
     font-family: ${fonts.family};
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    line-height: 1.1rem;
+    padding: 16px 32px;
     position: relative;
+    text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     transition-duration: 0.1s;
     transition-timing-function: ease;
 
     @media screen and (min-width: ${breakpoints.small}){
-      font-size: 18px;
+
+
     }
 
     &:hover {

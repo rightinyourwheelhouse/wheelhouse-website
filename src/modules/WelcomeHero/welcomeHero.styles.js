@@ -85,7 +85,7 @@ export const MaskContainer = styled.div`
     transform-style: preserve-3d;
     transform: ${({ loaded }) => (loaded ? 'scaleX(1) scaleY(1) scaleZ(1)' : 'scale(0.01, 0.01)')};
     transition: all 0.3s;
-    transition: opacity 200ms ease 0s, transform 800ms ease-in-out 0s;
+    transition: opacity 200ms ease 0s, transform 1300ms ease-in-out 0s;
     z-index: 0;
 
     path {

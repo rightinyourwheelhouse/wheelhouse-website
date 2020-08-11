@@ -15,7 +15,7 @@ import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
-import WelcomeHero from '~modules/WelcomeHero2';
+import WelcomeHero from '~modules/WelcomeHero';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';

@@ -1,44 +1,43 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 
 import { Container } from '~components/layoutComponents';
 import Button from '~components/Button';
-import DamnBigTitle from '~components/text/DamnBigTitle';
-import ColorSpinner from '~components/ColorSpinner';
 import MarkWithContent from '~components/MarkWithContent';
-import Stack from '~components/Stack';
+
+import {
+  WelcomeHeroContainer, MaskContainer, InnerContainer, InnerContent,
+} from './welcomeHero.styles';
 
 import TeamRotation from '~modules/TeamRotation';
 
-import { WelcomeHeroContainer } from './welcomeHero.styles';
-
 import colors from '~styles/colors';
 
-import Logo from '~images/wheelhouse.svg';
+import Blob from '~images/blobs/1.svg';
+import Welcome from '~images/blobs/welcome.svg';
 
-const WelcomeHero = () => (
-  <WelcomeHeroContainer>
-    <Container>
-      <Stack space="32px">
-        <ColorSpinner color={colors.primary}>
-          <Logo />
-        </ColorSpinner>
-        <DamnBigTitle color="#EAEAEA" className="background">
-          Hi!
-          <br />
-          We&apos;re
-          {' '}
-          <br />
-          Wheelhouse
-        </DamnBigTitle>
-        <div>
-          We are a
-          {' '}
-          <MarkWithContent text="team">
-            <TeamRotation />
-          </MarkWithContent>
-          {' '}
-          of passionate JavaScript developers, eager to exchange our expertise
-          to eachother and our customers.
+const WelcomeHero = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  return (
+    <WelcomeHeroContainer>
+      <Container relative>
+        <InnerContainer loaded={loaded}>
+          <MaskContainer loaded={loaded}>
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+          </MaskContainer>
+          <Welcome />
+        </InnerContainer>
+        <InnerContent centered>
           <Button
             background={colors.primary}
             color={colors.textLight}
@@ -47,10 +46,17 @@ const WelcomeHero = () => (
           >
             Meet us
           </Button>
-        </div>
-      </Stack>
-    </Container>
-  </WelcomeHeroContainer>
-);
+          <p>
+            get to know our
+            {' '}
+            <MarkWithContent text="team">
+              <TeamRotation />
+            </MarkWithContent>
+          </p>
+        </InnerContent>
+      </Container>
+    </WelcomeHeroContainer>
+  );
+};
 
 export default memo(WelcomeHero);

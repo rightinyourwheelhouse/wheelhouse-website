@@ -10,13 +10,19 @@ export const WelcomeHeroContainer = styled.div`
   align-content: center;
   align-items: center;
   text-align: left;
-  background: ${colors.primary};
   justify-content: flex-start;
   padding: ${spacing.large} 0;
+  position: relative;
 
-  h1 {
-    max-width: 100%;
+  .background {
+    position: absolute;
+    width: 100%;
+    left: -10%;
+    top: -20%;
+    z-index: -1;
+    opacity: 0.5;
   }
+
 
   > div {
     min-height: 50vh;
@@ -25,7 +31,7 @@ export const WelcomeHeroContainer = styled.div`
   div {
     font-size: 1.6rem;
     line-height: 1.7;
-    color: ${colors.textLight};
+    /* color: ${colors.textLight}; */
     width: 100%;
 
     > div {

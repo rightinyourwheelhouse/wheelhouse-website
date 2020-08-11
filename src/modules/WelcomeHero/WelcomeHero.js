@@ -19,11 +19,13 @@ const WelcomeHero = () => (
   <WelcomeHeroContainer>
     <Container>
       <Stack space="32px">
-        <ColorSpinner>
+        <ColorSpinner color={colors.primary}>
           <Logo />
         </ColorSpinner>
-        <DamnBigTitle>
-          Hi! We&apos;re
+        <DamnBigTitle color="#EAEAEA" className="background">
+          Hi!
+          <br />
+          We&apos;re
           {' '}
           <br />
           Wheelhouse
@@ -38,10 +40,10 @@ const WelcomeHero = () => (
           of passionate JavaScript developers, eager to exchange our expertise
           to eachother and our customers.
           <Button
-            background={colors.accent}
+            background={colors.primary}
             color={colors.textLight}
-            colorHover={colors.accent}
-            backgroundHover={colors.backgroundPrimary}
+            colorHover={colors.textLight}
+            backgroundHover={colors.accent}
           >
             Meet us
           </Button>

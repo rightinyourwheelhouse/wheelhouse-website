@@ -14,12 +14,12 @@ const DEFAULT_COLORS = [
 ];
 
 export const InnerContent = styled.div`
-  z-index: 10;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  text-align: ${({ centered }) => (centered ? 'center' : 'left')};
+  max-width: 800px;
   padding-left: ${({ centered }) => (centered ? '0' : '80px')};
+  text-align: ${({ centered }) => (centered ? 'center' : 'left')};
+  z-index: 10;
 
   button {
     margin-top: 30px;
@@ -27,44 +27,36 @@ export const InnerContent = styled.div`
 `;
 
 export const WelcomeHeroContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 100vh;
   align-content: center;
   align-items: center;
-  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
+  margin-top: 30px;
+  min-height: 100vh;
   padding: ${spacing.large} 0;
   position: relative;
-  margin-top: 30px;
-
+  text-align: left;
 
   svg {
+    display: block;
+    max-width: unset !important;
     position: relative;
     z-index: 10;
-    display: block;
-
-    max-width: unset !important;
-  }
-
-  .background {
-
   }
 
   div {
     font-size: 1.6rem;
     line-height: 1.7;
-    /* color: ${colors.textLight}; */
     width: 100%;
-
   }
 
 
 
   svg {
     display: block;
-    width: 100%;
     max-width: 110px;
+    width: 100%;
   }
 `;
 
@@ -75,25 +67,25 @@ export const ButtonContainer = styled.div`
 `;
 
 export const MaskContainer = styled.div`
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
   bottom: 0px;
   display: block;
-  overflow: hidden;
-  width: 100%;
   height: 99%;
+  left: 0px;
   margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
   transition: height 0.5s;
+  width: 100%;
 
   > svg {
-    position: absolute;
     opacity: ${({ loaded }) => (loaded ? '1' : '0')};
-    transform: ${({ loaded }) => (loaded ? 'scaleX(1) scaleY(1) scaleZ(1)' : 'scale(0.01, 0.01)')};
-    transition: opacity 200ms ease 0s, transform 1800ms ease-in-out 0s;
+    position: absolute;
     transform-style: preserve-3d;
+    transform: ${({ loaded }) => (loaded ? 'scaleX(1) scaleY(1) scaleZ(1)' : 'scale(0.01, 0.01)')};
     transition: all 0.3s;
+    transition: opacity 200ms ease 0s, transform 800ms ease-in-out 0s;
     z-index: 0;
 
     path {
@@ -101,98 +93,98 @@ export const MaskContainer = styled.div`
     }
 
     &:first-of-type {
+      height: 100%;
       left: 40%;
       top: 50%;
       width: 100%;
-      height: 100%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[0]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(2) {
+      height: 160%;
       left: -20%;
       top: -58%;
       width: 110%;
-      height: 160%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[1]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(3) {
+      height: 100%;
       left: -36%;
       top: 55%;
       width: 120%;
-      height: 100%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[2]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(4) {
+      height: 100%;
       left: 10%;
       top: 100%;
       width: 100%;
-      height: 100%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[3]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(5) {
+      height: 80%;
       left: 50%;
       top: -20%;
       width: 100%;
-      height: 80%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[4]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(6) {
+      height: 100%;
       left: -25%;
       top: -15%;
       width: 60%;
-      height: 100%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[5]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(7) {
+      height: 65%;
       left: -20%;
       top: -10%;
       width: 50%;
-      height: 65%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[6]};
+        transition: all 0.3s;
       }
     }
 
     &:nth-of-type(8) {
+      height: 100%;
       left: 60%;
       top: -12%;
       width: 100%;
-      height: 100%;
 
       path {
-        transition: all 0.3s;
         fill: ${DEFAULT_COLORS[7]};
+        transition: all 0.3s;
       }
     }
   }
@@ -203,16 +195,16 @@ export const MaskContainer = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  z-index: 1;
   display: block;
-  width: 100%;
-  margin-right: auto;
   margin-left: auto;
-  z-index: -1;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: auto;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  z-index: 1;
 
   > svg {
     transition: transform 300ms ease-in-out 0s;
@@ -230,11 +222,11 @@ export const InnerContainer = styled.div`
 
         > svg {
           &:nth-of-type(${DEFAULT_COLORS.length}) {
-            transition: all 1.3s;
+            height: 200%;
             left: -50%;
             top: -30%;
+            transition: all 1.3s;
             width: 200%;
-            height: 200%;
           }
         }
       }

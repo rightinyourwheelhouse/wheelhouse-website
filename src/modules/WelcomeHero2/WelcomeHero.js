@@ -2,10 +2,13 @@ import React, { memo, useEffect, useState } from 'react';
 
 import { Container } from '~components/layoutComponents';
 import Button from '~components/Button';
+import MarkWithContent from '~components/MarkWithContent';
 
 import {
   WelcomeHeroContainer, MaskContainer, InnerContainer, InnerContent,
 } from './welcomeHero.styles';
+
+import TeamRotation from '~modules/TeamRotation';
 
 import colors from '~styles/colors';
 
@@ -43,6 +46,13 @@ const WelcomeHero = () => {
           >
             Meet us
           </Button>
+          <p>
+            get to know our
+            {' '}
+            <MarkWithContent text="team">
+              <TeamRotation />
+            </MarkWithContent>
+          </p>
         </InnerContent>
       </Container>
     </WelcomeHeroContainer>

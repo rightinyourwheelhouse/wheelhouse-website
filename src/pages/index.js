@@ -32,6 +32,36 @@ const IndexPage = () => (
 
     <Section>
       <Container>
+        <TwoColumns>
+          <div>
+            <Image filename="opportunities.jpg" alt="oppurtunities" />
+            <h3>Our job opportunities</h3>
+            <p>
+              We are looking for new colleagues in different disciplines. Might
+              you be our next team member?
+            </p>
+            <Button as={Link} to="/careers">
+              Careers
+            </Button>
+          </div>
+          <div>
+            <Image filename="wheelhouse.jpg" alt="team" />
+            <h3>About</h3>
+            <p>
+              We are a bunch of people with a major common javascript passion.
+            </p>
+            <Button as={Link} to="/team">
+              Team
+            </Button>
+          </div>
+        </TwoColumns>
+      </Container>
+    </Section>
+
+    <WorkingAtmosphereHorizontal />
+
+    <Section>
+      <Container>
         <SubTitle>Blog</SubTitle>
         <h2>Some insight in how we think</h2>
         <BlogOverview count={2} />
@@ -61,36 +91,6 @@ const IndexPage = () => (
         </LightContent>
       </Container>
     </Section>
-
-    <Section>
-      <Container>
-        <TwoColumns>
-          <div>
-            <Image filename="opportunities.jpg" alt="oppurtunities" />
-            <h3>Our job opportunities</h3>
-            <p>
-              We are looking for new colleagues in different disciplines. Might
-              you be our next team member?
-            </p>
-            <Button as={Link} to="/careers">
-              Careers
-            </Button>
-          </div>
-          <div>
-            <Image filename="wheelhouse.jpg" alt="team" />
-            <h3>About</h3>
-            <p>
-              We are a bunch of people with a major common javascript passion.
-            </p>
-            <Button as={Link} to="/team">
-              Team
-            </Button>
-          </div>
-        </TwoColumns>
-      </Container>
-    </Section>
-
-    <WorkingAtmosphereHorizontal />
 
     <Section>
       <Container>

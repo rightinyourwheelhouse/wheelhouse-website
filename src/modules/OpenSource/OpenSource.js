@@ -3,7 +3,6 @@ import React, { memo } from 'react';
 import { OpenSourceContainer } from './openSource.styles';
 
 import Button from '~components/Button';
-import Stack from '~components/Stack';
 
 import Github from '~images/github.svg';
 import colors from '~styles/colors';
@@ -15,7 +14,7 @@ const OpenSource = () => (
     <p>
       something about open sourcing the website
     </p>
-    <Button backgroundHover={colors.backgroundPrimary} colorHover={colors.textPrimary} as="a" href="/">Check it out</Button>
+    <Button backgroundHover={colors.secundary} colorHover={colors.textLight} as="a" href="/">Check it out</Button>
   </OpenSourceContainer>
 );
 

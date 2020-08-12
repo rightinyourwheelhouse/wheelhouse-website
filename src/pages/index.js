@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Button from '~components/Button';
+import Content from '~components/Content';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
@@ -17,16 +18,15 @@ import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
 import WelcomeHero from '~modules/WelcomeHero';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
+import WheelhouseDescription from '~modules/WheelhouseDescription';
 
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Great javascript experts to strengthen your team" />
     <Navigation
-      baseBackgroundColor={colors.primary}
-      baseColor={colors.textLight}
       logoInitiallyHidden
     />
 
@@ -34,33 +34,9 @@ const IndexPage = () => (
 
     <Section>
       <Container>
-        <SubTitle>Blog</SubTitle>
-        <h2>Some insight in how we think</h2>
-        <BlogOverview count={2} />
-        <Button
-          as={Link}
-          to="/"
-          color={colors.textLight}
-          colorHover={colors.textLight}
-          background={colors.primary}
-          backgroundHover={colors.accent}
-        >
-          Discover more
-        </Button>
-      </Container>
-      <Container offset={spacing.large}>
-        <Card>
-          <h2>Javascript expertise</h2>
-          <p>Something about our amazing tech stack</p>
-        </Card>
-      </Container>
-    </Section>
-
-    <Section background={colors.backgroundSecundary}>
-      <Container>
-        <LightContent>
-          <OpenSource />
-        </LightContent>
+        <Content>
+          <WheelhouseDescription />
+        </Content>
       </Container>
     </Section>
 
@@ -93,6 +69,38 @@ const IndexPage = () => (
     </Section>
 
     <WorkingAtmosphereHorizontal />
+
+    <Section>
+      <Container>
+        <SubTitle>Blog</SubTitle>
+        <h2>Some insight in how we think</h2>
+        <BlogOverview count={2} />
+        <Button
+          as={Link}
+          to="/"
+          color={colors.textLight}
+          colorHover={colors.textLight}
+          background={colors.primary}
+          backgroundHover={colors.tertiary}
+        >
+          Discover more
+        </Button>
+      </Container>
+      <Container offset={spacing.large}>
+        <Card>
+          <h2>Javascript expertise</h2>
+          <p>Something about our amazing tech stack</p>
+        </Card>
+      </Container>
+    </Section>
+
+    <Section background={colors.backgroundSecundary}>
+      <Container>
+        <LightContent>
+          <OpenSource />
+        </LightContent>
+      </Container>
+    </Section>
 
     <Section>
       <Container>

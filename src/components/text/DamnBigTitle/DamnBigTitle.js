@@ -4,7 +4,7 @@ import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 
 export default styled.h1`
-  color: ${({ color }) => color || colors.textLight};
+  color: ${({ color }) => color || colors.textPrimary};
   display: block;
   font-size: 1.75rem;
   font-weight: 900;
@@ -14,13 +14,14 @@ export default styled.h1`
   position: relative;
   margin-top: 3rem;
   margin-bottom: 16px;
+  max-width: 800px;
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    font-size: 5vw;
+    font-size: 8vw;
   }
 
   @media screen and (min-width: ${breakpoints.large}) {
-    font-size: 6rem;
+    font-size: 10rem;
     line-height: 1;
   }
 `;

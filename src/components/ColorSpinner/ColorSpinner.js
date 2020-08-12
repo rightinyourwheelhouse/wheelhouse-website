@@ -84,7 +84,7 @@ ColorSpinner.propTypes = {
 };
 
 ColorSpinner.defaultProps = {
-  color: colors.textLight,
+  color: colors.textPrimary,
   colorSelection: DEFAULT_COLORS,
 };
 

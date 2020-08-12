@@ -25,7 +25,7 @@ import spacing from '~styles/spacing';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Great javascript experts to strengthen your team" />
     <Navigation
       logoInitiallyHidden
     />
@@ -81,7 +81,7 @@ const IndexPage = () => (
           color={colors.textLight}
           colorHover={colors.textLight}
           background={colors.primary}
-          backgroundHover={colors.accent}
+          backgroundHover={colors.tertiary}
         >
           Discover more
         </Button>

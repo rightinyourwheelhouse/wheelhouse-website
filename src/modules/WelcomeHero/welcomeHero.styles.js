@@ -6,8 +6,8 @@ import spacing from '~styles/spacing';
 const DEFAULT_COLORS = [
   '#0000E0',
   '#FF8360',
-  '#F3DE2C',
-  '#754668',
+  colors.secundary,
+  colors.tertiary,
   '#0000E0',
   '#FF5E5B',
   colors.primary,

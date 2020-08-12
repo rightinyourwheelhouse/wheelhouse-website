@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Button from '~components/Button';
+import Content from '~components/Content';
 import SEO from '~components/SEO';
 import TwoColumns from '~components/TwoColumns';
 import Image from '~components/Image';
@@ -17,6 +18,7 @@ import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
 import WelcomeHero from '~modules/WelcomeHero';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
+import WheelhouseDescription from '~modules/WheelhouseDescription';
 
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
@@ -29,6 +31,14 @@ const IndexPage = () => (
     />
 
     <WelcomeHero />
+
+    <Section>
+      <Container>
+        <Content>
+          <WheelhouseDescription />
+        </Content>
+      </Container>
+    </Section>
 
     <Section>
       <Container>

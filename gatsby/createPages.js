@@ -59,7 +59,7 @@ export default async function createPages({ actions: { createPage }, graphql }) 
     createPage({
       component: path.resolve('src/templates/blog.js'),
       context: { id },
-      path: `/blog/${slug}`,
+      path: `/insights/${slug}`,
     });
   });
 }

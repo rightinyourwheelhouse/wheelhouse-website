@@ -1,12 +1,72 @@
 ---
-  backend:
-    name: github
-    repo: rightinyourwheelhouse/wheelhouse-website
   # backend:
-  #   name: proxy
-  #   proxy_url: http://localhost:8081/api/v1
-  #   branch: add-offices
+  #   name: github
+  #   repo: rightinyourwheelhouse/wheelhouse-website
+  backend:
+    name: proxy
+    proxy_url: http://localhost:8081/api/v1
+    branch: blog-to-insights-page
   collections:
+    -
+      label: Picks
+      name: pick
+      create: true
+      identifier_field: title
+      folder: src/data/insights
+      extension: json
+      fields:
+        -
+          label: Live
+          name: live
+          widget: boolean
+          default: false
+        -
+          label: ID
+          name: id
+          widget: ncw-id
+          hidden: true
+        -
+          label: Title
+          name: title
+        -
+          label: Author
+          name: author
+          widget: relation
+          collection: teammembers
+          searchFields: ['name']
+          valueField: "{{name}}"
+        -
+          tags: Tags
+          name: tags
+          widget: list
+          allow_add: true
+        -
+          label: Introduction
+          name: introduction
+          widget: markdown
+        -
+          label: Item
+          name: item
+          widget: list
+          identifier_field: title
+          fields:
+            -
+              label: Title
+              name: title
+            -
+              label: Url
+              name: url
+              pattern: ['^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?', "Must be a valid link"]
+              required: false
+            -
+              label: Description
+              name: description
+              widget: markdown
+        -
+          label: Slot
+          name: slot
+          widget: markdown
+          required: false
     -
       label: Team member
       name: teammembers

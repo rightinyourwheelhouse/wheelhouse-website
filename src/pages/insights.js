@@ -10,9 +10,9 @@ import Layout from '~layouts/default';
 import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 
-const TeamPage = () => (
+const InsightsPage = () => (
   <Layout>
-    <SEO title="Blogposts about javascript in wheelhouse" />
+    <SEO title="Insights and blogposts from us" />
     <Navigation />
 
     <Section>
@@ -30,4 +30,4 @@ const TeamPage = () => (
   </Layout>
 );
 
-export default TeamPage;
+export default InsightsPage;

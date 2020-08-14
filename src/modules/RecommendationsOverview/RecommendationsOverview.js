@@ -21,14 +21,15 @@ const RecommendationsOverview = ({ count, current }) => {
       <Stack space="60px">
         <div>
           {recommendations.map(({
-            title, date, author, description,
+            title, date, author, description, introduction, slot,
           }) => {
             const url = `/recommendations/${toKebab(title)}`;
+            const { text: time } = readingTime(introduction + slot);
 
             return (
               <RecommendationsItemContainer>
                 <Stack>
-                  <Info date={toShortDate(date)} author={author} readTime="2 min read" />
+                  <Info date={toShortDate(date)} author={author} readTime={time} />
                   <h3>{title}</h3>
                   <p>{description}</p>
 

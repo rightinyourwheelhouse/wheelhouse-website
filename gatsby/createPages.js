@@ -7,7 +7,7 @@ export default async function createPages({
 }) {
   const { data } = await graphql(`
     query {
-      allRecommendationsJson {
+      allRecommendationsJson(filter: { live: { eq: true } }) {
         edges {
           node {
             id

@@ -39,7 +39,6 @@ export const useTeam = (name) => {
   }, [edges]);
 
   if (name) {
-    console.log(items[0]);
     return items.length > 0 ? items[0] : null;
   }
 

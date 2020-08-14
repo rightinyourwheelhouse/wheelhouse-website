@@ -22,13 +22,14 @@
   "author": "Daren Malfait",
   "live": false,
   "date": "2020-08-14T10:43:30.313Z",
-  "title": "4 VSCode plugin to use for day-to-day javascript programming",
+  "title": "3 VSCode plugins I use for day-to-day javascript programming",
   "tags": [
     "vscode",
-    "plugins"
+    "plugins",
+    "javascript"
   ],
-  "description": "A curated list of plugins I could not live without.",
   "introduction": "My preferred editor at the moment is VSCode. I have set it up so it matches my way of programming so much that I would be lost to a certain point without it. A part of that setup are plugins. \n",
   "image": "assets/vscode-background.png",
-  "slot": "this should be optional"
+  "description": "A curated list of plugins I could not live without.",
+  "slot": "This blog isn't finished and shouldn't be live. It's only live for demo purposes."
 }

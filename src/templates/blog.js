@@ -43,7 +43,7 @@ const Blog = ({
   return (
     <Layout>
       <SEO
-        title={`Vacancy ${title} at Wheelhouse ${title}`}
+        title={`${title}`}
         description={title}
       />
 

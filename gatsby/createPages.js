@@ -1,9 +1,20 @@
 import path from 'path';
 import { toKebab } from '../src/utils/string';
 
-export default async function createPages({ actions: { createPage }, graphql }) {
+export default async function createPages({
+  actions: { createPage },
+  graphql,
+}) {
   const { data } = await graphql(`
     query {
+      allRecommendationsJson {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
       allOfficesJson {
         edges {
           node {
@@ -31,7 +42,23 @@ export default async function createPages({ actions: { createPage }, graphql }) 
     }
   `);
 
-  const { allCareer, allOfficesJson, allFeedBlog } = data;
+  const {
+    allRecommendationsJson,
+    allCareer,
+    allOfficesJson,
+    allFeedBlog,
+  } = data;
+
+  // recommendations
+  allRecommendationsJson.edges.forEach(({ node: { id, title } }) => {
+    const slug = toKebab(title);
+
+    createPage({
+      component: path.resolve('src/templates/recommendations.js'),
+      context: { id },
+      path: `/recommendations/${slug}`,
+    });
+  });
 
   // offices
   allOfficesJson.edges.forEach(({ node: { id, name } }) => {

@@ -41,6 +41,10 @@
           widget: list
           allow_add: true
         -
+          label: image
+          name: image
+          widget: image
+        -
           label: Introduction
           name: introduction
           widget: markdown
@@ -53,6 +57,9 @@
             -
               label: Title
               name: title
+            -
+              label: Author
+              name: author
             -
               label: Url
               name: url

@@ -14,6 +14,7 @@ export default styled.div`
   > * {
     width: 100%;
     margin-bottom: 2%;
+    margin-bottom: ${spacing.default};
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {

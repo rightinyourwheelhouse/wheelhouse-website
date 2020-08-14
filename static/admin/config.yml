@@ -26,6 +26,12 @@
           widget: ncw-id
           hidden: true
         -
+          label: Date
+          name: Date
+          widget: datetime
+          dateFormat: D MMM YYYY
+          timeFormat: false
+        -
           label: Title
           name: title
         -
@@ -44,6 +50,7 @@
           label: image
           name: image
           widget: image
+          required: false
         -
           label: Introduction
           name: introduction
@@ -60,6 +67,7 @@
             -
               label: Author
               name: author
+              required: false
             -
               label: Url
               name: url

@@ -21,6 +21,19 @@ export const InfoContent = styled.div`
   }
 `;
 
+export const Avatar = styled.div`
+  --avatar-size: 36px;
+  width: calc(var(--avatar-size) * 2);
+  height: var(--avatar-size);
+  border-radius: 100%;
+  overflow: hidden;
+
+  > div {
+    height: var(--avatar-size);
+    width: var(--avatar-size);
+  }
+`;
+
 export const Title = styled.span`
   --color: ${colors.textPrimary};
 

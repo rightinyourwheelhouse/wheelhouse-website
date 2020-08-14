@@ -62,7 +62,7 @@ const Blog = ({
         <ImageTitle image={<Img fluid={fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <Info title={creator} description={`${isoDate} · ${time}`}>
+          <Info author={creator} date={isoDate} readTime={time}>
             <div>
               <FacebookShareButton url={url}>
                 <FacebookIcon />

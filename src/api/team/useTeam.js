@@ -23,16 +23,25 @@ const query = graphql`
   }
 `;
 
-export const useTeam = () => {
+export const useTeam = (name) => {
   const {
     allTeamJson: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node }));
+    let nodes = edges.map(({ node }) => ({ ...node }));
+
+    if (name) {
+      nodes = nodes.filter(({ name: n }) => name === n);
+    }
 
     return nodes;
   }, [edges]);
+
+  if (name) {
+    console.log(items[0]);
+    return items.length > 0 ? items[0] : null;
+  }
 
   return items;
 };

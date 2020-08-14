@@ -1,21 +1,32 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 import {
-  InfoContainer, Description, Title, InfoContent,
+  Avatar, InfoContainer, Description, Title, InfoContent,
 } from './info.styles';
 
 import TwoColumns from '~components/TwoColumns';
 
-const Info = ({ children, description, title }) => {
+import { useTeam } from '~api/team/useTeam';
+
+const Info = ({
+  author, children, date, readTime,
+}) => {
   const Wrapper = children ? TwoColumns : 'div';
+  const { image } = useTeam(author) || {};
 
   return (
     <InfoContainer>
       <Wrapper>
+        {image && (
+        <Avatar>
+          <Img fluid={image.childImageSharp.fluid} />
+        </Avatar>
+        )}
         <div>
-          <Title>{title}</Title>
-          <Description>{description}</Description>
+          <Title>{author}</Title>
+          <Description>{`${date} · ${readTime}`}</Description>
         </div>
         {children && <InfoContent>{children}</InfoContent>}
       </Wrapper>
@@ -24,13 +35,14 @@ const Info = ({ children, description, title }) => {
 };
 
 Info.propTypes = {
+  author: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node,
     PropTypes.arrayOf,
   ]),
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  readTime: PropTypes.string.isRequired,
 };
 
 Info.defaultProps = {

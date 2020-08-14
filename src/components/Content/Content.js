@@ -7,7 +7,7 @@ export default styled.div`
   margin-top: 5vw;
   width: 100%;
 
-  h2 {
+  h2, h1 {
     margin-bottom: ${spacing.default};
   }
 

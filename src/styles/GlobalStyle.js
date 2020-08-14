@@ -129,7 +129,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 1rem;
 
     &:not(:first-of-type){
-      margin-top: 2.8rem;
+      margin-top: 3.8rem;
     }
 
     @media screen and (min-width: ${breakpoints.small}){

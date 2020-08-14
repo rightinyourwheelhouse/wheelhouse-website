@@ -7,6 +7,7 @@ export const WheelhouseDescriptionContainer = styled.div`
   position: relative;
 
   h1 {
+    margin-top: 0;
     position: absolute;
     top: -2rem;
     left: -2rem;

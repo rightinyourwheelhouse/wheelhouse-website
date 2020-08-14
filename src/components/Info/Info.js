@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import {
-  Avatar, InfoContainer, Description, Title, InfoContent,
+  Avatar, InfoContainer, Description, Title, InfoContent, MainContentContainer,
 } from './info.styles';
 
 import TwoColumns from '~components/TwoColumns';
@@ -19,15 +19,17 @@ const Info = ({
   return (
     <InfoContainer>
       <Wrapper>
-        {image && (
-        <Avatar>
-          <Img fluid={image.childImageSharp.fluid} />
-        </Avatar>
-        )}
-        <div>
-          <Title>{author}</Title>
-          <Description>{`${date} · ${readTime}`}</Description>
-        </div>
+        <MainContentContainer>
+          {image && (
+          <Avatar>
+            <Img fluid={image.childImageSharp.fluid} />
+          </Avatar>
+          )}
+          <div>
+            <Title>{author}</Title>
+            <Description>{`${date} · ${readTime}`}</Description>
+          </div>
+        </MainContentContainer>
         {children && <InfoContent>{children}</InfoContent>}
       </Wrapper>
     </InfoContainer>

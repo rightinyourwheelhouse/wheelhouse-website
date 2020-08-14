@@ -6,7 +6,7 @@ import Stack from '~components/Stack';
 
 import { BlogItemContainer, BlogContainer } from './blogOverview.styles';
 
-import { useBlogOverview } from '~api/blog/useBlogOverview';
+import { useBlogOverview } from '~api/insights/useBlogOverview';
 
 import { toKebab } from '~utils/string';
 

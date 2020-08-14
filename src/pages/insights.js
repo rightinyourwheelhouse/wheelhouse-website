@@ -8,6 +8,7 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import BlogOverview from '~modules/BlogOverview';
+import RecommendationsOverview from '~modules/RecommendationsOverview';
 import Navigation from '~modules/Navigation';
 
 const InsightsPage = () => (
@@ -15,6 +16,18 @@ const InsightsPage = () => (
     <SEO title="Insights and blogposts from us" />
     <Navigation />
 
+    <Section>
+      <Container>
+        <Content>
+          <SubTitle>Picks</SubTitle>
+          <h2>Wheelhouse recommendations</h2>
+          <p>
+            Some text about blogposts and why we like them
+          </p>
+          <RecommendationsOverview />
+        </Content>
+      </Container>
+    </Section>
     <Section>
       <Container>
         <Content>

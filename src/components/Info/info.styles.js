@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 import colors from '~styles/colors';
 
-export const InfoContainer = styled.div``;
+export const InfoContainer = styled.div`
+`;
 
 export const InfoContent = styled.div`
   div {
@@ -23,15 +24,21 @@ export const InfoContent = styled.div`
 
 export const Avatar = styled.div`
   --avatar-size: 36px;
-  width: calc(var(--avatar-size) * 2);
+  width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 100%;
   overflow: hidden;
+  margin-right: 12px;
 
   > div {
     height: var(--avatar-size);
     width: var(--avatar-size);
   }
+`;
+
+export const MainContentContainer = styled.div`
+  display: flex;
+  flex-wrap: no-wrap;
 `;
 
 export const Title = styled.span`

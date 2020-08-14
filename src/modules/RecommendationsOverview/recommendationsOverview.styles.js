@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 export const RecommendationsContainer = styled.div`
   margin: 32px 0;
@@ -11,13 +11,15 @@ export const RecommendationsItemContainer = styled.div`
   float: left;
   clear: left;
   margin-top: 16px;
+  padding-bottom: ${spacing.default};
+  margin-bottom: ${spacing.default};
 
-  &:hover {
-    color: ${colors.primary};
+  &:not(:last-child){
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
   p {
-    margin: 0%;
+    margin: 6px 0;
     font-size: 1rem;
   }
 `;

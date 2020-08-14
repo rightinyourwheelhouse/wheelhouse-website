@@ -4,30 +4,39 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import Stack from '~components/Stack';
 
+import Info from '~components/Info';
+
 import { RecommendationsItemContainer, RecommendationsContainer } from './recommendationsOverview.styles';
 
-import { useBlogOverview } from '~api/insights/useBlogOverview';
+import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 
 import { toKebab } from '~utils/string';
+import { toShortDate } from '~utils/date';
 
 const RecommendationsOverview = ({ count, current }) => {
-  const [insights] = useBlogOverview({ count, current });
+  const [recommendations] = useRecommendationsOverview({ count, current });
 
   return (
     <RecommendationsContainer>
       <Stack space="60px">
         <div>
-          {insights.map(({ title, content: { encoded } }) => {
-            const { text: time } = readingTime(encoded);
+          {recommendations.map(({
+            title, date, author, description,
+          }) => {
             const url = `/recommendations/${toKebab(title)}`;
 
             return (
-              <Link key={title} to={url} rel="noopener noreferrer" target="_blank">
-                <RecommendationsItemContainer>
+              <RecommendationsItemContainer>
+                <Stack>
+                  <Info date={toShortDate(date)} author={author} readTime="2 min read" />
                   <h3>{title}</h3>
-                  <p>{time}</p>
-                </RecommendationsItemContainer>
-              </Link>
+                  <p>{description}</p>
+
+                  <Link key={title} to={url}>
+                    read more...
+                  </Link>
+                </Stack>
+              </RecommendationsItemContainer>
             );
           })}
         </div>

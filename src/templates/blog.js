@@ -20,8 +20,6 @@ import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
-// import FacebookIcon from '~images/icons/facebook.svg';
-
 const isWindowContext = typeof window !== 'undefined';
 
 const Blog = ({

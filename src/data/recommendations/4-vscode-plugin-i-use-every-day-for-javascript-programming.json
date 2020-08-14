@@ -2,21 +2,27 @@
   "items": [
     {
       "title": "ESLint",
-      "author": "nobody",
-      "url": "/",
+      "author": "Dirk Baeumer",
+      "url": "https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
       "description": "With this plugin I make sure that the code formats according to the `.eslint` file inside the project I am working at on save. That way my code is always formatted according to the ruleset that has been decided at an earlier stage."
     },
     {
       "title": "React Hooks Snippets",
-      "description": "I use a lot of custom snippets, but for most hooks this plugin works really well."
+      "description": "I use a lot of custom snippets, but for most hooks this plugin works really well.",
+      "url": "https://marketplace.visualstudio.com/items?itemName=AlDuncanson.react-hooks-snippets",
+      "author": "Al Duncanson"
     },
     {
       "title": "Settings Sync",
-      "description": "To keep my editors synced and so I don't need to keep track of every plugin I install I sync them using Settings Sync. "
+      "description": "To keep my editors synced and so I don't need to keep track of every plugin I install I sync them using Settings Sync. ",
+      "url": "https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync",
+      "author": "Shan Khan"
     },
     {
       "title": "Cobalt2 Theme Official",
-      "description": "My brain seems to love the color palette used in that theme. "
+      "description": "My brain seems to love the color palette used in that theme. ",
+      "url": "https://github.com/wesbos/cobalt2-vscode",
+      "author": "Wes Bos"
     }
   ],
   "author": "Daren Malfait",
@@ -31,5 +37,5 @@
   "introduction": "My preferred editor at the moment is VSCode. I have set it up so it matches my way of programming so much that I would be lost to a certain point without it. A part of that setup are plugins. \n",
   "image": "assets/vscode-background.png",
   "description": "A curated list of plugins I could not live without.",
-  "slot": "This blog isn't finished and shouldn't be live. It's only live for demo purposes."
+  "slot": ""
 }

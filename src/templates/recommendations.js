@@ -75,7 +75,6 @@ const Recommendations = ({
       title,
       items,
       tags,
-      description,
       introduction,
       slot,
       image,
@@ -213,12 +212,11 @@ export const query = graphql`
         description
       }
       tags
-      description
       introduction
       slot
       image {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

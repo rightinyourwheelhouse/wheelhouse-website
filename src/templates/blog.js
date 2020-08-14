@@ -4,20 +4,13 @@ import readingTime from 'reading-time';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-} from 'react-share';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import ImageTitle from '~components/ImageTitle';
 import Info from '~components/Info';
 import SEO from '~components/SEO';
+import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
@@ -63,21 +56,7 @@ const Blog = ({
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
           <Info author={creator} date={isoDate} readTime={time}>
-            <div>
-              <FacebookShareButton url={url}>
-                <FacebookIcon />
-              </FacebookShareButton>
-            </div>
-            <div>
-              <TwitterShareButton url={url}>
-                <TwitterIcon />
-              </TwitterShareButton>
-            </div>
-            <div>
-              <LinkedinShareButton url={url}>
-                <LinkedinIcon />
-              </LinkedinShareButton>
-            </div>
+            <Share url={url} />
           </Info>
         </ImageTitle>
         <Container>

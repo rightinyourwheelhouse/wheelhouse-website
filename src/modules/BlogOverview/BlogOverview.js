@@ -19,7 +19,7 @@ const BlogOverview = ({ count, current }) => {
         <div>
           {blogItems.map(({ title, content: { encoded } }) => {
             const { text: time } = readingTime(encoded);
-            const url = `/blog/${toKebab(title)}`;
+            const url = `/insights/${toKebab(title)}`;
 
             return (
               <Link key={title} to={url} rel="noopener noreferrer" target="_blank">

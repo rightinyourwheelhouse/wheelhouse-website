@@ -1,12 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import colors from '~styles/colors';
+
+const shake = () => keyframes`
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%,
+    60% {
+        transform: translateX(-10px);
+    }
+    40%,
+    80% {
+        transform: translateX(10px);
+    }
+`;
 
 export const LabelInputContainer = styled.div`
   --width: ${({ width }) => width || '100%'};
   --foreground: ${colors.textPrimary};
-  --active: ${colors.accent};
-  --hover: ${colors.accent};
+  --active: ${colors.textPrimary};
+  --hover: ${colors.textPrimary};
   --error: ${colors.error};
   --spacing: 16px;
   --height: 60px;
@@ -47,6 +61,7 @@ export const LabelInputContainer = styled.div`
   }
 
   &.error {
+    animation: 0.5s ${shake};
     border: 2px solid var(--error);
   }
 

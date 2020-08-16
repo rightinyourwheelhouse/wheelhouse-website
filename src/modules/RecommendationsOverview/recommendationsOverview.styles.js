@@ -14,6 +14,10 @@ export const RecommendationsItemContainer = styled.div`
   padding-bottom: ${spacing.default};
   margin-bottom: ${spacing.default};
 
+  h3 {
+    text-transform: none;
+  }
+
   &:not(:last-child){
     border-bottom: 1px solid rgba(0,0,0,0.05);
   }
@@ -23,3 +27,5 @@ export const RecommendationsItemContainer = styled.div`
     font-size: 1rem;
   }
 `;
+
+export const RecommendationsImage = styled.div``;

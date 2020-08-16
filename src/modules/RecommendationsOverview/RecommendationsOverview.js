@@ -2,11 +2,16 @@ import React, { memo } from 'react';
 import readingTime from 'reading-time';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import Stack from '~components/Stack';
+import Img from 'gatsby-image';
 
+import Stack from '~components/Stack';
 import Info from '~components/Info';
 
-import { RecommendationsItemContainer, RecommendationsContainer } from './recommendationsOverview.styles';
+import {
+  RecommendationsItemContainer,
+  RecommendationsContainer,
+  RecommendationsImage,
+} from './recommendationsOverview.styles';
 
 import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 
@@ -18,10 +23,10 @@ const RecommendationsOverview = ({ count, current }) => {
 
   return (
     <RecommendationsContainer>
-      <Stack space="60px">
-        <div>
-          {recommendations.map(({
-            title, date, author, description, introduction, slot,
+      <div>
+        {recommendations.map(
+          ({
+            title, date, author, description, introduction, slot, image,
           }) => {
             const url = `/recommendations/${toKebab(title)}`;
             const { text: time } = readingTime(introduction + slot);
@@ -29,19 +34,29 @@ const RecommendationsOverview = ({ count, current }) => {
             return (
               <RecommendationsItemContainer>
                 <Stack>
-                  <Info date={toShortDate(date)} author={author} readTime={time} />
-                  <h3>{title}</h3>
+                  {image && (
+                  <Link key={title} to={url}>
+                    <RecommendationsImage>
+                      <Img fluid={image.childImageSharp.fluid} />
+                    </RecommendationsImage>
+                  </Link>
+                  )}
+                  <Link key={title} to={url}>
+                    <h3>{title}</h3>
+                  </Link>
                   <p>{description}</p>
 
-                  <Link key={title} to={url}>
-                    read more...
-                  </Link>
+                  <Info
+                    date={toShortDate(date)}
+                    author={author}
+                    readTime={time}
+                  />
                 </Stack>
               </RecommendationsItemContainer>
             );
-          })}
-        </div>
-      </Stack>
+          }
+        )}
+      </div>
     </RecommendationsContainer>
   );
 };

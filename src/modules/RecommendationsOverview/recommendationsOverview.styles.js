@@ -4,6 +4,25 @@ import spacing from '~styles/spacing';
 
 export const RecommendationsContainer = styled.div`
   margin: 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 25%;
+    justify-content: space-evenly;
+    max-width: 25%;
+    padding: 0;
+
+    &:first-of-type {
+      flex: 0 0 75%;
+      max-width: 75%;
+      padding-right: ${spacing.default};
+      justify-content: flex-start;
+    }
+  }
 `;
 
 export const RecommendationsItemContainer = styled.div`
@@ -13,13 +32,20 @@ export const RecommendationsItemContainer = styled.div`
   margin-top: 16px;
   padding-bottom: ${spacing.default};
   margin-bottom: ${spacing.default};
+  width: 100%;
+
+  &.sticky {
+    position: sticky;
+    top: 90px;
+    height: calc(${({ height }) => `${height}px`});
+  }
 
   h3 {
     text-transform: none;
   }
 
-  &:not(:last-child){
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   p {
@@ -28,4 +54,13 @@ export const RecommendationsItemContainer = styled.div`
   }
 `;
 
-export const RecommendationsImage = styled.div``;
+export const RecommendationsImage = styled.div`
+  overflow: hidden;
+  > div {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+`;

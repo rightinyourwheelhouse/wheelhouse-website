@@ -17,13 +17,14 @@ const query = graphql`
               }
             }
           }
+          visible
         }
       }
     }
   }
 `;
 
-export const useTeam = (name) => {
+export const useTeam = (name, includeInvisible = false) => {
   const {
     allTeamJson: { edges },
   } = useStaticQuery(query);
@@ -33,6 +34,10 @@ export const useTeam = (name) => {
 
     if (name) {
       nodes = nodes.filter(({ name: n }) => name === n);
+    }
+
+    if (!includeInvisible) {
+      nodes = nodes.filter(({ visible }) => !!visible);
     }
 
     return nodes;

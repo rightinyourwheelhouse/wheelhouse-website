@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
   query {
-    allRecommendationsJson(filter: { live: { eq: true } }) {
+    allRecommendationsJson(filter: { live: { eq: true } }, sort: {fields: date, order: DESC}) {
       edges {
         node {
           id

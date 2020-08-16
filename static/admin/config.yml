@@ -92,6 +92,11 @@
           name: name
           widget: string
         -
+          label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        -
           label: Role
           name: role
         -

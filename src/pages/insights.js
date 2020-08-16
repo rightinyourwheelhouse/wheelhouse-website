@@ -24,8 +24,8 @@ const InsightsPage = () => (
           <p>
             Some text about blogposts and why we like them
           </p>
-          <RecommendationsOverview />
         </Content>
+        <RecommendationsOverview />
       </Container>
     </Section>
     <Section>

@@ -14,7 +14,7 @@ const Info = ({
   author, children, date, readTime,
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
-  const { image } = useTeam(author) || {};
+  const { image } = useTeam(author, true) || {};
 
   return (
     <InfoContainer>

@@ -15,10 +15,6 @@ export const StickyAsideItemContainer = styled.div`
     text-transform: none;
   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
   p {
     margin: 6px 0;
     font-size: 1rem;
@@ -38,7 +34,7 @@ export const StickyAsideContainer = styled.div`
 
           > div {
             width: 32%;
-            &:not(:nth-child(3n +1)){
+            &:not(:nth-child(3n + 1)) {
               margin-left: 2%;
             }
           }
@@ -76,6 +72,14 @@ export const StickyAsideContainer = styled.div`
                 position: sticky;
                 top: 90px;
                 height: var(--stickyHeight);
+              }
+            }
+
+            &:last-of-type {
+              ${StickyAsideItemContainer} {
+                &:not(:last-of-type) {
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
               }
             }
           }

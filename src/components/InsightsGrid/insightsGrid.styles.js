@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import spacing from '~styles/spacing';
 import breakpoints from '~styles/breakpoints';
 
-export const StickyAsideItemContainer = styled.div`
+export const InsightsGridItemContainer = styled.div`
   display: block;
 
   margin-top: 16px;
@@ -21,7 +21,7 @@ export const StickyAsideItemContainer = styled.div`
   }
 `;
 
-export const StickyAsideContainer = styled.div`
+export const InsightsGridContainer = styled.div`
   ${({ layout }) => {
     if (layout === 'column') {
       return css`
@@ -68,7 +68,7 @@ export const StickyAsideContainer = styled.div`
               padding-left: ${({ reverse }) => (reverse ? spacing.default : '0')};
               justify-content: flex-start;
 
-              ${StickyAsideItemContainer} {
+              ${InsightsGridItemContainer} {
                 position: sticky;
                 top: 90px;
                 height: var(--stickyHeight);
@@ -76,7 +76,7 @@ export const StickyAsideContainer = styled.div`
             }
 
             &:last-of-type {
-              ${StickyAsideItemContainer} {
+              ${InsightsGridItemContainer} {
                 &:not(:last-of-type) {
                   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                 }
@@ -89,7 +89,7 @@ export const StickyAsideContainer = styled.div`
   }}
 `;
 
-export const StickyAsideImage = styled.div`
+export const InsightsGridImage = styled.div`
   overflow: hidden;
 
   > div {

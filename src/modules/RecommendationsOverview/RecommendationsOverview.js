@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import readingTime from 'reading-time';
 import PropTypes from 'prop-types';
 
-import StickyAside from '~components/StickyAside';
+import InsightsGrid from '~components/InsightsGrid';
 
 import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 
@@ -34,7 +34,7 @@ const RecommendationsOverview = ({ count, current }) => {
     [allRecommendations]
   );
 
-  return <StickyAside items={items} layout="column" />;
+  return <InsightsGrid items={items} layout="column" />;
 };
 
 RecommendationsOverview.propTypes = {

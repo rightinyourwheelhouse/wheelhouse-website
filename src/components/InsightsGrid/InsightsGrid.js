@@ -9,15 +9,15 @@ import Stack from '~components/Stack';
 import Info from '~components/Info';
 
 import {
-  StickyAsideItemContainer,
-  StickyAsideContainer,
-  StickyAsideImage,
-} from './stickyAside.styles';
+  InsightsGridItemContainer,
+  InsightsGridContainer,
+  InsightsGridImage,
+} from './insightsGrid.styles';
 
-const StickyAsideOverview = ({ items, layout, reverse }) => {
+const InsightsGridOverview = ({ items, layout, reverse }) => {
   const [firstItemHeight, setfirstItemHeight] = useState(0);
 
-  const StickyAside = useMemo(() => [...items.slice(1, items.length)], [items]);
+  const InsightsGrid = useMemo(() => [...items.slice(1, items.length)], [items]);
 
   const {
     author: firstItemAuthor,
@@ -44,17 +44,17 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
   }, [layout]);
 
   return (
-    <StickyAsideContainer stickyHeight={firstItemHeight} layout={layout} reverse={reverse}>
+    <InsightsGridContainer stickyHeight={firstItemHeight} layout={layout} reverse={reverse}>
       <ContainerElement>
         {firstItemTitle && (
-          <StickyAsideItemContainer>
+          <InsightsGridItemContainer>
             <div ref={refCallback}>
               <Stack>
                 {firstItemImage && (
                   <Link to={firstItemUrl}>
-                    <StickyAsideImage>
+                    <InsightsGridImage>
                       <Img fluid={firstItemImage.childImageSharp.fluid} />
-                    </StickyAsideImage>
+                    </InsightsGridImage>
                   </Link>
                 )}
                 <Link to={firstItemUrl}>
@@ -69,11 +69,11 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
                 />
               </Stack>
             </div>
-          </StickyAsideItemContainer>
+          </InsightsGridItemContainer>
         )}
       </ContainerElement>
       <ContainerElement>
-        {StickyAside.map(
+        {InsightsGrid.map(
           ({
             author: itemAuthor,
             date: itemDate,
@@ -83,13 +83,13 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
             title: itemTitle,
             url: itemUrl,
           }) => (
-            <StickyAsideItemContainer key={itemTitle}>
+            <InsightsGridItemContainer key={itemTitle}>
               <Stack>
                 {itemImage && (
                   <Link to={itemUrl}>
-                    <StickyAsideImage>
+                    <InsightsGridImage>
                       <Img fluid={itemImage.childImageSharp.fluid} />
-                    </StickyAsideImage>
+                    </InsightsGridImage>
                   </Link>
                 )}
                 <Link to={itemUrl}>
@@ -103,15 +103,15 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
                   readTime={itemReadTime}
                 />
               </Stack>
-            </StickyAsideItemContainer>
+            </InsightsGridItemContainer>
           )
         )}
       </ContainerElement>
-    </StickyAsideContainer>
+    </InsightsGridContainer>
   );
 };
 
-StickyAsideOverview.propTypes = {
+InsightsGridOverview.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       author: PropTypes.string,
@@ -127,10 +127,10 @@ StickyAsideOverview.propTypes = {
   reverse: PropTypes.bool,
 };
 
-StickyAsideOverview.defaultProps = {
+InsightsGridOverview.defaultProps = {
   items: [],
   layout: 'highlight',
   reverse: false,
 };
 
-export default memo(StickyAsideOverview);
+export default memo(InsightsGridOverview);

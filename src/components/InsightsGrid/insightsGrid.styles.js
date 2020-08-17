@@ -8,9 +8,21 @@ import gridLayouts from './insightsGrid.layouts';
 
 export const InsightsGridImage = styled.div`
   overflow: hidden;
+  height: 215px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 
   > div {
     transition: all 0.3s;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+    }
 
     &:hover {
       transform: scale(1.02);
@@ -97,6 +109,10 @@ export const InsightsGridContainer = styled.div`
           display: flex;
           flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
           flex-wrap: wrap;
+
+          ${InsightsGridImage} {
+            height: unset;
+          }
 
           > div {
             display: flex;

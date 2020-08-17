@@ -5,7 +5,6 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import Stack from '~components/Stack';
 import Info from '~components/Info';
 
 import {

@@ -12,7 +12,10 @@ import {
   InsightsGridItemContainer,
   InsightsGridContainer,
   InsightsGridImage,
+  Type,
 } from './insightsGrid.styles';
+
+import gridLayouts from './insightsGrid.layouts';
 
 const InsightsGridOverview = ({ items, layout, reverse }) => {
   const [firstItemHeight, setfirstItemHeight] = useState(0);
@@ -26,6 +29,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
     image: firstItemImage,
     readTime: firstItemReadTime,
     title: firstItemTitle,
+    type: firstItemType,
     url: firstItemUrl,
   } = items[0] || {};
 
@@ -36,7 +40,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
   }, []);
 
   const ContainerElement = useMemo(() => {
-    if (layout === 'column') {
+    if (layout === gridLayouts.COLUMN) {
       return React.Fragment;
     }
 
@@ -57,6 +61,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
                     </InsightsGridImage>
                   </Link>
                 )}
+                <Type>{firstItemType}</Type>
                 <Link to={firstItemUrl}>
                   <h3>{firstItemTitle}</h3>
                 </Link>
@@ -81,6 +86,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
             image: itemImage,
             readTime: itemReadTime,
             title: itemTitle,
+            type: itemType,
             url: itemUrl,
           }) => (
             <InsightsGridItemContainer key={itemTitle}>
@@ -92,6 +98,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
                     </InsightsGridImage>
                   </Link>
                 )}
+                <Type>{itemType}</Type>
                 <Link to={itemUrl}>
                   <h3>{itemTitle}</h3>
                 </Link>
@@ -123,7 +130,7 @@ InsightsGridOverview.propTypes = {
       url: PropTypes.string,
     })
   ),
-  layout: PropTypes.oneOf(['highlight', 'column']),
+  layout: PropTypes.oneOf(Object.entries(gridLayouts)),
   reverse: PropTypes.bool,
 };
 

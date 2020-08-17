@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components';
 
 import spacing from '~styles/spacing';
 import breakpoints from '~styles/breakpoints';
+import colors from '~styles/colors';
+
+import gridLayouts from './insightsGrid.layouts';
 
 export const InsightsGridItemContainer = styled.div`
   display: block;
@@ -15,6 +18,10 @@ export const InsightsGridItemContainer = styled.div`
     text-transform: none;
   }
 
+  a {
+    margin-top: 0;
+  }
+
   p {
     margin: 6px 0;
     font-size: 1rem;
@@ -23,7 +30,7 @@ export const InsightsGridItemContainer = styled.div`
 
 export const InsightsGridContainer = styled.div`
   ${({ layout }) => {
-    if (layout === 'column') {
+    if (layout === gridLayouts.COLUMN) {
       return css`
         @media screen and (min-width: ${breakpoints.small}) {
           margin: 32px 0;
@@ -42,7 +49,7 @@ export const InsightsGridContainer = styled.div`
       `;
     }
 
-    if (layout === 'highlight') {
+    if (layout === gridLayouts.HIGHLIGHT) {
       return css`
         @media screen and (min-width: ${breakpoints.small}) {
           --stickyHeight: ${({ stickyHeight }) => `${stickyHeight}px`};
@@ -87,6 +94,16 @@ export const InsightsGridContainer = styled.div`
       `;
     }
   }}
+`;
+
+export const Type = styled.span`
+  display: block;
+  line-height: 2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: ${colors.primary};
+  font-weight: bold;
+  margin: 6px 0;
 `;
 
 export const InsightsGridImage = styled.div`

@@ -2,14 +2,14 @@ import React, { memo, useMemo } from 'react';
 import readingTime from 'reading-time';
 import PropTypes from 'prop-types';
 
-import InsightsGrid from '~components/InsightsGrid';
+import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
 
 import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 
 import { toKebab } from '~utils/string';
 import { toShortDate } from '~utils/date';
 
-const RecommendationsOverview = ({ count, current }) => {
+const RecommendationsOverview = ({ count, current, layout }) => {
   const [allRecommendations] = useRecommendationsOverview({ count, current });
 
   const items = useMemo(
@@ -27,6 +27,7 @@ const RecommendationsOverview = ({ count, current }) => {
           image,
           readTime,
           title,
+          type: 'recommendation',
           url,
         };
       }
@@ -34,17 +35,19 @@ const RecommendationsOverview = ({ count, current }) => {
     [allRecommendations]
   );
 
-  return <InsightsGrid items={items} layout="column" />;
+  return <InsightsGrid items={items} layout={layout} />;
 };
 
 RecommendationsOverview.propTypes = {
   count: PropTypes.number,
   current: PropTypes.string,
+  layout: PropTypes.oneOf(Object.entries(gridLayouts)),
 };
 
 RecommendationsOverview.defaultProps = {
   count: null,
   current: null,
+  layout: gridLayouts.HIGHLIGHT,
 };
 
 export default memo(RecommendationsOverview);

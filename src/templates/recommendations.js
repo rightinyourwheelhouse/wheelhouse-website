@@ -7,6 +7,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 import ReactMarkdown from 'react-markdown';
+import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import Info from '~components/Info';
@@ -151,7 +152,7 @@ const Recommendations = ({
         <Container>
           <SubTitle>Recommendations</SubTitle>
           <h2>More Recommendations</h2>
-          <RecommendationsOverview current={id} count={2} />
+          <RecommendationsOverview current={id} count={2} layout={gridLayouts.COLUMN} />
         </Container>
       </Section>
 

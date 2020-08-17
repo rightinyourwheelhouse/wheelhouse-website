@@ -34,7 +34,7 @@ const RecommendationsOverview = ({ count, current }) => {
     [allRecommendations]
   );
 
-  return <StickyAside items={items} />;
+  return <StickyAside items={items} layout="column" />;
 };
 
 RecommendationsOverview.propTypes = {

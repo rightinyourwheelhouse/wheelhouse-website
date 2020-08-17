@@ -36,7 +36,7 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
   }, []);
 
   const ContainerElement = useMemo(() => {
-    if (layout === 'columns') {
+    if (layout === 'column') {
       return React.Fragment;
     }
 
@@ -44,7 +44,7 @@ const StickyAsideOverview = ({ items, layout, reverse }) => {
   }, [layout]);
 
   return (
-    <StickyAsideContainer stickyHeight={firstItemHeight} reverse={reverse}>
+    <StickyAsideContainer stickyHeight={firstItemHeight} layout={layout} reverse={reverse}>
       <ContainerElement>
         {firstItemTitle && (
           <StickyAsideItemContainer>
@@ -123,7 +123,7 @@ StickyAsideOverview.propTypes = {
       url: PropTypes.string,
     })
   ),
-  layout: PropTypes.oneOf(['highlight', 'columns']),
+  layout: PropTypes.oneOf(['highlight', 'column']),
   reverse: PropTypes.bool,
 };
 

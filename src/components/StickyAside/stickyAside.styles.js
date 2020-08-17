@@ -26,38 +26,63 @@ export const StickyAsideItemContainer = styled.div`
 `;
 
 export const StickyAsideContainer = styled.div`
-  @media screen and (min-width: ${breakpoints.small}) {
-    --stickyHeight: ${({ stickyHeight }) => `${stickyHeight}px`};
+  ${({ layout }) => {
+    if (layout === 'column') {
+      return css`
+        @media screen and (min-width: ${breakpoints.small}) {
+          margin: 32px 0;
+          display: flex;
+          flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+          justify-content: flex-start;
+          flex-wrap: wrap;
 
-    margin: 32px 0;
-    display: flex;
-    flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
-    flex-wrap: wrap;
-
-    > div {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      flex: 0 0 25%;
-      justify-content: space-evenly;
-      max-width: 25%;
-      padding: 0;
-
-      &:first-of-type {
-        flex: 0 0 75%;
-        max-width: 75%;
-        padding-right: ${({ reverse }) => (reverse ? '0' : spacing.default)};
-        padding-left: ${({ reverse }) => (reverse ? spacing.default : '0')};
-        justify-content: flex-start;
-
-        ${StickyAsideItemContainer} {
-          position: sticky;
-          top: 90px;
-          height: var(--stickyHeight);
+          > div {
+            width: 32%;
+            &:not(:nth-child(3n +1)){
+              margin-left: 2%;
+            }
+          }
         }
-      }
+      `;
     }
-  }
+
+    if (layout === 'highlight') {
+      return css`
+        @media screen and (min-width: ${breakpoints.small}) {
+          --stickyHeight: ${({ stickyHeight }) => `${stickyHeight}px`};
+
+          margin: 32px 0;
+          display: flex;
+          flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+          flex-wrap: wrap;
+
+          > div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 0 0 25%;
+            justify-content: space-evenly;
+            max-width: 25%;
+            padding: 0;
+
+            &:first-of-type {
+              flex: 0 0 75%;
+              max-width: 75%;
+              padding-right: ${({ reverse }) => (reverse ? '0' : spacing.default)};
+              padding-left: ${({ reverse }) => (reverse ? spacing.default : '0')};
+              justify-content: flex-start;
+
+              ${StickyAsideItemContainer} {
+                position: sticky;
+                top: 90px;
+                height: var(--stickyHeight);
+              }
+            }
+          }
+        }
+      `;
+    }
+  }}
 `;
 
 export const StickyAsideImage = styled.div`

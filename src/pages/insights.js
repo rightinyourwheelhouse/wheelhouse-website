@@ -6,8 +6,9 @@ import SEO from '~components/SEO';
 import Layout from '~layouts/default';
 
 import BlogOverview from '~modules/BlogOverview';
-import RecommendationsOverview from '~modules/RecommendationsOverview';
 import Navigation from '~modules/Navigation';
+import RadioRaccoons from '~modules/RadioRaccoons';
+import RecommendationsOverview from '~modules/RecommendationsOverview';
 
 import colors from '~styles/colors';
 
@@ -24,7 +25,7 @@ const InsightsPage = () => (
     <Section background={colors.quaternary}>
       <Container>
         <LightContent>
-          <h2>Something about radio raccoons</h2>
+          <RadioRaccoons />
         </LightContent>
       </Container>
     </Section>

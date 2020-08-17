@@ -38,6 +38,7 @@ export const InsightsGridItemContainer = styled.div`
 
   h3 {
     text-transform: none;
+    margin-top: 12px;
   }
 
   a {

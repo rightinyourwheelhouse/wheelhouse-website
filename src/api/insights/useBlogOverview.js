@@ -17,6 +17,13 @@ const query = graphql`
           enclosure {
             url
           }
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }
@@ -29,7 +36,9 @@ export const useBlogOverview = ({ count, current }) => {
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node })).filter(({ id }) => id !== current);
+    const nodes = edges
+      .map(({ node }) => ({ ...node }))
+      .filter(({ id }) => id !== current);
 
     if (count) {
       return nodes.slice(0, count);

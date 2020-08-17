@@ -53,26 +53,24 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
         {firstItemTitle && (
           <InsightsGridItemContainer>
             <div ref={refCallback}>
-              <Stack>
-                {firstItemImage && (
-                  <Link to={firstItemUrl}>
-                    <InsightsGridImage>
-                      <Img fluid={firstItemImage.childImageSharp.fluid} />
-                    </InsightsGridImage>
-                  </Link>
-                )}
-                <Type>{firstItemType}</Type>
-                <Link to={firstItemUrl}>
-                  <h3>{firstItemTitle}</h3>
-                </Link>
-                <p>{firstItemDescription}</p>
+              {firstItemImage && (
+              <Link to={firstItemUrl}>
+                <InsightsGridImage>
+                  <Img fluid={firstItemImage.childImageSharp.fluid} />
+                </InsightsGridImage>
+              </Link>
+              )}
+              <Type>{firstItemType}</Type>
+              <Link to={firstItemUrl}>
+                <h3>{firstItemTitle}</h3>
+              </Link>
+              <p>{firstItemDescription}</p>
 
-                <Info
-                  date={firstItemDate}
-                  author={firstItemAuthor}
-                  readTime={firstItemReadTime}
-                />
-              </Stack>
+              <Info
+                date={firstItemDate}
+                author={firstItemAuthor}
+                readTime={firstItemReadTime}
+              />
             </div>
           </InsightsGridItemContainer>
         )}
@@ -90,26 +88,24 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
             url: itemUrl,
           }) => (
             <InsightsGridItemContainer key={itemTitle}>
-              <Stack>
-                {itemImage && (
-                  <Link to={itemUrl}>
-                    <InsightsGridImage>
-                      <Img fluid={itemImage.childImageSharp.fluid} />
-                    </InsightsGridImage>
-                  </Link>
-                )}
-                <Type>{itemType}</Type>
-                <Link to={itemUrl}>
-                  <h3>{itemTitle}</h3>
-                </Link>
-                <p>{itemDescription}</p>
+              {itemImage && (
+              <Link to={itemUrl}>
+                <InsightsGridImage>
+                  <Img fluid={itemImage.childImageSharp.fluid} />
+                </InsightsGridImage>
+              </Link>
+              )}
+              <Type>{itemType}</Type>
+              <Link to={itemUrl}>
+                <h3>{itemTitle}</h3>
+              </Link>
+              <p>{itemDescription}</p>
 
-                <Info
-                  date={itemDate}
-                  author={itemAuthor}
-                  readTime={itemReadTime}
-                />
-              </Stack>
+              <Info
+                date={itemDate}
+                author={itemAuthor}
+                readTime={itemReadTime}
+              />
             </InsightsGridItemContainer>
           )
         )}

@@ -6,6 +6,28 @@ import colors from '~styles/colors';
 
 import gridLayouts from './insightsGrid.layouts';
 
+export const InsightsGridImage = styled.div`
+  overflow: hidden;
+
+  > div {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+`;
+
+export const Type = styled.span`
+  display: block;
+  line-height: 2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: ${colors.primary};
+  font-weight: bold;
+  margin: 6px 0;
+`;
+
 export const InsightsGridItemContainer = styled.div`
   display: block;
 
@@ -23,13 +45,29 @@ export const InsightsGridItemContainer = styled.div`
   }
 
   p {
-    margin: 6px 0;
+    margin-top: 12px;
+    margin-bottom: ${spacing.default};
     font-size: 1rem;
   }
 `;
 
 export const InsightsGridContainer = styled.div`
   ${({ layout }) => {
+    if (layout === gridLayouts.SUMMARY) {
+      return css`
+        margin: 32px 0;
+
+        h3 {
+          text-transform: uppercase;
+          margin-bottom: ${spacing.column};
+        }
+
+        ${InsightsGridImage}, ${Type}, p {
+          display: none;
+        }
+      `;
+    }
+
     if (layout === gridLayouts.COLUMN) {
       return css`
         @media screen and (min-width: ${breakpoints.small}) {
@@ -94,26 +132,4 @@ export const InsightsGridContainer = styled.div`
       `;
     }
   }}
-`;
-
-export const Type = styled.span`
-  display: block;
-  line-height: 2;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: ${colors.primary};
-  font-weight: bold;
-  margin: 6px 0;
-`;
-
-export const InsightsGridImage = styled.div`
-  overflow: hidden;
-
-  > div {
-    transition: all 0.3s;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
 `;

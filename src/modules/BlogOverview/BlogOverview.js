@@ -22,7 +22,7 @@ const BlogOverview = ({ count, current }) => {
             const url = `/insights/${toKebab(title)}`;
 
             return (
-              <Link key={title} to={url} rel="noopener noreferrer" target="_blank">
+              <Link key={title} to={url}>
                 <BlogItemContainer>
                   <h3>{title}</h3>
                   <p>{time}</p>

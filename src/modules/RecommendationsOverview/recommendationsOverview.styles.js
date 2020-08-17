@@ -5,6 +5,7 @@ import spacing from '~styles/spacing';
 export const RecommendationsContainer = styled.div`
   margin: 32px 0;
   display: flex;
+  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   flex-wrap: wrap;
 
   > div {
@@ -19,7 +20,8 @@ export const RecommendationsContainer = styled.div`
     &:first-of-type {
       flex: 0 0 75%;
       max-width: 75%;
-      padding-right: ${spacing.default};
+      padding-right: ${({ reverse }) => (reverse ? '0' : spacing.default)};
+      padding-left: ${({ reverse }) => (reverse ? spacing.default : '0')};
       justify-content: flex-start;
     }
   }

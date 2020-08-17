@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Section, Container } from '~components/layoutComponents';
+import { Section, Container, LightContent } from '~components/layoutComponents';
 import Content from '~components/Content';
 import SEO from '~components/SEO';
 import SubTitle from '~components/SubTitle';
@@ -18,13 +18,6 @@ const InsightsPage = () => (
 
     <Section>
       <Container>
-        <Content>
-          <SubTitle>Picks</SubTitle>
-          <h2>Wheelhouse recommendations</h2>
-          <p>
-            Some text about blogposts and why we like them
-          </p>
-        </Content>
         <RecommendationsOverview />
       </Container>
     </Section>

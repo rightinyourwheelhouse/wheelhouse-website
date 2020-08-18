@@ -4,38 +4,38 @@
       "title": "ESLint",
       "author": "Dirk Baeumer",
       "url": "https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint",
-      "description": "With this plugin I make sure that the code formats according to the `.eslint` file inside the project I am working at on save. That way my code is always formatted according to the ruleset that has been decided at an earlier stage."
+      "description": "The most projects you work on have got an `.eslint` file. That file contains the code styling you must follow. Depending on the project that might defer a lot and you can setup the ESLint plugin to autoformat your code on save. That means that you can just type with single, double of even backticks and it will autoformat to the styling the project has decided at an earlier stage.\n\nIf none of your projects use ESLint you might aswell go with Prettier, which is also a great extensions."
     },
     {
       "title": "React Hooks Snippets",
-      "description": "I use a lot of custom snippets, but for most hooks this plugin works really well.",
+      "description": "Snippets take a while to get used to, but once you get the hang of them they are amazing and save you a lot of time. These specific snippets are for React Hooks specifically. ",
       "url": "https://marketplace.visualstudio.com/items?itemName=AlDuncanson.react-hooks-snippets",
       "author": "Al Duncanson"
     },
     {
-      "title": "Settings Sync",
-      "description": "To keep my editors synced and so I don't need to keep track of every plugin I install I sync them using Settings Sync. ",
-      "url": "https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync",
-      "author": "Shan Khan"
+      "title": "Color Highlight",
+      "description": "Seeing colors as hexadecimal numbers or some rgb code something can be tricky if you work with a lot of colors. Color Highlight does exactly what the names says. It highlights your colors. Meaning you can visually see the colors you hexadecimal number means. It make life easy to swap around colors without thinking which color is which again.",
+      "url": "https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight",
+      "author": "Sergii Naumov"
     },
     {
       "title": "Cobalt2 Theme Official",
-      "description": "My brain seems to love the color palette used in that theme. ",
+      "description": "What is a code editor without the right theme? My brain seems to love the color palette used in the theme made by Wes Bos. It's easy on the eyes and contrasts enough to keep you going without getting too tired.",
       "url": "https://github.com/wesbos/cobalt2-vscode",
       "author": "Wes Bos"
     }
   ],
   "author": "Daren Malfait",
   "live": true,
-  "date": "2020-08-14T10:43:30.313Z",
-  "title": "4 VSCode plugins I use for day-to-day javascript programming",
+  "date": "2020-08-18T10:43:30.313Z",
+  "title": "4 VSCode extensions I use for day-to-day javascript programming",
   "tags": [
     "vscode",
     "plugins",
     "javascript"
   ],
-  "introduction": "My preferred editor at the moment is VSCode. I have set it up so it matches my way of programming so much that I would be lost to a certain point without it. A part of that setup are plugins. \n",
+  "introduction": "Having the right tools for the job makes life as a developer easier. VSCode is a very popular code editor and is also the one I prefer. The many extensions you can install are great, but there are so many that it might be hard to find the \"right ones\".\n\nI made a list about the ones that I find to be indispensable.\n",
   "image": "assets/vscode-background.png",
-  "description": "A curated list of plugins I could not live without.",
+  "description": "A curated list of extensions I could not live without.",
   "slot": ""
 }

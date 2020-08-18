@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import SEO from '~components/SEO';
+import { gridLayouts } from '~components/InsightsGrid';
 
 import Layout from '~layouts/default';
 
@@ -31,7 +32,7 @@ const InsightsPage = () => (
     </Section>
     <Section>
       <Container>
-        <BlogOverview layout="highlight" />
+        <BlogOverview layout={gridLayouts.COLUMN} />
       </Container>
     </Section>
   </Layout>

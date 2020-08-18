@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown';
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
-import Info from '~components/Info';
+import AuthorInfo from '~components/AuthorInfo';
 import SEO from '~components/SEO';
 import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
@@ -95,9 +95,9 @@ const Recommendations = ({
         <Container>
           <Content>
             <h2>{title}</h2>
-            <Info author={author} date={toShortDate(date)} readTime={time}>
+            <AuthorInfo author={author} date={toShortDate(date)} readTime={time}>
               <Share url={url} />
-            </Info>
+            </AuthorInfo>
           </Content>
         </Container>
       </Section>
@@ -141,10 +141,10 @@ const Recommendations = ({
               )}
             </OrderedList>
             <ReactMarkdown source={slot} />
-            <Info author={author} date={toShortDate(date)} readTime={time}>
-              <Share url={url} />
-            </Info>
           </Content>
+          <AuthorInfo full author={author} date={toShortDate(date)} readTime={time}>
+            <Share url={url} />
+          </AuthorInfo>
         </Container>
       </Section>
 

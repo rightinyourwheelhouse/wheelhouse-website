@@ -8,7 +8,7 @@ import Img from 'gatsby-image';
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import ImageTitle from '~components/ImageTitle';
-import Info from '~components/Info';
+import AuthorInfo from '~components/AuthorInfo';
 import SEO from '~components/SEO';
 import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
@@ -42,10 +42,7 @@ const Blog = ({
 
   return (
     <Layout>
-      <SEO
-        title={`${title}`}
-        description={title}
-      />
+      <SEO title={`${title}`} description={title} />
 
       <Navigation />
 
@@ -53,9 +50,9 @@ const Blog = ({
         <ImageTitle image={<Img fluid={fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <Info author={creator} date={isoDate} readTime={time}>
+          <AuthorInfo author={creator} date={isoDate} readTime={time}>
             <Share url={url} />
-          </Info>
+          </AuthorInfo>
         </ImageTitle>
         <Container>
           <Content>

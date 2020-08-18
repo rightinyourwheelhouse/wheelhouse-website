@@ -7,14 +7,17 @@ import colors from '~styles/colors';
 import gridLayouts from './insightsGrid.layouts';
 
 export const InsightsGridImage = styled.div`
+  --height: 215px;
+
   overflow: hidden;
-  height: 215px;
+  height: var(--height);
   width: 100%;
   overflow: hidden;
   position: relative;
 
   > div {
     transition: all 0.3s;
+    min-height: var(--height);
 
     img {
       position: absolute;

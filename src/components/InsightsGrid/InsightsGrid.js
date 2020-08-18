@@ -5,7 +5,7 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import Info from '~components/Info';
+import AuthorInfo from '~components/AuthorInfo';
 
 import {
   InsightsGridItemContainer,
@@ -65,7 +65,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
               </Link>
               <p>{firstItemDescription}</p>
 
-              <Info
+              <AuthorInfo
                 date={firstItemDate}
                 author={firstItemAuthor}
                 readTime={firstItemReadTime}
@@ -100,7 +100,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
               </Link>
               <p>{itemDescription}</p>
 
-              <Info
+              <AuthorInfo
                 date={itemDate}
                 author={itemAuthor}
                 readTime={itemReadTime}

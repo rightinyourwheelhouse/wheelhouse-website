@@ -14,7 +14,6 @@ export const Container = styled.div`
 
   margin: 0 auto;
   max-width: var(--width);
-  overflow-x: hidden;
   padding: 0px 2.1rem;
   padding-top: 0;
   text-align: var(--centered);

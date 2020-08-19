@@ -141,11 +141,11 @@ export const GlobalStyle = createGlobalStyle`
 
     @media screen and (min-width: ${breakpoints.small}){
       font-size: 5.5vw;
-      max-width: 60%;
+      max-width: 80%;
     }
     @media screen and (min-width: ${breakpoints.large}){
       font-size: 4.5rem;
-      max-width: 60%;
+      max-width: 80%;
     }
   }
   h3 {

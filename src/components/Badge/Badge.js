@@ -19,7 +19,7 @@ Badge.propTypes = {
 };
 
 Badge.defaultProps = {
-  background: colors.accent,
+  background: colors.textPrimary,
   color: colors.textLight,
 };
 

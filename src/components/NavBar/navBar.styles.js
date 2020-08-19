@@ -178,9 +178,12 @@ export const ItemsContent = styled.div`
   align-self: center;
   order: 0;
 
-  &:not(:first-of-type){
-  margin-top: 130px;
-
+  &:not(:first-of-type) {
+    margin-top: 130px;
+      @media screen and (min-width: ${breakpoints.medium}) {
+        margin-top: 0;
+      }
+    &
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {

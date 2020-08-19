@@ -48,7 +48,7 @@ export const WelcomeHeroContainer = styled.div`
   div {
     font-size: 1.6rem;
     line-height: 1.7;
-    width: 100%;
+    width: 99%;
   }
 
 

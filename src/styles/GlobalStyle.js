@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.family};
     margin: 0;
     min-height: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body: {
@@ -91,6 +93,11 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
+    hyphens: auto;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    hyphens: auto;
     font-family: ${fonts.family};
     margin-bottom: 0;
     line-height: 1.5rem;
@@ -102,7 +109,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3.242rem;
+    font-size: 2.742rem;
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
@@ -122,7 +129,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;

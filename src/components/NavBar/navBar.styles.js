@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from '~styles/colors';
 import fonts from '~styles/fonts';
 import breakpoints from '~styles/breakpoints';
+import spacing from '~styles/spacing';
 
 export const Nav = styled.nav`
   align-items: center;
@@ -132,7 +133,7 @@ export const MenuIcon = styled.button`
   width: 30px;
   position: fixed;
   z-index: 2;
-  right: 50px;
+  right: ${spacing.default};
   top: 30px;
   cursor: pointer;
   background: none;
@@ -171,12 +172,16 @@ export const MenuIcon = styled.button`
 export const ItemsContent = styled.div`
   display: flex;
   width: 80vw;
-  margin-top: 130px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   align-self: center;
   order: 0;
+
+  &:not(:first-of-type){
+  margin-top: 130px;
+
+  }
 
   @media screen and (min-width: ${breakpoints.medium}) {
     align-items: center;

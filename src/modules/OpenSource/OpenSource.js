@@ -12,9 +12,20 @@ const OpenSource = () => (
     <h2>Have you seen this cat?</h2>
     <Github />
     <p>
-      something about open sourcing the website
+      We decided to make our website sourcecode public. We also try to make our
+      entire team use it as a playground and contribute to make the website
+      reflect who we really are.
     </p>
-    <Button backgroundHover={colors.secundary} colorHover={colors.textLight} as="a" href="/">Check it out</Button>
+    <Button
+      backgroundHover={colors.secundary}
+      colorHover={colors.textLight}
+      as="a"
+      href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
+      target="_blank"
+      rel="noreferrer nofollow"
+    >
+      Check it out
+    </Button>
   </OpenSourceContainer>
 );
 

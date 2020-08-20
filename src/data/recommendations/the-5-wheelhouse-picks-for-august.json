@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "url": "https://defaced.dev/tools/layout-shift-gif-generator/",
+      "author": "defaced",
+      "title": "Layout shift gif generator",
+      "description": "Easily identify problematic layout shifts in the viewport on mobile and desktop. Available as a simple command line tool, or as an online tool."
+    },
+    {
       "title": "Colorsafe",
       "url": "http://colorsafe.co/",
       "author": "",

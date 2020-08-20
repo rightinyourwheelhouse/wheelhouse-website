@@ -21,7 +21,7 @@ export const InnerContent = styled.div`
   text-align: ${({ centered }) => (centered ? 'center' : 'left')};
   z-index: 10;
 
-  button {
+  button, a {
     margin-top: 30px;
   }
 `;

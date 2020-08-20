@@ -26,9 +26,7 @@ import spacing from '~styles/spacing';
 const IndexPage = () => (
   <Layout>
     <SEO title="Great javascript experts to strengthen your team" />
-    <Navigation
-      logoInitiallyHidden
-    />
+    <Navigation logoInitiallyHidden />
 
     <WelcomeHero />
 
@@ -77,19 +75,23 @@ const IndexPage = () => (
         <BlogOverview count={2} />
         <Button
           as={Link}
-          to="/"
+          to="/insights"
           color={colors.textLight}
           colorHover={colors.textLight}
           background={colors.primary}
           backgroundHover={colors.tertiary}
         >
-          Discover more
+          See our insights
         </Button>
       </Container>
       <Container offset={spacing.large}>
         <Card>
           <h2>Javascript expertise</h2>
-          <p>Something about our amazing tech stack</p>
+          <p>
+            Wheelhouse works alongside your team to help strenghen your
+            business. We share our knowledge to help your project go to the
+            next level.
+          </p>
         </Card>
       </Container>
     </Section>

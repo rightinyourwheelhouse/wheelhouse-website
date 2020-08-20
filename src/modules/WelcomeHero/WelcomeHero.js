@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
+import { Link } from 'gatsby';
 
 import { Container } from '~components/layoutComponents';
 import Button from '~components/Button';
@@ -43,6 +44,8 @@ const WelcomeHero = () => {
             color={colors.textLight}
             colorHover={colors.textLight}
             backgroundHover={colors.accent}
+            to="/team"
+            as={Link}
           >
             Meet us
           </Button>

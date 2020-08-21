@@ -129,6 +129,8 @@ export const Items = styled.div`
 `;
 
 export const MenuIcon = styled.button`
+  --color: ${({ hamburgerColor }) => hamburgerColor};
+
   height: 30px;
   width: 30px;
   position: fixed;
@@ -148,7 +150,7 @@ export const MenuIcon = styled.button`
     height: 2px;
     width: 30px;
     display: block;
-    background-color: ${colors.textPrimary};
+    background-color: var(--color);
     margin-bottom: 4px;
     transition: transform 0.2s ease, background-color 0.5s ease;
   }

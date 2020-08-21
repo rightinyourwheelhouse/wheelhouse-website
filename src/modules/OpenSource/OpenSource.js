@@ -12,7 +12,7 @@ const OpenSource = () => (
     <h2>Have you seen this cat?</h2>
     <Github />
     <p>
-      We decided to make our website sourcecode public. We also try to make our
+      We decided to make our website source code public. We also try to make our
       entire team use it as a playground and contribute to make the website
       reflect who we really are.
     </p>

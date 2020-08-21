@@ -29,8 +29,7 @@ export default yup.object().shape({
       'fileFormat',
       'Unsupported Format',
       (value) => !value || value && SUPPORTED_FORMATS.includes(value.type)
-    )
-    .required(),
+    ),
   name: yup
     .string()
     .required(),

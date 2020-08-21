@@ -4,11 +4,11 @@ import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
 const DEFAULT_COLORS = [
-  '#0000E0',
+  colors.quaternary,
   '#FF8360',
   colors.secundary,
   colors.tertiary,
-  '#0000E0',
+  colors.quaternary,
   '#FF5E5B',
   colors.primary,
 ];
@@ -21,7 +21,7 @@ export const InnerContent = styled.div`
   text-align: ${({ centered }) => (centered ? 'center' : 'left')};
   z-index: 10;
 
-  button {
+  button, a {
     margin-top: 30px;
   }
 `;
@@ -48,7 +48,7 @@ export const WelcomeHeroContainer = styled.div`
   div {
     font-size: 1.6rem;
     line-height: 1.7;
-    width: 100%;
+    width: 99%;
   }
 
 

@@ -11,7 +11,7 @@ import { encode } from '~utils/form';
 
 import validationSchema from './validationSchema';
 
-import { Fieldset, Disclaimer } from './applyForm.styles';
+import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
 
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';
@@ -72,7 +72,7 @@ const ApplyForm = ({ vacancy }) => {
       style={{ paddingTop: '24px' }}
     >
       {formState !== SUBMITTED && (
-      <div>
+      <FormContainer>
         <Fieldset>
           <Stack>
             <Input
@@ -129,7 +129,7 @@ const ApplyForm = ({ vacancy }) => {
         </Fieldset>
 
         <Button disabled={isSubmitting} type="submit">Submit</Button>
-      </div>
+      </FormContainer>
       )}
       {formState === ERROR && (
         <div>

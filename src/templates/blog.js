@@ -4,20 +4,13 @@ import readingTime from 'reading-time';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-} from 'react-share';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import ImageTitle from '~components/ImageTitle';
-import Info from '~components/Info';
+import AuthorInfo from '~components/AuthorInfo';
 import SEO from '~components/SEO';
+import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
@@ -26,8 +19,6 @@ import JobOverview from '~modules/JobOverview';
 import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
-
-// import FacebookIcon from '~images/icons/facebook.svg';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -51,10 +42,7 @@ const Blog = ({
 
   return (
     <Layout>
-      <SEO
-        title={`Vacancy ${title} at Wheelhouse ${title}`}
-        description={title}
-      />
+      <SEO title={`${title}`} description={title} />
 
       <Navigation />
 
@@ -62,23 +50,9 @@ const Blog = ({
         <ImageTitle image={<Img fluid={fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <Info title={creator} description={`${isoDate} · ${time}`}>
-            <div>
-              <FacebookShareButton url={url}>
-                <FacebookIcon />
-              </FacebookShareButton>
-            </div>
-            <div>
-              <TwitterShareButton url={url}>
-                <TwitterIcon />
-              </TwitterShareButton>
-            </div>
-            <div>
-              <LinkedinShareButton url={url}>
-                <LinkedinIcon />
-              </LinkedinShareButton>
-            </div>
-          </Info>
+          <AuthorInfo author={creator} date={isoDate} readTime={time}>
+            <Share url={url} />
+          </AuthorInfo>
         </ImageTitle>
         <Container>
           <Content>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Stack from '~components/Stack';
 
-import { JobItemContainer } from './jobOverview.styles';
+import { JobItemContainer, JobTitle } from './jobOverview.styles';
 
 import { useJobOverview } from '~api/job/useJobOverview';
 
@@ -18,7 +18,7 @@ const JobOverview = ({ current }) => {
           {jobs.map(({ title, slug, city }) => (
             <Link to={`/careers/${slug}`} key={slug}>
               <JobItemContainer>
-                <h3>{title}</h3>
+                <JobTitle>{title}</JobTitle>
                 <p>{city}</p>
               </JobItemContainer>
             </Link>

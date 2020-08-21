@@ -53,8 +53,6 @@ export const Section = styled.section`
   display: block;
   min-height: 0;
   padding: var(--space);
-
-  overflow: var(--overflow);
   position: relative;
 
   > img {

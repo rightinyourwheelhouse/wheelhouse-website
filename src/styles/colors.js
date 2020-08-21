@@ -7,6 +7,7 @@ const error = '#EF6461';
 const primary = '#58bd86';
 const secundary = '#F3DE2C';
 const tertiary = '#FF5E5B';
+const quaternary = '#0000E0';
 const textInput = '#6d7278';
 const textLight = '#FFFFFF';
 const textLink = '#333';
@@ -19,6 +20,7 @@ export default {
   primary,
   secundary,
   tertiary,
+  quaternary,
 
   backgroundPrimary,
   backgroundSecundary,

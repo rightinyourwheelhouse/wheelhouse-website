@@ -10,6 +10,13 @@ export const CardContainer = styled.div`
   flex-direction: column;
   padding: 16px 20px 8px 14px;
   width: 100%;
+  overflow: hidden;
+
+  h2 {
+    font-size: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   @media screen and (min-width: ${breakpoints.medium}) {
     padding: 40px;

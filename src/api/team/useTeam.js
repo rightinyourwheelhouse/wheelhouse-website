@@ -17,22 +17,35 @@ const query = graphql`
               }
             }
           }
+          visible
         }
       }
     }
   }
 `;
 
-export const useTeam = () => {
+export const useTeam = (name, includeInvisible = false) => {
   const {
     allTeamJson: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node }));
+    let nodes = edges.map(({ node }) => ({ ...node }));
+
+    if (name) {
+      nodes = nodes.filter(({ name: n }) => name === n);
+    }
+
+    if (!includeInvisible) {
+      nodes = nodes.filter(({ visible }) => !!visible);
+    }
 
     return nodes;
   }, [edges]);
+
+  if (name) {
+    return items.length > 0 ? items[0] : null;
+  }
 
   return items;
 };

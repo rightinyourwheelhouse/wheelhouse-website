@@ -96,7 +96,7 @@ const Footer = () => {
             </p>
           ))}
           <p className="disclaimer">
-            <a href="/">Privacy policy</a>
+            <Link to="/privacy-policy" href="/">Privacy policy</Link>
           </p>
         </Stack>
       </Container>

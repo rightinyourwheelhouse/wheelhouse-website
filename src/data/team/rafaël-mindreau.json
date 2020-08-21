@@ -1,6 +1,7 @@
 {
   "name": "Rafaël Mindreau",
   "role": "full-stack developer",
-  "description": "is a developer that likes nice interfaces",
-  "image": "assets/rafael-2.jpg"
+  "description": "loves experimenting and beautiful interfaces, music and food too.",
+  "image": "assets/rafael-2.jpg",
+  "visible": true
 }

@@ -1,6 +1,20 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import colors from '~styles/colors';
+const animateCable = () => keyframes`
+  from {
+    transform:rotate(5deg);
+  } to {
+    transform:rotate(-5deg);
+  }
+`;
+
+const animateLamp = () => keyframes`
+  from {
+    transform: rotate(3deg) translate(-60.4px, -0px);
+  } to {
+    transform: rotate(-3deg) translate(-30.4px, -3px);
+  }
+`;
 
 export const LampContainer = styled.div`
   position: absolute;
@@ -10,7 +24,7 @@ export const LampContainer = styled.div`
 
 export const Cable = styled.div`
   position: relative;
-  background-color: rgba(255,255,255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   width: 2px;
   height: 150px;
   left: 50%;
@@ -18,13 +32,14 @@ export const Cable = styled.div`
   z-index: 1;
   transform-origin: 0% 0%;
   box-shadow: -80px -10px 10px -2px rgba(0, 0, 0, 0.1);
+  animation: ${animateCable} .9s ease-in-out 0s infinite alternate;
 
   &:after {
     content: ' ';
     left: -5px;
     top: 100%;
     position: absolute;
-    border-bottom: 15px solid rgba(255,255,255, 0.05);
+    border-bottom: 15px solid rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     height: 0;
@@ -45,13 +60,12 @@ export const Bulb = styled.div`
   border-radius: 100%;
   transform: translateX(-50%);
   z-index: 1;
+  animation: ${animateLamp} .9s ease-in-out 0s infinite alternate;
 
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8),
     0px 0px 30px rgba(255, 255, 255, 0.8), 0px 0px 50px rgba(255, 255, 255, 0.6),
     0px 0px 70px rgba(255, 255, 255, 0.8),
     -80px -15px 120px 0px rgba(255, 255, 255, 0.4),
     0px 0px 120px 320px rgba(255, 255, 255, 0.15),
-    0px 0px 120px 620px rgba(255, 255, 255, 0.05)
-    ;
-
+    0px 0px 120px 620px rgba(255, 255, 255, 0.05);
 `;

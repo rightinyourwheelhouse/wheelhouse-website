@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   padding: 16px 20px 8px 14px;
   width: 100%;
-    overflow: hidden;
+  overflow: hidden;
 
   h2 {
     font-size: 2rem;

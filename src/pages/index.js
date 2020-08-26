@@ -45,8 +45,8 @@ const IndexPage = () => (
             <Image filename="opportunities.jpg" alt="oppurtunities" />
             <h3>Our job opportunities</h3>
             <p>
-              We are looking for new colleagues in different disciplines. Might
-              you be our next team member?
+              We are looking for new colleagues in different disciplines. Are
+              you our next team member?
             </p>
             <Button as={Link} to="/careers">
               Careers
@@ -71,7 +71,7 @@ const IndexPage = () => (
     <Section>
       <Container>
         <SubTitle>Blog</SubTitle>
-        <h2>Some insight in how we think</h2>
+        <h2>Some of our insights</h2>
         <BlogOverview count={2} />
         <Button
           as={Link}
@@ -88,9 +88,9 @@ const IndexPage = () => (
         <Card>
           <h2>Javascript expertise</h2>
           <p>
-            Wheelhouse works alongside your team to help strenghen your
-            business. We share our knowledge to help your project go to the
-            next level.
+            Wheelhouse works alongside your team to help strengthen your
+            business. We share our knowledge to help your project go to the next
+            level.
           </p>
         </Card>
       </Container>

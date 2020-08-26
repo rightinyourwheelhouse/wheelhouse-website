@@ -35,7 +35,7 @@ const IndexPage = () => (
           <p>
             We improve the quality of our service and solutions by continuously
             focusing on improvement. We carefully analyse and monitor all
-            projects while training our team in the latest technologies. At
+            projects while our team is trained to keep up-to-date with the latest technologies. At
             Wheelhouse, we help you develop your talents so that you can build a
             high-quality career path.
           </p>

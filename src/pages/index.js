@@ -25,7 +25,10 @@ import spacing from '~styles/spacing';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Great javascript experts to strengthen your team" />
+    <SEO
+      title="Great javascript experts to strengthen your team"
+      description="Wheelhouse works alongside your team to help strengthen your business. We share our knowledge to help your project go to the next level."
+    />
     <Navigation logoInitiallyHidden />
 
     <WelcomeHero />

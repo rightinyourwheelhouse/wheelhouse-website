@@ -10,7 +10,7 @@ import Navigation from '~modules/Navigation';
 
 const InsightsPage = () => (
   <Layout>
-    <SEO title="Wheelhouse website privacy policy" />
+    <SEO title="Wheelhouse website privacy policy" description="just another privacy policy" />
     <Navigation />
 
     <Section>

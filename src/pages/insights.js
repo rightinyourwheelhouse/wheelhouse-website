@@ -15,7 +15,7 @@ import colors from '~styles/colors';
 
 const InsightsPage = () => (
   <Layout>
-    <SEO title="Insights and blogposts from us" />
+    <SEO title="Wheelhouse Insights and inspiration" description="Take a look at what keeps us occupied and what inspires us." />
     <Navigation />
 
     <Section>

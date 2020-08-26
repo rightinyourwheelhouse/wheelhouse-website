@@ -19,7 +19,7 @@ export const OuterContainer = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="404: Not found" description="You got lost on your way to our website" />
     <Navigation
       hamburgerColor={colors.textLight}
       baseBackgroundColor={colors.backgroundSecundary}

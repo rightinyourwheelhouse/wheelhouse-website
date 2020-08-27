@@ -1,11 +1,11 @@
 ---
-  # backend:
-  #   name: github
-  #   repo: rightinyourwheelhouse/wheelhouse-website
   backend:
-    name: proxy
-    proxy_url: http://localhost:8081/api/v1
-    branch: blog-to-insights-page
+    name: github
+    repo: rightinyourwheelhouse/wheelhouse-website
+  # backend:
+  #   name: proxy
+  #   proxy_url: http://localhost:8081/api/v1
+  #   branch: blog-to-insights-page
   collections:
     -
       label: Picks

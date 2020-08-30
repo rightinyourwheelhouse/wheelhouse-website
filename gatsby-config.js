@@ -50,21 +50,6 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-svgr-loader',
     },
-    {
-      options: {
-        fonts: [
-          {
-            family: 'Montserrat',
-            variants: ['300, 500, 700,900'],
-          },
-          {
-            family: 'Lora',
-            variants: ['400'],
-          },
-        ],
-      },
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-    },
     'gatsby-plugin-react-helmet',
     {
       options: {

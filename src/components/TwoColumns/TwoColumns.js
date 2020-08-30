@@ -4,9 +4,11 @@ import breakpoints from '~styles/breakpoints';
 import spacing from '~styles/spacing';
 
 export default styled.div`
+  --direction: ${({ reversed }) => (reversed ? 'column-reverse' : 'column')};
+
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--direction);
   justify-content: space-between;
   flex: 1;
   margin-bottom: ${spacing.default};

@@ -16,7 +16,7 @@ const shake = () => keyframes`
 
 export const LabelInputContainer = styled.div`
   --width: ${({ width }) => width || '100%'};
-  --foreground: var(--color-text-primary-100);
+  --foreground: ${({ color }) => (color || 'var(--color-text-primary-900)')};
   --active: var(--color-text-primary-900);
   --hover: var(--color-text-primary-900);
   --error: var(--color-error);

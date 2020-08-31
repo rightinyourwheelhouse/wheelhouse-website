@@ -16,12 +16,10 @@ export const ButtonContainer = styled.div`
 
   > div,
   .btn {
-
     align-items: center;
     background: var(--background);
     border-radius: 3px;
     border: 1px solid transparent;
-    box-shadow: 0 2px 6px rgba(0,0,0,.2);
     color: var(--foreground);
     cursor: pointer;
     display: inline-block;
@@ -37,11 +35,6 @@ export const ButtonContainer = styled.div`
     text-transform: uppercase;
     transition-duration: 0.1s;
     transition-timing-function: ease;
-
-    @media screen and (min-width: ${breakpoints.small}){
-
-
-    }
 
     &:hover {
       color: var(--foregroundHover);

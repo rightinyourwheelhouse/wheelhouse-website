@@ -7,6 +7,8 @@ import { FileUploadContainer, Caption, Label } from './fileUpload.styles';
 
 import ErrorField from '../_ErrorField';
 
+import colors from '~styles/colors';
+
 const FileUpload = ({
   error, name, onChange, valid, value, label, ...props
 }) => {
@@ -36,6 +38,7 @@ const FileUpload = ({
       <label htmlFor={name}>
         {Boolean(value) && (
         <LabelInputContainer
+          color={colors.textPrimary100}
           padding
           className={classnames({
             active,
@@ -49,6 +52,7 @@ const FileUpload = ({
         )}
         {!value && (
           <LabelInputContainer
+            color={colors.textPrimary100}
             padding
             className={classnames({
               active,

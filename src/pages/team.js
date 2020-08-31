@@ -67,7 +67,7 @@ const TeamPage = () => (
       </Container>
     </Section>
 
-    <Section background={colors.backgroundSecundary}>
+    <Section background={colors.backgroundPrimary100}>
       <Container>
         <LightContent>
           <TwoColumns>

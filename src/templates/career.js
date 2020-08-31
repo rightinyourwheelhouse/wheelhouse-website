@@ -8,7 +8,6 @@ import {
   Container,
   LightContent,
 } from '~components/layoutComponents';
-import Card from '~components/Card';
 import Content from '~components/Content';
 import SEO from '~components/SEO';
 import SubTitle from '~components/SubTitle';
@@ -22,7 +21,6 @@ import OpenSource from '~modules/OpenSource';
 import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
-import spacing from '~styles/spacing';
 
 const Career = ({
   data: {
@@ -38,12 +36,13 @@ const Career = ({
     />
 
     <Navigation
-      baseBackgroundColor={colors.backgroundSecundary}
-      baseColor={colors.textLight}
+      baseBackgroundColor={colors.backgroundPrimary100}
+      baseColor={colors.textPrimary100}
       baseHoverColor={colors.primary}
+      hamburgerColor={colors.textPrimary100}
     />
 
-    <Section background={colors.backgroundSecundary}>
+    <Section background={colors.backgroundPrimary100}>
       <Container>
         <LightContent>
           <article>
@@ -79,7 +78,7 @@ const Career = ({
       </Container>
     </Section>
 
-    <Section background={colors.backgroundTertiary}>
+    <Section background={colors.backgorundPrimary200}>
       <Container>
 
         <SubTitle>careers</SubTitle>

@@ -81,7 +81,7 @@ const HorizontalItemList = ({
           <Chevron />
         </ArrowContainer>
       )}
-      <List ref={list} onWheel={onWheel} {...props}>
+      <List background={background} space={space} ref={list} onWheel={onWheel} {...props}>
         {children}
       </List>
       {position < lastPos && (
@@ -103,7 +103,7 @@ HorizontalItemList.propTypes = {
 };
 
 HorizontalItemList.defaultProps = {
-  background: colors.backgroundPrimary,
+  background: colors.backgroundPrimary900,
   height: '30vw',
   itemWidth: '45vw',
   portraitWidth: '35vw',

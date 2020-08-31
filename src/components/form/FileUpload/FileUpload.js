@@ -7,10 +7,12 @@ import { FileUploadContainer, Caption, Label } from './fileUpload.styles';
 
 import ErrorField from '../_ErrorField';
 
+import colors from '~styles/colors';
+
 const FileUpload = ({
   error, name, onChange, valid, value, label, ...props
 }) => {
-  const [active, setActive] = useState(value && value.length > 0);
+  const [active, setActive] = useState(value && value.name.length > 0);
 
   const onFocus = useCallback(() => {
     setActive(true);
@@ -36,6 +38,7 @@ const FileUpload = ({
       <label htmlFor={name}>
         {Boolean(value) && (
         <LabelInputContainer
+          color={colors.textPrimary100}
           padding
           className={classnames({
             active,
@@ -49,6 +52,7 @@ const FileUpload = ({
         )}
         {!value && (
           <LabelInputContainer
+            color={colors.textPrimary100}
             padding
             className={classnames({
               active,
@@ -69,6 +73,7 @@ const FileUpload = ({
 
 FileUpload.propTypes = {
   error: PropTypes.string,
+  label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   valid: PropTypes.bool,
@@ -77,6 +82,7 @@ FileUpload.propTypes = {
 
 FileUpload.defaultProps = {
   error: null,
+  label: 'upload file',
   onChange: null,
   valid: false,
   value: null,

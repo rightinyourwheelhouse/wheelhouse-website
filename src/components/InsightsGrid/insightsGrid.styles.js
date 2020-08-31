@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import spacing from '~styles/spacing';
 import breakpoints from '~styles/breakpoints';
-import colors from '~styles/colors';
 
 import gridLayouts from './insightsGrid.layouts';
 
@@ -38,7 +37,7 @@ export const Type = styled.span`
   line-height: 2;
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: ${colors.primary};
+  color: var(--color-primary);
   font-weight: bold;
   margin: 6px 0;
 `;
@@ -47,8 +46,8 @@ export const InsightsGridItemContainer = styled.div`
   display: block;
 
   margin-top: 16px;
-  padding-bottom: ${spacing.default};
-  margin-bottom: ${spacing.default};
+  padding-bottom: var(--spacing-default);
+  margin-bottom: var(--spacing-default);
   width: 100%;
 
   h3 {
@@ -62,7 +61,7 @@ export const InsightsGridItemContainer = styled.div`
 
   p {
     margin-top: 12px;
-    margin-bottom: ${spacing.default};
+    margin-bottom: var(--spacing-default);
     font-size: 1rem;
   }
 `;
@@ -75,7 +74,7 @@ export const InsightsGridContainer = styled.div`
 
         h3 {
           text-transform: uppercase;
-          margin-bottom: ${spacing.column};
+          margin-bottom: var(--spacing-small);
         }
 
         ${InsightsGridImage}, ${Type}, p {

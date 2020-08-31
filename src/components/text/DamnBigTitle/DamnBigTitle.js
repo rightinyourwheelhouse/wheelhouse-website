@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 
 export default styled.h1`
-  color: ${({ color }) => color || colors.textPrimary};
+  color: ${({ color }) => color || 'var(--color-text-primary-900)'};
   display: block;
   font-size: 1.75rem;
   font-weight: 900;

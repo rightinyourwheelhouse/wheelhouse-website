@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
-
 export const BlogContainer = styled.div`
   margin: 32px 0;
 `;
@@ -13,7 +11,7 @@ export const BlogItemContainer = styled.div`
   margin-top: 16px;
 
   &:hover {
-    color: ${colors.primary};
+    color: var(--color-primary);
   }
 
   p {

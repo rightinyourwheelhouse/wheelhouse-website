@@ -79,8 +79,8 @@ const IndexPage = () => (
         <Button
           as={Link}
           to="/insights"
-          color={colors.textLight}
-          colorHover={colors.textLight}
+          color={colors.textPrimary100}
+          colorHover={colors.textPrimary100}
           background={colors.primary}
           backgroundHover={colors.tertiary}
         >
@@ -99,7 +99,7 @@ const IndexPage = () => (
       </Container>
     </Section>
 
-    <Section background={colors.backgroundSecundary}>
+    <Section background={colors.backgroundPrimary100}>
       <Container>
         <LightContent>
           <OpenSource />

@@ -16,10 +16,10 @@ const RadioRaccoons = () => (
       important new technologies.
     </p>
     <Button
-      background={colors.textLight}
-      color={colors.textPrimary}
-      backgroundHover={colors.textPrimary}
-      colorHover={colors.textLight}
+      background={colors.textPrimary100}
+      color={colors.textPrimary900}
+      backgroundHover={colors.textPrimary900}
+      colorHover={colors.textPrimary100}
       as="a"
       href="https://radio.raccoons.be/"
       rel="nofollow noreferrer"

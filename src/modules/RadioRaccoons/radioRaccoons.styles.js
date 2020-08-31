@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
-import spacing from '~styles/spacing';
-
 export const OuterContainer = styled.div`
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 
   h2 {
-    margin: 0 auto ${spacing.default} auto;
+    margin: 0 auto var(--spacing-default) auto;
   }
 
   p {

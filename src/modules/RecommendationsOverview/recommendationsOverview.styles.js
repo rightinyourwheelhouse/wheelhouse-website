@@ -32,8 +32,8 @@ export const RecommendationsItemContainer = styled.div`
   float: left;
   clear: left;
   margin-top: 16px;
-  padding-bottom: ${spacing.default};
-  margin-bottom: ${spacing.default};
+  padding-bottom: var(--spacing-default);
+  margin-bottom: var(--spacing-default);
   width: 100%;
 
   &.sticky {

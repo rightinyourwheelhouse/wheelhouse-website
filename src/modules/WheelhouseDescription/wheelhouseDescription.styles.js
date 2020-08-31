@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
-import colors from '~styles/colors';
 
 export const WheelhouseDescriptionContainer = styled.div`
   position: relative;
@@ -16,7 +15,7 @@ export const WheelhouseDescriptionContainer = styled.div`
     left: -2rem;
     opacity: 0.1;
     font-size: 5rem;
-    color: ${colors.primary};
+    color: var(--color-primary);
 
     @media screen and (min-width: ${breakpoints.medium}) {
       top: -5rem;

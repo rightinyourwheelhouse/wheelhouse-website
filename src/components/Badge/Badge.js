@@ -19,8 +19,8 @@ Badge.propTypes = {
 };
 
 Badge.defaultProps = {
-  background: colors.textPrimary,
-  color: colors.textLight,
+  background: colors.textPrimary900,
+  color: colors.textPrimary100,
 };
 
 export default memo(Badge);

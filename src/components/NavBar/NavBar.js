@@ -54,7 +54,7 @@ const NavBar = ({
       return 'none';
     }
 
-    return isScrolled ? colors.textLight : 'transparent';
+    return isScrolled ? colors.textPrimary100 : 'transparent';
   }, [colors, isScrolled, desktop, baseColor]);
 
   return (
@@ -161,11 +161,11 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  baseBackgroundColor: colors.backgroundPrimary,
-  baseColor: colors.textPrimary,
-  baseHoverColor: colors.textPrimary,
+  baseBackgroundColor: colors.backgroundPrimary900,
+  baseColor: colors.textPrimary900,
+  baseHoverColor: colors.textPrimary900,
   careerCount: 0,
-  hamburgerColor: colors.textPrimary,
+  hamburgerColor: colors.textPrimary900,
   items: [],
   logoInitiallyHidden: false,
 };

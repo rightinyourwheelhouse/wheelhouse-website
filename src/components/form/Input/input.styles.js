@@ -10,7 +10,7 @@ export const LabelInput = styled.div`
 export const Label = styled.label`
   box-sizing: border-box;
   position: absolute;
-  color: #000;
+  color: var(--color-text-primary-900);
   top: 50%;
   left: 16px;
   transition: all 0.2s ease-in-out;
@@ -39,7 +39,7 @@ export const InputField = styled.input`
   width: 100%;
 
   &::placeholder {
-    color: #9b9b9b;
+    color: var(--color-primary-text-700);
     opacity: ${(props) => (props.active ? 1 : 0)};
     transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   }

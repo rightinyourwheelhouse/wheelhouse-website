@@ -50,8 +50,8 @@ Button.defaultProps = {
   as: 'button',
   background: colors.primary,
   backgroundHover: colors.accent,
-  color: colors.textLight,
-  colorHover: colors.textLight,
+  color: colors.textPrimary100,
+  colorHover: colors.textPrimary100,
   full: false,
 };
 

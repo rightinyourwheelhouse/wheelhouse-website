@@ -21,7 +21,7 @@ export const LabelInputContainer = styled.div`
   --hover: var(--color-text-primary-900);
   --error: var(--color-error);
   --spacing: 16px;
-  --height: 50px;
+  --height: 60px;
 
   cursor: pointer;
   height: var(--height);

@@ -41,8 +41,8 @@ const WelcomeHero = () => {
         <InnerContent centered>
           <Button
             background={colors.primary}
-            color={colors.textLight}
-            colorHover={colors.textLight}
+            color={colors.textPrimary100}
+            colorHover={colors.textPrimary100}
             backgroundHover={colors.accent}
             to="/team"
             as={Link}

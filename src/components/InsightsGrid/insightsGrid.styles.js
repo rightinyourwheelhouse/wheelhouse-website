@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import spacing from '~styles/spacing';
 import breakpoints from '~styles/breakpoints';
-import colors from '~styles/colors';
 
 import gridLayouts from './insightsGrid.layouts';
 
@@ -38,7 +37,7 @@ export const Type = styled.span`
   line-height: 2;
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: ${colors.primary};
+  color: var(--color-primary);
   font-weight: bold;
   margin: 6px 0;
 `;

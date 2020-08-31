@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 import spacing from '~styles/spacing';
 
@@ -11,7 +10,7 @@ export const OuterContainer = styled.div`
 `;
 
 export const List = styled.div`
-  --background: ${({ background }) => background || colors.backgroundPrimary};
+  --background: ${({ background }) => background};
   --height: ${({ height }) => height || '30vw'};
   --itemWidth: ${({ itemWidth }) => itemWidth || '45vw'};
   --portraitWidth: ${({ portraitWidth }) => portraitWidth || '35vw'};
@@ -120,7 +119,7 @@ export const ArrowContainer = styled.div`
 
   svg {
     width: 30px;
-    stroke: ${colors.textLight};
+    stroke: var(--color-text-primary-200);
 
     @media screen and (min-width: ${breakpoints.medium}) {
       width: 70px;

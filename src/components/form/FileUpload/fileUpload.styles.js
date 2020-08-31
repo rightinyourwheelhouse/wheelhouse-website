@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import spacing from '~styles/spacing';
-
 export const FileUploadContainer = styled.div`
   > input {
     width: 1;
@@ -9,6 +7,7 @@ export const FileUploadContainer = styled.div`
     opacity: 0;
     position: absolute;
     z-index: -99;
+    color: var(--color-text-primary-100);
   }
 
   > label {

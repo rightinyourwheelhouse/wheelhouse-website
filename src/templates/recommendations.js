@@ -43,7 +43,7 @@ export const OrderedList = styled.ol`
 
   a {
     text-decoration: underline;
-    color: ${colors.textPrimary};
+    color: var(--color-text-primary-900);
 
     &:hover {
       color: ${colors.primary};

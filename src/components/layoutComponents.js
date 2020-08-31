@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import spacing from '~styles/spacing';
-import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 
 export const Container = styled.div`
@@ -12,15 +11,15 @@ export const Container = styled.div`
   --offset: ${({ offset }) => offset || 0};
   --relative: ${({ relative }) => (relative ? 'relative' : 'inherit')};
 
-  margin: 0 auto;
+  margin: 0 auto 0;
+  margin-top: var(--offset);
   max-width: var(--width);
-  padding: 0px 2.1rem;
+  min-height: var(--height);
   padding-top: 0;
+  padding: 0px 2.1rem;
+  position: var(--relative);
   text-align: var(--centered);
   z-index: 3;
-  min-height: var(--height);
-  position: var(--relative);
-  margin-top: var(--offset);
 
   * {
     color: ${({ color }) => color};
@@ -28,7 +27,7 @@ export const Container = styled.div`
 `;
 
 export const LightContent = styled.div`
-  color: ${colors.textLight};
+  color: var(--color-text-primary-100);
 
   p,
   a,

@@ -10,7 +10,7 @@ import ErrorField from '../_ErrorField';
 const FileUpload = ({
   error, name, onChange, valid, value, label, ...props
 }) => {
-  const [active, setActive] = useState(value && value.length > 0);
+  const [active, setActive] = useState(value && value.name.length > 0);
 
   const onFocus = useCallback(() => {
     setActive(true);
@@ -69,6 +69,7 @@ const FileUpload = ({
 
 FileUpload.propTypes = {
   error: PropTypes.string,
+  label: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   valid: PropTypes.bool,
@@ -77,6 +78,7 @@ FileUpload.propTypes = {
 
 FileUpload.defaultProps = {
   error: null,
+  label: 'upload file',
   onChange: null,
   valid: false,
   value: null,

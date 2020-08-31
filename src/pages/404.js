@@ -21,15 +21,15 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" description="You got lost on your way to our website" />
     <Navigation
-      hamburgerColor={colors.textLight}
-      baseBackgroundColor={colors.backgroundSecundary}
-      baseColor={colors.textLight}
+      hamburgerColor={colors.textPrimary100}
+      baseBackgroundColor={colors.backgroundPrimary100}
+      baseColor={colors.textPrimary100}
       baseHoverColor={colors.primary}
     />
 
     <Lamp />
 
-    <Section background="#000">
+    <Section background={colors.backgroundPrimary100}>
       <Container height="50vh">
         <OuterContainer>
           <h1>Are you lost?</h1>

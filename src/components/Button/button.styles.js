@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-import fonts from '~styles/fonts';
 import breakpoints from '~styles/breakpoints';
 
 const pulse = (color) => keyframes`
@@ -26,7 +25,7 @@ export const ButtonContainer = styled.div`
     color: var(--foreground);
     cursor: pointer;
     display: inline-block;
-    font-family: ${fonts.family};
+    font-family: var(--font-family);
     font-size: .8rem;
     font-weight: 700;
     letter-spacing: .2rem;

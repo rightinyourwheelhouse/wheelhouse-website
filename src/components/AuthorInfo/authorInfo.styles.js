@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
 export const InfoContainer = styled.div``;
@@ -63,17 +62,14 @@ export const MainContentContainer = styled.div`
 `;
 
 export const Title = styled.span`
-  --color: ${colors.textPrimary};
   font-weight: bold;
   font-size: ${({ full }) => (full ? '24px' : '16px')} !important;
   line-height: 0px;
-  color: var(--color);
+  color: var(--color-text-primary-900);
 `;
 
 export const Description = styled.div`
-  --color: rgba(117, 117, 117, 0.9);
-
   margin-top: 6px;
   font-size: 16px !important;
-  color: var(--color);
+  color: var(--color-text-primary-700);
 `;

@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-import spacing from '~styles/spacing';
-
 export const OpenSourceContainer = styled.div`
   text-align: center;
 
   h2 {
-    margin: 0 auto ${spacing.default} auto;
+    margin: 0 auto var(--spacing-default) auto;
   }
 
   p {

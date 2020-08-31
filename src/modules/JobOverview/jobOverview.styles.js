@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import spacing from '~styles/spacing';
-
 export const JobTitle = styled.span`
   display: block;
   font-size: 2rem;
@@ -15,7 +13,7 @@ export const JobItemContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin-top: ${spacing.default};
+  margin-top: var(--spacing-default);
 
   h3 {
   }

@@ -81,7 +81,7 @@ const HorizontalItemList = ({
           <Chevron />
         </ArrowContainer>
       )}
-      <List background={background} ref={list} onWheel={onWheel} {...props}>
+      <List background={background} space={space} ref={list} onWheel={onWheel} {...props}>
         {children}
       </List>
       {position < lastPos && (

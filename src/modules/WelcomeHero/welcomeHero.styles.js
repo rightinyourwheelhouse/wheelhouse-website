@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import colors from '~styles/colors';
-import spacing from '~styles/spacing';
 
 const DEFAULT_COLORS = [
   colors.quaternary,
@@ -34,7 +33,7 @@ export const WelcomeHeroContainer = styled.div`
   justify-content: flex-start;
   margin-top: 30px;
   min-height: 100vh;
-  padding: ${spacing.large} 0;
+  padding: var(--spacing-large) 0;
   position: relative;
   text-align: left;
 

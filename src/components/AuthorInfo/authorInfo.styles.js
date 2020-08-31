@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import spacing from '~styles/spacing';
-
 export const InfoContainer = styled.div``;
 
 export const InfoContent = styled.div`
@@ -34,7 +32,7 @@ export const WrittenBy = styled.span`
 export const AuthorDescription = styled.p`
   --color: rgba(117, 117, 117, 0.9);
 
-  margin-top: ${spacing.default};
+  margin-top: var(--spacing-default);
   color: var(--color);
   font-size: 18px;
   line-height: 24px;

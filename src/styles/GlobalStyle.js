@@ -45,7 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     --font-size-h5: ${fonts.sizes.h5};
     --font-size-h6: ${fonts.sizes.h6};
 
+    --spacing-tiny: ${spacing.tiny};
+    --spacing-small: ${spacing.small};
     --spacing-default: ${spacing.default};
+    --spacing-large: ${spacing.large};
+    --spacing-extra-large: ${spacing.extraLarge};
   }
 
   * {

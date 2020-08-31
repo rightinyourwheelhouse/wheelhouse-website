@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
-import spacing from '~styles/spacing';
 
 export const Nav = styled.nav`
   align-items: center;
@@ -133,7 +132,7 @@ export const MenuIcon = styled.button`
   width: 30px;
   position: fixed;
   z-index: 2;
-  right: ${spacing.default};
+  right: var(--space-default);
   top: 30px;
   cursor: pointer;
   background: none;

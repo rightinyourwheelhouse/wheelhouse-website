@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
-import spacing from '~styles/spacing';
 
 export const OuterContainer = styled.div`
   position: relative;
@@ -14,7 +13,7 @@ export const List = styled.div`
   --height: ${({ height }) => height || '30vw'};
   --itemWidth: ${({ itemWidth }) => itemWidth || '45vw'};
   --portraitWidth: ${({ portraitWidth }) => portraitWidth || '35vw'};
-  --space: ${({ space }) => space || spacing.default};
+  --space: ${({ space }) => space};
 
   background: var(--background);
   display: flex;

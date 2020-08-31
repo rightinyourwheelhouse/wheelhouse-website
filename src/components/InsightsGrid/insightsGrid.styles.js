@@ -46,8 +46,8 @@ export const InsightsGridItemContainer = styled.div`
   display: block;
 
   margin-top: 16px;
-  padding-bottom: ${spacing.default};
-  margin-bottom: ${spacing.default};
+  padding-bottom: var(--spacing-default);
+  margin-bottom: var(--spacing-default);
   width: 100%;
 
   h3 {
@@ -61,7 +61,7 @@ export const InsightsGridItemContainer = styled.div`
 
   p {
     margin-top: 12px;
-    margin-bottom: ${spacing.default};
+    margin-bottom: var(--spacing-default);
     font-size: 1rem;
   }
 `;
@@ -74,7 +74,7 @@ export const InsightsGridContainer = styled.div`
 
         h3 {
           text-transform: uppercase;
-          margin-bottom: ${spacing.column};
+          margin-bottom: var(--spacing-small);
         }
 
         ${InsightsGridImage}, ${Type}, p {

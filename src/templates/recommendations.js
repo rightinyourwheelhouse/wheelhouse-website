@@ -24,17 +24,14 @@ import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import { toShortDate } from '~utils/date';
 
-import colors from '~styles/colors';
-import spacing from '~styles/spacing';
-
 const isWindowContext = typeof window !== 'undefined';
 
 export const OrderedList = styled.ol`
-  margin: ${spacing.big} 0;
+  margin: var(--spacing-extra-large) 0;
 
   li {
-    margin-bottom: ${spacing.large};
-    padding-bottom: ${spacing.large};
+    margin-bottom: var(--spacing-large);
+    padding-bottom: var(--spacing-large);
 
     &:not(:last-child) {
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -46,7 +43,7 @@ export const OrderedList = styled.ol`
     color: var(--color-text-primary-900);
 
     &:hover {
-      color: ${colors.primary};
+      color: var(--color-primary);
     }
   }
 

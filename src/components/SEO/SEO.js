@@ -14,54 +14,92 @@ const query = graphql`
         siteUrl
       }
     }
+
+    defaultImage: file(name: { eq: "default-image" }) {
+      childImageSharp {
+        resize(width: 900) {
+          src
+        }
+      }
+    }
   }
 `;
 
 const SEO = ({
-  lang, title, description, image, article,
+  lang, title, description, meta, image, article,
 }) => {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
+  const { site, defaultImage } = useStaticQuery(query);
 
   const {
+    author,
     title: defaultTitle,
     description: defaultDescription,
     siteUrl,
   } = site.siteMetadata;
 
-  const imageUrl = image ? `${siteUrl}${image}` : null;
-
-  const seo = {
-    description: description || defaultDescription,
-    image: imageUrl,
-    title: title || defaultTitle,
-    url: `${siteUrl}${pathname}`,
-  };
+  const imageUrl = image
+    ? `${siteUrl}${image}`
+    : `${siteUrl}${defaultImage.childImageSharp.resize.src}`;
+  const metaDescription = description || defaultDescription;
+  const metaTitle = title || defaultTitle;
+  const metaType = article ? 'article' : 'website';
+  const url = `${siteUrl}${pathname}`;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={metaTitle}
       titleTemplate="%s | Wheelhouse Agency"
-    >
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      {seo.url && <meta property="og:url" content={seo.url} />}
-      {seo.image && <meta property="og:image" content={seo.image} />}
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-      <meta name="twitter:card" content="summary_large_image" />
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
-      )}
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
-    </Helmet>
+      meta={[
+        {
+          content: metaDescription,
+          name: 'description',
+        },
+        {
+          content: metaTitle,
+          property: 'og:title',
+        },
+        {
+          content: url,
+          property: 'og:url',
+        },
+        {
+          content: imageUrl,
+          property: 'og:image',
+        },
+        {
+          content: metaDescription,
+          property: 'og:description',
+        },
+        {
+          content: metaType,
+          property: 'og:type',
+        },
+        {
+          content: 'summary_large_image',
+          name: 'twitter:card',
+        },
+        {
+          content: author,
+          name: 'twitter:creator',
+        },
+        {
+          content: title,
+          name: 'twitter:title',
+        },
+        {
+          content: metaDescription,
+          name: 'twitter:description',
+        },
+        {
+          content: imageUrl,
+          name: 'twitter:image',
+        },
+      ].concat(meta)}
+    />
   );
 };
 
@@ -70,6 +108,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 };
 
@@ -78,6 +117,7 @@ SEO.defaultProps = {
   description: null,
   image: null,
   lang: 'en',
+  meta: [],
   title: null,
 };
 

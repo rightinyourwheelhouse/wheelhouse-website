@@ -90,7 +90,7 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
   siteMetadata: {
-    author: 'Daren M.',
+    author: 'Wheelhouse Agency',
     description: 'Wheelhouse agency - javascript experts',
     siteUrl: 'https://dazzling-mclean-2ccbbd.netlify.app',
     title: 'Wheelhouse agency',

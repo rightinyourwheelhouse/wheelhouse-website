@@ -23,6 +23,7 @@ import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import { toShortDate } from '~utils/date';
+import { getMarkdownExcerpt } from '~utils/string';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -91,7 +92,7 @@ const Recommendations = ({
     <Layout>
       <SEO
         title={`${title} | from ${author}`}
-        description={title}
+        description={getMarkdownExcerpt(introduction)}
         image={src}
         url={url}
         article

@@ -20,6 +20,8 @@ import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
+import { getHtmlExcerpt } from '~utils/string';
+
 const isWindowContext = typeof window !== 'undefined';
 
 const Blog = ({
@@ -47,7 +49,7 @@ const Blog = ({
     <Layout>
       <SEO
         title={`${title}`}
-        description={title}
+        description={getHtmlExcerpt(encoded)}
         image={src}
         url={url}
         article

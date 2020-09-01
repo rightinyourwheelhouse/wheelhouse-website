@@ -18,9 +18,7 @@ const BlogOverview = ({ count, current, layout }) => {
     content: { encoded },
     pubDate,
     image,
-    ...props
   }) => {
-    console.log('props', props);
     const { text: time } = readingTime(encoded);
     const url = `/insights/${toKebab(title)}`;
     const dte = new Date(pubDate);
@@ -44,7 +42,7 @@ const BlogOverview = ({ count, current, layout }) => {
 BlogOverview.propTypes = {
   count: PropTypes.number,
   current: PropTypes.string,
-  layout: PropTypes.oneOf(Object.entries(gridLayouts)),
+  layout: PropTypes.oneOf(Object.keys(gridLayouts).map((key) => gridLayouts[key])),
 };
 
 BlogOverview.defaultProps = {

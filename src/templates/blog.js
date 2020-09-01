@@ -32,7 +32,10 @@ const Blog = ({
       link,
       content: { encoded },
       image: {
-        childImageSharp: { fluid },
+        childImageSharp: {
+          fluid,
+          resize: { src },
+        },
       },
     },
   },
@@ -42,7 +45,13 @@ const Blog = ({
 
   return (
     <Layout>
-      <SEO title={`${title}`} description={title} />
+      <SEO
+        title={`${title}`}
+        description={title}
+        image={src}
+        url={url}
+        article
+      />
 
       <Navigation />
 
@@ -95,6 +104,9 @@ Blog.propTypes = {
       image: PropTypes.shape({
         childImageSharp: PropTypes.shape({
           fluid: PropTypes.shape({}),
+          resize: PropTypes.shape({
+            src: PropTypes.string,
+          }),
         }),
       }),
       isoDate: PropTypes.string,
@@ -119,6 +131,9 @@ export const query = graphql`
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
+          }
+          resize(width: 900, quality: 90) {
+            src
           }
         }
       }

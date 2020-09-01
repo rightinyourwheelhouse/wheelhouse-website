@@ -22,6 +22,7 @@ export const InnerContent = styled.div`
 
   button, a {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 `;
 

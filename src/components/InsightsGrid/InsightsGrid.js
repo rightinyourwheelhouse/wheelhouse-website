@@ -119,19 +119,19 @@ InsightsGridOverview.propTypes = {
       author: PropTypes.string,
       date: PropTypes.string,
       description: PropTypes.string,
-      image: PropTypes.string,
+      image: PropTypes.shape({}),
       readTime: PropTypes.string,
       title: PropTypes.string,
       url: PropTypes.string,
     })
   ),
-  layout: PropTypes.oneOf(Object.entries(gridLayouts)),
+  layout: PropTypes.oneOf(Object.keys(gridLayouts).map((key) => gridLayouts[key])),
   reverse: PropTypes.bool,
 };
 
 InsightsGridOverview.defaultProps = {
   items: [],
-  layout: 'highlight',
+  layout: gridLayouts.HIGHLIGHT,
   reverse: false,
 };
 

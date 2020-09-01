@@ -75,7 +75,12 @@ const Recommendations = ({
       tags,
       introduction,
       slot,
-      image,
+      image: {
+        childImageSharp: {
+          fluid,
+          resize: { src },
+        },
+      },
     },
   },
 }) => {
@@ -84,7 +89,13 @@ const Recommendations = ({
 
   return (
     <Layout>
-      <SEO title={`${title} | from ${author}`} description={title} />
+      <SEO
+        title={`${title} | from ${author}`}
+        description={title}
+        image={src}
+        url={url}
+        article
+      />
 
       <Navigation />
 
@@ -92,17 +103,21 @@ const Recommendations = ({
         <Container>
           <Content>
             <h2>{title}</h2>
-            <AuthorInfo author={author} date={toShortDate(date)} readTime={time}>
+            <AuthorInfo
+              author={author}
+              date={toShortDate(date)}
+              readTime={time}
+            >
               <Share url={url} />
             </AuthorInfo>
           </Content>
         </Container>
       </Section>
 
-      {image && (
+      {fluid && (
         <Section space="12px">
           <Container>
-            <Img fluid={image.childImageSharp.fluid} />
+            <Img fluid={fluid} />
           </Container>
         </Section>
       )}
@@ -119,7 +134,7 @@ const Recommendations = ({
                   url: itemUrl,
                   description: itemDescription,
                 }) => (
-                  <li>
+                  <li key={itemTitle}>
                     <a href={itemUrl} target="_blank" rel="nofollow noreferrer">
                       {itemTitle}
                     </a>
@@ -139,7 +154,12 @@ const Recommendations = ({
             </OrderedList>
             <ReactMarkdown source={slot} />
           </Content>
-          <AuthorInfo full author={author} date={toShortDate(date)} readTime={time}>
+          <AuthorInfo
+            full
+            author={author}
+            date={toShortDate(date)}
+            readTime={time}
+          >
             <Share url={url} />
           </AuthorInfo>
         </Container>
@@ -149,7 +169,11 @@ const Recommendations = ({
         <Container>
           <SubTitle>Recommendations</SubTitle>
           <h2>More Recommendations</h2>
-          <RecommendationsOverview current={id} count={2} layout={gridLayouts.COLUMN} />
+          <RecommendationsOverview
+            current={id}
+            count={2}
+            layout={gridLayouts.COLUMN}
+          />
         </Container>
       </Section>
 
@@ -177,6 +201,7 @@ Recommendations.propTypes = {
       image: PropTypes.shape({
         childImageSharp: PropTypes.shape({
           fluid: PropTypes.shape({}),
+          resize: PropTypes.shape({ src: PropTypes.string }),
         }),
       }),
       introduction: PropTypes.string,
@@ -216,6 +241,9 @@ export const query = graphql`
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
+          }
+          resize(width: 900, quality: 90) {
+            src
           }
         }
       }

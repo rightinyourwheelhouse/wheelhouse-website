@@ -49,13 +49,13 @@ const WelcomeHero = () => {
           >
             Meet us
           </Button>
-          <p>
+          <div>
             get to know our
             {' '}
             <MarkWithContent text="team">
               <TeamRotation />
             </MarkWithContent>
-          </p>
+          </div>
         </InnerContent>
       </Container>
     </WelcomeHeroContainer>

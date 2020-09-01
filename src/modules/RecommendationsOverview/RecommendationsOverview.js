@@ -41,7 +41,7 @@ const RecommendationsOverview = ({ count, current, layout }) => {
 RecommendationsOverview.propTypes = {
   count: PropTypes.number,
   current: PropTypes.string,
-  layout: PropTypes.oneOf(Object.entries(gridLayouts)),
+  layout: PropTypes.oneOf(Object.keys(gridLayouts).map((key) => gridLayouts[key])),
 };
 
 RecommendationsOverview.defaultProps = {

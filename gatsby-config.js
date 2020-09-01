@@ -92,7 +92,7 @@ module.exports = {
   siteMetadata: {
     author: 'Daren M.',
     description: 'Wheelhouse agency - javascript experts',
-    siteUrl: 'https://www.wheelhouse.be',
+    siteUrl: 'https://dazzling-mclean-2ccbbd.netlify.app',
     title: 'Wheelhouse agency',
   },
 };

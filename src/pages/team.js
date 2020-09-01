@@ -1,5 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Content from '~components/Content';
@@ -20,11 +22,20 @@ import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
-const TeamPage = () => (
+const TeamPage = ({
+  data: {
+    seoImage: {
+      childImageSharp: {
+        resize: { src: seoImage },
+      },
+    },
+  },
+}) => (
   <Layout>
     <SEO
       title="Wheelhouse consist of these people"
       description="Our door is always open to new enthusiastic colleagues. We welcome you to a fun family where everyone feels comfortable and supports each other."
+      image={seoImage}
     />
     <Navigation />
 
@@ -112,5 +123,27 @@ const TeamPage = () => (
     <WorkingAtmosphereGallery />
   </Layout>
 );
+
+TeamPage.propTypes = {
+  data: PropTypes.shape({
+    seoImage: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        resize: PropTypes.shape({ src: PropTypes.string }),
+      }),
+    }),
+  }).isRequired,
+};
+
+export const query = graphql`
+  query {
+    seoImage: file(name: { eq: "team" }) {
+      childImageSharp {
+        resize(width: 900) {
+          src
+        }
+      }
+    }
+  }
+`;
 
 export default TeamPage;

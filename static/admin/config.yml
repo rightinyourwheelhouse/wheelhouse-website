@@ -1,11 +1,9 @@
 ---
+  local_backend: true
   backend:
     name: github
     repo: rightinyourwheelhouse/wheelhouse-website
-  # backend:
-  #   name: proxy
-  #   proxy_url: http://localhost:8081/api/v1
-  #   branch: blog-to-insights-page
+  publish_mode: editorial_workflow
   collections:
     -
       label: Picks

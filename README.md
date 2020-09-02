@@ -73,14 +73,13 @@ For using the CMS offline you can use:
     npx netlify-cms-proxy-server
     ```
 
-And use the following yaml config:
+And change the local_backend param to true in the yaml config:
 
     ```
-    backend:
-        name: proxy
-        proxy_url: http://localhost:8081/api/v1
-        branch: master # optional, defaults to master
+    local_backend: true
     ```
+
+More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 
 ### Deploying storybook
 

@@ -1,6 +1,8 @@
 import React, {
   memo, useState, useCallback, useEffect, useMemo,
 } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import ReactGA from 'react-ga';
 
 import { CookieConsentContainer } from './cookieConsent.styles';
 
@@ -8,6 +10,8 @@ import CookieConsentSimple from '~components/CookieConsentSimple';
 import CookieConsentAdvanced from '~components/CookieConsentAdvanced';
 
 import { useCookie, setCookie } from '~hooks/useCookie';
+
+const ANALYTICS_COOKIE_NAME = 'gdpr-google-analytics';
 
 const cookies = [
   {
@@ -21,13 +25,31 @@ const cookies = [
     description:
       'These trackers help us to measure traffic and analyze your behavior with the goal of improving our service.',
     label: 'measurement',
-    name: 'gdpr-google-analytics',
+    name: ANALYTICS_COOKIE_NAME,
   },
 ];
+
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        trackingId
+      }
+    }
+  }
+`;
 
 const debug = false;
 
 const CookieConsent = () => {
+  const {
+    site: {
+      siteMetadata: {
+        trackingId,
+      },
+    },
+  } = useStaticQuery(query);
+
   const [visible, setVisible] = useState(false);
   const [advanced, setAdvanced] = useState(false);
   const [consentsCookieValue, setConsentsCookieValue] = useCookie(
@@ -76,6 +98,12 @@ const CookieConsent = () => {
           if (!required) {
             toSave[name] = value;
             setCookie(name, value.toString());
+
+            if (value) {
+              if (name === ANALYTICS_COOKIE_NAME) {
+                ReactGA.initialize(trackingId);
+              }
+            }
           }
         });
 
@@ -135,7 +163,10 @@ const CookieConsent = () => {
   return (
     <CookieConsentContainer>
       {!advanced && (
-        <CookieConsentSimple onUpdate={onUpdateAll} onCustomize={onToggleCustomize} />
+        <CookieConsentSimple
+          onUpdate={onUpdateAll}
+          onCustomize={onToggleCustomize}
+        />
       )}
       {advanced && (
         <CookieConsentAdvanced

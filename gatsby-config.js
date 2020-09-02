@@ -1,3 +1,5 @@
+const trackingId = 'UA-131264538-8';
+
 module.exports = {
   plugins: [
     {
@@ -6,7 +8,7 @@ module.exports = {
         googleAnalytics: {
           anonymize: true,
           cookieName: 'gdpr-google-analytics',
-          trackingId: 'UA-131264538-8',
+          trackingId,
         },
       },
       resolve: 'gatsby-plugin-gdpr-cookies',
@@ -105,5 +107,6 @@ module.exports = {
     description: 'Wheelhouse agency - javascript experts',
     siteUrl: 'https://www.wheelhouse.be',
     title: 'Wheelhouse agency',
+    trackingId,
   },
 };

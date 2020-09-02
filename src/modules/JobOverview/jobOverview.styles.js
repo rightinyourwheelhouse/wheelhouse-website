@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '~styles/breakpoints';
+
 export const JobTitle = styled.span`
   display: block;
   font-size: 2rem;
@@ -11,11 +13,12 @@ export const JobItemContainer = styled.div`
   display: block;
   margin-top: 16px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: var(--spacing-default);
 
-  h3 {
+  @media screen and (min-width: ${breakpoints.medium}){
+    flex-wrap: nowrap;
   }
 
   &:hover {
@@ -23,6 +26,7 @@ export const JobItemContainer = styled.div`
   }
 
   p {
+    padding-top: 8px;
     margin: 0%;
     font-size: 1rem;
   }

@@ -75,7 +75,7 @@ const CookieConsent = () => {
         cookiePreferences.forEach(({ name, value, required }) => {
           if (!required) {
             toSave[name] = value;
-            setCookie(name, value.toString());
+            setCookie(name, value);
           }
         });
 

@@ -1,5 +1,5 @@
 ---
-  local_backend: true
+  local_backend: false
   backend:
     name: github
     repo: rightinyourwheelhouse/wheelhouse-website

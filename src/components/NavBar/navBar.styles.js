@@ -132,7 +132,7 @@ export const MenuIcon = styled.button`
   width: 30px;
   position: fixed;
   z-index: 2;
-  right: var(--space-default);
+  right: var(--spacing-default);
   top: 30px;
   cursor: pointer;
   background: none;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
 
-export const CookieConsentContainer = styled.div`
+export const CookieConsentSimpleContainer = styled.div`
   margin-bottom: 0;
   flex: 1 1 auto;
   padding-bottom: 32px;
@@ -28,7 +28,7 @@ export const ConsentHeader = styled.header`
   font-size: 1.2em;
 `;
 
-export const ConsentContent = styled.div`
+export const ConsentContentSimple = styled.div`
   p,
   a {
     color: var(--color-text-primary-100);

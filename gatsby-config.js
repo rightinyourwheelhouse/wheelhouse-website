@@ -5,7 +5,7 @@ module.exports = {
         environments: ['production', 'development'],
         googleAnalytics: {
           anonymize: true,
-          cookieName: 'gatsby-plugin-gdpr-cookies',
+          cookieName: 'gdpr-google-analytics',
           trackingId: 'UA-131264538-8',
         },
       },

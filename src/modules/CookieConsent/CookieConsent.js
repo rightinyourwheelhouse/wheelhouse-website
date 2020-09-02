@@ -1,11 +1,10 @@
 import React, {
   memo, useState, useCallback, useEffect, useMemo,
 } from 'react';
-import PropTypes from 'prop-types';
 
-import { CookieConsentOptionsContainer } from './cookieConsentOptions.styles';
+import { CookieConsentContainer } from './cookieConsent.styles';
 
-import CookieConsent from '~components/CookieConsent';
+import CookieConsentSimple from '~components/CookieConsentSimple';
 import CookieConsentAdvanced from '~components/CookieConsentAdvanced';
 
 import { useCookie, setCookie } from '~hooks/useCookie';
@@ -22,13 +21,13 @@ const cookies = [
     description:
       'These trackers help us to measure traffic and analyze your behavior with the goal of improving our service.',
     label: 'measurement',
-    name: 'gatsby-plugin-gdpr-cookies',
+    name: 'gdpr-google-analytics',
   },
 ];
 
 const debug = false;
 
-const CookieConsentOptions = () => {
+const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
   const [advanced, setAdvanced] = useState(false);
   const [consentsCookieValue, setConsentsCookieValue] = useCookie(
@@ -134,9 +133,9 @@ const CookieConsentOptions = () => {
   }
 
   return (
-    <CookieConsentOptionsContainer>
+    <CookieConsentContainer>
       {!advanced && (
-        <CookieConsent onUpdate={onUpdateAll} onCustomize={onToggleCustomize} />
+        <CookieConsentSimple onUpdate={onUpdateAll} onCustomize={onToggleCustomize} />
       )}
       {advanced && (
         <CookieConsentAdvanced
@@ -147,8 +146,8 @@ const CookieConsentOptions = () => {
           onUpdateAll={onUpdateAll}
         />
       )}
-    </CookieConsentOptionsContainer>
+    </CookieConsentContainer>
   );
 };
 
-export default memo(CookieConsentOptions);
+export default memo(CookieConsent);

@@ -5,11 +5,11 @@ import Link from 'gatsby-link';
 import Button from '~components/Button';
 
 import {
-  CookieConsentContainer,
+  CookieConsentSimpleContainer,
   ConsentHeader,
   ConsentActions,
-  ConsentContent,
-} from './cookieConsent.styles';
+  ConsentContentSimple,
+} from './cookieConsentSimple.styles';
 
 import colors from '~styles/colors';
 
@@ -31,9 +31,9 @@ const CookieConsent = ({
   );
 
   return (
-    <CookieConsentContainer>
+    <CookieConsentSimpleContainer>
       <ConsentHeader>Experience more through cookies</ConsentHeader>
-      <ConsentContent>
+      <ConsentContentSimple>
         <p>
           We use cookies or similar technologies as specified in our
           {' '}
@@ -41,7 +41,7 @@ const CookieConsent = ({
             privacy policy
           </Link>
         </p>
-      </ConsentContent>
+      </ConsentContentSimple>
       <ConsentActions>
         <div>
           <Button background={colors.backgroundPrimary600} onClick={onCustomize} name="customize">
@@ -57,7 +57,7 @@ const CookieConsent = ({
           </Button>
         </div>
       </ConsentActions>
-    </CookieConsentContainer>
+    </CookieConsentSimpleContainer>
   );
 };
 

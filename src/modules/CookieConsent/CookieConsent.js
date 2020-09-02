@@ -39,7 +39,7 @@ const query = graphql`
   }
 `;
 
-const debug = false;
+const debug = true;
 
 const CookieConsent = () => {
   const {
@@ -100,7 +100,9 @@ const CookieConsent = () => {
             setCookie(name, value.toString());
 
             if (value) {
-              if (name === ANALYTICS_COOKIE_NAME) {
+              const prevValue = (consentsCookieValue !== undefined) && JSON.parse(consentsCookieValue)[name];
+
+              if (name === ANALYTICS_COOKIE_NAME && !prevValue) {
                 ReactGA.initialize(trackingId);
               }
             }

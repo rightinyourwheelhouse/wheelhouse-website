@@ -10,6 +10,8 @@ import colors from '~styles/colors';
 const Button = ({
   background,
   backgroundHover,
+  border,
+  borderHover,
   children,
   color,
   colorHover,
@@ -22,6 +24,8 @@ const Button = ({
     colorHover={colorHover}
     background={background}
     backgroundHover={backgroundHover}
+    border={border}
+    borderHover={borderHover}
     className={classnames({
       full,
     })}
@@ -40,6 +44,8 @@ Button.propTypes = {
   ]),
   background: PropTypes.string,
   backgroundHover: PropTypes.string,
+  border: PropTypes.string,
+  borderHover: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,
   color: PropTypes.string,
   colorHover: PropTypes.string,
@@ -50,6 +56,8 @@ Button.defaultProps = {
   as: 'button',
   background: colors.primary,
   backgroundHover: colors.accent,
+  border: 'transparent',
+  borderHover: 'transparent',
   color: colors.textPrimary100,
   colorHover: colors.textPrimary100,
   full: false,

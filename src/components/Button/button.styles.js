@@ -13,13 +13,15 @@ export const ButtonContainer = styled.div`
   --backgroundHover: ${({ backgroundHover }) => backgroundHover};
   --foreground: ${({ color }) => color};
   --foregroundHover: ${({ colorHover }) => colorHover};
+  --border: ${({ border }) => border};
+  --borderHover: ${({ borderHover }) => borderHover};
 
   > div,
   .btn {
     align-items: center;
     background: var(--background);
     border-radius: 3px;
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     color: var(--foreground);
     cursor: pointer;
     display: inline-block;
@@ -39,6 +41,7 @@ export const ButtonContainer = styled.div`
     &:hover {
       color: var(--foregroundHover);
       background: var(--backgroundHover);
+      border: 1px solid var(--borderHover);
       animation: 0.6s ${({ backgroundHover }) => pulse(backgroundHover)};
       box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
       animation-delay: 0.1s;

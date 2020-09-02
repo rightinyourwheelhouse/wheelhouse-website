@@ -2,6 +2,17 @@ module.exports = {
   plugins: [
     {
       options: {
+        environments: ['production', 'development'],
+        googleAnalytics: {
+          anonymize: true,
+          cookieName: 'gatsby-plugin-gdpr-cookies',
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        },
+      },
+      resolve: 'gatsby-plugin-gdpr-cookies',
+    },
+    {
+      options: {
         // Path to your Netlify CMS config file
         cmsConfig: '/static/admin/config.yml',
       },
@@ -92,7 +103,7 @@ module.exports = {
   siteMetadata: {
     author: 'Wheelhouse Agency',
     description: 'Wheelhouse agency - javascript experts',
-    siteUrl: 'https://dazzling-mclean-2ccbbd.netlify.app',
+    siteUrl: 'https://www.wheelhouse.be',
     title: 'Wheelhouse agency',
   },
 };

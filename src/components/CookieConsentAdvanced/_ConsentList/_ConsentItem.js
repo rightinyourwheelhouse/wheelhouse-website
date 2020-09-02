@@ -37,7 +37,7 @@ ConsentItem.propTypes = {
 ConsentItem.defaultProps = {
   onChange: () => {},
   required: false,
-  value: 'false',
+  value: false,
 };
 
 export default memo(ConsentItem);

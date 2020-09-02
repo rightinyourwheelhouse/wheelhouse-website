@@ -20,7 +20,7 @@ const ConsentItem = ({
         </span>
       </div>
       <div>
-        <Toggle id={name} onChange={handleChange} label={label} value={value || required} />
+        <Toggle id={name} onChange={handleChange} label={label} value={Boolean(value) || required} />
       </div>
     </ConsentItemContainer>
   );
@@ -31,13 +31,13 @@ ConsentItem.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   required: PropTypes.bool,
-  value: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 ConsentItem.defaultProps = {
   onChange: () => {},
   required: false,
-  value: false,
+  value: 'false',
 };
 
 export default memo(ConsentItem);

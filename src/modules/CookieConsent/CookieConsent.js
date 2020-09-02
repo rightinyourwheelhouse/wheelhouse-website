@@ -47,7 +47,7 @@ const CookieConsent = () => {
     }
 
     setConsents(values);
-  }, []);
+  }, [JSON.stringify(consentsCookieValue)]);
 
   const consentList = useMemo(() => {
     const list = [];
@@ -75,7 +75,7 @@ const CookieConsent = () => {
         cookiePreferences.forEach(({ name, value, required }) => {
           if (!required) {
             toSave[name] = value;
-            setCookie(name, value);
+            setCookie(name, value.toString());
           }
         });
 

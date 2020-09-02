@@ -11,7 +11,7 @@ export const setCookie = (name, value, options) => {
     Date.now() + optionsWithDefaults.days * 864e5
   ).toUTCString();
 
-  if (typeof document !== undefined) {
+  if (typeof document !== 'undefined') {
     document.cookie = `${name}=${encodeURIComponent(
       value
     )}; expires=${expires}; path=${optionsWithDefaults.path}`;
@@ -19,8 +19,8 @@ export const setCookie = (name, value, options) => {
 };
 
 export const getCookie = (name) => {
-  if (typeof document !== undefined) {
-    document.cookie.split('; ').reduce((r, v) => {
+  if (typeof document !== 'undefined') {
+    return document.cookie.split('; ').reduce((r, v) => {
       const parts = v.split('=');
       return parts[0] === name ? decodeURIComponent(parts[1]) : r;
     }, '');

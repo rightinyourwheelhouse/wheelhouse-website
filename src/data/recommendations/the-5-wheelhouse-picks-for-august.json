@@ -4,23 +4,17 @@
       "url": "https://defaced.dev/tools/layout-shift-gif-generator/",
       "author": "defaced",
       "title": "Layout shift gif generator",
-      "description": "Easily identify problematic layout shifts in the viewport on mobile and desktop. Available as a simple command line tool, or as an online tool."
-    },
-    {
-      "title": "Colorsafe",
-      "url": "http://colorsafe.co/",
-      "author": "",
-      "description": "Pick colors with enough contrastratio to maintain decent usability."
+      "description": "Easily identify problematic layout shifts in the viewport on mobile and desktop. Available as a simple command line tool, or as an online tool. With layout shifting now negatively impacts search results, this resource is very useful."
     }
   ],
   "author": "Wheelhouse",
-  "live": true,
-  "date": "2020-08-15T16:39:05.257Z",
-  "title": "The 5 Wheelhouse picks for august",
+  "live": false,
+  "date": "2020-09-03T16:39:05.257Z",
+  "title": "The 5 Wheelhouse picks going into september",
   "tags": [
     "picks"
   ],
-  "introduction": "These are some links that we found the most interesting this month.",
+  "introduction": "These are some links that we found the most interesting going into september. Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us.",
   "image": "assets/martin-sanchez-mipnylnw2ks-unsplash.jpg",
-  "description": "We put together a list of 5 links you must take a look at"
+  "description": "Every month we each pick the greatest thing that we found last month and share it with you"
 }

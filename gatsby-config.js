@@ -1,5 +1,18 @@
+const trackingId = 'UA-131264538-8';
+
 module.exports = {
   plugins: [
+    {
+      options: {
+        environments: ['production', 'development'],
+        googleAnalytics: {
+          anonymize: true,
+          cookieName: 'gdpr-google-analytics',
+          trackingId,
+        },
+      },
+      resolve: 'gatsby-plugin-gdpr-cookies',
+    },
     {
       options: {
         // Path to your Netlify CMS config file
@@ -92,7 +105,8 @@ module.exports = {
   siteMetadata: {
     author: 'Wheelhouse Agency',
     description: 'Wheelhouse agency - javascript experts',
-    siteUrl: 'https://dazzling-mclean-2ccbbd.netlify.app',
+    siteUrl: 'https://www.wheelhouse.be',
     title: 'Wheelhouse agency',
+    trackingId,
   },
 };

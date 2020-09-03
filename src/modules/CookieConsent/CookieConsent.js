@@ -39,7 +39,7 @@ const query = graphql`
   }
 `;
 
-const debug = true;
+const debug = false;
 
 const CookieConsent = () => {
   const {

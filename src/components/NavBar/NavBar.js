@@ -32,6 +32,7 @@ const NavBar = ({
   baseBackgroundColor,
   baseHoverColor,
   careerCount,
+  hamburgerColor,
   items,
   logoInitiallyHidden,
 }) => {
@@ -53,7 +54,7 @@ const NavBar = ({
       return 'none';
     }
 
-    return isScrolled ? colors.textLight : 'transparent';
+    return isScrolled ? colors.textPrimary100 : 'transparent';
   }, [colors, isScrolled, desktop, baseColor]);
 
   return (
@@ -64,6 +65,7 @@ const NavBar = ({
         scrolled={isScrolled}
       >
         <MenuIcon
+          hamburgerColor={hamburgerColor}
           type="MenuIcon"
           onClick={toggleMenu}
           className={open && 'active'}
@@ -148,6 +150,7 @@ NavBar.propTypes = {
   baseColor: PropTypes.string,
   baseHoverColor: PropTypes.string,
   careerCount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  hamburgerColor: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string,
@@ -158,10 +161,11 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  baseBackgroundColor: colors.backgroundPrimary,
-  baseColor: colors.textPrimary,
-  baseHoverColor: colors.textPrimary,
+  baseBackgroundColor: colors.backgroundPrimary900,
+  baseColor: colors.textPrimary900,
+  baseHoverColor: colors.textPrimary900,
   careerCount: 0,
+  hamburgerColor: colors.textPrimary900,
   items: [],
   logoInitiallyHidden: false,
 };

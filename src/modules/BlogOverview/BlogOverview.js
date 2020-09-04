@@ -1,49 +1,54 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import readingTime from 'reading-time';
-import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import Stack from '~components/Stack';
 
-import { BlogItemContainer, BlogContainer } from './blogOverview.styles';
+import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
 
-import { useBlogOverview } from '~api/blog/useBlogOverview';
+import { useBlogOverview } from '~api/insights/useBlogOverview';
 
 import { toKebab } from '~utils/string';
+import { toShortDate } from '~utils/date';
 
-const BlogOverview = ({ count, current }) => {
-  const [blogItems] = useBlogOverview({ count, current });
+const BlogOverview = ({ count, current, layout }) => {
+  const [originalBlogItems] = useBlogOverview({ count, current });
+
+  const blogItems = useMemo(() => originalBlogItems.map(({
+    creator: author,
+    title,
+    content: { encoded },
+    pubDate,
+    image,
+  }) => {
+    const { text: time } = readingTime(encoded);
+    const url = `/insights/${toKebab(title)}`;
+    const dte = new Date(pubDate);
+
+    return {
+      author,
+      date: toShortDate(dte),
+      image,
+      readTime: time,
+      title,
+      type: 'blog',
+      url,
+    };
+  }), [originalBlogItems]);
 
   return (
-    <BlogContainer>
-      <Stack space="60px">
-        <div>
-          {blogItems.map(({ title, content: { encoded } }) => {
-            const { text: time } = readingTime(encoded);
-            const url = `/blog/${toKebab(title)}`;
-
-            return (
-              <Link key={title} to={url} rel="noopener noreferrer" target="_blank">
-                <BlogItemContainer>
-                  <h3>{title}</h3>
-                  <p>{time}</p>
-                </BlogItemContainer>
-              </Link>
-            );
-          })}
-        </div>
-      </Stack>
-    </BlogContainer>
+    <InsightsGrid items={blogItems} layout={layout} />
   );
 };
 
 BlogOverview.propTypes = {
   count: PropTypes.number,
   current: PropTypes.string,
+  layout: PropTypes.oneOf(Object.keys(gridLayouts).map((key) => gridLayouts[key])),
 };
 
 BlogOverview.defaultProps = {
   count: null,
   current: null,
+  layout: gridLayouts.SUMMARY,
 };
 
 export default memo(BlogOverview);

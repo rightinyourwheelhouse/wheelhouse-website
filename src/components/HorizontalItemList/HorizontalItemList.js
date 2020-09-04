@@ -1,57 +1,113 @@
-import styled from 'styled-components';
+import React, {
+  memo, useRef, useState, useCallback, useMemo,
+} from 'react';
+import PropTypes from 'prop-types';
+import { animateScroll } from 'react-scroll';
 
-import colors from '~styles/colors';
-import breakpoints from '~styles/breakpoints';
+import {
+  List,
+  ArrowContainer,
+  OuterContainer,
+} from './horizontalItemList.styles';
+
 import spacing from '~styles/spacing';
+import colors from '~styles/colors';
 
-export default styled.div`
-  --background: ${({ background }) => background || colors.backgroundPrimary};
-  --height: ${({ height }) => height || '30vw'};
-  --itemWidth: ${({ itemWidth }) => itemWidth || '45vw'};
-  --portraitWidth: ${({ portraitWidth }) => portraitWidth || '35vw'};
-  --space: ${({ space }) => space || spacing.default};
+import Chevron from '~images/chevron-left.svg';
 
-  background: var(--background);
-  display: flex;
-  align-items: center;
-  height: var(--height);
-  max-height: 900px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  min-width: 100vw;
-  max-width: 100%;
-  box-sizing: border-box;
+const HorizontalItemList = ({
+  background,
+  children,
+  height,
+  itemWidth,
+  portraitWidth,
+  space,
+  ...props
+}) => {
+  const [position, setPosition] = useState(0);
+  const list = useRef();
 
-  &::-webkit-scrollbar {
-    height: 0rem;
-  }
+  const lastPos = useMemo(() => {
+    const { current } = list;
 
-  > * {
-    flex: 0 0 var(--itemWidth);
-
-    &.portrait {
-      flex: 0 0 var(--portraitWidth);
+    if (!current) {
+      return typeof window !== 'undefined' ? window.innerWidth : 0;
     }
-  }
 
-  img, >div {
-    height: 100%;
-    flex-basis: auto;
-    width: auto;
-    min-width: var(--itemWidth);
+    return current.scrollWidth - current.clientWidth;
+  }, [position, list]);
 
-    &.portrait {
-      min-width: var(--portraitWidth);
+  const scroll = useCallback((pos) => {
+    const { current } = list;
+
+    if (!current) {
+      return;
     }
-  }
 
-  > * + * {
-    margin-left: var(--space);
-  }
+    animateScroll.scrollTo(pos, {
+      container: current,
+      horizontal: true,
+    });
 
-  @media screen and (min-width: ${breakpoints.medium}) {
-    > * + * {
-      margin-left: var(--space);
-    }
-  }
-`;
+    setPosition(pos);
+  }, []);
+
+  const onRight = useCallback(() => {
+    const { current } = list;
+
+    const newPos = current.scrollLeft + window.innerWidth;
+
+    scroll(newPos);
+  }, [list]);
+
+  const onLeft = useCallback(() => {
+    const { current } = list;
+
+    const newPos = current.scrollLeft - window.innerWidth;
+
+    scroll(newPos);
+  }, [list]);
+
+  const onWheel = useCallback(() => {
+    const { current } = list;
+
+    setPosition(current.scrollLeft);
+  }, []);
+
+  return (
+    <OuterContainer>
+      {position > 0 && (
+        <ArrowContainer onClick={onLeft} role="button">
+          <Chevron />
+        </ArrowContainer>
+      )}
+      <List background={background} space={space} ref={list} onWheel={onWheel} {...props}>
+        {children}
+      </List>
+      {position < lastPos && (
+      <ArrowContainer onClick={onRight} className="right" role="button">
+        <Chevron />
+      </ArrowContainer>
+      )}
+    </OuterContainer>
+  );
+};
+
+HorizontalItemList.propTypes = {
+  background: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,
+  height: PropTypes.string,
+  itemWidth: PropTypes.string,
+  portraitWidth: PropTypes.string,
+  space: PropTypes.string,
+};
+
+HorizontalItemList.defaultProps = {
+  background: colors.backgroundPrimary900,
+  height: '30vw',
+  itemWidth: '45vw',
+  portraitWidth: '35vw',
+  space: spacing.default,
+};
+
+export default memo(HorizontalItemList);

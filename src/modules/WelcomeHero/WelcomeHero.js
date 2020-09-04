@@ -1,54 +1,65 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
+import { Link } from 'gatsby';
 
 import { Container } from '~components/layoutComponents';
 import Button from '~components/Button';
-import DamnBigTitle from '~components/text/DamnBigTitle';
-import ColorSpinner from '~components/ColorSpinner';
 import MarkWithContent from '~components/MarkWithContent';
-import Stack from '~components/Stack';
+
+import {
+  WelcomeHeroContainer, MaskContainer, InnerContainer, InnerContent,
+} from './welcomeHero.styles';
 
 import TeamRotation from '~modules/TeamRotation';
 
-import { WelcomeHeroContainer } from './welcomeHero.styles';
-
 import colors from '~styles/colors';
 
-import Logo from '~images/wheelhouse.svg';
+import Blob from '~images/blobs/1.svg';
+import Welcome from '~images/blobs/welcome.svg';
 
-const WelcomeHero = () => (
-  <WelcomeHeroContainer>
-    <Container>
-      <Stack space="32px">
-        <ColorSpinner>
-          <Logo />
-        </ColorSpinner>
-        <DamnBigTitle>
-          Hi! We&apos;re
-          {' '}
-          <br />
-          Wheelhouse
-        </DamnBigTitle>
-        <div>
-          We are a
-          {' '}
-          <MarkWithContent text="team">
-            <TeamRotation />
-          </MarkWithContent>
-          {' '}
-          of passionate JavaScript developers, eager to exchange our expertise
-          to eachother and our customers.
+const WelcomeHero = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  return (
+    <WelcomeHeroContainer>
+      <Container relative>
+        <InnerContainer loaded={loaded}>
+          <MaskContainer loaded={loaded}>
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+            <Blob />
+          </MaskContainer>
+          <Welcome />
+        </InnerContainer>
+        <InnerContent centered>
           <Button
-            background={colors.accent}
-            color={colors.textLight}
-            colorHover={colors.accent}
-            backgroundHover={colors.backgroundPrimary}
+            background={colors.primary}
+            color={colors.textPrimary100}
+            colorHover={colors.textPrimary100}
+            backgroundHover={colors.accent}
+            to="/team"
+            as={Link}
           >
             Meet us
           </Button>
-        </div>
-      </Stack>
-    </Container>
-  </WelcomeHeroContainer>
-);
+          <div>
+            get to know our
+            {' '}
+            <MarkWithContent text="team">
+              <TeamRotation />
+            </MarkWithContent>
+          </div>
+        </InnerContent>
+      </Container>
+    </WelcomeHeroContainer>
+  );
+};
 
 export default memo(WelcomeHero);

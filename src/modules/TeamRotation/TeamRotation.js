@@ -18,8 +18,6 @@ const TeamRotation = () => {
     return setIndex(index + 1);
   };
 
-  const { childImageSharp, id, name } = images[index];
-
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
@@ -32,12 +30,17 @@ const TeamRotation = () => {
 
   return (
     <RotationContainer>
-      <Img
-        loading="eager"
-        fluid={childImageSharp.fluid}
-        key={id}
-        alt={name.replace(/-/g, ' ').substring(2)}
-      />
+      {images.map(({ childImageSharp: { fluid }, id, name }, i) => (
+        <Img
+          loading="eager"
+          fluid={fluid}
+          key={id}
+          alt={name.replace(/-/g, ' ').substring(2)}
+          style={{
+            display: index === i ? 'block' : 'none',
+          }}
+        />
+      ))}
     </RotationContainer>
   );
 };

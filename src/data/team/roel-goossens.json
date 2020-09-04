@@ -1,6 +1,7 @@
 {
   "name": "Roel Goossens",
   "role": "full-stack developer",
-  "description": "is a full-stack developer and wants harmony in life.",
-  "image": "assets/roel-2.jpg"
+  "description": "has a passion for creation. Whether it's on the workbench, in the kitchen or in his IDE.",
+  "image": "assets/roel-2.jpg",
+  "visible": true
 }

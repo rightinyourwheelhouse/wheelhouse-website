@@ -21,8 +21,8 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  background: colors.backgroundTertiary,
-  foreground: colors.textPrimary,
+  background: colors.backgroundPrimary800,
+  foreground: colors.textPrimary900,
 };
 
 export default memo(Card);

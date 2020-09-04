@@ -1,9 +1,8 @@
 /* eslint-disable sort-keys */
 export default {
-  default: '36px',
+  tiny: '6px',
   small: '12px',
-  column: '12px',
-  grid: '6px',
+  default: '36px',
   large: '90px',
-  big: '180px',
+  extraLarge: '180px',
 };

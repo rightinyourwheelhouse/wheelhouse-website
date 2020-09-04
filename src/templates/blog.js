@@ -4,20 +4,13 @@ import readingTime from 'reading-time';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-} from 'react-share';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import ImageTitle from '~components/ImageTitle';
-import Info from '~components/Info';
+import AuthorInfo from '~components/AuthorInfo';
 import SEO from '~components/SEO';
+import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
@@ -27,7 +20,7 @@ import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
-// import FacebookIcon from '~images/icons/facebook.svg';
+import { getHtmlExcerpt } from '~utils/string';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -41,7 +34,10 @@ const Blog = ({
       link,
       content: { encoded },
       image: {
-        childImageSharp: { fluid },
+        childImageSharp: {
+          fluid,
+          resize: { src },
+        },
       },
     },
   },
@@ -52,8 +48,11 @@ const Blog = ({
   return (
     <Layout>
       <SEO
-        title={`Vacancy ${title} at Wheelhouse ${title}`}
-        description={title}
+        title={`${title}`}
+        description={getHtmlExcerpt(encoded)}
+        image={src}
+        url={url}
+        article
       />
 
       <Navigation />
@@ -62,23 +61,9 @@ const Blog = ({
         <ImageTitle image={<Img fluid={fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <Info title={creator} description={`${isoDate} · ${time}`}>
-            <div>
-              <FacebookShareButton url={url}>
-                <FacebookIcon />
-              </FacebookShareButton>
-            </div>
-            <div>
-              <TwitterShareButton url={url}>
-                <TwitterIcon />
-              </TwitterShareButton>
-            </div>
-            <div>
-              <LinkedinShareButton url={url}>
-                <LinkedinIcon />
-              </LinkedinShareButton>
-            </div>
-          </Info>
+          <AuthorInfo author={creator} date={isoDate} readTime={time}>
+            <Share url={url} />
+          </AuthorInfo>
         </ImageTitle>
         <Container>
           <Content>
@@ -99,6 +84,9 @@ const Blog = ({
 
       <Section>
         <Container>
+          <SubTitle>careers</SubTitle>
+          <h2>Work with us</h2>
+
           <JobOverview />
         </Container>
       </Section>
@@ -118,6 +106,9 @@ Blog.propTypes = {
       image: PropTypes.shape({
         childImageSharp: PropTypes.shape({
           fluid: PropTypes.shape({}),
+          resize: PropTypes.shape({
+            src: PropTypes.string,
+          }),
         }),
       }),
       isoDate: PropTypes.string,
@@ -142,6 +133,9 @@ export const query = graphql`
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
+          }
+          resize(width: 900, quality: 90) {
+            src
           }
         }
       }

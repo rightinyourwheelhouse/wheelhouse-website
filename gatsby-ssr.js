@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+const React = require('react');
 
-// You can delete this file if you're not using it
+exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
+  const headComponents = getHeadComponents();
+
+  headComponents.sort((a, b) => {
+    if (a.props && a.props['data-react-helmet']) {
+      return 0;
+    }
+    return 1;
+  });
+  replaceHeadComponents(headComponents);
+};

@@ -1,5 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Content from '~components/Content';
@@ -21,9 +23,21 @@ import GeneralOnboarding from '~modules/GeneralOnboarding';
 
 import colors from '~styles/colors';
 
-const TeamPage = () => (
+const TeamPage = ({
+  data: {
+    seoImage: {
+      childImageSharp: {
+        resize: { src: seoImage },
+      },
+    },
+  },
+}) => (
   <Layout>
-    <SEO title="Wheelhouse consist of these people" />
+    <SEO
+      title="Wheelhouse consist of these people"
+      description="Our door is always open to new enthusiastic colleagues. We welcome you to a fun family where everyone feels comfortable and supports each other."
+      image={seoImage}
+    />
     <Navigation />
 
     <Section>
@@ -32,14 +46,12 @@ const TeamPage = () => (
           <SubTitle>team</SubTitle>
           <h2>Feeling at home</h2>
           <p>
-            Our door is always open to new enthusiastic colleagues. We welcome you
-            to a fun family where everyone feels comfortable and supports each
-            other. Our passionate team will gladly guide you through Wheelhouse!
+            Our door is always open to new enthusiastic colleagues. We welcome
+            you to a fun family where everyone feels comfortable and supports
+            each other. Our passionate team will gladly guide you through
+            Wheelhouse!
           </p>
-          <Button
-            as={Link}
-            to="/careers"
-          >
+          <Button as={Link} to="/careers">
             View open positions
           </Button>
         </Content>
@@ -52,18 +64,22 @@ const TeamPage = () => (
       <Container>
         <TeamOverview />
         <Card>
-          <GeneralOnboarding>
-            <h2>Do you want to join us?</h2>
-            <p>
-              We improve the quality of our service and solutions by continuously focusing on improvement. We carefully analyse and monitor all projects while training our team in the latest technologies. At Wheelhouse, we help you develop your talents so that you can build a high-quality career path.
-            </p>
-          </GeneralOnboarding>
-          {/* <Button as={Link} to="/careers">Check our job openings</Button> */}
+          <h2>Do you want to join us?</h2>
+          <p>
+            We improve the quality of our service and solutions by continuously
+            focusing on improvement. We carefully analyse and monitor all
+            projects while our team is trained to keep up-to-date with the
+            latest technologies. At Wheelhouse, we help you develop your talents
+            so that you can build a high-quality career path.
+          </p>
+          <Button as={Link} to="/careers">
+            Check our job openings
+          </Button>
         </Card>
       </Container>
     </Section>
 
-    <Section background={colors.backgroundSecundary}>
+    <Section background={colors.backgroundPrimary100}>
       <Container>
         <LightContent>
           <TwoColumns>
@@ -99,11 +115,36 @@ const TeamPage = () => (
     </Section>
     <Section>
       <Container>
+        <SubTitle>careers</SubTitle>
+        <h2>Work with us</h2>
+
         <JobOverview />
       </Container>
     </Section>
     <WorkingAtmosphereGallery />
   </Layout>
 );
+
+TeamPage.propTypes = {
+  data: PropTypes.shape({
+    seoImage: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        resize: PropTypes.shape({ src: PropTypes.string }),
+      }),
+    }),
+  }).isRequired,
+};
+
+export const query = graphql`
+  query {
+    seoImage: file(name: { eq: "team" }) {
+      childImageSharp {
+        resize(width: 900) {
+          src
+        }
+      }
+    }
+  }
+`;
 
 export default TeamPage;

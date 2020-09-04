@@ -3,33 +3,81 @@ import { createGlobalStyle } from 'styled-components';
 import colors from './colors';
 import fonts from './fonts';
 import breakpoints from './breakpoints';
+import spacing from './spacing';
 
 export const GlobalStyle = createGlobalStyle`
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+  :root {
+    --color-primary: ${colors.primary};
+    --color-secundary: ${colors.secundary};
+    --color-tertiary: ${colors.tertiary};
+    --color-quaternary: ${colors.quaternary};
 
- html {
-    -webkit-font-smoothing: antialiased;
-    background: ${colors.backgroundPrimary};
-    color: ${colors.textPrimary};
-    font-family: ${fonts.family};
-    margin: 0;
-    min-height: 100%;
+    --color-background-primary-900: ${colors.backgroundPrimary900};
+    --color-background-primary-800: ${colors.backgroundPrimary800};
+    --color-background-primary-700: ${colors.backgroundPrimary700};
+    --color-background-primary-600: ${colors.backgroundPrimary600};
+    --color-background-primary-500: ${colors.backgroundPrimary500};
+    --color-background-primary-400: ${colors.backgroundPrimary400};
+    --color-background-primary-300: ${colors.backgroundPrimary300};
+    --color-background-primary-200: ${colors.backgroundPrimary200};
+    --color-background-primary-100: ${colors.backgroundPrimary100};
+
+    --color-text-primary-900: ${colors.textPrimary900};
+    --color-text-primary-800: ${colors.textPrimary800};
+    --color-text-primary-700: ${colors.textPrimary700};
+    --color-text-primary-600: ${colors.textPrimary600};
+    --color-text-primary-500: ${colors.textPrimary500};
+    --color-text-primary-400: ${colors.textPrimary400};
+    --color-text-primary-300: ${colors.textPrimary300};
+    --color-text-primary-200: ${colors.textPrimary200};
+    --color-text-primary-100: ${colors.textPrimary100};
+
+    --color-error: ${colors.error};
+
+    --font-family: ${fonts.family};
+
+    --font-size-default: ${fonts.sizes.default};
+    --font-size-small: ${fonts.sizes.small};
+    --font-size-h1: ${fonts.sizes.h1};
+    --font-size-h2: ${fonts.sizes.h2};
+    --font-size-h3: ${fonts.sizes.h3};
+    --font-size-h4: ${fonts.sizes.h4};
+    --font-size-h5: ${fonts.sizes.h5};
+    --font-size-h6: ${fonts.sizes.h6};
+
+    --spacing-tiny: ${spacing.tiny};
+    --spacing-small: ${spacing.small};
+    --spacing-default: ${spacing.default};
+    --spacing-large: ${spacing.large};
+    --spacing-extra-large: ${spacing.extraLarge};
   }
 
-  body: {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    background: var(--color-background-primary-900);
+    color: var(--color-text-primary-900);
+    font-family: var(--font-family);
+    margin: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
     margin: 0;
     min-height: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
   }
 
   a {
     text-decoration: none;
-    color: ${colors.textLink};
+    color: var(--color-text-primary-800);
     font-weight: 300;
     cursor: pointer;
 
@@ -38,16 +86,17 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p, p > button, li {
-    font-family: ${fonts.family};
-    color: ${colors.textPrimary};
+  p,
+  p > button,
+  li {
+    font-family: var(--font-family);
+    color: var(--color-text-primary-900);
     font-size: ${fonts.sizes.default};
     line-height: 180%;
     margin-top: 1.5rem;
     margin-bottom: 30px;
     font-weight: 400;
   }
-
 
   p > button {
     background: none;
@@ -91,7 +140,12 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${fonts.family};
+    hyphens: auto;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    hyphens: auto;
+    font-family: var(--font-family);
     margin-bottom: 0;
     line-height: 1.5rem;
     text-transform: uppercase;
@@ -102,47 +156,48 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3.242rem;
+    font-size: 2.742rem;
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
 
-    &:not(:first-of-type){
+    &:not(:first-of-type) {
       margin-top: 3rem;
     }
 
-    @media screen and (min-width: ${breakpoints.small}){
+    @media screen and (min-width: ${breakpoints.small}) {
       font-size: 6vw;
       max-width: 70%;
     }
-    @media screen and (min-width: ${breakpoints.large}){
+    @media screen and (min-width: ${breakpoints.large}) {
       font-size: 5rem;
       max-width: 70%;
     }
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
     margin-bottom: 1rem;
 
-    &:not(:first-of-type){
-      margin-top: 2.8rem;
+    &:not(:first-of-type) {
+      margin-top: 3.8rem;
     }
 
-    @media screen and (min-width: ${breakpoints.small}){
+    @media screen and (min-width: ${breakpoints.small}) {
       font-size: 5.5vw;
-      max-width: 60%;
+      max-width: 80%;
     }
-    @media screen and (min-width: ${breakpoints.large}){
+    @media screen and (min-width: ${breakpoints.large}) {
       font-size: 4.5rem;
-      max-width: 60%;
+      max-width: 80%;
     }
   }
   h3 {
     font-size: 23px;
+    font-weight: 900;
   }
   h4 {
     font-size: 0.707rem;
@@ -194,13 +249,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .visible-small {
-    @media screen and (min-width: ${breakpoints.medium}){
+    @media screen and (min-width: ${breakpoints.medium}) {
       display: none;
     }
   }
 
   .visible-large {
-    @media screen and (min-width: ${breakpoints.medium}){
+    @media screen and (min-width: ${breakpoints.medium}) {
       display: inherit;
     }
   }

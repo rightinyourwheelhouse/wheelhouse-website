@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
-import fonts from '~styles/fonts';
 import breakpoints from '~styles/breakpoints';
 
 export const Nav = styled.nav`
@@ -17,7 +15,7 @@ export const Nav = styled.nav`
 
 export const Item = styled.div`
   a {
-    font-family: ${fonts.family};
+    font-family: var(--font-family);
     align-items: center;
     display: flex;
     flex-direction: row-reverse;
@@ -128,11 +126,13 @@ export const Items = styled.div`
 `;
 
 export const MenuIcon = styled.button`
+  --color: ${({ hamburgerColor }) => hamburgerColor};
+
   height: 30px;
   width: 30px;
   position: fixed;
   z-index: 2;
-  right: 50px;
+  right: var(--spacing-default);
   top: 30px;
   cursor: pointer;
   background: none;
@@ -147,13 +147,14 @@ export const MenuIcon = styled.button`
     height: 2px;
     width: 30px;
     display: block;
-    background-color: ${colors.textPrimary};
+    background-color: var(--color);
     margin-bottom: 4px;
     transition: transform 0.2s ease, background-color 0.5s ease;
   }
 
   &.active span {
-    background: ${colors.textPrimary};
+    background: var(--color-text-primary-900);
+
     &:first-of-type {
       transform: translate(0, 6px) rotate(45deg);
     }
@@ -171,12 +172,19 @@ export const MenuIcon = styled.button`
 export const ItemsContent = styled.div`
   display: flex;
   width: 80vw;
-  margin-top: 130px;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   align-self: center;
   order: 0;
+
+  &:not(:first-of-type) {
+    margin-top: 130px;
+      @media screen and (min-width: ${breakpoints.medium}) {
+        margin-top: 0;
+      }
+    &
+  }
 
   @media screen and (min-width: ${breakpoints.medium}) {
     align-items: center;
@@ -200,30 +208,30 @@ export const ItemsContent = styled.div`
     &.scrolled {
       ${Item} {
         a {
-          color: ${colors.textPrimary};
+          color: var(--color-text-primary-900);
         }
 
         span:not(.label) {
-          color: ${colors.textLight};
-          background: ${colors.textPrimary};
+          color: var(--color-text-primary-100);
+          background: var(--color-text-primary-900);
         }
 
         svg path {
-          fill: ${colors.textPrimary};
+          fill: var(--color-text-primary-900);
         }
 
         &:hover {
           a {
-            color: ${colors.primary};
+            color: var(--color-primary);
           }
 
           span:not(.label) {
-            color: ${colors.textLight};
-            background: ${colors.primary};
+            color: var(--color-text-primary-100);
+            background: var(--color-primary);
           }
 
           svg path {
-            fill: ${colors.primary};
+            fill: var(--color-primary);
           }
         }
       }
@@ -244,21 +252,21 @@ export const ItemsContent = styled.div`
 
       svg {
         path {
-          fill: ${colors.primary};
+          fill: var(--color-primary);
         }
       }
     }
 
     a {
       font-weight: 900;
-      color: ${colors.textPrimary};
+      color: var(--color-text-primary-900);
 
       @media screen and (min-width: ${breakpoints.medium}) {
         color: ${({ baseColor }) => baseColor};
       }
 
       span:not(.label) {
-        color: ${colors.textLight};
+        color: var(--color-text-primary-100);
 
         @media screen and (min-width: ${breakpoints.medium}) {
           color: ${({ baseBackgroundColor }) => baseBackgroundColor};
@@ -272,7 +280,7 @@ export const ItemsContent = styled.div`
         display: block;
 
         path {
-          fill: ${colors.textPrimary};
+          fill: var(--color-text-primary-900);
 
           @media screen and (min-width: ${breakpoints.medium}) {
             fill: ${({ baseColor }) => baseColor};
@@ -281,18 +289,14 @@ export const ItemsContent = styled.div`
       }
 
       &:hover {
-        color: ${colors.primary};
+        color: var(--color-primary);
 
         @media screen and (min-width: ${breakpoints.medium}) {
           color: ${({ baseHoverColor }) => baseHoverColor};
         }
 
         span:not(.label) {
-          background: ${({ baseHoverColor }) => {
-    console.log('baseHoverColor', baseHoverColor);
-
-    return baseHoverColor;
-  }};
+          background: ${({ baseHoverColor }) => baseHoverColor};
           color: ${({ baseBackgroundColor }) => baseBackgroundColor};
         }
 

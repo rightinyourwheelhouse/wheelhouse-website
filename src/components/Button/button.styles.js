@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-import fonts from '~styles/fonts';
 import breakpoints from '~styles/breakpoints';
 
 const pulse = (color) => keyframes`
@@ -14,35 +13,35 @@ export const ButtonContainer = styled.div`
   --backgroundHover: ${({ backgroundHover }) => backgroundHover};
   --foreground: ${({ color }) => color};
   --foregroundHover: ${({ colorHover }) => colorHover};
+  --border: ${({ border }) => border};
+  --borderHover: ${({ borderHover }) => borderHover};
 
   > div,
   .btn {
+    align-items: center;
     background: var(--background);
-    border: none;
-    border-radius: 2px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
     color: var(--foreground);
     cursor: pointer;
     display: inline-block;
-    height: 50px;
-    font-size: 14px;
-    line-height: 50px;
+    font-family: var(--font-family);
+    font-size: .8rem;
     font-weight: 700;
-    align-items: center;
-    justify-content: center;
-    padding: 0 25px 0;
-    font-family: ${fonts.family};
+    letter-spacing: .2rem;
+    line-height: 1.1rem;
+    padding: 16px 32px;
     position: relative;
+    text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     transition-duration: 0.1s;
     transition-timing-function: ease;
-
-    @media screen and (min-width: ${breakpoints.small}){
-      font-size: 18px;
-    }
 
     &:hover {
       color: var(--foregroundHover);
       background: var(--backgroundHover);
+      border: 1px solid var(--borderHover);
       animation: 0.6s ${({ backgroundHover }) => pulse(backgroundHover)};
       box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
       animation-delay: 0.1s;

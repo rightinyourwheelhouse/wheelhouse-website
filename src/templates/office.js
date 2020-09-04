@@ -9,7 +9,6 @@ import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
 import SEO from '~components/SEO';
 import SubTitle from '~components/SubTitle';
-import Info from '~components/Info';
 import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';

@@ -87,15 +87,16 @@ const Footer = () => {
             </div>
           </TwoColumns>
 
-          {offices.map(({ address, phone }) => (
-            <p>
+          {offices.map(({ address, phone }, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <p key={i}>
               {address}
               {' '}
               <a href={`tel:${phone}`}>{phone}</a>
             </p>
           ))}
           <p className="disclaimer">
-            <a href="/">Privacy policy</a>
+            <Link to="/privacy-policy" href="/">Privacy policy</Link>
           </p>
         </Stack>
       </Container>

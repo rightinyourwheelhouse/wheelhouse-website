@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "title": "Syntax",
+      "author": "Wes Bos & Scott Tolinksi",
+      "url": "https://syntax.fm/",
+      "description": "This is my personal favourite. Wes Bos and Scott Tolinksi are some very knowledgeable and entertaining people. They talk about their own experiences and cover a variety of topic such as frameworks, tools, css and much more."
+    },
+    {
+      "title": "Front-end Happy Hour",
+      "author": "Panel of experts",
+      "url": "https://frontendhappyhour.com/",
+      "description": "A podcast featuring a panel of Software Engineers from Netflix, Twitch, & Atlassian talking over drinks about all things Front End development."
+    },
+    {
+      "title": "modern web",
+      "author": "This dot media",
+      "url": "https://www.thisdot.co/modern-web",
+      "description": "Modern Web is focussed the latest tooling in Web Development. It handles the latest news about angular, vue, react, reactive programming, ES20XX, ..."
+    },
+    {
+      "title": "That's my JAMStack",
+      "url": "https://thatsmyjamstack.com/",
+      "description": "I have to be honest and my time is limited and I don't personally listen to this one, but it's a topic that I really love and if days would have more hours in them this would be the one to add to my list!"
+    }
+  ],
+  "author": "Daren Malfait",
+  "live": true,
+  "date": "2020-09-02T09:17:05.047Z",
+  "title": "4 Great podcasts that will improve your understanding of front-end development",
+  "tags": [
+    "javascript",
+    "podcasts"
+  ],
+  "introduction": "Chances are that you are probably up to date on your podcast listenings and are looking for some new material. It can be hard separating the wheat from chaff having too much choice. I usually listen to podcasts when I go for a run or when I'm in the car. So I really like easy to listen to podcasts that give me an idea so I can take that idea when I like it and look it up if I wanted to know more about it. These are the ones about Web Development I like the most.",
+  "image": "assets/podcasts.png",
+  "description": "Easy to listen to podcasts about Javascript to listen to in your car, on a run or wherever you want."
+}

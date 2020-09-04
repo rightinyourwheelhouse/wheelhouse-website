@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
-import colors from '~styles/colors';
 
 export const Mark = styled.mark`
   position: relative;
@@ -18,7 +17,7 @@ export const TextContainer = styled.span`
   text-transform: uppercase;
   top: 100%;
   left: 12px;
-  color: ${colors.textLight};
+  color: var(--color-text-primary-100);
   z-index: 1;
   transform: translateY(-6rem);
 `;

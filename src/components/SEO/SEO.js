@@ -1,57 +1,89 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description, lang, meta, title,
-}) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        siteUrl
+      }
+    }
+
+    defaultImage: file(name: { eq: "default-image" }) {
+      childImageSharp {
+        resize(width: 900) {
+          src
         }
       }
-    `
-  );
+    }
+  }
+`;
 
-  const metaDescription = description || site.siteMetadata.description;
+const SEO = ({
+  lang, title, description, meta, image, article,
+}) => {
+  const { pathname } = useLocation();
+  const { site, defaultImage } = useStaticQuery(query);
+
+  const {
+    author,
+    title: defaultTitle,
+    description: defaultDescription,
+    siteUrl,
+  } = site.siteMetadata;
+
+  const imageUrl = image
+    ? `${siteUrl}${image}`
+    : `${siteUrl}${defaultImage.childImageSharp.resize.src}`;
+  const metaDescription = description || defaultDescription;
+  const metaTitle = title || defaultTitle;
+  const metaType = article ? 'article' : 'website';
+  const url = `${siteUrl}${pathname}`;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={metaTitle}
+      titleTemplate="%s | Wheelhouse Agency"
       meta={[
         {
           content: metaDescription,
           name: 'description',
         },
         {
-          content: title,
+          content: metaTitle,
           property: 'og:title',
+        },
+        {
+          content: url,
+          property: 'og:url',
+        },
+        {
+          content: imageUrl,
+          property: 'og:image',
         },
         {
           content: metaDescription,
           property: 'og:description',
         },
         {
-          content: 'website',
+          content: metaType,
           property: 'og:type',
         },
         {
-          content: 'summary',
+          content: 'summary_large_image',
           name: 'twitter:card',
         },
         {
-          content: site.siteMetadata.author,
+          content: author,
           name: 'twitter:creator',
         },
         {
@@ -62,22 +94,31 @@ function SEO({
           content: metaDescription,
           name: 'twitter:description',
         },
+        {
+          content: imageUrl,
+          name: 'twitter:image',
+        },
       ].concat(meta)}
     />
   );
-}
-
-SEO.defaultProps = {
-  description: '',
-  lang: 'en',
-  meta: [],
 };
 
 SEO.propTypes = {
+  article: PropTypes.bool,
   description: PropTypes.string,
+  image: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+};
+
+SEO.defaultProps = {
+  article: false,
+  description: null,
+  image: null,
+  lang: 'en',
+  meta: [],
+  title: null,
 };
 
 export default SEO;

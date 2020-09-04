@@ -1,5 +1,18 @@
+const trackingId = 'UA-131264538-8';
+
 module.exports = {
   plugins: [
+    {
+      options: {
+        environments: ['production', 'development'],
+        googleAnalytics: {
+          anonymize: true,
+          cookieName: 'gdpr-google-analytics',
+          trackingId,
+        },
+      },
+      resolve: 'gatsby-plugin-gdpr-cookies',
+    },
     {
       options: {
         // Path to your Netlify CMS config file
@@ -50,21 +63,6 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-svgr-loader',
     },
-    {
-      options: {
-        fonts: [
-          {
-            family: 'Montserrat',
-            variants: ['300, 500, 700,900'],
-          },
-          {
-            family: 'Lora',
-            variants: ['400'],
-          },
-        ],
-      },
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-    },
     'gatsby-plugin-react-helmet',
     {
       options: {
@@ -105,9 +103,10 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
   siteMetadata: {
-    author: 'Daren M.',
+    author: 'Wheelhouse Agency',
     description: 'Wheelhouse agency - javascript experts',
     siteUrl: 'https://www.wheelhouse.be',
     title: 'Wheelhouse agency',
+    trackingId,
   },
 };

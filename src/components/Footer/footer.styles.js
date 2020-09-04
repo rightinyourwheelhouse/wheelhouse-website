@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
-
 export const LinksContainer = styled.div`
    > span, > a {
     margin-bottom: 1vw;
@@ -16,9 +14,7 @@ export const LinksContainer = styled.div`
 `;
 
 export const Title = styled.span`
-   --foreground: ${colors.textLight};
-
-   color: var(--foreground);
+   color: var(--color-text-primary-100);
    font-size: .69em;
    text-transform: uppercase;
    font-weight: 700;
@@ -27,7 +23,8 @@ export const Title = styled.span`
 `;
 
 export const FooterContainer = styled.footer`
-  --foreground: ${colors.textLight};
+  --foreground: var(--color-text-primary-100);
+
   padding: 120px 0;
   font-size: 21px;
   background: #000;
@@ -55,7 +52,7 @@ export const FooterContainer = styled.footer`
     color: var(--foreground);
 
     &:hover {
-      color: ${colors.primary};
+      color: var(--color-primary);
     }
   }
 

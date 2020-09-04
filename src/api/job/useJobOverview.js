@@ -6,6 +6,7 @@ const query = graphql`
     allCareer {
       edges {
         node {
+          id
           city
           title
           slug
@@ -15,13 +16,13 @@ const query = graphql`
   }
 `;
 
-export const useJobOverview = (count) => {
+export const useJobOverview = ({ count, current = null } = {}) => {
   const {
     allCareer: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node }));
+    const nodes = edges.map(({ node }) => ({ ...node })).filter(({ id }) => id !== current);
 
     if (count) {
       return nodes.slice(0, count);
@@ -30,5 +31,5 @@ export const useJobOverview = (count) => {
     return nodes;
   }, [edges, count]);
 
-  return [items];
+  return items;
 };

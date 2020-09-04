@@ -2,12 +2,8 @@ import React, { memo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import {
-  LabelInput,
-  Label,
-  LabelInputContainer,
-  InputField,
-} from './input.styles';
+import { LabelInput, Label, InputField } from './input.styles';
+import { LabelInputContainer } from '../form.styles';
 import ErrorField from '../_ErrorField';
 
 const Input = ({

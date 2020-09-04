@@ -1,9 +1,9 @@
 {
   "name": "Ghent",
-  "address": "Gaston crommelaan 8, 9000 Ghent",
+  "address": "Gaston Crommelaan 8, 9050 Ghent",
   "mail": "hello@wheelhouse.be",
   "phone": "+32479559012",
-  "description": "Description about the office in Ghent",
-  "howToReach": "### by public transport\nSome information on how to reach the office\n### by car\nsome information how to reach the office by car",
+  "description": "",
+  "howToReach": "### by public transport\n\nA free shuttle bus service connects you with Ghent Sint-Pieters train station. \n\n### by car\n\nThe Zuiderpoort is located near the main highway. There is sufficient parking underneath the building.\n\n### I'm there what now?\n\nFollow the signs \"Esplanade 8\" and take the elevator to floor 1 (or the stairs from ground level). Our offices are behind a door marked “Comma Group”.\n",
   "image": "assets/ghent.png"
 }

@@ -14,15 +14,18 @@ import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
+import ApplyForm from '~modules/ApplyForm';
+import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import OpenSource from '~modules/OpenSource';
+import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
 const Career = ({
   data: {
     career: {
-      city, description, requirements, title,
+      city, description, id, requirements, title,
     },
   },
 }) => (
@@ -33,12 +36,13 @@ const Career = ({
     />
 
     <Navigation
-      baseBackgroundColor={colors.backgroundSecundary}
-      baseColor={colors.textLight}
+      baseBackgroundColor={colors.backgroundPrimary100}
+      baseColor={colors.textPrimary100}
       baseHoverColor={colors.primary}
+      hamburgerColor={colors.textPrimary100}
     />
 
-    <Section background={colors.backgroundSecundary}>
+    <Section background={colors.backgroundPrimary100}>
       <Container>
         <LightContent>
           <article>
@@ -62,11 +66,33 @@ const Career = ({
       </Container>
     </Section>
 
+    <WorkingAtmosphereGallery />
+
+    <Section>
+      <Container>
+        <Content>
+          <SubTitle>Apply</SubTitle>
+          <h2>Do we have your attention?</h2>
+          <ApplyForm vacancy={`${title} at ${city}`} />
+        </Content>
+      </Container>
+    </Section>
+
+    <Section background={colors.backgorundPrimary200}>
+      <Container>
+
+        <SubTitle>careers</SubTitle>
+        <h2>Other career opportunities</h2>
+
+        <JobOverview current={id} />
+      </Container>
+    </Section>
     <Section>
       <Container>
         <OpenSource />
       </Container>
     </Section>
+    <Section />
   </Layout>
 );
 
@@ -75,6 +101,7 @@ Career.propTypes = {
     career: PropTypes.shape({
       city: PropTypes.string,
       description: PropTypes.string,
+      id: PropTypes.string,
       requirements: PropTypes.string,
       title: PropTypes.string,
     }),
@@ -84,6 +111,7 @@ Career.propTypes = {
 export const query = graphql`
   query($slug: String!) {
     career(slug: { eq: $slug }) {
+      id
       city
       description
       requirements

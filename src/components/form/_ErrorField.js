@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-import colors from '../../styles/colors';
-
 export default styled.span`
   display: block;
   font-size: 17px;
-  color: ${colors.error};
+  color: var(--color-error);
   letter-spacing: 0;
   font-weight: bold;
   line-height: 22px;
-  margin-left: 16px;
   margin-top: 5px;
 `;

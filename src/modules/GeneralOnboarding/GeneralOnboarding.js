@@ -3,51 +3,48 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import { Onboarding, stages } from '~components/Onboarding';
+import { Onboarding, stages as stageComponents } from '~components/Onboarding';
+import stages from '~components/Onboarding/stageData.json';
 
-const introText = [
-  'Hi!',
-  "We're very excited to have you here...",
-  "And we're also very excited to tell you more about us.",
-];
+/**
+ * We define all of the behaviour in our JSON file for the conversation
+ * This requires us to bind the components referred in that JSON to actual ones here
+ * The "component" key in the JSON is the key in this mapping, values should be imported components
+ * Make sure they can handle all the properties the stage describes!
+ */
+const componentMapping = {
+  FadingText: stageComponents.FadingText,
+  TextInput: stageComponents.Name,
+};
 
-const GeneralOnboarding = ({ children }) => {
+const GeneralOnboarding = ({
+  children,
+  hidden,
+  showInitialStage,
+}) => {
   const reducer = (state, newState) => ({ ...state, ...newState });
   const [values, setValues] = useReducer(reducer, {});
 
-  const advancedText = useMemo(() => {
-    const { firstName } = values;
+  // Get all stages from config, but we change the component to an actual React component
+  // All the other properties we just pass along
+  const bootstrappedStages = useMemo(
+    () => stages.map(({
+      component: componentName,
+      ...stageProperties
+    }) => ({
+      Component: componentMapping[componentName],
+      values,
+      ...stageProperties,
+    })),
+    [values]
+  );
 
-    if (firstName) {
-      return [
-        `Hey there ${firstName}`,
-        'This is not an interview, yet 😏',
-        "No seriously, don't worry about it 😌",
-        "We're just trying to get some information from you...",
-        'So we can contact you ASAP!',
-      ];
-    }
-
-    return [];
-  }, [values]);
-
+  // When the conversation finishes, this triggers
   const onSubmit = useCallback(() => {
     console.log('values', values);
   }, [values]);
 
-  const onboardingStages = useMemo(
-    () => [
-      { Component: stages.SmoothTalk, metaData: introText },
-      { Component: stages.Name },
-      {
-        Component: stages.SmoothTalk,
-        action: onSubmit,
-        metaData: advancedText,
-      },
-    ],
-    [advancedText, values]
-  );
-
+  // When a user makes an input to the conversation, this triggers
   const onValueChange = useCallback(
     (newValues) => {
       setValues(newValues);
@@ -56,7 +53,11 @@ const GeneralOnboarding = ({ children }) => {
   );
 
   return (
-    <Onboarding stages={onboardingStages} onValueChange={onValueChange}>
+    <Onboarding
+      stages={bootstrappedStages}
+      onValueChange={onValueChange}
+      showInitialStage={showInitialStage}
+    >
       {children}
     </Onboarding>
   );
@@ -64,6 +65,13 @@ const GeneralOnboarding = ({ children }) => {
 
 GeneralOnboarding.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf]).isRequired,
+  hidden: PropTypes.bool,
+  showInitialStage: PropTypes.bool,
+};
+
+GeneralOnboarding.defaultProps = {
+  hidden: false,
+  showInitialStage: true,
 };
 
 export default memo(GeneralOnboarding);

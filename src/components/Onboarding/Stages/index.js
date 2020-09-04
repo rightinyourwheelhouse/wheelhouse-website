@@ -1,9 +1,9 @@
 import Name from './Name';
 import Opening from './Opening';
-import SmoothTalk from './SmoothTalk';
+import FadingText from './FadingText';
 
 export const stages = {
-  Name, Opening, SmoothTalk,
+  Name, Opening, FadingText,
 };
 
 export default stages;

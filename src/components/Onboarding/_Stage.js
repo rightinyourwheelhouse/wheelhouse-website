@@ -7,7 +7,6 @@ const Stage = ({
   Component,
   action,
   active,
-  metaData,
   onAdvance,
   onValueChange,
   ...props
@@ -29,7 +28,7 @@ const Stage = ({
         active={active}
         onAdvance={handleAdvance}
         onValueChange={onValueChange}
-        metaData={metaData}
+        {...props}
       />
     </StageContainer>
   );
@@ -39,7 +38,6 @@ Stage.propTypes = {
   Component: PropTypes.func.isRequired,
   action: PropTypes.func,
   active: PropTypes.bool,
-  metaData: PropTypes.array,
   onAdvance: PropTypes.func,
   onValueChange: PropTypes.func,
 };
@@ -47,7 +45,6 @@ Stage.propTypes = {
 Stage.defaultProps = {
   action: null,
   active: false,
-  metaData: [],
   onAdvance: () => {},
   onValueChange: () => {},
 };

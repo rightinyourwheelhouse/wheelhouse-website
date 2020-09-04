@@ -1,0 +1,54 @@
+[
+  {
+    "component": "FadingText",
+    "background": "#252525",
+    "textItems": [
+      {
+        "text": "Wait a minute...",
+        "timeout": 3000
+      },
+      {
+        "text": "Forms are boring, don't you agree?",
+        "timeout": 3000
+      },
+      {
+        "text": "Let's try something different...",
+        "timeout": 3000
+      }
+    ]
+  },
+  {
+    "component": "TextInput",
+    "subtitle": "First things first",
+    "title": "Can you tell us your name?",
+    "confirmButtonText": "Tell me more",
+    "background": "#ffffff",
+    "dataKey": "onboardee-name"
+  },
+  {
+    "component": "FadingText",
+    "background": "#252525",
+    "textItems": [
+      {
+        "text": "Hey there ${onboardee-name}",
+        "timeout": 3000
+      },
+      {
+        "text": "This is not an interview, yet 😏",
+        "timeout": 2000
+      },
+      {
+        "text": "No seriously, don't worry about it 😌",
+        "timeout": 1000
+      },
+      {
+        "text": "We're just trying to get some information from you...",
+        "timeout": 1000
+      },
+      {
+        "text": "So we can contact you ASAP!",
+        "timeout": 1000
+      }
+    ]
+  }
+]

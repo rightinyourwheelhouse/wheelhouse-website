@@ -15,6 +15,7 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import ApplyForm from '~modules/ApplyForm';
+import GeneralOnboarding from '~modules/GeneralOnboarding';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import OpenSource from '~modules/OpenSource';
@@ -73,7 +74,10 @@ const Career = ({
         <Content>
           <SubTitle>Apply</SubTitle>
           <h2>Do we have your attention?</h2>
-          <ApplyForm vacancy={`${title} at ${city}`} />
+          <ApplyForm />
+          <GeneralOnboarding showInitialStage={false}>
+            <h2>Get in touch with us</h2>
+          </GeneralOnboarding>
         </Content>
       </Container>
     </Section>

@@ -6,17 +6,22 @@ import SubTitle from '~components/SubTitle';
 
 import InputName from './_InputName';
 
-const Opening = ({
+const Name = ({
+  confirmButtonText,
+  dataKey,
   onAdvance,
   onValueChange,
+  subtitle,
+  title,
 }) => {
   const [name, setName] = useState('');
 
   const onButtonClick = useCallback(
     () => {
-      onValueChange({
-        firstName: name,
-      });
+      const valueToUpdate = {};
+      valueToUpdate[dataKey] = name;
+
+      onValueChange(valueToUpdate);
 
       onAdvance();
     },
@@ -26,22 +31,26 @@ const Opening = ({
   return (
     <>
       <div>
-        <SubTitle>First things first</SubTitle>
-        <h2>Can you tell us your name?</h2>
+        <SubTitle>{subtitle}</SubTitle>
+        <h2>{title}</h2>
       </div>
 
       <InputName id="name" label="Your name" onChange={setName} type="text" width="300px" placeholder="Your name..." />
 
       <Button onClick={onButtonClick}>
-        Continue...
+        {confirmButtonText}
       </Button>
     </>
   );
 };
 
-Opening.propTypes = {
+Name.propTypes = {
+  confirmButtonText: PropTypes.string.isRequired,
+  dataKey: PropTypes.string.isRequired,
   onAdvance: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
-export default Opening;
+export default Name;

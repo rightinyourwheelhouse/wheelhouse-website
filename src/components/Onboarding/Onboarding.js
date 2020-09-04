@@ -17,6 +17,7 @@ const GeneralOnboarding = ({
   buttonText,
   onValueChange,
   stages: originalStages,
+  showInitialStage,
 }) => {
   const [stageIndex, setStageIndex] = useState(0);
 
@@ -33,12 +34,19 @@ const GeneralOnboarding = ({
   );
 
   const stages = useMemo(
-    () => [
-      {
-        Component: InitialStageComponent,
-      },
-      ...originalStages,
-    ],
+    () => {
+      const result = [];
+
+      if (showInitialStage) {
+        result.push({
+          Component: InitialStageComponent,
+        });
+      }
+
+      return result.concat([
+        ...originalStages,
+      ]);
+    },
     [originalStages, InitialStageComponent]
   );
 
@@ -56,15 +64,14 @@ const GeneralOnboarding = ({
 
   return (
     <OnboardingContainer name="onboarding">
-      {stages.map(({ Component, metaData, action }, index) => (
+      {stages.map(({ Component, ...stageProperties }, index) => (
         <Stage
-          Component={Component}
-          action={action}
           active={index === stageIndex}
+          Component={Component}
           key={uuid()}
-          metaData={metaData}
           onAdvance={onAdvance}
           onValueChange={onValueChange}
+          {...stageProperties}
         />
       ))}
     </OnboardingContainer>
@@ -75,6 +82,7 @@ GeneralOnboarding.propTypes = {
   buttonText: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,
   onValueChange: PropTypes.func,
+  showInitialStage: PropTypes.bool.isRequired,
   stages: PropTypes.array.isRequired,
 };
 

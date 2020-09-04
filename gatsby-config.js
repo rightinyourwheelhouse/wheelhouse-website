@@ -7,7 +7,6 @@ module.exports = {
         environments: ['production', 'development'],
         googleAnalytics: {
           anonymize: true,
-          cookieName: 'gdpr-google-analytics',
           trackingId,
         },
       },

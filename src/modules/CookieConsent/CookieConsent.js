@@ -97,7 +97,7 @@ const CookieConsent = () => {
         cookiePreferences.forEach(({ name, value, required }) => {
           if (!required) {
             toSave[name] = value;
-            setCookie(name, (value || false);
+            setCookie(name, value);
 
             if (value) {
               const prevValue = (consentsCookieValue !== undefined) && JSON.parse(consentsCookieValue)[name];

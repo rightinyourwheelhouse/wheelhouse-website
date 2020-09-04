@@ -125,4 +125,4 @@ yarn-error.log
 .netlify
 
 # Other
-.tmp
+*.tmp

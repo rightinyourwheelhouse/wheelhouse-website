@@ -11,7 +11,7 @@ import CookieConsentAdvanced from '~components/CookieConsentAdvanced';
 
 import { useCookie, setCookie } from '~hooks/useCookie';
 
-const ANALYTICS_COOKIE_NAME = 'gdpr-google-analytics';
+const ANALYTICS_COOKIE_NAME = 'gatsby-gdpr-google-analytics';
 
 const cookies = [
   {
@@ -44,9 +44,7 @@ const debug = false;
 const CookieConsent = () => {
   const {
     site: {
-      siteMetadata: {
-        trackingId,
-      },
+      siteMetadata: { trackingId },
     },
   } = useStaticQuery(query);
 
@@ -97,10 +95,11 @@ const CookieConsent = () => {
         cookiePreferences.forEach(({ name, value, required }) => {
           if (!required) {
             toSave[name] = value;
-            setCookie(name, (value || false).toString());
+            setCookie(name, value);
 
             if (value) {
-              const prevValue = (consentsCookieValue !== undefined) && JSON.parse(consentsCookieValue)[name];
+              const prevValue = consentsCookieValue !== undefined
+                && JSON.parse(consentsCookieValue)[name];
 
               if (name === ANALYTICS_COOKIE_NAME && !prevValue) {
                 ReactGA.initialize(trackingId);

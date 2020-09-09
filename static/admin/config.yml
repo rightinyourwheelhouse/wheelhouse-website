@@ -3,6 +3,7 @@
   backend:
     name: github
     repo: rightinyourwheelhouse/wheelhouse-website
+    branch: demo-brownbag
   publish_mode: editorial_workflow
   collections:
     -

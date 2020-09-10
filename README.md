@@ -87,7 +87,3 @@ More information about that: https://www.netlifycms.org/docs/beta-features/#work
     npm run build-storybook
     ```
 
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rightinyourwheelhouse/wheelhouse-website/)
-

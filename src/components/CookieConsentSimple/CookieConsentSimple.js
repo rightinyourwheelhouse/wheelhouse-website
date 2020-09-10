@@ -50,10 +50,10 @@ const CookieConsent = ({
         </div>
         <div>
           <Button onClick={handleReject} name="reject">
-            Reject
+            Accept minimum
           </Button>
           <Button onClick={handleAccept} name="accept">
-            Accept
+            Accept all
           </Button>
         </div>
       </ConsentActions>

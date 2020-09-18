@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 
 import Stack from '~components/Stack';
 
-import { JobItemContainer, JobTitle } from './jobOverview.styles';
+import { JobItemContainer, JobTitle, IconContainer } from './jobOverview.styles';
+
+import CircleBackground from '~components/CircleBackground';
 
 import { useJobOverview } from '~api/job/useJobOverview';
+
+import Arrow from '~images/icons/arrow-top-right.svg';
 
 const JobOverview = ({ current }) => {
   const jobs = useJobOverview({ count: 2, current });
@@ -18,8 +22,13 @@ const JobOverview = ({ current }) => {
           {jobs.map(({ title, slug, city }) => (
             <Link to={`/careers/${slug}`} key={slug}>
               <JobItemContainer>
+                <span>{city}</span>
                 <JobTitle>{title}</JobTitle>
-                <p>{city}</p>
+                <IconContainer>
+                  <CircleBackground>
+                    <Arrow />
+                  </CircleBackground>
+                </IconContainer>
               </JobItemContainer>
             </Link>
           ))}

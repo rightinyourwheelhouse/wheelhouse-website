@@ -82,7 +82,7 @@ const IndexPage = () => (
           color={colors.textPrimary100}
           colorHover={colors.textPrimary100}
           background={colors.primary}
-          backgroundHover={colors.tertiary}
+          backgroundHover={colors.primary}
         >
           See our insights
         </Button>

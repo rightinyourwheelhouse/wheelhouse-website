@@ -55,7 +55,7 @@ Button.propTypes = {
 Button.defaultProps = {
   as: 'button',
   background: colors.primary,
-  backgroundHover: colors.accent,
+  backgroundHover: colors.primary,
   border: 'transparent',
   borderHover: 'transparent',
   color: colors.textPrimary100,

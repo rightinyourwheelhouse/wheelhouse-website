@@ -18,8 +18,8 @@ const RadioRaccoons = () => (
     <Button
       background={colors.textPrimary100}
       color={colors.textPrimary900}
-      backgroundHover={colors.textPrimary900}
-      colorHover={colors.textPrimary100}
+      backgroundHover={colors.textPrimary100}
+      colorHover={colors.textPrimary900}
       as="a"
       href="https://radio.raccoons.be/"
       rel="nofollow noreferrer"

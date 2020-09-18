@@ -36,7 +36,7 @@ const NotFoundPage = () => (
           <h2>4 oh 4</h2>
 
           <p>It sure is dark here...</p>
-          <Button as={Link} to="/" backgroundHover={colors.secundary}>Hold my hand</Button>
+          <Button as={Link} to="/">Hold my hand</Button>
         </OuterContainer>
       </Container>
     </Section>

@@ -12,7 +12,7 @@ import Card from '~components/Card';
 
 import Layout from '~layouts/default';
 
-import BlogOverview from '~modules/BlogOverview';
+import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
@@ -75,7 +75,7 @@ const IndexPage = () => (
       <Container>
         <SubTitle>Blog</SubTitle>
         <h2>Some of our insights</h2>
-        <BlogOverview count={2} />
+        <InsightsOverview count={2} />
         <Button
           as={Link}
           to="/insights"

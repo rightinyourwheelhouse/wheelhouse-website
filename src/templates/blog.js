@@ -16,11 +16,13 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import JobOverview from '~modules/JobOverview';
-import BlogOverview from '~modules/BlogOverview';
+import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import { getHtmlExcerpt } from '~utils/string';
+
+import { gridLayouts } from '~components/InsightsGrid';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -74,9 +76,9 @@ const Blog = ({
 
       <Section>
         <Container>
-          <SubTitle>Blog</SubTitle>
-          <h2>More blog articles</h2>
-          <BlogOverview current={id} count={2} />
+          <SubTitle>insights</SubTitle>
+          <h2>More insights</h2>
+          <InsightsOverview current={id} count={3} layout={gridLayouts.COLUMN} />
         </Container>
       </Section>
 

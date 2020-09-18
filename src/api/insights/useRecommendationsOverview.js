@@ -40,7 +40,10 @@ const query = graphql`
   }
 `;
 
-export const useRecommendationsOverview = ({ count = null, current = null }) => {
+export const useRecommendationsOverview = ({
+  count = null,
+  current = null,
+}) => {
   const {
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
@@ -50,7 +53,14 @@ export const useRecommendationsOverview = ({ count = null, current = null }) => 
       .map(
         ({
           node: {
-            author, date, description, image, introduction, slot, title,
+            author,
+            date,
+            description,
+            id,
+            image,
+            introduction,
+            slot,
+            title,
           },
         }) => {
           const url = `/recommendations/${toKebab(title)}`;
@@ -60,6 +70,7 @@ export const useRecommendationsOverview = ({ count = null, current = null }) => 
             author,
             date,
             description,
+            id,
             image,
             readTime,
             title,

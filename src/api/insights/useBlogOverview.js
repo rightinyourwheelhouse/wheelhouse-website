@@ -42,6 +42,7 @@ export const useBlogOverview = ({ count = null, current = null }) => {
     const nodes = edges
       .map(({
         node: {
+          id,
           creator: author,
           title,
           content: { encoded },
@@ -56,6 +57,7 @@ export const useBlogOverview = ({ count = null, current = null }) => {
         return {
           author,
           date,
+          id,
           image,
           readTime: time,
           title,

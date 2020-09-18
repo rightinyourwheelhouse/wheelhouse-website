@@ -1,9 +1,15 @@
 import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import readingTime from 'reading-time';
+
+import { toKebab } from '~utils/string';
 
 const query = graphql`
   query {
-    allRecommendationsJson(filter: { live: { eq: true } }, sort: {fields: date, order: DESC}) {
+    allRecommendationsJson(
+      filter: { live: { eq: true } }
+      sort: { fields: date, order: DESC }
+    ) {
       edges {
         node {
           id
@@ -34,14 +40,45 @@ const query = graphql`
   }
 `;
 
-export const useRecommendationsOverview = ({ count, current }) => {
+export const useRecommendationsOverview = ({
+  count = null,
+  current = null,
+}) => {
   const {
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
     const nodes = edges
-      .map(({ node }) => ({ ...node }))
+      .map(
+        ({
+          node: {
+            author,
+            date,
+            description,
+            id,
+            image,
+            introduction,
+            slot,
+            title,
+          },
+        }) => {
+          const url = `/recommendations/${toKebab(title)}`;
+          const { text: readTime } = readingTime(introduction + slot);
+
+          return {
+            author,
+            date,
+            description,
+            id,
+            image,
+            readTime,
+            title,
+            type: 'recommendation',
+            url,
+          };
+        }
+      )
       .filter(({ id }) => id !== current);
 
     if (count) {

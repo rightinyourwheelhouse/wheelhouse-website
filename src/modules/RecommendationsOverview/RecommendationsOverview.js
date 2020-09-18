@@ -6,36 +6,10 @@ import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
 
 import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 
-import { toKebab } from '~utils/string';
-import { toShortDate } from '~utils/date';
-
 const RecommendationsOverview = ({ count, current, layout }) => {
-  const [allRecommendations] = useRecommendationsOverview({ count, current });
+  const [recommendations] = useRecommendationsOverview({ count, current });
 
-  const items = useMemo(
-    () => allRecommendations.map(
-      ({
-        author, date, description, image, title, introduction, slot,
-      }) => {
-        const url = `/recommendations/${toKebab(title)}`;
-        const { text: readTime } = readingTime(introduction + slot);
-
-        return {
-          author,
-          date: toShortDate(date),
-          description,
-          image,
-          readTime,
-          title,
-          type: 'recommendation',
-          url,
-        };
-      }
-    ),
-    [allRecommendations]
-  );
-
-  return <InsightsGrid items={items} layout={layout} />;
+  return <InsightsGrid items={recommendations} layout={layout} />;
 };
 
 RecommendationsOverview.propTypes = {

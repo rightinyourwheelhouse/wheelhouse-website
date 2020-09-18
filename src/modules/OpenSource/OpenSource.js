@@ -17,8 +17,6 @@ const OpenSource = () => (
       reflect who we really are.
     </p>
     <Button
-      backgroundHover={colors.secundary}
-      colorHover={colors.textPrimary100}
       as="a"
       href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
       target="_blank"

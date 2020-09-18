@@ -11,7 +11,7 @@ import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 import JobOverview from '~modules/JobOverview';
-import RecommendationsOverview from '~modules/RecommendationsOverview';
+import InsightsOverview from '~modules/InsightsOverview';
 
 const IndexPage = () => (
   <Layout>
@@ -53,8 +53,8 @@ const IndexPage = () => (
     <Section>
       <Container>
         <Card>
-          <h2>Wheelhouse recommendations</h2>
-          <RecommendationsOverview count={3} layout={gridLayouts.COLUMN} />
+          <h2>Wheelhouse insights</h2>
+          <InsightsOverview count={3} layout={gridLayouts.COLUMN} />
         </Card>
       </Container>
     </Section>

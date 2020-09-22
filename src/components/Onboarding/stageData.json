@@ -2,6 +2,7 @@
   {
     "component": "FadingText",
     "background": "#252525",
+    "color": "#fff",
     "textItems": [
       {
         "text": "Wait a minute...",
@@ -22,12 +23,14 @@
     "subtitle": "First things first",
     "title": "Can you tell us your name?",
     "confirmButtonText": "Tell me more",
-    "background": "#ffffff",
+    "background": "#fff",
+    "color": "#252525",
     "dataKey": "onboardee-name"
   },
   {
     "component": "FadingText",
-    "background": "#252525",
+    "background": "#58bd86",
+    "color": "#fff",
     "textItems": [
       {
         "text": "Hey there ${onboardee-name}",
@@ -35,19 +38,19 @@
       },
       {
         "text": "This is not an interview, yet 😏",
-        "timeout": 2000
+        "timeout": 3000
       },
       {
         "text": "No seriously, don't worry about it 😌",
-        "timeout": 1000
+        "timeout": 3000
       },
       {
         "text": "We're just trying to get some information from you...",
-        "timeout": 1000
+        "timeout": 3000
       },
       {
         "text": "So we can contact you ASAP!",
-        "timeout": 1000
+        "timeout": 3000
       }
     ]
   }

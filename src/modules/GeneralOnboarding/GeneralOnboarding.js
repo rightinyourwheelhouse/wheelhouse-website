@@ -14,7 +14,7 @@ import stages from '~components/Onboarding/stageData.json';
  */
 const componentMapping = {
   FadingText: stageComponents.FadingText,
-  TextInput: stageComponents.Name,
+  TextInput: stageComponents.TextInput,
 };
 
 const GeneralOnboarding = ({
@@ -57,6 +57,7 @@ const GeneralOnboarding = ({
       stages={bootstrappedStages}
       onValueChange={onValueChange}
       showInitialStage={showInitialStage}
+      hidden={hidden}
     >
       {children}
     </Onboarding>

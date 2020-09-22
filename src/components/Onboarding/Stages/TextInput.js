@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Button from '~components/Button';
@@ -6,7 +7,11 @@ import SubTitle from '~components/SubTitle';
 
 import InputName from './_InputName';
 
-const Name = ({
+const ButtonContainer = styled.div`
+  margin-top: 20px;
+`;
+
+const TextInput = ({
   confirmButtonText,
   dataKey,
   onAdvance,
@@ -37,14 +42,16 @@ const Name = ({
 
       <InputName id="name" label="Your name" onChange={setName} type="text" width="300px" placeholder="Your name..." />
 
-      <Button onClick={onButtonClick}>
-        {confirmButtonText}
-      </Button>
+      <ButtonContainer>
+        <Button onClick={onButtonClick}>
+          {confirmButtonText}
+        </Button>
+      </ButtonContainer>
     </>
   );
 };
 
-Name.propTypes = {
+TextInput.propTypes = {
   confirmButtonText: PropTypes.string.isRequired,
   dataKey: PropTypes.string.isRequired,
   onAdvance: PropTypes.func.isRequired,
@@ -53,4 +60,4 @@ Name.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default Name;
+export default TextInput;

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
-import React, { memo } from 'react';
+import React, { memo, useCallback, useState } from 'react';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -23,82 +24,98 @@ import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
+const FadingSection = styled.div`
+  filter: ${({ visible }) => (visible ? 'blur(0)' : 'blur(10px)')};
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+`;
+
 const Career = ({
   data: {
     career: {
       city, description, id, requirements, title,
     },
   },
-}) => (
-  <Layout>
-    <SEO
-      title={`Vacancy ${title} at Wheelhouse ${city}`}
-      description={description}
-    />
+}) => {
+  const [formIsVisible, setFormVisibility] = useState(true);
+  const handleFormClicked = useCallback(() => {
+    setFormVisibility(false);
+  }, []);
 
-    <Navigation
-      baseBackgroundColor={colors.backgroundPrimary100}
-      baseColor={colors.textPrimary100}
-      baseHoverColor={colors.primary}
-      hamburgerColor={colors.textPrimary100}
-    />
+  return (
+    <Layout>
+      <SEO
+        title={`Vacancy ${title} at Wheelhouse ${city}`}
+        description={description}
+      />
 
-    <Section background={colors.backgroundPrimary100}>
-      <Container>
-        <LightContent>
-          <article>
-            <SubTitle>{city}</SubTitle>
-            <h1>{title}</h1>
+      <Navigation
+        baseBackgroundColor={colors.backgroundPrimary100}
+        baseColor={colors.textPrimary100}
+        baseHoverColor={colors.primary}
+        hamburgerColor={colors.textPrimary100}
+      />
+
+      <Section background={colors.backgroundPrimary100}>
+        <Container>
+          <LightContent>
+            <article>
+              <SubTitle>{city}</SubTitle>
+              <h1>{title}</h1>
+              <Content>
+                <div dangerouslySetInnerHTML={{ __html: description }} />
+              </Content>
+            </article>
+          </LightContent>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SubTitle>career</SubTitle>
+          <h2>Your foundations</h2>
+          <Content>
+            <div dangerouslySetInnerHTML={{ __html: requirements }} />
+          </Content>
+        </Container>
+      </Section>
+
+      <WorkingAtmosphereGallery />
+
+      <FadingSection visible={formIsVisible}>
+        <Section>
+          <Container>
             <Content>
-              <div dangerouslySetInnerHTML={{ __html: description }} />
+              <SubTitle>Apply</SubTitle>
+              <h2>Do we have your attention?</h2>
+              <ApplyForm handleFormClicked={handleFormClicked} />
             </Content>
-          </article>
-        </LightContent>
-      </Container>
-    </Section>
+          </Container>
+        </Section>
+      </FadingSection>
 
-    <Section>
-      <Container>
-        <SubTitle>career</SubTitle>
-        <h2>Your foundations</h2>
-        <Content>
-          <div dangerouslySetInnerHTML={{ __html: requirements }} />
-        </Content>
-      </Container>
-    </Section>
+      <GeneralOnboarding showInitialStage={false} hidden={formIsVisible}>
+        <h2>Get in touch with us</h2>
+      </GeneralOnboarding>
 
-    <WorkingAtmosphereGallery />
+      <Section background={colors.backgorundPrimary200}>
+        <Container>
 
-    <Section>
-      <Container>
-        <Content>
-          <SubTitle>Apply</SubTitle>
-          <h2>Do we have your attention?</h2>
-          <ApplyForm />
-          <GeneralOnboarding showInitialStage={false}>
-            <h2>Get in touch with us</h2>
-          </GeneralOnboarding>
-        </Content>
-      </Container>
-    </Section>
+          <SubTitle>careers</SubTitle>
+          <h2>Other career opportunities</h2>
 
-    <Section background={colors.backgorundPrimary200}>
-      <Container>
-
-        <SubTitle>careers</SubTitle>
-        <h2>Other career opportunities</h2>
-
-        <JobOverview current={id} />
-      </Container>
-    </Section>
-    <Section>
-      <Container>
-        <OpenSource />
-      </Container>
-    </Section>
-    <Section />
-  </Layout>
-);
+          <JobOverview current={id} />
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <OpenSource />
+        </Container>
+      </Section>
+      <Section />
+    </Layout>
+  );
+};
 
 Career.propTypes = {
   data: PropTypes.shape({

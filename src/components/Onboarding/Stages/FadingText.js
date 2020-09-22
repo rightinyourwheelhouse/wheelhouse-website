@@ -27,6 +27,11 @@ const AnimatedFrame = styled.div`
   }
 
   animation: smooth-talking ${({ delay }) => delay / 1000}s forwards;
+
+  h3 {
+    font-size: 48px;
+    line-height: 42px;
+  }
 `;
 
 const FadingText = ({

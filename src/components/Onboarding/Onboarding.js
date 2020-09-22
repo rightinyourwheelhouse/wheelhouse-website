@@ -1,7 +1,8 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 import { scroller } from 'react-scroll';
+import { Container } from '~components/layoutComponents';
 
 import {
   OnboardingContainer,
@@ -18,8 +19,19 @@ const GeneralOnboarding = ({
   onValueChange,
   stages: originalStages,
   showInitialStage,
+  hidden,
 }) => {
   const [stageIndex, setStageIndex] = useState(0);
+
+  useEffect(() => {
+    if (!hidden) {
+      scroller.scrollTo('onboarding', {
+        duration: 600,
+        offset: -400,
+        smooth: 'easeInOutQuart',
+      });
+    }
+  }, [hidden]);
 
   const InitialStageComponent = useCallback(
     ({ onAdvance: advance }) => (
@@ -50,30 +62,28 @@ const GeneralOnboarding = ({
     [originalStages, InitialStageComponent]
   );
 
+  const activeStage = useMemo(() => stages[stageIndex], [stages, stageIndex]);
+
   const onAdvance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
       setStageIndex(stageIndex + 1);
-
-      scroller.scrollTo('onboarding', {
-        duration: 600,
-        offset: -200,
-        smooth: 'easeInOutQuart',
-      });
     }
   }, [stages, stageIndex]);
 
   return (
-    <OnboardingContainer name="onboarding">
-      {stages.map(({ Component, ...stageProperties }, index) => (
-        <Stage
-          active={index === stageIndex}
-          Component={Component}
-          key={uuid()}
-          onAdvance={onAdvance}
-          onValueChange={onValueChange}
-          {...stageProperties}
-        />
-      ))}
+    <OnboardingContainer name="onboarding" hidden={hidden} background={activeStage.background} color={activeStage.color}>
+      <Container>
+        { hidden ? '' : stages.map(({ Component, ...stageProperties }, index) => (
+          <Stage
+            active={index === stageIndex}
+            Component={Component}
+            key={uuid()}
+            onAdvance={onAdvance}
+            onValueChange={onValueChange}
+            {...stageProperties}
+          />
+        ))}
+      </Container>
     </OnboardingContainer>
   );
 };
@@ -84,11 +94,13 @@ GeneralOnboarding.propTypes = {
   onValueChange: PropTypes.func,
   showInitialStage: PropTypes.bool.isRequired,
   stages: PropTypes.array.isRequired,
+  hidden: PropTypes.bool,
 };
 
 GeneralOnboarding.defaultProps = {
   buttonText: 'Get in touch',
   onValueChange: () => {},
+  hidden: false,
 };
 
 export default GeneralOnboarding;

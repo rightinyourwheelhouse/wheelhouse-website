@@ -1,9 +1,11 @@
-import Name from './Name';
+import TextInput from './TextInput';
 import Opening from './Opening';
 import FadingText from './FadingText';
 
 export const stages = {
-  Name, Opening, FadingText,
+  FadingText,
+  Opening,
+  TextInput,
 };
 
 export default stages;

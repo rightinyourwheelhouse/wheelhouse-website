@@ -16,7 +16,7 @@ import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';
 
-const ApplyForm = ({ vacancy }) => {
+const ApplyForm = ({ vacancy, handleFormClicked }) => {
   const [formState, setFormState] = useState(null);
 
   const {
@@ -63,6 +63,8 @@ const ApplyForm = ({ vacancy }) => {
     [setFieldValue]
   );
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events */
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   return (
     <form
       name="application-form"
@@ -70,6 +72,7 @@ const ApplyForm = ({ vacancy }) => {
       onSubmit={handleSubmit}
       data-netlify="true"
       style={{ paddingTop: '24px' }}
+      onClick={handleFormClicked}
     >
       {formState !== SUBMITTED && (
       <FormContainer>
@@ -151,10 +154,12 @@ const ApplyForm = ({ vacancy }) => {
 
 ApplyForm.propTypes = {
   vacancy: PropTypes.string,
+  handleFormClicked: PropTypes.func,
 };
 
 ApplyForm.defaultProps = {
   vacancy: null,
+  handleFormClicked: () => {},
 };
 
 export default memo(ApplyForm);

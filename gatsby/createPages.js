@@ -23,7 +23,7 @@ export default async function createPages({
           }
         }
       }
-      allFeedBlog {
+      allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
         edges {
           node {
             id

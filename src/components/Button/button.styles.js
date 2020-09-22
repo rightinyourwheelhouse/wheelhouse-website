@@ -1,12 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-import breakpoints from '~styles/breakpoints';
-
-const pulse = (color) => keyframes`
- 0% {
-   box-shadow: 0 0 0 0 ${color};
- }
-`;
+import styled from 'styled-components';
 
 export const ButtonContainer = styled.div`
   --background: ${({ background }) => background};
@@ -20,7 +12,7 @@ export const ButtonContainer = styled.div`
   .btn {
     align-items: center;
     background: var(--background);
-    border-radius: 3px;
+    border-radius: 6px;
     border: 1px solid var(--border);
     color: var(--foreground);
     cursor: pointer;
@@ -35,16 +27,14 @@ export const ButtonContainer = styled.div`
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transition-duration: 0.1s;
+    transition-duration: 0.3s;
     transition-timing-function: ease;
 
     &:hover {
       color: var(--foregroundHover);
       background: var(--backgroundHover);
       border: 1px solid var(--borderHover);
-      animation: 0.6s ${({ backgroundHover }) => pulse(backgroundHover)};
-      box-shadow: 0 0 0 1em rgba(0, 0, 0, 0);
-      animation-delay: 0.1s;
+      transform: translateY(-2px);
     }
 
     &:focus {

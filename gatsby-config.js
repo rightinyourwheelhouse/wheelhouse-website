@@ -1,4 +1,10 @@
-const trackingId = 'UA-131264538-8';
+const {
+  COMPANY_URL,
+  COMPANY_NAME,
+  COMPANY_NAME_SHORT,
+  COMPANY_ANALYTICS_ID,
+  COMPANY_DESCRIPTION,
+} = require('./src/data/company');
 
 module.exports = {
   plugins: [
@@ -7,7 +13,8 @@ module.exports = {
         environments: ['production', 'development'],
         googleAnalytics: {
           anonymize: true,
-          trackingId,
+          cookieName: 'gdpr-google-analytics',
+          trackingId: COMPANY_ANALYTICS_ID,
         },
       },
       resolve: 'gatsby-plugin-gdpr-cookies',
@@ -81,11 +88,11 @@ module.exports = {
     'gatsby-plugin-sharp',
     {
       options: {
-        background_color: '#663399',
+        background_color: '#ffffff',
         display: 'minimal-ui',
-        icon: 'src/images/wheelhouse.svg', // This path is relative to the root of the site.
-        name: 'Wheelhouse agency',
-        short_name: 'Wheelhouse',
+        icon: 'src/images/favicon.svg', // This path is relative to the root of the site.
+        name: COMPANY_NAME,
+        short_name: COMPANY_NAME_SHORT,
         start_url: '/',
       },
       resolve: 'gatsby-plugin-manifest',
@@ -102,10 +109,10 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
   siteMetadata: {
-    author: 'Wheelhouse Agency',
-    description: 'Wheelhouse agency - javascript experts',
-    siteUrl: 'https://www.wheelhouse.be',
-    title: 'Wheelhouse agency',
-    trackingId,
+    author: COMPANY_NAME,
+    description: COMPANY_DESCRIPTION,
+    siteUrl: COMPANY_URL,
+    title: COMPANY_NAME,
+    trackingId: COMPANY_ANALYTICS_ID,
   },
 };

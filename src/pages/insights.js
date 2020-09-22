@@ -10,6 +10,7 @@ import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import RadioRaccoons from '~modules/RadioRaccoons';
 import RecommendationsOverview from '~modules/RecommendationsOverview';
+import InsightsOverview from '~modules/InsightsOverview';
 
 import colors from '~styles/colors';
 
@@ -20,7 +21,7 @@ const InsightsPage = () => (
 
     <Section>
       <Container>
-        <RecommendationsOverview />
+        <InsightsOverview count={4} />
       </Container>
     </Section>
     <Section background={colors.quaternary}>
@@ -32,7 +33,7 @@ const InsightsPage = () => (
     </Section>
     <Section>
       <Container>
-        <BlogOverview layout={gridLayouts.COLUMN} />
+        <InsightsOverview layout={gridLayouts.COLUMN} skip={4} />
       </Container>
     </Section>
   </Layout>

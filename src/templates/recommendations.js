@@ -18,7 +18,7 @@ import SubTitle from '~components/SubTitle';
 import Layout from '~layouts/default';
 
 import JobOverview from '~modules/JobOverview';
-import RecommendationsOverview from '~modules/RecommendationsOverview';
+import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
@@ -170,9 +170,9 @@ const Recommendations = ({
         <Container>
           <SubTitle>Recommendations</SubTitle>
           <h2>More Recommendations</h2>
-          <RecommendationsOverview
+          <InsightsOverview
             current={id}
-            count={2}
+            count={3}
             layout={gridLayouts.COLUMN}
           />
         </Container>

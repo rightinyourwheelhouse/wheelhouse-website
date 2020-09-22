@@ -45,7 +45,7 @@ const CookieConsentAdvanced = ({
           <Button
             onClick={onCancel}
             background={colors.backgroundPrimary900}
-            backgroundHover={colors.backgroundPrimary700}
+            backgroundHover={colors.backgroundPrimary900}
             border={colors.textPrimary900}
             color={colors.textPrimary900}
           >
@@ -55,7 +55,7 @@ const CookieConsentAdvanced = ({
             as={Link}
             to={privacyUrl}
             background={colors.backgroundPrimary900}
-            backgroundHover={colors.backgroundPrimary700}
+            backgroundHover={colors.backgroundPrimary900}
             color={colors.textPrimary900}
           >
             See cookie policy

@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { COMPANY_NAME_SHORT } from '~data/company';
+
 const query = graphql`
   query SEO {
     site {
@@ -52,7 +54,7 @@ const SEO = ({
         lang,
       }}
       title={metaTitle}
-      titleTemplate="%s | Wheelhouse Agency"
+      titleTemplate={`%s | ${COMPANY_NAME_SHORT}`}
       meta={[
         {
           content: metaDescription,

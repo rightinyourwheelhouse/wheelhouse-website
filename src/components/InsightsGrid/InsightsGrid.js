@@ -7,6 +7,8 @@ import Img from 'gatsby-image';
 
 import AuthorInfo from '~components/AuthorInfo';
 
+import { toShortDate } from '~utils/date';
+
 import {
   InsightsGridItemContainer,
   InsightsGridContainer,
@@ -66,7 +68,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
               <p>{firstItemDescription}</p>
 
               <AuthorInfo
-                date={firstItemDate}
+                date={toShortDate(firstItemDate)}
                 author={firstItemAuthor}
                 readTime={firstItemReadTime}
               />
@@ -101,7 +103,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
               <p>{itemDescription}</p>
 
               <AuthorInfo
-                date={itemDate}
+                date={toShortDate(itemDate)}
                 author={itemAuthor}
                 readTime={itemReadTime}
               />

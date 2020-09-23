@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import Markdown from 'react-markdown';
 
 import { Section, Container } from '~components/layoutComponents';
-import SEO from '~components/SEO';
 import Content from '~components/Content';
+import SEO from '~components/SEO';
 
 import Layout from '~layouts/default';
 
@@ -12,7 +13,11 @@ import Navigation from '~modules/Navigation';
 
 const PrivacyPolicyPage = ({
   data: {
-    pagesJson: { seo },
+    pagesJson: {
+      title,
+      body,
+      seo,
+    },
   },
 }) => (
   <Layout>
@@ -22,8 +27,9 @@ const PrivacyPolicyPage = ({
 
     <Section>
       <Container>
+        <h2>{title}</h2>
         <Content>
-          <p>Privacy policy comes here</p>
+          <Markdown source={body} />
         </Content>
       </Container>
     </Section>
@@ -45,6 +51,8 @@ export default PrivacyPolicyPage;
 export const privacyPolicyQuery = graphql`
   query PrivacyPolicyPage {
     pagesJson(page: { eq: "privacyPolicy" }) {
+      title
+      body
       seo {
         ...seo
       }

@@ -3,7 +3,7 @@ import CMS from 'netlify-cms-app';
 
 import blogPage from './config/pages/blogPage';
 import landingPage from './config/pages/landingPage';
-import privacyPolicy from './config/pages/privacyPolicy';
+import privacyPolicy from './config/pages/privacyPolicyPage';
 
 import backend from './config/backend';
 

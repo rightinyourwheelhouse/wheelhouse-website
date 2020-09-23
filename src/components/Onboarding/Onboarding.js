@@ -1,4 +1,9 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+} from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 import { scroller } from 'react-scroll';
@@ -71,7 +76,13 @@ const GeneralOnboarding = ({
   }, [stages, stageIndex]);
 
   return (
-    <OnboardingContainer name="onboarding" hidden={hidden} background={activeStage.background} color={activeStage.color}>
+    <OnboardingContainer
+      name="onboarding"
+      hidden={hidden}
+      background={activeStage.background}
+      color={activeStage.color}
+      data-netlify="true"
+    >
       <Container>
         { hidden ? '' : stages.map(({ Component, ...stageProperties }, index) => (
           <Stage

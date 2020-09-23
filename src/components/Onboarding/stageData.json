@@ -25,7 +25,8 @@
     "confirmButtonText": "Tell me more",
     "background": "#fff",
     "color": "#252525",
-    "dataKey": "onboardee-name"
+    "dataKey": "onboardee-name",
+    "placeholder": "Your name..."
   },
   {
     "component": "FadingText",
@@ -42,14 +43,6 @@
       },
       {
         "text": "No seriously, don't worry about it 😌",
-        "timeout": 3000
-      },
-      {
-        "text": "We're just trying to get some information from you...",
-        "timeout": 3000
-      },
-      {
-        "text": "So we can contact you ASAP!",
         "timeout": 3000
       }
     ]

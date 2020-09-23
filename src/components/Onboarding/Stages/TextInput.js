@@ -18,6 +18,7 @@ const TextInput = ({
   onValueChange,
   subtitle,
   title,
+  placeholder,
 }) => {
   const [name, setName] = useState('');
 
@@ -40,7 +41,7 @@ const TextInput = ({
         <h2>{title}</h2>
       </div>
 
-      <InputName id="name" label="Your name" onChange={setName} type="text" width="300px" placeholder="Your name..." />
+      <InputName id="name" label="Your name" onChange={setName} type="text" width="300px" placeholder={placeholder} />
 
       <ButtonContainer>
         <Button onClick={onButtonClick}>
@@ -56,6 +57,7 @@ TextInput.propTypes = {
   dataKey: PropTypes.string.isRequired,
   onAdvance: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };

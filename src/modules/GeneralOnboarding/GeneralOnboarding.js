@@ -2,9 +2,9 @@ import React, {
   memo, useReducer, useCallback, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
-
 import { Onboarding, stages as stageComponents } from '~components/Onboarding';
 import stages from '~components/Onboarding/stageData.json';
+import { encode } from '~utils/form';
 
 /**
  * We define all of the behaviour in our JSON file for the conversation
@@ -14,6 +14,7 @@ import stages from '~components/Onboarding/stageData.json';
  */
 const componentMapping = {
   FadingText: stageComponents.FadingText,
+  Submit: stageComponents.Submit,
   TextInput: stageComponents.TextInput,
 };
 
@@ -25,6 +26,17 @@ const GeneralOnboarding = ({
   const reducer = (state, newState) => ({ ...state, ...newState });
   const [values, setValues] = useReducer(reducer, {});
 
+  // When the conversation finishes, this triggers
+  const onSubmit = useCallback(() => {
+    const data = { 'form-name': 'application-form', ...values };
+    console.log('%cDEBUG', 'background-color: #1962dd; padding: 5px; border-radius: 3px; font-weight: bold; color: white', data);
+
+    // fetch('/', {
+    //   body: encode(data),
+    //   method: 'POST',
+    // });
+  }, [values]);
+
   // Get all stages from config, but we change the component to an actual React component
   // All the other properties we just pass along
   const bootstrappedStages = useMemo(
@@ -35,14 +47,13 @@ const GeneralOnboarding = ({
       Component: componentMapping[componentName],
       values,
       ...stageProperties,
-    })),
+    })).concat({
+      Component: componentMapping.Submit,
+      handleSubmit: onSubmit,
+      values,
+    }),
     [values]
   );
-
-  // When the conversation finishes, this triggers
-  const onSubmit = useCallback(() => {
-    console.log('values', values);
-  }, [values]);
 
   // When a user makes an input to the conversation, this triggers
   const onValueChange = useCallback(

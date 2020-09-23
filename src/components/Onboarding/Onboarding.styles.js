@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const OnboardingContainer = styled.div`
+export const OnboardingContainer = styled.form`
   position: relative;
   width: 100%;
   background-color: ${({ background }) => background};

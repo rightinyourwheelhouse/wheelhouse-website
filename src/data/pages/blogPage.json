@@ -1,0 +1,9 @@
+{
+  "page": "blog",
+  "title": "TODO_PAGE_TITLE",
+  "seo": {
+    "title": "TODO_PAGE_TITEL",
+    "description": "TODO_PAGE_DESCRIPTION",
+    "image": "assets/default-image.png"
+  }
+}

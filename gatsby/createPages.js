@@ -7,7 +7,7 @@ export default async function createPages({
 }) {
   const { data } = await graphql(`
     query {
-      allFeedBlog(filter: { categories: { eq: "TODO_COMPANY_NAME" } }) {
+      allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
         edges {
           node {
             id

@@ -31,12 +31,11 @@ const GeneralOnboarding = ({
   // When the conversation finishes, this triggers
   const onSubmit = useCallback(() => {
     const data = { 'form-name': 'application-form', ...values };
-    console.log('%cDEBUG', 'background-color: #1962dd; padding: 5px; border-radius: 3px; font-weight: bold; color: white', data);
 
-    // fetch('/', {
-    //   body: encode(data),
-    //   method: 'POST',
-    // });
+    fetch('/', {
+      body: encode(data),
+      method: 'POST',
+    });
   }, [values]);
 
   // Get all stages from config, but we change the component to an actual React component
@@ -46,9 +45,9 @@ const GeneralOnboarding = ({
       component: componentName,
       ...stageProperties
     }) => ({
-      id: uuid(),
       Component: componentMapping[componentName],
       handleSubmit: onSubmit,
+      id: uuid(),
       values,
       ...stageProperties,
     })),

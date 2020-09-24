@@ -4,14 +4,22 @@ import PropTypes from 'prop-types';
 
 import Button from '~components/Button';
 import SubTitle from '~components/SubTitle';
-import Input from '~components/form/Input';
 
 const ButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
-const TextInput = ({
-  id,
+const TextArea = styled.textarea`
+  padding: 20px;
+  max-width: 100%;
+  width: 50%;
+  border: 2px solid black;
+
+  font-size: 1em;
+  font-family: inherit;
+`;
+
+const TextAreaInput = ({
   confirmButtonText,
   dataKey,
   onAdvance,
@@ -19,7 +27,7 @@ const TextInput = ({
   subtitle,
   title,
   placeholder,
-  label,
+  id,
 }) => {
   const [text, setText] = useState('');
 
@@ -50,7 +58,7 @@ const TextInput = ({
         <h2>{title}</h2>
       </div>
 
-      <Input label={label} id={id} onChange={handleInputChanged} type="text" width="300px" placeholder={placeholder} />
+      <TextArea id={id} onChange={handleInputChanged} type="text" placeholder={placeholder} />
 
       <ButtonContainer>
         <Button onClick={onButtonClick}>
@@ -61,11 +69,10 @@ const TextInput = ({
   );
 };
 
-TextInput.propTypes = {
+TextAreaInput.propTypes = {
   confirmButtonText: PropTypes.string.isRequired,
   dataKey: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
   onAdvance: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
@@ -73,4 +80,4 @@ TextInput.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default TextInput;
+export default TextAreaInput;

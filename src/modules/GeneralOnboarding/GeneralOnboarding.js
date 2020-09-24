@@ -2,6 +2,7 @@ import React, {
   memo, useReducer, useCallback, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
 import { Onboarding, stages as stageComponents } from '~components/Onboarding';
 import stages from '~components/Onboarding/stageData.json';
 import { encode } from '~utils/form';
@@ -15,6 +16,7 @@ import { encode } from '~utils/form';
 const componentMapping = {
   FadingText: stageComponents.FadingText,
   Submit: stageComponents.Submit,
+  TextAreaInput: stageComponents.TextAreaInput,
   TextInput: stageComponents.TextInput,
 };
 
@@ -44,14 +46,12 @@ const GeneralOnboarding = ({
       component: componentName,
       ...stageProperties
     }) => ({
+      id: uuid(),
       Component: componentMapping[componentName],
-      values,
-      ...stageProperties,
-    })).concat({
-      Component: componentMapping.Submit,
       handleSubmit: onSubmit,
       values,
-    }),
+      ...stageProperties,
+    })),
     [values]
   );
 

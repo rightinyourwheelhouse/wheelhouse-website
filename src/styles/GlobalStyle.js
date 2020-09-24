@@ -72,7 +72,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     min-height: 100%;
-    max-width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   a {

@@ -8,9 +8,10 @@ import { StageContainer } from './_stage.styles';
 
 const IconContainer = styled.div`
   position: absolute;
-  top: calc(50% - 15px);
-  left: -50px;
-  opacity: 0.5;
+  bottom: 10px;
+  left: 0;
+  opacity: 0.2;
+  cursor: pointer;
 
   svg {
     fill: white;
@@ -23,6 +24,7 @@ const Stage = ({
   action,
   active,
   onAdvance,
+  onReturn,
   onValueChange,
   isFirst,
   ...props
@@ -42,8 +44,8 @@ const Stage = ({
     <StageContainer visible={active} {...props}>
       {
         isFirst ? '' : (
-          <IconContainer>
-            <CircleBackground>
+          <IconContainer title="View previous panel again" onClick={onReturn}>
+            <CircleBackground size="20px">
               <ArrowIcon />
             </CircleBackground>
           </IconContainer>
@@ -66,6 +68,7 @@ Stage.propTypes = {
   active: PropTypes.bool,
   isFirst: PropTypes.bool.isRequired,
   onAdvance: PropTypes.func,
+  onReturn: PropTypes.func,
   onValueChange: PropTypes.func,
 };
 
@@ -73,6 +76,7 @@ Stage.defaultProps = {
   action: null,
   active: false,
   onAdvance: () => {},
+  onReturn: () => {},
   onValueChange: () => {},
 };
 

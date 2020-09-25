@@ -44,10 +44,11 @@ const GeneralOnboarding = ({
     () => stages.map(({
       component: componentName,
       ...stageProperties
-    }) => ({
+    }, index) => ({
       Component: componentMapping[componentName],
       handleSubmit: onSubmit,
       id: uuid(),
+      isFirst: index === 0,
       values,
       ...stageProperties,
     })),

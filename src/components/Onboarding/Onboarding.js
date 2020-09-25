@@ -69,9 +69,15 @@ const GeneralOnboarding = ({
 
   const activeStage = useMemo(() => stages[stageIndex], [stages, stageIndex]);
 
-  const onAdvance = useCallback(() => {
+  const handleAdvance = useCallback(() => {
     if (stageIndex < stages.length - 1) {
       setStageIndex(stageIndex + 1);
+    }
+  }, [stages, stageIndex]);
+
+  const handleReturn = useCallback(() => {
+    if (stageIndex > 0) {
+      setStageIndex(stageIndex - 1);
     }
   }, [stages, stageIndex]);
 
@@ -89,7 +95,8 @@ const GeneralOnboarding = ({
             active={index === stageIndex}
             Component={Component}
             key={uuid()}
-            onAdvance={onAdvance}
+            onAdvance={handleAdvance}
+            onReturn={handleReturn}
             onValueChange={onValueChange}
             {...stageProperties}
           />

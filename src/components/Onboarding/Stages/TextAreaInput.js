@@ -3,16 +3,28 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Button from '~components/Button';
-import SubTitle from '~components/SubTitle';
 
 const ButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
+const TitleContainer = styled.div`
+  h2.conversation-title {
+    margin-top: 4px;
+    font-size: 42px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 24px;
+  }
+`;
+
 const TextArea = styled.textarea`
   padding: 20px;
   max-width: 100%;
-  width: 50%;
+  width: 100%;
   border: 2px solid black;
 
   font-size: 1em;
@@ -53,10 +65,10 @@ const TextAreaInput = ({
 
   return (
     <>
-      <div>
-        <SubTitle>{subtitle}</SubTitle>
-        <h2>{title}</h2>
-      </div>
+      <TitleContainer>
+        <h3>{subtitle}</h3>
+        <h2 className="conversation-title">{title}</h2>
+      </TitleContainer>
 
       <TextArea id={id} onChange={handleInputChanged} type="text" placeholder={placeholder} />
 

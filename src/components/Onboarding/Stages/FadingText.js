@@ -31,6 +31,13 @@ const AnimatedFrame = styled.div`
   h3 {
     font-size: 48px;
     line-height: 42px;
+    text-transform: none;
+  }
+
+  @media (max-width: 800px) {
+    h3 {
+      font-size: 30px;
+    }
   }
 `;
 

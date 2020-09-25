@@ -3,8 +3,20 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import Button from '~components/Button';
-import SubTitle from '~components/SubTitle';
 import Input from '~components/form/Input';
+
+const TitleContainer = styled.div`
+  h2.conversation-title {
+    margin-top: 4px;
+    font-size: 42px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 24px;
+  }
+`;
 
 const ButtonContainer = styled.div`
   margin-top: 20px;
@@ -45,10 +57,10 @@ const TextInput = ({
 
   return (
     <>
-      <div>
-        <SubTitle>{subtitle}</SubTitle>
-        <h2>{title}</h2>
-      </div>
+      <TitleContainer>
+        <h3>{subtitle}</h3>
+        <h2 className="conversation-title">{title}</h2>
+      </TitleContainer>
 
       <Input label={label} id={id} onChange={handleInputChanged} type="text" width="300px" placeholder={placeholder} />
 

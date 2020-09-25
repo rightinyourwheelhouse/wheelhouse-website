@@ -19,6 +19,18 @@ const TitleContainer = styled.div`
     font-size: 28px;
     line-height: 24px;
   }
+
+  @media (max-width: 800px) {
+    h2.conversation-title {
+      font-size: 28px;
+      line-height: 24px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 14px;
+    }
+  }
 `;
 
 const TextArea = styled.textarea`

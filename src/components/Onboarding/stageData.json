@@ -157,14 +157,6 @@
     "color": "#fff",
     "textItems": [
       {
-        "text": "Oh, by the way, at the end of all this, we'll formally ask you if you're ok with us saving this conversation.",
-        "timeout": 7500
-      },
-      {
-        "text": "You can simply choose not to submit it, and none of this will be saved, if you feel uncomfortable with it.",
-        "timeout": 8000
-      },
-      {
         "text": "OK, two more questions, and then we'll leave you alone! ...",
         "timeout": 4000
       }
@@ -179,6 +171,17 @@
     "color": "black",
     "dataKey": "portfolio",
     "placeholder": "",
+    "label": "URL"
+  },
+  {
+    "component": "TextAreaInput",
+    "subtitle": "Your thoughts",
+    "title": "What do you like about Wheelhouse?",
+    "confirmButtonText": "Send",
+    "background": "#F1F1F1",
+    "color": "black",
+    "dataKey": "portfolio",
+    "placeholder": "I really like ...",
     "label": "URL"
   },
   {

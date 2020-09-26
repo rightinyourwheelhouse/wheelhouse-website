@@ -65,15 +65,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--font-family);
     margin: 0;
     min-height: 100%;
+    max-width: 100%;
     overflow-x: hidden;
-    max-width: 100vw;
   }
 
   body {
     margin: 0;
     min-height: 100%;
     max-width: 100%;
-    overflow-x: hidden;
   }
 
   a {

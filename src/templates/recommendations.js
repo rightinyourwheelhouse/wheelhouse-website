@@ -76,12 +76,7 @@ const Recommendations = ({
       tags,
       introduction,
       slot,
-      image: {
-        childImageSharp: {
-          fluid,
-          resize: { src },
-        },
-      },
+      image,
     },
   },
 }) => {
@@ -93,7 +88,7 @@ const Recommendations = ({
       <SEO
         title={`${title} | from ${author}`}
         description={getMarkdownExcerpt(introduction)}
-        image={src}
+        image={image}
         url={url}
         article
       />
@@ -115,10 +110,10 @@ const Recommendations = ({
         </Container>
       </Section>
 
-      {fluid && (
+      {image && (
         <Section space="12px">
           <Container>
-            <Img fluid={fluid} />
+            <Img fluid={image.childImageSharp.fluid} />
           </Container>
         </Section>
       )}

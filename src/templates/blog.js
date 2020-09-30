@@ -35,12 +35,7 @@ const Blog = ({
       title,
       link,
       content: { encoded },
-      image: {
-        childImageSharp: {
-          fluid,
-          resize: { src },
-        },
-      },
+      image,
     },
   },
 }) => {
@@ -52,7 +47,7 @@ const Blog = ({
       <SEO
         title={`${title}`}
         description={getHtmlExcerpt(encoded)}
-        image={src}
+        image={image}
         url={url}
         article
       />
@@ -60,7 +55,7 @@ const Blog = ({
       <Navigation />
 
       <Section>
-        <ImageTitle image={<Img fluid={fluid} />}>
+        <ImageTitle image={<Img fluid={image.childImageSharp.fluid} />}>
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
           <AuthorInfo author={creator} date={isoDate} readTime={time}>

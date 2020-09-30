@@ -24,11 +24,7 @@ import colors from '~styles/colors';
 
 const TeamPage = ({
   data: {
-    seoImage: {
-      childImageSharp: {
-        resize: { src: seoImage },
-      },
-    },
+    seoImage,
   },
 }) => (
   <Layout>

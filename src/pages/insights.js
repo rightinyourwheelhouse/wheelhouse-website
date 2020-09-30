@@ -6,10 +6,8 @@ import { gridLayouts } from '~components/InsightsGrid';
 
 import Layout from '~layouts/default';
 
-import BlogOverview from '~modules/BlogOverview';
 import Navigation from '~modules/Navigation';
 import RadioRaccoons from '~modules/RadioRaccoons';
-import RecommendationsOverview from '~modules/RecommendationsOverview';
 import InsightsOverview from '~modules/InsightsOverview';
 
 import colors from '~styles/colors';

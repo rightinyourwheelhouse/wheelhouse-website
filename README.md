@@ -73,10 +73,10 @@ For using the CMS offline you can use:
     npx netlify-cms-proxy-server
     ```
 
-And change the local_backend param to true in the yaml config:
+in your local .env file you also need to add:
 
     ```
-    local_backend: true
+    NODE_ENV=development
     ```
 
 More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository

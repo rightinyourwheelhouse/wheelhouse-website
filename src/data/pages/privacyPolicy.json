@@ -1,0 +1,10 @@
+{
+  "page": "privacyPolicy",
+  "title": "TODO privacy policy title",
+  "body": "TODO privacy policy",
+  "seo": {
+    "title": "Privacy policy",
+    "description": "Privacy policy for TODO_COMPANY_NAME",
+    "image": "assets/default-image.png"
+  }
+}

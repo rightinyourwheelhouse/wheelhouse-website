@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
@@ -40,9 +40,16 @@ const SEO = ({
     siteUrl,
   } = site.siteMetadata;
 
-  const imageUrl = image
-    ? `${siteUrl}${image}`
-    : `${siteUrl}${defaultImage.childImageSharp.resize.src}`;
+  const imageUrl = useMemo(() => {
+    if (!image) {
+      const { childImageSharp: { resize: { src } } } = defaultImage;
+      return `${siteUrl}${src}`;
+    }
+
+    const { childImageSharp: { resize: { src } } } = image;
+    return `${siteUrl}${src}`;
+  }, [siteUrl, image]);
+
   const metaDescription = description || defaultDescription;
   const metaTitle = title || defaultTitle;
   const metaType = article ? 'article' : 'website';
@@ -108,7 +115,13 @@ const SEO = ({
 SEO.propTypes = {
   article: PropTypes.bool,
   description: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      resize: PropTypes.shape({
+        src: PropTypes.string,
+      }),
+    }),
+  }),
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,

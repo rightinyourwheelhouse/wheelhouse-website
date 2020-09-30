@@ -1,0 +1,9 @@
+{
+  "page": "landing",
+  "title": "TODO_PAGE_TITLE",
+  "seo": {
+    "title": "TODO_BROWSER_TITLE",
+    "description": "TODO_PAGE_DESCRIPTION",
+    "image": "assets/default-image.png"
+  }
+}

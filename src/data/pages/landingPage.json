@@ -1,9 +1,9 @@
 {
   "page": "landing",
-  "title": "TODO_PAGE_TITLE",
+  "title": "Wheelhouse",
   "seo": {
-    "title": "TODO_BROWSER_TITLE",
-    "description": "TODO_PAGE_DESCRIPTION",
+    "title": "Great javascript experts to strengthen your team",
+    "description": "Wheelhouse works alongside your team to help strengthen your business. We share our knowledge to help your project go to the next level.",
     "image": "assets/default-image.png"
   }
 }

@@ -1,9 +1,9 @@
 {
   "page": "blog",
-  "title": "TODO_PAGE_TITLE",
+  "title": "Wheelhouse Insights and inspiration",
   "seo": {
-    "title": "TODO_PAGE_TITEL",
-    "description": "TODO_PAGE_DESCRIPTION",
+    "title": "Wheelhouse Insights and inspiration",
+    "description": "Take a look at what keeps us occupied and what inspires us.",
     "image": "assets/default-image.png"
   }
 }

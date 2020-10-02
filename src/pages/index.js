@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import Button from '~components/Button';
@@ -23,12 +24,16 @@ import WheelhouseDescription from '~modules/WheelhouseDescription';
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
-const IndexPage = () => (
+const IndexPage = ({
+  data: {
+    pagesJson: {
+      seo,
+    },
+  },
+}) => (
   <Layout>
-    <SEO
-      title="Great javascript experts to strengthen your team"
-      description="Wheelhouse works alongside your team to help strengthen your business. We share our knowledge to help your project go to the next level."
-    />
+    <SEO title={seo.title} description={seo.description} image={seo.image} />
+
     <Navigation logoInitiallyHidden />
 
     <WelcomeHero />
@@ -115,4 +120,26 @@ const IndexPage = () => (
   </Layout>
 );
 
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    pagesJson: PropTypes.shape({
+      seo: PropTypes.shape({
+        ...SEO.propTypes,
+      }),
+    }),
+  }).isRequired,
+};
+
 export default IndexPage;
+
+export const IndexPageQuery = graphql`
+  query landinPage {
+    pagesJson(page: { eq: "landing" }) {
+      title
+      body
+      seo {
+        ...seo
+      }
+    }
+  }
+`;

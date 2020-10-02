@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import { Section, Container, LightContent } from '~components/layoutComponents';
 import SEO from '~components/SEO';
@@ -12,9 +14,16 @@ import InsightsOverview from '~modules/InsightsOverview';
 
 import colors from '~styles/colors';
 
-const InsightsPage = () => (
+const InsightsPage = ({
+  data: {
+    pagesJson: {
+      seo,
+    },
+  },
+}) => (
   <Layout>
-    <SEO title="Wheelhouse Insights and inspiration" description="Take a look at what keeps us occupied and what inspires us." />
+    <SEO title={seo.title} description={seo.description} image={seo.image} />
+
     <Navigation />
 
     <Section>
@@ -37,4 +46,24 @@ const InsightsPage = () => (
   </Layout>
 );
 
+InsightsPage.propTypes = {
+  data: PropTypes.shape({
+    pagesJson: PropTypes.shape({
+      seo: PropTypes.shape({
+        ...SEO.propTypes,
+      }),
+    }),
+  }).isRequired,
+};
+
 export default InsightsPage;
+
+export const InsightsPageQuery = graphql`
+  query blogPage {
+    pagesJson(page: { eq: "blog" }) {
+      seo {
+        ...seo
+      }
+    }
+  }
+`;

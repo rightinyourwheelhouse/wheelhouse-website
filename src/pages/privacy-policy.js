@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Markdown from 'react-markdown';
+import Markdown from '~components/Markdown';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';

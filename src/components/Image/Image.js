@@ -1,47 +1,41 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Img from 'gatsby-image';
-import styled, { css } from 'styled-components';
 
 import { useImage } from '~api/images/useImage';
 
-import colors from '~styles/colors';
+const ImageContainer = styled.div`
+  margin: var(--spacing-large) 0;
+`;
 
 const Image = ({
-  alt, filename, bw, ...props
+  alt, filename, bw, src, ...props
 }) => {
-  const image = useImage(filename);
+  const image = useImage(filename, src);
 
-  if (!image) {
+  if (!image && !src) {
     return null;
   }
 
-  const StyledImage = styled(Img)`
-    ${bw
-    && css`
-      filter: grayscale(100%);
-      background-color: ${colors.primary};
-      position: relative;
-
-      &:hover {
-        filter: none;
-      }
-    `}
-  `;
-
   return (
-    <StyledImage {...props} alt={alt} fluid={image.childImageSharp.fluid} />
+    <ImageContainer>
+      <Img {...props} alt={alt} image={image} />
+    </ImageContainer>
   );
 };
 
 Image.propTypes = {
   alt: PropTypes.string.isRequired,
   bw: PropTypes.bool,
-  filename: PropTypes.string.isRequired,
+  filename: PropTypes.string,
+  src: PropTypes.string,
 };
 
 Image.defaultProps = {
-  bw: true,
+  bw: false,
+  filename: null,
+  src: null,
 };
 
 export default memo(Image);

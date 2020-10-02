@@ -2,8 +2,10 @@
 import CMS from 'netlify-cms-app';
 
 import blogPage from './config/pages/blogPage';
+import careersPage from './config/pages/careersPage';
 import landingPage from './config/pages/landingPage';
 import privacyPolicy from './config/pages/privacyPolicyPage';
+import teamPage from './config/pages/teamPage';
 
 import backend from './config/backend';
 
@@ -17,6 +19,8 @@ CMS.init({
         name: 'pages',
         files: [
           { ...landingPage },
+          { ...teamPage },
+          { ...careersPage },
           { ...blogPage },
           { ...privacyPolicy },
         ],

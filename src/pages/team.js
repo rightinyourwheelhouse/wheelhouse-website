@@ -24,15 +24,14 @@ import colors from '~styles/colors';
 
 const TeamPage = ({
   data: {
-    seoImage,
+    pagesJson: {
+      seo,
+    },
   },
 }) => (
   <Layout>
-    <SEO
-      title="Wheelhouse consist of these people"
-      description="Our door is always open to new enthusiastic colleagues. We welcome you to a fun family where everyone feels comfortable and supports each other."
-      image={seoImage}
-    />
+    <SEO title={seo.title} description={seo.description} image={seo.image} />
+
     <Navigation />
 
     <Section>
@@ -122,24 +121,20 @@ const TeamPage = ({
 
 TeamPage.propTypes = {
   data: PropTypes.shape({
-    seoImage: PropTypes.shape({
-      childImageSharp: PropTypes.shape({
-        resize: PropTypes.shape({ src: PropTypes.string }),
-      }),
+    seo: PropTypes.shape({
+      ...SEO.propTypes,
     }),
   }).isRequired,
 };
 
-export const query = graphql`
-  query {
-    seoImage: file(name: { eq: "team" }) {
-      childImageSharp {
-        resize(width: 900) {
-          src
-        }
+export default TeamPage;
+
+export const teamPageQuery = graphql`
+  query teamPage {
+    pagesJson(page: { eq: "team" }) {
+      seo {
+        ...seo
       }
     }
   }
 `;
-
-export default TeamPage;

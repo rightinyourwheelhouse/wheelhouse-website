@@ -11,6 +11,8 @@ import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 
+import spacing from '~styles/spacing';
+
 const PrivacyPolicyPage = ({
   data: {
     pagesJson: {
@@ -26,7 +28,7 @@ const PrivacyPolicyPage = ({
     <Navigation />
 
     <Section>
-      <Container>
+      <Container offset={spacing.large}>
         <h2>{title}</h2>
         <Content>
           <Markdown source={body} />

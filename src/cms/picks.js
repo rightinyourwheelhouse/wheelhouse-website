@@ -64,10 +64,7 @@ export default {
         {
           label: 'Url',
           name: 'url',
-          pattern: [
-            '^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(?([^#]*))?(#(.*))?',
-            'Must be a valid link',
-          ],
+          widget: 'string',
           required: false,
         },
 

@@ -1,12 +1,19 @@
 {
+  "items": [
+    {
+      "title": "markup",
+      "description": "MarkUp lets you collect feedback directly on your live website or any image.",
+      "url": "https://www.markup.io"
+    }
+  ],
+  "author": "Wheelhouse",
   "live": false,
   "date": "2020-10-05T13:36:16.307Z",
   "title": "Our 5 October picks ",
-  "author": "Wheelhouse",
   "tags": [
     "picks"
   ],
+  "introduction": "Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us. This time we're sharing our picks for october.",
   "image": "assets/wheelhouse-picks-oktober.png",
-  "description": "Each month we pick 1 thing we found very interesting and put it into a list. ",
-  "introduction": "Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us. This time we're sharing our picks for october."
+  "description": "Each month we pick 1 thing we found very interesting and put it into a list. "
 }

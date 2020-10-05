@@ -5,10 +5,8 @@ const LOCAL = {
 };
 
 const PRODUCTION = {
-  name: 'bitbucket',
-  repo: 'TODO_REPO',
-  auth_type: 'implicit',
-  app_id: 'TODO_REPO_APP_ID',
+  name: 'github',
+  repo: 'rightinyourwheelhouse/wheelhouse-website',
 };
 
 export default process.env.NODE_ENV === 'development' ? LOCAL : PRODUCTION;

@@ -7,6 +7,10 @@ import landingPage from './config/pages/landingPage';
 import privacyPolicy from './config/pages/privacyPolicyPage';
 import teamPage from './config/pages/teamPage';
 
+import employees from './employees';
+import offices from './offices';
+import picks from './picks';
+
 import backend from './config/backend';
 
 CMS.init({
@@ -25,6 +29,9 @@ CMS.init({
           { ...privacyPolicy },
         ],
       },
+      { ...employees },
+      { ...offices },
+      { ...picks },
     ],
     load_config_file: true,
     media_folder: 'static/assets',

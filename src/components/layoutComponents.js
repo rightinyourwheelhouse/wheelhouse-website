@@ -4,6 +4,8 @@ import spacing from '~styles/spacing';
 import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
 
+import { invertColor } from '~utils/color';
+
 export const Container = styled.div`
   --offset: ${({ offset }) => offset || 0};
   --width: ${({ width }) => width || '1240px'};
@@ -27,11 +29,14 @@ export const Container = styled.div`
   }
 `;
 
-export const LightContent = styled.div`
-  color: ${colors.textLight};
+export const ContrastColor = styled.div`
+  --color: ${({ color }) => (color ? invertColor(color, true) : colors.textPrimary100)};
+  color: var(--color);
 
   p,
   a,
+  h2,
+  mark,
   li {
     color: currentColor;
   }

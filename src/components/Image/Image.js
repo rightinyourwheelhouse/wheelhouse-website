@@ -20,7 +20,7 @@ const Image = ({
 
   return (
     <ImageContainer>
-      <Img {...props} alt={alt} image={image} />
+      <Img {...props} alt={alt} fluid={image.childImageSharp.fluid} />
     </ImageContainer>
   );
 };

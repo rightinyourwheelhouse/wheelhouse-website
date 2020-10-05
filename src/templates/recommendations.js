@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import ReactMarkdown from 'react-markdown';
+import Markdown from '~components/Markdown';
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
@@ -121,7 +121,7 @@ const Recommendations = ({
       <Section>
         <Container>
           <Content>
-            <ReactMarkdown source={introduction} />
+            {introduction && <Markdown source={introduction} />}
             <OrderedList>
               {items.map(
                 ({
@@ -142,13 +142,13 @@ const Recommendations = ({
                     </span>
                     )}
                     <blockquote>
-                      <ReactMarkdown source={itemDescription} />
+                      {itemDescription && <Markdown source={itemDescription} />}
                     </blockquote>
                   </li>
                 )
               )}
             </OrderedList>
-            <ReactMarkdown source={slot} />
+            {slot && <Markdown source={slot} />}
           </Content>
           <AuthorInfo
             full

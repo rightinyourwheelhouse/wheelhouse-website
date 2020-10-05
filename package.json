@@ -46,6 +46,7 @@
     "gatsby-source-filesystem": "^2.3.27",
     "gatsby-source-rss-feed": "^1.2.0",
     "gatsby-transformer-json": "^2.4.11",
+    "gatsby-transformer-remark": "^2.8.37",
     "gatsby-transformer-sharp": "^2.5.13",
     "lodash.throttle": "^4.1.1",
     "netlify-cms-app": "^2.12.19",

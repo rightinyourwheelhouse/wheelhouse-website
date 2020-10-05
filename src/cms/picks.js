@@ -32,10 +32,17 @@ export default {
     },
 
     {
-      tags: 'Tags', name: 'tags', widget: 'list', allow_add: true,
+      tags: 'Tags',
+      name: 'tags',
+      widget: 'list',
+      allow_add: true,
+      required: false,
     },
     {
-      label: 'image', name: 'image', widget: 'image', required: false,
+      label: 'image',
+      name: 'image',
+      widget: 'image',
+      required: false,
     },
 
     { label: 'Description', name: 'description', widget: 'string' },
@@ -72,7 +79,10 @@ export default {
       ],
     },
     {
-      label: 'Slot', name: 'slot', widget: 'markdown', required: false,
+      label: 'Slot',
+      name: 'slot',
+      widget: 'markdown',
+      required: false,
     },
   ],
 };

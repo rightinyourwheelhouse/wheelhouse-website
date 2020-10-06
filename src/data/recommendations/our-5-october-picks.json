@@ -14,6 +14,11 @@
       "title": "The 7 habits of highly effective people - animated book summary",
       "author": "Stephen Covey",
       "description": "7 habits"
+    },
+    {
+      "url": "https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/",
+      "title": "Eleventy and Vue, a match made to power Netlify.com",
+      "description": "Netlify talks about how they made their new website."
     }
   ],
   "author": "Wheelhouse",

@@ -1,34 +1,47 @@
+/* eslint-disable sort-keys */
+import { image } from './config/common';
+
 export default {
+  folder: 'src/data/team',
+  label: 'Employees',
+  name: 'employees',
+  label_singular: 'employee',
+  identifier_field: 'name',
   create: true,
-  extension: 'json',
   fields: [
+    {
+      label: 'Template Key',
+      name: 'templateKey',
+      widget: 'hidden',
+      default: 'employees',
+    },
+    {
+      label: 'Visible',
+      name: 'visible',
+      widget: 'boolean',
+      default: true,
+    },
     {
       label: 'Name',
       name: 'name',
       widget: 'string',
     },
     {
-      default: true,
-      label: 'Visible',
-      name: 'visible',
-      widget: 'boolean',
-    }, {
       label: 'Role',
       name: 'role',
-    },
-
-    {
-      label: 'Description',
-      name: 'description',
+      widget: 'string',
     },
     {
-      label: 'image',
-      name: 'image',
+      label: 'Body',
+      name: 'body',
+      widget: 'markdown',
+    },
+    image,
+    {
+      label: 'Detail image',
+      name: 'detailImage',
       widget: 'image',
-    }],
-  folder: 'src/data/team',
-  identifier_field: 'name',
-  label: 'Team members',
-  label_singular: 'Team member',
-  name: 'teammembers',
+      default: 'assets/default-image.png',
+    },
+  ],
 };

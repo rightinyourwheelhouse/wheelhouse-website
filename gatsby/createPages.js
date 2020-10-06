@@ -39,6 +39,23 @@ export default async function createPages({
           }
         }
       }
+      allEmployees: allMarkdownRemark(
+        filter: {
+          frontmatter: {
+            templateKey: { eq: "employees" }
+            visible: { eq: true }
+          }
+        }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -47,6 +64,7 @@ export default async function createPages({
     allCareer,
     allOfficesJson,
     allFeedBlog,
+    allEmployees,
   } = data;
 
   // recommendations
@@ -89,4 +107,20 @@ export default async function createPages({
       path: `/insights/${slug}`,
     });
   });
+
+  // employees
+  allEmployees.edges.forEach(
+    ({
+      node: {
+        id,
+        fields: { slug },
+      },
+    }) => {
+      createPage({
+        component: path.resolve('src/templates/team.js'),
+        context: { id },
+        path: `${slug}`,
+      });
+    }
+  );
 }

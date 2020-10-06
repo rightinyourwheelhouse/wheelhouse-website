@@ -21,7 +21,7 @@ const AuthorInfo = ({
   author, children, date, full = false, readTime,
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
-  const { image, role, description } = useTeam(author, true) || {};
+  const { image, role, description } = useTeam({ includeInvisible: true, name: author }) || {};
 
   return (
     <InfoContainer>
@@ -37,7 +37,9 @@ const AuthorInfo = ({
             <Title full={full}>{author}</Title>
             {!full && <Description>{`${date} · ${readTime}`}</Description>}
             {full && role && <Description>{role}</Description>}
-            {full && description && <AuthorDescription>{description}</AuthorDescription>}
+            {full && description && (
+              <AuthorDescription>{description}</AuthorDescription>
+            )}
           </div>
         </MainContentContainer>
         {children && <InfoContent>{children}</InfoContent>}

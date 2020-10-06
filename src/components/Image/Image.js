@@ -20,7 +20,12 @@ const Image = ({
 
   return (
     <ImageContainer>
-      <Img {...props} alt={alt} image={image} />
+      {image.extension === 'gif' && (
+        <img src={image.publicURL} alt={alt} {...props} />
+      )}
+      {image.extension !== 'gif' && (
+        <Img {...props} alt={alt} fluid={image.childImageSharp.fluid} />
+      )}
     </ImageContainer>
   );
 };

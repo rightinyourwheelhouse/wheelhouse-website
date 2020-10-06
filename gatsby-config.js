@@ -21,6 +21,12 @@ module.exports = {
     },
     {
       options: {
+        plugins: [],
+      },
+      resolve: 'gatsby-transformer-remark',
+    },
+    {
+      options: {
         // Path to your Netlify CMS config file
         cmsConfig: '/static/admin/config.yml',
       },

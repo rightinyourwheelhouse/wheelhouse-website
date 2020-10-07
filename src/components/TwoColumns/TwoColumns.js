@@ -17,7 +17,7 @@ export default styled.div`
     margin-bottom: 2%;
     margin-bottom: var(--spacing-default);
 
-    > div {
+    > div, > ul {
       &:first-child {
         margin-top: 0 !important;
       }

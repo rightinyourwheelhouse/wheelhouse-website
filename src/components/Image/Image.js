@@ -20,10 +20,10 @@ const Image = ({
 
   return (
     <ImageContainer>
-      {image.extension === 'gif' && (
+      {selectedImage.extension === 'gif' && (
         <img src={selectedImage.publicURL} alt={alt} {...props} />
       )}
-      {image.extension !== 'gif' && (
+      {selectedImage.extension !== 'gif' && (
         <Img {...props} alt={alt} fluid={selectedImage.childImageSharp.fluid} />
       )}
     </ImageContainer>

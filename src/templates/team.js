@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Section, Container } from '~components/layoutComponents';
+import { Section, Container, ContrastColor } from '~components/layoutComponents';
 import Content from '~components/Content';
 import Cinemagraph from '~components/Cinemagraph';
 import Markdown from '~components/Markdown';
@@ -18,6 +18,7 @@ import TeamOverview from '~modules/TeamOverview';
 import Layout from '~layouts/default';
 
 import spacing from '~styles/spacing';
+import colors from '~styles/colors';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -50,27 +51,34 @@ const Team = ({
         url={url}
       />
 
-      <Navigation />
+      <Navigation
+        baseBackgroundColor={colors.backgroundPrimary100}
+        baseColor={colors.textPrimary100}
+        baseHoverColor={colors.primary}
+        hamburgerColor={colors.textPrimary100}
+      />
 
-      <Section overflow="visible">
+      <Section overflow="visible" background={colors.backgroundPrimary100}>
         <Container width="1600px" offset={spacing.large}>
-          <TwoColumns>
-            <div>
-              <Container centered>
-                <GeneralInfoContainer>
-                  <h2>{name}</h2>
-                  <h3>{role}</h3>
-                </GeneralInfoContainer>
-              </Container>
-            </div>
-            <div>
-              <Cinemagraph
-                image={detailImage.image}
-                alt={name}
-                movie={detailImage.cinemagraph}
-              />
-            </div>
-          </TwoColumns>
+          <ContrastColor color={colors.backgroundPrimary100}>
+            <TwoColumns>
+              <div>
+                <Container centered>
+                  <GeneralInfoContainer>
+                    <h2>{name}</h2>
+                    <h3>{role}</h3>
+                  </GeneralInfoContainer>
+                </Container>
+              </div>
+              <div>
+                <Cinemagraph
+                  image={detailImage.image}
+                  alt={name}
+                  movie={detailImage.cinemagraph}
+                />
+              </div>
+            </TwoColumns>
+          </ContrastColor>
         </Container>
       </Section>
 

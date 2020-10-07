@@ -17,6 +17,7 @@ const query = graphql`
             name
             role
             visible
+            description
             image {
               extension
               childImageSharp {

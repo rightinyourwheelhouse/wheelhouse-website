@@ -32,6 +32,11 @@ export default {
       widget: 'string',
     },
     {
+      label: 'Description',
+      name: 'description',
+      widget: 'string',
+    },
+    {
       label: 'Body',
       name: 'body',
       widget: 'markdown',

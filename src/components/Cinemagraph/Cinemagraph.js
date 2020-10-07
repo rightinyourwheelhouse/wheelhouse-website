@@ -16,7 +16,16 @@ const Cinemagraph = ({ image, movie: { publicURL }, ...props }) => {
   return (
     <>
       {!loaded && image && <Image {...props} offset="0" image={image} />}
-      <video autoPlay loop muted onLoadedData={onLoadedData}>
+      <video
+        style={{
+          opacity: loaded ? 1 : 0,
+          position: loaded ? 'inherit' : 'absolute',
+        }}
+        autoPlay
+        loop
+        muted
+        onLoadedData={onLoadedData}
+      >
         <source src={publicURL} type="video/mp4" />
       </video>
     </>

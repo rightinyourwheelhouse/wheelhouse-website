@@ -102,11 +102,15 @@ const Team = ({
         </Container>
       </Section>
 
-      <Section>
-        <Container>
-          <QAndA items={qAndA} />
-        </Container>
-      </Section>
+      {
+        qAndA && (
+        <Section>
+          <Container>
+            <QAndA items={qAndA} />
+          </Container>
+        </Section>
+        )
+      }
 
       <Section>
         <Container>

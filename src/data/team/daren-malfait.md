@@ -3,6 +3,7 @@ templateKey: employees
 visible: true
 name: Daren Malfait
 role: Front-end developer
+description: brings front-end to life and tries to stay healthy with sports.
 image: assets/daren-2.jpg
 detailImage:
   image: assets/daren-cinemagraph-still.png
@@ -14,4 +15,4 @@ qAndA:
   - q: What does your desk look like?
     a: '![desk](assets/daren-2.jpg "desk")'
 ---
-testing
+### Daren brings front-end to life and tries to stay healthy with sports

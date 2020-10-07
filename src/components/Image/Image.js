@@ -10,21 +10,21 @@ const ImageContainer = styled.div`
 `;
 
 const Image = ({
-  alt, filename, bw, src, ...props
+  alt, filename, bw, src, image, ...props
 }) => {
-  const image = useImage(filename, src);
+  const selectedImage = image || useImage(filename, src);
 
-  if (!image && !src) {
+  if (!selectedImage && !src) {
     return null;
   }
 
   return (
     <ImageContainer>
       {image.extension === 'gif' && (
-        <img src={image.publicURL} alt={alt} {...props} />
+        <img src={selectedImage.publicURL} alt={alt} {...props} />
       )}
       {image.extension !== 'gif' && (
-        <Img {...props} alt={alt} fluid={image.childImageSharp.fluid} />
+        <Img {...props} alt={alt} fluid={selectedImage.childImageSharp.fluid} />
       )}
     </ImageContainer>
   );
@@ -34,12 +34,14 @@ Image.propTypes = {
   alt: PropTypes.string.isRequired,
   bw: PropTypes.bool,
   filename: PropTypes.string,
+  image: PropTypes.shape({}),
   src: PropTypes.string,
 };
 
 Image.defaultProps = {
   bw: false,
   filename: null,
+  image: null,
   src: null,
 };
 

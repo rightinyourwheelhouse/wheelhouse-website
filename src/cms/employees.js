@@ -1,5 +1,5 @@
 /* eslint-disable sort-keys */
-import { image } from './config/common';
+import { image, qAndA } from './config/common';
 
 export default {
   folder: 'src/data/team',
@@ -51,5 +51,6 @@ export default {
         },
       ],
     },
+    qAndA,
   ],
 };

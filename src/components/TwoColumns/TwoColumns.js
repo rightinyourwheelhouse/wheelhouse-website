@@ -16,6 +16,12 @@ export default styled.div`
     width: 100%;
     margin-bottom: 2%;
     margin-bottom: var(--spacing-default);
+
+    > div {
+      &:first-child {
+        margin-top: 0 !important;
+      }
+    }
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {

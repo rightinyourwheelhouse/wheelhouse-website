@@ -4,13 +4,18 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Section, Container, ContrastColor } from '~components/layoutComponents';
+import {
+  Section,
+  Container,
+  ContrastColor,
+} from '~components/layoutComponents';
 import Content from '~components/Content';
 import Cinemagraph from '~components/Cinemagraph';
 import Markdown from '~components/Markdown';
 import SEO from '~components/SEO';
 import Image from '~components/Image';
 import TwoColumns from '~components/TwoColumns';
+import QAndA from '~components/QAndA';
 
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
@@ -19,6 +24,8 @@ import Layout from '~layouts/default';
 
 import spacing from '~styles/spacing';
 import colors from '~styles/colors';
+
+import { COMPANY_NAME } from '~data/company';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -35,7 +42,9 @@ const Team = ({
     employee: {
       excerpt,
       id,
-      frontmatter: { name, role, detailImage },
+      frontmatter: {
+        name, role, detailImage, qAndA,
+      },
       rawMarkdownBody,
     },
   },
@@ -45,7 +54,7 @@ const Team = ({
   return (
     <Layout>
       <SEO
-        title={`${name} ${role}`}
+        title={`${name} - ${role} at ${COMPANY_NAME}`}
         description={excerpt}
         image={detailImage.image}
         url={url}
@@ -84,9 +93,18 @@ const Team = ({
 
       <Section>
         <Container>
-          <Content>
-            <Markdown source={rawMarkdownBody} />
-          </Content>
+          <TwoColumns>
+            <div />
+            <div>
+              <Markdown source={rawMarkdownBody} />
+            </div>
+          </TwoColumns>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <QAndA items={qAndA} />
         </Container>
       </Section>
 
@@ -109,6 +127,9 @@ Team.propTypes = {
           }),
         }),
         name: PropTypes.string,
+        qAndA: {
+          ...QAndA.propTypes,
+        },
         role: PropTypes.string,
       }),
       id: PropTypes.string.isRequired,
@@ -141,6 +162,10 @@ export const query = graphql`
           cinemagraph {
             publicURL
           }
+        }
+        qAndA {
+          q
+          a
         }
         role
       }

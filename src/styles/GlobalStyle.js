@@ -96,6 +96,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 1.5rem;
     margin-bottom: 30px;
     font-weight: 400;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   p > button {

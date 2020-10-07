@@ -42,3 +42,23 @@ export const imageWithAlt = {
     { label: 'Image Description', name: 'alt', widget: 'string' },
   ],
 };
+
+export const qAndA = {
+  label: 'Q and A',
+  name: 'qAndA',
+  widget: 'list',
+  required: false,
+  create: true,
+  fields: [
+    {
+      label: 'Question',
+      name: 'q',
+      widget: 'text',
+    },
+    {
+      label: 'Answer',
+      name: 'a',
+      widget: 'markdown',
+    },
+  ],
+};

@@ -18,6 +18,7 @@ const query = graphql`
             role
             visible
             image {
+              extension
               childImageSharp {
                 fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid_withWebp

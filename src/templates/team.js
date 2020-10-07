@@ -41,6 +41,7 @@ const Team = ({
   },
 }) => {
   const url = isWindowContext && window.location.href;
+  console.log('image', image);
 
   return (
     <Layout>
@@ -84,12 +85,7 @@ Team.propTypes = {
     employee: PropTypes.shape({
       frontmatter: PropTypes.shape({
         image: PropTypes.shape({
-          childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({}),
-            resize: PropTypes.shape({
-              src: PropTypes.string,
-            }),
-          }),
+          ...Image.propTypes,
         }),
         name: PropTypes.string,
         role: PropTypes.string,
@@ -110,6 +106,7 @@ export const query = graphql`
       frontmatter {
         name
         image: detailImage {
+          extension
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid_withWebp

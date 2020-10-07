@@ -4,6 +4,7 @@ const query = graphql`
   query {
     file(name: { eq: "new-member" }) {
       relativePath
+      extension
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp

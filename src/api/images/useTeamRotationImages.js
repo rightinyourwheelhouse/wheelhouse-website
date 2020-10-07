@@ -11,6 +11,7 @@ const query = graphql`
         node {
           id
           name
+          extension
           childImageSharp {
             fluid(maxHeight: 300) {
               ...GatsbyImageSharpFluid_withWebp

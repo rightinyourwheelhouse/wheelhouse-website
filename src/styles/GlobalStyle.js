@@ -224,7 +224,7 @@ export const GlobalStyle = createGlobalStyle`
     vertical-align: bottom;
   }
 
-  img {
+  img, video {
     width: 100%;
   }
 

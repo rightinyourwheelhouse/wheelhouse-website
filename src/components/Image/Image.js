@@ -5,12 +5,16 @@ import Img from 'gatsby-image';
 
 import { useImage } from '~api/images/useImage';
 
+import spacing from '~styles/spacing';
+
 const ImageContainer = styled.div`
-  margin: var(--spacing-large) 0;
+  --offset: ${({ offset }) => offset || spacing.large};
+
+  margin: var(--offset) 0;
 `;
 
 const Image = ({
-  alt, filename, bw, src, image, ...props
+  alt, filename, bw, src, image, offset, ...props
 }) => {
   const selectedImage = image || useImage(filename, src);
 
@@ -19,7 +23,7 @@ const Image = ({
   }
 
   return (
-    <ImageContainer>
+    <ImageContainer offset={offset}>
       {selectedImage.extension === 'gif' && (
         <img src={selectedImage.publicURL} alt={alt} {...props} />
       )}
@@ -35,6 +39,7 @@ Image.propTypes = {
   bw: PropTypes.bool,
   filename: PropTypes.string,
   image: PropTypes.shape({}),
+  offset: PropTypes.string,
   src: PropTypes.string,
 };
 
@@ -42,6 +47,7 @@ Image.defaultProps = {
   bw: false,
   filename: null,
   image: null,
+  offset: spacing.default,
   src: null,
 };
 

@@ -40,8 +40,16 @@ export default {
     {
       label: 'Detail image',
       name: 'detailImage',
-      widget: 'image',
-      default: 'assets/default-image.png',
+      widget: 'object',
+      fields: [
+        image,
+        {
+          label: 'cinemagraph',
+          name: 'cinemagraph',
+          widget: 'file',
+          default: 'assets/default-image.png',
+        },
+      ],
     },
   ],
 };

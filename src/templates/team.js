@@ -2,32 +2,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Markdown from 'react-markdown';
 import styled from 'styled-components';
 
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
+import Cinemagraph from '~components/Cinemagraph';
+import Markdown from '~components/Markdown';
 import SEO from '~components/SEO';
 import Image from '~components/Image';
+import TwoColumns from '~components/TwoColumns';
 
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 
 import Layout from '~layouts/default';
 
+import spacing from '~styles/spacing';
+
 const isWindowContext = typeof window !== 'undefined';
 
-export const Name = styled.h1`
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  max-width: 100%;
-  top: var(--spacing-default);
-  transform: translateX(-50%);
-  left: 50%;
-  color: var(--color-text-primary-100);
-  z-index: 99;
-  margin-bottom: var(--spacing-default);
+export const GeneralInfoContainer = styled.div`
+  padding-top: var(--spacing-large);
+
+  h2 {
+    max-width: unset;
+  }
 `;
 
 const Team = ({
@@ -35,31 +34,43 @@ const Team = ({
     employee: {
       excerpt,
       id,
-      frontmatter: { name, role, image },
+      frontmatter: { name, role, detailImage },
       rawMarkdownBody,
     },
   },
 }) => {
   const url = isWindowContext && window.location.href;
-  console.log('image', image);
 
   return (
     <Layout>
       <SEO
         title={`${name} ${role}`}
         description={excerpt}
-        image={image}
+        image={detailImage.image}
         url={url}
       />
 
       <Navigation />
 
       <Section overflow="visible">
-        <Container relative overflow="visible">
-          <Name>{name}</Name>
-          <Content centered width="700px">
-            <Image image={image} alt={name} />
-          </Content>
+        <Container width="1600px" offset={spacing.large}>
+          <TwoColumns>
+            <div>
+              <Container centered>
+                <GeneralInfoContainer>
+                  <h2>{name}</h2>
+                  <h3>{role}</h3>
+                </GeneralInfoContainer>
+              </Container>
+            </div>
+            <div>
+              <Cinemagraph
+                image={detailImage.image}
+                alt={name}
+                movie={detailImage.cinemagraph}
+              />
+            </div>
+          </TwoColumns>
         </Container>
       </Section>
 
@@ -84,8 +95,10 @@ Team.propTypes = {
   data: PropTypes.shape({
     employee: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        image: PropTypes.shape({
-          ...Image.propTypes,
+        detailImage: PropTypes.shape({
+          image: PropTypes.shape({
+            ...Image.propTypes,
+          }),
         }),
         name: PropTypes.string,
         role: PropTypes.string,
@@ -105,15 +118,20 @@ export const query = graphql`
       excerpt
       frontmatter {
         name
-        image: detailImage {
-          extension
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_withWebp
+        detailImage {
+          image {
+            extension
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+              resize(width: 900) {
+                src
+              }
             }
-            resize(width: 900) {
-              src
-            }
+          }
+          cinemagraph {
+            publicURL
           }
         }
         role

@@ -9,7 +9,6 @@ import SubTitle from '~components/SubTitle';
 
 const TeamOverview = () => {
   const members = useTeam();
-  console.log('members', members);
 
   return (
     <div>

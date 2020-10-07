@@ -21,6 +21,7 @@ const query = graphql`
             url
           }
           image {
+            extension
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp

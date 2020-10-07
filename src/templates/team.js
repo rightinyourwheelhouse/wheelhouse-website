@@ -9,7 +9,6 @@ import {
   Container,
   ContrastColor,
 } from '~components/layoutComponents';
-import Content from '~components/Content';
 import Cinemagraph from '~components/Cinemagraph';
 import Markdown from '~components/Markdown';
 import SEO from '~components/SEO';

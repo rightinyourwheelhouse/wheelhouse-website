@@ -43,6 +43,7 @@
     "gatsby-plugin-svgr-loader": "^0.1.0",
     "gatsby-remark-images": "^3.3.28",
     "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-remark-relative-source": "0.0.4",
     "gatsby-source-filesystem": "^2.3.27",
     "gatsby-source-rss-feed": "^1.2.0",
     "gatsby-transformer-json": "^2.4.11",

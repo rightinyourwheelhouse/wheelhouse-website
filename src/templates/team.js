@@ -82,7 +82,7 @@ const Team = ({
                 <Cinemagraph
                   image={detailImage.image}
                   alt={name}
-                  movie={detailImage.cinemagraph}
+                  movie={detailImage.movingPicture}
                 />
               </div>
             </TwoColumns>
@@ -130,9 +130,10 @@ Team.propTypes = {
           }),
         }),
         name: PropTypes.string,
-        qAndA: {
-          ...QAndA.propTypes,
-        },
+        qAndA: PropTypes.arrayOf(PropTypes.shape({
+          a: PropTypes.string,
+          q: PropTypes.string,
+        })),
         role: PropTypes.string,
       }),
       id: PropTypes.string.isRequired,
@@ -162,7 +163,7 @@ export const query = graphql`
               }
             }
           }
-          cinemagraph {
+          movingPicture {
             publicURL
           }
         }

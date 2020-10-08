@@ -8,28 +8,28 @@ import { QAndAContainer, QAndAItemContainer } from './qAndA.styles';
 
 const QAndA = ({ items }) => (
   <QAndAContainer>
-    {
-       items.map(({ q, a }) => (
-         <QAndAItemContainer>
-           <TwoColumns>
-             <div>
-               <h3>{q}</h3>
-             </div>
-             <div>
-               <Markdown source={a} />
-             </div>
-           </TwoColumns>
-         </QAndAItemContainer>
-       ))
-     }
+    {items.map(({ q, a }) => (
+      <QAndAItemContainer key={q}>
+        <TwoColumns>
+          <div>
+            <h3>{q}</h3>
+          </div>
+          <div>
+            <Markdown source={a} />
+          </div>
+        </TwoColumns>
+      </QAndAItemContainer>
+    ))}
   </QAndAContainer>
 );
 
 QAndA.propTypes = {
-  items: PropTypes.arrayOf({
-    q: PropTypes.string,
-    a: PropTypes.string,
-  }).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      a: PropTypes.string,
+      q: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default memo(QAndA);

@@ -17,8 +17,7 @@ const Image = ({
   alt, filename, bw, src, image, offset, ...props
 }) => {
   const selectedImage = image || useImage(filename, src);
-
-  if (!selectedImage && !src) {
+  if (!image && !src) {
     return null;
   }
 

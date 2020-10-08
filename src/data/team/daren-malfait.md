@@ -7,7 +7,7 @@ description: brings front-end to life and tries to stay healthy with sports.
 image: assets/daren-2.jpg
 detailImage:
   image: assets/daren-cinemagraph-still.png
-  cinemagraph: assets/daren-cinemagraph.mp4
+  movingPicture: assets/daren-cinemagraph.mp4
 qAndA:
   - q: Why do you prefer front-end over back-end?
     a: I love writing code, but I also love design and UX. As a front-end developer

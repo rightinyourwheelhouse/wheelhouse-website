@@ -49,10 +49,9 @@ export default {
       fields: [
         image,
         {
-          label: 'cinemagraph',
-          name: 'cinemagraph',
+          label: 'Moving Picture',
+          name: 'movingPicture',
           widget: 'file',
-          default: 'assets/default-image.png',
         },
       ],
     },

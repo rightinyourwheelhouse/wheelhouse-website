@@ -60,6 +60,8 @@ export const MainContentContainer = styled.div`
 `;
 
 export const Title = styled.span`
+  display: block;
+  margin: ${({ full }) => (full ? '16px' : '12px')} 0;
   font-weight: bold;
   font-size: ${({ full }) => (full ? '24px' : '16px')} !important;
   line-height: 0px;

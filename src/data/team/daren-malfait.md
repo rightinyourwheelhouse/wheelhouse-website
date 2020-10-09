@@ -14,5 +14,6 @@ qAndA:
       I usually get the chance to get the best of both worlds.
   - q: What does your desk look like?
     a: '![desk](assets/daren-2.jpg "desk")'
+showPickedBy: true
 ---
 ### Daren brings front-end to life and tries to stay healthy with sports

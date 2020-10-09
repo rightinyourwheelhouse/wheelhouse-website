@@ -4,31 +4,36 @@
       "url": "https://defaced.dev/tools/layout-shift-gif-generator/",
       "author": "defaced",
       "title": "Layout shift gif generator",
-      "description": "Easily identify problematic layout shifts in the viewport on mobile and desktop. Available as a simple command line tool, or as an online tool. With layout shifting now negatively impacts search results, this resource is very useful."
+      "description": "Easily identify problematic layout shifts in the viewport on mobile and desktop. Available as a simple command line tool, or as an online tool. With layout shifting now negatively impacts search results, this resource is very useful.",
+      "pickedBy": "Daren Malfait"
     },
     {
       "url": " https://www.mmhmm.app/",
       "title": "mmmhmm",
       "author": "mmhmm inc.",
-      "description": "Thanks to COVID-19, all Wheelhouse employees are working from home. This makes video calls a daily thing. Personally, we like how we are rethinking our way of working in a team. However, there are some downsides when working remotely. One main issue is presenting or pitching in a Zoom call. In a presentation, the presenter is usually supported by their slides. In a video conference, everyone is just looking at the slides and this way, you lose a lot of non-verbal communication. This is where mmhmm comes into the picture. mmhmm created an application where you can bring that presenting magic back. By combining your webcam video with your screen, you can decide how big or small one or the other is. You can even collaborate with other people as well, so they can continue their part of the presentation with the same slides without having to switch screens. Essentially, you can have total control over how your presentation is perceived."
+      "description": "Thanks to COVID-19, all Wheelhouse employees are working from home. This makes video calls a daily thing. Personally, we like how we are rethinking our way of working in a team. However, there are some downsides when working remotely. One main issue is presenting or pitching in a Zoom call. In a presentation, the presenter is usually supported by their slides. In a video conference, everyone is just looking at the slides and this way, you lose a lot of non-verbal communication. This is where mmhmm comes into the picture. mmhmm created an application where you can bring that presenting magic back. By combining your webcam video with your screen, you can decide how big or small one or the other is. You can even collaborate with other people as well, so they can continue their part of the presentation with the same slides without having to switch screens. Essentially, you can have total control over how your presentation is perceived.",
+      "pickedBy": "Aagje Reynders"
     },
     {
       "url": "https://www.economist.com/graphic-detail/2020/08/25/the-greenland-ice-sheet-has-melted-past-the-point-of-no-return?utm_campaign=later-linkinbio-theeconomist&utm_content=later-9700426&utm_medium=social&utm_source=instagram",
       "title": "The Greenland ice sheet has melted past the point of no return",
       "author": "The economist",
-      "description": "We all live on the same planet. We should take care of it and it seems like this article is proving again and again that we aren't. This article is yet another reminder that we really need to start taking meaningful action if we aren't already. It's an interesting read."
+      "description": "We all live on the same planet. We should take care of it and it seems like this article is proving again and again that we aren't. This article is yet another reminder that we really need to start taking meaningful action if we aren't already. It's an interesting read.",
+      "pickedBy": "Roel Goossens"
     },
     {
       "title": "Beautiful chords (everyone should know)",
       "url": "https://youtu.be/K_T-jYyQCbQ",
       "author": "Paul Davids",
-      "description": "Paul Davids is a guitar teacher. With this video he introduces some patterns that are really nice to know and helped improving my guitar skills."
+      "description": "Paul Davids is a guitar teacher. With this video he introduces some patterns that are really nice to know and helped improving my guitar skills.",
+      "pickedBy": "Olivier De Wit"
     },
     {
       "url": "https://www.developerdrive.com/variable-fonts-best-tips/",
       "title": "Variable fonts best tips",
       "author": "Developerdrive staff",
-      "description": "Animations which include changes in typography and appearance are heavily underrated!"
+      "description": "Animations which include changes in typography and appearance are heavily underrated!",
+      "pickedBy": "Rafaël Mindreau"
     }
   ],
   "author": "Wheelhouse",

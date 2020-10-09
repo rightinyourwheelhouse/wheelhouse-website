@@ -56,5 +56,11 @@ export default {
       ],
     },
     qAndA,
+    {
+      label: 'Show Picked By in recommendations',
+      name: 'showPickedBy',
+      widget: 'boolean',
+      default: true,
+    },
   ],
 };

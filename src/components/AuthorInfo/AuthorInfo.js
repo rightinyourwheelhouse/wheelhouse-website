@@ -18,10 +18,21 @@ import TwoColumns from '~components/TwoColumns';
 import { useTeam } from '~api/team/useTeam';
 
 const AuthorInfo = ({
-  author, children, date, full = false, readTime,
+  author,
+  children,
+  date,
+  full = false,
+  readTime,
+  pickedBy,
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
-  const { image, role, description } = useTeam({ includeInvisible: true, name: author }) || {};
+  const {
+    image, role, description, showPickedBy,
+  } = useTeam({ includeInvisible: true, name: author }) || {};
+
+  if (pickedBy && !showPickedBy) {
+    return null;
+  }
 
   return (
     <InfoContainer>
@@ -33,13 +44,12 @@ const AuthorInfo = ({
             </Avatar>
           )}
           <div>
-            {full && <WrittenBy>Written by</WrittenBy>}
+            {full && !pickedBy && <WrittenBy>Written by</WrittenBy>}
             <Title full={full}>{author}</Title>
-            {!full && <Description>{`${date} · ${readTime}`}</Description>}
-            {full && role && <Description>{role}</Description>}
-            {full && description && (
-              <AuthorDescription>{description}</AuthorDescription>
+            {date && readTime && !full && (
+              <Description>{`${date} · ${readTime}`}</Description>
             )}
+            {full && role && <Description>{role}</Description>}
           </div>
         </MainContentContainer>
         {children && <InfoContent>{children}</InfoContent>}
@@ -55,14 +65,18 @@ AuthorInfo.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf,
   ]),
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
   full: PropTypes.bool,
-  readTime: PropTypes.string.isRequired,
+  pickedBy: PropTypes.bool,
+  readTime: PropTypes.string,
 };
 
 AuthorInfo.defaultProps = {
   children: null,
+  date: null,
   full: false,
+  pickedBy: false,
+  readTime: null,
 };
 
 export default memo(AuthorInfo);

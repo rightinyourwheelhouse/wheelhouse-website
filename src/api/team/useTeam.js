@@ -18,6 +18,7 @@ const query = graphql`
             role
             visible
             description
+            showPickedBy
             image {
               extension
               childImageSharp {

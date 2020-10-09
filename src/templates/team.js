@@ -12,6 +12,7 @@ import {
 } from '~components/layoutComponents';
 import Button from '~components/Button';
 import Cinemagraph from '~components/Cinemagraph';
+import Content from '~components/Content';
 import Image from '~components/Image';
 import Markdown from '~components/Markdown';
 import OrderedList from '~components/OrderedList';
@@ -143,25 +144,27 @@ const Team = ({
       {recommendations.length > 0 && (
         <Section>
           <Container>
-            <h2>Latest recommendations</h2>
-            <OrderedList>
-              {recommendations.map(
-                ({
-                  author: itemAuthor,
-                  title: itemTitle,
-                  url: itemUrl,
-                  description: itemDescription,
-                }) => (
-                  <Recommendation
-                    author={itemAuthor}
-                    title={itemTitle}
-                    url={itemUrl}
-                    description={itemDescription}
-                    key={itemTitle}
-                  />
-                )
-              )}
-            </OrderedList>
+            <Content>
+              <h2>Latest recommendations</h2>
+              <OrderedList>
+                {recommendations.map(
+                  ({
+                    author: itemAuthor,
+                    title: itemTitle,
+                    url: itemUrl,
+                    description: itemDescription,
+                  }) => (
+                    <Recommendation
+                      author={itemAuthor}
+                      title={itemTitle}
+                      url={itemUrl}
+                      description={itemDescription}
+                      key={itemTitle}
+                    />
+                  )
+                )}
+              </OrderedList>
+            </Content>
           </Container>
           <Container centered>
             <Button to="/insights" as={Link}>See more insights</Button>

@@ -92,6 +92,7 @@ const Recommendations = ({
                   title: itemTitle,
                   url: itemUrl,
                   description: itemDescription,
+                  pickedBy,
                 }) => (
                   <Recommendation
                     author={itemAuthor}
@@ -99,6 +100,7 @@ const Recommendations = ({
                     url={itemUrl}
                     description={itemDescription}
                     key={itemTitle}
+                    pickedBy={pickedBy}
                   />
                 )
               )}
@@ -184,6 +186,7 @@ export const query = graphql`
         author
         url
         description
+        pickedBy
       }
       tags
       introduction

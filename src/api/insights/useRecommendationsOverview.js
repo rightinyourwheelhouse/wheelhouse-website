@@ -21,6 +21,7 @@ const query = graphql`
             author
             url
             description
+            pickedBy
           }
           tags
           description

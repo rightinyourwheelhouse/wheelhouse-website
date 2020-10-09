@@ -17,5 +17,6 @@ qAndA:
       * wake up at 7
       * stand-up at 9
       * whatever happens between 9 and food.
+showPickedBy: true
 ---
 Aagje loves creating new things: UI's at work, cosplays at home.

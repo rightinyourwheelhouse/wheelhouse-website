@@ -21,13 +21,6 @@ export default styled.ol`
     }
   }
 
-  span {
-    display: block;
-    margin-top: 12px;
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.5);
-  }
-
   blockquote {
     margin-top: 1em;
     margin-bottom: 0;

@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
 import {
   Avatar,
-  AuthorDescription,
   InfoContainer,
   Description,
   Title,
@@ -27,31 +27,36 @@ const AuthorInfo = ({
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
   const {
-    image, role, description, showPickedBy,
+    image, role, showPickedBy, slug,
   } = useTeam({ includeInvisible: true, name: author }) || {};
 
   if (pickedBy && !showPickedBy) {
     return null;
   }
 
+  const Element = slug ? Link : 'div';
+
   return (
     <InfoContainer>
       <Wrapper>
-        <MainContentContainer>
-          {image && (
-            <Avatar full={full}>
-              <Img fluid={image.childImageSharp.fluid} />
-            </Avatar>
-          )}
-          <div>
-            {full && !pickedBy && <WrittenBy>Written by</WrittenBy>}
-            <Title full={full}>{author}</Title>
-            {date && readTime && !full && (
-              <Description>{`${date} · ${readTime}`}</Description>
+        <Element to={slug} as={Link}>
+          <MainContentContainer>
+            {image && (
+              <Avatar full={full}>
+                <Img fluid={image.childImageSharp.fluid} />
+              </Avatar>
             )}
-            {full && role && <Description>{role}</Description>}
-          </div>
-        </MainContentContainer>
+            <div>
+              {full && !pickedBy && <WrittenBy>Written by</WrittenBy>}
+              <Title full={full}>{author}</Title>
+              {date && readTime && !full && (
+                <Description>{`${date} · ${readTime}`}</Description>
+              )}
+              {full && role && <Description>{role}</Description>}
+            </div>
+          </MainContentContainer>
+        </Element>
+
         {children && <InfoContent>{children}</InfoContent>}
       </Wrapper>
     </InfoContainer>

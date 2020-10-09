@@ -6,8 +6,8 @@ role: Founder
 description: is founder and only has 301 kids to take care of.
 image: assets/olivier-2.jpg
 detailImage:
-  image: assets/default-image.png
-  movingPicture: assets/olivier-2.jpg
+  image: assets/olivier-cinemagraph-still.png
+  movingPicture: assets/olivier-cinemagraph.mp4
 showPickedBy: true
 ---
 ### Olivier is founder and only has 301 kids to take care of.

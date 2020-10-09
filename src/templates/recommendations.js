@@ -4,13 +4,14 @@ import readingTime from 'reading-time';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import styled from 'styled-components';
 
 import Markdown from '~components/Markdown';
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
-import Content from '~components/Content';
 import AuthorInfo from '~components/AuthorInfo';
+import Content from '~components/Content';
+import OrderedList from '~components/OrderedList';
+import Recommendation from '~components/Recommendation';
 import SEO from '~components/SEO';
 import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
@@ -26,44 +27,6 @@ import { toShortDate } from '~utils/date';
 import { getMarkdownExcerpt } from '~utils/string';
 
 const isWindowContext = typeof window !== 'undefined';
-
-export const OrderedList = styled.ol`
-  margin: var(--spacing-extra-large) 0;
-
-  li {
-    margin-bottom: var(--spacing-large);
-    padding-bottom: var(--spacing-large);
-
-    &:not(:last-child) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-  }
-
-  a {
-    text-decoration: underline;
-    color: var(--color-text-primary-900);
-
-    &:hover {
-      color: var(--color-primary);
-    }
-  }
-
-  span {
-    display: block;
-    margin-top: 12px;
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.5);
-  }
-
-  blockquote {
-    margin-top: 1em;
-    margin-bottom: 0;
-
-    * {
-      font-size: 1.1rem;
-    }
-  }
-`;
 
 const Recommendations = ({
   data: {
@@ -130,21 +93,13 @@ const Recommendations = ({
                   url: itemUrl,
                   description: itemDescription,
                 }) => (
-                  <li key={itemTitle}>
-                    <a href={itemUrl} target="_blank" rel="nofollow noreferrer">
-                      {itemTitle}
-                    </a>
-                    {itemAuthor && (
-                    <span>
-                      Author:
-                      {' '}
-                      {itemAuthor}
-                    </span>
-                    )}
-                    <blockquote>
-                      {itemDescription && <Markdown source={itemDescription} />}
-                    </blockquote>
-                  </li>
+                  <Recommendation
+                    author={itemAuthor}
+                    title={itemTitle}
+                    url={itemUrl}
+                    description={itemDescription}
+                    key={itemTitle}
+                  />
                 )
               )}
             </OrderedList>

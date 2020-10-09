@@ -43,7 +43,7 @@ const query = graphql`
 export const useRecommendationsOverview = ({
   count = null,
   current = null,
-}) => {
+} = {}) => {
   const {
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
@@ -58,6 +58,7 @@ export const useRecommendationsOverview = ({
             description,
             id,
             image,
+            items,
             introduction,
             slot,
             title,
@@ -72,6 +73,7 @@ export const useRecommendationsOverview = ({
             description,
             id,
             image,
+            items,
             readTime,
             title,
             type: 'recommendation',

@@ -46,6 +46,15 @@ const HeaderContainer = styled.div`
     flex-basis: 40%;
     flex-grow: 1;
 
+    span {
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      text-transform: unset;
+    }
+
     &:last-child {
       flex-basis: 0;
       flex-grow: 999;
@@ -82,7 +91,6 @@ const Team = ({
 }) => {
   const url = isWindowContext && window.location.href;
   const [recommendations] = useTeamRecommendations(name);
-  console.log('recommendations', recommendations);
 
   return (
     <Layout>
@@ -101,13 +109,18 @@ const Team = ({
       />
 
       <Section overflow="visible" background={colors.backgroundPrimary100}>
-        <Container width="1600px" offset={spacing.large}>
+        <Container width="1800px" offset={spacing.large}>
           <ContrastColor color={colors.backgroundPrimary100}>
             <HeaderContainer>
               <GeneralInfoContainer>
                 <Container centered>
-                  <h2>{name}</h2>
-                  <h3>{role}</h3>
+                  <span>TEAM</span>
+                  <h2>
+                    {name}
+                    ,
+                    {' '}
+                    {role}
+                  </h2>
                 </Container>
               </GeneralInfoContainer>
               <div>
@@ -124,7 +137,7 @@ const Team = ({
 
       <Section>
         <Container>
-          <TwoColumns>
+          <TwoColumns firstColumnWidth="30%">
             <div />
             <div>
               <Markdown source={rawMarkdownBody} />
@@ -135,7 +148,7 @@ const Team = ({
 
       {qAndA && (
         <Section>
-          <Container>
+          <Container offset={spacing.large}>
             <QAndA items={qAndA} />
           </Container>
         </Section>

@@ -3,36 +3,23 @@ import styled from 'styled-components';
 import breakpoints from '~styles/breakpoints';
 
 export default styled.div`
-  --direction: ${({ reversed }) => (reversed ? 'column-reverse' : 'column')};
+  --direction: ${({ reversed }) => (reversed ? 'row-reverse' : 'row')};
+  --first-column-width: ${({ firstColumnWidth }) => firstColumnWidth || '45%'};
 
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--spacing-large) / 2 * -1);
   flex-direction: var(--direction);
-  justify-content: space-between;
-  flex: 1;
-  margin-bottom: var(--spacing-default);
 
   > * {
-    width: 100%;
-    margin-bottom: 2%;
-    margin-bottom: var(--spacing-default);
+    margin: calc(var(--spacing-large) / 2);
+    flex-basis: var(--first-column-width);
+    flex-grow: 1;
 
-    > div, > ul {
-      &:first-child {
-        margin-top: 0 !important;
-      }
-    }
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    flex-direction: row;
-
-    > *:first-child {
-      margin-right: 2%;
-    }
-
-    > *:last-child {
-      margin-left: 2%;
+    &:last-child {
+      flex-basis: 0;
+      flex-grow: 999;
+      min-width: calc(var(--first-column-width) - var(--spacing-large));
     }
   }
 `;

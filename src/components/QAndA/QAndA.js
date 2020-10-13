@@ -10,7 +10,7 @@ const QAndA = ({ items }) => (
   <QAndAContainer>
     {items.map(({ q, a }) => (
       <QAndAItemContainer key={q}>
-        <TwoColumns>
+        <TwoColumns firstColumnWidth="30%">
           <div>
             <h3>{q}</h3>
           </div>

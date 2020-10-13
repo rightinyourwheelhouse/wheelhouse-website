@@ -9,3 +9,17 @@ export const fluidImage = graphql`
     }
   }
 `;
+
+export const seo = graphql`
+  fragment seo on PagesJsonSeo {
+    title
+    description
+    image {
+      childImageSharp {
+        resize(width: 900) {
+          src
+        }
+      }
+    }
+  }
+`;

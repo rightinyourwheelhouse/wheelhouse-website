@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
   query {
-    allFile(filter: { relativeDirectory: { eq: "general" } }) {
+    allFile {
       edges {
         node {
           relativePath
@@ -14,7 +14,7 @@ const query = graphql`
   }
 `;
 
-export const useImage = (filename) => {
+export const useImage = (filename, src) => {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
@@ -22,7 +22,7 @@ export const useImage = (filename) => {
   const image = useMemo(
     () => edges
       .map(({ node }) => ({ ...node }))
-      .find(({ relativePath }) => relativePath.includes(filename)),
+      .find(({ relativePath }) => relativePath.includes(src || filename)),
     [edges]
   );
 

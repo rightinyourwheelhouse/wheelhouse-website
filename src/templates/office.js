@@ -24,9 +24,7 @@ const Office = ({
       mail,
       name,
       phone,
-      image: {
-        childImageSharp: { fluid },
-      },
+      image,
     },
   },
 }) => (
@@ -57,7 +55,7 @@ const Office = ({
           </TwoColumns>
 
         </Content>
-        <Img fluid={fluid} alt={`${name} office`} />
+        <Img fluid={image.childImageSharp.fluid} alt={`${name} office`} />
         <Content>
           <h2>How to reach us</h2>
           <div>

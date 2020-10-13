@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-import ReactMarkdown from 'react-markdown';
+import Markdown from '~components/Markdown';
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
@@ -76,12 +76,7 @@ const Recommendations = ({
       tags,
       introduction,
       slot,
-      image: {
-        childImageSharp: {
-          fluid,
-          resize: { src },
-        },
-      },
+      image,
     },
   },
 }) => {
@@ -93,7 +88,7 @@ const Recommendations = ({
       <SEO
         title={`${title} | from ${author}`}
         description={getMarkdownExcerpt(introduction)}
-        image={src}
+        image={image}
         url={url}
         article
       />
@@ -115,10 +110,10 @@ const Recommendations = ({
         </Container>
       </Section>
 
-      {fluid && (
+      {image && (
         <Section space="12px">
           <Container>
-            <Img fluid={fluid} />
+            <Img fluid={image.childImageSharp.fluid} />
           </Container>
         </Section>
       )}
@@ -126,7 +121,7 @@ const Recommendations = ({
       <Section>
         <Container>
           <Content>
-            <ReactMarkdown source={introduction} />
+            {introduction && <Markdown source={introduction} />}
             <OrderedList>
               {items.map(
                 ({
@@ -147,13 +142,13 @@ const Recommendations = ({
                     </span>
                     )}
                     <blockquote>
-                      <ReactMarkdown source={itemDescription} />
+                      {itemDescription && <Markdown source={itemDescription} />}
                     </blockquote>
                   </li>
                 )
               )}
             </OrderedList>
-            <ReactMarkdown source={slot} />
+            {slot && <Markdown source={slot} />}
           </Content>
           <AuthorInfo
             full

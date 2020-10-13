@@ -16,13 +16,6 @@ import colors from '~styles/colors';
 const CookieConsent = ({
   onUpdate, onCustomize, privacyUrl,
 }) => {
-  const handleReject = useCallback(
-    () => {
-      onUpdate(false);
-    },
-    [onUpdate],
-  );
-
   const handleAccept = useCallback(
     () => {
       onUpdate(true);
@@ -49,9 +42,6 @@ const CookieConsent = ({
           </Button>
         </div>
         <div>
-          <Button onClick={handleReject} name="reject">
-            Accept minimum
-          </Button>
           <Button onClick={handleAccept} name="accept">
             Accept all
           </Button>

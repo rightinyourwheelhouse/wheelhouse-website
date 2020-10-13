@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
@@ -13,16 +15,23 @@ import Navigation from '~modules/Navigation';
 import JobOverview from '~modules/JobOverview';
 import InsightsOverview from '~modules/InsightsOverview';
 
-const IndexPage = () => (
+const CareersPage = ({
+  data: {
+    pagesJson: {
+      seo,
+    },
+  },
+}) => (
   <Layout>
-    <SEO title="Working as a javascript expert at Wheelhouse and expand our team" />
+    <SEO title={seo.title} description={seo.description} image={seo.image} />
+
     <Navigation />
 
     <Section>
       <Container>
-        <SubTitle>Careers</SubTitle>
-        <h2>What we have to offer</h2>
         <Content>
+          <SubTitle>Careers</SubTitle>
+          <h2>What we have to offer</h2>
           <p>
             At Wheelhouse, we encourage everyone to think and work on our
             strategy. Initiative and new insights are stimulated to deliver a
@@ -61,4 +70,24 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+CareersPage.propTypes = {
+  data: PropTypes.shape({
+    pagesJson: PropTypes.shape({
+      seo: PropTypes.shape({
+        ...SEO.propTypes,
+      }),
+    }),
+  }).isRequired,
+};
+
+export default CareersPage;
+
+export const privacyPolicyQuery = graphql`
+  query CareersPage {
+    pagesJson(page: { eq: "careers" }) {
+      seo {
+        ...seo
+      }
+    }
+  }
+`;

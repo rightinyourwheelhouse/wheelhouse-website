@@ -1,0 +1,195 @@
+[
+  {
+    "component": "FadingText",
+    "background": "#252525",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "Wait a minute...",
+        "timeout": 3000
+      },
+      {
+        "text": "Forms are boring, don't you agree?",
+        "timeout": 3000
+      },
+      {
+        "text": "Let's try something different...",
+        "timeout": 3000
+      }
+    ]
+  },
+  {
+    "component": "TextInput",
+    "subtitle": "First things first",
+    "title": "Can you tell us your name?",
+    "confirmButtonText": "Tell me more",
+    "background": "#fff",
+    "color": "#252525",
+    "dataKey": "onboardee-name",
+    "placeholder": "",
+    "label": "Your name"
+  },
+  {
+    "component": "FadingText",
+    "background": "#58bd86",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "Hey there ${onboardee-name}",
+        "timeout": 3000
+      },
+      {
+        "text": "This is not an interview, yet 😏",
+        "timeout": 3000
+      },
+      {
+        "text": "No seriously, don't worry about it 😌",
+        "timeout": 3000
+      }
+    ]
+  },
+  {
+    "component": "FadingText",
+    "background": "#FF8360",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "Let's talk Wheelhouse ⚙️",
+        "timeout": 2800
+      },
+      {
+        "text": "We're a group of JS experts and consultants...",
+        "timeout": 3500
+      }
+    ]
+  },
+  {
+    "component": "FadingText",
+    "background": "#0000E0",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "We're a Cronos company under the Raccoons group",
+        "timeout": 3500
+      }
+    ]
+  },
+  {
+    "component": "FadingText",
+    "background": "#252525",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "We're looking for people that fit into our family culture...",
+        "timeout": 4200
+      },
+      {
+        "text": "...people with an open mind, who like to try out new things!",
+        "timeout": 4200
+      }
+    ]
+  },
+  {
+    "component": "FadingText",
+    "background": "#F1F1F1",
+    "color": "#141618",
+    "textItems": [
+      {
+        "text": "Like these strange new conversational forms! 😄",
+        "timeout": 4000
+      },
+      {
+        "text": "So, in order to get to know you better, let's go through some questions",
+        "timeout": 4500
+      }
+    ]
+  },
+  {
+    "component": "TextAreaInput",
+    "subtitle": "So what about you",
+    "title": "What do you do in your free time?",
+    "confirmButtonText": "Reply",
+    "background": "#2d383c",
+    "color": "#fff",
+    "dataKey": "hobbies",
+    "placeholder": "Fishing, ice skating, hockey..."
+  },
+  {
+    "component": "FadingText",
+    "background": "#58bd86",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "Interesting ${onboardee-name}! We like escape rooms, cars, cosplay... You could say we're pretty diverse 😄",
+        "timeout": 6000
+      },
+      {
+        "text": "OK we promised this wouldn't become like an interview, so we're going to have to keep this a bit shorter...",
+        "timeout": 5600
+      }
+    ]
+  },
+  {
+    "component": "TextInput",
+    "subtitle": "Your contact details",
+    "title": "Can you give us your email?",
+    "confirmButtonText": "Here's my email",
+    "background": "#FF8360",
+    "color": "#fff",
+    "dataKey": "email",
+    "placeholder": "",
+    "label": "Your email address"
+  },
+  {
+    "component": "TextInput",
+    "subtitle": "Your contact details",
+    "title": "Can you give us your phone number?",
+    "confirmButtonText": "Sure, but please don't stalk me! 😅",
+    "background": "#fff",
+    "color": "#2d383c",
+    "dataKey": "phone",
+    "placeholder": "",
+    "label": "Your phone number"
+  },
+  {
+    "component": "FadingText",
+    "background": "#252525",
+    "color": "#fff",
+    "textItems": [
+      {
+        "text": "OK, two more questions, and then we'll leave you alone! ...",
+        "timeout": 4000
+      }
+    ]
+  },
+  {
+    "component": "TextInput",
+    "subtitle": "Your work",
+    "title": "Do you have a github or website?",
+    "confirmButtonText": "Sure, check out my portfolio!",
+    "background": "#F1F1F1",
+    "color": "black",
+    "dataKey": "portfolio",
+    "placeholder": "",
+    "label": "URL"
+  },
+  {
+    "component": "TextAreaInput",
+    "subtitle": "Your thoughts",
+    "title": "What do you like about Wheelhouse?",
+    "confirmButtonText": "Send",
+    "background": "#F1F1F1",
+    "color": "black",
+    "dataKey": "portfolio",
+    "placeholder": "I really like ...",
+    "label": "URL"
+  },
+  {
+    "component": "Submit",
+    "background": "#2d383c",
+    "color": "#fff",
+    "subtitle": "All done!",
+    "finalText": "All set and done. Thank you so much for your time ${onboardee-name}. It was a pleasure 😊. If you want us to reach out to you, please confirm by submitting this conversation. You may also choose not to. It's all up to you 😉",
+    "buttonText": "Submit"
+  }
+]

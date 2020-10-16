@@ -19,6 +19,7 @@ import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
+import GeneralOnboarding from '~modules/GeneralOnboarding';
 
 import colors from '~styles/colors';
 

@@ -70,6 +70,7 @@
     "typeface-montserrat": "0.0.75",
     "use-is-in-viewport": "^1.0.9",
     "utf-8-validate": "^5.0.2",
+    "uuid": "^8.2.0",
     "webpack-plugin-serve": "^1.0.1",
     "yup": "^0.29.3"
   },

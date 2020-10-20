@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const InfoContainer = styled.div``;
+export const InfoContainer = styled.div`
+  a {
+    text-decoration: none;
+  }
+`;
 
 export const InfoContent = styled.div`
   div {

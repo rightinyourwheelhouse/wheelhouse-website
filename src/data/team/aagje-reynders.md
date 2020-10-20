@@ -4,19 +4,23 @@ visible: true
 name: Aagje Reynders
 role: front-end developer
 description: "loves creating new things: UI's at work, cosplays at home."
-image: assets/aagje-2.jpg
+image: assets/aagje.jpg
 detailImage:
   image: assets/aagje-cinemagraph-still.png
   movingPicture: assets/aagje-cinemagraph.mp4
 qAndA:
-  - q: How do you cut your pizza?
-    a: I don't cut my pizza, but eat it with knife and fork. That way I get to keep
-      the better parts separate.
-  - q: What does your average day look like?
-    a: |-
-      * wake up at 7
-      * stand-up at 9
-      * whatever happens between 9 and food.
+  - q: What's your favourite anime?
+    a: Jojo Bizarre Adventure
+  - q: What's your most challenging cosplay?
+    a: '![Aagje Cosplay](assets/aagje-hollow.jpeg "Aagje Cosplay")'
+  - q: Why did you start coding?
+    a: When I was 14 years old, I played this Runescape remake with friends and met
+      the person who made it, I was really interested in how he managed to code
+      it. So I started to look things up and learned myself how to program.
+  - q: "Fun fact:"
+    a: As a kid I was really impressed how my father could “talk to computers”.
+      Thats how he explained me what he was doing. Little did I know that he was
+      just using Command prompt. Not as exciting as I remember it was!
 showPickedBy: true
 ---
 Aagje loves creating new things: UI's at work, cosplays at home.

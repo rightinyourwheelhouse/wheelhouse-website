@@ -14,9 +14,6 @@ export default styled.div`
     flex-basis: var(--first-column-width);
     flex-grow: 1;
 
-    div:first-child {
-      margin-top: 0;
-    }
 
     &:last-child {
       flex-basis: 0;

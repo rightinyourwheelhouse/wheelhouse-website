@@ -31,6 +31,7 @@ export const FooterContainer = styled.footer`
 
   h2 {
     color: var(--foreground);
+    margin-bottom: var(--spacing-default);
   }
 
   p {

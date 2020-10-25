@@ -184,7 +184,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-default);
 
     &:not(:first-of-type) {
       margin-top: 3.8rem;

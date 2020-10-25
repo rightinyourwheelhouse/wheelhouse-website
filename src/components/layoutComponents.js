@@ -59,6 +59,8 @@ export const Section = styled.section`
   min-height: 0;
   padding: var(--space);
   position: relative;
+  overflow-y: var(--overflow);
+  overflow-x: hidden;
 
   > img {
     margin-bottom: 30px;

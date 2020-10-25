@@ -37,43 +37,23 @@ import { useTeamRecommendations } from '~api/team/useTeamRecommendations';
 const isWindowContext = typeof window !== 'undefined';
 
 const HeaderContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: calc(var(--spacing-default) / 2 * -1);
-
-  > div {
-    margin: calc(var(--spacing-default) / 2);
-    flex-basis: 40%;
-    flex-grow: 1;
-
-    span {
-      font-size: 1.5em;
-      text-transform: uppercase;
-    }
-
     h2 {
+      font-size: 40px;
       text-transform: unset;
+      padding-bottom: var(--spacing-default);
+      position: relative;
+      margin-bottom: var(--spacing-default);
+
+      &:after {
+        content: "";
+        height: 2px;
+        width: 75px;
+        background: var(--color-text-primary-900);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
-
-    &:last-child {
-      flex-basis: 0;
-      flex-grow: 999;
-      min-width: calc(50% - var(--spacing-default));
-    }
-  }
-`;
-
-const GeneralInfoContainer = styled.div`
-  @media screen and (min-width: ${breakpoints.medium}) {
-    padding-top: var(--spacing-large);
-  }
-
-  > div {
-    padding: 0;
-  }
-
-  h2 {
-    max-width: unset;
   }
 `;
 
@@ -83,7 +63,7 @@ const Team = ({
       excerpt,
       id,
       frontmatter: {
-        name, role, detailImage, qAndA,
+        name, role, detailImage, qAndA, description,
       },
       rawMarkdownBody,
     },
@@ -101,14 +81,41 @@ const Team = ({
         url={url}
       />
 
-      <Navigation
-        baseBackgroundColor={colors.backgroundPrimary100}
-        baseColor={colors.textPrimary100}
-        baseHoverColor={colors.primary}
-        hamburgerColor={colors.textPrimary100}
-      />
+      <Navigation />
 
-      <Section overflow="visible" background={colors.backgroundPrimary100}>
+      <Section>
+        <Container offset={spacing.large}>
+          <HeaderContainer>
+            <div>
+              <Cinemagraph
+                image={detailImage.image}
+                alt={name}
+                movie={detailImage.movingPicture}
+              />
+            </div>
+            <Content>
+              <h2>
+                {name}
+                {' '}
+                {description}
+                .
+              </h2>
+              <p>
+                {name}
+                {' '}
+                is a
+                {' '}
+                {role}
+                {' '}
+                at Wheelhouse
+              </p>
+              <Markdown source={rawMarkdownBody} />
+            </Content>
+          </HeaderContainer>
+        </Container>
+      </Section>
+
+      {/* <Section overflow="visible" background={colors.backgroundPrimary100}>
         <Container width="1800px" offset={spacing.large}>
           <ContrastColor color={colors.backgroundPrimary100}>
             <HeaderContainer>
@@ -133,18 +140,7 @@ const Team = ({
             </HeaderContainer>
           </ContrastColor>
         </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <TwoColumns firstColumnWidth="30%">
-            <div />
-            <div>
-              <Markdown source={rawMarkdownBody} />
-            </div>
-          </TwoColumns>
-        </Container>
-      </Section>
+      </Section> */}
 
       {qAndA && (
         <Section>
@@ -180,7 +176,9 @@ const Team = ({
             </Content>
           </Container>
           <Container centered>
-            <Button to="/insights" as={Link}>See more insights</Button>
+            <Button to="/insights" as={Link}>
+              See more insights
+            </Button>
           </Container>
         </Section>
       )}
@@ -226,6 +224,7 @@ export const query = graphql`
       rawMarkdownBody
       excerpt
       frontmatter {
+        description
         name
         detailImage {
           image {

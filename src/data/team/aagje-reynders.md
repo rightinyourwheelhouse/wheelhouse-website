@@ -25,4 +25,4 @@ qAndA:
       just using Command prompt. Not as exciting as I remember it was!
 showPickedBy: true
 ---
-### Aagje loves creating new things: UI's at work, cosplays at home.
+I love creating new things: UI's at work, cosplays at home.

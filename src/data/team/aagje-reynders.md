@@ -9,6 +9,8 @@ detailImage:
   image: assets/aagje-cinemagraph-still.png
   movingPicture: assets/aagje-cinemagraph.mp4
 qAndA:
+  - q: "Describe yourself using only emojis:"
+    a: "###### 🐍🍕🖤💀"
   - q: What's your favourite anime?
     a: Jojo Bizarre Adventure
   - q: What's your most challenging cosplay?
@@ -23,4 +25,4 @@ qAndA:
       just using Command prompt. Not as exciting as I remember it was!
 showPickedBy: true
 ---
-Aagje loves creating new things: UI's at work, cosplays at home.
+### Aagje loves creating new things: UI's at work, cosplays at home.

@@ -43,7 +43,7 @@ export const AuthorDescription = styled.p`
 `;
 
 export const Avatar = styled.div`
-  --avatar-size: ${({ full }) => (full ? '60px' : '40px')};
+  --avatar-size: ${({ full }) => (full ? '40px' : '40px')};
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 100%;
@@ -65,9 +65,9 @@ export const MainContentContainer = styled.div`
 
 export const Title = styled.span`
   display: block;
-  margin: ${({ full }) => (full ? '16px' : '12px')} 0;
+  margin: ${({ full }) => (full ? '12px' : '12px')} 0;
   font-weight: bold;
-  font-size: ${({ full }) => (full ? '24px' : '16px')} !important;
+  font-size: ${({ full }) => (full ? '16x' : '16px')} !important;
   line-height: 0px;
   color: var(--color-text-primary-900);
 `;

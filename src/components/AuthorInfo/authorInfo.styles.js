@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
   a {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 `;
 

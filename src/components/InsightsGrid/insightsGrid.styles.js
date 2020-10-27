@@ -112,6 +112,7 @@ export const InsightsGridContainer = styled.div`
           margin: 0;
           display: flex;
           flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+          align-items: flex-start;
           flex-wrap: wrap;
 
           ${InsightsGridImage} {

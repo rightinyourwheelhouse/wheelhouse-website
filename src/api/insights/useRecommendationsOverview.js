@@ -49,7 +49,7 @@ export const useRecommendationsOverview = ({
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
 
-  const items = useMemo(() => {
+  const selectedItems = useMemo(() => {
     const nodes = edges
       .map(
         ({
@@ -91,5 +91,5 @@ export const useRecommendationsOverview = ({
     return nodes;
   }, [edges, count]);
 
-  return [items];
+  return [selectedItems];
 };

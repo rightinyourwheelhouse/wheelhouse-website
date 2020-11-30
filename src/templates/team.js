@@ -97,6 +97,7 @@ const Team = ({
                 {name}
                 {' '}
                 is a
+                {' '}
                 {role}
                 {' '}
                 at Wheelhouse
@@ -110,11 +111,14 @@ const Team = ({
       {qAndA && (
         <Section>
           <Container>
-            <p>
-              To get to know who we are and what kind of person we are, we ask a few questions. Here are the questions and answers of
-              {' '}
-              {name}
-            </p>
+            <h2>Q&A</h2>
+            <Content>
+              <p>
+                To get to know who we are and what kind of person we are, we ask a few questions. Here are the questions and answers of
+                {' '}
+                {name}
+              </p>
+            </Content>
           </Container>
           <Container offset={spacing.large}>
 

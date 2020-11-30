@@ -25,7 +25,9 @@ qAndA:
 
       4. **My wireless headphones**
 
-      5. **Raspberry pi:** I use my raspberry pi for a multitude of stuff. It's amazing!
+      5. **My phone** on a wireless Qi charger
+
+      6. **Raspberry pi:** I use my raspberry pi for a multitude of stuff. It's amazing!
   - q: Why do you prefer front-end over back-end?
     a: I love writing code, but I also love design and UX. As a front-end developer
       I usually get the chance to get the best of both worlds.

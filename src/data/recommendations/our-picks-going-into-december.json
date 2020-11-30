@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "title": "Its time to say goodbye to docker",
+      "url": "https://towardsdatascience.com/its-time-to-say-goodbye-to-docker-5cfec8eff833",
+      "description": "I always considered docker to be the only tool for containerisation. For my home server I have been using docker-compose and never did I even think about an alternative. This article does a good job of listing and explaining alternatives to docker. My next project for my home server is to migrate to k3s using kompose"
+    },
+    {
+      "url": "https://www.carbondesignsystem.com/",
+      "description": "Carbon Design System is a great example when working on your design system and guidelines. When designing a new component, I often do some research about UX and how things should look; this is one of the places I go to and read their documentation. They also have a Storybook (React, Vue.js and Angular), so when developing, I sometimes check that out as well.",
+      "title": "Carbon Design System"
+    },
+    {
+      "title": "Tauri",
+      "url": "https://github.com/tauri-apps/tauri",
+      "description": "Better binary sizes than Electron"
+    },
+    {
+      "description": "It's no secret that listening and playing music is a passion. Discovering new music is absolutely part of that. I mainly discover this new music through the website dansendeberen.be, where new reviews are posted every day. Not only from the big bands, but also from the local scene.",
+      "url": "https://www.dansendeberen.be",
+      "title": "Dansende beren"
+    },
+    {
+      "title": "Epic React",
+      "url": "https://epicreact.dev",
+      "description": "This month I got introduced to Epic React. Wheelhouse gave me the opportunity to give it a try and holy it's amazing!"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2020-11-27T13:23:30.269Z",
+  "title": "Our picks going into December",
+  "tags": [
+    "picks"
+  ],
+  "introduction": "These are some links that we found the most interesting going into december. Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us.",
+  "image": "assets/picks-december2020.png",
+  "description": "Every month we each pick somethign that we would like to share to the world."
+}

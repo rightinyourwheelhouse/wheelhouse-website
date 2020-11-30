@@ -31,7 +31,7 @@ qAndA:
       I usually get the chance to get the best of both worlds.
   - q: What podcasts are you currently listening to?
     a: |-
-      * No sush thing as a fish
+      * No such thing as a fish
       * Reply All
       * Syntax
       * Nerdland

@@ -18,7 +18,7 @@ export default styled.div`
     &:last-child {
       flex-basis: 0;
       flex-grow: 999;
-      min-width: calc(var(--first-column-width) - var(--spacing-large));
+      min-width: calc(60% - var(--spacing-large));
     }
   }
 `;

@@ -3,7 +3,8 @@
     {
       "title": "Its time to say goodbye to docker",
       "url": "https://towardsdatascience.com/its-time-to-say-goodbye-to-docker-5cfec8eff833",
-      "description": "I always considered docker to be the only tool for containerisation. For my home server I have been using docker-compose and never did I even think about an alternative. This article does a good job of listing and explaining alternatives to docker. My next project for my home server is to migrate to k3s using kompose"
+      "description": "I always considered docker to be the only tool for containerisation. For my home server I have been using docker-compose and never did I even think about an alternative. This article does a good job of listing and explaining alternatives to docker. My next project for my home server is to migrate to k3s using kompose",
+      "pickedBy": "Roel Goossens"
     },
     {
       "url": "https://www.carbondesignsystem.com/",

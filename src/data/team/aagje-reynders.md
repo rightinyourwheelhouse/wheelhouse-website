@@ -27,4 +27,3 @@ qAndA:
     a: '![Aagjes Desk layout](assets/20201127_1126582.jpg "Aagjes Desk layout")'
 showPickedBy: true
 ---
-Aagje loves creating new things. Whether it's creating UI's at work or cosplays at home, Aagje is a source of creativity.

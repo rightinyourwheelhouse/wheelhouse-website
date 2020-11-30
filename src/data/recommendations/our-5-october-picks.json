@@ -24,7 +24,8 @@
     {
       "url": "https://medium.com/@levon_t/java-vert-x-starter-guide-part-1-30cb050d68aa",
       "description": "On his new assignment, Roel's client works with Vert.X as their backend framework. This guide helped him get a good understanding of what Vert.X is about.",
-      "title": "Java Vert.x Starter Guide - Part 1"
+      "title": "Java Vert.x Starter Guide - Part 1",
+      "pickedBy": "Roel Goossens"
     }
   ],
   "author": "Wheelhouse",

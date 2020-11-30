@@ -8,7 +8,8 @@
     {
       "url": "https://www.carbondesignsystem.com/",
       "description": "Carbon Design System is a great example when working on your design system and guidelines. When designing a new component, I often do some research about UX and how things should look; this is one of the places I go to and read their documentation. They also have a Storybook (React, Vue.js and Angular), so when developing, I sometimes check that out as well.",
-      "title": "Carbon Design System"
+      "title": "Carbon Design System",
+      "pickedBy": "Aagje Reynders"
     },
     {
       "title": "Tauri",

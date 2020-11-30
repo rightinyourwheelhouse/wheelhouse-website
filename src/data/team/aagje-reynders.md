@@ -23,6 +23,8 @@ qAndA:
     a: As a kid I was really impressed how my father could “talk to computers”.
       Thats how he explained me what he was doing. Little did I know that he was
       just using Command prompt. Not as exciting as I remember it was!
+  - q: My desk layout
+    a: '![Aagjes Desk layout](assets/20201127_1126582.jpg "Aagjes Desk layout")'
 showPickedBy: true
 ---
-I love creating new things: UI's at work, cosplays at home.
+Aagje loves creating new things. Whether it's creating UI's at work or cosplays at home, Aagje is a source of creativity.

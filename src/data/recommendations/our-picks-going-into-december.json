@@ -15,17 +15,20 @@
     {
       "title": "Tauri",
       "url": "https://github.com/tauri-apps/tauri",
-      "description": "Better binary sizes than Electron"
+      "description": "Better binary sizes than Electron",
+      "pickedBy": "Rafaël Mindreau"
     },
     {
       "description": "It's no secret that listening and playing music is a passion. Discovering new music is absolutely part of that. I mainly discover this new music through the website dansendeberen.be, where new reviews are posted every day. Not only from the big bands, but also from the local scene.",
       "url": "https://www.dansendeberen.be",
-      "title": "Dansende beren"
+      "title": "Dansende beren",
+      "pickedBy": "Olivier De Wit"
     },
     {
       "title": "Epic React",
       "url": "https://epicreact.dev",
-      "description": "This month I got introduced to Epic React. Wheelhouse gave me the opportunity to give it a try and holy it's amazing!"
+      "description": "This month I got introduced to Epic React. Wheelhouse gave me the opportunity to give it a try and holy it's amazing!",
+      "pickedBy": "Daren Malfait"
     }
   ],
   "author": "Wheelhouse",

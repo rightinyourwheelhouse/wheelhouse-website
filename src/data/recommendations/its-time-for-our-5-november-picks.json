@@ -15,17 +15,20 @@
     {
       "title": "Notion.so",
       "url": "https://www.notion.so/",
-      "description": "A long long time ago I used Notion, but it didn't work out at the time. Now I've been using Bear App as a main note taking app. I do miss a few features like being able to put a reminder on notes or put it on a calendar. So I took another look at Notion and now I can't look back."
+      "description": "A long long time ago I used Notion, but it didn't work out at the time. Now I've been using Bear App as a main note taking app. I do miss a few features like being able to put a reminder on notes or put it on a calendar. So I took another look at Notion and now I can't look back.",
+      "pickedBy": "Daren Malfait"
     },
     {
       "title": "Socratic",
       "url": "https://socratic.org/",
-      "description": "Socratic was built to support Science, Math, Literature, Social Studies, and more. With help from teachers, Socratic brings you visual explanations of important concepts in each subject."
+      "description": "Socratic was built to support Science, Math, Literature, Social Studies, and more. With help from teachers, Socratic brings you visual explanations of important concepts in each subject.",
+      "pickedBy": "Olivier De Wit"
     },
     {
       "title": "GIFS and prefers-reduced-motion",
       "url": "https://css-tricks.com/gifs-and-prefers-reduced-motion/",
-      "description": "Rather than entirely stopping the GIF, you can put animated and non-animated images on top of each other (inside a `<details>` element) and allow them to be “played” on demand."
+      "description": "Rather than entirely stopping the GIF, you can put animated and non-animated images on top of each other (inside a `<details>` element) and allow them to be “played” on demand.",
+      "pickedBy": "Rafaël Mindreau"
     }
   ],
   "author": "Wheelhouse",

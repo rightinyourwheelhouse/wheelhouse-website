@@ -33,4 +33,3 @@ qAndA:
     a: "I don't like dogs. "
 showPickedBy: true
 ---
-### Olivier is founder and only has 301 kids to take care of.

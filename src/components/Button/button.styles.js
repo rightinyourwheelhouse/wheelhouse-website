@@ -45,7 +45,7 @@ export const ButtonContainer = styled.div`
       transition: all 0.3s;
     }
   }
-  }
+
 
   &.full {
     width: 100%;

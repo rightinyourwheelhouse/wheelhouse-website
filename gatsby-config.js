@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 const {
   COMPANY_URL,
   COMPANY_NAME,
@@ -8,6 +9,47 @@ const {
 
 module.exports = {
   plugins: [
+    {
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static`,
+        name: 'assets',
+      },
+    },
+    {
+      options: {
+        path: './src/data/',
+        name: 'data',
+      },
+      resolve: 'gatsby-source-filesystem',
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      options: {
+        plugins: [
+          'gatsby-remark-relative-source',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {},
+          },
+        ],
+      },
+      resolve: 'gatsby-transformer-remark',
+    },
+    {
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+      resolve: 'gatsby-plugin-netlify-cms',
+    },
     {
       options: {
         environments: ['production', 'development'],
@@ -21,24 +63,13 @@ module.exports = {
     },
     {
       options: {
-        plugins: [],
-      },
-      resolve: 'gatsby-transformer-remark',
-    },
-    {
-      options: {
         // Path to your Netlify CMS config file
         cmsConfig: '/static/admin/config.yml',
       },
       resolve: 'gatsby-plugin-netlify-cms-paths',
     },
     'gatsby-transformer-json',
-    {
-      options: {
-        path: './src/data/',
-      },
-      resolve: 'gatsby-source-filesystem',
-    },
+
     'gatsby-plugin-sass',
     {
       options: {
@@ -76,22 +107,7 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr-loader',
     },
     'gatsby-plugin-react-helmet',
-    {
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
-      },
-      resolve: 'gatsby-source-filesystem',
-    },
-    {
-      options: {
-        name: 'static',
-        path: `${__dirname}/static/`,
-      },
-      resolve: 'gatsby-source-filesystem',
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+
     {
       options: {
         background_color: '#ffffff',
@@ -106,12 +122,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-      resolve: 'gatsby-plugin-netlify-cms',
-    },
     'gatsby-plugin-netlify',
   ],
   siteMetadata: {

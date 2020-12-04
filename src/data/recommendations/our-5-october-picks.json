@@ -3,27 +3,32 @@
     {
       "title": "markup",
       "description": "MarkUp lets you collect feedback directly on your live website or any image.",
-      "url": "https://www.markup.io"
+      "url": "https://www.markup.io",
+      "pickedBy": "Rafaël Mindreau"
     },
     {
       "description": "![snapchat anime filter](assets/animefilter-snapchat.jpg \"snapchat anime filter\")\n\nMy pick of the month is going to be the snapchat anime filter. It's really impressive how it works and you can still recognize yourself. As a weeb myself I totally approve this filter!",
-      "title": "Snapchat anime filter"
+      "title": "Snapchat anime filter",
+      "pickedBy": "Aagje Reynders"
     },
     {
       "url": "https://www.youtube.com/watch?v=ktlTxC4QG8g",
       "title": "The 7 habits of highly effective people - animated book summary",
       "author": "Stephen Covey",
-      "description": "The book as is, is a recommendation on its own. So if you're more of a book person: go ahead and give it a read, but if you just want to know what it's about or want a quick summary the video is a really nice watch."
+      "description": "The book as is, is a recommendation on its own. So if you're more of a book person: go ahead and give it a read, but if you just want to know what it's about or want a quick summary the video is a really nice watch.",
+      "pickedBy": "Olivier De Wit"
     },
     {
       "url": "https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/",
       "title": "Eleventy and Vue, a match made to power Netlify.com",
-      "description": "Netlify talks about how they made their new website."
+      "description": "Netlify talks about how they made their new website.",
+      "pickedBy": "Daren Malfait"
     },
     {
       "url": "https://medium.com/@levon_t/java-vert-x-starter-guide-part-1-30cb050d68aa",
       "description": "On his new assignment, Roel's client works with Vert.X as their backend framework. This guide helped him get a good understanding of what Vert.X is about.",
-      "title": "Java Vert.x Starter Guide - Part 1"
+      "title": "Java Vert.x Starter Guide - Part 1",
+      "pickedBy": "Roel Goossens"
     }
   ],
   "author": "Wheelhouse",

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-import { Section, Container, LightContent } from '~components/layoutComponents';
+import { Section, Container, ContrastColor } from '~components/layoutComponents';
 import Content from '~components/Content';
 import Button from '~components/Button';
 import Card from '~components/Card';
@@ -75,7 +75,7 @@ const TeamPage = ({
 
     <Section background={colors.backgroundPrimary100}>
       <Container>
-        <LightContent>
+        <ContrastColor color={colors.backgroundPrimary100}>
           <TwoColumns>
             <div>
               <Summary
@@ -104,7 +104,7 @@ const TeamPage = ({
               />
             </div>
           </TwoColumns>
-        </LightContent>
+        </ContrastColor>
       </Container>
     </Section>
     <Section>

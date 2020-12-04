@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 import spacing from '~styles/spacing';
+import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
+
+import { invertColor } from '~utils/color';
 
 export const Container = styled.div`
   --offset: ${({ offset }) => offset || 0};
@@ -26,11 +29,14 @@ export const Container = styled.div`
   }
 `;
 
-export const LightContent = styled.div`
-  color: var(--color-text-primary-100);
+export const ContrastColor = styled.div`
+  --color: ${({ color }) => (color ? invertColor(color, true) : colors.textPrimary100)};
+  color: var(--color);
 
   p,
   a,
+  h2,
+  mark,
   li {
     color: currentColor;
   }
@@ -53,6 +59,8 @@ export const Section = styled.section`
   min-height: 0;
   padding: var(--space);
   position: relative;
+  overflow-y: var(--overflow);
+  overflow-x: hidden;
 
   > img {
     margin-bottom: 30px;

@@ -41,7 +41,7 @@ const Footer = () => {
               </LinksContainer>
             </div>
             <div>
-              <TwoColumns>
+              <TwoColumns firstColumnWidth="30%">
                 <div>
                   <LinksContainer>
                     <Title>Social</Title>

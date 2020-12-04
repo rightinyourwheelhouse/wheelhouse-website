@@ -21,6 +21,7 @@ const query = graphql`
             author
             url
             description
+            pickedBy
           }
           tags
           description
@@ -43,12 +44,12 @@ const query = graphql`
 export const useRecommendationsOverview = ({
   count = null,
   current = null,
-}) => {
+} = {}) => {
   const {
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
 
-  const items = useMemo(() => {
+  const selectedItems = useMemo(() => {
     const nodes = edges
       .map(
         ({
@@ -58,6 +59,7 @@ export const useRecommendationsOverview = ({
             description,
             id,
             image,
+            items,
             introduction,
             slot,
             title,
@@ -72,6 +74,7 @@ export const useRecommendationsOverview = ({
             description,
             id,
             image,
+            items,
             readTime,
             title,
             type: 'recommendation',
@@ -88,5 +91,5 @@ export const useRecommendationsOverview = ({
     return nodes;
   }, [edges, count]);
 
-  return [items];
+  return [selectedItems];
 };

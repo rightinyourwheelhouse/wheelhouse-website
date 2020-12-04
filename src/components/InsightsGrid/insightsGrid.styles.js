@@ -44,11 +44,13 @@ export const Type = styled.span`
 
 export const InsightsGridItemContainer = styled.div`
   display: block;
-
-  margin-top: 16px;
   padding-bottom: var(--spacing-default);
   margin-bottom: var(--spacing-default);
   width: 100%;
+
+  &:not(:first-of-type) {
+    margin-top: 16px;
+  }
 
   h3 {
     text-transform: none;
@@ -107,9 +109,10 @@ export const InsightsGridContainer = styled.div`
         @media screen and (min-width: ${breakpoints.small}) {
           --stickyHeight: ${({ stickyHeight }) => `${stickyHeight}px`};
 
-          margin: 32px 0;
+          margin: 0;
           display: flex;
           flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+          align-items: flex-start;
           flex-wrap: wrap;
 
           ${InsightsGridImage} {

@@ -96,6 +96,10 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 1.5rem;
     margin-bottom: 30px;
     font-weight: 400;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   p > button {
@@ -180,7 +184,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-default);
 
     &:not(:first-of-type) {
       margin-top: 3.8rem;
@@ -224,7 +228,7 @@ export const GlobalStyle = createGlobalStyle`
     vertical-align: bottom;
   }
 
-  img {
+  img, video {
     width: 100%;
   }
 

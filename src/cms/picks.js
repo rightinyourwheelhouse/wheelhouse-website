@@ -23,7 +23,7 @@ export default {
     { label: 'Title', name: 'title' },
 
     {
-      collection: 'teammembers',
+      collection: 'employees',
       label: 'Author',
       name: 'author',
       searchFields: ['name'],
@@ -72,6 +72,16 @@ export default {
           label: 'Description',
           name: 'description',
           widget: 'markdown',
+        },
+
+        {
+          collection: 'employees',
+          label: 'Picked by',
+          name: 'pickedBy',
+          searchFields: ['name'],
+          valueField: '{{name}}',
+          widget: 'relation',
+          required: false,
         },
       ],
     },

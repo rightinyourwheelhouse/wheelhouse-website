@@ -37,7 +37,7 @@ const NavBar = ({
   logoInitiallyHidden,
 }) => {
   const [open, setOpen] = useState(false);
-  const [{ isScrolled }] = useScrolling(100);
+  const [{ isScrolled }] = useScrolling(0);
 
   const toggleMenu = useCallback(() => {
     setOpen((isOpen) => !isOpen);

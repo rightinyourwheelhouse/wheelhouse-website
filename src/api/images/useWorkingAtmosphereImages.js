@@ -13,6 +13,7 @@ const query = graphql`
         node {
           id
           name
+          extension
           childImageSharp {
             fluid(maxWidth: 1000) {
               aspectRatio

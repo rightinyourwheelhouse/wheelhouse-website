@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import { Section, Container, LightContent } from '~components/layoutComponents';
+import { Section, Container, ContrastColor } from '~components/layoutComponents';
 import SEO from '~components/SEO';
 import { gridLayouts } from '~components/InsightsGrid';
 
@@ -33,9 +33,9 @@ const InsightsPage = ({
     </Section>
     <Section background={colors.quaternary}>
       <Container>
-        <LightContent>
+        <ContrastColor color={colors.quaternary}>
           <RadioRaccoons />
-        </LightContent>
+        </ContrastColor>
       </Container>
     </Section>
     <Section>

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { darken } from 'polished';
+
 export const ButtonContainer = styled.div`
   --background: ${({ background }) => background};
   --backgroundHover: ${({ backgroundHover }) => backgroundHover};
@@ -38,13 +40,12 @@ export const ButtonContainer = styled.div`
     }
 
     &:focus {
-      background: var(--background);
+      background: ${({ backgroundHover }) => darken(0.2, backgroundHover)};
       color: var(--foreground);
-      filter: brightness(170%);
       transition: all 0.3s;
     }
   }
-  }
+
 
   &.full {
     width: 100%;

@@ -15,8 +15,7 @@ import backend from './config/backend';
 
 CMS.init({
   config: {
-    // publish_mode: 'editorial_workflow',
-    backend,
+    ...backend,
     collections: [
       {
         label: 'Pages',

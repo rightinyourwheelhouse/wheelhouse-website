@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import {
   Section,
   Container,
-  LightContent,
+  ContrastColor,
 } from '~components/layoutComponents';
 import Content from '~components/Content';
 import SEO from '~components/SEO';
@@ -44,7 +44,7 @@ const Career = ({
 
     <Section background={colors.backgroundPrimary100}>
       <Container>
-        <LightContent>
+        <ContrastColor color={colors.backgroundPrimary100}>
           <article>
             <SubTitle>{city}</SubTitle>
             <h1>{title}</h1>
@@ -52,7 +52,7 @@ const Career = ({
               <div dangerouslySetInnerHTML={{ __html: description }} />
             </Content>
           </article>
-        </LightContent>
+        </ContrastColor>
       </Container>
     </Section>
 

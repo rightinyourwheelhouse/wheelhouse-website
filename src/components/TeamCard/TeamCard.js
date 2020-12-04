@@ -1,21 +1,32 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import Link from 'gatsby-link';
+
+import Button from '~components/Button';
 
 import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
 
 const TeamCard = ({
-  image, name, description,
+  image, name, description, slug,
 }) => (
   <CardContainer>
-    <ImageContainer>
-      {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
-    </ImageContainer>
+    <Link to={slug}>
+      <ImageContainer>
+        {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
+      </ImageContainer>
+    </Link>
     <Caption>
       <strong>{name}</strong>
       {' '}
       {description}
     </Caption>
+
+    <Button to={slug} as={Link}>
+      meet
+      {' '}
+      {name.split(' ')[0]}
+    </Button>
   </CardContainer>
 );
 

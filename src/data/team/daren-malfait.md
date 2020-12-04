@@ -4,7 +4,7 @@ visible: true
 name: Daren Malfait
 role: Senior front-end developer
 description: brings front-end to life and tries to stay healthy with exercise.
-image: assets/daren-2.jpg
+image: assets/daren.png
 detailImage:
   image: assets/daren-cinemagraph-still.png
   movingPicture: assets/daren-cinemagraph.mp4

@@ -4,7 +4,7 @@ visible: true
 name: Aagje Reynders
 role: front-end developer
 description: "loves creating new things: UI's at work, cosplays at home."
-image: assets/aagje.jpg
+image: assets/aagje.png
 detailImage:
   image: assets/aagje-cinemagraph-still.png
   movingPicture: assets/aagje-cinemagraph.mp4

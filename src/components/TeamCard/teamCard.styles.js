@@ -13,6 +13,7 @@ export const Caption = styled.div`
   font-weight: 400;
   line-height: 1.66666667;
   align-items: center;
+  margin-bottom: var(--spacing-default);
 
   * {
     display: inline;

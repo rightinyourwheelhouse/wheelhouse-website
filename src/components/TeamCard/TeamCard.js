@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 
+import Button from '~components/Button';
+
 import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
 
 const TeamCard = ({
@@ -19,6 +21,12 @@ const TeamCard = ({
       {' '}
       {description}
     </Caption>
+
+    <Button to={slug} as={Link}>
+      meet
+      {' '}
+      {name.split(' ')[0]}
+    </Button>
   </CardContainer>
 );
 

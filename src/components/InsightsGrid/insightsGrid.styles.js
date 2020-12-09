@@ -50,6 +50,10 @@ export const InsightsGridItemContainer = styled.div`
 
   &:not(:first-of-type) {
     margin-top: 16px;
+
+    @media screen and (min-width: ${breakpoints.small}){
+      margin-top: 0;
+    }
   }
 
   h3 {

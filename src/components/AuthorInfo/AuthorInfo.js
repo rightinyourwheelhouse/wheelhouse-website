@@ -27,14 +27,18 @@ const AuthorInfo = ({
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
   const {
-    image, role, showPickedBy, slug,
+    image, role, showPickedBy, slug, visible,
   } = useTeam({ includeInvisible: true, name: author }) || {};
 
   if (pickedBy && !showPickedBy) {
     return null;
   }
 
-  const Element = slug ? Link : 'div';
+  let Element = slug ? Link : 'div';
+
+  if (!visible) {
+    Element = 'div';
+  }
 
   return (
     <InfoContainer>

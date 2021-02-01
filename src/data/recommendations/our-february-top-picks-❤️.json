@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "author": "",
+      "pickedBy": "Daren Malfait",
+      "title": "PX to VW calculator",
+      "url": "https://web-development.space/tools/px-to-vw/",
+      "description": "Font sizing based on viewport width is great. Having a max size so it doesn't scale too much on wide screens is a good thing."
+    },
+    {
+      "title": "Fastify.io",
+      "url": "https://www.fastify.io/",
+      "pickedBy": "Ward Poel",
+      "description": "Another Node.js web framework, you might think! However, Fastify is even faster than a native Node.js JSPON API. Fastify is by far the fastest Node.js web framework out there at the moment."
+    },
+    {
+      "url": "https://specifishity.com",
+      "title": "CSS Specifishity",
+      "description": "This website offers a really fun way to explain specificity in CSS. It basically covers why an ID overrules a classname, and a classname overrules a selector. However, you probably know the basics... But I never realised that an ID would also overrule a classname + :hover. So, if you are curious about it, definitely check out more information [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#specificity_2)!",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "The Economist podcasts",
+      "url": "https://www.economist.com/podcasts/",
+      "description": "The Economist is an excellent source of correct and **real news**. Unfortunately, you can read only a few articles with a free account. However, their podcasts are free on all major platforms!",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Joachim Zeelmaekers' blog",
+      "url": "https://www.joachimzeelmaekers.be",
+      "description": "Joachim is a high potential developer who works for our sister company Craftworkz. In his free time, he likes to write about his thoughts and experiences. He also gives tips and tricks, for example about choosing your first job as a developer (which you can read [here](https://www.joachimzeelmaekers.be/why-money-should-not-be-your-main-motivator)). I totally agree with his vision, as he puts personal development and choice of technology at the top of his list.",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "Sequel Pro",
+      "url": "https://www.sequelpro.com",
+      "pickedBy": "Rafaël Mindreau",
+      "description": "I was looking for a good DB viewer. First, I was using DBeaver for quite some time, but its user-friendliness (or lack thereof) had me looking for alternatives. For instance, there's DataGrip, which is a paid software many people tend to use. Luckily, I stumbled upon Sequel Pro, an open-source tool with a little extra elegancy."
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-02-01T10:05:25.844Z",
+  "title": "Our February top picks ❤️",
+  "tags": [
+    "picks"
+  ],
+  "introduction": "Oh, February, the month of ❤️. Valentine's day is around the corner and we are preparing ourselves by giving some love to the tools we absolutely adore. As you probably know, each month we pick one thing that intrigues us and we put it into the list of top picks! This list might give you some insight into how Wheelhouse loves. Let's dive in!",
+  "image": "assets/february-picks-wheelhouse.jpg",
+  "description": "Oh February: the month of love. Time for our monthly picks of tools we absolutely adore."
+}

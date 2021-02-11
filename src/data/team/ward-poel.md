@@ -10,7 +10,8 @@ detailImage:
   movingPicture: assets/ward.png
 qAndA:
   - q: Describe yourself using only emojis
-    a: 👨‍💻 🏓🐶 👀
+    a: |-
+      ###### 👨‍💻🏓🐶 👀 🎵
   - q: What's your favorite pizza?
     a: Just a simple pizza Margherita 😋
   - q: What's on your desk?
@@ -18,9 +19,9 @@ qAndA:
       ![ward's desk](assets/image-1-.png "Ward's desk")
 
       * My 13" **Macbook Pro** and 2 external displays
-      * **Mouse** 
+      * **Mouse**
       * All the magic code I write goes through my **wired keyboard** 👀
-      * My **AirPods** and my headset 🎵 
+      * My **AirPods** and my headset 🎵
       * For backups, I use a **Raspberry Pi** that I turned into a NAS
   - q: What does your average day look like?
     a: Usually, I wake up at 8 o'clock, well... let's say... I try to. 😴  After
@@ -35,7 +36,7 @@ qAndA:
       the opportunity to do this at Wheelhouse.
   - q: What are your hobbies?
     a: |-
-      Table tennis 🏓  and mountain biking 🚵‍♂️ 
+      Table tennis 🏓  and mountain biking 🚵‍♂️
 
       ![hobbies ward](assets/hobbies-ward.png "Ward's hobbies")
 showPickedBy: true

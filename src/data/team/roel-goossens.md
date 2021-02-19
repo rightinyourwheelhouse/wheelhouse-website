@@ -20,7 +20,7 @@ qAndA:
     a: '![Favourite instant noodles](assets/roel-instant-noodles.png "Favourite
       instant noodles")'
   - q: Best boy
-    a: Rafael
+    a: "[Rafael](https://www.wheelhouse.be/team/rafa%C3%ABl-mindreau/)"
   - q: Why are you a developer
     a: I'm lazy and impatient.
 showPickedBy: true

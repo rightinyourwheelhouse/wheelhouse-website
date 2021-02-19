@@ -3,8 +3,8 @@ templateKey: employees
 visible: true
 name: Roel Goossens
 role: full-stack developer
-description: has a passion for creating. Whether it's on the workbench, in the
-  kitchen or in his IDE.
+description: has a passion for creating, be it on the workbench, in the kitchen
+  or in his IDE.
 image: assets/roel.png
 detailImage:
   image: assets/roel-still.png

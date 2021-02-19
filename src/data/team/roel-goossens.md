@@ -3,8 +3,8 @@ templateKey: employees
 visible: true
 name: Roel Goossens
 role: full-stack developer
-description: has a passion for creation. Whether it's on the workbench, in the
-  kitchen or in his IDE.
+description: has a passion for creating, be it on the workbench, in the kitchen
+  or in his IDE.
 image: assets/roel.png
 detailImage:
   image: assets/roel-still.png
@@ -20,7 +20,7 @@ qAndA:
     a: '![Favourite instant noodles](assets/roel-instant-noodles.png "Favourite
       instant noodles")'
   - q: Best boy
-    a: Rafael
+    a: "[Rafael](https://www.wheelhouse.be/team/rafa%C3%ABl-mindreau/)"
   - q: Why are you a developer
     a: I'm lazy and impatient.
 showPickedBy: true

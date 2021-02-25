@@ -4,5 +4,37 @@
   "title": "Going into spring with our March picks ",
   "author": "Wheelhouse",
   "description": "Every month, we each share one of our favorite things. Find out what we picked for March.",
-  "introduction": "Spring, the season where everything blossoms, sprouts, and basically comes to life. It's the time news things appear and of course, we have some brand new picks ready for you. You probably already know: each month we each pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us."
+  "introduction": "Spring, the season where everything blossoms, sprouts, and basically comes to life. It's the time news things appear and of course, we have some brand new picks ready for you. You probably already know: each month we each pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us.",
+  "items": [
+    {
+      "title": "Food Unfolded",
+      "url": "https://www.foodunfolded.com/",
+      "description": "I started following food unfolded on Instagram last year and since then, I have learned so much. Last month, they covered pancakes. Apparently, pancakes might have been around since the Stone Age! Of course, they also cover some more serious topics - all food-related.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Lichess",
+      "url": "https://lichess.org",
+      "description": "Lichess is an open-source alternative to chess.com. I started playing chess after watching The Queen's Gambit. What a drop-dead cliché! Still, I'll beat all of your asses one day, just wait for it! 😤 Okay, probably not, but I've come to really appreciate the game's versatility and various situations. By the way, I have always admired how ancient the game really is.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Wappalyzer",
+      "url": "https://www.wappalyzer.com/",
+      "description": "Instantly reveal the technology stack and contact details of any website, such as e-commerce platform, content management system, or marketing automation tools.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Remotion",
+      "url": "https://www.remotion.dev/",
+      "description": "Remotion allows you to make your own MP4 videos with React. You can use web technologies like CSS, SVG, WebGL to make fancy motion graphics. I think that's really awesome for just a JavaScript library.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Dungeon Alchemist",
+      "url": "https://www.dungeonalchemist.com/",
+      "description": "I do love playing Dungeons and Dragons, this month I came across this cool Kickstarter that will generate themed maps and rooms with AI. Fun Fact, it's even a Belgian company!",
+      "pickedBy": "Aagje Reynders"
+    }
+  ]
 }

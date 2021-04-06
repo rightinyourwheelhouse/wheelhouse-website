@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "title": "Into Design Systems 2021",
+      "url": "https://intodesignsystems.com/",
+      "description": "In March, I participated in the \"Into Design Systems\" online conference. The conference handles topics on designing, creating systems, and UX. I definitely learned more about Design System principles, such as accessibility. There will be a follow-up conference in September, so stay tuned!",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "The importance of Changelogs",
+      "description": "I have recently used vue-markdown-loader to load a CHANGELOG.md file directly into the app. It turned out that some users in the app wanted to follow up on the process taking place. Not only should most projects already have a changelog and a release system, it should be very easy to include a changelog somewhere in the application.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "The worst best practice",
+      "url": "https://pythonspeed.com/articles/security-updates-in-docker/",
+      "description": "I remember blindly following this \"best practice\" before. This article was a welcome wake-up call for me. **Remember to keep your systems updated**!",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Git-tower",
+      "url": "https://www.git-tower.com/mac",
+      "description": "I've always been a visual minded person and having a git GUI with this much power is amazing.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "TailwindCSS' JIT compiler",
+      "url": "https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css",
+      "description": "TailwindCSS Just-In-Time (JIT) compiler is out! Instead of generating a massive CSS file in development, the JIT compiler compiles all of your CSS on-demand as you author your files. 🚀",
+      "pickedBy": "Ward Poel"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-04-01T11:57:56.114Z",
+  "title": "Our April picks",
+  "introduction": "We've already had April Fools' Day and Easter, so yeah, we'll spend this time celebrating our top picks. Each month, we each pick one thing we love and put it into a list. This list might give you some insight into how our brains work, what we use on a daily basis and what intrigues us.",
+  "image": "assets/rua-robot_.png",
+  "description": "April. The month of April Fools' Day, Easter, and of course: our top picks.",
+  "slot": "See you next month, with more picks, of course!"
+}

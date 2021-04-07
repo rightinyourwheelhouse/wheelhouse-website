@@ -96,7 +96,7 @@ module.exports = {
         name: 'Blog',
         url: 'https://blog.raccoons.be/rss/32013',
       },
-      resolve: 'gatsby-source-rss-feed',
+      resolve: 'gatsby-source-rss-feeds',
     },
     {
       options: {

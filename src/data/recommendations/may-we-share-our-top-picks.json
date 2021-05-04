@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "title": "womendotcode.be",
+      "url": "https://www.womendotcode.be/",
+      "description": "The first thing I do mostly as a woman in the IT world is checking how many other women are in the room and how many of them actually are like me: a coder. It might not be surprising that this is most of the time quite disappointing. Last week, I got introduced to womendotcode and it’s a community that aims to unite women who code in Belgium. Feel free to join or share with your fellow female developers!",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "No Such Thing As A Fish",
+      "url": "https://www.nosuchthingasafish.com/",
+      "description": "Before Corona put the world on a leash, I listened to podcasts on a daily basis. Recently, I rediscovered podcasts and now I listen to them when I go on a run. No such thing as a fish always brings a smile to my face, even though people I pass by probably think I'm crazy because it looks like I'm laughing randomly.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Lantertronics",
+      "url": "https://www.youtube.com/c/Lantertronics/videos",
+      "description": "I found a treasure of electronics explanation videos by an electronics professor at the Georgia Institute of Technology. Especially the videos on analog sound are what interest me the most. He goes over some ancient and legendary synth modules from famous brands like Moog and Buchla. Most of the theory behind analog sound engineering is very specific, and understanding them makes debugging a circuit a lot easier when things go wrong when you build a synthesizer module. They don't teach you at school what Rossum compensation is in a VCO. 😉",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "clickclickclick.click",
+      "url": "https://clickclickclick.click/",
+      "description": "clickclickclick.click is a browser event-based game. It's a small funny game where you have to complete the most random challenges. Can you beat my score? I'm currently at 82% completed.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Mumshad Mannambeth - Kubernetes course",
+      "url": "https://www.udemy.com/user/mumshad-mannambeth/",
+      "description": "Last month, I followed a udemy course on Kubernetes by Mumshad Mannambeth. He does a really good job of explaining the various Kubernetes components using very approachable animations. The course also includes hands-on labs that help develop your Kubernetes skills.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Formula 1: Drive to Survive",
+      "url": "https://www.youtube.com/watch?v=aViLtXEtgqs",
+      "description": "I am a huge fan of Formula 1, so I was patiently waiting for the next series of Drive to Survive (on Netflix).\n\nEven if you’re not a fan of Formula 1 and, in general, racing, it is a must-see and a pleasant docu-series, because it gives insights into the life of top competitive driving racers, team bosses, engineers, and sponsors.",
+      "pickedBy": "Olivier De Wit"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-05-04T10:26:22.989Z",
+  "title": "May we share our top picks? ",
+  "introduction": "Of course, we may and we will. It's time for our top picks of May. Each month, we each pick one thing we love and put it into a list. This list might give you some insight into how our brains work, what we use on a daily basis, and what intrigues us. We hope we've shared something useful or inspiring for you!",
+  "image": "assets/spencer-davis-zhrm7qcu8zc-unsplash.jpg",
+  "description": "Of course, we may. It's May. Time to share! ",
+  "slot": "See you next month! And make sure to let us know your top top pick. 🤓"
+}

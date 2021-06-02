@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "title": "Codecademy",
+      "url": "https://www.codecademy.com/",
+      "description": "Codecademy is a coding platform where you can learn different programming languages such as our favorite: JavaScript. At Wheelhouse, we recently bought a pro subscription, so our Wheelies can expand their learning curve.",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "The Good Place",
+      "url": "https://www.netflix.com/title/80113701",
+      "description": "A good comedy series is hard to find. The Good Place absolutely nails it. The show has a good balance between comedy and a great story.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Sli.dev",
+      "url": "https://sli.dev",
+      "description": "Sli.dev is a web-based slides maker and presenter. It's designed for developers, so they can write their content in Markdown and enables them to add interactive components. At the moment, they support Vue components. Hopefully, React components will follow soon!",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Good on you",
+      "url": "https://directory.goodonyou.eco",
+      "description": "Looking for new shoes, but don't want the environmental impact of Dr. Martens on your conscience? The Good On You directory is an awesome tool to find out whether your favorite brand or store is with the program and helps you find alternatives that care. Good On You rates brands based on the information the brands provide and their own independent research.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "git-hours",
+      "url": "https://github.com/kimmobrunfeldt/git-hours",
+      "description": "git-hours. A small nodejs util that allows you to estimate the time spent on a project simply by inspecting the commits. It's not precise, but it can give you a good idea of the amount of time you've spent on any given project.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Learn CSS by web.dev",
+      "url": "https://web.dev/learn/css/",
+      "description": "Google launched a new course about CSS. It's documented well and looks like a great starting point to learn CSS. There's also a podcast episode for each topic, which is a unique way to get to know some tech-related content.",
+      "pickedBy": "Aagje Reynders"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-06-02T16:18:21.632Z",
+  "title": "Our ready-for-summer picks of June",
+  "introduction": "The weather is fine, the bees are buzzing, and the birds are singing. We're already feeling those summer butterflies in our stomachs. That doesn't hold us back from sharing our top picks with you, though! Each month, we share our top picks: things that intrigue us, help us, or teach us. Hopefully, it helps you too.",
+  "image": "assets/pawel-czerwinski-ldtmu_abtcu-unsplash.jpg",
+  "description": "We're feeling those summer butterflies in our stomachs. That doesn't hold us back from sharing our top picks with you, though!",
+  "slot": "See you next month and enjoy the sun!"
+}

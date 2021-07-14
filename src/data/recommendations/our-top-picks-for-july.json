@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "title": "Astroneer",
+      "url": "https://astroneer.space/",
+      "description": "A bunch of friends and me picked up Astroneer during the steam sales. We are so addicted to it. Almost as addicted as we were with Valheim. I really like the way Astroneer handles progression.\\\nIf you like survival games you should definitely give this one a try.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Day.js",
+      "url": "https//day.js.org/",
+      "description": "Many, many people will use Moment.js when it comes to handling Dates and Times in JS. Also, many, many people don't realize Moment.js is DONE. It's no longer being actively developed on, and while it will continue to work the way it used to in your older projects, perhaps it's time for a switch in your newer ones. \n\nI've been using DayJS for some time now and it basically has everything you need from timezones, to locales, and even far beyond that with their plugins. There are other alternatives like Luxon, date-fns, and js-Joda, but I have mainly gotten to like DayJS in the past few... days. 🙃",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "The homepage of Github",
+      "url": "https://github.com",
+      "description": "Most of us never actually get to see it, because once you are logged in, you usually skip it. The homepage of Github is actually really nice. \n\nThe artwork is great and it has a globe that shows you live interactions of people around the world using it. In my opinion, it's a great piece of coding. It's a shame that the users of Github never get to see it.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "She Goes ICT",
+      "url": "https://shegoesict.be",
+      "description": "I listened to the diversity talk of Ayla Cremmery, ICT Lady of the Year 2021, which was truly inspiring. She talked about the importance of diversity in IT and why the lack of women in tech companies has an impact on the applications made. This is why She Goes ICT is my pick of the month because initiatives like this are important!",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Stripe",
+      "url": "https://stripe.com",
+      "description": "For a side project, I'm exploring Stripe payments. Such a nice, well-documented platform that you can easily integrate into your own website or webshop.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Carwow",
+      "url": "https://www.youtube.com/channel/UCUhFaUpnq31m6TNX2VKVSVA",
+      "description": "I am a huge fan of cars and, more specifically, car reviews on YouTube. One of the best YouTube channels in this matter is carwow. The host, Mat Watson, is an absolute petrol head who gives excellent reviews with a mix of humour and pragmatism.",
+      "pickedBy": "Olivier De Wit"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": false,
+  "date": "2021-07-14T14:05:53.132Z",
+  "title": "Our top picks for July",
+  "introduction": "This month, we're going from outer space to diversity. We're covering a lot of topics for July. Each month, we each pick one thing we love and put it into a list. \n\nThis list might give you some insight into the Wheelhouse crew. We hope we've shared something useful or inspiring for you! Definitely let us know what your \"top\" top pick was. 🤓",
+  "image": "assets/nasa-gywfpvi2jzm-unsplash.jpg",
+  "description": "From outer space to diversity. We're covering a lot of topics here. 🚀",
+  "slot": "Thanks for sticking with us, guys. See you next month."
+}

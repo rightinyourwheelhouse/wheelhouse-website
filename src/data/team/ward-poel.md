@@ -6,12 +6,11 @@ role: Full-stack developer
 description: is a full-stack developer that kicks your ass in ping-pong
 image: assets/ward.png
 detailImage:
-  image: assets/ward.png
-  movingPicture: assets/ward.png
+  image: assets/ward-cine-still.jpg
+  movingPicture: assets/mvi_3176_1.gif
 qAndA:
   - q: Describe yourself using only emojis
-    a: |-
-      ###### 👨‍💻🏓🐶 👀 🎵
+    a: "###### 👨‍💻🏓🐶 👀 🎵"
   - q: What's your favorite pizza?
     a: Just a simple pizza Margherita 😋
   - q: What's on your desk?

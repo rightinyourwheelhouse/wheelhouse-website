@@ -7,7 +7,7 @@ description: is a full-stack developer that kicks your ass in ping-pong
 image: assets/ward.png
 detailImage:
   image: assets/ward-cine-still.jpg
-  movingPicture: assets/mvi_3176_1.gif
+  movingPicture: assets/mvi_3176_2.mp4
 qAndA:
   - q: Describe yourself using only emojis
     a: "###### 👨‍💻🏓🐶 👀 🎵"

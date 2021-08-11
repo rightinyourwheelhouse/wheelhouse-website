@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "title": "Krabzcam",
+      "url": "https://github.com/mkrabset/krabzcam",
+      "description": "Some time ago, I revealed I was making Christmas cards using a plotter I built myself (some parts printed by my best boy and colleague Roel). In order to convert vectors to GCode, you need something called CAM processing. This is quite difficult and advanced stuff. I found Krabzcam to make my life significantly easier in this domain, and he decided to put his code open source. I just wanted to take the time and applaud his work!",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "url": "https://kameleon.be/",
+      "title": "Kameleon.be",
+      "description": "Something not tech-related! I bought a pet snake last week and found this amazing shop in Hasselt where they have everything you need for your reptile, rodent, amphibian, spider, … So, if you ever are looking for something different as a pet, they have all the stuff you need (and it’s fun to look at all the animals they have, they are taken care of very well).",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Naddpod",
+      "url": "https://www.naddpod.com",
+      "description": "Looking for a light and entertaining podcast that isn't just a bunch of men talking about their \"cool\" interests? Not another D&D podcast, the name says it all.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "React Sprout",
+      "url": "https://www.npmjs.com/package/react-sprout",
+      "description": "Almost every React developer uses React Router for their applications. For all my side-projects, I use React Sprout: a suspense-ready router. React Sprout does also provides a method for data fetching.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "fav.farm",
+      "url": "https://fav.farm/",
+      "description": "Get an SVG of an emoji. Not sure if it's useful, but it's cool. 😉",
+      "pickedBy": "Daren Malfait"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-08-11T08:28:09.512Z",
+  "title": "Our most random August top picks ",
+  "introduction": "You probably already know the drill! Each month, we pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us. This month, we have some technical stuff, snake stuff, and podcast stuff. 🤪",
+  "image": "assets/jan-kopriva-81kriuf4crq-unsplash.jpg",
+  "description": "Every month we each pick something random that we would like to share to the world. 🐍",
+  "slot": "See ya next month!"
+}

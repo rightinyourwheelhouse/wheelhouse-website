@@ -1,0 +1,36 @@
+{
+  "live": true,
+  "date": "2021-09-07T09:21:13.546Z",
+  "title": "Bye summer, hello top picks. 🤘🏼",
+  "author": "Wheelhouse",
+  "image": "assets/ricardo-resende-z50c7lrn4_y-unsplash.jpg",
+  "description": "Summer is done, but we won't stop with sharing our picks.",
+  "introduction": "Ah. Summer's ending. We're getting a few more days of sun (finally), but it's time to get back to work. Here we go. Each month, we pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us. Spoiler alert: this one contains a lot of icons. Let's go!",
+  "items": [
+    {
+      "title": "CodeLand Conference 2021",
+      "url": "https://codelandconf.com",
+      "description": "Looking for a free virtual dev conference? Mark your calendar! 23-24 September, CodeLand! It's a community-first conference designed to level up programmers and people learning to code.",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "heroicons",
+      "url": "https://heroicons.com",
+      "description": "Looking for some nice free icons to use on your website? Heroicons are beautiful handcrafted .svg icons from the makers of TailwindCSS.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Fastasticons - Icon font generation tool",
+      "author": "",
+      "url": "https://github.com/tancredi/fantasticon",
+      "description": "If you want to use your own .svg icons, but you like to use an icon font like fontawesome, you can basically generate your own quite easily. This is great if you want to be independent of third-party services, and if you want to embed your icon font anyway. It’s fairly straightforward and works just like all the other icon fonts where you just have to specify a <span> or <i> element with the right class.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "The Vegan Butcher",
+      "url": "https://www.zaccharybird.com/all-recipes",
+      "description": "I recently got Zacchary's book *Vegan junk food* and preordered his next book *The Vegan butcher.* You can find a lot of his recipes on his website as well. I also follow him on Instagram and he is honestly hilarious. I can't wait to try out all of his recipes.",
+      "pickedBy": "Roel Goossens"
+    }
+  ]
+}

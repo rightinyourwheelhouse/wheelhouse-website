@@ -6,6 +6,10 @@ export default styled.div`
   --direction: ${({ reversed }) => (reversed ? 'row-reverse' : 'row')};
   --first-column-width: ${({ firstColumnWidth }) => firstColumnWidth || '45%'};
 
+  > *:last-child {
+    margin-top: var(--spacing-large);
+  }
+
   @media screen and (min-width: ${breakpoints.medium}) {
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +22,7 @@ export default styled.div`
       flex-grow: 1;
 
       &:last-child {
+        margin: calc(var(--spacing-large) / 2);
         flex-basis: 0;
         flex-grow: 999;
       }

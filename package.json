@@ -8,11 +8,6 @@
     "@babel/register": "^7.11.5",
     "@ncwidgets/id": "^0.8.1",
     "@reach/router": "^1.3.4",
-    "@storybook/addon-actions": "^6.0.26",
-    "@storybook/addon-knobs": "^6.0.26",
-    "@storybook/addon-links": "^6.0.26",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/react": "^6.0.26",
     "@svgr/webpack": "^5.4.0",
     "acorn": "^8.0.4",
     "axios": "^0.21.1",
@@ -93,8 +88,6 @@
     "start": "rm -rf ./.cache && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

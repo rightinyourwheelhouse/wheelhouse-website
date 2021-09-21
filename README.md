@@ -16,7 +16,6 @@
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
     .
-    ├── .storybook
     ├── node_modules
     ├── src
     ├── .gitignore
@@ -29,8 +28,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── package-lock.json
     ├── package.json
     └── README.md
-
-**`/.storybook`**: This folder contains the configurations for the storybook attached to this project.
 
 **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
@@ -54,17 +51,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## Storybook
-
-All the components in this project are bundles in the storybook.
-
-You can see the storybook using:
-
-
-    ```shell
-    npm run storybook
-    ```
-
 ## Netlify CMS
 
 For using the CMS offline you can use:
@@ -80,10 +66,3 @@ in your local .env file you also need to add:
     ```
 
 More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
-
-### Deploying storybook
-
-    ```shell
-    npm run build-storybook
-    ```
-

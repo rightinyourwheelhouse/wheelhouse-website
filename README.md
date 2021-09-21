@@ -1,68 +1,112 @@
-## 🚀 Quick start
-**Start developing.**
+<div align="center">
+<h1>Wheelhouse.be</h1>
 
-    ```shell
-    npm run start
-    ```
+<p>Wheelhouse official website</p>
+</div>
 
-**Open the source code and start editing!**
+---
 
-    Your site is now running at `http://localhost:8000`!
+<!-- prettier-ignore-start -->
+[![Netlify Status][netlify-badge]][netlify]
+<!-- prettier-ignore-end -->
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+The website is built using Gatsby. It uses Netlify-CMS to provide data.
 
-## 🧐 What's inside?
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- [☕ Setup](#-setup)
+  - [Website](#website)
+    - [Website](#website-1)
+  - [Netlify CMS](#netlify-cms)
+- [🧰 Development](#-development)
+- [🚀 Deployment](#-deployment)
+  - [Netlify](#netlify)
+- [📑 Repo structure](#-repo-structure)
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+## ☕ Setup
 
-**`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+Install node_modules with `npm install`.
 
-**`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-**`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 
-**`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+### Website
 
-**`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+1. Run `cp .env.example .env` file in the project folder.
+2. Update all the `xxxxxx` values, here's where to find each:
+  #### Website
+  - `RECRUITEE_TOKEN` - You can find this in your recruitee profile settings (or ask a collegue)
 
-**`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+4. (initial deployment). Fill in the Website values on Netlify.
 
-**`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## Netlify CMS
-
+### Netlify CMS
 For using the CMS offline you can use:
 
-    ```shell
-    npx netlify-cms-proxy-server
-    ```
+```shell
+npx netlify-cms-proxy-server
+```
 
 in your local .env file you also need to add:
 
-    ```
-    NODE_ENV=development
-    ```
+```
+NODE_ENV=development
+```
 
-More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+## 🧰 Development
+
+```shell
+npm start
+```
+
+Your site is now running at `http://localhost:8000`!
+
+> ⚠️ **Important!** <br />_Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).
+
+## 🚀 Deployment
+
+### Netlify
+This is setup to work seamlessly with Netlify. **Add these website `.env` variables to the Netlify Project**
+
+`RECRUITEE_TOKEN`
+
+## 📑 Repo structure
+
+```
+/
+A quick look at the top-level files and directories you'll see in a Gatsby project.
+
+.
+├─ gatsby                              # gatsby-node configuration files
+├─ node_modules                        # installed packages
+├─ public                              # autogenerated gatsby website, used for deployment
+├─ src/
+│  ├─ api/                              # hooks for data fetching
+│  ├─ cms/                              # netlify-cms configuration files
+│  ├─ components/                       # components without logic
+│  ├─ data/                             # json files that provide data (editable via netlify-cms)
+│  ├─ hooks/                            # generic react hooks
+│  ├─ images/                           # image assets
+│  ├─ layouts/                          # gatsby layouts
+│  ├─ modules/                          # components with logic
+│  ├─ pages/                            # gatsby pages
+│  ├─ styles/                           # style configuration utils
+│  ├─ templates/                        # gatsby page templates for autocreated pages
+│  └─ utils/                            # generic utils
+├─ static                              # files in this folder get copied to /public/static
+├─ .gitignore
+├─ gatsby-browser.js
+├─ gatsby-config.js
+├─ gatsby-node.js
+├─ gatsby-ssr.js
+├─ package-lock.json
+├─ package.json
+└─ README.md
+```
+
+<!-- prettier-ignore-start -->
+[netlify]: https://app.netlify.com/sites/dazzling-mclean-2ccbbd/deploys
+[netlify-badge]: https://api.netlify.com/api/v1/badges/f7b9e6a5-231f-4e66-8bfb-922e12b339cf/deploy-status
+<!-- prettier-ignore-end -->

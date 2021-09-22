@@ -30,9 +30,6 @@ The website is built using Gatsby. It uses Netlify-CMS to provide data.
 
 Install node_modules with `npm install`.
 
-
-More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
-
 ### Website
 
 1. Run `cp .env.example .env` file in the project folder.
@@ -54,6 +51,8 @@ in your local .env file you also need to add:
 ```
 NODE_ENV=development
 ```
+
+More information about that: https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 
 ## 🧰 Development
 

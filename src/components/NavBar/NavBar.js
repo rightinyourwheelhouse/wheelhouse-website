@@ -112,6 +112,15 @@ const NavBar = ({
               </Item>
             ))}
             <Item>
+              <a
+                href="https://brainhouse.be"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Internships
+              </a>
+            </Item>
+            <Item>
               <Link to="/careers">
                 {careerCount > 0 && <Badge>{careerCount}</Badge>}
                 Careers

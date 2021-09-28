@@ -73,6 +73,13 @@ const Footer = () => {
                         {title}
                       </Link>
                     ))}
+                    <a
+                      href="https://brainhouse.be"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Internships
+                    </a>
                     <Link to="/careers">Careers</Link>
                     <a
                       href="https://github.com/rightinyourwheelhouse/wheelhouse-website"

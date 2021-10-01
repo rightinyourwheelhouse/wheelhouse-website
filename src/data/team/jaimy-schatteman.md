@@ -3,8 +3,8 @@ templateKey: employees
 visible: true
 name: Jaimy Schatteman
 role: Junior JavaScript Engineer
-description: A scoutesque web developer and designer who likes to immerse
-  himself in water but also in music.
+description: is a scoutesque web developer and designer who likes to immerse
+  himself in water and music.
 image: assets/img_3583.jpg
 detailImage:
   image: assets/img_3583.jpg

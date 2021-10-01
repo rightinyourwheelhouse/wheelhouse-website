@@ -3,7 +3,7 @@ templateKey: employees
 visible: true
 name: Rafaël Mindreau
 role: full-stack developer
-description: loves experimenting and beautiful interfaces, music and food too.
+description: loves experimenting and beautiful interfaces, music and food too
 image: assets/rafael.png
 detailImage:
   image: assets/rafael-cinemagraph-still.png

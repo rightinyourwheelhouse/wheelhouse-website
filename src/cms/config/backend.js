@@ -10,6 +10,7 @@ const PRODUCTION = {
   publish_mode: 'editorial_workflow',
   backend: {
     name: 'github',
+    branch: 'main',
     repo: 'rightinyourwheelhouse/wheelhouse-website',
   },
 };

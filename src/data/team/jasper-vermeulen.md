@@ -4,7 +4,7 @@ visible: true
 name: Jasper Vermeulen
 role: Junior JavaScript Engineer
 description: is the developer with the cleanest desk you've ever seen
-image: assets/img_3602.jpg
+image: assets/jasper.png
 detailImage:
   image: assets/img_3602.jpg
   movingPicture: assets/img_3602.jpg

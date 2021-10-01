@@ -48,4 +48,3 @@ qAndA:
       bit.
 showPickedBy: true
 ---
-Jaimy is a Junior JavaScript Engineer at Wheelhouse.

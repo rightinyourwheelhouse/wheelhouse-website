@@ -24,8 +24,8 @@ qAndA:
   - q: What's your role at Wheelhouse?
     a: "As a Marketing Manager for Wheelhouse, I make sure digital marketing is on
       point. 🚀 To summarize my job: I make sure the team is seen on social
-      media, I write blogs and share the team's insights, make visuals, come up
-      with campaigns. I basically do anything that's marketing-related."
+      media, I write blogs and share the team's insights, design visuals, come
+      up with campaigns. I basically do anything that's marketing-related."
   - q: What's your favorite food?
     a: That's a hard choice. As long as it's vegetarian, I love it! Maybe pizza? Or
       fries? Or tacos? Or salads? (I guess you can imagine the struggle of my

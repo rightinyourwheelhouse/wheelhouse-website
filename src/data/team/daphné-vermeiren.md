@@ -5,7 +5,7 @@ name: Daphné Vermeiren
 role: Marketing Manager
 description: is our digital marketing guru and makes sure the Wheelie's are seen
   all over the internet
-image: assets/daphné.png
+image: assets/daphné.png
 detailImage:
   image: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
   movingPicture: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg

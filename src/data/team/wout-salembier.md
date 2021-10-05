@@ -36,5 +36,7 @@ qAndA:
       GPU: RTX 2070 SUPER
 
       ![Game computer](assets/gaming-pc.png "Game computer")
+  - q: Describe yourself in emojis
+    a: 🧑🏼‍💻🎮🍟👟🚴🏻‍♂️
 showPickedBy: true
 ---

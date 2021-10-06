@@ -1,0 +1,53 @@
+{
+  "live": true,
+  "date": "2021-10-06T09:39:13.957Z",
+  "title": "One year of Wheelhouse picks",
+  "author": "Wheelhouse",
+  "description": "You know the drill! This time, however, we have got the biggest amount of top picks ever 🥳",
+  "introduction": "Each month, we pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us. This month, we have got three more employees sharing their top picks - get to know them a little better! 🥳",
+  "items": [
+    {
+      "title": "Traveling abroad",
+      "url": "https://livingcost.org/",
+      "description": "In addition to [Living Cost](https://livingcost.org), [Travel Safe Abroad](https://www.travelsafe-abroad.com/) is a very helpful website when you go on vacation. There are two things you probably never think about when choosing a destination: the cost of living - for estimating expenses - and how safe the country really is.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "remotion.dev",
+      "url": "https://remotion.dev",
+      "description": "This is a tool that lets you create videos with your knowledge of React. You can scale your video production with server-side rendering and parametrization. So, basically, if you know React you can make videos - very handy!",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "Bellroy wallets",
+      "url": "https://bellroy.com/products/category/wallets",
+      "description": "For years I have been using a Bellroy slim sleeve wallet and it's still the best wallet I can think of. It's small, has a clean design and can carry everything I like.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Fresku ",
+      "url": "https://www.youtube.com/watch?v=DOX6uHel56s",
+      "description": "Fresku isn't known for his singing talent, but rather for his captivating lyrics packed with satire. He's a staple in the Dutch hip-hop scene producing tracks for more than a decade. His playful flow will guide you through his metaphorical lyrics and will leave you pondering. Recently, he released a single from his upcoming album, where he addresses the problematic use of social media.",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "title": "Kaomoji",
+      "url": "https://www.kaomoji.co",
+      "description": "My go-to anime/Japanese clothing webshop! Based in the Netherlands, they make stunning designs. They just launched a new collection, and I love it so much. RIP my money. 🪦",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Squoosh",
+      "url": "https://squoosh.app/",
+      "description": "Squoosh is a secure web application that lets you shrink images in file size but makes sure they still maintain high quality. Smaller images are better for SEO optimization.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Spline",
+      "url": "https://spline.design/",
+      "description": "Spline is a design tool for 3D web experiences. It simplifies creating things in 3D by providing a simple tool to create modals and export them directly to code, videos, or gifs.",
+      "pickedBy": "Jasper Vermeulen"
+    }
+  ],
+  "slot": "See you next month!"
+}

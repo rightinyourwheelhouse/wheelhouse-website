@@ -1,0 +1,21 @@
+{
+  "live": true,
+  "date": "2021-10-06T09:39:13.957Z",
+  "title": "One year of Wheelhouse picks",
+  "author": "Wheelhouse",
+  "description": "You know the drill! This time, however, we have got the biggest amount of top picks ever 🥳",
+  "introduction": "Each month, we pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us. This month, we have got three more employees sharing their top picks - get to know them a little better! 🥳",
+  "items": [
+    {
+      "title": "Traveling abroad",
+      "url": "https://livingcost.org/",
+      "description": "In addition to [Living Cost](https://livingcost.org), [Travel Safe Abroad](https://www.travelsafe-abroad.com/) is a very helpful website when you go on vacation. There are two things you probably never think about when choosing a destination: the cost of living - for estimating expenses - and how safe the country really is.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "remotion.dev",
+      "url": "https://remotion.dev",
+      "description": "This is a tool that lets you create videos with your knowledge of React. You can also scale your video production with server-side rendering and parametrization. So, basically, if you know React you can make videos which makes this tool very handy!"
+    }
+  ]
+}

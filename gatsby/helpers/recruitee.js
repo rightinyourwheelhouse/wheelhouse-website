@@ -1,6 +1,10 @@
 require('dotenv').config();
 const axios = require('axios');
 
+if (!process.env.RECRUITEE_TOKEN) {
+  throw new Error("Couldn't find env variable RECRUITEE_TOKEN!");
+}
+
 export async function getRecruiteeData(actions, createNodeId, createContentDigest) {
   const { createNode } = actions;
 

@@ -1,95 +1,11 @@
 {
-  "env": {
-    "browser": true
-  },
   "extends": [
-    "airbnb"
+    "eslint-config-daren"
   ],
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "jsx-a11y/label-has-associated-control": [ 2, {
-      "assert": "either",
-    }],
-    "comma-dangle": [
-      "error",
-      {
-        "arrays": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "ignore",
-        "imports": "always-multiline",
-        "objects": "always-multiline"
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "max-len": [
-      "error",
-      160,
-      2,
-      {
-        "ignoreComments": true,
-        "ignoreRegExpLiterals": true,
-        "ignoreStrings": false,
-        "ignoreTemplateLiterals": true,
-        "ignoreUrls": true
-      }
-    ],
-    "no-param-reassign": "warn",
-    "no-unused-expressions": "error",
-    "react/jsx-filename-extension": 0,
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/prop-types": 0,
-    "react/forbid-prop-types": [
-      "error",
-      {
-        "checkChildContextTypes": true,
-        "checkContextTypes": true,
-        "forbid": [
-          "any",
-          "object"
-        ]
-      }
-    ],
-    "jsx-a11y/anchor-is-valid": "off",
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "react/jsx-indent-props": [
-      "error",
-      2
-    ],
-    "react/jsx-no-bind": [
-      2,
-      {
-        "allowBind": true,
-        "ignoreRefs": true
-      }
-    ],
-    "react/no-danger": "warn",
-    "react/prefer-stateless-function": [
-      "error",
-      {
-        "ignorePureComponents": true
-      }
-    ],
-    "sort-keys": [
-      "warn",
-      "asc",
-      {
-        "caseSensitive": true,
-        "natural": true
-      }
-    ]
-  },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "alias": [
         [

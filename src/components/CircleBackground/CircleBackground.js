@@ -1,13 +1,11 @@
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import { CircleBackgroundContainer } from './circleBackground.styles';
 
 import colors from '~styles/colors';
 
-const CircleBackground = ({
-  background, children, foreground, size,
-}) => (
+const CircleBackground = ({ background, children, foreground, size }) => (
   <CircleBackgroundContainer
     background={background}
     foreground={foreground}

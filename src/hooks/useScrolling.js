@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import throttle from 'lodash.throttle';
+import { useState, useEffect, useRef } from 'react';
 
 const SCROLL_DIRECTION = {
   DOWN: 'down',
@@ -19,7 +19,7 @@ export const useScrolling = (offset = 0) => {
   const scrollTimerRef = useRef();
 
   const resetValues = () => {
-    setValue((currentValue) => ({ ...currentValue, ...DEFAULT_VALUE }));
+    setValue(currentValue => ({ ...currentValue, ...DEFAULT_VALUE }));
   };
 
   const clearTimer = () => {
@@ -31,7 +31,7 @@ export const useScrolling = (offset = 0) => {
 
   const onTimerEnded = () => {
     clearTimer();
-    setValue((currentValue) => ({ ...currentValue, ...DEFAULT_VALUE }));
+    setValue(currentValue => ({ ...currentValue, ...DEFAULT_VALUE }));
   };
 
   const resetTimer = () => {
@@ -49,7 +49,10 @@ export const useScrolling = (offset = 0) => {
       let nextScrollDirection = SCROLL_DIRECTION.NONE;
 
       if (nextIsScrolling) {
-        nextScrollDirection = scrollY < lastEvent.scrollY ? SCROLL_DIRECTION.UP : SCROLL_DIRECTION.DOWN;
+        nextScrollDirection =
+          scrollY < lastEvent.scrollY
+            ? SCROLL_DIRECTION.UP
+            : SCROLL_DIRECTION.DOWN;
       }
 
       setValue({
@@ -71,18 +74,17 @@ export const useScrolling = (offset = 0) => {
 
   const throttledListener = throttle(listener, 75);
 
-  const unsubscribe = () => {
-    window.removeEventListener('scroll', throttledListener);
-    clearTimer();
-  };
-
   const listen = () => {
+    const unsubscribe = () => {
+      window.removeEventListener('scroll', throttledListener);
+      clearTimer();
+    };
     window.addEventListener('scroll', throttledListener);
 
     return unsubscribe;
   };
 
-  useEffect(listen, []);
+  useEffect(listen, [throttledListener]);
 
   return [value, SCROLL_DIRECTION];
 };

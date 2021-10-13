@@ -1,6 +1,8 @@
-import React, { memo, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
+import React, { memo, useCallback } from 'react';
+
+import ConsentList from './_ConsentList';
 
 import {
   CookieConsentActions,
@@ -10,8 +12,6 @@ import {
   CookieConsentHeader,
   Overlay,
 } from './cookieConsentAdvanced.styles';
-import ConsentList from './_ConsentList';
-import ConsentItem from './_ConsentList/_ConsentItem';
 
 import Button from '~components/Button';
 
@@ -35,7 +35,7 @@ const CookieConsentAdvanced = ({
 
   const handleSave = useCallback(() => {
     onSave(cookies);
-  }, [JSON.stringify(cookies)]);
+  }, [cookies, onSave]);
 
   return (
     <div>
@@ -97,9 +97,15 @@ const CookieConsentAdvanced = ({
 };
 
 CookieConsentAdvanced.propTypes = {
-  cookies: PropTypes.arrayOf(PropTypes.shape({
-    ...ConsentItem.propTypes,
-  })),
+  cookies: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      onChange: PropTypes.func,
+      required: PropTypes.bool,
+      value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    }),
+  ),
   onCancel: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
   onUpdate: PropTypes.func.isRequired,

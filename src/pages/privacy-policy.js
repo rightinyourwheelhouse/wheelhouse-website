@@ -1,11 +1,11 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Markdown from '~components/Markdown';
+import React from 'react';
 
-import { Section, Container } from '~components/layoutComponents';
 import Content from '~components/Content';
-import SEO from '~components/SEO';
+import { Section, Container } from '~components/layoutComponents';
+import Markdown from '~components/Markdown';
+import Seo from '~components/SEO';
 
 import Layout from '~layouts/default';
 
@@ -15,15 +15,11 @@ import spacing from '~styles/spacing';
 
 const PrivacyPolicyPage = ({
   data: {
-    pagesJson: {
-      title,
-      body,
-      seo,
-    },
+    pagesJson: { title, body, seo },
   },
 }) => (
   <Layout>
-    <SEO title={seo.title} description={seo.description} image={seo.image} />
+    <Seo title={seo.title} description={seo.description} image={seo.image} />
 
     <Navigation />
 
@@ -42,7 +38,18 @@ PrivacyPolicyPage.propTypes = {
   data: PropTypes.shape({
     pagesJson: PropTypes.shape({
       seo: PropTypes.shape({
-        ...SEO.propTypes,
+        article: PropTypes.bool,
+        description: PropTypes.string,
+        image: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            resize: PropTypes.shape({
+              src: PropTypes.string,
+            }),
+          }),
+        }),
+        lang: PropTypes.string,
+        meta: PropTypes.arrayOf(PropTypes.object),
+        title: PropTypes.string,
       }),
     }),
   }).isRequired,

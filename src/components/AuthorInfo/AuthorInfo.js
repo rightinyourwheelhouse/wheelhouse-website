@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import {
   Avatar,
@@ -13,9 +13,8 @@ import {
   WrittenBy,
 } from './authorInfo.styles';
 
-import TwoColumns from '~components/TwoColumns';
-
 import { useTeam } from '~api/team/useTeam';
+import TwoColumns from '~components/TwoColumns';
 
 const AuthorInfo = ({
   author,
@@ -26,9 +25,8 @@ const AuthorInfo = ({
   pickedBy,
 }) => {
   const Wrapper = children ? TwoColumns : 'div';
-  const {
-    image, role, showPickedBy, slug, visible,
-  } = useTeam({ includeInvisible: true, name: author }) || {};
+  const { image, role, showPickedBy, slug, visible } =
+    useTeam({ includeInvisible: true, name: author }) || {};
 
   if (pickedBy && !showPickedBy) {
     return null;

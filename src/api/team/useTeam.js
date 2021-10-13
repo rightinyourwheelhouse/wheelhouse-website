@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 
 const query = graphql`
   query {
@@ -59,7 +59,7 @@ export const useTeam = ({
         id,
         rawMarkdownBody,
         slug,
-      })
+      }),
     );
 
     if (!includeInvisible) {
@@ -68,7 +68,7 @@ export const useTeam = ({
 
     if (name) {
       nodes = nodes.filter(
-        ({ name: n }) => name.toLowerCase() === n.toLowerCase()
+        ({ name: n }) => name.toLowerCase() === n.toLowerCase(),
       );
     }
 
@@ -77,7 +77,7 @@ export const useTeam = ({
     }
 
     return nodes;
-  }, [edges, current, name]);
+  }, [edges, includeInvisible, name, current]);
 
   if (name) {
     return items.length > 0 ? items[0] : null;

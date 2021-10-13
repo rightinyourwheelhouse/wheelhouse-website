@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 
 const query = graphql`
   query {
@@ -20,10 +20,11 @@ export const useImage = (filename, src) => {
   } = useStaticQuery(query);
 
   const image = useMemo(
-    () => edges
-      .map(({ node }) => ({ ...node }))
-      .find(({ relativePath }) => relativePath.includes(src || filename)),
-    [edges]
+    () =>
+      edges
+        .map(({ node }) => ({ ...node }))
+        .find(({ relativePath }) => relativePath.includes(src || filename)),
+    [edges, filename, src],
   );
 
   return image;

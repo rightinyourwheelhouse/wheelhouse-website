@@ -1,29 +1,18 @@
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-
-import Markdown from '~components/Markdown';
-
-import AuthorInfo from '~components/AuthorInfo';
+import React, { memo } from 'react';
 
 import { RecommendationContainer } from './recommendation.styles';
 
-const Recommendation = ({
-  url, title, author, description, pickedBy,
-}) => (
+import AuthorInfo from '~components/AuthorInfo';
+import Markdown from '~components/Markdown';
+
+const Recommendation = ({ url, title, author, description, pickedBy }) => (
   <RecommendationContainer>
     <a href={url} target="_blank" rel="nofollow noreferrer">
       {title}
     </a>
-    {author && (
-    <h4>
-      Author:
-      {' '}
-      {author}
-    </h4>
-    )}
-    <blockquote>
-      {description && <Markdown source={description} />}
-    </blockquote>
+    {author && <h4>Author: {author}</h4>}
+    <blockquote>{description && <Markdown source={description} />}</blockquote>
 
     {pickedBy && <AuthorInfo author={pickedBy} full pickedBy />}
   </RecommendationContainer>

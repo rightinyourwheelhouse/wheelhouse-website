@@ -1,25 +1,25 @@
 /* eslint-disable react/no-danger */
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import readingTime from 'reading-time';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 
-import Markdown from '~components/Markdown';
-import { gridLayouts } from '~components/InsightsGrid';
-import { Section, Container } from '~components/layoutComponents';
 import AuthorInfo from '~components/AuthorInfo';
 import Content from '~components/Content';
+import { gridLayouts } from '~components/InsightsGrid';
+import { Section, Container } from '~components/layoutComponents';
+import Markdown from '~components/Markdown';
 import OrderedList from '~components/OrderedList';
 import Recommendation from '~components/Recommendation';
-import SEO from '~components/SEO';
+import Seo from '~components/SEO';
 import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
-import JobOverview from '~modules/JobOverview';
 import InsightsOverview from '~modules/InsightsOverview';
+import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
@@ -36,7 +36,6 @@ const Recommendations = ({
       author,
       title,
       items,
-      tags,
       introduction,
       slot,
       image,
@@ -48,7 +47,7 @@ const Recommendations = ({
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={`${title} | from ${author}`}
         description={getMarkdownExcerpt(introduction)}
         image={image}
@@ -102,7 +101,7 @@ const Recommendations = ({
                     key={itemTitle}
                     pickedBy={pickedBy}
                   />
-                )
+                ),
               )}
             </OrderedList>
             {slot && <Markdown source={slot} />}
@@ -164,7 +163,7 @@ Recommendations.propTypes = {
           description: PropTypes.string,
           title: PropTypes.string,
           url: PropTypes.string,
-        })
+        }),
       ),
       slot: PropTypes.string,
       tags: PropTypes.array,
@@ -175,7 +174,7 @@ Recommendations.propTypes = {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     recommendationsJson(id: { eq: $id }) {
       id
       date

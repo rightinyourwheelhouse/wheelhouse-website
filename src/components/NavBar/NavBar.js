@@ -1,11 +1,7 @@
-import React, {
-  memo, useState, useCallback, useMemo,
-} from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import classnames from 'classnames';
-
-import { useScrolling } from '~hooks/useScrolling';
+import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
+import React, { memo, useState, useCallback, useMemo } from 'react';
 
 import {
   Address,
@@ -20,12 +16,12 @@ import {
 import Badge from '~components/Badge';
 
 import { useMedia } from '~hooks/useMedia';
-
-import colors from '~styles/colors';
-import breakpoints from '~styles/breakpoints';
+import { useScrolling } from '~hooks/useScrolling';
 
 import Github from '~images/github.svg';
 import Wheelhouse from '~images/wheelhouse.svg';
+import breakpoints from '~styles/breakpoints';
+import colors from '~styles/colors';
 
 const NavBar = ({
   baseColor,
@@ -40,13 +36,13 @@ const NavBar = ({
   const [{ isScrolled }] = useScrolling(0);
 
   const toggleMenu = useCallback(() => {
-    setOpen((isOpen) => !isOpen);
+    setOpen(isOpen => !isOpen);
   }, []);
 
   const desktop = useMedia(
     [`(min-width: ${breakpoints.medium})`],
     [true],
-    false
+    false,
   );
 
   const background = useMemo(() => {
@@ -55,7 +51,7 @@ const NavBar = ({
     }
 
     return isScrolled ? colors.textPrimary100 : 'transparent';
-  }, [colors, isScrolled, desktop, baseColor]);
+  }, [isScrolled, desktop]);
 
   return (
     <Nav>
@@ -139,9 +135,7 @@ const NavBar = ({
           </ItemsContent>
           <Address>
             <div>
-              Gaston Geenslaan 11 B4
-              {' '}
-              <br />
+              Gaston Geenslaan 11 B4 <br />
               3001 Leuven
             </div>
             <div>
@@ -164,7 +158,7 @@ NavBar.propTypes = {
     PropTypes.shape({
       href: PropTypes.string,
       title: PropTypes.string,
-    })
+    }),
   ),
   logoInitiallyHidden: PropTypes.bool,
 };

@@ -1,8 +1,6 @@
-import React, { memo, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-
-import Button from '~components/Button';
+import PropTypes from 'prop-types';
+import React, { memo, useCallback } from 'react';
 
 import {
   CookieConsentSimpleContainer,
@@ -11,33 +9,31 @@ import {
   ConsentContentSimple,
 } from './cookieConsentSimple.styles';
 
+import Button from '~components/Button';
+
 import colors from '~styles/colors';
 
-const CookieConsent = ({
-  onUpdate, onCustomize, privacyUrl,
-}) => {
-  const handleAccept = useCallback(
-    () => {
-      onUpdate(true);
-    },
-    [onUpdate],
-  );
+const CookieConsent = ({ onUpdate, onCustomize, privacyUrl }) => {
+  const handleAccept = useCallback(() => {
+    onUpdate(true);
+  }, [onUpdate]);
 
   return (
     <CookieConsentSimpleContainer>
       <ConsentHeader>Experience more through cookies</ConsentHeader>
       <ConsentContentSimple>
         <p>
-          We use cookies or similar technologies as specified in our
-          {' '}
-          <Link to={privacyUrl}>
-            privacy policy
-          </Link>
+          We use cookies or similar technologies as specified in our{' '}
+          <Link to={privacyUrl}>privacy policy</Link>
         </p>
       </ConsentContentSimple>
       <ConsentActions>
         <div>
-          <Button background={colors.backgroundPrimary600} onClick={onCustomize} name="customize">
+          <Button
+            background={colors.backgroundPrimary600}
+            onClick={onCustomize}
+            name="customize"
+          >
             Learn more and customize
           </Button>
         </div>

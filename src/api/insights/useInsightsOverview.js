@@ -9,7 +9,7 @@ export const useInsightsOverview = ({ count, current, skip = 0 }) => {
 
   const insights = useMemo(() => {
     const collection = [...blogs, ...recommendations].filter(
-      ({ id }) => id !== current
+      ({ id }) => id !== current,
     );
 
     collection.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
@@ -20,7 +20,7 @@ export const useInsightsOverview = ({ count, current, skip = 0 }) => {
     }
 
     return collection;
-  }, [blogs]);
+  }, [blogs, count, current, recommendations, skip]);
 
   return [insights];
 };

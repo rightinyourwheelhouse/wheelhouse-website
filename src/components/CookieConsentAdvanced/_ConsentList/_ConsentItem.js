@@ -1,26 +1,27 @@
-import React, { memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useCallback } from 'react';
 
 import { ConsentItemContainer } from './_consentItem.styles';
 
 import Toggle from '~components/Toggle';
 
-const ConsentItem = ({
-  name, label, value, onChange, required,
-}) => {
+const ConsentItem = ({ name, label, value, onChange, required }) => {
   const handleChange = useCallback(() => {
     onChange(name, !value);
-  }, [value]);
+  }, [name, onChange, value]);
 
   return (
     <ConsentItemContainer required={required}>
       <div>
-        <span>
-          {label}
-        </span>
+        <span>{label}</span>
       </div>
       <div>
-        <Toggle id={name} onChange={handleChange} label={label} value={Boolean(value) || required} />
+        <Toggle
+          id={name}
+          onChange={handleChange}
+          label={label}
+          value={Boolean(value) || required}
+        />
       </div>
     </ConsentItemContainer>
   );

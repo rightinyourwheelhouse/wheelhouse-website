@@ -5,7 +5,6 @@ import { OpenSourceContainer } from './openSource.styles';
 import Button from '~components/Button';
 
 import Github from '~images/github.svg';
-import colors from '~styles/colors';
 
 const OpenSource = () => (
   <OpenSourceContainer>

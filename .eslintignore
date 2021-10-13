@@ -1,0 +1,9 @@
+.next
+next-env.d.ts
+node_modules
+public
+package-lock.json
+yarn.lock
+out
+dist
+generate/templates

@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 
 import { toKebab } from '~utils/string';
 
@@ -24,7 +24,10 @@ export const useOfficeOverview = () => {
   } = useStaticQuery(query);
 
   const offices = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node, slug: toKebab(node.name) }));
+    const nodes = edges.map(({ node }) => ({
+      ...node,
+      slug: toKebab(node.name),
+    }));
 
     return nodes;
   }, [edges]);

@@ -1,20 +1,20 @@
-import React, { memo, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
-
-import { Container } from '~components/layoutComponents';
-import Button from '~components/Button';
-import MarkWithContent from '~components/MarkWithContent';
+import React, { memo, useEffect, useState } from 'react';
 
 import {
-  WelcomeHeroContainer, MaskContainer, InnerContainer, InnerContent,
+  WelcomeHeroContainer,
+  MaskContainer,
+  InnerContainer,
+  InnerContent,
 } from './welcomeHero.styles';
 
-import TeamRotation from '~modules/TeamRotation';
-
-import colors from '~styles/colors';
+import Button from '~components/Button';
+import { Container } from '~components/layoutComponents';
+import MarkWithContent from '~components/MarkWithContent';
 
 import Blob from '~images/blobs/1.svg';
 import Welcome from '~images/blobs/welcome.svg';
+import TeamRotation from '~modules/TeamRotation';
 
 const WelcomeHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -39,15 +39,11 @@ const WelcomeHero = () => {
           <Welcome />
         </InnerContainer>
         <InnerContent centered>
-          <Button
-            to="/team"
-            as={Link}
-          >
+          <Button to="/team" as={Link}>
             Meet us
           </Button>
           <div>
-            get to know our
-            {' '}
+            get to know our{' '}
             <MarkWithContent text="team">
               <TeamRotation />
             </MarkWithContent>

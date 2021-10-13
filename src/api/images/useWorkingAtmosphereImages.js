@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 
 import { shuffle, mode } from '~utils/array';
 
@@ -29,7 +29,7 @@ const query = graphql`
 export const useWorkingAtmosphereImages = (
   count,
   shuffled = true,
-  fixedAR = false
+  fixedAR = false,
 ) => {
   const {
     allFile: { edges },
@@ -45,8 +45,8 @@ export const useWorkingAtmosphereImages = (
             childImageSharp: {
               fluid: { aspectRatio },
             },
-          }) => aspectRatio
-        )
+          }) => aspectRatio,
+        ),
       );
 
       nodes = nodes.filter(
@@ -54,7 +54,7 @@ export const useWorkingAtmosphereImages = (
           childImageSharp: {
             fluid: { aspectRatio },
           },
-        }) => aspectRatio === mostCommonAspectRatio
+        }) => aspectRatio === mostCommonAspectRatio,
       );
     }
 
@@ -67,7 +67,7 @@ export const useWorkingAtmosphereImages = (
     }
 
     return nodes;
-  }, [edges]);
+  }, [count, edges, fixedAR, shuffled]);
 
   return images;
 };

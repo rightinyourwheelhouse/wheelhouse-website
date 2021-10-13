@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 
 import { COMPANY_NAME_SHORT } from '~data/company';
 
@@ -27,9 +27,7 @@ const query = graphql`
   }
 `;
 
-const SEO = ({
-  lang, title, description, meta, image, article,
-}) => {
+const SEO = ({ lang, title, description, meta, image, article }) => {
   const { pathname } = useLocation();
   const { site, defaultImage } = useStaticQuery(query);
 
@@ -42,13 +40,21 @@ const SEO = ({
 
   const imageUrl = useMemo(() => {
     if (!image) {
-      const { childImageSharp: { resize: { src } } } = defaultImage;
+      const {
+        childImageSharp: {
+          resize: { src },
+        },
+      } = defaultImage;
       return `${siteUrl}${src}`;
     }
 
-    const { childImageSharp: { resize: { src } } } = image;
+    const {
+      childImageSharp: {
+        resize: { src },
+      },
+    } = image;
     return `${siteUrl}${src}`;
-  }, [siteUrl, image]);
+  }, [image, siteUrl, defaultImage]);
 
   const metaDescription = description || defaultDescription;
   const metaTitle = title || defaultTitle;

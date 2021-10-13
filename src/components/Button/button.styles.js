@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-
 import { darken } from 'polished';
+import styled from 'styled-components';
 
 export const ButtonContainer = styled.div`
   --background: ${({ background }) => background};
@@ -20,9 +19,9 @@ export const ButtonContainer = styled.div`
     cursor: pointer;
     display: inline-block;
     font-family: var(--font-family);
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     line-height: 1.1rem;
     padding: 16px 32px;
     position: relative;
@@ -45,7 +44,6 @@ export const ButtonContainer = styled.div`
       transition: all 0.3s;
     }
   }
-
 
   &.full {
     width: 100%;

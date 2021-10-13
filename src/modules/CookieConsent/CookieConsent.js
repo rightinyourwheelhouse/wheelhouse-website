@@ -1,13 +1,11 @@
-import React, {
-  memo, useState, useCallback, useEffect, useMemo,
-} from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import React, { memo, useState, useCallback, useEffect, useMemo } from 'react';
 import ReactGA from 'react-ga';
 
 import { CookieConsentContainer } from './cookieConsent.styles';
 
-import CookieConsentSimple from '~components/CookieConsentSimple';
 import CookieConsentAdvanced from '~components/CookieConsentAdvanced';
+import CookieConsentSimple from '~components/CookieConsentSimple';
 
 import { useCookie, setCookie } from '~hooks/useCookie';
 
@@ -44,17 +42,14 @@ const debug = false;
 const CookieConsent = () => {
   const {
     site: {
-      siteMetadata: {
-        trackingId,
-      },
+      siteMetadata: { trackingId },
     },
   } = useStaticQuery(query);
 
   const [visible, setVisible] = useState(false);
   const [advanced, setAdvanced] = useState(false);
-  const [consentsCookieValue, setConsentsCookieValue] = useCookie(
-    'gdpr-consents'
-  );
+  const [consentsCookieValue, setConsentsCookieValue] =
+    useCookie('gdpr-consents');
   const [consents, setConsents] = useState([]);
 
   useEffect(() => {
@@ -69,7 +64,7 @@ const CookieConsent = () => {
     }
 
     setConsents(values);
-  }, [JSON.stringify(consentsCookieValue)]);
+  }, [consentsCookieValue]);
 
   const consentList = useMemo(() => {
     const list = [];
@@ -85,7 +80,7 @@ const CookieConsent = () => {
     });
 
     return list;
-  }, [JSON.stringify(consents)]);
+  }, [consents]);
 
   const onSave = useCallback(
     (cookiePreferences = undefined) => {
@@ -100,7 +95,9 @@ const CookieConsent = () => {
             setCookie(name, value);
 
             if (value) {
-              const prevValue = (consentsCookieValue !== undefined) && JSON.parse(consentsCookieValue)[name];
+              const prevValue =
+                consentsCookieValue !== undefined &&
+                JSON.parse(consentsCookieValue)[name];
 
               if (name === ANALYTICS_COOKIE_NAME && !prevValue) {
                 ReactGA.initialize(trackingId);
@@ -116,7 +113,7 @@ const CookieConsent = () => {
       setAdvanced(false);
       setConsentsCookieValue(stringified);
     },
-    [JSON.stringify(consents), JSON.stringify(consentsCookieValue)]
+    [consentsCookieValue, setConsentsCookieValue, trackingId],
   );
 
   const onUpdateAll = useCallback(
@@ -142,11 +139,11 @@ const CookieConsent = () => {
         onSave(updatedConsents, false);
       }
     },
-    [JSON.stringify(consents)]
+    [onSave],
   );
 
   const onUpdate = useCallback((cookieName, value) => {
-    setConsents((currentConsents) => {
+    setConsents(currentConsents => {
       const updatedCookie = { ...currentConsents };
       updatedCookie[cookieName] = value;
 
@@ -155,11 +152,11 @@ const CookieConsent = () => {
   }, []);
 
   const onToggleCustomize = useCallback(() => {
-    setAdvanced((vb) => !vb);
+    setAdvanced(vb => !vb);
   }, []);
 
   if (!visible) {
-    return <></>;
+    return null;
   }
 
   return (

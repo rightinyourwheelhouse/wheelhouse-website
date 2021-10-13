@@ -19,9 +19,7 @@ export const invertColor = (hex, bw) => {
   let g = parseInt(hex.slice(2, 4), 16);
   let b = parseInt(hex.slice(4, 6), 16);
   if (bw) {
-    return (r * 0.299 + g * 0.587 + b * 0.114) > 186
-      ? '#000000'
-      : '#FFFFFF';
+    return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? '#000000' : '#FFFFFF';
   }
   // invert color components
   r = (255 - r).toString(16);

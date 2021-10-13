@@ -1,17 +1,16 @@
-import React, { memo, useState, useCallback } from 'react';
 import { useFormik } from 'formik';
 import PropTypes from 'prop-types';
-
-import Stack from '~components/Stack';
-import Button from '~components/Button';
-import Input from '~components/form/Input';
-import FileUpload from '~components/form/FileUpload';
-
-import { encode } from '~utils/form';
-
-import validationSchema from './validationSchema';
+import React, { memo, useState, useCallback } from 'react';
 
 import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
+import validationSchema from './validationSchema';
+
+import Button from '~components/Button';
+import FileUpload from '~components/form/FileUpload';
+import Input from '~components/form/Input';
+import Stack from '~components/Stack';
+
+import { encode } from '~utils/form';
 
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';
@@ -38,7 +37,11 @@ const ApplyForm = ({ vacancy }) => {
     },
     onSubmit: async (submittedValues, actions) => {
       try {
-        const data = { 'form-name': 'application-form', ...submittedValues, vacancy };
+        const data = {
+          'form-name': 'application-form',
+          ...submittedValues,
+          vacancy,
+        };
 
         fetch('/', {
           body: encode(data),
@@ -57,10 +60,10 @@ const ApplyForm = ({ vacancy }) => {
   });
 
   const setFile = useCallback(
-    (files) => {
+    files => {
       setFieldValue('file', files[0]);
     },
-    [setFieldValue]
+    [setFieldValue],
   );
 
   return (
@@ -72,64 +75,66 @@ const ApplyForm = ({ vacancy }) => {
       style={{ paddingTop: '24px' }}
     >
       {formState !== SUBMITTED && (
-      <FormContainer>
-        <Fieldset>
-          <Stack>
-            <Input
-              error={touched.name && errors.name}
-              name="name"
-              id="name"
-              label="Your full name"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.name}
-              valid={touched.name && !errors.name}
-            />
-            <Input
-              error={touched.email && errors.email}
-              name="email"
-              id="email"
-              label="Your email address"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              valid={touched.email && !errors.email}
-            />
-            <Input
-              error={touched.phone && errors.phone}
-              name="phone"
-              id="phone"
-              label="Your phone number"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.phone}
-              valid={touched.phone && !errors.phone}
-            />
-            <Input
-              error={touched.website && errors.website}
-              name="website"
-              id="website"
-              label="Your website (optional)"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.website}
-              valid={touched.website && !errors.website}
-            />
-            <FileUpload
-              error={touched.file && errors.file}
-              name="file"
-              id="file"
-              label="Your resume"
-              onChange={setFile}
-              onBlur={handleBlur}
-              value={values.file}
-              valid={touched.file && !errors.file}
-            />
-          </Stack>
-        </Fieldset>
+        <FormContainer>
+          <Fieldset>
+            <Stack>
+              <Input
+                error={touched.name && errors.name}
+                name="name"
+                id="name"
+                label="Your full name"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+                valid={touched.name && !errors.name}
+              />
+              <Input
+                error={touched.email && errors.email}
+                name="email"
+                id="email"
+                label="Your email address"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+                valid={touched.email && !errors.email}
+              />
+              <Input
+                error={touched.phone && errors.phone}
+                name="phone"
+                id="phone"
+                label="Your phone number"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.phone}
+                valid={touched.phone && !errors.phone}
+              />
+              <Input
+                error={touched.website && errors.website}
+                name="website"
+                id="website"
+                label="Your website (optional)"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.website}
+                valid={touched.website && !errors.website}
+              />
+              <FileUpload
+                error={touched.file && errors.file}
+                name="file"
+                id="file"
+                label="Your resume"
+                onChange={setFile}
+                onBlur={handleBlur}
+                value={values.file}
+                valid={touched.file && !errors.file}
+              />
+            </Stack>
+          </Fieldset>
 
-        <Button disabled={isSubmitting} type="submit">Submit</Button>
-      </FormContainer>
+          <Button disabled={isSubmitting} type="submit">
+            Submit
+          </Button>
+        </FormContainer>
       )}
       {formState === ERROR && (
         <div>
@@ -139,8 +144,8 @@ const ApplyForm = ({ vacancy }) => {
       {formState === SUBMITTED && (
         <div>
           <p>
-            Your application has been submitted. We'll get in touch with you
-            soon.
+            Your application has been submitted. We&apos;ll get in touch with
+            you soon.
           </p>
         </div>
       )}

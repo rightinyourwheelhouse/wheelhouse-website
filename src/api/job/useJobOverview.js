@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 
 const query = graphql`
   query {
@@ -22,14 +22,16 @@ export const useJobOverview = ({ count, current = null } = {}) => {
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges.map(({ node }) => ({ ...node })).filter(({ id }) => id !== current);
+    const nodes = edges
+      .map(({ node }) => ({ ...node }))
+      .filter(({ id }) => id !== current);
 
     if (count) {
       return nodes.slice(0, count);
     }
 
     return nodes;
-  }, [edges, count]);
+  }, [edges, count, current]);
 
   return items;
 };

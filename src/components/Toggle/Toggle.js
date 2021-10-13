@@ -1,11 +1,9 @@
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import { ToggleInput, ToggleLabel } from './toggle.styles';
 
-const Toggle = ({
-  disabled, id, onChange, value,
-}) => (
+const Toggle = ({ disabled, id, onChange, value }) => (
   <>
     <ToggleInput
       disabled={disabled}
@@ -14,9 +12,7 @@ const Toggle = ({
       checked={value}
       onChange={onChange}
     />
-    <ToggleLabel
-      htmlFor={id}
-    >
+    <ToggleLabel htmlFor={id}>
       <span />
     </ToggleLabel>
   </>

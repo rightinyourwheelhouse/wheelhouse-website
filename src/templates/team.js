@@ -1,31 +1,27 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
-import { Section, Container } from '~components/layoutComponents';
+import { useTeamRecommendations } from '~api/team/useTeamRecommendations';
 import Button from '~components/Button';
 import Cinemagraph from '~components/Cinemagraph';
 import Content from '~components/Content';
-import Image from '~components/Image';
+import { Section, Container } from '~components/layoutComponents';
 import Markdown from '~components/Markdown';
 import OrderedList from '~components/OrderedList';
 import QAndA from '~components/QAndA';
 import Recommendation from '~components/Recommendation';
-import SEO from '~components/SEO';
+import Seo from '~components/SEO';
 
+import { COMPANY_NAME } from '~data/company';
+import Layout from '~layouts/default';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 
-import Layout from '~layouts/default';
-
 import spacing from '~styles/spacing';
-
-import { COMPANY_NAME } from '~data/company';
-
-import { useTeamRecommendations } from '~api/team/useTeamRecommendations';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -55,9 +51,7 @@ const Team = ({
     employee: {
       excerpt,
       id,
-      frontmatter: {
-        name, role, detailImage, qAndA, description,
-      },
+      frontmatter: { name, role, detailImage, qAndA, description },
       rawMarkdownBody,
     },
   },
@@ -67,7 +61,7 @@ const Team = ({
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={`${name} - ${role} at ${COMPANY_NAME}`}
         description={excerpt}
         image={detailImage.image}
@@ -88,19 +82,10 @@ const Team = ({
             </div>
             <Content>
               <h2>
-                {name}
-                {' '}
-                {description}
-                .
+                {name} {description}.
               </h2>
               <p>
-                {name}
-                {' '}
-                is a
-                {' '}
-                {role}
-                {' '}
-                at Wheelhouse
+                {name} is a {role} at Wheelhouse
               </p>
               <Markdown source={rawMarkdownBody} />
             </Content>
@@ -114,14 +99,12 @@ const Team = ({
             <h2>Q&A</h2>
             <Content>
               <p>
-                To get to know who we are and what kind of person we are, we ask a few questions. Here are the questions and answers of
-                {' '}
-                {name}
+                To get to know who we are and what kind of person we are, we ask
+                a few questions. Here are the questions and answers of {name}
               </p>
             </Content>
           </Container>
           <Container offset={spacing.large}>
-
             <QAndA items={qAndA} />
           </Container>
         </Section>
@@ -147,7 +130,7 @@ const Team = ({
                       description={itemDescription}
                       key={itemTitle}
                     />
-                  )
+                  ),
                 )}
               </OrderedList>
             </Content>
@@ -175,7 +158,12 @@ Team.propTypes = {
       frontmatter: PropTypes.shape({
         detailImage: PropTypes.shape({
           image: PropTypes.shape({
-            ...Image.propTypes,
+            alt: PropTypes.string.isRequired,
+            bw: PropTypes.bool,
+            filename: PropTypes.string,
+            image: PropTypes.shape({}),
+            offset: PropTypes.string,
+            src: PropTypes.string,
           }),
         }),
         name: PropTypes.string,
@@ -183,7 +171,7 @@ Team.propTypes = {
           PropTypes.shape({
             a: PropTypes.string,
             q: PropTypes.string,
-          })
+          }),
         ),
         role: PropTypes.string,
       }),
@@ -195,7 +183,7 @@ Team.propTypes = {
 export default Team;
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     employee: markdownRemark(id: { eq: $id }) {
       id
       rawMarkdownBody

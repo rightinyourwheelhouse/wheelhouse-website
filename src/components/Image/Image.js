@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
+import React, { memo } from 'react';
+import styled from 'styled-components';
 
 import { useImage } from '~api/images/useImage';
 
@@ -13,10 +13,13 @@ const ImageContainer = styled.div`
   margin: var(--offset) 0;
 `;
 
-const Image = ({
-  alt, filename, bw, src, image, offset, ...props
-}) => {
-  const selectedImage = image || useImage(filename, src);
+const Image = ({ alt, filename, bw, src, image, offset, ...props }) => {
+  let selectedImage = useImage(filename, src);
+
+  if (image) {
+    selectedImage = image;
+  }
+
   if (!image && !src) {
     return null;
   }

@@ -1,7 +1,5 @@
-import React, {
-  memo, useRef, useState, useCallback, useMemo,
-} from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useRef, useState, useCallback, useMemo } from 'react';
 import { animateScroll } from 'react-scroll';
 
 import {
@@ -10,10 +8,9 @@ import {
   OuterContainer,
 } from './horizontalItemList.styles';
 
-import spacing from '~styles/spacing';
-import colors from '~styles/colors';
-
 import Chevron from '~images/chevron-left.svg';
+import colors from '~styles/colors';
+import spacing from '~styles/spacing';
 
 const HorizontalItemList = ({
   background,
@@ -35,9 +32,9 @@ const HorizontalItemList = ({
     }
 
     return current.scrollWidth - current.clientWidth;
-  }, [position, list]);
+  }, [list]);
 
-  const scroll = useCallback((pos) => {
+  const scroll = useCallback(pos => {
     const { current } = list;
 
     if (!current) {
@@ -58,7 +55,7 @@ const HorizontalItemList = ({
     const newPos = current.scrollLeft + window.innerWidth;
 
     scroll(newPos);
-  }, [list]);
+  }, [scroll]);
 
   const onLeft = useCallback(() => {
     const { current } = list;
@@ -66,7 +63,7 @@ const HorizontalItemList = ({
     const newPos = current.scrollLeft - window.innerWidth;
 
     scroll(newPos);
-  }, [list]);
+  }, [scroll]);
 
   const onWheel = useCallback(() => {
     const { current } = list;
@@ -81,13 +78,19 @@ const HorizontalItemList = ({
           <Chevron />
         </ArrowContainer>
       )}
-      <List background={background} space={space} ref={list} onWheel={onWheel} {...props}>
+      <List
+        background={background}
+        space={space}
+        ref={list}
+        onWheel={onWheel}
+        {...props}
+      >
         {children}
       </List>
       {position < lastPos && (
-      <ArrowContainer onClick={onRight} className="right" role="button">
-        <Chevron />
-      </ArrowContainer>
+        <ArrowContainer onClick={onRight} className="right" role="button">
+          <Chevron />
+        </ArrowContainer>
       )}
     </OuterContainer>
   );

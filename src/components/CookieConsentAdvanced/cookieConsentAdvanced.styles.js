@@ -32,7 +32,7 @@ export const CookieConsentAdvancedContainer = styled.div`
   transform: translate(-50%, -50%);
   z-index: 999999999;
 
-  @media screen and (min-width: ${breakpoints.medium}){
+  @media screen and (min-width: ${breakpoints.medium}) {
     max-width: 800px;
     height: unset;
   }

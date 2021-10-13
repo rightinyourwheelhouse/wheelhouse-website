@@ -1,16 +1,22 @@
-import React, { memo, useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { memo, useCallback, useState } from 'react';
 
-import { LabelInputContainer } from '../form.styles';
 import { FileUploadContainer, Caption, Label } from './fileUpload.styles';
 
 import ErrorField from '../_ErrorField';
+import { LabelInputContainer } from '../form.styles';
 
 import colors from '~styles/colors';
 
 const FileUpload = ({
-  error, name, onChange, valid, value, label, ...props
+  error,
+  name,
+  onChange,
+  valid,
+  value,
+  label,
+  ...props
 }) => {
   const [active, setActive] = useState(value && value.name.length > 0);
 
@@ -18,11 +24,14 @@ const FileUpload = ({
     setActive(true);
   }, []);
 
-  const handleChange = useCallback((e) => {
-    if (onChange) {
-      onChange([...e.target.files]);
-    }
-  }, []);
+  const handleChange = useCallback(
+    e => {
+      if (onChange) {
+        onChange([...e.target.files]);
+      }
+    },
+    [onChange],
+  );
 
   return (
     <FileUploadContainer>
@@ -37,18 +46,18 @@ const FileUpload = ({
       />
       <label htmlFor={name}>
         {Boolean(value) && (
-        <LabelInputContainer
-          color={colors.textPrimary100}
-          padding
-          className={classnames({
-            active,
-            error,
-            valid,
-          })}
-          width="100px"
-        >
-          {value.name}
-        </LabelInputContainer>
+          <LabelInputContainer
+            color={colors.textPrimary100}
+            padding
+            className={classnames({
+              active,
+              error,
+              valid,
+            })}
+            width="100px"
+          >
+            {value.name}
+          </LabelInputContainer>
         )}
         {!value && (
           <LabelInputContainer

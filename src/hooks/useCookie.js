@@ -8,17 +8,17 @@ export const setCookie = (name, value, options) => {
   };
 
   const expires = new Date(
-    Date.now() + optionsWithDefaults.days * 864e5
+    Date.now() + optionsWithDefaults.days * 864e5,
   ).toUTCString();
 
   if (typeof document !== 'undefined') {
     document.cookie = `${name}=${encodeURIComponent(
-      value
+      value,
     )}; expires=${expires}; path=${optionsWithDefaults.path}`;
   }
 };
 
-export const getCookie = (name) => {
+export const getCookie = name => {
   if (typeof document !== 'undefined') {
     return document.cookie.split('; ').reduce((r, v) => {
       const parts = v.split('=');

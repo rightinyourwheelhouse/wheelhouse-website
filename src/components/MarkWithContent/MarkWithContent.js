@@ -1,16 +1,9 @@
-import React, {
-  memo, useCallback, useState,
-} from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useCallback, useState } from 'react';
 
 import { Mark, Image, TextContainer } from './markWithContent.styles';
 
-const MarkWithContent = ({
-  children,
-  contentVisible,
-  hideText,
-  text,
-}) => {
+const MarkWithContent = ({ children, contentVisible, hideText, text }) => {
   const [imageVisible, setImageVisible] = useState(false);
 
   const onHover = useCallback(() => {

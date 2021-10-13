@@ -1,15 +1,19 @@
-import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Section, Container, ContrastColor } from '~components/layoutComponents';
 import Button from '~components/Button';
-import Content from '~components/Content';
-import SEO from '~components/SEO';
-import TwoColumns from '~components/TwoColumns';
-import Image from '~components/Image';
-import SubTitle from '~components/SubTitle';
 import Card from '~components/Card';
+import Content from '~components/Content';
+import Image from '~components/Image';
+import {
+  Section,
+  Container,
+  ContrastColor,
+} from '~components/layoutComponents';
+import Seo from '~components/SEO';
+import SubTitle from '~components/SubTitle';
+import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
 
@@ -18,21 +22,19 @@ import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
 import OpenSource from '~modules/OpenSource';
 import WelcomeHero from '~modules/WelcomeHero';
-import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import WheelhouseDescription from '~modules/WheelhouseDescription';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
 const IndexPage = ({
   data: {
-    pagesJson: {
-      seo,
-    },
+    pagesJson: { seo },
   },
 }) => (
   <Layout>
-    <SEO title={seo.title} description={seo.description} image={seo.image} />
+    <Seo title={seo.title} description={seo.description} image={seo.image} />
 
     <Navigation logoInitiallyHidden />
 
@@ -124,7 +126,18 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     pagesJson: PropTypes.shape({
       seo: PropTypes.shape({
-        ...SEO.propTypes,
+        article: PropTypes.bool,
+        description: PropTypes.string,
+        image: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            resize: PropTypes.shape({
+              src: PropTypes.string,
+            }),
+          }),
+        }),
+        lang: PropTypes.string,
+        meta: PropTypes.arrayOf(PropTypes.object),
+        title: PropTypes.string,
       }),
     }),
   }).isRequired,

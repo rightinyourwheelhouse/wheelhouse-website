@@ -1,14 +1,13 @@
-import React from 'react';
 import Link from 'gatsby-link';
+import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '~layouts/default';
-
-import { Section, Container } from '~components/layoutComponents';
-import SEO from '~components/SEO';
 import Button from '~components/Button';
-
 import Lamp from '~components/Lamp';
+import { Section, Container } from '~components/layoutComponents';
+import Seo from '~components/SEO';
+
+import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 import colors from '~styles/colors';
@@ -19,7 +18,10 @@ export const OuterContainer = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" description="You got lost on your way to our website" />
+    <Seo
+      title="404: Not found"
+      description="You got lost on your way to our website"
+    />
     <Navigation
       hamburgerColor={colors.textPrimary100}
       baseBackgroundColor={colors.backgroundPrimary100}
@@ -36,7 +38,9 @@ const NotFoundPage = () => (
           <h2>4 oh 4</h2>
 
           <p>It sure is dark here...</p>
-          <Button as={Link} to="/">Hold my hand</Button>
+          <Button as={Link} to="/">
+            Hold my hand
+          </Button>
         </OuterContainer>
       </Container>
     </Section>

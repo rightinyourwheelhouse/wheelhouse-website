@@ -1,5 +1,5 @@
-import React, { memo, useState, useEffect } from 'react';
 import Img from 'gatsby-image';
+import React, { memo, useState, useEffect } from 'react';
 
 import { RotationContainer } from './teamRotation.styles';
 
@@ -10,15 +10,16 @@ const TeamRotation = () => {
   const images = useTeamRotationImages();
 
   const length = images.length - 1;
-  const handleNext = () => {
-    if (index === length) {
-      return setIndex(0);
-    }
-
-    return setIndex(index + 1);
-  };
 
   useEffect(() => {
+    const handleNext = () => {
+      if (index === length) {
+        return setIndex(0);
+      }
+
+      return setIndex(index + 1);
+    };
+
     const interval = setInterval(() => {
       handleNext();
     }, 500);
@@ -26,7 +27,7 @@ const TeamRotation = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [index]);
+  }, [index, length]);
 
   return (
     <RotationContainer>

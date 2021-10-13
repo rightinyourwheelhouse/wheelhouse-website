@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
+
+import { QAndAContainer, QAndAItemContainer } from './qAndA.styles';
 
 import Markdown from '~components/Markdown';
 import TwoColumns from '~components/TwoColumns';
-
-import { QAndAContainer, QAndAItemContainer } from './qAndA.styles';
 
 const QAndA = ({ items }) => (
   <QAndAContainer>
@@ -28,7 +28,7 @@ QAndA.propTypes = {
     PropTypes.shape({
       a: PropTypes.string,
       q: PropTypes.string,
-    })
+    }),
   ).isRequired,
 };
 

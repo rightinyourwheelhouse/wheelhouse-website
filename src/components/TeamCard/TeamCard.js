@@ -1,15 +1,13 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import Link from 'gatsby-link';
-
-import Button from '~components/Button';
+import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
 
-const TeamCard = ({
-  image, name, description, slug,
-}) => (
+import Button from '~components/Button';
+
+const TeamCard = ({ image, name, description, slug }) => (
   <CardContainer>
     <Link to={slug}>
       <ImageContainer>
@@ -17,15 +15,11 @@ const TeamCard = ({
       </ImageContainer>
     </Link>
     <Caption>
-      <strong>{name}</strong>
-      {' '}
-      {description}
+      <strong>{name}</strong> {description}
     </Caption>
 
     <Button to={slug} as={Link}>
-      meet
-      {' '}
-      {name.split(' ')[0]}
+      meet {name.split(' ')[0]}
     </Button>
   </CardContainer>
 );

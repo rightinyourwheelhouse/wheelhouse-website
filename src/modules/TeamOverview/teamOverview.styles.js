@@ -9,7 +9,8 @@ export const CardsContainer = styled.div`
   justify-content: flex-start;
   margin: 3rem 0 0 0;
 
-  > div, > a {
+  > div,
+  > a {
     padding-left: 8.33333333vw;
     width: 100%;
     margin-bottom: 45px;
@@ -23,7 +24,8 @@ export const CardsContainer = styled.div`
     justify-content: flex-start;
     margin-left: -8.33333333vw;
 
-    > div, > a {
+    > div,
+    > a {
       padding-left: 8.33333333vw;
       width: 50%;
       margin-bottom: 6.5vw;
@@ -37,7 +39,8 @@ export const CardsContainer = styled.div`
     justify-content: flex-start;
     margin-left: -8.33333333vw;
 
-    > div, > a {
+    > div,
+    > a {
       padding-left: 8.33333333vw;
       width: 33.33333333%;
       margin-bottom: 6.5vw;

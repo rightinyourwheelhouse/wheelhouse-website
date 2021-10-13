@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 import readingTime from 'reading-time';
 
 import { toKebab } from '~utils/string';
@@ -80,7 +80,7 @@ export const useRecommendationsOverview = ({
             type: 'recommendation',
             url,
           };
-        }
+        },
       )
       .filter(({ id }) => id !== current);
 
@@ -89,7 +89,7 @@ export const useRecommendationsOverview = ({
     }
 
     return nodes;
-  }, [edges, count]);
+  }, [edges, count, current]);
 
   return [selectedItems];
 };

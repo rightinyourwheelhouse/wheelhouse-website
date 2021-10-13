@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { useRecommendationsOverview } from '../insights/useRecommendationsOverview';
 
 export const useTeamRecommendations = (name, count = 3) => {
@@ -11,24 +12,29 @@ export const useTeamRecommendations = (name, count = 3) => {
       if (author.toLowerCase() === name.toLowerCase()) {
         recommendations = [
           ...recommendations,
-          ...items.map((item) => ({ ...item, date })),
+          ...items.map(item => ({ ...item, date })),
         ];
       }
 
       const memberItems = items.filter(
-        ({ pickedBy }) => pickedBy && pickedBy.toLowerCase() === name.toLowerCase()
+        ({ pickedBy }) =>
+          pickedBy && pickedBy.toLowerCase() === name.toLowerCase(),
       );
 
       recommendations = [
         ...recommendations,
-        ...memberItems.map((item) => ({ ...item, date })),
+        ...memberItems.map(item => ({ ...item, date })),
       ];
     });
 
-    recommendations.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
+    recommendations.sort((a, b) =>
+      new Date(a.date) < new Date(b.date) ? 1 : -1,
+    );
 
     recommendations = recommendations.reduce((result, current) => {
-      if (!result.some((item) => item.title === current.title)) { result.push(current); }
+      if (!result.some(item => item.title === current.title)) {
+        result.push(current);
+      }
       return result;
     }, []);
 
@@ -37,7 +43,7 @@ export const useTeamRecommendations = (name, count = 3) => {
     }
 
     return recommendations;
-  }, [allRecommendations]);
+  }, [allRecommendations, count, name]);
 
   return [teamMemberRecommendations];
 };

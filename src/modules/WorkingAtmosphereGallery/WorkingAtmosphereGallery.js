@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
 import Img from 'gatsby-image';
+import React, { memo } from 'react';
+
+import { WorkingAtmosphereContainer } from './workingAtmosphereGallery.styles';
 
 import { useWorkingAtmosphereImages } from '~api/images/useWorkingAtmosphereImages';
 
 import AsymmetricImageGallery from '~components/ImageGallery';
-
-import { WorkingAtmosphereContainer } from './workingAtmosphereGallery.styles';
 
 const WorkingAtmosphereGallery = () => {
   const images = useWorkingAtmosphereImages(14, true, true);
@@ -14,7 +14,12 @@ const WorkingAtmosphereGallery = () => {
     <WorkingAtmosphereContainer>
       <AsymmetricImageGallery>
         {images.map(({ id, childImageSharp: { fluid } }) => (
-          <Img objectFit="none" key={id} fluid={fluid} alt="Working atmosphere" />
+          <Img
+            objectFit="none"
+            key={id}
+            fluid={fluid}
+            alt="Working atmosphere"
+          />
         ))}
       </AsymmetricImageGallery>
     </WorkingAtmosphereContainer>

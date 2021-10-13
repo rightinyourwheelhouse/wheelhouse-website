@@ -1,13 +1,17 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Section, Container, ContrastColor } from '~components/layoutComponents';
-import Content from '~components/Content';
 import Button from '~components/Button';
 import Card from '~components/Card';
-import SEO from '~components/SEO';
+import Content from '~components/Content';
+import {
+  Section,
+  Container,
+  ContrastColor,
+} from '~components/layoutComponents';
+import Seo from '~components/SEO';
 import SubTitle from '~components/SubTitle';
 import Summary from '~components/Summary';
 import TwoColumns from '~components/TwoColumns';
@@ -17,20 +21,18 @@ import Layout from '~layouts/default';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
-import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
+import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
 
 const TeamPage = ({
   data: {
-    pagesJson: {
-      seo,
-    },
+    pagesJson: { seo },
   },
 }) => (
   <Layout>
-    <SEO title={seo.title} description={seo.description} image={seo.image} />
+    <Seo title={seo.title} description={seo.description} image={seo.image} />
 
     <Navigation />
 
@@ -122,7 +124,18 @@ const TeamPage = ({
 TeamPage.propTypes = {
   data: PropTypes.shape({
     seo: PropTypes.shape({
-      ...SEO.propTypes,
+      article: PropTypes.bool,
+      description: PropTypes.string,
+      image: PropTypes.shape({
+        childImageSharp: PropTypes.shape({
+          resize: PropTypes.shape({
+            src: PropTypes.string,
+          }),
+        }),
+      }),
+      lang: PropTypes.string,
+      meta: PropTypes.arrayOf(PropTypes.object),
+      title: PropTypes.string,
     }),
   }).isRequired,
 };

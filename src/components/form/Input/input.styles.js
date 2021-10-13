@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const LabelInput = styled.div`
-   --width: ${({ width }) => width};
+  --width: ${({ width }) => width};
 
   width: 100%;
   max-width: var(--width);
@@ -19,12 +19,14 @@ export const Label = styled.label`
   cursor: text;
   pointer-events: none;
   width: 66.6%;
-  transform: ${({ active }) => (active ? 'translate3d(0, -25px, 0)' : 'translateY(-50%)')};
+  transform: ${({ active }) =>
+    active ? 'translate3d(0, -25px, 0)' : 'translateY(-50%)'};
   z-index: 2;
 
-  ${({ active }) => active
-    && css`
-      color: #6D7278;
+  ${({ active }) =>
+    active &&
+    css`
+      color: #6d7278;
       font-size: 10px;
     `}
 `;
@@ -40,7 +42,7 @@ export const InputField = styled.input`
 
   &::placeholder {
     color: var(--color-primary-text-700);
-    opacity: ${(props) => (props.active ? 1 : 0)};
+    opacity: ${props => (props.active ? 1 : 0)};
     transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   }
 `;

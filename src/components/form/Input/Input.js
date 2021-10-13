@@ -1,10 +1,11 @@
-import React, { memo, useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { memo, useState, useCallback } from 'react';
 
 import { LabelInput, Label, InputField } from './input.styles';
-import { LabelInputContainer } from '../form.styles';
+
 import ErrorField from '../_ErrorField';
+import { LabelInputContainer } from '../form.styles';
 
 const Input = ({
   error,
@@ -24,13 +25,16 @@ const Input = ({
     setActive(true);
   }, []);
 
-  const handleBlur = useCallback((event) => {
-    setActive(event.target.value.length !== 0);
+  const handleBlur = useCallback(
+    event => {
+      setActive(event.target.value.length !== 0);
 
-    if (onBlur) {
-      onBlur(event);
-    }
-  }, []);
+      if (onBlur) {
+        onBlur(event);
+      }
+    },
+    [onBlur],
+  );
 
   return (
     <div>

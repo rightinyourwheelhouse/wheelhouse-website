@@ -5,7 +5,7 @@ name: Daphné Vermeiren
 role: Marketing Manager
 description: is our digital marketing guru and makes sure the Wheelie's are seen
   all over the internet
-image: assets/daphnétransp.png
+image: assets/daphnetransp.png
 detailImage:
   image: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
   movingPicture: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
@@ -39,10 +39,10 @@ qAndA:
       I used to be a dog person. I even worked in a dog hotel for four years as
       a student. Since I moved to live on my own, I got a little cat called
       Maurice a.k.a. Momo and he stole my heart. I would consider myself as a
-      dog-and-Momo person now. ❤️ 
+      dog-and-Momo person now. ❤️
 
 
-      Fun fact: my favorite breeds are golden retrievers, dwarf dachshunds, and white shepherds. 
+      Fun fact: my favorite breeds are golden retrievers, dwarf dachshunds, and white shepherds.
 
 
       ![Momo, my cat](assets/image-from-ios-3-.jpg "Momo")

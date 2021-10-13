@@ -1,15 +1,15 @@
 /* eslint-disable react/no-danger */
-import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
+import Content from '~components/Content';
 import {
   Section,
   Container,
   ContrastColor,
 } from '~components/layoutComponents';
-import Content from '~components/Content';
-import SEO from '~components/SEO';
+import Seo from '~components/SEO';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
@@ -24,13 +24,11 @@ import colors from '~styles/colors';
 
 const Career = ({
   data: {
-    career: {
-      city, description, id, requirements, title,
-    },
+    career: { city, description, id, requirements, title },
   },
 }) => (
   <Layout>
-    <SEO
+    <Seo
       title={`Vacancy ${title} at Wheelhouse ${city}`}
       description={description}
     />
@@ -80,7 +78,6 @@ const Career = ({
 
     <Section background={colors.backgorundPrimary200}>
       <Container>
-
         <SubTitle>careers</SubTitle>
         <h2>Other career opportunities</h2>
 
@@ -109,7 +106,7 @@ Career.propTypes = {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     career(slug: { eq: $slug }) {
       id
       city

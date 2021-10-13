@@ -20,7 +20,8 @@ export const InnerContent = styled.div`
   text-align: ${({ centered }) => (centered ? 'center' : 'left')};
   z-index: 10;
 
-  button, a {
+  button,
+  a {
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -50,8 +51,6 @@ export const WelcomeHeroContainer = styled.div`
     line-height: 1.7;
     width: 99%;
   }
-
-
 
   svg {
     display: block;
@@ -83,7 +82,8 @@ export const MaskContainer = styled.div`
     opacity: ${({ loaded }) => (loaded ? '1' : '0')};
     position: absolute;
     transform-style: preserve-3d;
-    transform: ${({ loaded }) => (loaded ? 'scaleX(1) scaleY(1) scaleZ(1)' : 'scale(0.01, 0.01)')};
+    transform: ${({ loaded }) =>
+      loaded ? 'scaleX(1) scaleY(1) scaleZ(1)' : 'scale(0.01, 0.01)'};
     transition: all 0.3s;
     transition: opacity 200ms ease 0s, transform 1300ms ease-in-out 0s;
     z-index: 0;
@@ -217,18 +217,18 @@ export const InnerContainer = styled.div`
       transition: transform 300ms ease-in-out 0s;
     }
 
-      ${MaskContainer} {
-        height: 105%;
+    ${MaskContainer} {
+      height: 105%;
 
-        > svg {
-          &:nth-of-type(${DEFAULT_COLORS.length}) {
-            height: 200%;
-            left: -50%;
-            top: -30%;
-            transition: all 1.3s;
-            width: 200%;
-          }
+      > svg {
+        &:nth-of-type(${DEFAULT_COLORS.length}) {
+          height: 200%;
+          left: -50%;
+          top: -30%;
+          transition: all 1.3s;
+          width: 200%;
         }
       }
     }
+  }
 `;

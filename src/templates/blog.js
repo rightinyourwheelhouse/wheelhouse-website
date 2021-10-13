@@ -1,28 +1,27 @@
 /* eslint-disable react/no-danger */
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import readingTime from 'reading-time';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 
-import { Section, Container } from '~components/layoutComponents';
+import AuthorInfo from '~components/AuthorInfo';
 import Content from '~components/Content';
 import ImageTitle from '~components/ImageTitle';
-import AuthorInfo from '~components/AuthorInfo';
-import SEO from '~components/SEO';
+import { gridLayouts } from '~components/InsightsGrid';
+import { Section, Container } from '~components/layoutComponents';
+import Seo from '~components/SEO';
 import Share from '~components/Share';
 import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
-import JobOverview from '~modules/JobOverview';
 import InsightsOverview from '~modules/InsightsOverview';
+import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import { getHtmlExcerpt } from '~utils/string';
-
-import { gridLayouts } from '~components/InsightsGrid';
 
 const isWindowContext = typeof window !== 'undefined';
 
@@ -44,7 +43,7 @@ const Blog = ({
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={`${title}`}
         description={getHtmlExcerpt(encoded)}
         image={image}
@@ -73,7 +72,11 @@ const Blog = ({
         <Container>
           <SubTitle>insights</SubTitle>
           <h2>More insights</h2>
-          <InsightsOverview current={id} count={3} layout={gridLayouts.COLUMN} />
+          <InsightsOverview
+            current={id}
+            count={3}
+            layout={gridLayouts.COLUMN}
+          />
         </Container>
       </Section>
 
@@ -116,7 +119,7 @@ Blog.propTypes = {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     feedBlog(id: { eq: $id }) {
       id
       creator

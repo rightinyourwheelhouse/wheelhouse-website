@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import colors from '~styles/colors';
 import breakpoints from '~styles/breakpoints';
+import colors from '~styles/colors';
 
 export default styled.div`
   display: flex;
@@ -19,10 +19,10 @@ export default styled.div`
     margin: 5px;
     background-color: ${colors.accent};
 
-    @media screen and (min-width: ${breakpoints.small}){
+    @media screen and (min-width: ${breakpoints.small}) {
       flex: 1 0 30%;
     }
-    @media screen and (min-width: ${breakpoints.medium}){
+    @media screen and (min-width: ${breakpoints.medium}) {
       flex: 1 0 21%;
     }
   }

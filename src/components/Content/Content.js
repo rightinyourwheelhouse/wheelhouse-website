@@ -9,7 +9,8 @@ export default styled.div`
   width: 100%;
   text-align: var(--centered);
 
-  h2, h1 {
+  h2,
+  h1 {
     margin-bottom: var(--spacing-default);
   }
 

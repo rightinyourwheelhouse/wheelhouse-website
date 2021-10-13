@@ -5,7 +5,11 @@ if (!process.env.RECRUITEE_TOKEN) {
   throw new Error("Couldn't find env variable RECRUITEE_TOKEN!");
 }
 
-export async function getRecruiteeData(actions, createNodeId, createContentDigest) {
+export async function getRecruiteeData(
+  actions,
+  createNodeId,
+  createContentDigest,
+) {
   const { createNode } = actions;
 
   const RECRUITEE_API_PATH = 'https://api.recruitee.com/c/raccoons/offers';
@@ -21,17 +25,16 @@ export async function getRecruiteeData(actions, createNodeId, createContentDiges
   const wheelhouseData = await Promise.all(
     offers
       .filter(
-        ({ department, status }) => department === 'Wheelhouse' && status === 'published'
+        ({ department, status }) =>
+          department === 'Wheelhouse' && status === 'published',
       )
-      .map(async (offer) => {
+      .map(async offer => {
         const { id } = offer;
         const RECRUITEE_OFFER_PATH = `${RECRUITEE_API_PATH}/${id}`;
 
         const {
           data: {
-            offer: {
-              city, description, requirements, title,
-            },
+            offer: { city, description, requirements, title },
           },
         } = await axios.get(RECRUITEE_OFFER_PATH, {
           headers: {
@@ -46,13 +49,11 @@ export async function getRecruiteeData(actions, createNodeId, createContentDiges
           requirements,
           title,
         };
-      })
+      }),
   );
 
   wheelhouseData.forEach(
-    async ({
-      city, id, slug, requirements, description, title,
-    }) => {
+    async ({ city, id, slug, requirements, description, title }) => {
       const data = {
         city,
         description,
@@ -71,6 +72,6 @@ export async function getRecruiteeData(actions, createNodeId, createContentDiges
           type: 'career',
         },
       });
-    }
+    },
   );
 }

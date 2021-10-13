@@ -32,7 +32,7 @@ export const Cable = styled.div`
   z-index: 1;
   transform-origin: 0% 0%;
   box-shadow: -80px -10px 10px -2px rgba(0, 0, 0, 0.1);
-  animation: ${animateCable} .9s ease-in-out 0s infinite alternate;
+  animation: ${animateCable} 0.9s ease-in-out 0s infinite alternate;
 
   &:after {
     content: ' ';
@@ -60,7 +60,7 @@ export const Bulb = styled.div`
   border-radius: 100%;
   transform: translateX(-50%);
   z-index: 1;
-  animation: ${animateLamp} .9s ease-in-out 0s infinite alternate;
+  animation: ${animateLamp} 0.9s ease-in-out 0s infinite alternate;
 
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8),
     0px 0px 30px rgba(255, 255, 255, 0.8), 0px 0px 50px rgba(255, 255, 255, 0.6),

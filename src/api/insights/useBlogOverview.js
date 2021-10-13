@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useMemo } from 'react';
 import readingTime from 'reading-time';
 
 import { toKebab } from '~utils/string';
@@ -41,31 +41,33 @@ export const useBlogOverview = ({ count = null, current = null }) => {
 
   const items = useMemo(() => {
     const nodes = edges
-      .map(({
-        node: {
-          id,
-          creator: author,
-          title,
-          content: { encoded },
-          pubDate,
-          image,
-        },
-      }) => {
-        const { text: time } = readingTime(encoded);
-        const url = `/insights/${toKebab(title)}`;
-        const date = new Date(pubDate).toString();
+      .map(
+        ({
+          node: {
+            id,
+            creator: author,
+            title,
+            content: { encoded },
+            pubDate,
+            image,
+          },
+        }) => {
+          const { text: time } = readingTime(encoded);
+          const url = `/insights/${toKebab(title)}`;
+          const date = new Date(pubDate).toString();
 
-        return {
-          author,
-          date,
-          id,
-          image,
-          readTime: time,
-          title,
-          type: 'blog',
-          url,
-        };
-      })
+          return {
+            author,
+            date,
+            id,
+            image,
+            readTime: time,
+            title,
+            type: 'blog',
+            url,
+          };
+        },
+      )
       .filter(({ id }) => id !== current);
 
     if (count) {
@@ -73,7 +75,7 @@ export const useBlogOverview = ({ count = null, current = null }) => {
     }
 
     return nodes;
-  }, [edges, count]);
+  }, [edges, count, current]);
 
   return [items];
 };

@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import spacing from '~styles/spacing';
-import breakpoints from '~styles/breakpoints';
-
 import gridLayouts from './insightsGrid.layouts';
+
+import breakpoints from '~styles/breakpoints';
+import spacing from '~styles/spacing';
 
 export const InsightsGridImage = styled.div`
   --height: 215px;
@@ -51,7 +51,7 @@ export const InsightsGridItemContainer = styled.div`
   &:not(:first-of-type) {
     margin-top: 16px;
 
-    @media screen and (min-width: ${breakpoints.small}){
+    @media screen and (min-width: ${breakpoints.small}) {
       margin-top: 0;
     }
   }
@@ -135,8 +135,10 @@ export const InsightsGridContainer = styled.div`
             &:first-of-type {
               flex: 0 0 75%;
               max-width: 75%;
-              padding-right: ${({ reverse }) => (reverse ? '0' : spacing.default)};
-              padding-left: ${({ reverse }) => (reverse ? spacing.default : '0')};
+              padding-right: ${({ reverse }) =>
+                reverse ? '0' : spacing.default};
+              padding-left: ${({ reverse }) =>
+                reverse ? spacing.default : '0'};
               justify-content: flex-start;
 
               ${InsightsGridItemContainer} {

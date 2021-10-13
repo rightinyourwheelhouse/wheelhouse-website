@@ -1,14 +1,9 @@
-import React, {
-  memo, useCallback, useState, useMemo,
-} from 'react';
+import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import React, { memo, useCallback, useState, useMemo } from 'react';
 
-import AuthorInfo from '~components/AuthorInfo';
-
-import { toShortDate } from '~utils/date';
-
+import gridLayouts from './insightsGrid.layouts';
 import {
   InsightsGridItemContainer,
   InsightsGridContainer,
@@ -16,12 +11,17 @@ import {
   Type,
 } from './insightsGrid.styles';
 
-import gridLayouts from './insightsGrid.layouts';
+import AuthorInfo from '~components/AuthorInfo';
+
+import { toShortDate } from '~utils/date';
 
 const InsightsGridOverview = ({ items, layout, reverse }) => {
   const [firstItemHeight, setfirstItemHeight] = useState(0);
 
-  const InsightsGrid = useMemo(() => [...items.slice(1, items.length)], [items]);
+  const InsightsGrid = useMemo(
+    () => [...items.slice(1, items.length)],
+    [items],
+  );
 
   const {
     author: firstItemAuthor,
@@ -34,7 +34,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
     url: firstItemUrl,
   } = items[0] || {};
 
-  const refCallback = useCallback((node) => {
+  const refCallback = useCallback(node => {
     if (node) {
       setfirstItemHeight(node.getBoundingClientRect().height);
     }
@@ -49,17 +49,21 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
   }, [layout]);
 
   return (
-    <InsightsGridContainer stickyHeight={firstItemHeight} layout={layout} reverse={reverse}>
+    <InsightsGridContainer
+      stickyHeight={firstItemHeight}
+      layout={layout}
+      reverse={reverse}
+    >
       <ContainerElement>
         {firstItemTitle && (
           <InsightsGridItemContainer>
             <div ref={refCallback}>
               {firstItemImage && (
-              <Link to={firstItemUrl}>
-                <InsightsGridImage>
-                  <Img fluid={firstItemImage.childImageSharp.fluid} />
-                </InsightsGridImage>
-              </Link>
+                <Link to={firstItemUrl}>
+                  <InsightsGridImage>
+                    <Img fluid={firstItemImage.childImageSharp.fluid} />
+                  </InsightsGridImage>
+                </Link>
               )}
               <Type>{firstItemType}</Type>
               <Link to={firstItemUrl}>
@@ -90,11 +94,11 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
           }) => (
             <InsightsGridItemContainer key={itemTitle}>
               {itemImage && (
-              <Link to={itemUrl}>
-                <InsightsGridImage>
-                  <Img fluid={itemImage.childImageSharp.fluid} />
-                </InsightsGridImage>
-              </Link>
+                <Link to={itemUrl}>
+                  <InsightsGridImage>
+                    <Img fluid={itemImage.childImageSharp.fluid} />
+                  </InsightsGridImage>
+                </Link>
               )}
               <Type>{itemType}</Type>
               <Link to={itemUrl}>
@@ -108,7 +112,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
                 readTime={itemReadTime}
               />
             </InsightsGridItemContainer>
-          )
+          ),
         )}
       </ContainerElement>
     </InsightsGridContainer>
@@ -125,9 +129,11 @@ InsightsGridOverview.propTypes = {
       readTime: PropTypes.string,
       title: PropTypes.string,
       url: PropTypes.string,
-    })
+    }),
   ),
-  layout: PropTypes.oneOf(Object.keys(gridLayouts).map((key) => gridLayouts[key])),
+  layout: PropTypes.oneOf(
+    Object.keys(gridLayouts).map(key => gridLayouts[key]),
+  ),
   reverse: PropTypes.bool,
 };
 

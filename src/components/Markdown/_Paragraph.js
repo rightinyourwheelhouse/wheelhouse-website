@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo } from 'react';
 
 const Paragraph = ({ children }) => {
   const hasImage = !!children.find(
-    (child) => typeof child === 'object' && child.key && !!child.key.match(/image/g)
+    child =>
+      typeof child === 'object' && child.key && !!child.key.match(/image/g),
   );
   return hasImage ? children : <p>{children}</p>;
 };

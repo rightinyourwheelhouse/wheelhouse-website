@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 
-import { useTeam } from '../../api/team/useTeam';
-
 import { CardsContainer } from './teamOverview.styles';
 
-import TeamCard from '~components/TeamCard';
+import { useTeam } from '../../api/team/useTeam';
+
 import SubTitle from '~components/SubTitle';
+import TeamCard from '~components/TeamCard';
 
 const TeamOverview = () => {
   const members = useTeam();
@@ -15,7 +15,7 @@ const TeamOverview = () => {
       <SubTitle>We are</SubTitle>
       <h2>Our talent pool</h2>
       <CardsContainer>
-        {members.map((member) => (
+        {members.map(member => (
           <TeamCard key={member.name} {...member} />
         ))}
       </CardsContainer>

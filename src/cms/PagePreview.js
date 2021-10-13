@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import 'netlify-cms-yoast-seo/dist/main.css';
 
@@ -23,21 +23,22 @@ const PagePreview = ({ entry }) => {
     <div className="yoast">
       <h3 className="yoast__heading">SEO</h3>
       {seo && (
-      <ul className="yoast__items">
-        {seo.map(({ rating, text }, i) => (
-          <li key={i} className={`yoast__item yoast__item--${rating}`}>
-            {text.replace(/<(?:.|\n)*?>/gm, '')}
-          </li>
-        ))}
-      </ul>
+        <ul className="yoast__items">
+          {seo.map(({ rating, text }, i) => (
+            <li key={i} className={`yoast__item yoast__item--${rating}`}>
+              {text.replace(/<(?:.|\n)*?>/gm, '')}
+            </li>
+          ))}
+        </ul>
       )}
       <h3 className="yoast__heading">Content</h3>
       <ul className="yoast__items">
-        {content && content.map(({ rating, text }, i) => (
-          <li key={i} className={`yoast__item yoast__item--${rating}`}>
-            {text.replace(/<(?:.|\n)*?>/gm, '')}
-          </li>
-        ))}
+        {content &&
+          content.map(({ rating, text }, i) => (
+            <li key={i} className={`yoast__item yoast__item--${rating}`}>
+              {text.replace(/<(?:.|\n)*?>/gm, '')}
+            </li>
+          ))}
       </ul>
     </div>
   );

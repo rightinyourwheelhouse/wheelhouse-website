@@ -16,7 +16,7 @@ const shake = () => keyframes`
 
 export const LabelInputContainer = styled.div`
   --width: ${({ width }) => width || '100%'};
-  --foreground: ${({ color }) => (color || 'var(--color-text-primary-900)')};
+  --foreground: ${({ color }) => color || 'var(--color-text-primary-900)'};
   --active: var(--color-text-primary-900);
   --hover: var(--color-text-primary-900);
   --error: var(--color-error);
@@ -49,8 +49,9 @@ export const LabelInputContainer = styled.div`
     background: var(--color-background-primary-400);
   }
 
-  ${({ padding }) => padding
-    && css`
+  ${({ padding }) =>
+    padding &&
+    css`
       padding: 0 var(--spacing);
     `};
 

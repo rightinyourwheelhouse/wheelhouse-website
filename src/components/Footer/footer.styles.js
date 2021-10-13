@@ -1,25 +1,26 @@
 import styled from 'styled-components';
 
 export const LinksContainer = styled.div`
-   > span, > a {
+  > span,
+  > a {
     margin-bottom: 1vw;
     padding-top: 6px;
     padding-bottom: 6px;
-   }
+  }
 
-   a {
-     font-weight: 700;
-     text-transform: lowercase;
-   }
+  a {
+    font-weight: 700;
+    text-transform: lowercase;
+  }
 `;
 
 export const Title = styled.span`
-   color: var(--color-text-primary-100);
-   font-size: .69em;
-   text-transform: uppercase;
-   font-weight: 700;
-   margin-bottom: 1vw;
-   display: block;
+  color: var(--color-text-primary-100);
+  font-size: 0.69em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1vw;
+  display: block;
 `;
 
 export const FooterContainer = styled.footer`
@@ -38,7 +39,7 @@ export const FooterContainer = styled.footer`
     margin: 0;
     color: var(--foreground);
 
-    &.disclaimer{
+    &.disclaimer {
       font-size: 0.8em;
       margin-top: 30px;
     }

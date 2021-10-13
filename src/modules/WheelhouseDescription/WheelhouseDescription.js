@@ -4,7 +4,7 @@ import { WheelhouseDescriptionContainer } from './wheelhouseDescription.styles';
 
 const WheelhouseDescription = () => (
   <WheelhouseDescriptionContainer>
-    <h1>We're javascript experts</h1>
+    <h1>We&apos;re javascript experts</h1>
     <h2>About wheel&shy;house</h2>
     <p>
       We are a team of passionate JavaScript developers, working together to

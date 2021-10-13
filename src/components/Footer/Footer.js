@@ -1,14 +1,5 @@
-import React, { memo } from 'react';
-
 import { Link } from 'gatsby';
-import { Container } from '~components/layoutComponents';
-import Stack from '~components/Stack';
-import TwoColumns from '~components/TwoColumns';
-
-import Raccoons from '~images/raccoons.svg';
-
-import { useNavigation } from '~api/navigation/useNavigation';
-import { useOfficeOverview } from '~api/office/useOfficeOverview';
+import React, { memo } from 'react';
 
 import {
   FooterContainer,
@@ -16,6 +7,14 @@ import {
   Title,
   LinksContainer,
 } from './footer.styles';
+
+import { useNavigation } from '~api/navigation/useNavigation';
+import { useOfficeOverview } from '~api/office/useOfficeOverview';
+import { Container } from '~components/layoutComponents';
+import Stack from '~components/Stack';
+import TwoColumns from '~components/TwoColumns';
+
+import Raccoons from '~images/raccoons.svg';
 
 const Footer = () => {
   const navigationItems = useNavigation();
@@ -97,13 +96,13 @@ const Footer = () => {
           {offices.map(({ address, phone }, i) => (
             // eslint-disable-next-line react/no-array-index-key
             <p key={i}>
-              {address}
-              {' '}
-              <a href={`tel:${phone}`}>{phone}</a>
+              {address} <a href={`tel:${phone}`}>{phone}</a>
             </p>
           ))}
           <p className="disclaimer">
-            <Link to="/privacy-policy" href="/">Privacy policy</Link>
+            <Link to="/privacy-policy" href="/">
+              Privacy policy
+            </Link>
           </p>
         </Stack>
       </Container>

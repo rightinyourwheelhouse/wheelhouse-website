@@ -1,28 +1,30 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Section, Container, ContrastColor } from '~components/layoutComponents';
-import SEO from '~components/SEO';
 import { gridLayouts } from '~components/InsightsGrid';
+import {
+  Section,
+  Container,
+  ContrastColor,
+} from '~components/layoutComponents';
+import Seo from '~components/SEO';
 
 import Layout from '~layouts/default';
 
+import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
 import RadioRaccoons from '~modules/RadioRaccoons';
-import InsightsOverview from '~modules/InsightsOverview';
 
 import colors from '~styles/colors';
 
 const InsightsPage = ({
   data: {
-    pagesJson: {
-      seo,
-    },
+    pagesJson: { seo },
   },
 }) => (
   <Layout>
-    <SEO title={seo.title} description={seo.description} image={seo.image} />
+    <Seo title={seo.title} description={seo.description} image={seo.image} />
 
     <Navigation />
 
@@ -50,7 +52,18 @@ InsightsPage.propTypes = {
   data: PropTypes.shape({
     pagesJson: PropTypes.shape({
       seo: PropTypes.shape({
-        ...SEO.propTypes,
+        article: PropTypes.bool,
+        description: PropTypes.string,
+        image: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            resize: PropTypes.shape({
+              src: PropTypes.string,
+            }),
+          }),
+        }),
+        lang: PropTypes.string,
+        meta: PropTypes.arrayOf(PropTypes.object),
+        title: PropTypes.string,
       }),
     }),
   }).isRequired,

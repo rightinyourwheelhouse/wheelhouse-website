@@ -8,7 +8,7 @@ export const WheelhouseDescriptionContainer = styled.div`
   h1 {
     margin-top: 0;
     position: absolute;
-    max-width: calc(100vw );
+    max-width: calc(100vw);
     text-overflow: unset;
     overflow: hidden;
     top: -2rem;

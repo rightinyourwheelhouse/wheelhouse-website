@@ -1,17 +1,14 @@
-import React, { memo, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import React, { memo, useState, useCallback } from 'react';
 
 import Image from '~components/Image';
 
 const Cinemagraph = ({ image, movie: { publicURL }, ...props }) => {
   const [loaded, setLoaded] = useState(false);
 
-  const onLoadedData = useCallback(
-    () => {
-      setLoaded(true);
-    },
-    [],
-  );
+  const onLoadedData = useCallback(() => {
+    setLoaded(true);
+  }, []);
 
   return (
     <>
@@ -34,7 +31,12 @@ const Cinemagraph = ({ image, movie: { publicURL }, ...props }) => {
 
 Cinemagraph.propTypes = {
   image: PropTypes.shape({
-    ...Image.propTypes,
+    alt: PropTypes.string.isRequired,
+    bw: PropTypes.bool,
+    filename: PropTypes.string,
+    image: PropTypes.shape({}),
+    offset: PropTypes.string,
+    src: PropTypes.string,
   }),
   movie: PropTypes.shape({
     publicURL: PropTypes.string,

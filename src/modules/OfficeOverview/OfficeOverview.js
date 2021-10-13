@@ -1,14 +1,12 @@
-import React, { memo } from 'react';
 import Link from 'gatsby-link';
-
-import SubTitle from '~components/SubTitle';
-import Stack from '~components/Stack';
-import Card from '~components/Card';
-import TwoColumns from '~components/TwoColumns';
+import React, { memo } from 'react';
 
 import { OfficeItemContainer } from './officeOverview.styles';
 
 import { useOfficeOverview } from '~api/office/useOfficeOverview';
+import Card from '~components/Card';
+import SubTitle from '~components/SubTitle';
+import TwoColumns from '~components/TwoColumns';
 
 const OfficeOverview = () => {
   const offices = useOfficeOverview();
@@ -20,9 +18,7 @@ const OfficeOverview = () => {
 
       <OfficeItemContainer>
         <TwoColumns>
-          {offices.map(({
-            name, address, slug, mail, phone,
-          }) => (
+          {offices.map(({ name, address, slug, mail, phone }) => (
             <Card key={name}>
               <Link to={`/offices/${slug}`} key={slug}>
                 <h3>{name}</h3>

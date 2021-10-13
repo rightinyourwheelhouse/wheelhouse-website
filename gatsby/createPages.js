@@ -1,4 +1,5 @@
 import path from 'path';
+
 import { toKebab } from '../src/utils/string';
 
 export default async function createPages({
@@ -121,6 +122,6 @@ export default async function createPages({
         context: { id },
         path: `${slug}`,
       });
-    }
+    },
   );
 }

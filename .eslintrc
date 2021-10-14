@@ -1,11 +1,10 @@
 {
   "extends": [
-    "eslint-config-daren"
+    "daren",
+    "daren/react",
+    "daren/jsx-a11y"
   ],
   "settings": {
-    "react": {
-      "version": "detect"
-    },
     "import/resolver": {
       "alias": [
         [

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import styled from 'styled-components';
 
 import { useTeamRecommendations } from '~api/team/useTeamRecommendations';
@@ -18,6 +19,7 @@ import Seo from '~components/SEO';
 
 import { COMPANY_NAME } from '~data/company';
 import Layout from '~layouts/default';
+import GithubLink from '~modules/GithubLink';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 
@@ -142,6 +144,15 @@ const Team = ({
           </Container>
         </Section>
       )}
+
+      <Section>
+        <Container>
+          <Content>
+            <h2> Open Source Projects </h2>
+            <GithubLink />
+          </Content>
+        </Container>
+      </Section>
 
       <Section>
         <Container>

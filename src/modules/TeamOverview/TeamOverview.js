@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { CardsContainer } from './teamOverview.styles';
 
-import { useTeam } from '../../api/team/useTeam';
+import { useTeam } from '../../services/team/useTeam';
 
 import SubTitle from '~components/SubTitle';
 import TeamCard from '~components/TeamCard';

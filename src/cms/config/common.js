@@ -62,3 +62,34 @@ export const qAndA = {
     },
   ],
 };
+
+export const openSourceProject = {
+  label: 'Open-source project',
+  name: 'openSourceProject',
+  widget: 'object',
+  required: false,
+  create: true,
+  fields: [
+    imageWithAlt,
+    {
+      label: 'Site name',
+      name: 'site_name',
+      widget: 'text',
+    },
+    {
+      label: 'Title',
+      name: 'title',
+      widget: 'text',
+    },
+    {
+      label: 'Url',
+      name: 'url',
+      widget: 'text',
+    },
+    {
+      label: 'Description',
+      name: 'description',
+      widget: 'text',
+    },
+  ],
+};

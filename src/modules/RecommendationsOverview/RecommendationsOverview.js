@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { useRecommendationsOverview } from '~api/insights/useRecommendationsOverview';
 import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
+import { useRecommendationsOverview } from '~services/insights/useRecommendationsOverview';
 
 const RecommendationsOverview = ({ count, current, layout }) => {
   const [recommendations] = useRecommendationsOverview({ count, current });

@@ -8,8 +8,8 @@
     "import/resolver": {
       "alias": [
         [
-          "~api",
-          "./src/api"
+          "~services",
+          "./src/services"
         ],
         [
           "~components",

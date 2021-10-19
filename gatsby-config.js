@@ -74,7 +74,6 @@ module.exports = {
     {
       options: {
         alias: {
-          '~api': 'src/api',
           '~components': 'src/components',
           '~data': 'src/data',
           '~hooks': 'src/hooks',
@@ -82,6 +81,7 @@ module.exports = {
           '~layouts': 'src/layouts',
           '~modules': 'src/modules',
           '~pages': 'src/pages',
+          '~services': 'src/services',
           '~styles': 'src/styles',
           '~templates': 'src/templates',
           '~utils': 'src/utils',

@@ -13,8 +13,8 @@ import {
   WrittenBy,
 } from './authorInfo.styles';
 
-import { useTeam } from '~api/team/useTeam';
 import TwoColumns from '~components/TwoColumns';
+import { useTeam } from '~services/team/useTeam';
 
 const AuthorInfo = ({
   author,

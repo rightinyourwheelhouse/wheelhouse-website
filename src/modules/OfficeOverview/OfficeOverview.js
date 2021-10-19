@@ -3,10 +3,10 @@ import React, { memo } from 'react';
 
 import { OfficeItemContainer } from './officeOverview.styles';
 
-import { useOfficeOverview } from '~api/office/useOfficeOverview';
 import Card from '~components/Card';
 import SubTitle from '~components/SubTitle';
 import TwoColumns from '~components/TwoColumns';
+import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
 const OfficeOverview = () => {
   const offices = useOfficeOverview();

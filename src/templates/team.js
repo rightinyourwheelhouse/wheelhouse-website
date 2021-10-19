@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import { useTeamRecommendations } from '~api/team/useTeamRecommendations';
 import Button from '~components/Button';
 import Cinemagraph from '~components/Cinemagraph';
 import Content from '~components/Content';
@@ -20,6 +19,7 @@ import { COMPANY_NAME } from '~data/company';
 import Layout from '~layouts/default';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
+import { useTeamRecommendations } from '~services/team/useTeamRecommendations';
 
 import spacing from '~styles/spacing';
 

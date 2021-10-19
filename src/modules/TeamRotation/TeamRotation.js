@@ -3,7 +3,7 @@ import React, { memo, useState, useEffect } from 'react';
 
 import { RotationContainer } from './teamRotation.styles';
 
-import { useTeamRotationImages } from '~api/images/useTeamRotationImages';
+import { useTeamRotationImages } from '~services/images/useTeamRotationImages';
 
 const TeamRotation = () => {
   const [index, setIndex] = useState(0);

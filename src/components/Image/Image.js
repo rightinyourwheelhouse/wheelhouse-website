@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import styled from 'styled-components';
 
-import { useImage } from '~api/images/useImage';
+import { useImage } from '~services/images/useImage';
 
 import spacing from '~styles/spacing';
 

@@ -8,13 +8,13 @@ import {
   LinksContainer,
 } from './footer.styles';
 
-import { useNavigation } from '~api/navigation/useNavigation';
-import { useOfficeOverview } from '~api/office/useOfficeOverview';
 import { Container } from '~components/layoutComponents';
 import Stack from '~components/Stack';
 import TwoColumns from '~components/TwoColumns';
 
 import Raccoons from '~images/raccoons.svg';
+import { useNavigation } from '~services/navigation/useNavigation';
+import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
 const Footer = () => {
   const navigationItems = useNavigation();

@@ -90,6 +90,7 @@ module.exports = {
       resolve: 'gatsby-plugin-alias-imports',
     },
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-styled-components',
     {
       options: {

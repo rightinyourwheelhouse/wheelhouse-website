@@ -12,7 +12,7 @@ import Layout from '~layouts/default';
 import Navigation from '~modules/Navigation';
 import colors from '~styles/colors';
 
-export const OuterContainer = styled.div`
+const OuterContainer = styled.div`
   margin-top: 300px;
 `;
 

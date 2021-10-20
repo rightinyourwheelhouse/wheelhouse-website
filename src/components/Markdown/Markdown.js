@@ -1,23 +1,21 @@
 import PropTypes from 'prop-types';
-import React, { memo } from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import Paragraph from './_Paragraph';
 
 import Image from '~components/Image';
 
-const Markdown = ({ source }) => (
-  <ReactMarkdown
-    source={source}
-    renderers={{
-      image: Image,
-      paragraph: Paragraph,
-    }}
-  />
-);
+function Markdown({ children }) {
+  return (
+    <ReactMarkdown components={{ img: Image, p: Paragraph }}>
+      {children}
+    </ReactMarkdown>
+  );
+}
 
 Markdown.propTypes = {
-  source: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
-export default memo(Markdown);
+export default Markdown;

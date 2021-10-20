@@ -83,7 +83,7 @@ const Recommendations = ({
       <Section>
         <Container>
           <Content>
-            {introduction && <Markdown source={introduction} />}
+            {introduction && <Markdown>{introduction}</Markdown>}
             <OrderedList>
               {items.map(
                 ({
@@ -104,7 +104,7 @@ const Recommendations = ({
                 ),
               )}
             </OrderedList>
-            {slot && <Markdown source={slot} />}
+            {slot && <Markdown>{slot}</Markdown>}
           </Content>
           <AuthorInfo
             full

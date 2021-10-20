@@ -40,7 +40,7 @@ const Office = ({
               <p>{address}</p>
             </div>
             <div>
-              <ReactMarkdown children={description} />
+              <ReactMarkdown>{description}</ReactMarkdown>
             </div>
           </TwoColumns>
         </Content>
@@ -48,7 +48,7 @@ const Office = ({
         <Content>
           <h2>How to reach us</h2>
           <div>
-            <ReactMarkdown children={howToReach} />
+            <ReactMarkdown>{howToReach}</ReactMarkdown>
           </div>
         </Content>
       </Container>

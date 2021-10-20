@@ -15,7 +15,7 @@ const QAndA = ({ items }) => (
             <h3>{q}</h3>
           </div>
           <div>
-            <Markdown source={a} />
+            <Markdown>{a}</Markdown>
           </div>
         </TwoColumns>
       </QAndAItemContainer>

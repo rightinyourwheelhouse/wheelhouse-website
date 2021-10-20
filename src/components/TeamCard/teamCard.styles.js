@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
+import breakpoints from '~styles/breakpoints';
+
 export const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   margin-bottom: 20px;
   overflow: hidden;
-  filter: brightness(0.1);
+  filter: brightness(1);
   transition: filter 0.3s;
+
+  @media screen and (min-width: ${breakpoints.small}) {
+    filter: brightness(0.1);
+  }
 `;
 
 export const CardContainer = styled.div`

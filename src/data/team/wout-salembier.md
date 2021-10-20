@@ -38,5 +38,17 @@ qAndA:
       ![Game computer](assets/gaming-pc.png "Game computer")
   - q: Describe yourself in emojis
     a: 🧑🏼‍💻🎮🍟👟🚴🏻‍♂️
+openSourceProject:
+  site_name: GitHub
+  imageWithAlt:
+    alt: This a mancave but for vr! This can be used to see your friends live in vr
+      on the web. You can hangout and play games with each other and have a fun
+      time! You can talk to each other to get more imm...
+    image: https://repository-images.githubusercontent.com/307073564/5a4f0080-3e1e-11eb-885a-f09b10c79c5c
+  title: GitHub - Wotusay/Personal-Passion-webVR-webAR
+  url: https://github.com/Wotusay/Personal-Passion-webVR-webAR
+  description: This a mancave but for vr! This can be used to see your friends
+    live in vr on the web. You can hangout and play games with each other and
+    have a fun time! You can talk to each other to get more imm...
 showPickedBy: true
 ---

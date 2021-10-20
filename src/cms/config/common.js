@@ -74,22 +74,22 @@ export const openSourceProject = {
     {
       label: 'Site name',
       name: 'site_name',
-      widget: 'text',
+      widget: 'string',
     },
     {
       label: 'Title',
       name: 'title',
-      widget: 'text',
+      widget: 'string',
     },
     {
       label: 'Url',
       name: 'url',
-      widget: 'text',
+      widget: 'string',
     },
     {
       label: 'Description',
       name: 'description',
-      widget: 'text',
+      widget: 'string',
     },
   ],
 };

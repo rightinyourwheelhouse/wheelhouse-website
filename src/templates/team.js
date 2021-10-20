@@ -26,22 +26,21 @@ import spacing from '~styles/spacing';
 const isWindowContext = typeof window !== 'undefined';
 
 const HeaderContainer = styled.div`
-    h2 {
-      font-size: 40px;
-      text-transform: unset;
-      padding-bottom: var(--spacing-default);
-      position: relative;
-      margin-bottom: var(--spacing-default);
+  h2 {
+    font-size: 40px;
+    text-transform: unset;
+    padding-bottom: var(--spacing-default);
+    position: relative;
+    margin-bottom: var(--spacing-default);
 
-      &:after {
-        content: "";
-        height: 2px;
-        width: 75px;
-        background: var(--color-text-primary-900);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
+    &:after {
+      content: '';
+      height: 2px;
+      width: 75px;
+      background: var(--color-text-primary-900);
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
   }
 `;
@@ -87,7 +86,7 @@ const Team = ({
               <p>
                 {name} is a {role} at Wheelhouse
               </p>
-              <Markdown source={rawMarkdownBody} />
+              <Markdown>{rawMarkdownBody}</Markdown>
             </Content>
           </HeaderContainer>
         </Container>

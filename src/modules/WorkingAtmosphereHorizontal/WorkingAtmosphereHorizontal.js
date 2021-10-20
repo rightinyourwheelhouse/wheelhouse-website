@@ -3,9 +3,8 @@ import React, { memo } from 'react';
 
 import { WorkingAtmosphereContainer } from './workingAtmosphereHorizontal.styles';
 
-import { useWorkingAtmosphereImages } from '~api/images/useWorkingAtmosphereImages';
-
 import HorizontalItemList from '~components/HorizontalItemList';
+import { useWorkingAtmosphereImages } from '~services/images/useWorkingAtmosphereImages';
 
 import { orientationName } from '~utils/image';
 

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { useBlogOverview } from '~api/insights/useBlogOverview';
 import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
+import { useBlogOverview } from '~services/insights/useBlogOverview';
 
 const BlogOverview = ({ count, current, layout }) => {
   const [blogItems] = useBlogOverview({ count, current });

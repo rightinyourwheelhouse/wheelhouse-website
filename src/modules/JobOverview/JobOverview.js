@@ -8,12 +8,12 @@ import {
   IconContainer,
 } from './jobOverview.styles';
 
-import { useJobOverview } from '~api/job/useJobOverview';
 import CircleBackground from '~components/CircleBackground';
 
 import Stack from '~components/Stack';
 
 import Arrow from '~images/icons/arrow-top-right.svg';
+import { useJobOverview } from '~services/job/useJobOverview';
 
 const JobOverview = ({ current }) => {
   const jobs = useJobOverview({ count: 2, current });

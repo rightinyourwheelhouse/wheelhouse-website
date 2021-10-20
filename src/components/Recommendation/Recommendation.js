@@ -12,7 +12,7 @@ const Recommendation = ({ url, title, author, description, pickedBy }) => (
       {title}
     </a>
     {author && <h4>Author: {author}</h4>}
-    <blockquote>{description && <Markdown source={description} />}</blockquote>
+    <blockquote>{description && <Markdown>{description}</Markdown>}</blockquote>
 
     {pickedBy && <AuthorInfo author={pickedBy} full pickedBy />}
   </RecommendationContainer>

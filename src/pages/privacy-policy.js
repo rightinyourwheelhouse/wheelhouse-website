@@ -27,7 +27,7 @@ const PrivacyPolicyPage = ({
       <Container offset={spacing.large}>
         <h2>{title}</h2>
         <Content>
-          <Markdown source={body} />
+          <Markdown>{body}</Markdown>
         </Content>
       </Container>
     </Section>

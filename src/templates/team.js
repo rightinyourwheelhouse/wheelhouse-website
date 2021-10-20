@@ -96,7 +96,7 @@ const Team = ({
               <p>
                 {name} is a {role} at Wheelhouse
               </p>
-              <Markdown source={rawMarkdownBody} />
+              <Markdown>{rawMarkdownBody}</Markdown>
             </Content>
           </HeaderContainer>
         </Container>

@@ -6,18 +6,19 @@ import Paragraph from './_Paragraph';
 
 import Image from '~components/Image';
 
-const Markdown = ({ source }) => (
+const Markdown = ({ children }) => (
   <ReactMarkdown
-    source={source}
     renderers={{
       image: Image,
       paragraph: Paragraph,
     }}
-  />
+  >
+    {children}
+  </ReactMarkdown>
 );
 
 Markdown.propTypes = {
-  source: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default memo(Markdown);

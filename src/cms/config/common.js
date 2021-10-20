@@ -70,26 +70,18 @@ export const openSourceProject = {
   required: false,
   create: true,
   fields: [
-    imageWithAlt,
     {
-      label: 'Site name',
-      name: 'site_name',
-      widget: 'string',
-    },
-    {
-      label: 'Title',
-      name: 'title',
-      widget: 'string',
-    },
-    {
-      label: 'Url',
-      name: 'url',
-      widget: 'string',
-    },
-    {
-      label: 'Description',
-      name: 'description',
-      widget: 'string',
+      label: 'Github Repos links',
+      name: 'repos_links',
+      widget: 'list',
+      summary: 'repo_links',
+      max: 5,
+      min: 1,
+      field: {
+        label: 'Repo link',
+        name: 'repo_link',
+        widget: 'string',
+      },
     },
   ],
 };

@@ -12,6 +12,7 @@ import Cinemagraph from '~components/Cinemagraph';
 import Content from '~components/Content';
 import { Section, Container } from '~components/layoutComponents';
 import Markdown from '~components/Markdown';
+import OpenSourceLink from '~components/OpenSourceLink';
 import OrderedList from '~components/OrderedList';
 import QAndA from '~components/QAndA';
 import Recommendation from '~components/Recommendation';
@@ -19,7 +20,6 @@ import Seo from '~components/SEO';
 
 import { COMPANY_NAME } from '~data/company';
 import Layout from '~layouts/default';
-import GithubLink from '~modules/GithubLink';
 import Navigation from '~modules/Navigation';
 import TeamOverview from '~modules/TeamOverview';
 
@@ -53,7 +53,14 @@ const Team = ({
     employee: {
       excerpt,
       id,
-      frontmatter: { name, role, detailImage, qAndA, description },
+      frontmatter: {
+        name,
+        role,
+        detailImage,
+        qAndA,
+        description,
+        openSourceProject,
+      },
       rawMarkdownBody,
     },
   },
@@ -145,14 +152,16 @@ const Team = ({
         </Section>
       )}
 
-      <Section>
-        <Container>
-          <Content>
-            <h2> Open Source Projects </h2>
-            <GithubLink />
-          </Content>
-        </Container>
-      </Section>
+      {openSourceProject && (
+        <Section>
+          <Container>
+            <Content>
+              <h2> Open Source Projects </h2>
+              <OpenSourceLink items={openSourceProject} />
+            </Content>
+          </Container>
+        </Section>
+      )}
 
       <Section>
         <Container>
@@ -221,6 +230,16 @@ export const query = graphql`
         qAndA {
           q
           a
+        }
+        openSourceProject {
+          description
+          title
+          url
+          site_name
+          imageWithAlt {
+            alt
+            image
+          }
         }
         role
       }

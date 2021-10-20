@@ -11,7 +11,6 @@ import Cinemagraph from '~components/Cinemagraph';
 import Content from '~components/Content';
 import { Section, Container } from '~components/layoutComponents';
 import Markdown from '~components/Markdown';
-import OpenSourceLink from '~components/OpenSourceLink';
 import OrderedList from '~components/OrderedList';
 import QAndA from '~components/QAndA';
 import Recommendation from '~components/Recommendation';
@@ -20,6 +19,7 @@ import Seo from '~components/SEO';
 import { COMPANY_NAME } from '~data/company';
 import Layout from '~layouts/default';
 import Navigation from '~modules/Navigation';
+import OpenSourceLink from '~modules/OpenSourceLink';
 import TeamOverview from '~modules/TeamOverview';
 import { useTeamRecommendations } from '~services/team/useTeamRecommendations';
 
@@ -157,7 +157,10 @@ const Team = ({
           <Container>
             <Content>
               <h2> Open Source Projects </h2>
-              <OpenSourceLink items={openSourceProject} />
+              {openSourceProject.repos_links.map(link => console.info(link))}
+              {openSourceProject.repos_links.map(link => (
+                <OpenSourceLink key={link} link={link} />
+              ))}
             </Content>
           </Container>
         </Section>
@@ -232,14 +235,7 @@ export const query = graphql`
           a
         }
         openSourceProject {
-          description
-          title
-          url
-          site_name
-          imageWithAlt {
-            alt
-            image
-          }
+          repos_links
         }
         role
       }

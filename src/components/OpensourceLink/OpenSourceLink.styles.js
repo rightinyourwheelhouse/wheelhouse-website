@@ -67,9 +67,6 @@ export const OpenSourceTitle = styled.p`
   max-width: 380px;
   margin-bottom: 15px;
   text-decoration: underline;
-  @media screen and (min-width: ${breakpoints.large}) {
-    font-size: 1.1rem;
-  }
 `;
 
 export const OpensSourceLink = styled.p`

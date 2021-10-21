@@ -13,7 +13,7 @@ export const OpenSourceContainer = styled.a`
     display: none;
   }
 
-  @media screen and (min-width: ${breakpoints.medium}) {
+  @media screen and (min-width: ${breakpoints.small}) {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
@@ -23,17 +23,26 @@ export const OpenSourceContainer = styled.a`
     margin-top: var(--spacing-large);
 
     img {
+      display: initial;
       width: unset;
       border-top-right-radius: 14px;
       border-bottom-right-radius: 14px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-position: 50% 50%;
     }
+  }
+
+  @media screen and (min-width: ${breakpoints.large}) {
+    width: unset;
   }
 `;
 
 export const OpenSourceInformationContainer = styled.div`
   p {
     padding: 20px;
-    max-width: 380px;
+    max-width: 707px;
   }
   @media screen and (min-width: ${breakpoints.medium}) {
     padding: 10px;
@@ -48,9 +57,8 @@ export const OpenSourceDescription = styled.p`
   font-size: 1.1rem;
   max-width: 380px;
   margin-top: 15px;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    font-size: 15px;
+  @media screen and (min-width: ${breakpoints.large}) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -58,31 +66,31 @@ export const OpenSourceTitle = styled.p`
   font-weight: bold;
   max-width: 380px;
   margin-bottom: 15px;
-  @media screen and (min-width: ${breakpoints.medium}) {
-    font-size: 15px;
+  text-decoration: underline;
+  @media screen and (min-width: ${breakpoints.large}) {
+    font-size: 1.1rem;
   }
 `;
 
 export const OpensSourceLink = styled.p`
   display: none;
   @media screen and (min-width: ${breakpoints.medium}) {
-    text-decoration: none;
     color: var(--color-text-primary-800);
     font-weight: 300;
     cursor: pointer;
-    font-size: 15px;
-    line-height: unset;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    display: initial;
   }
 `;
 
 export const OpensSourceStarGazers = styled.p`
   @media screen and (min-width: ${breakpoints.medium}) {
-    text-decoration: none;
-    color: var(--color-text-primary-800);
     font-weight: 300;
     cursor: pointer;
-    font-size: var(--font-size-small);
-    line-height: unset;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: initial;
   }
 `;
 
@@ -90,6 +98,7 @@ export const OpenSourceContainerLinkContainer = styled.div`
   display: flex;
   justify-content: right;
   @media screen and (min-width: ${breakpoints.medium}) {
+    justify-content: center;
     display: flex;
     gap: 10px;
     margin-top: calc(var(--spacing-default) - 6px);
@@ -98,6 +107,9 @@ export const OpenSourceContainerLinkContainer = styled.div`
 
 export const OpenSourceContainerStargazersContainer = styled.div`
   display: flex;
+  path {
+    fill: var(--color-primary);
+  }
   @media screen and (min-width: ${breakpoints.medium}) {
     display: flex;
     gap: 10px;

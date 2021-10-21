@@ -24,7 +24,7 @@ const OpenSourceLinkComponent = ({ items }) => (
         </S.OpenSourceContainerLinkContainer>
       </S.OpenSourceContainerIconsContainer>
     </S.OpenSourceInformationContainer>
-    <img width="220" height="230" src={items.avatarUrl} alt={items.fullName} />
+    <img width="230" height="230" src={items.avatarUrl} alt={items.fullName} />
   </S.OpenSourceContainer>
 );
 

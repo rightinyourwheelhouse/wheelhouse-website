@@ -4,10 +4,10 @@ visible: true
 name: Wout Salembier
 role: Junior JavaScript Engineer
 description: is a developer who's eager to learn new things
-image: assets/wout.png
+image: /assets/wout.png
 detailImage:
-  image: assets/img_3592.jpg
-  movingPicture: assets/img_3592.jpg
+  image: /assets/img_3592.jpg
+  movingPicture: /assets/img_3592.jpg
 qAndA:
   - q: What’s the best place you’ve traveled to?
     a: >-
@@ -15,7 +15,7 @@ qAndA:
       Definitely would recommend it!
 
 
-      ![Malgrat de Mar](assets/spain.png "Malgrat de Mar")
+      ![Malgrat de Mar](/assets/spain.png "Malgrat de Mar")
   - q: What's your favorite movie?
     a: This has to be Blade Runner 2049. Just watch it!
   - q: Why are you a developer?
@@ -35,7 +35,7 @@ qAndA:
 
       GPU: RTX 2070 SUPER
 
-      ![Game computer](assets/gaming-pc.png "Game computer")
+      ![Game computer](/assets/gaming-pc.png "Game computer")
   - q: Describe yourself in emojis
     a: 🧑🏼‍💻🎮🍟👟🚴🏻‍♂️
 showPickedBy: true

@@ -30,7 +30,7 @@ export const image = {
   label: 'Image',
   name: 'image',
   widget: 'image',
-  default: 'assets/default-image.png',
+  default: '/assets/default-image.png',
 };
 
 export const imageWithAlt = {

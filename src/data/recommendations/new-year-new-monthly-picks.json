@@ -9,7 +9,7 @@
     {
       "title": "Three cup mushrooms",
       "url": "https://chejorge.com/2020/07/09/three-cup-mushrooms/",
-      "description": "\n\n![three cup mushroom](assets/cup-mushroom.jpg \"three cup mushroom\")\n\nThis simple dish is great as a starter or as a quick and easy dinner. The three cup sauce is so full of flavor and the mushrooms just soak it all up. George has a lot of interesting plant-based recipes.",
+      "description": "\n\n![three cup mushroom](/assets/cup-mushroom.jpg \"three cup mushroom\")\n\nThis simple dish is great as a starter or as a quick and easy dinner. The three cup sauce is so full of flavor and the mushrooms just soak it all up. George has a lot of interesting plant-based recipes.",
       "pickedBy": "Roel Goossens"
     },
     {
@@ -45,6 +45,6 @@
     "picks"
   ],
   "introduction": "To start the year off, we gathered our new picks for this month. Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us.",
-  "image": "assets/roel_resolutions.png",
+  "image": "/assets/roel_resolutions.png",
   "description": "Every month we each pick the greatest thing that we found last month and share it with you"
 }

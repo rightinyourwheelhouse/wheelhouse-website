@@ -4,17 +4,17 @@ visible: true
 name: Aagje Reynders
 role: front-end developer
 description: "loves creating new things: UI's at work, cosplays at home"
-image: assets/aagje.png
+image: /assets/aagje.png
 detailImage:
-  image: assets/aagje-cinemagraph-still.png
-  movingPicture: assets/aagje-cinemagraph.mp4
+  image: /assets/aagje-cinemagraph-still.png
+  movingPicture: /assets/aagje-cinemagraph.mp4
 qAndA:
   - q: "Describe yourself using only emojis:"
     a: "###### 🐍🍕🖤💀"
   - q: What's your favourite anime?
     a: Jojo Bizarre Adventure
   - q: What's your most challenging cosplay?
-    a: '![Aagje Cosplay](assets/aagje-hollow.jpeg "Aagje Cosplay")'
+    a: '![Aagje Cosplay](/assets/aagje-hollow.jpeg "Aagje Cosplay")'
   - q: Why did you start coding?
     a: When I was 14 years old, I played this Runescape remake with friends and met
       the person who made it, I was really interested in how he managed to code
@@ -24,6 +24,6 @@ qAndA:
       Thats how he explained me what he was doing. Little did I know that he was
       just using Command prompt. Not as exciting as I remember it was!
   - q: My desk layout
-    a: '![Aagjes Desk layout](assets/20201127_1126582.jpg "Aagjes Desk layout")'
+    a: '![Aagjes Desk layout](/assets/20201127_1126582.jpg "Aagjes Desk layout")'
 showPickedBy: true
 ---

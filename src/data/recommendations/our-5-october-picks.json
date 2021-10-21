@@ -7,7 +7,7 @@
       "pickedBy": "Rafaël Mindreau"
     },
     {
-      "description": "![snapchat anime filter](assets/animefilter-snapchat.jpg \"snapchat anime filter\")\n\nMy pick of the month is going to be the snapchat anime filter. It's really impressive how it works and you can still recognize yourself. As a weeb myself I totally approve this filter!",
+      "description": "![snapchat anime filter](/assets/animefilter-snapchat.jpg \"snapchat anime filter\")\n\nMy pick of the month is going to be the snapchat anime filter. It's really impressive how it works and you can still recognize yourself. As a weeb myself I totally approve this filter!",
       "title": "Snapchat anime filter",
       "pickedBy": "Aagje Reynders"
     },
@@ -39,6 +39,6 @@
     "picks"
   ],
   "introduction": "Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us. This time we're sharing our picks for october.",
-  "image": "assets/wheelhouse-picks-oktober.png",
+  "image": "/assets/wheelhouse-picks-oktober.png",
   "description": "Each month we pick 1 thing we found very interesting and put it into a list. "
 }

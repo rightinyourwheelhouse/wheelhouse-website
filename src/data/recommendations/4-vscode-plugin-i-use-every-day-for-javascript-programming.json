@@ -35,7 +35,7 @@
     "javascript"
   ],
   "introduction": "Having the right tools for the job makes life as a developer easier. VSCode is a very popular code editor and is also the one I prefer. The many extensions you can install are great, but there are so many that it might be hard to find the \"right ones\".\n\nI made a list about the ones that I find to be indispensable.\n",
-  "image": "assets/vscode-background.png",
+  "image": "/assets/vscode-background.png",
   "description": "A curated list of extensions I could not live without.",
   "slot": ""
 }

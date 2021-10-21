@@ -4,13 +4,9 @@ import ReactMarkdown from 'react-markdown';
 
 import Paragraph from './_Paragraph';
 
-import Image from '~components/Image';
-
 function Markdown({ children }) {
   return (
-    <ReactMarkdown components={{ img: Image, p: Paragraph }}>
-      {children}
-    </ReactMarkdown>
+    <ReactMarkdown components={{ p: Paragraph }}>{children}</ReactMarkdown>
   );
 }
 

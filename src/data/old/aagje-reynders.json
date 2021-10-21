@@ -2,6 +2,6 @@
   "name": "Aagje Reynders",
   "role": "front-end developer",
   "description": "loves creating new things: UI's at work, cosplays at home.",
-  "image": "assets/aagje-2.jpg",
+  "image": "/assets/aagje-2.jpg",
   "visible": true
 }

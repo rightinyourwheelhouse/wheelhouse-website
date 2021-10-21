@@ -8,7 +8,7 @@
       "pickedBy": "Aagje Reynders"
     },
     {
-      "description": "![World Vegan Day](assets/worldveganday.png \"World Vegan Day\")\n\nThe 1ste of November was world vegan day. There are many initiatives that promote the vegan lifestyle in November. There is a general consensus in the scientific community that switching to a mostly plant-based diet is a necessary step in the fight against climate change.",
+      "description": "![World Vegan Day](/assets/worldveganday.png \"World Vegan Day\")\n\nThe 1ste of November was world vegan day. There are many initiatives that promote the vegan lifestyle in November. There is a general consensus in the scientific community that switching to a mostly plant-based diet is a necessary step in the fight against climate change.",
       "title": "World vegan day",
       "pickedBy": "Roel Goossens"
     },
@@ -39,6 +39,6 @@
     "picks"
   ],
   "introduction": "Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us. This time we're sharing our picks for November.",
-  "image": "assets/worldveganday.png",
+  "image": "/assets/worldveganday.png",
   "description": "Our monthly picks where each of us pick something we liked in the past month."
 }

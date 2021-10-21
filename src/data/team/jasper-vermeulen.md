@@ -4,13 +4,13 @@ visible: true
 name: Jasper Vermeulen
 role: Junior JavaScript Engineer
 description: is the developer with the cleanest desk you've ever seen
-image: assets/jasper.png
+image: /assets/jasper.png
 detailImage:
-  image: assets/img_3602.jpg
-  movingPicture: assets/img_3602.jpg
+  image: /assets/img_3602.jpg
+  movingPicture: /assets/img_3602.jpg
 qAndA:
   - q: What's on your desk?
-    a: "![The cleanest desk you've ever seen](assets/untitled.png \"The cleanest
+    a: "![The cleanest desk you've ever seen](/assets/untitled.png \"The cleanest
       desk you've ever seen\")"
   - q: Describe yourself using only emojis
     a: 💻🏕️🐶🗺️
@@ -28,7 +28,7 @@ qAndA:
     a: |-
       I’m a dog person, my best friend is my dog!
 
-      ![The cutest dog you've ever seen](assets/dog.png "Bolle")
+      ![The cutest dog you've ever seen](/assets/dog.png "Bolle")
 showPickedBy: true
 ---
 I’m Jasper, I am a digital designer and developer. I’m very interested in JavaScript and all the frameworks behind it, that’s why I joined Wheelhouse. During summer, you can find me on summer camps with Kazou!

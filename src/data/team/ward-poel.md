@@ -4,10 +4,10 @@ visible: true
 name: Ward Poel
 role: Full-stack developer
 description: is a full-stack developer that kicks your ass in ping-pong
-image: assets/ward.png
+image: /assets/ward.png
 detailImage:
-  image: assets/ward-cine-still.jpg
-  movingPicture: assets/mvi_3176_2.mp4
+  image: /assets/ward-cine-still.jpg
+  movingPicture: /assets/mvi_3176_2.mp4
 qAndA:
   - q: Describe yourself using only emojis
     a: "###### 👨‍💻🏓🐶 👀 🎵"
@@ -15,7 +15,7 @@ qAndA:
     a: Just a simple pizza Margherita 😋
   - q: What's on your desk?
     a: |-
-      ![ward's desk](assets/image-1-.png "Ward's desk")
+      ![ward's desk](/assets/image-1-.png "Ward's desk")
 
       * My 13" **Macbook Pro** and 2 external displays
       * **Mouse**
@@ -37,6 +37,6 @@ qAndA:
     a: |-
       Table tennis 🏓  and mountain biking 🚵‍♂️
 
-      ![hobbies ward](assets/hobbies-ward.png "Ward's hobbies")
+      ![hobbies ward](/assets/hobbies-ward.png "Ward's hobbies")
 showPickedBy: true
 ---

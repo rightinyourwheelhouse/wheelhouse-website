@@ -33,6 +33,6 @@
     "podcasts"
   ],
   "introduction": "Chances are that you are probably up to date on your podcast listenings and are looking for some new material. It can be hard separating the wheat from chaff having too much choice. I usually listen to podcasts when I go for a run or when I'm in the car. So I really like easy to listen to podcasts that give me an idea so I can take that idea when I like it and look it up if I wanted to know more about it. These are the ones about Web Development I like the most.",
-  "image": "assets/podcasts.png",
+  "image": "/assets/podcasts.png",
   "description": "Easy to listen to podcasts about Javascript to listen to in your car, on a run or wherever you want."
 }

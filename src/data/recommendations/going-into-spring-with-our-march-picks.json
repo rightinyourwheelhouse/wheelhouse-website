@@ -15,7 +15,7 @@
     {
       "title": "Lichess",
       "url": "https://lichess.org",
-      "description": "Lichess is an open-source alternative to chess.com. I started playing chess after watching The Queen's Gambit. What a drop-dead cliché! Still, I'll beat all of your asses one day, just wait for it! 😤 Okay, probably not, but I've come to really appreciate the game's versatility and various situations. By the way, I have always admired how ancient the game really is.\n\n\n\n![](assets/e-h-qrp3apqf15g-unsplash.jpg)",
+      "description": "Lichess is an open-source alternative to chess.com. I started playing chess after watching The Queen's Gambit. What a drop-dead cliché! Still, I'll beat all of your asses one day, just wait for it! 😤 Okay, probably not, but I've come to really appreciate the game's versatility and various situations. By the way, I have always admired how ancient the game really is.\n\n\n\n![](/assets/e-h-qrp3apqf15g-unsplash.jpg)",
       "pickedBy": "Rafaël Mindreau"
     },
     {
@@ -37,5 +37,5 @@
       "pickedBy": "Aagje Reynders"
     }
   ],
-  "image": "assets/pickofthemonth_grijptang.png"
+  "image": "/assets/pickofthemonth_grijptang.png"
 }

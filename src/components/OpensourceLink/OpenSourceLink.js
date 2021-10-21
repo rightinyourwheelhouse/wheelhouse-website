@@ -1,18 +1,38 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { OpenSourceContainer } from './OpenSourceLink.styles';
+import {
+  OpenSourceContainer,
+  OpenSourceInformationContainer,
+  OpenSourceDescription,
+  OpensSourceLink,
+  OpenSourceContainerLinkContainer,
+  OpenSourceContainerIconsContainer,
+  OpensSourceStarGazers,
+} from './OpenSourceLink.styles';
+
+import Github from '~images/github.svg';
+import Stargazer from '~images/stargazers.svg';
 
 const OpenSourceLinkComponent = ({ items }) => (
   <OpenSourceContainer>
-    <p>{items.repoFullName}</p>
-    <p>{items.description}</p>
-    <p>{items.starsgazersCount}</p>
-    <div>
-      <p>{items.site_name}</p>
-      <a href={items.htmlUrl}>{items.htmlUrl}</a>
-    </div>
-    <img src={items.avatarUrl} alt={items.fullName} />
+    <OpenSourceInformationContainer>
+      <p>{items.repoFullName}</p>
+      <OpenSourceDescription>{items.description}</OpenSourceDescription>
+      <OpenSourceContainerIconsContainer>
+        <OpenSourceContainerLinkContainer>
+          <Stargazer />
+          <OpensSourceStarGazers>
+            {items.starsgazersCount}
+          </OpensSourceStarGazers>
+        </OpenSourceContainerLinkContainer>
+        <OpenSourceContainerLinkContainer>
+          <Github />
+          <OpensSourceLink>{items.htmlUrl}</OpensSourceLink>
+        </OpenSourceContainerLinkContainer>
+      </OpenSourceContainerIconsContainer>
+    </OpenSourceInformationContainer>
+    <img width="220" height="230" src={items.avatarUrl} alt={items.fullName} />
   </OpenSourceContainer>
 );
 

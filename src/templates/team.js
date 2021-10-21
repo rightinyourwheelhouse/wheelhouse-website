@@ -156,11 +156,12 @@ const Team = ({
           <Container>
             <Content>
               <h2> Open Source Projects </h2>
-              {openSourceProject.repos_links.map(link => console.info(link))}
-              {openSourceProject.repos_links.map(link => (
-                <OpenSourceLink key={link} link={link} />
-              ))}
             </Content>
+          </Container>
+          <Container>
+            {openSourceProject.repos_links.map(link => (
+              <OpenSourceLink key={link} link={link} />
+            ))}
           </Container>
         </Section>
       )}

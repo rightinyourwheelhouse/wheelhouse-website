@@ -78,10 +78,11 @@ const Career = ({
 
     <Section background={colors.backgorundPrimary200}>
       <Container>
-        <SubTitle>careers</SubTitle>
-        <h2>Other career opportunities</h2>
-
-        <JobOverview current={id} />
+        <JobOverview
+          title="Other career opportunities"
+          subTitle="careers"
+          current={id}
+        />
       </Container>
     </Section>
     <Section>

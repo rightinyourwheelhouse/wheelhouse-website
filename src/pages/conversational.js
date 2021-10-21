@@ -2,23 +2,21 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Section } from '~components/layoutComponents';
 import Seo from '~components/SEO';
 import Layout from '~layouts/default';
+import ConversationalForm from '~modules/ConversationalForm';
 import Navigation from '~modules/Navigation';
 
 function ConversationalPage({
   data: {
-    pagesJson: { seo },
+    pagesJson: { seo, questions },
   },
 }) {
   return (
     <Layout>
       <Seo title={seo.title} description={seo.description} image={seo.image} />
       <Navigation />
-      <Section>
-        <p>Hello World!</p>
-      </Section>
+      <ConversationalForm questions={questions} />
     </Layout>
   );
 }
@@ -51,6 +49,21 @@ export const privacyPolicyQuery = graphql`
     pagesJson(page: { eq: "conversational" }) {
       seo {
         ...seo
+      }
+      questions {
+        question
+        title
+        textItems {
+          text
+          timeout
+        }
+        label
+        id
+        value
+        type
+        placeholder
+        nextButtonText
+        previousButtonText
       }
     }
   }

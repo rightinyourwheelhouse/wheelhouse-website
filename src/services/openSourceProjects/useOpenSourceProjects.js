@@ -18,7 +18,7 @@ export const useUserRepos = async link => {
     htmlUrl: repo.html_url,
     starsgazersCount: repo.stargazers_count,
     description:
-      repo.description !== '' && !repo.description ? repo.description : '',
+      repo.description !== '' || !repo.description ? repo.description : '',
     avatarUrl: repo.owner.avatar_url,
     fullName: repo.owner.login,
   };

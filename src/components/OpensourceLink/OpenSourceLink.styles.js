@@ -17,7 +17,7 @@ export const OpenSourceContainer = styled.a`
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-    border: solid 1px var(--color-text-primary-900);
+    border: solid 1px #b0b0b0;
     margin-bottom: var(--spacing-default);
     border-radius: 15px;
     margin-top: var(--spacing-large);
@@ -31,6 +31,10 @@ export const OpenSourceContainer = styled.a`
       width: 100%;
       height: 100%;
       object-position: 50% 50%;
+    }
+
+    :hover {
+      border: solid 1px var(--color-primary);
     }
   }
 

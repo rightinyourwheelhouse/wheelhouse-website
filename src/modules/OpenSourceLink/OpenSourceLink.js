@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 
-import OpenSourceLinkComponent from '~components/OpenSourceLink';
+import OpenSourceLinkComponent from '~components/OpensourceLink';
 import { useUserRepos } from '~services/openSourceProjects/useOpenSourceProjects';
 
 const OpenSourceLink = ({ link }) => {

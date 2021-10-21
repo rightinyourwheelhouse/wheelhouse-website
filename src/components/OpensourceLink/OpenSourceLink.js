@@ -1,39 +1,31 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import {
-  OpenSourceContainer,
-  OpenSourceInformationContainer,
-  OpenSourceDescription,
-  OpensSourceLink,
-  OpenSourceContainerLinkContainer,
-  OpenSourceContainerIconsContainer,
-  OpensSourceStarGazers,
-} from './OpenSourceLink.styles';
+import * as S from './OpenSourceLink.styles';
 
 import Github from '~images/github.svg';
 import Stargazer from '~images/stargazers.svg';
 
 const OpenSourceLinkComponent = ({ items }) => (
-  <OpenSourceContainer>
-    <OpenSourceInformationContainer>
-      <p>{items.repoFullName}</p>
-      <OpenSourceDescription>{items.description}</OpenSourceDescription>
-      <OpenSourceContainerIconsContainer>
-        <OpenSourceContainerLinkContainer>
+  <S.OpenSourceContainer target="_blank">
+    <S.OpenSourceInformationContainer>
+      <S.OpenSourceTitle>{items.repoFullName}</S.OpenSourceTitle>
+      <S.OpenSourceDescription>{items.description}</S.OpenSourceDescription>
+      <S.OpenSourceContainerIconsContainer>
+        <S.OpenSourceContainerStargazersContainer>
           <Stargazer />
-          <OpensSourceStarGazers>
+          <S.OpensSourceStarGazers>
             {items.starsgazersCount}
-          </OpensSourceStarGazers>
-        </OpenSourceContainerLinkContainer>
-        <OpenSourceContainerLinkContainer>
+          </S.OpensSourceStarGazers>
+        </S.OpenSourceContainerStargazersContainer>
+        <S.OpenSourceContainerLinkContainer>
           <Github />
-          <OpensSourceLink>{items.htmlUrl}</OpensSourceLink>
-        </OpenSourceContainerLinkContainer>
-      </OpenSourceContainerIconsContainer>
-    </OpenSourceInformationContainer>
+          <S.OpensSourceLink>{items.htmlUrl}</S.OpensSourceLink>
+        </S.OpenSourceContainerLinkContainer>
+      </S.OpenSourceContainerIconsContainer>
+    </S.OpenSourceInformationContainer>
     <img width="220" height="230" src={items.avatarUrl} alt={items.fullName} />
-  </OpenSourceContainer>
+  </S.OpenSourceContainer>
 );
 
 OpenSourceLinkComponent.propTypes = {

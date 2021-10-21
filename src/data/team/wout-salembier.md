@@ -41,6 +41,5 @@ qAndA:
 openSourceProject:
   repos_links:
     - https://github.com/Wotusay/Personal-Passion-webVR-webAR
-    - https://github.com/Wotusay/Personal-Passion-webVR-webAR
 showPickedBy: true
 ---

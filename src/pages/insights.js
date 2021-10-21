@@ -30,7 +30,7 @@ const InsightsPage = ({
 
     <Section>
       <Container>
-        <InsightsOverview count={4} />
+        <InsightsOverview count={2} />
       </Container>
     </Section>
     <Section background={colors.quaternary}>
@@ -42,7 +42,7 @@ const InsightsPage = ({
     </Section>
     <Section>
       <Container>
-        <InsightsOverview layout={gridLayouts.COLUMN} skip={4} />
+        <InsightsOverview layout={gridLayouts.COLUMN} skip={2} />
       </Container>
     </Section>
   </Layout>

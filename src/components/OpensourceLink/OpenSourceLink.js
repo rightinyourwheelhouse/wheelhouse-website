@@ -7,29 +7,36 @@ import Github from '~images/github.svg';
 import Stargazer from '~images/stargazers.svg';
 
 function OpenSourceLinkComponent({ items }) {
-  <S.OpenSourceContainer
-    target="_blank"
-    rel="nofollow noreferrer"
-    href={items.htmlUrl}
-  >
-    <S.OpenSourceInformationContainer>
-      <S.OpenSourceTitle>{items.repoFullName}</S.OpenSourceTitle>
-      <S.OpenSourceDescription>{items.description}</S.OpenSourceDescription>
-      <S.OpenSourceContainerIconsContainer>
-        <S.OpenSourceContainerStargazersContainer>
-          <Stargazer />
-          <S.OpensSourceStarGazers>
-            {items.starsgazersCount}
-          </S.OpensSourceStarGazers>
-        </S.OpenSourceContainerStargazersContainer>
-        <S.OpenSourceContainerLinkContainer>
-          <Github />
-          <S.OpensSourceLink>{items.htmlUrl}</S.OpensSourceLink>
-        </S.OpenSourceContainerLinkContainer>
-      </S.OpenSourceContainerIconsContainer>
-    </S.OpenSourceInformationContainer>
-    <img width="230" height="230" src={items.avatarUrl} alt={items.fullName} />
-  </S.OpenSourceContainer>;
+  return (
+    <S.OpenSourceContainer
+      target="_blank"
+      rel="nofollow noreferrer"
+      href={items.htmlUrl}
+    >
+      <S.OpenSourceInformationContainer>
+        <S.OpenSourceTitle>{items.repoFullName}</S.OpenSourceTitle>
+        <S.OpenSourceDescription>{items.description}</S.OpenSourceDescription>
+        <S.OpenSourceContainerIconsContainer>
+          <S.OpenSourceContainerStargazersContainer>
+            <Stargazer />
+            <S.OpensSourceStarGazers>
+              {items.starsgazersCount}
+            </S.OpensSourceStarGazers>
+          </S.OpenSourceContainerStargazersContainer>
+          <S.OpenSourceContainerLinkContainer>
+            <Github />
+            <S.OpensSourceLink>{items.htmlUrl}</S.OpensSourceLink>
+          </S.OpenSourceContainerLinkContainer>
+        </S.OpenSourceContainerIconsContainer>
+      </S.OpenSourceInformationContainer>
+      <img
+        width="230"
+        height="230"
+        src={items.avatarUrl}
+        alt={items.fullName}
+      />
+    </S.OpenSourceContainer>
+  );
 }
 
 OpenSourceLinkComponent.propTypes = {

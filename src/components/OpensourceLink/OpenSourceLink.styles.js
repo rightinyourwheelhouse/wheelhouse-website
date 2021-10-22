@@ -51,6 +51,11 @@ export const OpenSourceInformationContainer = styled.div`
   @media screen and (min-width: ${breakpoints.medium}) {
     padding: 10px;
     padding-left: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     p {
       margin: unset;
     }

@@ -30,11 +30,18 @@ export const OpenSourceContainer = styled.a`
       object-fit: cover;
       width: 100%;
       height: 100%;
+      max-height: 420px;
       object-position: 50% 50%;
     }
 
     :hover {
       border: solid 1px var(--color-primary);
+    }
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    img {
+      max-height: 382px;
     }
   }
 
@@ -102,7 +109,12 @@ export const OpensSourceStarGazers = styled.p`
 
 export const OpenSourceContainerLinkContainer = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  svg {
+    width: 20px;
+    height: 20px;
+    justify-content: right;
+  }
   @media screen and (min-width: ${breakpoints.medium}) {
     justify-content: center;
     display: flex;

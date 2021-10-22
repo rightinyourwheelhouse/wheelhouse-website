@@ -39,6 +39,9 @@ qAndA:
       * Nerdland
       * Front-end Happy Hour
       * 99% Invisible
+openSourceProject:
+  repos_links:
+    - https://github.com/darenmalfait/eslint-config-daren
 showPickedBy: true
 ---
 Over the years, Daren has done projects for a multitude of companies ranging from small to big. That way he learned a lot in a small amount of time. Now there is nothing he rather does than share his knowledge so the web becomes a better place. 

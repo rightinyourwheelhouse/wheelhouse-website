@@ -1,17 +1,12 @@
-import React, { memo, useEffect, useState } from 'react';
+import React from 'react';
 
 import OpenSourceLinkComponent from '~components/OpensourceLink';
 import { useUserRepos } from '~services/openSourceProjects/useOpenSourceProjects';
 
-const OpenSourceLink = ({ link }) => {
-  const [items, setItems] = useState({});
+function OpenSourceLink({ link }) {
+  const items = useUserRepos(link);
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const setInfo = async () => setItems(await useUserRepos(link));
-    setInfo();
-  }, [link]);
   return <OpenSourceLinkComponent items={items} />;
-};
+}
 
-export default memo(OpenSourceLink);
+export default OpenSourceLink;

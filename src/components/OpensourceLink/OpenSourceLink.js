@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
-import React, { memo } from 'react';
+import React from 'react';
 
 import * as S from './OpenSourceLink.styles';
 
 import Github from '~images/github.svg';
 import Stargazer from '~images/stargazers.svg';
 
-const OpenSourceLinkComponent = ({ items }) => (
-  <S.OpenSourceContainer target="_blank">
+function OpenSourceLinkComponent({ items }) {
+  <S.OpenSourceContainer
+    target="_blank"
+    rel="nofollow noreferrer"
+    href={items.htmlUrl}
+  >
     <S.OpenSourceInformationContainer>
       <S.OpenSourceTitle>{items.repoFullName}</S.OpenSourceTitle>
       <S.OpenSourceDescription>{items.description}</S.OpenSourceDescription>
@@ -25,8 +29,8 @@ const OpenSourceLinkComponent = ({ items }) => (
       </S.OpenSourceContainerIconsContainer>
     </S.OpenSourceInformationContainer>
     <img width="230" height="230" src={items.avatarUrl} alt={items.fullName} />
-  </S.OpenSourceContainer>
-);
+  </S.OpenSourceContainer>;
+}
 
 OpenSourceLinkComponent.propTypes = {
   items: PropTypes.objectOf(
@@ -41,4 +45,4 @@ OpenSourceLinkComponent.propTypes = {
   ),
 };
 
-export default memo(OpenSourceLinkComponent);
+export default OpenSourceLinkComponent;

@@ -38,5 +38,8 @@ qAndA:
       Table tennis 🏓  and mountain biking 🚵‍♂️
 
       ![hobbies ward](/assets/hobbies-ward.png "Ward's hobbies")
+openSourceProject:
+  repos_links:
+    - https://github.com/ScribbbleIO/scribbble
 showPickedBy: true
 ---

@@ -38,5 +38,8 @@ qAndA:
       ![Game computer](/assets/gaming-pc.png "Game computer")
   - q: Describe yourself in emojis
     a: 🧑🏼‍💻🎮🍟👟🚴🏻‍♂️
+openSourceProject:
+  repos_links:
+    - https://github.com/Wotusay/Personal-Passion-webVR-webAR
 showPickedBy: true
 ---

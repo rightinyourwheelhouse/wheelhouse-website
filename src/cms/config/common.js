@@ -62,3 +62,26 @@ export const qAndA = {
     },
   ],
 };
+
+export const openSourceProject = {
+  label: 'Open-source project',
+  name: 'openSourceProject',
+  widget: 'object',
+  required: false,
+  create: true,
+  fields: [
+    {
+      label: 'Github Repos links',
+      name: 'repos_links',
+      widget: 'list',
+      summary: 'repo_links',
+      max: 5,
+      min: 1,
+      field: {
+        label: 'Repo link',
+        name: 'repo_link',
+        widget: 'string',
+      },
+    },
+  ],
+};

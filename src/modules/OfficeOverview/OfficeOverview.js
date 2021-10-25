@@ -5,7 +5,7 @@ import { OfficeItemContainer } from './officeOverview.styles';
 
 import Card from '~components/Card';
 import SubTitle from '~components/SubTitle';
-import TwoColumns from '~components/TwoColumns';
+import ThreeColumns from '~components/ThreeColumns';
 import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
 const OfficeOverview = () => {
@@ -17,7 +17,7 @@ const OfficeOverview = () => {
       <h2>Where to find us</h2>
 
       <OfficeItemContainer>
-        <TwoColumns>
+        <ThreeColumns>
           {offices.map(({ name, address, slug, mail, phone }) => (
             <Card key={name}>
               <Link to={`/offices/${slug}`} key={slug}>
@@ -31,7 +31,7 @@ const OfficeOverview = () => {
               </p>
             </Card>
           ))}
-        </TwoColumns>
+        </ThreeColumns>
       </OfficeItemContainer>
     </div>
   );

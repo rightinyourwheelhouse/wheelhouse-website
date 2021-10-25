@@ -8,6 +8,6 @@ export const ConversationTitle = styled.p`
   word-break: break-word;
 `;
 
-export const ConversationSection = styled.div`
-  margin: 15.5rem 2rem 0 2rem;
+export const QuestionSection = styled.section`
+  margin: 10rem 2rem 6rem 2rem;
 `;

@@ -17,7 +17,7 @@ export const TextContainer = styled.span`
   text-transform: uppercase;
   top: 100%;
   left: 12px;
-  color: var(--color-text-primary-100);
+  color: currentColor;
   z-index: 1;
   transform: translateY(-6rem);
 `;

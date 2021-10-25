@@ -47,6 +47,7 @@
     "gatsby-transformer-json": "^3.14.0",
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
+    "highlight.js": "^11.3.1",
     "lodash.throttle": "^4.1.1",
     "netlify-cms-app": "^2.15.53",
     "polished": "^4.1.3",

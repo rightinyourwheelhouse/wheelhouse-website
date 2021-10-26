@@ -2,7 +2,12 @@
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import hljs from 'highlight.js/lib/core';
+import css from 'highlight.js/lib/languages/css';
+import javascript from 'highlight.js/lib/languages/javascript';
+import json from 'highlight.js/lib/languages/json';
+import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml';
 import PropTypes from 'prop-types';
 import React, { memo, useEffect } from 'react';
 import readingTime from 'reading-time';
@@ -29,6 +34,11 @@ import 'highlight.js/styles/github-dark.css';
 
 const isWindowContext = typeof window !== 'undefined';
 hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('scss', scss);
 
 const Blog = ({
   data: {

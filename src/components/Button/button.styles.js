@@ -13,7 +13,7 @@ export const ButtonContainer = styled.div`
   .btn {
     align-items: center;
     background: var(--background);
-    border-radius: 6px;
+    border-radius: var(--rounded-corners);
     border: 1px solid var(--border);
     color: var(--foreground);
     cursor: pointer;

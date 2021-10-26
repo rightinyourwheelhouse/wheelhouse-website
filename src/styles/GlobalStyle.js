@@ -50,6 +50,8 @@ export const GlobalStyle = createGlobalStyle`
     --spacing-default: ${spacing.default};
     --spacing-large: ${spacing.large};
     --spacing-extra-large: ${spacing.extraLarge};
+
+    --rounded-corners: ${spacing.tiny}; 
   }
 
   * {
@@ -315,7 +317,7 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: auto;
     font-size: 1.3em;
     line-height: 1.7;
-    border-radius: 0.5em;
+    border-radius: var(--rounded-corners);
     padding: 2rem;
   }
 `;

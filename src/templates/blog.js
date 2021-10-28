@@ -1,8 +1,15 @@
 /* eslint-disable react/no-danger */
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import hljs from 'highlight.js/lib/core';
+import css from 'highlight.js/lib/languages/css';
+import javascript from 'highlight.js/lib/languages/javascript';
+import json from 'highlight.js/lib/languages/json';
+import scss from 'highlight.js/lib/languages/scss';
+import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml';
 import PropTypes from 'prop-types';
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import readingTime from 'reading-time';
 
 import AuthorInfo from '~components/AuthorInfo';
@@ -18,12 +25,20 @@ import Layout from '~layouts/default';
 
 import InsightsOverview from '~modules/InsightsOverview';
 import JobOverview from '~modules/JobOverview';
+
 import Navigation from '~modules/Navigation';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import { getHtmlExcerpt } from '~utils/string';
+import 'highlight.js/styles/github-dark.css';
 
 const isWindowContext = typeof window !== 'undefined';
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('scss', scss);
 
 const Blog = ({
   data: {
@@ -40,6 +55,22 @@ const Blog = ({
 }) => {
   const { text: time } = readingTime(encoded);
   const url = isWindowContext && window.location.href;
+
+  useEffect(() => {
+    hljs.configure({ cssSelector: 'pre' });
+    const brPlugin = {
+      'before:highlightBlock': ({ block }) => {
+        block.innerHTML = block.innerHTML
+          .replace(/\n/g, '')
+          .replace(/<br[ /]*>/g, '\n');
+      },
+      'after:highlightBlock': ({ result }) => {
+        result.value = result.value.replace(/\n/g, '<br>');
+      },
+    };
+    hljs.addPlugin(brPlugin);
+    hljs.highlightAll();
+  }, []);
 
   return (
     <Layout>

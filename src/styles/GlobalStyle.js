@@ -312,12 +312,11 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     position: relative;
     padding: 2rem;
-    color: #d6deeb;
-    background-color: #011627;
     overflow-x: auto;
     font-size: 1.3em;
     line-height: 1.7;
     border-radius: var(--rounded-corners);
     padding: 2rem;
+    white-space: pre;
   }
 `;

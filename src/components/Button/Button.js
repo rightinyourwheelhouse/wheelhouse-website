@@ -7,7 +7,7 @@ import { ButtonContainer } from './button.styles';
 
 import colors from '~styles/colors';
 
-const Button = ({
+function Button({
   background,
   backgroundHover,
   border,
@@ -18,23 +18,25 @@ const Button = ({
   as: Element,
   full,
   ...props
-}) => (
-  <ButtonContainer
-    color={color}
-    colorHover={colorHover}
-    background={background}
-    backgroundHover={backgroundHover}
-    border={border}
-    borderHover={borderHover}
-    className={classnames({
-      full,
-    })}
-  >
-    <Element className="btn" {...props}>
-      {children}
-    </Element>
-  </ButtonContainer>
-);
+}) {
+  return (
+    <ButtonContainer
+      color={color}
+      colorHover={colorHover}
+      background={background}
+      backgroundHover={backgroundHover}
+      border={border}
+      borderHover={borderHover}
+      className={classnames({
+        full,
+      })}
+    >
+      <Element className="btn" {...props}>
+        {children}
+      </Element>
+    </ButtonContainer>
+  );
+}
 
 Button.propTypes = {
   as: PropTypes.oneOfType([

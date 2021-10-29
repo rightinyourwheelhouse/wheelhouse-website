@@ -27,7 +27,7 @@ const query = graphql`
   }
 `;
 
-const SEO = ({ lang, title, description, meta, image, article }) => {
+function SEO({ lang, title, description, meta, image, article }) {
   const { pathname } = useLocation();
   const { site, defaultImage } = useStaticQuery(query);
 
@@ -116,7 +116,7 @@ const SEO = ({ lang, title, description, meta, image, article }) => {
       ].concat(meta)}
     />
   );
-};
+}
 
 SEO.propTypes = {
   article: PropTypes.bool,

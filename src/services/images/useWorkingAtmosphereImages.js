@@ -26,11 +26,11 @@ const query = graphql`
   }
 `;
 
-export const useWorkingAtmosphereImages = (
+export function useWorkingAtmosphereImages(
   count,
   shuffled = true,
   fixedAR = false,
-) => {
+) {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
@@ -70,4 +70,4 @@ export const useWorkingAtmosphereImages = (
   }, [count, edges, fixedAR, shuffled]);
 
   return images;
-};
+}

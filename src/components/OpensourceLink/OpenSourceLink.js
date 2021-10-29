@@ -6,43 +6,43 @@ import * as S from './OpenSourceLink.styles';
 import Github from '~images/github.svg';
 import Stargazer from '~images/stargazers.svg';
 
-function OpenSourceLinkComponent({ items }) {
+function OpenSourceProjectLinkComponent({ project }) {
   return (
     <S.OpenSourceContainer
       target="_blank"
       rel="nofollow noreferrer"
-      href={items.htmlUrl}
+      href={project.htmlUrl}
     >
       <S.OpenSourceInformationContainer>
-        <S.OpenSourceTitle>{items.repoFullName}</S.OpenSourceTitle>
-        <S.OpenSourceDescription>{items.description}</S.OpenSourceDescription>
+        <S.OpenSourceTitle>{project.repoFullName}</S.OpenSourceTitle>
+        <S.OpenSourceDescription>{project.description}</S.OpenSourceDescription>
         <S.OpenSourceContainerIconsContainer>
           <S.OpenSourceContainerStargazersContainer>
             <Stargazer />
             <S.OpensSourceStarGazers>
-              {items.starsgazersCount}
+              {project.starsgazersCount}
             </S.OpensSourceStarGazers>
           </S.OpenSourceContainerStargazersContainer>
           <S.OpenSourceContainerLinkContainer>
             <Github />
-            <S.OpensSourceLink>{items.htmlUrl}</S.OpensSourceLink>
+            <S.OpensSourceLink>{project.htmlUrl}</S.OpensSourceLink>
           </S.OpenSourceContainerLinkContainer>
         </S.OpenSourceContainerIconsContainer>
       </S.OpenSourceInformationContainer>
       <img
         width="230"
         height="230"
-        src={items.avatarUrl}
-        alt={items.fullName}
+        src={project.avatarUrl}
+        alt={project.fullName}
       />
     </S.OpenSourceContainer>
   );
 }
 
-OpenSourceLinkComponent.propTypes = {
-  items: PropTypes.objectOf(
+OpenSourceProjectLinkComponent.propTypes = {
+  project: PropTypes.objectOf(
     PropTypes.shape({
-      repoFullName: PropTypes.string,
+      repoFullName: PropTypes.any,
       htmlUrl: PropTypes.string,
       description: PropTypes.string,
       avatarUrl: PropTypes.string,
@@ -52,4 +52,4 @@ OpenSourceLinkComponent.propTypes = {
   ),
 };
 
-export default OpenSourceLinkComponent;
+export default OpenSourceProjectLinkComponent;

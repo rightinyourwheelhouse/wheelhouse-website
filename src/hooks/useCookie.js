@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const setCookie = (name, value, options) => {
+export function setCookie(name, value, options) {
   const optionsWithDefaults = {
     days: 7,
     path: '/',
@@ -16,18 +16,18 @@ export const setCookie = (name, value, options) => {
       value,
     )}; expires=${expires}; path=${optionsWithDefaults.path}`;
   }
-};
+}
 
-export const getCookie = name => {
+export function getCookie(name) {
   if (typeof document !== 'undefined') {
     return document.cookie.split('; ').reduce((r, v) => {
       const parts = v.split('=');
       return parts[0] === name ? decodeURIComponent(parts[1]) : r;
     }, '');
   }
-};
+}
 
-export const useCookie = (key, initialValue) => {
+export function useCookie(key, initialValue) {
   const [item, setItem] = useState(() => getCookie(key) || initialValue);
 
   const updateItem = (value, options) => {
@@ -36,4 +36,4 @@ export const useCookie = (key, initialValue) => {
   };
 
   return [item, updateItem];
-};
+}

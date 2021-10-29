@@ -35,7 +35,3 @@ export function useUserRepos(link) {
 
   return items;
 }
-
-export function useSetUserRepos(link) {
-  return useUserRepos(link);
-}

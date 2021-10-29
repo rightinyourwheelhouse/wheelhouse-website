@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { memo } from 'react';
 
 import { OpenSourceContainer } from './openSource.styles';
@@ -23,6 +24,9 @@ const OpenSource = () => (
     >
       Check it out
     </Button>
+    <p>
+      Or check out the <Link to="/projects"> projects from our wheelies </Link>
+    </p>
   </OpenSourceContainer>
 );
 

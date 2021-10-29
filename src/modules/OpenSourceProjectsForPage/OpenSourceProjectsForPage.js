@@ -1,15 +1,14 @@
 import React from 'react';
 
-import OpenSourceLinkComponent from '~components/OpensourceLink';
+import OpenSourceProjectLinkComponent from '~components/OpensourceLink';
 
-import { useOpenSourceLinks } from '~services/openSourceProjects/useOpenSourceLinks';
-import { useUserRepos } from '~services/openSourceProjects/useOpenSourceProjects';
+import { useBestRepoByEmployees } from '~services/openSourceProjects/useOpenSourceLinks';
 
 function OpenSourceProjectsForPage() {
-  const links = useOpenSourceLinks();
-  const items = links.map(useUserRepos);
-  return items.map(item => (
-    <OpenSourceLinkComponent key={item.repoFullName} items={item} />
+  const projects = useBestRepoByEmployees();
+
+  return projects.map(project => (
+    <OpenSourceProjectLinkComponent key={project.htmlUrl} project={project} />
   ));
 }
 

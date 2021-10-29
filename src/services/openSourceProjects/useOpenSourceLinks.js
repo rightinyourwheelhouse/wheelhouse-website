@@ -1,5 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
+
+import { getGithubRepo } from '~services/openSourceProjects/useOpenSourceProjects';
 
 const query = graphql`
   query {
@@ -19,24 +21,34 @@ const query = graphql`
   }
 `;
 
-export function useOpenSourceLinks() {
-  const reposLink = [];
+export function useBestRepoByEmployees() {
+  const [bestRepos, setBestRepos] = useState([]);
+
   const {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(query);
-  const items = useMemo(() => {
-    const frontmatter = nodes.map(({ frontmatter: { openSourceProject } }) => ({
-      ...openSourceProject,
-    }));
-    return frontmatter;
+
+  useEffect(() => {
+    async function getData() {
+      const repoLinks = nodes.map(
+        ({ frontmatter: { openSourceProject } }) =>
+          openSourceProject.repos_links,
+      );
+
+      const newBestRepos = [];
+
+      for (const array of repoLinks) {
+        const uniqueLink = [...new Set(array)];
+        const promises = uniqueLink.map(getGithubRepo);
+        let repos = await Promise.all(promises);
+        repos = repos.sort((a, b) => a.stargazers_count - b.stargazers_count);
+        newBestRepos.push(repos[0]);
+      }
+
+      setBestRepos(newBestRepos);
+    }
+    getData();
   }, [nodes]);
 
-  items.forEach(item => {
-    const linkExists = reposLink.findIndex(link => link === item);
-    if (linkExists === -1) {
-      reposLink.push(item.repos_links[0]);
-    }
-  });
-
-  return reposLink;
+  return bestRepos;
 }

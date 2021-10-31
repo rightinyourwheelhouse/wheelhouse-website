@@ -1,12 +1,12 @@
 import React from 'react';
 
-import OpenSourceLinkComponent from '~components/OpensourceLink';
-import { useUserRepos } from '~services/openSourceProjects/useOpenSourceProjects';
+import OpenSourceProjectLinkComponent from '~components/OpensourceLink';
+import { useGithubRepo } from '~services/openSourceProjects/useOpenSourceProjects';
 
 function OpenSourceLink({ link }) {
-  const items = useUserRepos(link);
+  const project = useGithubRepo(link);
 
-  return <OpenSourceLinkComponent items={items} />;
+  return <OpenSourceProjectLinkComponent project={project} />;
 }
 
 export default OpenSourceLink;

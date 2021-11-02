@@ -35,7 +35,8 @@
       ],
       "label": "name",
       "id": "name",
-      "value": "name",
+      "value": "intervieweeName",
+      "onChange": "e => setIntervieweeName(e.currentTarget.value)",
       "type": "input",
       "placeholder": "Your name...",
       "nextButtonText": "That's me",
@@ -46,7 +47,7 @@
       "title": "",
       "textItems": [
         {
-          "text": "Nice to meet you ${interviewee}! Let’s talk Wheelhouse first:",
+          "text": "Nice to meet you! Let’s talk Wheelhouse first:",
           "timeout": 0
         },
         {

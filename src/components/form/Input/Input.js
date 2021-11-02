@@ -7,7 +7,7 @@ import { LabelInput, Label, InputField } from './input.styles';
 import ErrorField from '../_ErrorField';
 import { LabelInputContainer } from '../form.styles';
 
-const Input = ({
+function Input({
   error,
   id,
   label,
@@ -18,7 +18,7 @@ const Input = ({
   valid,
   width,
   ...props
-}) => {
+}) {
   const [active, setActive] = useState(value && value.length > 0);
 
   const onFocus = useCallback(() => {
@@ -63,7 +63,7 @@ const Input = ({
       {error && <ErrorField>{error}</ErrorField>}
     </div>
   );
-};
+}
 
 Input.propTypes = {
   className: PropTypes.string,

@@ -15,7 +15,7 @@ import AuthorInfo from '~components/AuthorInfo';
 
 import { toShortDate } from '~utils/date';
 
-const InsightsGridOverview = ({ items, layout, reverse }) => {
+function InsightsGridOverview({ items, layout, reverse }) {
   const [firstItemHeight, setfirstItemHeight] = useState(0);
 
   const InsightsGrid = useMemo(
@@ -117,7 +117,7 @@ const InsightsGridOverview = ({ items, layout, reverse }) => {
       </ContainerElement>
     </InsightsGridContainer>
   );
-};
+}
 
 InsightsGridOverview.propTypes = {
   items: PropTypes.arrayOf(

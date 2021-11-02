@@ -41,10 +41,10 @@ const query = graphql`
   }
 `;
 
-export const useRecommendationsOverview = ({
+export function useRecommendationsOverview({
   count = null,
   current = null,
-} = {}) => {
+} = {}) {
   const {
     allRecommendationsJson: { edges },
   } = useStaticQuery(query);
@@ -92,4 +92,4 @@ export const useRecommendationsOverview = ({
   }, [edges, count, current]);
 
   return [selectedItems];
-};
+}

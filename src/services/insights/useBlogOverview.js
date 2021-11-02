@@ -34,7 +34,7 @@ const query = graphql`
   }
 `;
 
-export const useBlogOverview = ({ count = null, current = null }) => {
+export function useBlogOverview({ count = null, current = null }) {
   const {
     allFeedBlog: { edges },
   } = useStaticQuery(query);
@@ -78,4 +78,4 @@ export const useBlogOverview = ({ count = null, current = null }) => {
   }, [edges, count, current]);
 
   return [items];
-};
+}

@@ -4,11 +4,11 @@ import React, { memo } from 'react';
 import InsightsGrid, { gridLayouts } from '~components/InsightsGrid';
 import { useInsightsOverview } from '~services/insights/useInsightsOverview';
 
-const InsightsOverview = ({ skip, count, current, layout }) => {
+function InsightsOverview({ skip, count, current, layout }) {
   const [insights] = useInsightsOverview({ count, current, skip });
 
   return <InsightsGrid items={insights} layout={layout} />;
-};
+}
 
 InsightsOverview.propTypes = {
   count: PropTypes.number,

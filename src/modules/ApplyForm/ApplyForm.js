@@ -1,5 +1,4 @@
 import { useFormik } from 'formik';
-import PropTypes from 'prop-types';
 import React, { memo, useState, useCallback } from 'react';
 
 import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
@@ -15,7 +14,7 @@ import { encode } from '~utils/form';
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';
 
-const ApplyForm = ({ vacancy }) => {
+function ApplyForm({ vacancy }) {
   const [formState, setFormState] = useState(null);
 
   const {
@@ -152,11 +151,7 @@ const ApplyForm = ({ vacancy }) => {
       <Disclaimer>Your data will be used to get in touch with you.</Disclaimer>
     </form>
   );
-};
-
-ApplyForm.propTypes = {
-  vacancy: PropTypes.string,
-};
+}
 
 ApplyForm.defaultProps = {
   vacancy: null,

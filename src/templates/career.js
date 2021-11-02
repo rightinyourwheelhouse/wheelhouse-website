@@ -22,77 +22,79 @@ import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
-const Career = ({
+function Career({
   data: {
     career: { city, description, id, requirements, title },
   },
-}) => (
-  <Layout>
-    <Seo
-      title={`Vacancy ${title} at Wheelhouse ${city}`}
-      description={description}
-    />
+}) {
+  return (
+    <Layout>
+      <Seo
+        title={`Vacancy ${title} at Wheelhouse ${city}`}
+        description={description}
+      />
 
-    <Navigation
-      baseBackgroundColor={colors.backgroundPrimary100}
-      baseColor={colors.textPrimary100}
-      baseHoverColor={colors.primary}
-      hamburgerColor={colors.textPrimary100}
-    />
+      <Navigation
+        baseBackgroundColor={colors.backgroundPrimary100}
+        baseColor={colors.textPrimary100}
+        baseHoverColor={colors.primary}
+        hamburgerColor={colors.textPrimary100}
+      />
 
-    <Section background={colors.backgroundPrimary100}>
-      <Container>
-        <ContrastColor color={colors.backgroundPrimary100}>
-          <article>
-            <SubTitle>{city}</SubTitle>
-            <h1>{title}</h1>
-            <Content>
-              <div dangerouslySetInnerHTML={{ __html: description }} />
-            </Content>
-          </article>
-        </ContrastColor>
-      </Container>
-    </Section>
+      <Section background={colors.backgroundPrimary100}>
+        <Container>
+          <ContrastColor color={colors.backgroundPrimary100}>
+            <article>
+              <SubTitle>{city}</SubTitle>
+              <h1>{title}</h1>
+              <Content>
+                <div dangerouslySetInnerHTML={{ __html: description }} />
+              </Content>
+            </article>
+          </ContrastColor>
+        </Container>
+      </Section>
 
-    <Section>
-      <Container>
-        <SubTitle>career</SubTitle>
-        <h2>Your foundations</h2>
-        <Content>
-          <div dangerouslySetInnerHTML={{ __html: requirements }} />
-        </Content>
-      </Container>
-    </Section>
+      <Section>
+        <Container>
+          <SubTitle>career</SubTitle>
+          <h2>Your foundations</h2>
+          <Content>
+            <div dangerouslySetInnerHTML={{ __html: requirements }} />
+          </Content>
+        </Container>
+      </Section>
 
-    <WorkingAtmosphereGallery />
+      <WorkingAtmosphereGallery />
 
-    <Section>
-      <Container>
-        <Content>
-          <SubTitle>Apply</SubTitle>
-          <h2>Do we have your attention?</h2>
-          <ApplyForm vacancy={`${title} at ${city}`} />
-        </Content>
-      </Container>
-    </Section>
+      <Section>
+        <Container>
+          <Content>
+            <SubTitle>Apply</SubTitle>
+            <h2>Do we have your attention?</h2>
+            <ApplyForm vacancy={`${title} at ${city}`} />
+          </Content>
+        </Container>
+      </Section>
 
-    <Section background={colors.backgorundPrimary200}>
-      <Container>
-        <JobOverview
-          title="Other career opportunities"
-          subTitle="careers"
-          current={id}
-        />
-      </Container>
-    </Section>
-    <Section>
-      <Container>
-        <OpenSource />
-      </Container>
-    </Section>
-    <Section />
-  </Layout>
-);
+      <Section background={colors.backgorundPrimary200}>
+        <Container>
+          <JobOverview
+            title="Other career opportunities"
+            subTitle="careers"
+            current={id}
+          />
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <OpenSource />
+        </Container>
+      </Section>
+      <Section />
+    </Layout>
+  );
+}
 
 Career.propTypes = {
   data: PropTypes.shape({

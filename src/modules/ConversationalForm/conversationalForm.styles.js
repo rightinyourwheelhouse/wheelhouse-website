@@ -86,9 +86,6 @@ export const BackBtn = styled.button`
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: start;
   margin-top: 2rem;
 `;
 
@@ -103,4 +100,63 @@ export const AddBtn = styled.button`
   border-radius: 0.6rem;
   margin-bottom: 1rem;
   cursor: pointer;
+`;
+
+export const InputStyle = styled.input`
+  width: 100%;
+  height: 4rem;
+  padding-left: 1rem;
+  border: 0.15rem solid #87b09a;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+`;
+
+export const TextareaStyle = styled.textarea`
+  width: 100%;
+  height: 8rem;
+  padding: 1rem;
+  border: 0.15rem solid #87b09a;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+`;
+
+export const ButtonStyle = styled.button`
+  align-items: center;
+  background: #96baa7;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: 1.1rem;
+  padding: 16px 32px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  &:hover {
+    border: 1px solid transparant;
+    transform: translateY(-2px);
+  }
+`;
+
+export const ButtonWrapperStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.4rem;
+  margin-bottom: 1.2rem;
+`;
+
+export const SmallTextStyle = styled.p`
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0.5rem 0;
 `;

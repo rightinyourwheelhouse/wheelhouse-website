@@ -6,17 +6,21 @@ import { RecommendationContainer } from './recommendation.styles';
 import AuthorInfo from '~components/AuthorInfo';
 import Markdown from '~components/Markdown';
 
-const Recommendation = ({ url, title, author, description, pickedBy }) => (
-  <RecommendationContainer>
-    <a href={url} target="_blank" rel="nofollow noreferrer">
-      {title}
-    </a>
-    {author && <h4>Author: {author}</h4>}
-    <blockquote>{description && <Markdown>{description}</Markdown>}</blockquote>
+function Recommendation({ url, title, author, description, pickedBy }) {
+  return (
+    <RecommendationContainer>
+      <a href={url} target="_blank" rel="nofollow noreferrer">
+        {title}
+      </a>
+      {author && <h4>Author: {author}</h4>}
+      <blockquote>
+        {description && <Markdown>{description}</Markdown>}
+      </blockquote>
 
-    {pickedBy && <AuthorInfo author={pickedBy} full pickedBy />}
-  </RecommendationContainer>
-);
+      {pickedBy && <AuthorInfo author={pickedBy} full pickedBy />}
+    </RecommendationContainer>
+  );
+}
 
 Recommendation.propTypes = {
   author: PropTypes.string,

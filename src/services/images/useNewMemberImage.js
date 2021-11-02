@@ -14,8 +14,8 @@ const query = graphql`
   }
 `;
 
-export const useNewMemberImage = () => {
+export function useNewMemberImage() {
   const { file } = useStaticQuery(query);
 
   return file;
-};
+}

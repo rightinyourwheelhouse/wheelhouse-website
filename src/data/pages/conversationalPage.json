@@ -8,238 +8,216 @@
   },
   "questions": [
     {
-      "question": 1,
-      "title": "Hi! We are wheelhouse",
-      "textItems": [
+      "id": 1,
+      "title": "Welcome",
+      "blocks": [
         {
-          "text": "Hi! At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!",
-          "timeout": 0
-        }
-      ],
-      "label": "",
-      "id": "",
-      "value": "",
-      "type": "",
-      "placeholder": "",
-      "nextButtonText": "Let's talk",
-      "previousButtonText": ""
-    },
-    {
-      "question": 2,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Before we start, can we get your first name?",
-          "timeout": 0
-        }
-      ],
-      "label": "name",
-      "id": "name",
-      "value": "intervieweeName",
-      "onChange": "e => setIntervieweeName(e.currentTarget.value)",
-      "type": "input",
-      "placeholder": "Your name...",
-      "nextButtonText": "That's me",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 3,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Nice to meet you! Let’s talk Wheelhouse first:",
-          "timeout": 0
+          "title": "Hi! We are Wheelhouse"
         },
         {
-          "text": "We are a group of JavaScript experts and consultants. We’re looking for people that fit into our family vibe, people with an open mind, who like to try out new things! Like these new strange conversational forms. So if you are interested we would like to know you a little better!",
-          "timeout": 0
+          "text": "Hi! At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!"
         }
       ],
-      "label": "",
-      "id": "",
-      "value": "",
-      "type": "",
-      "placeholder": "",
-      "nextButtonText": "Sounds great",
-      "previousButtonText": "Go back"
+      "previousBtn": false,
+      "nextBtnText": "Let's talk"
     },
     {
-      "question": 4,
-      "title": "",
-      "textItems": [
+      "id": 2,
+      "title": "Name",
+      "blocks": [
         {
-          "text": "Now, we are interested in what you are looking for in a job. How do you see yourself in Wheelhouse?",
-          "timeout": 0
-        }
-      ],
-      "label": "expectations",
-      "id": "expectations",
-      "value": "expectations",
-      "type": "textarea",
-      "placeholder": "I see myself...",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 5,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Cool! How about your educational background, where and what did you study?",
-          "timeout": 0
-        }
-      ],
-      "label": "education",
-      "id": "education",
-      "value": "education",
-      "type": "textarea",
-      "placeholder": "I got my knowledge from...",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 6,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Sweet. Have you already used your knowledge, with other words do you have any experience?",
-          "timeout": 0
-        }
-      ],
-      "label": "experience",
-      "id": "experience",
-      "value": "experience",
-      "type": "textarea",
-      "placeholder": "I did this...",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 7,
-      "title": "",
-      "textItems": [
-        {
-          "text": "One thing we really like is seeing new stuff! Do you have a portfolio ( GitHub, website, ...) that you are proud of?",
-          "timeout": 0
-        }
-      ],
-      "label": "portfolio",
-      "id": "portfolio",
-      "value": "portfolio",
-      "type": "socials",
-      "placeholder": "",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 8,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Now do you have any hobbies? Tech related or not, we’re interested!",
-          "timeout": 0
-        }
-      ],
-      "label": "hobbies",
-      "id": "hobbies",
-      "value": "hobbies",
-      "type": "textarea",
-      "placeholder": "Fishing, ice skating, hockey...",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 9,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Interesting..., we like escape rooms, cars, cosplay, you could say we’re pretty diverse...",
-          "timeout": 0
-        }
-      ],
-      "label": "",
-      "id": "",
-      "value": "",
-      "type": "",
-      "placeholder": "",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
-    },
-    {
-      "question": 10,
-      "title": "",
-      "textItems": [
-        {
-          "text": "Nice! I’m starting to have the feeling that we start to know each other pretty well!",
-          "timeout": 0
+          "text": "Before we start, can we get your first name?"
         },
         {
-          "text": "If we want to contact you, via which way can we do this?",
-          "timeout": 0
+          "input": "input",
+          "name": "name",
+          "placeholder": "Your name"
         }
       ],
-      "label": "contact",
-      "id": "contact",
-      "value": "contact",
-      "type": "contacts",
-      "placeholder": "",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
+      "previousBtn": true,
+      "nextBtnText": "Next"
     },
     {
-      "question": 11,
-      "title": "",
-      "textItems": [
+      "id": 3,
+      "title": "About Wheelhouse",
+      "blocks": [
         {
-          "text": "Alright! 2 more questions. Then you can go back to what you were doing!",
-          "timeout": 0
+          "text": "Nice to meet you! Let’s talk Wheelhouse first:"
+        },
+        {
+          "text": "We are a group of JavaScript experts and consultants. We’re looking for people that fit into our family vibe, people with an open mind, who like to try out new things! Like these new strange conversational forms. So if you are interested we would like to know you a little better!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Sounds cool"
+    },
+    {
+      "id": 4,
+      "title": "Expectations",
+      "blocks": [
+        {
+          "text": "Now, we are interested in what you are looking for in a job. How do you see yourself in Wheelhouse?"
+        },
+        {
+          "input": "textarea",
+          "name": "expectations",
+          "placeholder": "I see myself..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 5,
+      "title": "Education",
+      "blocks": [
+        {
+          "text": "Cool! How about your educational background, where and what did you study?"
+        },
+        {
+          "input": "textarea",
+          "name": "education",
+          "placeholder": "I studied..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 6,
+      "title": "Experience",
+      "blocks": [
+        {
+          "text": "Sweet. Have you already used your knowledge, with other words do you have any experience?"
+        },
+        {
+          "input": "textarea",
+          "name": "experience",
+          "placeholder": "I have done..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 7,
+      "title": "Portfolio",
+      "blocks": [
+         {
+          "text": "One thing we really like is seeing new stuff! Do you have a portfolio (GitHub, website, ...) that you are proud of?"
+        },
+        {
+          "input": "portfolio",
+          "name": "portfolio"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 8,
+      "title": "Hobbies",
+      "blocks": [
+        {
+          "text": "Now do you have any hobbies? Tech related or not, we’re interested!"
+        },
+        {
+          "input": "textarea",
+          "name": "hobbies",
+          "placeholder": "Fishing, ice skating, hockey..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 9,
+      "title": "About Wheelhouse",
+      "blocks": [
+        {
+          "text": "Interesting..., we like escape rooms, cars, cosplay, games, ... you could say we’re pretty diverse..."
+        },
+        {
+          "text": "I’m starting to have the feeling that we start to know each other pretty well!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 10,
+      "title": "Contact",
+      "blocks": [
+        {
+          "text": "If we want to contact you, via which way can we do this?"
+        },
+        {
+          "input": "contact",
+          "name": "contact"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 11,
+      "title": "CV",
+      "blocks": [
+        {
+          "text": "Alright! 2 more questions. Then you can go back to what you were doing!"
         },
         {
           "text": "Do you have a CV? We like seeing a CV because it gives us a good overview of all your specialties!",
-          "timeout": 0
+          "input": "cv",
+          "name": "cv"
         }
       ],
-      "label": "cv",
-      "id": "cv",
-      "value": "cv",
-      "type": "file",
-      "placeholder": "",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
+      "previousBtn": true,
+      "nextBtnText": "Next"
     },
     {
-      "question": 12,
-      "title": "",
-      "textItems": [
+      "id": 12,
+      "title": "About Wheelhouse",
+      "blocks":[
         {
-          "text": "Lastly what do you think about Wheelhouse? What attracted you to have this conversation with us or check out our website?",
-          "timeout": 0
+          "text": "Lastly what do you think about Wheelhouse? What attracted you to have this conversation with us or check out our website?"
+        },
+        {
+          "input": "textarea",
+          "name": "insight",
+          "placeholder": "I think that..."
         }
       ],
-      "label": "insights",
-      "id": "insights",
-      "value": "insights",
-      "type": "textarea",
-      "placeholder": "I think that...",
-      "nextButtonText": "Next",
-      "previousButtonText": "Go back"
+      "previousBtn": true,
+      "nextBtnText": "Next"
     },
     {
-      "question": 13,
-      "title": "",
-      "textItems": [
+      "id": 13,
+      "title": "Confirmation",
+      "blocks":[
         {
-          "text": "Alright! Thank you so much for your attention INTERVIEWEE_NAME! It was a pleasure.",
-          "timeout": 0
+          "text": "Alright! Thank you so much for your attention! It was a pleasure."
+        },
+        {
+          "text": "If you want us to reach out to you, please confirm by submitting this conversation. You may also choose not to. It’s all up to you!"
         }
       ],
-      "label": "confirm",
-      "id": "confirm",
-      "value": "confirm",
-      "type": "",
-      "placeholder": "",
-      "nextButtonText": "Submit conversation",
-      "previousButtonText": "Go back"
+      "previousBtn": true,
+      "nextBtnText": "Submit"
+    },
+    {
+      "id": 14,
+      "title": "Confirmation",
+      "blocks":[
+        {
+          "title": "Successfully submitted"
+        },
+        {
+          "text": "Thank you so much for your attention!"
+        }
+      ],
+      "previousBtn": false,
+      "nextBtnText": "Go home"
     }
   ]
 }

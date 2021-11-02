@@ -50,21 +50,6 @@ export const privacyPolicyQuery = graphql`
       seo {
         ...seo
       }
-      questions {
-        question
-        title
-        textItems {
-          text
-          timeout
-        }
-        label
-        id
-        value
-        type
-        placeholder
-        nextButtonText
-        previousButtonText
-      }
     }
   }
 `;

@@ -1,5 +1,5 @@
 /* eslint-disable sort-keys */
-import { image, qAndA } from './config/common';
+import { image, qAndA, openSourceProject } from './config/common';
 
 export default {
   folder: 'src/data/team',
@@ -57,6 +57,7 @@ export default {
       ],
     },
     qAndA,
+    openSourceProject,
     {
       label: 'Show Picked By in recommendations',
       name: 'showPickedBy',

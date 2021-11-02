@@ -4,17 +4,17 @@ visible: true
 name: Daren Malfait
 role: Senior front-end developer
 description: brings front-end to life and tries to stay healthy with exercise
-image: assets/daren.png
+image: /assets/daren.png
 detailImage:
-  image: assets/daren-cinemagraph-still.png
-  movingPicture: assets/daren-cinemagraph.mp4
+  image: /assets/daren-cinemagraph-still.png
+  movingPicture: /assets/daren-cinemagraph.mp4
 emojis: 👨‍💻🏸🚴‍♂️🏃‍♂️👶
 qAndA:
   - q: Describe yourself using only emojis
     a: "###### 👨‍💻🏸🚴‍♂️🏃‍♂️👶"
   - q: What does your desk look like?
     a: >-
-      ![Desk Daren](assets/desk-daren.png "Desk Daren")
+      ![Desk Daren](/assets/desk-daren.png "Desk Daren")
 
 
       1. **My macbook pro:** it's my workhorse
@@ -39,8 +39,11 @@ qAndA:
       * Nerdland
       * Front-end Happy Hour
       * 99% Invisible
+openSourceProject:
+  repos_links:
+    - https://github.com/darenmalfait/eslint-config-daren
 showPickedBy: true
 ---
-Over the years, Daren has done projects for a multitude of companies ranging from small to big. That way he learned a lot in a small amount of time. Now there is nothing he rather does than share his knowledge so the web becomes a better place. 
+Over the years, Daren has done projects for a multitude of companies ranging from small to big. That way he learned a lot in a small amount of time. Now there is nothing he rather does than share his knowledge so the web becomes a better place.
 
 He finds it important that a user comes first. If the user has a nice experience it will automatically result in whatever the applications goal is. On top of that the user will feel good about it. As a front-end developer it’s your goal to make that as smooth as possible.

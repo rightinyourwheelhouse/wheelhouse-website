@@ -33,6 +33,6 @@ CMS.init({
     ],
     load_config_file: true,
     media_folder: 'static/assets',
-    public_folder: 'assets',
+    public_folder: '/assets',
   },
 });

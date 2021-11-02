@@ -5,10 +5,10 @@ name: Daphné Vermeiren
 role: Marketing Manager
 description: is our digital marketing guru and makes sure the Wheelie's are seen
   all over the internet
-image: assets/daphnetransp.png
+image: /assets/daphnetransp.png
 detailImage:
-  image: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
-  movingPicture: assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
+  image: /assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
+  movingPicture: /assets/storychief_kevin_boone_grijsfilter__1d_0070.jpg
 qAndA:
   - q: Describe yourself using only emojis
     a: 🐶🏃🏽‍♀️🐱🌍⛷🎉
@@ -21,7 +21,7 @@ qAndA:
       months of saving animals combined with traveling - a dream come true! 🌍
 
 
-      ![Leopard, Victoria Falls & elephant in Botswana](assets/website-wheelhouse-question.png "Leopard, Victoria Falls & elephant in Botswana")
+      ![Leopard, Victoria Falls & elephant in Botswana](/assets/website-wheelhouse-question.png "Leopard, Victoria Falls & elephant in Botswana")
   - q: What's your role at Wheelhouse?
     a: "As a Marketing Manager for Wheelhouse, I make sure digital marketing is on
       point. 🚀 To summarize my job: I make sure the team is seen on social
@@ -45,6 +45,6 @@ qAndA:
       Fun fact: my favorite breeds are golden retrievers, dwarf dachshunds, and white shepherds.
 
 
-      ![Momo, my cat](assets/image-from-ios-3-.jpg "Momo")
+      ![Momo, my cat](/assets/image-from-ios-3-.jpg "Momo")
 showPickedBy: true
 ---

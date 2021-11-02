@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import styled from 'styled-components';
 
 import Button from '~components/Button';
@@ -18,6 +19,7 @@ import Seo from '~components/SEO';
 import { COMPANY_NAME } from '~data/company';
 import Layout from '~layouts/default';
 import Navigation from '~modules/Navigation';
+import OpenSourceLink from '~modules/OpenSourceLink';
 import TeamOverview from '~modules/TeamOverview';
 import { useTeamRecommendations } from '~services/team/useTeamRecommendations';
 
@@ -50,7 +52,14 @@ const Team = ({
     employee: {
       excerpt,
       id,
-      frontmatter: { name, role, detailImage, qAndA, description },
+      frontmatter: {
+        name,
+        role,
+        detailImage,
+        qAndA,
+        description,
+        openSourceProject,
+      },
       rawMarkdownBody,
     },
   },
@@ -142,6 +151,21 @@ const Team = ({
         </Section>
       )}
 
+      {openSourceProject && (
+        <Section>
+          <Container>
+            <Content>
+              <h2> Open Source Projects </h2>
+            </Content>
+          </Container>
+          <Container>
+            {openSourceProject.repos_links.map(link => (
+              <OpenSourceLink key={link} link={link} />
+            ))}
+          </Container>
+        </Section>
+      )}
+
       <Section>
         <Container>
           <TeamOverview current={id} />
@@ -209,6 +233,9 @@ export const query = graphql`
         qAndA {
           q
           a
+        }
+        openSourceProject {
+          repos_links
         }
         role
       }

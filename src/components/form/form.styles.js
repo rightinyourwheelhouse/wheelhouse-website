@@ -27,7 +27,7 @@ export const LabelInputContainer = styled.div`
   height: var(--height);
   align-items: center;
   background: var(--color-background-primary-300);
-  border-radius: 2px;
+  border-radius: var(--rounded-corners);
   border: 2px solid var(--foreground);
   box-shadow: none;
   box-sizing: border-box;

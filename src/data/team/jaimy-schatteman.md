@@ -5,10 +5,10 @@ name: Jaimy Schatteman
 role: Junior JavaScript Engineer
 description: is a scoutesque web developer and designer who likes to immerse
   himself in water and music
-image: assets/jaimy5.png
+image: /assets/jaimy5.png
 detailImage:
-  image: assets/img_3583.jpg
-  movingPicture: assets/img_3583.jpg
+  image: /assets/img_3583.jpg
+  movingPicture: /assets/img_3583.jpg
 qAndA:
   - q: If you were an animal, what would you be?
     a: I’ve been in the Boy Scouts for most of my life. It is a tradition that
@@ -22,10 +22,10 @@ qAndA:
   - q: What do you like to do with your friends?
     a: >-
       Most of my friends are really into music. When we are together, we like to
-      experiment with our favorite tracks and blend them together. 
+      experiment with our favorite tracks and blend them together.
 
 
-      ![Jaimy behind the turntables](assets/draaien-moat-enhanced.jpg "Behind the turntables")
+      ![Jaimy behind the turntables](/assets/draaien-moat-enhanced.jpg "Behind the turntables")
   - q: What is the dumbest way you’ve been injured?
     a: >-
       Although the injury wasn’t really painful, I do think it makes up for it
@@ -33,7 +33,7 @@ qAndA:
       an unrefrigerated drink in a bottle and it was really hot outside. In the
       corner of my eye, I spotted a bag filled to the brim with ice cubes.
       Obviously, the ice cubes were too large for the opening of the glass
-      bottle and I had nothing else at hand to put my drink in. 
+      bottle and I had nothing else at hand to put my drink in.
 
 
       So, I tried to push the ice cube into the bottle with my hands. Sadly, this was harder than I thought it would be. I suddenly thought of a solution. What if I tried to ram it in the bottle with my teeth? IT WORKED! However, when it finally slipped through, my teeth hit the bottle and a piece chipped off never to be found again...

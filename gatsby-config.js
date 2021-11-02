@@ -19,13 +19,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static`,
+        path: `${__dirname}/static/assets`,
         name: 'assets',
       },
     },
     {
       options: {
-        path: './src/data/',
+        path: `${__dirname}/src/data`,
         name: 'data',
       },
       resolve: 'gatsby-source-filesystem',
@@ -33,16 +33,22 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-relative-source',
+          // gatsby-remark-relative-images must go before gatsby-remark-images
           {
-            resolve: 'gatsby-remark-images',
-            options: {},
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: 'assets',
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 1024 },
           },
         ],
       },
-      resolve: 'gatsby-transformer-remark',
     },
     {
       options: {

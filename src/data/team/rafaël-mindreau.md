@@ -4,10 +4,10 @@ visible: true
 name: Rafaël Mindreau
 role: full-stack developer
 description: loves experimenting and beautiful interfaces, music and food too
-image: assets/rafael.png
+image: /assets/rafael.png
 detailImage:
-  image: assets/rafael-cinemagraph-still.png
-  movingPicture: assets/rafael-cinemagraph.mp4
+  image: /assets/rafael-cinemagraph-still.png
+  movingPicture: /assets/rafael-cinemagraph.mp4
 qAndA:
   - a: Wake up variably at around 8 AM, ready in 30 mins. Make myself a coffee,
       eating some breakfast (can’t do without it). I will take the time to
@@ -27,7 +27,7 @@ qAndA:
       reversing into you!
   - q: What’s your craziest invention?
     a: >-
-      ![Synth](assets/syth.png "Synth")
+      ![Synth](/assets/syth.png "Synth")
 
 
       My HelloFresh synthesizer, even though I’m sure the guys at HelloFresh don’t have a clue.

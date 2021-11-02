@@ -14,4 +14,8 @@ export const OpenSourceContainer = styled.div`
   svg {
     max-width: 200px;
   }
+
+  a {
+    text-decoration: underline;
+  }
 `;

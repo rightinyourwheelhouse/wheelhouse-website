@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useBlogOverview } from './useBlogOverview';
 import { useRecommendationsOverview } from './useRecommendationsOverview';
 
-export const useInsightsOverview = ({ count, current, skip = 0 }) => {
+export function useInsightsOverview({ count, current, skip = 0 }) {
   const [blogs] = useBlogOverview({});
   const [recommendations] = useRecommendationsOverview({});
 
@@ -23,4 +23,4 @@ export const useInsightsOverview = ({ count, current, skip = 0 }) => {
   }, [blogs, count, current, recommendations, skip]);
 
   return [insights];
-};
+}

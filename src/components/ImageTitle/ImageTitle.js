@@ -7,12 +7,14 @@ import {
   ImageContainer,
 } from './imageTitle.styles';
 
-const ImageTitle = ({ image, children }) => (
-  <OuterContainer>
-    <ContentContainer>{children}</ContentContainer>
-    {image && <ImageContainer>{image}</ImageContainer>}
-  </OuterContainer>
-);
+function ImageTitle({ image, children }) {
+  return (
+    <OuterContainer>
+      <ContentContainer>{children}</ContentContainer>
+      {image && <ImageContainer>{image}</ImageContainer>}
+    </OuterContainer>
+  );
+}
 
 ImageTitle.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,

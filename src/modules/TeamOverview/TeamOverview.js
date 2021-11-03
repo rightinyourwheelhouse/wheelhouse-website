@@ -7,7 +7,7 @@ import { useTeam } from '../../services/team/useTeam';
 import SubTitle from '~components/SubTitle';
 import TeamCard from '~components/TeamCard';
 
-const TeamOverview = () => {
+function TeamOverview() {
   const members = useTeam();
 
   return (
@@ -21,6 +21,6 @@ const TeamOverview = () => {
       </CardsContainer>
     </div>
   );
-};
+}
 
 export default memo(TeamOverview);

@@ -15,46 +15,48 @@ import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 
-const Office = ({
+function Office({
   data: {
     officesJson: { address, description, howToReach, mail, name, phone, image },
   },
-}) => (
-  <Layout>
-    <Seo title={`Wheelhouse office in ${name}`} description={description} />
+}) {
+  return (
+    <Layout>
+      <Seo title={`Wheelhouse office in ${name}`} description={description} />
 
-    <Navigation />
+      <Navigation />
 
-    <Section>
-      <Container>
-        <SubTitle>{Office}</SubTitle>
-        <h1>{`Wheelhouse ${name}`}</h1>
-        <Content>
-          <TwoColumns>
+      <Section>
+        <Container>
+          <SubTitle>{Office}</SubTitle>
+          <h1>{`Wheelhouse ${name}`}</h1>
+          <Content>
+            <TwoColumns>
+              <div>
+                <p>
+                  <a href={`mailto:${mail}`}>{mail}</a>
+                  <br />
+                  <a href={`tel:${phone}`}>{phone}</a>
+                </p>
+                <p>{address}</p>
+              </div>
+              <div>
+                <ReactMarkdown>{description}</ReactMarkdown>
+              </div>
+            </TwoColumns>
+          </Content>
+          <Img fluid={image.childImageSharp.fluid} alt={`${name} office`} />
+          <Content>
+            <h2>How to reach us</h2>
             <div>
-              <p>
-                <a href={`mailto:${mail}`}>{mail}</a>
-                <br />
-                <a href={`tel:${phone}`}>{phone}</a>
-              </p>
-              <p>{address}</p>
+              <ReactMarkdown>{howToReach}</ReactMarkdown>
             </div>
-            <div>
-              <ReactMarkdown>{description}</ReactMarkdown>
-            </div>
-          </TwoColumns>
-        </Content>
-        <Img fluid={image.childImageSharp.fluid} alt={`${name} office`} />
-        <Content>
-          <h2>How to reach us</h2>
-          <div>
-            <ReactMarkdown>{howToReach}</ReactMarkdown>
-          </div>
-        </Content>
-      </Container>
-    </Section>
-  </Layout>
-);
+          </Content>
+        </Container>
+      </Section>
+    </Layout>
+  );
+}
 
 Office.propTypes = {
   data: PropTypes.shape({

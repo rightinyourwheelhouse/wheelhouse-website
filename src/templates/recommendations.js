@@ -28,7 +28,7 @@ import { getMarkdownExcerpt } from '~utils/string';
 
 const isWindowContext = typeof window !== 'undefined';
 
-const Recommendations = ({
+function Recommendations({
   data: {
     recommendationsJson: {
       id,
@@ -41,7 +41,7 @@ const Recommendations = ({
       image,
     },
   },
-}) => {
+}) {
   const { text: time } = readingTime(introduction + slot);
   const url = isWindowContext && window.location.href;
 
@@ -141,7 +141,7 @@ const Recommendations = ({
       </Section>
     </Layout>
   );
-};
+}
 
 Recommendations.propTypes = {
   data: PropTypes.shape({

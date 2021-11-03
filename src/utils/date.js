@@ -1,4 +1,4 @@
-export const toShortDate = date => {
+export function toShortDate(date) {
   const months = [
     'Jan',
     'Feb',
@@ -17,4 +17,4 @@ export const toShortDate = date => {
   return `${currentDateTime.getDate()} ${
     months[currentDateTime.getMonth()]
   } ${currentDateTime.getFullYear()}`;
-};
+}

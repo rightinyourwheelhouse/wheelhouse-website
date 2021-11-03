@@ -7,22 +7,24 @@ import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
 
 import Button from '~components/Button';
 
-const TeamCard = ({ image, name, description, slug }) => (
-  <CardContainer>
-    <Link to={slug}>
-      <ImageContainer>
-        {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
-      </ImageContainer>
-    </Link>
-    <Caption>
-      <strong>{name}</strong> {description}
-    </Caption>
+function TeamCard({ image, name, description, slug }) {
+  return (
+    <CardContainer>
+      <Link to={slug}>
+        <ImageContainer>
+          {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
+        </ImageContainer>
+      </Link>
+      <Caption>
+        <strong>{name}</strong> {description}
+      </Caption>
 
-    <Button to={slug} as={Link}>
-      meet {name.split(' ')[0]}
-    </Button>
-  </CardContainer>
-);
+      <Button to={slug} as={Link}>
+        meet {name.split(' ')[0]}
+      </Button>
+    </CardContainer>
+  );
+}
 
 TeamCard.propTypes = {
   description: PropTypes.string,

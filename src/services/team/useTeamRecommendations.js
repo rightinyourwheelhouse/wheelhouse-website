@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useRecommendationsOverview } from '../insights/useRecommendationsOverview';
 
-export const useTeamRecommendations = (name, count = 3) => {
+export function useTeamRecommendations(name, count = 3) {
   const [allRecommendations] = useRecommendationsOverview();
 
   const teamMemberRecommendations = useMemo(() => {
@@ -46,4 +46,4 @@ export const useTeamRecommendations = (name, count = 3) => {
   }, [allRecommendations, count, name]);
 
   return [teamMemberRecommendations];
-};
+}

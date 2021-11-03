@@ -14,7 +14,7 @@ const query = graphql`
   }
 `;
 
-export const useNavigation = () => {
+export function useNavigation() {
   const {
     allNavigationJson: { edges },
   } = useStaticQuery(query);
@@ -26,4 +26,4 @@ export const useNavigation = () => {
   }, [edges]);
 
   return items;
-};
+}

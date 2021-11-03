@@ -5,7 +5,7 @@ import React from 'react';
 import Card from '~components/Card';
 import Content from '~components/Content';
 import { gridLayouts } from '~components/InsightsGrid';
-import { Section, Container } from '~components/layoutComponents';
+import { Section, Container, LastSection } from '~components/layoutComponents';
 import Seo from '~components/SEO';
 import SubTitle from '~components/SubTitle';
 
@@ -57,14 +57,14 @@ const CareersPage = ({
         <JobOverview />
       </Container>
     </Section>
-    <Section>
+    <LastSection>
       <Container>
         <Card>
           <h2>Wheelhouse insights</h2>
           <InsightsOverview count={3} layout={gridLayouts.COLUMN} />
         </Card>
       </Container>
-    </Section>
+    </LastSection>
   </Layout>
 );
 

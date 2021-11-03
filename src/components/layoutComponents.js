@@ -72,32 +72,6 @@ export const Section = styled.section`
   }
 `;
 
-export const LastSection = styled.section`
-  --background: ${({ background }) => background || 'transparent'};
-  --space: ${({ space }) => space || spacing.large} 0;
-  --overflow: ${({ overflow }) => overflow || 'hidden'};
-  --padding-bottom: 90px;
-
-  background: var(--background);
-  box-sizing: border-box;
-  display: block;
-  min-height: 0;
-  padding: var(--space);
-  position: relative;
-  overflow-y: var(--overflow);
-  overflow-x: hidden;
-  padding-bottom: calc(var(--padding-bottom) * 2);
-
-  > img {
-    margin-bottom: 30px;
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    padding: var(--space);
-    padding-bottom: calc(var(--padding-bottom) * 2);
-  }
-`;
-
 export const Row = styled.div`
   flex-direction: ${props => (props.mobile ? 'column' : 'row')};
 

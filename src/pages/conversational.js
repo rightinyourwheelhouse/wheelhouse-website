@@ -61,6 +61,7 @@ export const privacyPolicyQuery = graphql`
           placeholder
         }
         previousBtn
+        nextBtnText
       }
     }
   }

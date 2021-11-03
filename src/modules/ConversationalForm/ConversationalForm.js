@@ -217,7 +217,7 @@ function ConversationalForm({ questions }) {
               <ConversationalButtons
                 loader={setLoaders}
                 onChange={setQuestionStatus}
-                nextBtnText="Next"
+                nextBtnText={question.nextBtnText}
                 value={questionStatus}
                 previousBtn={question.previousBtn}
               />

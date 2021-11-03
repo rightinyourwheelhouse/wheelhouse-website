@@ -13,7 +13,7 @@ const ImageContainer = styled.div`
   margin: var(--offset) 0;
 `;
 
-const Image = ({ alt, filename, bw, src, image, offset, ...props }) => {
+function Image({ alt, filename, bw, src, image, offset, ...props }) {
   let selectedImage = useImage(filename, src);
 
   if (image) {
@@ -34,7 +34,7 @@ const Image = ({ alt, filename, bw, src, image, offset, ...props }) => {
       )}
     </ImageContainer>
   );
-};
+}
 
 Image.propTypes = {
   alt: PropTypes.string.isRequired,

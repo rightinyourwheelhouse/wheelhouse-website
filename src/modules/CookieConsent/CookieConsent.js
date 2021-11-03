@@ -39,7 +39,7 @@ const query = graphql`
 
 const debug = false;
 
-const CookieConsent = () => {
+function CookieConsent() {
   const {
     site: {
       siteMetadata: { trackingId },
@@ -178,6 +178,6 @@ const CookieConsent = () => {
       )}
     </CookieConsentContainer>
   );
-};
+}
 
 export default memo(CookieConsent);

@@ -5,7 +5,7 @@ import { ConsentItemContainer } from './_consentItem.styles';
 
 import Toggle from '~components/Toggle';
 
-const ConsentItem = ({ name, label, value, onChange, required }) => {
+function ConsentItem({ name, label, value, onChange, required }) {
   const handleChange = useCallback(() => {
     onChange(name, !value);
   }, [name, onChange, value]);
@@ -25,7 +25,7 @@ const ConsentItem = ({ name, label, value, onChange, required }) => {
       </div>
     </ConsentItemContainer>
   );
-};
+}
 
 ConsentItem.propTypes = {
   label: PropTypes.string.isRequired,

@@ -5,11 +5,13 @@ import { BadgeContainer } from './badge.styles';
 
 import colors from '~styles/colors';
 
-const Badge = ({ background, children, color }) => (
-  <BadgeContainer background={background} color={color}>
-    {children}
-  </BadgeContainer>
-);
+function Badge({ background, children, color }) {
+  return (
+    <BadgeContainer background={background} color={color}>
+      {children}
+    </BadgeContainer>
+  );
+}
 
 Badge.propTypes = {
   background: PropTypes.string,

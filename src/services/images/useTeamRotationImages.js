@@ -23,7 +23,7 @@ const query = graphql`
   }
 `;
 
-export const useTeamRotationImages = () => {
+export function useTeamRotationImages() {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
@@ -35,4 +35,4 @@ export const useTeamRotationImages = () => {
   }, [edges]);
 
   return images;
-};
+}

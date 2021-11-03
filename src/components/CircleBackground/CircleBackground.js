@@ -5,15 +5,17 @@ import { CircleBackgroundContainer } from './circleBackground.styles';
 
 import colors from '~styles/colors';
 
-const CircleBackground = ({ background, children, foreground, size }) => (
-  <CircleBackgroundContainer
-    background={background}
-    foreground={foreground}
-    size={size}
-  >
-    {children}
-  </CircleBackgroundContainer>
-);
+function CircleBackground({ background, children, foreground, size }) {
+  return (
+    <CircleBackgroundContainer
+      background={background}
+      foreground={foreground}
+      size={size}
+    >
+      {children}
+    </CircleBackgroundContainer>
+  );
+}
 
 CircleBackground.propTypes = {
   background: PropTypes.string,

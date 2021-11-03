@@ -6,7 +6,7 @@ import { WorkingAtmosphereContainer } from './workingAtmosphereGallery.styles';
 import AsymmetricImageGallery from '~components/ImageGallery';
 import { useWorkingAtmosphereImages } from '~services/images/useWorkingAtmosphereImages';
 
-const WorkingAtmosphereGallery = () => {
+function WorkingAtmosphereGallery() {
   const images = useWorkingAtmosphereImages(14, true, true);
 
   return (
@@ -23,6 +23,6 @@ const WorkingAtmosphereGallery = () => {
       </AsymmetricImageGallery>
     </WorkingAtmosphereContainer>
   );
-};
+}
 
 export default memo(WorkingAtmosphereGallery);

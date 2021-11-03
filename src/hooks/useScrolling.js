@@ -12,34 +12,34 @@ const DEFAULT_VALUE = {
   scrollDirection: SCROLL_DIRECTION.NONE,
 };
 
-export const useScrolling = (offset = 0) => {
+export function useScrolling(offset = 0) {
   const [value, setValue] = useState(DEFAULT_VALUE);
 
   const lastEventRef = useRef();
   const scrollTimerRef = useRef();
 
-  const resetValues = () => {
+  function resetValues() {
     setValue(currentValue => ({ ...currentValue, ...DEFAULT_VALUE }));
-  };
+  }
 
-  const clearTimer = () => {
+  function clearTimer() {
     if (scrollTimerRef.current) {
       window.clearTimeout(scrollTimerRef.current);
       scrollTimerRef.current = undefined;
     }
-  };
+  }
 
-  const onTimerEnded = () => {
+  function onTimerEnded() {
     clearTimer();
     setValue(currentValue => ({ ...currentValue, ...DEFAULT_VALUE }));
-  };
+  }
 
-  const resetTimer = () => {
+  function resetTimer() {
     clearTimer();
     scrollTimerRef.current = window.setTimeout(onTimerEnded, 250);
-  };
+  }
 
-  const listener = () => {
+  function listener() {
     const { scrollY } = window;
 
     if (lastEventRef.current) {
@@ -70,21 +70,21 @@ export const useScrolling = (offset = 0) => {
     }
 
     lastEventRef.current = { scrollY };
-  };
+  }
 
   const throttledListener = throttle(listener, 75);
 
-  const listen = () => {
-    const unsubscribe = () => {
+  function listen() {
+    function unsubscribe() {
       window.removeEventListener('scroll', throttledListener);
       clearTimer();
-    };
+    }
     window.addEventListener('scroll', throttledListener);
 
     return unsubscribe;
-  };
+  }
 
   useEffect(listen, [throttledListener]);
 
   return [value, SCROLL_DIRECTION];
-};
+}

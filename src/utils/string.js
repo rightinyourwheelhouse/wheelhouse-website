@@ -1,6 +1,6 @@
 import removeMd from 'remove-markdown';
 
-export const toKebab = string => {
+export function toKebab(string) {
   const a =
     'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;';
   const b =
@@ -17,9 +17,9 @@ export const toKebab = string => {
     .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, ''); // Trim - from end of text
-};
+}
 
-export const getMarkdownExcerpt = (markdown, maxExcerptLength = 120) => {
+export function getMarkdownExcerpt(markdown, maxExcerptLength = 120) {
   let contentText = removeMd(markdown);
 
   contentText = contentText.trim().replace(/\s+/g, ' ');
@@ -30,9 +30,9 @@ export const getMarkdownExcerpt = (markdown, maxExcerptLength = 120) => {
   }
 
   return excerpt;
-};
+}
 
-export const getHtmlExcerpt = (content, maxExcerptLength = 120) => {
+export function getHtmlExcerpt(content, maxExcerptLength = 120) {
   const strippedContent = content.replace(/<\/?[^>]+(>|$)/g, '');
   const excerpt = strippedContent.slice(0, maxExcerptLength);
 
@@ -41,4 +41,4 @@ export const getHtmlExcerpt = (content, maxExcerptLength = 120) => {
   }
 
   return excerpt;
-};
+}

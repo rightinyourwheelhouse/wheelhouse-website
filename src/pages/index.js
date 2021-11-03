@@ -28,99 +28,101 @@ import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
-const IndexPage = ({
+function IndexPage({
   data: {
     pagesJson: { seo },
   },
-}) => (
-  <Layout>
-    <Seo title={seo.title} description={seo.description} image={seo.image} />
+}) {
+  return (
+    <Layout>
+      <Seo title={seo.title} description={seo.description} image={seo.image} />
 
-    <Navigation logoInitiallyHidden />
+      <Navigation logoInitiallyHidden />
 
-    <WelcomeHero />
+      <WelcomeHero />
 
-    <Section>
-      <Container>
-        <Content>
-          <WheelhouseDescription />
-        </Content>
-      </Container>
-    </Section>
+      <Section>
+        <Container>
+          <Content>
+            <WheelhouseDescription />
+          </Content>
+        </Container>
+      </Section>
 
-    <Section>
-      <Container>
-        <TwoColumns>
-          <div>
-            <Image filename="opportunities.jpg" alt="oppurtunities" />
-            <h3>Our job opportunities</h3>
+      <Section>
+        <Container>
+          <TwoColumns>
+            <div>
+              <Image filename="opportunities.jpg" alt="oppurtunities" />
+              <h3>Our job opportunities</h3>
+              <p>
+                We are looking for new colleagues in different disciplines. Are
+                you our next team member?
+              </p>
+              <Button as={Link} to="/careers">
+                Careers
+              </Button>
+            </div>
+            <div>
+              <Image filename="wheelhouse.jpg" alt="team" />
+              <h3>About</h3>
+              <p>
+                We are a bunch of people with a major common javascript passion.
+              </p>
+              <Button as={Link} to="/team">
+                Team
+              </Button>
+            </div>
+          </TwoColumns>
+        </Container>
+      </Section>
+
+      <WorkingAtmosphereHorizontal />
+
+      <Section>
+        <Container>
+          <SubTitle>Blog</SubTitle>
+          <h2>Some of our insights</h2>
+          <InsightsOverview count={2} />
+          <Button
+            as={Link}
+            to="/insights"
+            color={colors.textPrimary100}
+            colorHover={colors.textPrimary100}
+            background={colors.primary}
+            backgroundHover={colors.primary}
+          >
+            See our insights
+          </Button>
+        </Container>
+        <Container offset={spacing.large}>
+          <Card>
+            <h2>Javascript expertise</h2>
             <p>
-              We are looking for new colleagues in different disciplines. Are
-              you our next team member?
+              Wheelhouse works alongside your team to help strengthen your
+              business. We share our knowledge to help your project go to the
+              next level.
             </p>
-            <Button as={Link} to="/careers">
-              Careers
-            </Button>
-          </div>
-          <div>
-            <Image filename="wheelhouse.jpg" alt="team" />
-            <h3>About</h3>
-            <p>
-              We are a bunch of people with a major common javascript passion.
-            </p>
-            <Button as={Link} to="/team">
-              Team
-            </Button>
-          </div>
-        </TwoColumns>
-      </Container>
-    </Section>
+          </Card>
+        </Container>
+      </Section>
 
-    <WorkingAtmosphereHorizontal />
+      <Section background={colors.backgroundPrimary100}>
+        <Container>
+          <ContrastColor color={colors.backgroundPrimary100}>
+            <OpenSource />
+          </ContrastColor>
+        </Container>
+      </Section>
 
-    <Section>
-      <Container>
-        <SubTitle>Blog</SubTitle>
-        <h2>Some of our insights</h2>
-        <InsightsOverview count={2} />
-        <Button
-          as={Link}
-          to="/insights"
-          color={colors.textPrimary100}
-          colorHover={colors.textPrimary100}
-          background={colors.primary}
-          backgroundHover={colors.primary}
-        >
-          See our insights
-        </Button>
-      </Container>
-      <Container offset={spacing.large}>
-        <Card>
-          <h2>Javascript expertise</h2>
-          <p>
-            Wheelhouse works alongside your team to help strengthen your
-            business. We share our knowledge to help your project go to the next
-            level.
-          </p>
-        </Card>
-      </Container>
-    </Section>
-
-    <Section background={colors.backgroundPrimary100}>
-      <Container>
-        <ContrastColor color={colors.backgroundPrimary100}>
-          <OpenSource />
-        </ContrastColor>
-      </Container>
-    </Section>
-
-    <Section>
-      <Container>
-        <OfficeOverview />
-      </Container>
-    </Section>
-  </Layout>
-);
+      <Section>
+        <Container>
+          <OfficeOverview />
+        </Container>
+      </Section>
+    </Layout>
+  );
+}
 
 IndexPage.propTypes = {
   data: PropTypes.shape({

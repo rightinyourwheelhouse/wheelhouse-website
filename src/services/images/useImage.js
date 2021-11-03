@@ -14,7 +14,7 @@ const query = graphql`
   }
 `;
 
-export const useImage = (filename, src) => {
+export function useImage(filename, src) {
   const {
     allFile: { edges },
   } = useStaticQuery(query);
@@ -28,4 +28,4 @@ export const useImage = (filename, src) => {
   );
 
   return image;
-};
+}

@@ -23,7 +23,7 @@ import Wheelhouse from '~images/wheelhouse.svg';
 import breakpoints from '~styles/breakpoints';
 import colors from '~styles/colors';
 
-const NavBar = ({
+function NavBar({
   baseColor,
   baseBackgroundColor,
   baseHoverColor,
@@ -31,7 +31,7 @@ const NavBar = ({
   hamburgerColor,
   items,
   logoInitiallyHidden,
-}) => {
+}) {
   const [open, setOpen] = useState(false);
   const [{ isScrolled }] = useScrolling(0);
 
@@ -146,7 +146,7 @@ const NavBar = ({
       </Items>
     </Nav>
   );
-};
+}
 
 NavBar.propTypes = {
   baseBackgroundColor: PropTypes.string,

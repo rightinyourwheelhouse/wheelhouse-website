@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import hljs from 'highlight.js/lib/core';
@@ -40,7 +39,7 @@ hljs.registerLanguage('css', css);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('scss', scss);
 
-const Blog = ({
+function Blog({
   data: {
     feedBlog: {
       id,
@@ -52,7 +51,7 @@ const Blog = ({
       image,
     },
   },
-}) => {
+}) {
   const { text: time } = readingTime(encoded);
   const url = isWindowContext && window.location.href;
 
@@ -124,7 +123,7 @@ const Blog = ({
       <link rel="canonical" href={link} />
     </Layout>
   );
-};
+}
 
 Blog.propTypes = {
   data: PropTypes.shape({

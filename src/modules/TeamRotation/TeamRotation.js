@@ -5,7 +5,7 @@ import { RotationContainer } from './teamRotation.styles';
 
 import { useTeamRotationImages } from '~services/images/useTeamRotationImages';
 
-const TeamRotation = () => {
+function TeamRotation() {
   const [index, setIndex] = useState(0);
   const images = useTeamRotationImages();
 
@@ -44,6 +44,6 @@ const TeamRotation = () => {
       ))}
     </RotationContainer>
   );
-};
+}
 
 export default memo(TeamRotation);

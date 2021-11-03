@@ -12,7 +12,7 @@ import Chevron from '~images/chevron-left.svg';
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
 
-const HorizontalItemList = ({
+function HorizontalItemList({
   background,
   children,
   height,
@@ -20,7 +20,7 @@ const HorizontalItemList = ({
   portraitWidth,
   space,
   ...props
-}) => {
+}) {
   const [position, setPosition] = useState(0);
   const list = useRef();
 
@@ -94,7 +94,7 @@ const HorizontalItemList = ({
       )}
     </OuterContainer>
   );
-};
+}
 
 HorizontalItemList.propTypes = {
   background: PropTypes.string,

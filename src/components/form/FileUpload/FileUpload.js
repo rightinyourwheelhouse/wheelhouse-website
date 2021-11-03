@@ -9,15 +9,7 @@ import { LabelInputContainer } from '../form.styles';
 
 import colors from '~styles/colors';
 
-const FileUpload = ({
-  error,
-  name,
-  onChange,
-  valid,
-  value,
-  label,
-  ...props
-}) => {
+function FileUpload({ error, name, onChange, valid, value, label, ...props }) {
   const [active, setActive] = useState(value && value.name.length > 0);
 
   const onFocus = useCallback(() => {
@@ -78,7 +70,7 @@ const FileUpload = ({
       {error && <ErrorField>{error}</ErrorField>}
     </FileUploadContainer>
   );
-};
+}
 
 FileUpload.propTypes = {
   error: PropTypes.string,
@@ -87,14 +79,6 @@ FileUpload.propTypes = {
   onChange: PropTypes.func,
   valid: PropTypes.bool,
   value: PropTypes.shape({ name: PropTypes.string }),
-};
-
-FileUpload.defaultProps = {
-  error: null,
-  label: 'upload file',
-  onChange: null,
-  valid: false,
-  value: null,
 };
 
 export default memo(FileUpload);

@@ -18,35 +18,37 @@ import RadioRaccoons from '~modules/RadioRaccoons';
 
 import colors from '~styles/colors';
 
-const InsightsPage = ({
+function InsightsPage({
   data: {
     pagesJson: { seo },
   },
-}) => (
-  <Layout>
-    <Seo title={seo.title} description={seo.description} image={seo.image} />
+}) {
+  return (
+    <Layout>
+      <Seo title={seo.title} description={seo.description} image={seo.image} />
 
-    <Navigation />
+      <Navigation />
 
-    <Section>
-      <Container>
-        <InsightsOverview count={2} />
-      </Container>
-    </Section>
-    <Section background={colors.quaternary}>
-      <Container>
-        <ContrastColor color={colors.quaternary}>
-          <RadioRaccoons />
-        </ContrastColor>
-      </Container>
-    </Section>
-    <Section>
-      <Container>
-        <InsightsOverview layout={gridLayouts.COLUMN} skip={2} />
-      </Container>
-    </Section>
-  </Layout>
-);
+      <Section>
+        <Container>
+          <InsightsOverview count={2} />
+        </Container>
+      </Section>
+      <Section background={colors.quaternary}>
+        <Container>
+          <ContrastColor color={colors.quaternary}>
+            <RadioRaccoons />
+          </ContrastColor>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <InsightsOverview layout={gridLayouts.COLUMN} skip={2} />
+        </Container>
+      </Section>
+    </Layout>
+  );
+}
 
 InsightsPage.propTypes = {
   data: PropTypes.shape({

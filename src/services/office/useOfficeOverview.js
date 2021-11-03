@@ -18,7 +18,7 @@ const query = graphql`
   }
 `;
 
-export const useOfficeOverview = () => {
+export function useOfficeOverview() {
   const {
     allOfficesJson: { edges },
   } = useStaticQuery(query);
@@ -33,4 +33,4 @@ export const useOfficeOverview = () => {
   }, [edges]);
 
   return offices;
-};
+}

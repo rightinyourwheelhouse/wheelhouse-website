@@ -3,7 +3,7 @@ import React, { memo, useCallback, useState } from 'react';
 
 import { Mark, Image, TextContainer } from './markWithContent.styles';
 
-const MarkWithContent = ({ children, contentVisible, hideText, text }) => {
+function MarkWithContent({ children, contentVisible, hideText, text }) {
   const [imageVisible, setImageVisible] = useState(false);
 
   const onHover = useCallback(() => {
@@ -17,7 +17,6 @@ const MarkWithContent = ({ children, contentVisible, hideText, text }) => {
   }, []);
 
   return (
-    // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
     <Mark onMouseOver={onHover} onMouseOut={onMouseOut}>
       {`${text}`}
       <Image className={(imageVisible || contentVisible) && 'active'}>
@@ -26,7 +25,7 @@ const MarkWithContent = ({ children, contentVisible, hideText, text }) => {
       </Image>
     </Mark>
   );
-};
+}
 
 MarkWithContent.propTypes = {
   children: PropTypes.oneOfType([

@@ -34,11 +34,11 @@ const query = graphql`
   }
 `;
 
-export const useTeam = ({
+export function useTeam({
   current = null,
   name = null,
   includeInvisible = false,
-} = {}) => {
+} = {}) {
   const {
     allMarkdownRemark: { edges },
   } = useStaticQuery(query);
@@ -84,4 +84,4 @@ export const useTeam = ({
   }
 
   return items;
-};
+}

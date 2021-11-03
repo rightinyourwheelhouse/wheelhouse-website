@@ -3,7 +3,7 @@ import React, { memo, useState, useCallback } from 'react';
 
 import Image from '~components/Image';
 
-const Cinemagraph = ({ image, movie: { publicURL }, ...props }) => {
+function Cinemagraph({ image, movie: { publicURL }, ...props }) {
   const [loaded, setLoaded] = useState(false);
 
   const onLoadedData = useCallback(() => {
@@ -27,7 +27,7 @@ const Cinemagraph = ({ image, movie: { publicURL }, ...props }) => {
       </video>
     </>
   );
-};
+}
 
 Cinemagraph.propTypes = {
   image: PropTypes.shape({

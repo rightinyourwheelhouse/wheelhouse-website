@@ -44,8 +44,6 @@ export const Type = styled.span`
 
 export const InsightsGridItemContainer = styled.div`
   display: block;
-  padding-bottom: var(--spacing-default);
-  margin-bottom: var(--spacing-default);
   width: 100%;
 
   &:not(:first-of-type) {

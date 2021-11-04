@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Card from '~components/Card';
+import CardCareers from '~components/CardCareers';
 import Content from '~components/Content';
 import { gridLayouts } from '~components/InsightsGrid';
 import { Section, Container } from '~components/layoutComponents';
@@ -11,7 +11,7 @@ import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
-import InsightsOverview from '~modules/InsightsOverview';
+import CareerInsightsOverview from '~modules/CareerInsightsOverview';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 
@@ -60,10 +60,10 @@ function CareersPage({
       </Section>
       <Section>
         <Container>
-          <Card>
+          <CardCareers>
             <h2>Wheelhouse insights</h2>
-            <InsightsOverview count={3} layout={gridLayouts.COLUMN} />
-          </Card>
+            <CareerInsightsOverview count={3} layout={gridLayouts.COLUMN} />
+          </CardCareers>
         </Container>
       </Section>
     </Layout>

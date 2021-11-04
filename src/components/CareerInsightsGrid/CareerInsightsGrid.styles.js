@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import gridLayouts from './insightsGrid.layouts';
+import gridLayouts from './CareerInsightsGrid.layouts';
 
 import breakpoints from '~styles/breakpoints';
 import spacing from '~styles/spacing';
 
-export const InsightsGridImage = styled.div`
+export const CareerInsightsGridImage = styled.div`
   --height: 215px;
 
   overflow: hidden;
@@ -42,11 +42,10 @@ export const Type = styled.span`
   margin: 6px 0;
 `;
 
-export const InsightsGridItemContainer = styled.div`
+export const CareerInsightsGridItemContainer = styled.div`
   display: block;
   width: 100%;
   padding-bottom: var(--spacing-default);
-  margin-bottom: var(--spacing-default);
 
   &:not(:first-of-type) {
     margin-top: 16px;
@@ -72,7 +71,7 @@ export const InsightsGridItemContainer = styled.div`
   }
 `;
 
-export const InsightsGridContainer = styled.div`
+export const CareerInsightsGridContainer = styled.div`
   ${({ layout }) => {
     if (layout === gridLayouts.SUMMARY) {
       return css`
@@ -83,7 +82,7 @@ export const InsightsGridContainer = styled.div`
           margin-bottom: var(--spacing-small);
         }
 
-        ${InsightsGridImage}, ${Type}, p {
+        ${CareerInsightsGridImage}, ${Type}, p {
           display: none;
         }
       `;
@@ -119,7 +118,7 @@ export const InsightsGridContainer = styled.div`
           align-items: flex-start;
           flex-wrap: wrap;
 
-          ${InsightsGridImage} {
+          ${CareerInsightsGridImage} {
             height: unset;
           }
 
@@ -141,7 +140,7 @@ export const InsightsGridContainer = styled.div`
                 reverse ? spacing.default : '0'};
               justify-content: flex-start;
 
-              ${InsightsGridItemContainer} {
+              ${CareerInsightsGridItemContainer} {
                 position: sticky;
                 top: 90px;
                 height: var(--stickyHeight);
@@ -149,7 +148,7 @@ export const InsightsGridContainer = styled.div`
             }
 
             &:last-of-type {
-              ${InsightsGridItemContainer} {
+              ${CareerInsightsGridItemContainer} {
                 &:not(:last-of-type) {
                   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                 }

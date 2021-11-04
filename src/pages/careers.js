@@ -11,7 +11,7 @@ import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
-import InsightsOverview from '~modules/InsightsOverview';
+import CareerInsightsOverview from '~modules/CareerInsightsOverview';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 
@@ -62,7 +62,7 @@ function CareersPage({
         <Container>
           <CardCareers>
             <h2>Wheelhouse insights</h2>
-            <InsightsOverview count={3} layout={gridLayouts.COLUMN} />
+            <CareerInsightsOverview count={3} layout={gridLayouts.COLUMN} />
           </CardCareers>
         </Container>
       </Section>

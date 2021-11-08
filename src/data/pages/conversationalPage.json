@@ -19,7 +19,9 @@
         }
       ],
       "previousBtn": false,
-      "nextBtnText": "Let's talk"
+      "nextBtnText": "Let's talk",
+      "image": "assets/rafael-cartoon.png",
+      "cartoon": "rafael"
     },
     {
       "id": 2,
@@ -49,7 +51,9 @@
         }
       ],
       "previousBtn": true,
-      "nextBtnText": "Sounds cool"
+      "nextBtnText": "Sounds cool",
+      "image": "assets/roel-cartoon.png",
+      "cartoon": "roel"
     },
     {
       "id": 4,
@@ -81,7 +85,9 @@
         }
       ],
       "previousBtn": true,
-      "nextBtnText": "Next"
+      "nextBtnText": "Next",
+      "image": "assets/ward-cartoon.png",
+      "cartoon": "ward"
     },
     {
       "id": 6,
@@ -128,7 +134,10 @@
         }
       ],
       "previousBtn": true,
-      "nextBtnText": "Next"
+      "nextBtnText": "Next",
+      "image": "assets/aagje-cartoon.png",
+      "cartoon": "aagje"
+
     },
     {
       "id": 9,
@@ -203,7 +212,9 @@
         }
       ],
       "previousBtn": true,
-      "nextBtnText": "Submit"
+      "nextBtnText": "Submit",
+      "image": "assets/olivier-cartoon.png",
+      "cartoon": "olivier"
     },
     {
       "id": 14,

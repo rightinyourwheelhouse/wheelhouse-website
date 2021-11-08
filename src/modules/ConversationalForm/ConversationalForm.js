@@ -10,12 +10,18 @@ import {
   ButtonStyle,
   ButtonWrapperStyle,
   SmallTextStyle,
+  ConversationText,
+  RafCartoon,
+  RoelCartoon,
+  AagjeCartoon,
+  WardCartoon,
+  OlivierCartoon,
 } from './conversationalForm.styles';
 
 import Button from '~components/Button';
 
 function ConversationalForm({ questions }) {
-  const [questionStatus, setQuestionStatus] = useState(11);
+  const [questionStatus, setQuestionStatus] = useState(1);
   const [portfolioItems, setPortfolioItems] = useState(1);
 
   const [portfolioLink1, setPortfolioLink1] = useState('');
@@ -26,6 +32,7 @@ function ConversationalForm({ questions }) {
   const [intervieweeMail, setIntervieweeMail] = useState('');
 
   const [interviewee, setInterviewee] = useState({});
+  console.info(interviewee);
 
   const [loaderOne, setLoaderOne] = useState(false);
   const [loaderTwo, setLoaderTwo] = useState(false);
@@ -43,13 +50,13 @@ function ConversationalForm({ questions }) {
 
     setTimeout(() => {
       setLoaderOne(true);
-    }, 1000);
+    }, 500);
     setTimeout(() => {
       setLoaderTwo(true);
-    }, 2000);
+    }, 1200);
     setTimeout(() => {
       setLoaderThree(true);
-    }, 3000);
+    }, 1900);
   }
 
   const handleValueChange = e => {
@@ -81,7 +88,6 @@ function ConversationalForm({ questions }) {
 
   return (
     <div>
-      <button onClick={() => console.info(interviewee)}>see usestate</button>
       {questions.map(question => {
         return (
           <QuestionSection
@@ -100,7 +106,7 @@ function ConversationalForm({ questions }) {
               }
             >
               <ConversationTitle>{question.blocks[0].title}</ConversationTitle>
-              <p>{question.blocks[0].text}</p>
+              <ConversationText>{question.blocks[0].text}</ConversationText>
             </div>
 
             <div
@@ -110,7 +116,9 @@ function ConversationalForm({ questions }) {
                   : { transition: 'all 0.2s ease-in', opacity: 0 }
               }
             >
-              {question.blocks[1].text && <p>{question.blocks[1].text}</p>}
+              {question.blocks[1].text && (
+                <ConversationText>{question.blocks[1].text}</ConversationText>
+              )}
 
               {question.blocks[1].input === 'input' ? (
                 <InputStyle
@@ -210,10 +218,45 @@ function ConversationalForm({ questions }) {
             <div
               style={
                 loaderThree
-                  ? { transition: 'all 0.2s ease-in', opacity: 1 }
-                  : { transition: 'all 0.2s ease-in', opacity: 0 }
+                  ? {
+                      transition: 'all 0.2s ease-in',
+                      opacity: 1,
+                      position: 'relative',
+                    }
+                  : {
+                      transition: 'all 0.2s ease-in',
+                      opacity: 0,
+                      position: 'relative',
+                    }
               }
             >
+              {question.cartoon === 'rafael' ? (
+                <RafCartoon
+                  src={question.image}
+                  alt={question.blocks[0].title}
+                />
+              ) : question.cartoon === 'roel' ? (
+                <RoelCartoon
+                  src={question.image}
+                  alt={question.blocks[0].title}
+                />
+              ) : question.cartoon === 'aagje' ? (
+                <AagjeCartoon
+                  src={question.image}
+                  alt={question.blocks[0].title}
+                />
+              ) : question.cartoon === 'ward' ? (
+                <WardCartoon
+                  src={question.image}
+                  alt={question.blocks[0].title}
+                />
+              ) : (
+                <OlivierCartoon
+                  src={question.image}
+                  alt={question.blocks[0].title}
+                />
+              )}
+
               <ConversationalButtons
                 loader={setLoaders}
                 onChange={setQuestionStatus}

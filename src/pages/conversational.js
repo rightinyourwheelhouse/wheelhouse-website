@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { Section, Container } from '~components/layoutComponents';
 import Seo from '~components/SEO';
 import Layout from '~layouts/default';
 import ConversationalForm from '~modules/ConversationalForm';
@@ -16,7 +17,12 @@ function ConversationalPage({
     <Layout>
       <Seo title={seo.title} description={seo.description} image={seo.image} />
       <Navigation />
-      <ConversationalForm questions={questions} />
+
+      <Section>
+        <Container>
+          <ConversationalForm questions={questions} />
+        </Container>
+      </Section>
     </Layout>
   );
 }
@@ -62,6 +68,8 @@ export const privacyPolicyQuery = graphql`
         }
         previousBtn
         nextBtnText
+        image
+        cartoon
       }
     }
   }

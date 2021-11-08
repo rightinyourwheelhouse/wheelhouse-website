@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakpoints from '~styles/breakpoints';
+
 export const ConversationTitle = styled.p`
   font-weight: 900;
   text-transform: uppercase;
@@ -71,7 +73,11 @@ export const HiddenTitle = styled.h2`
 `;
 
 export const QuestionSection = styled.section`
-  margin: 10rem 2rem 6rem 2rem;
+  margin: 4rem 0 3rem 0;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    margin: 10rem 0 6rem 0;
+  }
 `;
 
 export const BackBtn = styled.button`
@@ -109,6 +115,14 @@ export const InputStyle = styled.input`
   border: 0.15rem solid #87b09a;
   border-radius: 0.6rem;
   font-size: 1rem;
+
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    width: 25rem;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 30rem;
+  }
 `;
 
 export const TextareaStyle = styled.textarea`
@@ -118,6 +132,22 @@ export const TextareaStyle = styled.textarea`
   border: 0.15rem solid #87b09a;
   border-radius: 0.6rem;
   font-size: 1rem;
+
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    width: 25rem;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 30rem;
+  }
+`;
+
+export const ConversationText = styled.p`
+  max-width: 100;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    max-width: 50%;
+  }
 `;
 
 export const ButtonStyle = styled.button`
@@ -152,6 +182,15 @@ export const ButtonWrapperStyle = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.4rem;
   margin-bottom: 1.2rem;
+
+  width: 100%;
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    width: 25rem;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 30rem;
+  }
 `;
 
 export const SmallTextStyle = styled.p`
@@ -159,4 +198,72 @@ export const SmallTextStyle = styled.p`
   text-transform: uppercase;
   font-weight: 700;
   margin: 0.5rem 0;
+`;
+
+export const RafCartoon = styled.img`
+  display: none;
+
+  @media screen and (min-width: 1156px) {
+    display: inline;
+    width: 20rem;
+    position: absolute;
+    top: -20rem;
+    right: 0;
+  }
+`;
+
+export const RoelCartoon = styled.img`
+  display: none;
+
+  @media screen and (min-width: 1156px) {
+    display: inline;
+    width: 23rem;
+    position: absolute;
+    top: -24rem;
+    right: 0;
+  }
+`;
+
+export const AagjeCartoon = styled.img`
+  display: none;
+
+  @media screen and (min-width: 1156px) {
+    display: inline;
+    width: 28rem;
+    position: absolute;
+    top: -18rem;
+    right: 4rem;
+  }
+`;
+
+export const WardCartoon = styled.img`
+  display: none;
+
+  @media screen and (min-width: 1156px) {
+    display: inline;
+    width: 23rem;
+    position: absolute;
+    top: -24rem;
+    right: 6rem;
+  }
+`;
+
+export const OlivierCartoon = styled.img`
+  display: none;
+
+  @media screen and (min-width: 1156px) {
+    display: inline;
+    width: 23rem;
+    position: absolute;
+    top: -24rem;
+    right: 6rem;
+  }
+  cursor: pointer;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+
+  &:hover {
+    transform: translateX(-2rem) rotate(-5deg);
+  }
 `;

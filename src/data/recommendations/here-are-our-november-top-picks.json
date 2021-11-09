@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "title": "node-fetch",
+      "url": "https://www.npmjs.com/package/node-fetch",
+      "description": "It's fetch, but for your back-end. 😊",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "radiooooo",
+      "url": "https://radiooooo.com/",
+      "description": "Let yourself get carried away by a beautiful musical collection that takes you on a journey around the world through different decades. Users can choose a decade anytime from 1900 until today. It’s basically a musical time machine but in your browser. 🎼",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "redact.photo",
+      "url": "https://redact.photo/",
+      "description": "This is a simple web app to redact some parts of a photo.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Brickwatch",
+      "url": "https://www.brickwatch.net/nl-BE/",
+      "description": "In the past week, I rediscovered an old hobby. This website helps me to get the most value out of my money!",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Tomie",
+      "author": "Junji Ito",
+      "description": "Got this one from my birthday. If you like horror manga with some unsettling pages, this classic is your go-to!\n\n![Tomie](/assets/image.png \"Tomie by Juni Ito\")",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "NordPass",
+      "url": "https://nordpass.com",
+      "description": "I used to be a person who had the same passwords for everything until I met Daren. 😆 Now, I am aware of security and use NordPass to store everything. They have amazing features such as a password generator, health checker, or a data breach scanner. Perfect for keeping your online stuff safe!",
+      "pickedBy": "Jasper Vermeulen"
+    },
+    {
+      "title": "keybr",
+      "description": "Recently I switched from an AZERTY to a QWERTY keyboard, because I didn't find the keyboard I wanted with an AZERTY layout. Luckily, nowadays typing aids exist to help you practice your typing. So typing a 'Z instead of a 'W' will occur less frequently. It helps you by repeating the keys you miss most, in word-like letter patterns.",
+      "url": "https://www.keybr.com/",
+      "pickedBy": "Jaimy Schatteman"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2021-11-09T10:16:27.380Z",
+  "title": "Here are our November top picks",
+  "introduction": "The days are getting shorter and we're already feeling the end-of-year vibe. This month, we share some cool stuff we recently discovered. This way, you get to know the things that intrigue us, help us, or teach us. Hopefully, you discovered something new too. Enjoy our November picks! 🥳",
+  "image": "/assets/carson-arias-7z03r1wodmi-unsplash.jpg",
+  "description": "Get to know some cool stuff we recently discovered ",
+  "slot": "See ya next month!"
+}

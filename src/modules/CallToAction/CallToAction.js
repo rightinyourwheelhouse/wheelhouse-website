@@ -23,7 +23,7 @@ function CallToAction() {
             better!
           </CTABody>
           <Link to="/conversational">
-            <Button>Let's talk</Button>
+            <Button>Let&apos;s talk</Button>
           </Link>
         </CTAText>
         <CTACartoon src="assets/olivier-cartoon-cta.png" alt="Rafael Cartoon" />

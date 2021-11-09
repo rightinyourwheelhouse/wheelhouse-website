@@ -16,6 +16,7 @@ import SubTitle from '~components/SubTitle';
 import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
+import CallToAction from '~modules/CallToAction/CallToAction';
 
 import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
@@ -35,6 +36,8 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Seo title={seo.title} description={seo.description} image={seo.image} />
+
+    <CallToAction />
 
     <Navigation logoInitiallyHidden />
 

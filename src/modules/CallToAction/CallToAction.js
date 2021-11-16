@@ -19,7 +19,7 @@ function CallToAction() {
 
   useEffect(() => {
     checkLocal();
-  }, [ctaStatus]);
+  }, []);
 
   function checkLocal() {
     if (sessionStorage.getItem('cta') === null) {

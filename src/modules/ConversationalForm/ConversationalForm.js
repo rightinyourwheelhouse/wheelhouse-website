@@ -1,3 +1,4 @@
+import { ArrowDownIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -16,6 +17,10 @@ import {
   AagjeCartoon,
   WardCartoon,
   OlivierCartoon,
+  OverviewButton,
+  OverviewLabel,
+  OverviewText,
+  OverviewWrapper,
 } from './conversationalForm.styles';
 
 import Button from '~components/Button';
@@ -32,11 +37,12 @@ function ConversationalForm({ questions }) {
   const [intervieweeMail, setIntervieweeMail] = useState('');
 
   const [interviewee, setInterviewee] = useState({});
-  console.info(interviewee);
 
   const [loaderOne, setLoaderOne] = useState(false);
   const [loaderTwo, setLoaderTwo] = useState(false);
   const [loaderThree, setLoaderThree] = useState(false);
+
+  const [overview, setOverwiew] = useState(false);
 
   useEffect(() => {
     setLoaders();
@@ -255,6 +261,101 @@ function ConversationalForm({ questions }) {
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
+              )}
+
+              {question.id === 13 && (
+                <>
+                  <OverviewButton
+                    onClick={() => {
+                      setOverwiew(!overview);
+                    }}
+                  >
+                    <span
+                      style={{ fontSize: '18px', fontFamily: 'Montserrat' }}
+                    >
+                      See my anwsers
+                    </span>
+                    <div
+                      style={
+                        overview
+                          ? {
+                              transform: 'rotate(180deg)',
+                            }
+                          : {
+                              transform: 'rotate(0deg)',
+                            }
+                      }
+                    >
+                      <ArrowDownIcon width="24" />
+                    </div>
+                  </OverviewButton>
+                  <div
+                    style={
+                      overview
+                        ? {
+                            display: 'inline',
+                            backgroundColor: 'gray',
+                          }
+                        : {
+                            display: 'none',
+                            backgroundColor: 'gray',
+                          }
+                    }
+                  >
+                    <OverviewWrapper>
+                      <div>
+                        <OverviewLabel>Name</OverviewLabel>
+                        <OverviewText>{interviewee.name}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Expectations</OverviewLabel>
+                        <OverviewText>{interviewee.expectations}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Education</OverviewLabel>
+                        <OverviewText>{interviewee.education}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Experience</OverviewLabel>
+                        <OverviewText>{interviewee.experience}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Hobbies</OverviewLabel>
+                        <OverviewText>{interviewee.hobbies}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Cv</OverviewLabel>
+                        <OverviewText>{interviewee.cv}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Insight</OverviewLabel>
+                        <OverviewText>{interviewee.insight}</OverviewText>
+                      </div>
+                      <div>
+                        <OverviewLabel>Contact</OverviewLabel>
+                        {interviewee.contact &&
+                          Object.values(interviewee.contact).map(
+                            (item, index) => {
+                              return (
+                                <OverviewText key={index}>{item}</OverviewText>
+                              );
+                            },
+                          )}
+                      </div>
+                      <div>
+                        <OverviewLabel>Portfolio</OverviewLabel>
+                        {interviewee.portfolio &&
+                          Object.values(interviewee.portfolio).map(
+                            (item, index) => {
+                              return (
+                                <OverviewText key={index}>{item}</OverviewText>
+                              );
+                            },
+                          )}
+                      </div>
+                    </OverviewWrapper>
+                  </div>
+                </>
               )}
 
               <ConversationalButtons

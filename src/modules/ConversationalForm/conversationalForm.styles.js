@@ -51,7 +51,15 @@ export const Textarea = styled.textarea`
   font-size: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;
-  color: #999999;
+  color: #000000;
+
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    width: 25rem;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 30rem;
+  }
 `;
 
 export const Button = styled.button`

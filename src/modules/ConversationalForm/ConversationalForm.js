@@ -73,6 +73,38 @@ function ConversationalForm({ questions }) {
       [name]: value,
     }));
   };
+  const RECRUITEE_API_PATH = `https://raccoons.recruitee.com/api/offers`;
+
+  const handleSubmit = async () => {
+    try {
+      const url = `${RECRUITEE_API_PATH}/spontaneous-application/candidates`;
+
+      const formdata = new FormData();
+      formdata.append(`candidate[name]`, 'Jasper');
+      formdata.append(`candidate[email]`, 'jasper.vermeulen@icloud.com');
+      formdata.append(`candidate[phone]`, '0499363308');
+      if (interviewee.cv) {
+        formdata.append(`candidate[cv]`, interviewee.cv || ``);
+      }
+      formdata.append(
+        `candidate[referrer]`,
+        `Wheelhouse Conversational Onboarding`,
+      );
+
+      const result = await fetch(url, {
+        body: formdata,
+        method: `POST`,
+      });
+
+      if (result.ok) {
+        console.info('ok');
+      } else {
+        console.info('niet oke');
+      }
+    } catch (error) {
+      console.info(error);
+    }
+  };
 
   const handlePortfolioChange = e => {
     const { name } = e.target;
@@ -98,11 +130,11 @@ function ConversationalForm({ questions }) {
         return (
           <QuestionSection
             key={question.id}
-            style={
-              questionStatus === question.id
-                ? { display: 'block' }
-                : { display: 'none' }
-            }
+            // style={
+            //   questionStatus === question.id
+            //     ? { display: 'block' }
+            //     : { display: 'none' }
+            // }
           >
             <div
               style={
@@ -358,13 +390,35 @@ function ConversationalForm({ questions }) {
                 </>
               )}
 
-              <ConversationalButtons
-                loader={setLoaders}
-                onChange={setQuestionStatus}
-                nextBtnText={question.nextBtnText}
-                value={questionStatus}
-                previousBtn={question.previousBtn}
-              />
+              {question.id === 13 ? (
+                <Wrapper>
+                  <BackBtn
+                    onClick={() => {
+                      setQuestionStatus(questionStatus - 1);
+                      setLoaders();
+                    }}
+                  >
+                    Go back
+                  </BackBtn>
+                  <Button
+                    onClick={() => {
+                      handleSubmit();
+                      // setQuestionStatus(questionStatus + 1);
+                      // setLoaders();
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Wrapper>
+              ) : (
+                <ConversationalButtons
+                  loader={setLoaders}
+                  onChange={setQuestionStatus}
+                  nextBtnText={question.nextBtnText}
+                  value={questionStatus}
+                  previousBtn={question.previousBtn}
+                />
+              )}
             </div>
           </QuestionSection>
         );

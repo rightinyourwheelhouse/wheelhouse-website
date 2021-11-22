@@ -26,6 +26,15 @@ export const Text = styled.p`
   }
 `;
 
+export const ErrorText = styled.p`
+  max-width: 100%;
+  color: red;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    max-width: 50%;
+  }
+`;
+
 export const Input = styled.input`
   width: 100%;
   height: 4rem;

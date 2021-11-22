@@ -38,8 +38,8 @@ function CallToAction() {
     <div
       style={
         ctaStatus
-          ? { transition: 'all 0.2s ease-in', opacity: 1 }
-          : { transition: 'all 0.2s ease-in', opacity: 0 }
+          ? { transition: 'all 0.1s ease-in', opacity: 1 }
+          : { transition: 'all 0.1s ease-in', opacity: 0 }
       }
     >
       <CTAContainer>

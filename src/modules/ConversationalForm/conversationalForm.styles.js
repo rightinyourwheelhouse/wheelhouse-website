@@ -2,7 +2,15 @@ import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
 
-export const ConversationTitle = styled.p`
+export const Container = styled.section`
+  margin: 4rem 0;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    margin: 10rem 0 6rem 0;
+  }
+`;
+
+export const Title = styled.p`
   font-weight: 900;
   text-transform: uppercase;
   font-size: 3.4rem;
@@ -10,54 +18,32 @@ export const ConversationTitle = styled.p`
   word-break: break-word;
 `;
 
-export const QuestionWrapper = styled.div`
-  margin: 10rem 2rem 6.6rem 2rem;
-`;
+export const Text = styled.p`
+  max-width: 100%;
 
-export const QuestionNextButton = styled.button`
-  margin-top: 2rem;
-  width: 100%;
-  height: 3rem;
-  border-radius: 0.6rem;
-  background-color: #51b47e;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: white;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    transform: translateY(-0.4rem);
+  @media screen and (min-width: ${breakpoints.medium}) {
+    max-width: 50%;
   }
 `;
 
-export const QuestionPreviousButton = styled.button`
+export const Input = styled.input`
   width: 100%;
   height: 4rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: black;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  background-color: white;
-`;
-
-export const QuestionInput = styled.input`
-  width: 100%;
-  height: 4rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #96baa7;
-  font-size: 1rem;
   padding-left: 1rem;
-  color: #999999;
+  border: 0.15rem solid #87b09a;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    width: 25rem;
+  }
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 30rem;
+  }
 `;
 
-export const QuestionTextarea = styled.textarea`
+export const Textarea = styled.textarea`
   width: 100%;
   height: 10rem;
   border-radius: 0.6rem;
@@ -68,89 +54,7 @@ export const QuestionTextarea = styled.textarea`
   color: #999999;
 `;
 
-export const HiddenTitle = styled.h2`
-  display: none;
-`;
-
-export const QuestionSection = styled.section`
-  margin: 4rem 0 3rem 0;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    margin: 10rem 0 6rem 0;
-  }
-`;
-
-export const BackBtn = styled.button`
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  font-weight: 600;
-  border: none;
-  background-color: white;
-  padding: 1rem;
-  cursor: pointer;
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-  margin-top: 2rem;
-`;
-
-export const AddBtn = styled.button`
-  width: 100%;
-  height: 4rem;
-  background-color: #87b09a;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: white;
-  border: none;
-  border-radius: 0.6rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-`;
-
-export const InputStyle = styled.input`
-  width: 100%;
-  height: 4rem;
-  padding-left: 1rem;
-  border: 0.15rem solid #87b09a;
-  border-radius: 0.6rem;
-  font-size: 1rem;
-
-  @media screen and (min-width: ${breakpoints.tiny}) {
-    width: 25rem;
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 30rem;
-  }
-`;
-
-export const TextareaStyle = styled.textarea`
-  width: 100%;
-  height: 8rem;
-  padding: 1rem;
-  border: 0.15rem solid #87b09a;
-  border-radius: 0.6rem;
-  font-size: 1rem;
-
-  @media screen and (min-width: ${breakpoints.tiny}) {
-    width: 25rem;
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 30rem;
-  }
-`;
-
-export const ConversationText = styled.p`
-  max-width: 100;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    max-width: 50%;
-  }
-`;
-
-export const ButtonStyle = styled.button`
+export const Button = styled.button`
   align-items: center;
   background: #96baa7;
   border-radius: 6px;
@@ -177,7 +81,17 @@ export const ButtonStyle = styled.button`
   }
 `;
 
-export const ButtonWrapperStyle = styled.div`
+export const BackButton = styled.button`
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+  border: none;
+  background-color: white;
+  padding: 1rem;
+  cursor: pointer;
+`;
+
+export const ButtonWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.4rem;
@@ -193,11 +107,72 @@ export const ButtonWrapperStyle = styled.div`
   }
 `;
 
-export const SmallTextStyle = styled.p`
+export const TextSM = styled.p`
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;
   margin: 0.5rem 0;
+`;
+
+export const OverviewButton = styled.button`
+  width: 100%;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 50%;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: #58bd86;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2 ease-in-out;
+  color: white;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.4;
+  }
+`;
+
+export const OverviewLabel = styled.p`
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  padding: 1rem;
+`;
+
+export const OverviewText = styled.p`
+  margin: 0;
+  padding: 1rem;
+`;
+
+export const OverviewWrapper = styled.div`
+  word-break: break-word;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  width: 100%;
+
+  @media screen and (min-width: ${breakpoints.medium}) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: ${breakpoints.tiny}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  border-radius: 0.4rem;
+  background-color: #58bd8610;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  margin-top: 2rem;
 `;
 
 export const RafCartoon = styled.img`
@@ -266,60 +241,4 @@ export const OlivierCartoon = styled.img`
   &:hover {
     transform: translateX(-2rem) rotate(-5deg);
   }
-`;
-
-export const OverviewButton = styled.button`
-  width: 100%;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 50%;
-  }
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1rem;
-  background-color: #58bd86;
-  border-radius: 0.4rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2 ease-in-out;
-  color: white;
-  font-weight: 500;
-
-  &:hover {
-    opacity: 0.4;
-  }
-`;
-
-export const OverviewLabel = styled.p`
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 16px;
-  margin: 0;
-  padding: 1rem 0 0 1rem;
-  margin-right: 2rem;
-`;
-
-export const OverviewText = styled.p`
-  margin: 0;
-  padding: 0 0 1rem 1rem;
-`;
-
-export const OverviewWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-
-  width: 100%;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 50%;
-  }
-
-  @media screen and (min-width: ${breakpoints.tiny}) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  border-radius: 0.4rem;
-  background-color: #58bd8610;
 `;

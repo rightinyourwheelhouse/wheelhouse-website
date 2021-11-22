@@ -1,29 +1,11 @@
 import { ArrowDownIcon } from '@heroicons/react/solid';
+import { Link } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 
-import {
-  QuestionSection,
-  BackBtn,
-  Wrapper,
-  ConversationTitle,
-  InputStyle,
-  TextareaStyle,
-  ButtonStyle,
-  ButtonWrapperStyle,
-  SmallTextStyle,
-  ConversationText,
-  RafCartoon,
-  RoelCartoon,
-  AagjeCartoon,
-  WardCartoon,
-  OlivierCartoon,
-  OverviewButton,
-  OverviewLabel,
-  OverviewText,
-  OverviewWrapper,
-} from './conversationalForm.styles';
+import * as S from './conversationalForm.styles';
 
 import Button from '~components/Button';
+import ConversationalButtons from '~components/ConversationalButtons';
 
 function ConversationalForm({ questions }) {
   const [questionStatus, setQuestionStatus] = useState(1);
@@ -44,8 +26,14 @@ function ConversationalForm({ questions }) {
 
   const [overview, setOverwiew] = useState(false);
 
+  const [error, setError] = useState('');
+
+  const RECRUITEE_API_PATH = `https://raccoons.recruitee.com/api/offers`;
+  const APPLICATION = `spontaneous-application`;
+
   useEffect(() => {
     setLoaders();
+    setError('');
   }, [questionStatus]);
 
   function setLoaders() {
@@ -73,36 +61,60 @@ function ConversationalForm({ questions }) {
       [name]: value,
     }));
   };
-  const RECRUITEE_API_PATH = `https://raccoons.recruitee.com/api/offers`;
+
+  const handleCVChange = e => {
+    const { value } = e.target;
+
+    setInterviewee(interviewee => ({
+      ...interviewee,
+      cv: value,
+    }));
+  };
 
   const handleSubmit = async () => {
-    try {
-      const url = `${RECRUITEE_API_PATH}/spontaneous-application/candidates`;
-
-      const formdata = new FormData();
-      formdata.append(`candidate[name]`, 'Jasper');
-      formdata.append(`candidate[email]`, 'jasper.vermeulen@icloud.com');
-      formdata.append(`candidate[phone]`, '0499363308');
-      if (interviewee.cv) {
-        formdata.append(`candidate[cv]`, interviewee.cv || ``);
+    if (
+      interviewee.name &&
+      interviewee.expectations &&
+      interviewee.education &&
+      interviewee.experience &&
+      portfolioLink1 &&
+      interviewee.hobbies &&
+      intervieweePhone &&
+      intervieweeMail &&
+      interviewee.cv &&
+      interviewee.insight
+    ) {
+      try {
+        const url = `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`;
+        const formdata = new FormData();
+        formdata.append(`candidate[name]`, interviewee.name);
+        formdata.append(
+          `candidate[email]`,
+          interviewee.contact.intervieweeMail || ``,
+        );
+        formdata.append(
+          `candidate[phone]`,
+          interviewee.contact.intervieweePhone || ``,
+        );
+        if (interviewee.cv) {
+          formdata.append(`candidate[cv]`, interviewee.cv || ``);
+        }
+        formdata.append(`candidate[referrer]`, `Wheelhouse`);
+        const result = await fetch(url, {
+          body: formdata,
+          method: `POST`,
+        });
+        if (result.ok) {
+          console.info('Submitted');
+          setQuestionStatus(questionStatus + 1);
+        } else {
+          console.info(`Error ${result}`);
+        }
+      } catch (error) {
+        console.info(error);
       }
-      formdata.append(
-        `candidate[referrer]`,
-        `Wheelhouse Conversational Onboarding`,
-      );
-
-      const result = await fetch(url, {
-        body: formdata,
-        method: `POST`,
-      });
-
-      if (result.ok) {
-        console.info('ok');
-      } else {
-        console.info('niet oke');
-      }
-    } catch (error) {
-      console.info(error);
+    } else {
+      setError('It seems like you forgot to fill in some things!');
     }
   };
 
@@ -128,14 +140,15 @@ function ConversationalForm({ questions }) {
     <div>
       {questions.map(question => {
         return (
-          <QuestionSection
+          <S.Container
             key={question.id}
-            // style={
-            //   questionStatus === question.id
-            //     ? { display: 'block' }
-            //     : { display: 'none' }
-            // }
+            style={
+              questionStatus === question.id
+                ? { display: 'block' }
+                : { display: 'none' }
+            }
           >
+            {question.id === 13 && <S.ErrorText>{error}</S.ErrorText>}
             <div
               style={
                 loaderOne
@@ -143,8 +156,8 @@ function ConversationalForm({ questions }) {
                   : { transition: 'all 0.2s ease-in', opacity: 0 }
               }
             >
-              <ConversationTitle>{question.blocks[0].title}</ConversationTitle>
-              <ConversationText>{question.blocks[0].text}</ConversationText>
+              <S.Title>{question.blocks[0].title}</S.Title>
+              <S.Text>{question.blocks[0].text}</S.Text>
             </div>
 
             <div
@@ -155,38 +168,38 @@ function ConversationalForm({ questions }) {
               }
             >
               {question.blocks[1].text && (
-                <ConversationText>{question.blocks[1].text}</ConversationText>
+                <S.Text>{question.blocks[1].text}</S.Text>
               )}
 
               {question.blocks[1].input === 'input' ? (
-                <InputStyle
+                <S.Input
                   name={question.blocks[1].name}
                   onChange={e => handleValueChange(e)}
                   placeholder={question.blocks[1].placeholder}
                 />
               ) : question.blocks[1].input === 'textarea' ? (
-                <TextareaStyle
+                <S.Textarea
                   name={question.blocks[1].name}
                   onChange={e => handleValueChange(e)}
                   placeholder={question.blocks[1].placeholder}
                 />
               ) : question.blocks[1].input === 'portfolio' ? (
                 <>
-                  <ButtonWrapperStyle>
-                    <ButtonStyle
+                  <S.ButtonWrapper>
+                    <S.Button
                       onClick={() => setPortfolioItems(portfolioItems + 1)}
                       disabled={portfolioItems === 3}
                     >
                       +
-                    </ButtonStyle>
-                    <ButtonStyle
+                    </S.Button>
+                    <S.Button
                       onClick={() => setPortfolioItems(portfolioItems - 1)}
                       disabled={portfolioItems === 1}
                     >
                       -
-                    </ButtonStyle>
-                  </ButtonWrapperStyle>
-                  <InputStyle
+                    </S.Button>
+                  </S.ButtonWrapper>
+                  <S.Input
                     style={
                       portfolioItems >= 1
                         ? { marginBottom: '1rem', display: 'block' }
@@ -199,7 +212,7 @@ function ConversationalForm({ questions }) {
                     }}
                     placeholder="Link"
                   />
-                  <InputStyle
+                  <S.Input
                     style={
                       portfolioItems >= 2
                         ? { marginBottom: '1rem', display: 'block' }
@@ -212,7 +225,7 @@ function ConversationalForm({ questions }) {
                     }}
                     placeholder="Link"
                   />
-                  <InputStyle
+                  <S.Input
                     style={
                       portfolioItems >= 3
                         ? { marginBottom: '1rem', display: 'block' }
@@ -228,7 +241,7 @@ function ConversationalForm({ questions }) {
                 </>
               ) : question.blocks[1].input === 'contact' ? (
                 <>
-                  <InputStyle
+                  <S.Input
                     name={question.blocks[1].name}
                     onChange={e => {
                       setIntervieweePhone(e.currentTarget.value);
@@ -236,8 +249,8 @@ function ConversationalForm({ questions }) {
                     }}
                     placeholder="Phone"
                   />
-                  <SmallTextStyle>And/or</SmallTextStyle>
-                  <InputStyle
+                  <S.TextSM>And</S.TextSM>
+                  <S.Input
                     name={question.blocks[1].name}
                     onChange={e => {
                       setIntervieweeMail(e.currentTarget.value);
@@ -247,7 +260,11 @@ function ConversationalForm({ questions }) {
                   />
                 </>
               ) : question.blocks[1].input === 'cv' ? (
-                <input type="file" name={question.blocks[1].name} />
+                <input
+                  type="file"
+                  name={question.blocks[1].name}
+                  onChange={e => handleCVChange(e)}
+                />
               ) : (
                 <p />
               )}
@@ -269,27 +286,27 @@ function ConversationalForm({ questions }) {
               }
             >
               {question.cartoon === 'rafael' ? (
-                <RafCartoon
+                <S.RafCartoon
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
               ) : question.cartoon === 'roel' ? (
-                <RoelCartoon
+                <S.RoelCartoon
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
               ) : question.cartoon === 'aagje' ? (
-                <AagjeCartoon
+                <S.AagjeCartoon
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
               ) : question.cartoon === 'ward' ? (
-                <WardCartoon
+                <S.WardCartoon
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
               ) : (
-                <OlivierCartoon
+                <S.OlivierCartoon
                   src={question.image}
                   alt={question.blocks[0].title}
                 />
@@ -297,7 +314,7 @@ function ConversationalForm({ questions }) {
 
               {question.id === 13 && (
                 <>
-                  <OverviewButton
+                  <S.OverviewButton
                     onClick={() => {
                       setOverwiew(!overview);
                     }}
@@ -320,7 +337,7 @@ function ConversationalForm({ questions }) {
                     >
                       <ArrowDownIcon width="24" />
                     </div>
-                  </OverviewButton>
+                  </S.OverviewButton>
                   <div
                     style={
                       overview
@@ -334,82 +351,103 @@ function ConversationalForm({ questions }) {
                           }
                     }
                   >
-                    <OverviewWrapper>
+                    <S.OverviewWrapper>
                       <div>
-                        <OverviewLabel>Name</OverviewLabel>
-                        <OverviewText>{interviewee.name}</OverviewText>
+                        <S.OverviewLabel>Name</S.OverviewLabel>
+                        <S.OverviewText>{interviewee.name}</S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Expectations</OverviewLabel>
-                        <OverviewText>{interviewee.expectations}</OverviewText>
+                        <S.OverviewLabel>Expectations</S.OverviewLabel>
+                        <S.OverviewText>
+                          {interviewee.expectations}
+                        </S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Education</OverviewLabel>
-                        <OverviewText>{interviewee.education}</OverviewText>
+                        <S.OverviewLabel>Education</S.OverviewLabel>
+                        <S.OverviewText>{interviewee.education}</S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Experience</OverviewLabel>
-                        <OverviewText>{interviewee.experience}</OverviewText>
+                        <S.OverviewLabel>Experience</S.OverviewLabel>
+                        <S.OverviewText>
+                          {interviewee.experience}
+                        </S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Hobbies</OverviewLabel>
-                        <OverviewText>{interviewee.hobbies}</OverviewText>
+                        <S.OverviewLabel>Hobbies</S.OverviewLabel>
+                        <S.OverviewText>{interviewee.hobbies}</S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Cv</OverviewLabel>
-                        <OverviewText>{interviewee.cv}</OverviewText>
+                        <S.OverviewLabel>Cv</S.OverviewLabel>
+                        <S.OverviewText>{interviewee.cv}</S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Insight</OverviewLabel>
-                        <OverviewText>{interviewee.insight}</OverviewText>
+                        <S.OverviewLabel>Insight</S.OverviewLabel>
+                        <S.OverviewText>{interviewee.insight}</S.OverviewText>
                       </div>
                       <div>
-                        <OverviewLabel>Contact</OverviewLabel>
+                        <S.OverviewLabel>Contact</S.OverviewLabel>
                         {interviewee.contact &&
                           Object.values(interviewee.contact).map(
                             (item, index) => {
                               return (
-                                <OverviewText key={index}>{item}</OverviewText>
+                                <S.OverviewText key={index}>
+                                  {item}
+                                </S.OverviewText>
                               );
                             },
                           )}
                       </div>
+
                       <div>
-                        <OverviewLabel>Portfolio</OverviewLabel>
+                        <S.OverviewLabel>Portfolio</S.OverviewLabel>
                         {interviewee.portfolio &&
                           Object.values(interviewee.portfolio).map(
                             (item, index) => {
                               return (
-                                <OverviewText key={index}>{item}</OverviewText>
+                                <S.OverviewText key={index}>
+                                  {item}
+                                </S.OverviewText>
                               );
                             },
                           )}
                       </div>
-                    </OverviewWrapper>
+                    </S.OverviewWrapper>
                   </div>
                 </>
               )}
 
               {question.id === 13 ? (
-                <Wrapper>
-                  <BackBtn
+                <S.Wrapper>
+                  <S.BackButton
                     onClick={() => {
                       setQuestionStatus(questionStatus - 1);
                       setLoaders();
                     }}
                   >
                     Go back
-                  </BackBtn>
+                  </S.BackButton>
                   <Button
                     onClick={() => {
                       handleSubmit();
-                      // setQuestionStatus(questionStatus + 1);
-                      // setLoaders();
                     }}
                   >
                     Submit
                   </Button>
-                </Wrapper>
+                </S.Wrapper>
+              ) : question.id === 14 ? (
+                <S.Wrapper>
+                  <S.BackButton
+                    onClick={() => {
+                      setQuestionStatus(questionStatus - 1);
+                      setLoaders();
+                    }}
+                  >
+                    Go back
+                  </S.BackButton>
+                  <Link to="/">
+                    <Button>Go home</Button>
+                  </Link>
+                </S.Wrapper>
               ) : (
                 <ConversationalButtons
                   loader={setLoaders}
@@ -420,41 +458,10 @@ function ConversationalForm({ questions }) {
                 />
               )}
             </div>
-          </QuestionSection>
+          </S.Container>
         );
       })}
     </div>
-  );
-}
-
-export function ConversationalButtons({
-  previousBtn = true,
-  nextBtnText,
-  onChange,
-  value,
-  loader,
-}) {
-  return (
-    <Wrapper>
-      {previousBtn && (
-        <BackBtn
-          onClick={() => {
-            onChange(value - 1);
-            loader();
-          }}
-        >
-          Go back
-        </BackBtn>
-      )}
-      <Button
-        onClick={() => {
-          onChange(value + 1);
-          loader();
-        }}
-      >
-        {nextBtnText}
-      </Button>
-    </Wrapper>
   );
 }
 

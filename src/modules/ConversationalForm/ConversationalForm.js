@@ -1,6 +1,5 @@
 import { ArrowDownIcon } from '@heroicons/react/solid';
 import { Link } from '@reach/router';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 import * as S from './conversationalForm.styles';
@@ -40,7 +39,7 @@ function ConversationalForm({ questions }) {
   }, [questionStatus]);
 
   function setLoaders() {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     setLoaderOne(false);
     setLoaderTwo(false);
     setLoaderThree(false);
@@ -65,33 +64,62 @@ function ConversationalForm({ questions }) {
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    const data = {
-      candidate: {
-        name: 'Jasper',
-        email: 'jaspervermeulen@icloud.com',
-        cv: cv || '',
-        phone: '0499363308',
-        referrer: 'Wheelhouse Onboarding',
-      },
-    };
+    if (
+      interviewee.name &&
+      interviewee.expectations &&
+      interviewee.education &&
+      interviewee.experience &&
+      portfolioLink1 &&
+      interviewee.hobbies &&
+      intervieweePhone &&
+      intervieweeMail &&
+      cv &&
+      interviewee.insight
+    ) {
+      try {
+        const url = `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`;
+        const formdata = new FormData();
+        formdata.append(`candidate[name]`, interviewee.name);
+        formdata.append(`candidate[email]`, intervieweeMail);
+        formdata.append(`candidate[phone]`, intervieweePhone);
+        formdata.append(
+          `candidate[referrer]`,
+          `Wheelhouse Conversational Onboarding`,
+        );
+        if (cv) {
+          formdata.append(`candidate[cv]`, cv || ``);
+        }
+        formdata.append(
+          `candidate[cover_letter]`,
+          `
+            Expectations? ${interviewee.expectations},
+            Education? ${interviewee.education},
+            Experience? ${interviewee.experience},
+            Hobbies? ${interviewee.hobbies},
+            Insight? ${interviewee.insight},
+            Portfolio? ${portfolioLink1}, ${portfolioLink2}, ${portfolioLink3}
+          `,
+        );
 
-    const options = {
-      method: 'POST',
-      url: `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`,
-      data,
-    };
-
-    axios
-      .request(options)
-      .then(response => {
-        console.info(response.data);
-      })
-      .catch(error => {
+        const result = await fetch(url, {
+          body: formdata,
+          method: `POST`,
+        });
+        if (result.ok) {
+          console.info('Submitted');
+          setQuestionStatus(questionStatus + 1);
+        } else {
+          setError('Conversation could not be submitted.');
+        }
+      } catch (error) {
         console.error(error);
-      });
+      }
+    } else {
+      setError('It seems like you forgot to fill in some things!');
+    }
   }
 
   function handlePortfolioChange(e) {
@@ -299,6 +327,7 @@ function ConversationalForm({ questions }) {
                       onClick={() => {
                         setOverwiew(!overview);
                       }}
+                      type="button"
                     >
                       <span
                         style={{ fontSize: '18px', fontFamily: 'Montserrat' }}
@@ -413,14 +442,6 @@ function ConversationalForm({ questions }) {
                   </S.Wrapper>
                 ) : question.id === 14 ? (
                   <S.Wrapper>
-                    <S.BackButton
-                      onClick={() => {
-                        setQuestionStatus(questionStatus - 1);
-                        setLoaders();
-                      }}
-                    >
-                      Go back
-                    </S.BackButton>
                     <Link to="/">
                       <Button>Go home</Button>
                     </Link>

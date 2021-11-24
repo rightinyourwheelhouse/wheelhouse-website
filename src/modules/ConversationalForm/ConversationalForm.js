@@ -131,15 +131,6 @@ function ConversationalForm({ questions }) {
     }));
   }
 
-  function handleContactChange(e) {
-    const { name } = e.target;
-
-    setInterviewee(interviewee => ({
-      ...interviewee,
-      [name]: { intervieweePhone, intervieweeMail },
-    }));
-  }
-
   return (
     <div>
       <form method="post" onSubmit={e => handleSubmit(e)}>
@@ -250,7 +241,6 @@ function ConversationalForm({ questions }) {
                       name={question.blocks[1].name}
                       onChange={e => {
                         setIntervieweePhone(e.currentTarget.value);
-                        handleContactChange(e);
                       }}
                       placeholder="Phone"
                     />
@@ -259,7 +249,6 @@ function ConversationalForm({ questions }) {
                       name={question.blocks[1].name}
                       onChange={e => {
                         setIntervieweeMail(e.currentTarget.value);
-                        handleContactChange(e);
                       }}
                       placeholder="Mail"
                     />
@@ -390,7 +379,7 @@ function ConversationalForm({ questions }) {
                         </div>
                         <div>
                           <S.OverviewLabel>Cv</S.OverviewLabel>
-                          <S.OverviewText>{interviewee.cv}</S.OverviewText>
+                          <S.OverviewText>{cv.name}</S.OverviewText>
                         </div>
                         <div>
                           <S.OverviewLabel>Insight</S.OverviewLabel>
@@ -398,30 +387,19 @@ function ConversationalForm({ questions }) {
                         </div>
                         <div>
                           <S.OverviewLabel>Contact</S.OverviewLabel>
-                          {interviewee.contact &&
-                            Object.values(interviewee.contact).map(
-                              (item, index) => {
-                                return (
-                                  <S.OverviewText key={index}>
-                                    {item}
-                                  </S.OverviewText>
-                                );
-                              },
-                            )}
+                          <S.OverviewText>{intervieweePhone}</S.OverviewText>
+                          <S.OverviewText>{intervieweeMail}</S.OverviewText>
                         </div>
 
                         <div>
                           <S.OverviewLabel>Portfolio</S.OverviewLabel>
-                          {interviewee.portfolio &&
-                            Object.values(interviewee.portfolio).map(
-                              (item, index) => {
-                                return (
-                                  <S.OverviewText key={index}>
-                                    {item}
-                                  </S.OverviewText>
-                                );
-                              },
-                            )}
+                          <S.OverviewText>{portfolioLink1}</S.OverviewText>
+                          <S.OverviewText>
+                            {portfolioLink2 || ''}
+                          </S.OverviewText>
+                          <S.OverviewText>
+                            {portfolioLink3 || ''}
+                          </S.OverviewText>
                         </div>
                       </S.OverviewWrapper>
                     </div>

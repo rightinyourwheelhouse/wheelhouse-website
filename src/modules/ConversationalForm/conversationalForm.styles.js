@@ -160,12 +160,12 @@ export const OverviewLabel = styled.p`
   font-weight: 600;
   font-size: 16px;
   margin: 0;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 `;
 
 export const OverviewText = styled.p`
   margin: 0;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
 `;
 
 export const OverviewWrapper = styled.div`

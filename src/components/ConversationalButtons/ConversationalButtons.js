@@ -19,6 +19,7 @@ function ConversationalButtons({
             onChange(value - 1);
             loader();
           }}
+          type="button"
         >
           Go back
         </S.BackButton>
@@ -28,6 +29,7 @@ function ConversationalButtons({
           onChange(value + 1);
           loader();
         }}
+        type="button"
       >
         {nextBtnText}
       </Button>

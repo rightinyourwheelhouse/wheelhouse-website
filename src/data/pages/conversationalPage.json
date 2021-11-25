@@ -28,7 +28,7 @@
       "title": "Name",
       "blocks": [
         {
-          "text": "Before we start, can we get your first name?"
+          "text": "Before we start, can we get your full name?"
         },
         {
           "input": "input",
@@ -176,7 +176,7 @@
           "text": "Alright! 2 more questions. Then you can go back to what you were doing!"
         },
         {
-          "text": "Do you have a CV? We like seeing a CV because it gives us a good overview of all your specialties!",
+          "text": "Do you have a CV? We like seeing a CV because it gives us a good overview of all your specialties! You can upload your CV in pdf format!",
           "input": "cv",
           "name": "cv"
         }

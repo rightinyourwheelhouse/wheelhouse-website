@@ -16,7 +16,7 @@ const query = graphql`
   }
 `;
 
-export const useJobOverview = ({ count, current = null } = {}) => {
+export function useJobOverview({ count, current = null } = {}) {
   const {
     allCareer: { edges },
   } = useStaticQuery(query);
@@ -34,4 +34,4 @@ export const useJobOverview = ({ count, current = null } = {}) => {
   }, [edges, count, current]);
 
   return items;
-};
+}

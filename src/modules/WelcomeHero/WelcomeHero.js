@@ -16,7 +16,7 @@ import Blob from '~images/blobs/1.svg';
 import Welcome from '~images/blobs/welcome.svg';
 import TeamRotation from '~modules/TeamRotation';
 
-const WelcomeHero = () => {
+function WelcomeHero() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -52,6 +52,6 @@ const WelcomeHero = () => {
       </Container>
     </WelcomeHeroContainer>
   );
-};
+}
 
 export default memo(WelcomeHero);

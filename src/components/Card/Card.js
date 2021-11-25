@@ -5,11 +5,13 @@ import { CardContainer } from './card.styles';
 
 import colors from '~styles/colors';
 
-const Card = ({ background, children, foreground }) => (
-  <CardContainer background={background} foreground={foreground}>
-    {children}
-  </CardContainer>
-);
+function Card({ background, children, foreground }) {
+  return (
+    <CardContainer background={background} foreground={foreground}>
+      {children}
+    </CardContainer>
+  );
+}
 
 Card.propTypes = {
   background: PropTypes.string,

@@ -17,14 +17,14 @@ import Button from '~components/Button';
 
 import colors from '~styles/colors';
 
-const CookieConsentAdvanced = ({
+function CookieConsentAdvanced({
   cookies,
   onCancel,
   onUpdate,
   onUpdateAll,
   onSave,
   privacyUrl,
-}) => {
+}) {
   const handleRejectAll = useCallback(() => {
     onUpdateAll(false);
   }, [onUpdateAll]);
@@ -94,7 +94,7 @@ const CookieConsentAdvanced = ({
       </CookieConsentAdvancedContainer>
     </div>
   );
-};
+}
 
 CookieConsentAdvanced.propTypes = {
   cookies: PropTypes.arrayOf(

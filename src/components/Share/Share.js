@@ -9,25 +9,27 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
-const Share = ({ url }) => (
-  <>
-    <div>
-      <FacebookShareButton url={url}>
-        <FacebookIcon />
-      </FacebookShareButton>
-    </div>
-    <div>
-      <TwitterShareButton url={url}>
-        <TwitterIcon />
-      </TwitterShareButton>
-    </div>
-    <div>
-      <LinkedinShareButton url={url}>
-        <LinkedinIcon />
-      </LinkedinShareButton>
-    </div>
-  </>
-);
+function Share({ url }) {
+  return (
+    <>
+      <div>
+        <FacebookShareButton url={url}>
+          <FacebookIcon />
+        </FacebookShareButton>
+      </div>
+      <div>
+        <TwitterShareButton url={url}>
+          <TwitterIcon />
+        </TwitterShareButton>
+      </div>
+      <div>
+        <LinkedinShareButton url={url}>
+          <LinkedinIcon />
+        </LinkedinShareButton>
+      </div>
+    </>
+  );
+}
 
 Share.propTypes = {
   url: PropTypes.string.isRequired,

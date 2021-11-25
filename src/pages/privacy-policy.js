@@ -13,26 +13,28 @@ import Navigation from '~modules/Navigation';
 
 import spacing from '~styles/spacing';
 
-const PrivacyPolicyPage = ({
+function PrivacyPolicyPage({
   data: {
     pagesJson: { title, body, seo },
   },
-}) => (
-  <Layout>
-    <Seo title={seo.title} description={seo.description} image={seo.image} />
+}) {
+  return (
+    <Layout>
+      <Seo title={seo.title} description={seo.description} image={seo.image} />
 
-    <Navigation />
+      <Navigation />
 
-    <Section>
-      <Container offset={spacing.large}>
-        <h2>{title}</h2>
-        <Content>
-          <Markdown>{body}</Markdown>
-        </Content>
-      </Container>
-    </Section>
-  </Layout>
-);
+      <Section>
+        <Container offset={spacing.large}>
+          <h2>{title}</h2>
+          <Content>
+            <Markdown>{body}</Markdown>
+          </Content>
+        </Container>
+      </Section>
+    </Layout>
+  );
+}
 
 PrivacyPolicyPage.propTypes = {
   data: PropTypes.shape({

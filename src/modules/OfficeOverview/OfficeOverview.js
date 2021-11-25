@@ -8,7 +8,7 @@ import SubTitle from '~components/SubTitle';
 import ThreeColumns from '~components/ThreeColumns';
 import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
-const OfficeOverview = () => {
+function OfficeOverview() {
   const offices = useOfficeOverview();
 
   return (
@@ -35,6 +35,6 @@ const OfficeOverview = () => {
       </OfficeItemContainer>
     </div>
   );
-};
+}
 
 export default memo(OfficeOverview);

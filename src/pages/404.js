@@ -16,35 +16,37 @@ const OuterContainer = styled.div`
   margin-top: 300px;
 `;
 
-const NotFoundPage = () => (
-  <Layout>
-    <Seo
-      title="404: Not found"
-      description="You got lost on your way to our website"
-    />
-    <Navigation
-      hamburgerColor={colors.textPrimary100}
-      baseBackgroundColor={colors.backgroundPrimary100}
-      baseColor={colors.textPrimary100}
-      baseHoverColor={colors.primary}
-    />
+function NotFoundPage() {
+  return (
+    <Layout>
+      <Seo
+        title="404: Not found"
+        description="You got lost on your way to our website"
+      />
+      <Navigation
+        hamburgerColor={colors.textPrimary100}
+        baseBackgroundColor={colors.backgroundPrimary100}
+        baseColor={colors.textPrimary100}
+        baseHoverColor={colors.primary}
+      />
 
-    <Lamp />
+      <Lamp />
 
-    <Section background={colors.backgroundPrimary100}>
-      <Container height="50vh">
-        <OuterContainer>
-          <h1>Are you lost?</h1>
-          <h2>4 oh 4</h2>
+      <Section background={colors.backgroundPrimary100}>
+        <Container height="50vh">
+          <OuterContainer>
+            <h1>Are you lost?</h1>
+            <h2>4 oh 4</h2>
 
-          <p>It sure is dark here...</p>
-          <Button as={Link} to="/">
-            Hold my hand
-          </Button>
-        </OuterContainer>
-      </Container>
-    </Section>
-  </Layout>
-);
+            <p>It sure is dark here...</p>
+            <Button as={Link} to="/">
+              Hold my hand
+            </Button>
+          </OuterContainer>
+        </Container>
+      </Section>
+    </Layout>
+  );
+}
 
 export default NotFoundPage;

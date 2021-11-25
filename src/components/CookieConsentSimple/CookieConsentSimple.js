@@ -13,7 +13,7 @@ import Button from '~components/Button';
 
 import colors from '~styles/colors';
 
-const CookieConsent = ({ onUpdate, onCustomize, privacyUrl }) => {
+function CookieConsent({ onUpdate, onCustomize, privacyUrl }) {
   const handleAccept = useCallback(() => {
     onUpdate(true);
   }, [onUpdate]);
@@ -45,7 +45,7 @@ const CookieConsent = ({ onUpdate, onCustomize, privacyUrl }) => {
       </ConsentActions>
     </CookieConsentSimpleContainer>
   );
-};
+}
 
 CookieConsent.propTypes = {
   onCustomize: PropTypes.func.isRequired,

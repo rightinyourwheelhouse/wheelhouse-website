@@ -3,20 +3,22 @@ import React, { memo } from 'react';
 
 import ConsentItem from './_ConsentItem';
 
-const ConsentList = ({ cookies, onChange }) => (
-  <div>
-    {cookies.map(({ name, value, label, required }) => (
-      <ConsentItem
-        key={name}
-        name={name}
-        value={value}
-        label={label}
-        onChange={onChange}
-        required={required}
-      />
-    ))}
-  </div>
-);
+function ConsentList({ cookies, onChange }) {
+  return (
+    <div>
+      {cookies.map(({ name, value, label, required }) => (
+        <ConsentItem
+          key={name}
+          name={name}
+          value={value}
+          label={label}
+          onChange={onChange}
+          required={required}
+        />
+      ))}
+    </div>
+  );
+}
 
 ConsentList.propTypes = {
   cookies: PropTypes.arrayOf(

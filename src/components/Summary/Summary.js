@@ -3,18 +3,20 @@ import React, { memo } from 'react';
 
 import { SummaryContainer, Title, List } from './summary.styles';
 
-const Summary = ({ title, items }) => (
-  <SummaryContainer>
-    {title && <Title>{title}</Title>}
-    <List>
-      {items.map(({ label, disabled }) => (
-        <li key={label} className={disabled && 'disabled'}>
-          {label}
-        </li>
-      ))}
-    </List>
-  </SummaryContainer>
-);
+function Summary({ title, items }) {
+  return (
+    <SummaryContainer>
+      {title && <Title>{title}</Title>}
+      <List>
+        {items.map(({ label, disabled }) => (
+          <li key={label} className={disabled && 'disabled'}>
+            {label}
+          </li>
+        ))}
+      </List>
+    </SummaryContainer>
+  );
+}
 
 Summary.propTypes = {
   items: PropTypes.arrayOf(

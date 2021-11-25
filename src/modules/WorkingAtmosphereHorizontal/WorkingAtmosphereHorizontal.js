@@ -8,7 +8,7 @@ import { useWorkingAtmosphereImages } from '~services/images/useWorkingAtmospher
 
 import { orientationName } from '~utils/image';
 
-const WorkingAtmosphereHorizontal = () => {
+function WorkingAtmosphereHorizontal() {
   const images = useWorkingAtmosphereImages();
 
   return (
@@ -29,6 +29,6 @@ const WorkingAtmosphereHorizontal = () => {
       </HorizontalItemList>
     </WorkingAtmosphereContainer>
   );
-};
+}
 
 export default memo(WorkingAtmosphereHorizontal);

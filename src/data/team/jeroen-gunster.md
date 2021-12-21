@@ -4,7 +4,7 @@ visible: true
 name: Jeroen Gunster
 role: JavaScript Engineer
 description: is a web developer who loves tinkering with his 3D printer
-image: /assets/jeroen-gunster.jpg
+image: /assets/hoofdjedec.png
 detailImage:
   image: /assets/jeroen-gunster.jpg
   movingPicture: /assets/jeroen-gunster.jpg

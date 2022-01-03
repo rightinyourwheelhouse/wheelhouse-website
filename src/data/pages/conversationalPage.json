@@ -1,0 +1,234 @@
+{
+  "page": "conversational",
+  "title": "Let's talk Wheelhouse.",
+  "seo": {
+    "title": "Working as a javascript expert at Wheelhouse and expand our team",
+    "description": "At Wheelhouse, we encourage everyone to think and work on our strategy. Initiative and new insights are stimulated to deliver a valuable solution together.",
+    "image": "assets/default-image.png"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "title": "Welcome",
+      "blocks": [
+        {
+          "title": "Hi! We are Wheelhouse"
+        },
+        {
+          "text": "Hi! At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!"
+        }
+      ],
+      "previousBtn": false,
+      "nextBtnText": "Let's talk",
+      "image": "assets/rafael-cartoon.png",
+      "cartoon": "rafael"
+    },
+    {
+      "id": 2,
+      "title": "Name",
+      "blocks": [
+        {
+          "text": "Before we start, can we get your full name?"
+        },
+        {
+          "input": "input",
+          "name": "name",
+          "placeholder": "Your name"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 3,
+      "title": "About Wheelhouse",
+      "blocks": [
+        {
+          "text": "Nice to meet you! Let’s talk Wheelhouse first:"
+        },
+        {
+          "text": "We are a group of JavaScript experts and consultants. We’re looking for people that fit into our family vibe, people with an open mind, who like to try out new things! Like these new strange conversational forms. So if you are interested we would like to know you a little better!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Sounds cool",
+      "image": "assets/roel-cartoon.png",
+      "cartoon": "roel"
+    },
+    {
+      "id": 4,
+      "title": "Expectations",
+      "blocks": [
+        {
+          "text": "Now, we are interested in what you are looking for in a job. How do you see yourself in Wheelhouse?"
+        },
+        {
+          "input": "textarea",
+          "name": "expectations",
+          "placeholder": "I see myself..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 5,
+      "title": "Education",
+      "blocks": [
+        {
+          "text": "Cool! How about your educational background, where and what did you study?"
+        },
+        {
+          "input": "textarea",
+          "name": "education",
+          "placeholder": "I studied..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next",
+      "image": "assets/ward-cartoon.png",
+      "cartoon": "ward"
+    },
+    {
+      "id": 6,
+      "title": "Experience",
+      "blocks": [
+        {
+          "text": "Sweet. Have you already used your knowledge, with other words do you have any experience?"
+        },
+        {
+          "input": "textarea",
+          "name": "experience",
+          "placeholder": "I have done..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 7,
+      "title": "Portfolio",
+      "blocks": [
+         {
+          "text": "One thing we really like is seeing new stuff! Do you have a portfolio (GitHub, website, ...) that you are proud of?"
+        },
+        {
+          "input": "portfolio",
+          "name": "portfolio"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 8,
+      "title": "Hobbies",
+      "blocks": [
+        {
+          "text": "Now do you have any hobbies? Tech related or not, we’re interested!"
+        },
+        {
+          "input": "textarea",
+          "name": "hobbies",
+          "placeholder": "Fishing, ice skating, hockey..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next",
+      "image": "assets/aagje-cartoon.png",
+      "cartoon": "aagje"
+
+    },
+    {
+      "id": 9,
+      "title": "About Wheelhouse",
+      "blocks": [
+        {
+          "text": "Interesting..., we like escape rooms, cars, cosplay, games, ... you could say we’re pretty diverse..."
+        },
+        {
+          "text": "I’m starting to have the feeling that we start to know each other pretty well!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 10,
+      "title": "Contact",
+      "blocks": [
+        {
+          "text": "If we want to contact you, via which way can we do this?"
+        },
+        {
+          "input": "contact",
+          "name": "contact"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 11,
+      "title": "CV",
+      "blocks": [
+        {
+          "text": "Alright! 2 more questions. Then you can go back to what you were doing!"
+        },
+        {
+          "text": "Do you have a CV? We like seeing a CV because it gives us a good overview of all your specialties! You can upload your CV in pdf format!",
+          "input": "cv",
+          "name": "cv"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 12,
+      "title": "About Wheelhouse",
+      "blocks":[
+        {
+          "text": "Lastly what do you think about Wheelhouse? What attracted you to have this conversation with us or check out our website?"
+        },
+        {
+          "input": "textarea",
+          "name": "insight",
+          "placeholder": "I think that..."
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 13,
+      "title": "Confirmation",
+      "blocks":[
+        {
+          "text": "Alright! Thank you so much for your attention! It was a pleasure."
+        },
+        {
+          "text": "If you want us to reach out to you, please confirm by submitting this conversation. You may also choose not to. It’s all up to you!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Submit",
+      "image": "assets/olivier-cartoon.png",
+      "cartoon": "olivier"
+    },
+    {
+      "id": 14,
+      "title": "Confirmation",
+      "blocks":[
+        {
+          "title": "Successfully submitted"
+        },
+        {
+          "text": "Thank you so much for your attention!"
+        }
+      ],
+      "previousBtn": false,
+      "nextBtnText": "Go home"
+    }
+  ]
+}

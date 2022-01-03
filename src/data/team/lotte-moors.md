@@ -4,7 +4,7 @@ visible: true
 name: Lotte Moors
 role: Junior JavaScript Engineer
 description: is a web developer with a passion for technology and nature
-image: /assets/lotte-moors.png
+image: /assets/lotte.png
 detailImage:
   image: /assets/lotte-moors.png
   movingPicture: /assets/lotte-moors.png

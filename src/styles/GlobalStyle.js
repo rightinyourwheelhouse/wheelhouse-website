@@ -182,7 +182,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     line-height: 0.9;
     font-weight: 900;
     margin-top: 0;

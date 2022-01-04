@@ -47,7 +47,7 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const Team = ({
+function Team({
   data: {
     employee: {
       excerpt,
@@ -63,7 +63,7 @@ const Team = ({
       rawMarkdownBody,
     },
   },
-}) => {
+}) {
   const url = isWindowContext && window.location.href;
   const [recommendations] = useTeamRecommendations(name);
 
@@ -173,7 +173,7 @@ const Team = ({
       </Section>
     </Layout>
   );
-};
+}
 
 Team.propTypes = {
   data: PropTypes.shape({

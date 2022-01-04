@@ -1,4 +1,4 @@
-export const orientationName = aspectRatio => {
+export function orientationName(aspectRatio) {
   if (aspectRatio > 1) {
     return 'landscape';
   }
@@ -7,4 +7,4 @@ export const orientationName = aspectRatio => {
   }
 
   return 'square';
-};
+}

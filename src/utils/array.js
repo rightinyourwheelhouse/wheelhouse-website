@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-export const shuffle = array => {
+export function shuffle(array) {
   let currentIndex = array.length;
   let temporaryValue;
   let randomIndex;
@@ -17,9 +17,9 @@ export const shuffle = array => {
   }
 
   return array;
-};
+}
 
-export const mode = array =>
+export function mode(array) {
   array.reduce(
     (a, b, i, arr) =>
       arr.filter(v => v === a).length >= arr.filter(v => v === b).length
@@ -27,3 +27,4 @@ export const mode = array =>
         : b,
     null,
   );
+}

@@ -16,7 +16,7 @@ import Raccoons from '~images/raccoons.svg';
 import { useNavigation } from '~services/navigation/useNavigation';
 import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
-const Footer = () => {
+function Footer() {
   const navigationItems = useNavigation();
   const offices = useOfficeOverview();
 
@@ -108,6 +108,6 @@ const Footer = () => {
       </Container>
     </FooterContainer>
   );
-};
+}
 
 export default memo(Footer);

@@ -1,0 +1,43 @@
+{
+  "live": true,
+  "date": "2022-01-11T08:15:28.365Z",
+  "title": "Our New Year's resolutions (or January top picks)",
+  "author": "Wheelhouse",
+  "image": "/assets/image-from-ios-2-.jpg",
+  "description": "New year, new us. Discover our team's New Year's resolutions for 2022. 🥂",
+  "introduction": "New year, new us. Discover our team's New Year's resolutions for 2022, whether they are on a professional level or a personal one. Cheers to the new year! 🥂",
+  "items": [
+    {
+      "title": "Prepare for Inca Trail and get back at making music",
+      "url": "https://bookatrekking.com/en/blog/inca-trail-peru/",
+      "description": "Before the pandemic hit, I wanted to go back to Peru. Unfortunately, I had to cancel everything, but I've been wanting to get back at it. This time, we want to do the Inca Trail because the dreaded train is the most expensive railway per km in the entire world. Apart from that, I've been creating a lot of instruments and synthesizers in the last couple of years, and I kind of quit putting out any music since 2018. Finding inspiration and motivation can be tough at times, and I was hoping to go for a more organic approach with the new instruments.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Run the Antwerp 10 miles",
+      "url": "https://agantwerp10miles.be",
+      "description": "It may seem like a basic resolution, but I had this one on my list for a while now. Last year, I couldn't participate in the Antwerp 10 miles because of shin splints, but now I'm recovered, I have started training again. Hopefully, I won't be injured this year.",
+      "pickedBy": "Daphné Vermeiren"
+    },
+    {
+      "title": "More confidence",
+      "description": "My resolutions for 2022 are:\n\n* Learning to care less about what other people say\n* More public speaking\n* Being confident about my work\n\nSummarized: more confidence. 💪🏼",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "In essence, do more",
+      "description": "There are a few things I want to do more of:\n\n* I want to get back to my workout routine. I used to follow a schedule and tried to increase the exercises every day, but lately, it has been hanging on my wall as decoration\n* Listen and play more music\n* Put more focus and put an active effort on cultivating the positive things in life",
+      "pickedBy": "Lotte Moors"
+    },
+    {
+      "title": "Spend more time in the pool",
+      "description": "When I was younger, I would spend a lot of my free time in the swimming pool training for swimming contests. While it improved my physical fitness, I also noticed how at peace I was after a training session. Over the years, my free time became scarce and the number of times I went swimming declined. The whole corona situation didn't help either. So for my New Year's resolution and the sake of my physical and mental well-being, I want to spend more time in the pool or doing other physical activities.",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "title": "Fewer things online, more in person",
+      "description": "Before Covid-19, I used to go out and loved to go to places with my friends. However, the pandemic changed that. Now I only stay inside and do activities online with my friends. Hopefully, I can do things again with my friends soon. In addition, I hope to see my friends who aren't as active online. I really want to escape my trap of being inside all day. So for this year, I want to do fewer things online and do more in person.",
+      "pickedBy": "Wout Salembier"
+    }
+  ]
+}

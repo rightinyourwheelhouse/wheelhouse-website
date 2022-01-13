@@ -1,15 +1,15 @@
 import { useFormik } from 'formik';
 import React, { memo, useState, useCallback } from 'react';
 
-import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
-import validationSchema from './validationSchema';
-
 import Button from '~components/Button';
 import FileUpload from '~components/form/FileUpload';
 import Input from '~components/form/Input';
 import Stack from '~components/Stack';
 
 import { encode } from '~utils/form';
+
+import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
+import validationSchema from './validationSchema';
 
 const ERROR = 'ERROR';
 const SUBMITTED = 'SUBMITTED';

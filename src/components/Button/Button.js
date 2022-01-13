@@ -3,9 +3,9 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { ButtonContainer } from './button.styles';
-
 import colors from '~styles/colors';
+
+import { ButtonContainer } from './button.styles';
 
 function Button({
   background,

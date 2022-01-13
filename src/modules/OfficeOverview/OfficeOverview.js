@@ -1,12 +1,12 @@
 import Link from 'gatsby-link';
 import React, { memo } from 'react';
 
-import { OfficeItemContainer } from './officeOverview.styles';
-
 import Card from '~components/Card';
 import SubTitle from '~components/SubTitle';
 import ThreeColumns from '~components/ThreeColumns';
 import { useOfficeOverview } from '~services/office/useOfficeOverview';
+
+import { OfficeItemContainer } from './officeOverview.styles';
 
 function OfficeOverview() {
   const offices = useOfficeOverview();

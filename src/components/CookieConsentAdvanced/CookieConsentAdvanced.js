@@ -2,6 +2,10 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React, { memo, useCallback } from 'react';
 
+import Button from '~components/Button';
+
+import colors from '~styles/colors';
+
 import ConsentList from './_ConsentList';
 
 import {
@@ -12,10 +16,6 @@ import {
   CookieConsentHeader,
   Overlay,
 } from './cookieConsentAdvanced.styles';
-
-import Button from '~components/Button';
-
-import colors from '~styles/colors';
 
 function CookieConsentAdvanced({
   cookies,

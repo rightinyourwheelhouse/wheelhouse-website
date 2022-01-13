@@ -1,11 +1,11 @@
 import { Link } from '@reach/router';
 import React, { useEffect, useState } from 'react';
 
-import * as S from './conversationalForm.styles';
-
 import Button from '~components/Button';
 import ConversationalButtons from '~components/ConversationalButtons';
 import ConversationalOverview from '~components/ConversationalOverview';
+
+import * as S from './conversationalForm.styles';
 
 function ConversationalForm({ questions }) {
   const [questionStatus, setQuestionStatus] = useState(1);

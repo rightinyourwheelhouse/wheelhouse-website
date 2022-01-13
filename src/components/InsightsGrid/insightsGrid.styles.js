@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import gridLayouts from './insightsGrid.layouts';
-
 import breakpoints from '~styles/breakpoints';
 import spacing from '~styles/spacing';
+
+import gridLayouts from './insightsGrid.layouts';
 
 export const InsightsGridImage = styled.div`
   --height: 215px;

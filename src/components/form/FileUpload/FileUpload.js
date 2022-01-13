@@ -2,12 +2,12 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { memo, useCallback, useState } from 'react';
 
+import colors from '~styles/colors';
+
 import { FileUploadContainer, Caption, Label } from './fileUpload.styles';
 
 import ErrorField from '../_ErrorField';
 import { LabelInputContainer } from '../form.styles';
-
-import colors from '~styles/colors';
 
 function FileUpload({ error, name, onChange, valid, value, label, ...props }) {
   const [active, setActive] = useState(value && value.name.length > 0);

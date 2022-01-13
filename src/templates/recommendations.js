@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
-import readingTime from 'reading-time';
 
 import AuthorInfo from '~components/AuthorInfo';
 import Content from '~components/Content';
@@ -42,7 +41,9 @@ function Recommendations({
     },
   },
 }) {
-  const { text: time } = readingTime(introduction + slot);
+  const introductionLength = introduction?.length || 0;
+  const slotLength = slot?.length || 0;
+  const time = `${Math.ceil((introductionLength + slotLength) / 5 / 180)} min`;
   const url = isWindowContext && window.location.href;
 
   return (

@@ -1,31 +1,28 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { useMemo } from 'react';
-import readingTime from 'reading-time';
 
 import { toKebab } from '~utils/string';
 
 const query = graphql`
   query {
     allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
-      edges {
-        node {
-          id
-          title
-          pubDate
-          link
-          content {
-            encoded
-          }
-          creator
-          enclosure {
-            url
-          }
-          image {
-            extension
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+      nodes {
+        id
+        title
+        pubDate
+        link
+        content {
+          encoded
+        }
+        creator
+        enclosure {
+          url
+        }
+        image {
+          extension
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -36,23 +33,21 @@ const query = graphql`
 
 export function useBlogOverview({ count = null, current = null }) {
   const {
-    allFeedBlog: { edges },
+    allFeedBlog: { nodes },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const nodes = edges
+    const items = nodes
       .map(
         ({
-          node: {
-            id,
-            creator: author,
-            title,
-            content: { encoded },
-            pubDate,
-            image,
-          },
+          id,
+          creator: author,
+          title,
+          content: { encoded },
+          pubDate,
+          image,
         }) => {
-          const { text: time } = readingTime(encoded);
+          const readTime = `${Math.ceil(encoded.length / 5 / 180)} min`;
           const url = `/insights/${toKebab(title)}`;
           const date = new Date(pubDate).toString();
 
@@ -61,7 +56,7 @@ export function useBlogOverview({ count = null, current = null }) {
             date,
             id,
             image,
-            readTime: time,
+            readTime,
             title,
             type: 'blog',
             url,
@@ -71,11 +66,11 @@ export function useBlogOverview({ count = null, current = null }) {
       .filter(({ id }) => id !== current);
 
     if (count) {
-      return nodes.slice(0, count);
+      return items.slice(0, count);
     }
 
-    return nodes;
-  }, [edges, count, current]);
+    return items;
+  }, [nodes, count, current]);
 
   return [items];
 }

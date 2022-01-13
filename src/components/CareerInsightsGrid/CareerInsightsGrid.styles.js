@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import gridLayouts from './CareerInsightsGrid.layouts';
-
 import breakpoints from '~styles/breakpoints';
 import spacing from '~styles/spacing';
+
+import gridLayouts from './CareerInsightsGrid.layouts';
 
 export const CareerInsightsGridImage = styled.div`
   --height: 215px;

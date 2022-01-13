@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 
-import { OuterContainer } from './radioRaccoons.styles';
-
 import Button from '~components/Button';
 
 import RadioRaccoonsLogo from '~images/radio-raccoons.svg';
 import colors from '~styles/colors';
+
+import { OuterContainer } from './radioRaccoons.styles';
 
 function RadioRaccoons() {
   return (

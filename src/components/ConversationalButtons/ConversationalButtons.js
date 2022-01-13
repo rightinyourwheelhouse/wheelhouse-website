@@ -1,8 +1,8 @@
 import React from 'react';
 
-import * as S from './conversationalButtons.styles';
-
 import Button from '~components/Button';
+
+import * as S from './conversationalButtons.styles';
 
 function ConversationalButtons({
   previousBtn = true,

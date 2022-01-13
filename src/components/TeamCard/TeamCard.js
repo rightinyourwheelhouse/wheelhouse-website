@@ -3,9 +3,9 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
-
 import Button from '~components/Button';
+
+import { CardContainer, ImageContainer, Caption } from './teamCard.styles';
 
 function TeamCard({ image, name, description, slug }) {
   return (

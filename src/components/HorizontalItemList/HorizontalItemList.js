@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 import React, { memo, useRef, useState, useCallback, useMemo } from 'react';
 import { animateScroll } from 'react-scroll';
 
+import Chevron from '~images/chevron-left.svg';
+import colors from '~styles/colors';
+import spacing from '~styles/spacing';
+
 import {
   List,
   ArrowContainer,
   OuterContainer,
 } from './horizontalItemList.styles';
-
-import Chevron from '~images/chevron-left.svg';
-import colors from '~styles/colors';
-import spacing from '~styles/spacing';
 
 function HorizontalItemList({
   background,

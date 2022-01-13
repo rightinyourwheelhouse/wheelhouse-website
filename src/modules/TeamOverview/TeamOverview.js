@@ -1,11 +1,12 @@
 import React, { memo } from 'react';
 
+import SubTitle from '~components/SubTitle';
+
+import TeamCard from '~components/TeamCard';
+
 import { CardsContainer } from './teamOverview.styles';
 
 import { useTeam } from '../../services/team/useTeam';
-
-import SubTitle from '~components/SubTitle';
-import TeamCard from '~components/TeamCard';
 
 function TeamOverview() {
   const members = useTeam();

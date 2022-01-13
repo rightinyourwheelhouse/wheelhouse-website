@@ -1,6 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { useMemo } from 'react';
-import readingTime from 'reading-time';
 
 import { toKebab } from '~utils/string';
 
@@ -10,29 +9,27 @@ const query = graphql`
       filter: { live: { eq: true } }
       sort: { fields: date, order: DESC }
     ) {
-      edges {
-        node {
-          id
-          date
-          author
+      nodes {
+        id
+        date
+        author
+        title
+        items {
           title
-          items {
-            title
-            author
-            url
-            description
-            pickedBy
-          }
-          tags
+          author
+          url
           description
-          introduction
-          slot
-          image {
-            id
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+          pickedBy
+        }
+        tags
+        description
+        introduction
+        slot
+        image {
+          id
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -46,27 +43,29 @@ export function useRecommendationsOverview({
   current = null,
 } = {}) {
   const {
-    allRecommendationsJson: { edges },
+    allRecommendationsJson: { nodes },
   } = useStaticQuery(query);
 
   const selectedItems = useMemo(() => {
-    const nodes = edges
+    const items = nodes
       .map(
         ({
-          node: {
-            author,
-            date,
-            description,
-            id,
-            image,
-            items,
-            introduction,
-            slot,
-            title,
-          },
+          author,
+          date,
+          description,
+          id,
+          image,
+          items,
+          introduction,
+          slot,
+          title,
         }) => {
           const url = `/recommendations/${toKebab(title)}`;
-          const { text: readTime } = readingTime(introduction + slot);
+          const introductionLength = introduction?.length || 0;
+          const slotLength = slot?.length || 0;
+          const readTime = `${Math.ceil(
+            (introductionLength + slotLength) / 5 / 180,
+          )} min`;
 
           return {
             author,
@@ -85,11 +84,11 @@ export function useRecommendationsOverview({
       .filter(({ id }) => id !== current);
 
     if (count) {
-      return nodes.slice(0, count);
+      return items.slice(0, count);
     }
 
-    return nodes;
-  }, [edges, count, current]);
+    return items;
+  }, [nodes, count, current]);
 
   return [selectedItems];
 }

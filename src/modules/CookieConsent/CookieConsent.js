@@ -2,12 +2,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React, { memo, useState, useCallback, useEffect, useMemo } from 'react';
 import ReactGA from 'react-ga';
 
-import { CookieConsentContainer } from './cookieConsent.styles';
-
 import CookieConsentAdvanced from '~components/CookieConsentAdvanced';
 import CookieConsentSimple from '~components/CookieConsentSimple';
 
 import { useCookie, setCookie } from '~hooks/useCookie';
+
+import { CookieConsentContainer } from './cookieConsent.styles';
 
 const ANALYTICS_COOKIE_NAME = 'gdpr-google-analytics';
 

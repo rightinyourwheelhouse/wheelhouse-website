@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { RecommendationContainer } from './recommendation.styles';
-
 import AuthorInfo from '~components/AuthorInfo';
 import Markdown from '~components/Markdown';
+
+import { RecommendationContainer } from './recommendation.styles';
 
 function Recommendation({ url, title, author, description, pickedBy }) {
   return (

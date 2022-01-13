@@ -1,13 +1,6 @@
 import { Link } from 'gatsby';
 import React, { memo, useEffect, useState } from 'react';
 
-import {
-  WelcomeHeroContainer,
-  MaskContainer,
-  InnerContainer,
-  InnerContent,
-} from './welcomeHero.styles';
-
 import Button from '~components/Button';
 import { Container } from '~components/layoutComponents';
 import MarkWithContent from '~components/MarkWithContent';
@@ -15,6 +8,13 @@ import MarkWithContent from '~components/MarkWithContent';
 import Blob from '~images/blobs/1.svg';
 import Welcome from '~images/blobs/welcome.svg';
 import TeamRotation from '~modules/TeamRotation';
+
+import {
+  WelcomeHeroContainer,
+  MaskContainer,
+  InnerContainer,
+  InnerContent,
+} from './welcomeHero.styles';
 
 function WelcomeHero() {
   const [loaded, setLoaded] = useState(false);

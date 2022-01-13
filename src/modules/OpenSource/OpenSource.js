@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React, { memo } from 'react';
 
-import { OpenSourceContainer } from './openSource.styles';
-
 import Button from '~components/Button';
 
 import Github from '~images/github.svg';
+
+import { OpenSourceContainer } from './openSource.styles';
 
 const OpenSource = () => (
   <OpenSourceContainer>

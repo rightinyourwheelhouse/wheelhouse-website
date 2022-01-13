@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import * as S from './OpenSourceLink.styles';
-
 import Github from '~images/github.svg';
 import Stargazer from '~images/stargazers.svg';
+
+import * as S from './OpenSourceLink.styles';
 
 function OpenSourceProjectLinkComponent({ project }) {
   return (

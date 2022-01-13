@@ -3,16 +3,6 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React, { memo, useState, useCallback, useMemo } from 'react';
 
-import {
-  Address,
-  Nav,
-  Items,
-  MenuIcon,
-  ItemsContainer,
-  Item,
-  ItemsContent,
-} from './navBar.styles';
-
 import Badge from '~components/Badge';
 
 import { useMedia } from '~hooks/useMedia';
@@ -22,6 +12,16 @@ import Github from '~images/github.svg';
 import Wheelhouse from '~images/wheelhouse.svg';
 import breakpoints from '~styles/breakpoints';
 import colors from '~styles/colors';
+
+import {
+  Address,
+  Nav,
+  Items,
+  MenuIcon,
+  ItemsContainer,
+  Item,
+  ItemsContent,
+} from './navBar.styles';
 
 function NavBar({
   baseColor,

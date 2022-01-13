@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { CardContainer } from './card.styles';
-
 import colors from '~styles/colors';
+
+import { CardContainer } from './card.styles';
 
 function Card({ background, children, foreground }) {
   return (

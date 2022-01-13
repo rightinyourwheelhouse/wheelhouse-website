@@ -2,18 +2,18 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 
-import {
-  JobItemContainer,
-  JobTitle,
-  IconContainer,
-} from './jobOverview.styles';
-
 import CircleBackground from '~components/CircleBackground';
 import Stack from '~components/Stack';
 import SubTitle from '~components/SubTitle';
 
 import Arrow from '~images/icons/arrow-top-right.svg';
 import { useJobOverview } from '~services/job/useJobOverview';
+
+import {
+  JobItemContainer,
+  JobTitle,
+  IconContainer,
+} from './jobOverview.styles';
 
 function JobOverview({ current, title, subTitle }) {
   const jobs = useJobOverview({ count: 2, current });

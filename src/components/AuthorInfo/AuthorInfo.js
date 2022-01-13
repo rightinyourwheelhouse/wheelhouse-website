@@ -2,6 +2,9 @@ import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 import React, { memo } from 'react';
 
+import TwoColumns from '~components/TwoColumns';
+import { useTeam } from '~services/team/useTeam';
+
 import {
   Avatar,
   InfoContainer,
@@ -11,9 +14,6 @@ import {
   MainContentContainer,
   WrittenBy,
 } from './authorInfo.styles';
-
-import TwoColumns from '~components/TwoColumns';
-import { useTeam } from '~services/team/useTeam';
 
 function AuthorInfo({
   author,

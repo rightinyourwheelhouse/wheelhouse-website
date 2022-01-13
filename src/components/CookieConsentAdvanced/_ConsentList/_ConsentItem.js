@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { memo, useCallback } from 'react';
 
-import { ConsentItemContainer } from './_consentItem.styles';
-
 import Toggle from '~components/Toggle';
+
+import { ConsentItemContainer } from './_consentItem.styles';
 
 function ConsentItem({ name, label, value, onChange, required }) {
   const handleChange = useCallback(() => {

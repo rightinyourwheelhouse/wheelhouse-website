@@ -1,9 +1,9 @@
 import Img from 'gatsby-image';
 import React, { memo, useState, useEffect } from 'react';
 
-import { RotationContainer } from './teamRotation.styles';
-
 import { useTeamRotationImages } from '~services/images/useTeamRotationImages';
+
+import { RotationContainer } from './teamRotation.styles';
 
 function TeamRotation() {
   const [index, setIndex] = useState(0);

@@ -9,7 +9,6 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import PropTypes from 'prop-types';
 import React, { memo, useEffect } from 'react';
-import readingTime from 'reading-time';
 
 import AuthorInfo from '~components/AuthorInfo';
 import Content from '~components/Content';
@@ -52,7 +51,7 @@ function Blog({
     },
   },
 }) {
-  const { text: time } = readingTime(encoded);
+  const time = `${Math.ceil(encoded.length / 5 / 180)} min`;
   const url = isWindowContext && window.location.href;
 
   useEffect(() => {

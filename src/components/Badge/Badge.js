@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
-import { BadgeContainer } from './badge.styles';
-
 import colors from '~styles/colors';
+
+import { BadgeContainer } from './badge.styles';
 
 function Badge({ background, children, color }) {
   return (

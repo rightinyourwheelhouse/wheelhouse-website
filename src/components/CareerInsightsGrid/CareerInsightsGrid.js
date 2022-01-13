@@ -3,6 +3,10 @@ import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React, { memo, useCallback, useState, useMemo } from 'react';
 
+import AuthorInfo from '~components/AuthorInfo';
+
+import { toShortDate } from '~utils/date';
+
 import gridLayouts from './CareerInsightsGrid.layouts';
 import {
   CareerInsightsGridItemContainer,
@@ -10,10 +14,6 @@ import {
   CareerInsightsGridImage,
   Type,
 } from './CareerInsightsGrid.styles';
-
-import AuthorInfo from '~components/AuthorInfo';
-
-import { toShortDate } from '~utils/date';
 
 function CareerInsightsGrid({ items, layout, reverse }) {
   const [firstItemHeight, setfirstItemHeight] = useState(0);

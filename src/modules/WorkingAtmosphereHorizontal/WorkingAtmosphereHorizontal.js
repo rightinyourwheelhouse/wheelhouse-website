@@ -1,12 +1,12 @@
 import Img from 'gatsby-image';
 import React, { memo } from 'react';
 
-import { WorkingAtmosphereContainer } from './workingAtmosphereHorizontal.styles';
-
 import HorizontalItemList from '~components/HorizontalItemList';
 import { useWorkingAtmosphereImages } from '~services/images/useWorkingAtmosphereImages';
 
 import { orientationName } from '~utils/image';
+
+import { WorkingAtmosphereContainer } from './workingAtmosphereHorizontal.styles';
 
 function WorkingAtmosphereHorizontal() {
   const images = useWorkingAtmosphereImages();

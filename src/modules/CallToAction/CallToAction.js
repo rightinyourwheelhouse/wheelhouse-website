@@ -2,6 +2,8 @@ import { XIcon } from '@heroicons/react/solid';
 import { Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 
+import Button from '~components/Button';
+
 import {
   CTAContainer,
   CTACartoon,
@@ -11,8 +13,6 @@ import {
   CTABody,
   CTAClose,
 } from './callToAction.styles';
-
-import Button from '~components/Button';
 
 function CallToAction() {
   const [ctaStatus, setCtaStatus] = useState(false);

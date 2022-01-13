@@ -1,6 +1,7 @@
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 
 import Button from '~components/Button';
 import Card from '~components/Card';
@@ -16,11 +17,11 @@ import SubTitle from '~components/SubTitle';
 import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
-import CallToAction from '~modules/CallToAction/CallToAction';
 
 import InsightsOverview from '~modules/InsightsOverview';
 import Navigation from '~modules/Navigation';
 import OfficeOverview from '~modules/OfficeOverview';
+
 import OpenSource from '~modules/OpenSource';
 import WelcomeHero from '~modules/WelcomeHero';
 import WheelhouseDescription from '~modules/WheelhouseDescription';
@@ -28,6 +29,16 @@ import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
 import spacing from '~styles/spacing';
+
+const ImageContainer = styled.div`
+  --height: 350px;
+
+  overflow: hidden;
+  height: var(--height);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+`;
 
 function IndexPage({
   data: {
@@ -37,8 +48,6 @@ function IndexPage({
   return (
     <Layout>
       <Seo title={seo.title} description={seo.description} image={seo.image} />
-
-      <CallToAction />
 
       <Navigation logoInitiallyHidden />
 
@@ -56,7 +65,9 @@ function IndexPage({
         <Container>
           <TwoColumns>
             <div>
-              <Image filename="opportunities.jpg" alt="oppurtunities" />
+              <ImageContainer>
+                <Image filename="opportunities.jpg" alt="oppurtunities" />
+              </ImageContainer>
               <h3>Our job opportunities</h3>
               <p>
                 We are looking for new colleagues in different disciplines. Are
@@ -67,7 +78,9 @@ function IndexPage({
               </Button>
             </div>
             <div>
-              <Image filename="wheelhouse.jpg" alt="team" />
+              <ImageContainer>
+                <Image filename="wheelhouse.jpg" alt="team" />
+              </ImageContainer>
               <h3>About</h3>
               <p>
                 We are a bunch of people with a major common javascript passion.

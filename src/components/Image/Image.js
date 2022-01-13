@@ -20,7 +20,7 @@ function Image({ alt, filename, bw, src, image, offset, ...props }) {
     selectedImage = image;
   }
 
-  if (!image && !src) {
+  if (!selectedImage && !src) {
     return null;
   }
 

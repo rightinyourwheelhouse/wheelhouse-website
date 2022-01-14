@@ -157,7 +157,7 @@ export const query = graphql`
       }
       image {
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(width: 1200)
           resize(width: 900, quality: 90) {
             src
           }

@@ -27,7 +27,7 @@ const query = graphql`
           introduction
           slot
           image {
-            id
+            extension
             childImageSharp {
               gatsbyImageData(width: 800)
             }

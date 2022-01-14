@@ -33,6 +33,7 @@ module.exports = {
     `gatsby-plugin-image`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-json',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -75,8 +76,6 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-netlify-cms-paths',
     },
-    'gatsby-transformer-json',
-
     'gatsby-plugin-sass',
     {
       options: {

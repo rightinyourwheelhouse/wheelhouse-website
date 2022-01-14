@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import styled from 'styled-components';
 
-import { useImage } from '~services/images/useImage';
-
 import spacing from '~styles/spacing';
 
 const ImageContainer = styled.div`
@@ -13,25 +11,19 @@ const ImageContainer = styled.div`
   margin: var(--offset) 0;
 `;
 
-function Image({ alt, filename, bw, src, image, offset, ...props }) {
-  let selectedImage = useImage(filename, src);
-
-  if (image) {
-    selectedImage = image;
-  }
-
-  if (!selectedImage && !src) {
+function Image({ alt, filename, bw, image, offset, ...props }) {
+  if (!image) {
     return null;
   }
 
   return (
     <ImageContainer offset={offset}>
-      {selectedImage.extension === 'gif' && (
-        <img src={selectedImage.publicURL} alt={alt} {...props} />
+      {image.extension === 'gif' && (
+        <img src={image.publicURL} alt={alt} {...props} />
       )}
-      {selectedImage.extension !== 'gif' && (
+      {image.extension !== 'gif' && (
         <GatsbyImage
-          image={selectedImage?.childImageSharp?.gatsbyImageData}
+          image={image?.childImageSharp?.gatsbyImageData}
           {...props}
           alt={alt}
         />

@@ -123,3 +123,6 @@ yarn.lock
 # Other
 *.tmp
 .history
+# @netlify/plugin-gatsby ignores start
+netlify/functions/gatsby
+# @netlify/plugin-gatsby ignores end

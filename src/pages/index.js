@@ -1,4 +1,5 @@
 import { Link, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
@@ -6,7 +7,6 @@ import styled from 'styled-components';
 import Button from '~components/Button';
 import Card from '~components/Card';
 import Content from '~components/Content';
-import Image from '~components/Image';
 import {
   Section,
   Container,
@@ -66,7 +66,10 @@ function IndexPage({
           <TwoColumns>
             <div>
               <ImageContainer>
-                <Image filename="opportunities.jpg" alt="oppurtunities" />
+                <StaticImage
+                  src="../images/general/opportunities.jpg"
+                  alt="oppurtunities"
+                />
               </ImageContainer>
               <h3>Our job opportunities</h3>
               <p>
@@ -79,7 +82,10 @@ function IndexPage({
             </div>
             <div>
               <ImageContainer>
-                <Image filename="wheelhouse.jpg" alt="team" />
+                <StaticImage
+                  src="../images/general/wheelhouse.jpg"
+                  alt="team"
+                />
               </ImageContainer>
               <h3>About</h3>
               <p>

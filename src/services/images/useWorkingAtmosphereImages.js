@@ -15,10 +15,10 @@ const query = graphql`
           name
           extension
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid {
               aspectRatio
-              ...GatsbyImageSharpFluid_withWebp
             }
+            gatsbyImageData(width: 1000)
           }
         }
       }

@@ -1,4 +1,4 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { memo, useState, useEffect } from 'react';
 
 import { useTeamRotationImages } from '~services/images/useTeamRotationImages';
@@ -31,11 +31,11 @@ function TeamRotation() {
 
   return (
     <RotationContainer>
-      {images.map(({ childImageSharp: { fluid }, id, name }, i) => (
-        <Img
+      {images.map(({ name, ...image }, i) => (
+        <GatsbyImage
           loading="eager"
-          fluid={fluid}
-          key={id}
+          image={image?.childImageSharp?.gatsbyImageData}
+          key={image.id}
           alt={name.replace(/-/g, ' ').substring(2)}
           style={{
             display: index === i ? 'block' : 'none',

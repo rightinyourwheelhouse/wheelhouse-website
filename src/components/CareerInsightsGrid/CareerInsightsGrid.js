@@ -1,5 +1,5 @@
-import Img from 'gatsby-image';
 import Link from 'gatsby-link';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { memo, useCallback, useState, useMemo } from 'react';
 
@@ -61,7 +61,9 @@ function CareerInsightsGrid({ items, layout, reverse }) {
               {firstItemImage && (
                 <Link to={firstItemUrl}>
                   <CareerInsightsGridImage>
-                    <Img fluid={firstItemImage.childImageSharp.fluid} />
+                    <GatsbyImage
+                      image={firstItemImage?.childImageSharp?.gatsbyImageData}
+                    />
                   </CareerInsightsGridImage>
                 </Link>
               )}
@@ -96,7 +98,9 @@ function CareerInsightsGrid({ items, layout, reverse }) {
               {itemImage && (
                 <Link to={itemUrl}>
                   <CareerInsightsGridImage>
-                    <Img fluid={itemImage.childImageSharp.fluid} />
+                    <GatsbyImage
+                      image={itemImage?.childImageSharp?.gatsbyImageData}
+                    />
                   </CareerInsightsGridImage>
                 </Link>
               )}

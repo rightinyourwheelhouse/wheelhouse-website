@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
@@ -76,7 +76,7 @@ function Recommendations({
       {image && (
         <Section space="12px">
           <Container>
-            <Img fluid={image.childImageSharp.fluid} />
+            <GatsbyImage image={image?.childImageSharp?.gatsbyImageData} />
           </Container>
         </Section>
       )}
@@ -151,12 +151,7 @@ Recommendations.propTypes = {
       date: PropTypes.string,
       description: PropTypes.string,
       id: PropTypes.string,
-      image: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({}),
-          resize: PropTypes.shape({ src: PropTypes.string }),
-        }),
-      }),
+      image: PropTypes.shape({}),
       introduction: PropTypes.string,
       items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -193,9 +188,7 @@ export const query = graphql`
       slot
       image {
         childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(width: 1200)
           resize(width: 900, quality: 90) {
             src
           }

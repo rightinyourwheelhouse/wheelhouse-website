@@ -1,5 +1,5 @@
-import Img from 'gatsby-image';
 import Link from 'gatsby-link';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { memo } from 'react';
 
 import TwoColumns from '~components/TwoColumns';
@@ -44,7 +44,7 @@ function AuthorInfo({
           <MainContentContainer>
             {image && (
               <Avatar full={full}>
-                <Img fluid={image.childImageSharp.fluid} />
+                <GatsbyImage image={image?.childImageSharp?.gatsbyImageData} />
               </Avatar>
             )}
             <div>

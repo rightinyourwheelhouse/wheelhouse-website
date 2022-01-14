@@ -1,5 +1,5 @@
-import Img from 'gatsby-image';
 import Link from 'gatsby-link';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
@@ -12,7 +12,12 @@ function TeamCard({ image, name, description, slug }) {
     <CardContainer>
       <Link to={slug}>
         <ImageContainer>
-          {image && <Img fluid={image.childImageSharp.fluid} alt={name} />}
+          {image && (
+            <GatsbyImage
+              image={image?.childImageSharp?.gatsbyImageData}
+              alt={name}
+            />
+          )}
         </ImageContainer>
       </Link>
       <Caption>
@@ -28,11 +33,7 @@ function TeamCard({ image, name, description, slug }) {
 
 TeamCard.propTypes = {
   description: PropTypes.string,
-  image: PropTypes.shape({
-    childImageSharp: PropTypes.shape({
-      fluid: PropTypes.shape({}),
-    }),
-  }).isRequired,
+  image: PropTypes.shape({}).isRequired,
   name: PropTypes.string.isRequired,
 };
 

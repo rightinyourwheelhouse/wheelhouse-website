@@ -1,4 +1,4 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { memo } from 'react';
 
 import AsymmetricImageGallery from '~components/ImageGallery';
@@ -12,11 +12,11 @@ function WorkingAtmosphereGallery() {
   return (
     <WorkingAtmosphereContainer>
       <AsymmetricImageGallery>
-        {images.map(({ id, childImageSharp: { fluid } }) => (
-          <Img
+        {images.map(image => (
+          <GatsbyImage
             objectFit="none"
-            key={id}
-            fluid={fluid}
+            key={image.id}
+            image={image?.childImageSharp?.gatsbyImageData}
             alt="Working atmosphere"
           />
         ))}

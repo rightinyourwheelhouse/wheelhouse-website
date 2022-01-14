@@ -22,9 +22,7 @@ const query = graphql`
             image {
               extension
               childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 500)
               }
             }
           }

@@ -4,7 +4,7 @@
   "seo": {
     "title": "Working as a javascript expert at Wheelhouse and expand our team",
     "description": "At Wheelhouse, we encourage everyone to think and work on our strategy. Initiative and new insights are stimulated to deliver a valuable solution together.",
-    "image": "assets/default-image.png"
+    "image": "/assets/default-image.png"
   },
   "questions": [
     {
@@ -20,7 +20,7 @@
       ],
       "previousBtn": false,
       "nextBtnText": "Let's talk",
-      "image": "assets/rafael-cartoon.png",
+      "image": "/assets/rafael-cartoon.png",
       "cartoon": "rafael"
     },
     {
@@ -52,7 +52,7 @@
       ],
       "previousBtn": true,
       "nextBtnText": "Sounds cool",
-      "image": "assets/roel-cartoon.png",
+      "image": "/assets/roel-cartoon.png",
       "cartoon": "roel"
     },
     {
@@ -86,7 +86,7 @@
       ],
       "previousBtn": true,
       "nextBtnText": "Next",
-      "image": "assets/ward-cartoon.png",
+      "image": "/assets/ward-cartoon.png",
       "cartoon": "ward"
     },
     {
@@ -109,7 +109,7 @@
       "id": 7,
       "title": "Portfolio",
       "blocks": [
-         {
+        {
           "text": "One thing we really like is seeing new stuff! Do you have a portfolio (GitHub, website, ...) that you are proud of?"
         },
         {
@@ -135,9 +135,8 @@
       ],
       "previousBtn": true,
       "nextBtnText": "Next",
-      "image": "assets/aagje-cartoon.png",
+      "image": "/assets/aagje-cartoon.png",
       "cartoon": "aagje"
-
     },
     {
       "id": 9,
@@ -187,7 +186,7 @@
     {
       "id": 12,
       "title": "About Wheelhouse",
-      "blocks":[
+      "blocks": [
         {
           "text": "Lastly what do you think about Wheelhouse? What attracted you to have this conversation with us or check out our website?"
         },
@@ -203,7 +202,7 @@
     {
       "id": 13,
       "title": "Confirmation",
-      "blocks":[
+      "blocks": [
         {
           "text": "Alright! Thank you so much for your attention! It was a pleasure."
         },
@@ -213,13 +212,13 @@
       ],
       "previousBtn": true,
       "nextBtnText": "Submit",
-      "image": "assets/olivier-cartoon.png",
+      "image": "/assets/olivier-cartoon.png",
       "cartoon": "olivier"
     },
     {
       "id": 14,
       "title": "Confirmation",
-      "blocks":[
+      "blocks": [
         {
           "title": "Successfully submitted"
         },

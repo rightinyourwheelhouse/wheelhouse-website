@@ -3,12 +3,11 @@ import { useMemo } from 'react';
 
 const query = graphql`
   query {
-    allFile {
-      edges {
-        node {
-          relativePath
-          ...fluidImage
-        }
+    allFile(filter: { extension: { regex: "/(jpg)|(png)|(jpeg)/" } }) {
+      nodes {
+        base
+        relativePath
+        ...fluidImage
       }
     }
   }
@@ -16,15 +15,15 @@ const query = graphql`
 
 export function useImage(filename, src) {
   const {
-    allFile: { edges },
+    allFile: { nodes },
   } = useStaticQuery(query);
 
   const image = useMemo(
     () =>
-      edges
-        .map(({ node }) => ({ ...node }))
+      nodes
+        .map(node => ({ ...node }))
         .find(({ relativePath }) => relativePath.includes(src || filename)),
-    [edges, filename, src],
+    [nodes, filename, src],
   );
 
   return image;

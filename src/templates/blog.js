@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import hljs from 'highlight.js/lib/core';
 import css from 'highlight.js/lib/languages/css';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -83,7 +83,11 @@ function Blog({
       <Navigation />
 
       <Section>
-        <ImageTitle image={<Img fluid={image.childImageSharp.fluid} />}>
+        <ImageTitle
+          image={
+            <GatsbyImage image={image?.childImageSharp?.gatsbyImageData} />
+          }
+        >
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
           <AuthorInfo author={creator} date={isoDate} readTime={time}>
@@ -132,14 +136,7 @@ Blog.propTypes = {
       }),
       creator: PropTypes.string,
       id: PropTypes.string,
-      image: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({}),
-          resize: PropTypes.shape({
-            src: PropTypes.string,
-          }),
-        }),
-      }),
+      image: PropTypes.shape({}),
       isoDate: PropTypes.string,
       link: PropTypes.string,
       title: PropTypes.string,
@@ -160,9 +157,7 @@ export const query = graphql`
       }
       image {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData
           resize(width: 900, quality: 90) {
             src
           }

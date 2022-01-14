@@ -6,9 +6,7 @@ const query = graphql`
       relativePath
       extension
       childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 600)
       }
     }
   }

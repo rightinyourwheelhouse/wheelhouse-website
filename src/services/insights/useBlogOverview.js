@@ -6,23 +6,23 @@ import { toKebab } from '~utils/string';
 const query = graphql`
   query {
     allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
-      nodes {
-        id
-        title
-        pubDate
-        link
-        content {
-          encoded
-        }
-        creator
-        enclosure {
-          url
-        }
-        image {
-          extension
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
+      edges {
+        node {
+          id
+          title
+          pubDate
+          link
+          content {
+            encoded
+          }
+          creator
+          enclosure {
+            url
+          }
+          image {
+            extension
+            childImageSharp {
+              gatsbyImageData(width: 800)
             }
           }
         }
@@ -33,19 +33,21 @@ const query = graphql`
 
 export function useBlogOverview({ count = null, current = null }) {
   const {
-    allFeedBlog: { nodes },
+    allFeedBlog: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
-    const items = nodes
+    const items = edges
       .map(
         ({
-          id,
-          creator: author,
-          title,
-          content: { encoded },
-          pubDate,
-          image,
+          node: {
+            id,
+            creator: author,
+            title,
+            content: { encoded },
+            pubDate,
+            image,
+          },
         }) => {
           const readTime = `${Math.ceil(encoded.length / 5 / 180)} min`;
           const url = `/insights/${toKebab(title)}`;
@@ -70,7 +72,7 @@ export function useBlogOverview({ count = null, current = null }) {
     }
 
     return items;
-  }, [nodes, count, current]);
+  }, [edges, count, current]);
 
   return [items];
 }

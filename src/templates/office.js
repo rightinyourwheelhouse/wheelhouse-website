@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -45,7 +45,10 @@ function Office({
               </div>
             </TwoColumns>
           </Content>
-          <Img fluid={image.childImageSharp.fluid} alt={`${name} office`} />
+          <GatsbyImage
+            image={image?.childImageSharp?.gatsbyImageData}
+            alt={`${name} office`}
+          />
           <Content>
             <h2>How to reach us</h2>
             <div>
@@ -64,11 +67,7 @@ Office.propTypes = {
       address: PropTypes.string,
       description: PropTypes.string,
       howToReach: PropTypes.string,
-      image: PropTypes.shape({
-        childImageSharp: PropTypes.shape({
-          fluid: PropTypes.shape({}),
-        }),
-      }),
+      image: PropTypes.shape({}),
       mail: PropTypes.string,
       name: PropTypes.string,
       phone: PropTypes.string,

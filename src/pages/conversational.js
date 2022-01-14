@@ -33,13 +33,7 @@ ConversationalPage.propTypes = {
       seo: PropTypes.shape({
         article: PropTypes.bool,
         description: PropTypes.string,
-        image: PropTypes.shape({
-          childImageSharp: PropTypes.shape({
-            resize: PropTypes.shape({
-              src: PropTypes.string,
-            }),
-          }),
-        }),
+        image: PropTypes.shape({}),
         lang: PropTypes.string,
         meta: PropTypes.arrayOf(PropTypes.object),
         title: PropTypes.string,
@@ -68,7 +62,11 @@ export const privacyPolicyQuery = graphql`
         }
         previousBtn
         nextBtnText
-        image
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 800)
+          }
+        }
         cartoon
       }
     }

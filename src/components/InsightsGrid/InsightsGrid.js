@@ -1,7 +1,7 @@
-import Img from 'gatsby-image';
 import Link from 'gatsby-link';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import React, { memo, useCallback, useState, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import AuthorInfo from '~components/AuthorInfo';
 
@@ -16,8 +16,6 @@ import {
 } from './insightsGrid.styles';
 
 function InsightsGridOverview({ items, layout, reverse }) {
-  const [firstItemHeight, setfirstItemHeight] = useState(0);
-
   const InsightsGrid = useMemo(
     () => [...items.slice(1, items.length)],
     [items],
@@ -34,12 +32,6 @@ function InsightsGridOverview({ items, layout, reverse }) {
     url: firstItemUrl,
   } = items[0] || {};
 
-  const refCallback = useCallback(node => {
-    if (node) {
-      setfirstItemHeight(node.getBoundingClientRect().height);
-    }
-  }, []);
-
   const ContainerElement = useMemo(() => {
     if (layout === gridLayouts.COLUMN) {
       return React.Fragment;
@@ -49,19 +41,19 @@ function InsightsGridOverview({ items, layout, reverse }) {
   }, [layout]);
 
   return (
-    <InsightsGridContainer
-      stickyHeight={firstItemHeight}
-      layout={layout}
-      reverse={reverse}
-    >
+    <InsightsGridContainer layout={layout} reverse={reverse}>
       <ContainerElement>
         {firstItemTitle && (
           <InsightsGridItemContainer>
-            <div ref={refCallback}>
+            <div>
               {firstItemImage && (
                 <Link to={firstItemUrl}>
                   <InsightsGridImage>
-                    <Img fluid={firstItemImage.childImageSharp.fluid} />
+                    <GatsbyImage
+                      objectFit="cover"
+                      objectPosition="50% 50%"
+                      image={firstItemImage?.childImageSharp?.gatsbyImageData}
+                    />
                   </InsightsGridImage>
                 </Link>
               )}
@@ -96,7 +88,11 @@ function InsightsGridOverview({ items, layout, reverse }) {
               {itemImage && (
                 <Link to={itemUrl}>
                   <InsightsGridImage>
-                    <Img fluid={itemImage.childImageSharp.fluid} />
+                    <GatsbyImage
+                      objectFit="cover"
+                      objectPosition="50% 50%"
+                      image={itemImage?.childImageSharp?.gatsbyImageData}
+                    />
                   </InsightsGridImage>
                 </Link>
               )}

@@ -9,27 +9,27 @@ const query = graphql`
       filter: { live: { eq: true } }
       sort: { fields: date, order: DESC }
     ) {
-      nodes {
-        id
-        date
-        author
-        title
-        items {
-          title
-          author
-          url
-          description
-          pickedBy
-        }
-        tags
-        description
-        introduction
-        slot
-        image {
+      edges {
+        node {
           id
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid_withWebp
+          date
+          author
+          title
+          items {
+            title
+            author
+            url
+            description
+            pickedBy
+          }
+          tags
+          description
+          introduction
+          slot
+          image {
+            id
+            childImageSharp {
+              gatsbyImageData(width: 800)
             }
           }
         }
@@ -43,22 +43,24 @@ export function useRecommendationsOverview({
   current = null,
 } = {}) {
   const {
-    allRecommendationsJson: { nodes },
+    allRecommendationsJson: { edges },
   } = useStaticQuery(query);
 
   const selectedItems = useMemo(() => {
-    const items = nodes
+    const items = edges
       .map(
         ({
-          author,
-          date,
-          description,
-          id,
-          image,
-          items,
-          introduction,
-          slot,
-          title,
+          node: {
+            author,
+            date,
+            description,
+            id,
+            image,
+            items,
+            introduction,
+            slot,
+            title,
+          },
         }) => {
           const url = `/recommendations/${toKebab(title)}`;
           const introductionLength = introduction?.length || 0;
@@ -88,7 +90,7 @@ export function useRecommendationsOverview({
     }
 
     return items;
-  }, [nodes, count, current]);
+  }, [edges, count, current]);
 
   return [selectedItems];
 }

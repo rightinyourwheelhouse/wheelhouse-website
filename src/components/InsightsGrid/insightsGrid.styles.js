@@ -20,10 +20,8 @@ export const InsightsGridImage = styled.div`
 
     img {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 50%;
-      top: 50%;
+      min-width: 100%;
+      min-height: 100%;
     }
 
     &:hover {
@@ -111,8 +109,6 @@ export const InsightsGridContainer = styled.div`
     if (layout === gridLayouts.HIGHLIGHT) {
       return css`
         @media screen and (min-width: ${breakpoints.small}) {
-          --stickyHeight: ${({ stickyHeight }) => `${stickyHeight}px`};
-
           margin: 0;
           display: flex;
           flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
@@ -140,12 +136,6 @@ export const InsightsGridContainer = styled.div`
               padding-left: ${({ reverse }) =>
                 reverse ? spacing.default : '0'};
               justify-content: flex-start;
-
-              ${InsightsGridItemContainer} {
-                position: sticky;
-                top: 90px;
-                height: var(--stickyHeight);
-              }
             }
 
             &:last-of-type {

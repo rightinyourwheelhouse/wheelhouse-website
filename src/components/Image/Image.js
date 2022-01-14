@@ -1,4 +1,4 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import styled from 'styled-components';
@@ -30,7 +30,11 @@ function Image({ alt, filename, bw, src, image, offset, ...props }) {
         <img src={selectedImage.publicURL} alt={alt} {...props} />
       )}
       {selectedImage.extension !== 'gif' && (
-        <Img {...props} alt={alt} fluid={selectedImage.childImageSharp.fluid} />
+        <GatsbyImage
+          image={selectedImage?.childImageSharp?.gatsbyImageData}
+          {...props}
+          alt={alt}
+        />
       )}
     </ImageContainer>
   );

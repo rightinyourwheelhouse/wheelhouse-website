@@ -18,14 +18,6 @@ export const CareerInsightsGridImage = styled.div`
     transition: all 0.3s;
     min-height: var(--height);
 
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 50%;
-      top: 50%;
-    }
-
     &:hover {
       transform: scale(1.02);
     }

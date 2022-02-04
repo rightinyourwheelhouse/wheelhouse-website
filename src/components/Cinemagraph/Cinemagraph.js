@@ -12,7 +12,9 @@ function Cinemagraph({ image, movie: { publicURL }, ...props }) {
 
   return (
     <>
-      {!loaded && image && <Image {...props} offset="0" image={image} />}
+      {!loaded && image && (
+        <Image {...props} offset="0" image={image} layout="fullWidth" />
+      )}
       <video
         style={{
           opacity: loaded ? 1 : 0,

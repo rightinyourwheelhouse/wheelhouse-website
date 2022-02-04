@@ -9,6 +9,10 @@ const ImageContainer = styled.div`
   --offset: ${({ offset }) => offset || spacing.large};
 
   margin: var(--offset) 0;
+
+  > div {
+    width: 100%;
+  }
 `;
 
 function Image({ alt, filename, bw, image, offset, ...props }) {

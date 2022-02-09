@@ -270,33 +270,32 @@ function ConversationalForm({ questions }) {
               >
                 {question.cartoon === 'rafael' ? (
                   <S.RafCartoon
-                    src={question.image}
+                    image={question?.image?.childImageSharp?.gatsbyImageData}
                     alt={question.blocks[0].title}
                   />
                 ) : question.cartoon === 'roel' ? (
                   <S.RoelCartoon
-                    src={question.image}
+                    image={question?.image?.childImageSharp?.gatsbyImageData}
                     alt={question.blocks[0].title}
                   />
                 ) : question.cartoon === 'aagje' ? (
                   <S.AagjeCartoon
-                    src={question.image}
+                    image={question?.image?.childImageSharp?.gatsbyImageData}
                     alt={question.blocks[0].title}
                   />
                 ) : question.cartoon === 'ward' ? (
                   <S.WardCartoon
-                    src={question.image}
+                    image={question?.image?.childImageSharp?.gatsbyImageData}
                     alt={question.blocks[0].title}
                   />
                 ) : question.cartoon === 'olivier' ? (
                   <S.OlivierCartoon
-                    src={question.image}
+                    image={question?.image?.childImageSharp?.gatsbyImageData}
                     alt={question.blocks[0].title}
                   />
                 ) : (
                   <p />
                 )}
-
                 {question.id === 13 ? (
                   <>
                     <ConversationalOverview

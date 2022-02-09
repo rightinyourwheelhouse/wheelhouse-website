@@ -59,8 +59,8 @@ function CallToAction() {
           </CTAText>
 
           <CTACartoon
-            src="assets/olivier-cartoon-cta.png"
-            alt="Rafael Cartoon"
+            src="/assets/olivier-cartoon-cta.png"
+            alt="Olivier Cartoon"
           />
         </CTAContent>
       </CTAContainer>

@@ -20,7 +20,10 @@ function OnboardingCta() {
           </Link>
         </S.Text>
 
-        <S.Cartoon src="assets/olivier-cartoon-cta.png" alt="Rafael Cartoon" />
+        <S.Cartoon
+          src="/assets/olivier-cartoon-cta.png"
+          alt="Olivier Cartoon"
+        />
       </S.Content>
     </div>
   );

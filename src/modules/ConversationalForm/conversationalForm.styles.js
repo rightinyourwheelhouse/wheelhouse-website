@@ -1,12 +1,16 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
 
 export const Container = styled.section`
   margin: 4rem 0;
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
 
   @media screen and (min-width: ${breakpoints.medium}) {
-    margin: 10rem 0 6rem 0;
+    margin: 10rem 0 10rem 0;
+    padding-bottom: 10rem;
   }
 `;
 
@@ -136,7 +140,7 @@ export const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export const RafCartoon = styled.img`
+export const RafCartoon = styled(GatsbyImage)`
   display: none;
 
   @media screen and (min-width: 1156px) {
@@ -148,7 +152,7 @@ export const RafCartoon = styled.img`
   }
 `;
 
-export const RoelCartoon = styled.img`
+export const RoelCartoon = styled(GatsbyImage)`
   display: none;
 
   @media screen and (min-width: 1156px) {
@@ -160,7 +164,7 @@ export const RoelCartoon = styled.img`
   }
 `;
 
-export const AagjeCartoon = styled.img`
+export const AagjeCartoon = styled(GatsbyImage)`
   display: none;
 
   @media screen and (min-width: 1156px) {
@@ -172,7 +176,7 @@ export const AagjeCartoon = styled.img`
   }
 `;
 
-export const WardCartoon = styled.img`
+export const WardCartoon = styled(GatsbyImage)`
   display: none;
 
   @media screen and (min-width: 1156px) {
@@ -184,7 +188,7 @@ export const WardCartoon = styled.img`
   }
 `;
 
-export const OlivierCartoon = styled.img`
+export const OlivierCartoon = styled(GatsbyImage)`
   display: none;
 
   @media screen and (min-width: 1156px) {

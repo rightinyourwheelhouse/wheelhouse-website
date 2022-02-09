@@ -4,7 +4,7 @@ import breakpoints from '~styles/breakpoints';
 import colors from '~styles/colors';
 
 export const Content = styled.div`
-  margin-top: 42px;
+  margin-top: 10rem;
   display: flex;
   justify-content: center;
 `;

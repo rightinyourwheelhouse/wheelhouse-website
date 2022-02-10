@@ -46,6 +46,12 @@
       "url": "https://www.youtube.com/c/EtenmetNick",
       "description": "We recently installed a new kitchen, making cooking a hobby instead of a task. One of the new YouTube channels I discovered is 'Eating with Nick'; his specialties are world cuisine and street food.",
       "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "DocsJS",
+      "description": "DocsJS is an API documentation tool for Javascript. For projects where TypeScript isn’t used, this tool comes in handy for adding types. In comments, you can add documentation to your code. When you’re done, you can use the jsdocs command to generate an HTML website from your documentation.",
+      "url": "https://jsdoc.app/index.html",
+      "pickedBy": "Lotte Moors"
     }
   ],
   "author": "Wheelhouse",

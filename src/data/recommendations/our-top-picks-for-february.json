@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "title": "Remix",
+      "url": "https://remix.run/",
+      "description": "I've been playing with the new kid on the block. It's fun, powerful, and something I will be using onwards from now. I have written a [blog article](<https://www.wheelhouse.be/insights/frrrip-throwing-remixrun-into-the-mix-my-first-impressions>) about it, and it's a must-read if you want to learn more about Remix!",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Force drawing by Michaël Mattesi",
+      "url": "https://www.youtube.com/user/drawingforce",
+      "description": "Force drawing is a drawing technique to make your sketches and poses more dynamic. I try to learn this by watching their videos and doing 10-minute sketches for different poses. Doing this asks for so much more technique than just drawing what you see.",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Slopes",
+      "url": "https://getslopes.com",
+      "description": "As I went for a short ski, I looked for the best app to track my ski averages. For instance, I wanted to know how many runs I did, my average speed, heart rate, and so on. For me, it had to be compatible with my Apple Watch and had to upload to Strava as well. I found three apps: Ski Tracks, Slopes, and Snoww. Slopes got the best reviews online, so I decided to use this app for this trip. The watch app has a clean UI (very easy to use) and offers valuable stats, so I recommend it!",
+      "pickedBy": "Daphné Vermeiren"
+    },
+    {
+      "title": "Bonsai Browser",
+      "description": "With Bonsai Browser, you just hit Option + Space, bringing up a browser window. You can fully customize the look and feel. This browser is made for programmers to improve their workflow.\nI'm looking forward to seeing if it will help me improve my workflow.",
+      "url": "https://bonsaibrowser.com/",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Raised by Wolves",
+      "description": "I recently rewatched Raised By Wolves. This is a show about two androids raising newborn children on a newly discovered planet. They are escaping their old world because of a huge war that destroyed almost everything. The mission of the android is to populate this newly discovered planet. It's directed by Ridley Scott, who made a lot of sci-fi horror movies. This is his next installment, Raised by Wolves, which has the Alien/Prometheus type vibe in it. They will release a new season this February, which I'm hyped about!",
+      "url": "https://youtu.be/R6Kqm0qJ9Uc",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "Creative coding document",
+      "url": "https://www.notion.so/Creative-coding-algorithms-techniques-c5550ef2f7574126bdc77b09ed76651b",
+      "description": "A living document where you can find information and a visual representation of standard techniques and algorithms used for creative coding.",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "Conditional Props",
+      "url": "https://www.youtube.com/watch?v=vXh4PFwZFGI",
+      "description": "Typescript, you either love it or hate it. Either way, it is here to stay, so you better make the most of it. In the linked video, you’ll find some insightful typescript patterns that do just that."
+    },
+    {
+      "title": "Eten met Nick",
+      "url": "https://www.youtube.com/c/EtenmetNick",
+      "description": "We recently installed a new kitchen, making cooking a hobby instead of a task. One of the new YouTube channels I discovered is 'Eating with Nick'; his specialties are world cuisine and street food.",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "DocsJS",
+      "description": "DocsJS is an API documentation tool for Javascript. For projects where TypeScript isn’t used, this tool comes in handy for adding types. In comments, you can add documentation to your code. When you’re done, you can use the jsdocs command to generate an HTML website from your documentation.",
+      "url": "https://jsdoc.app/index.html",
+      "pickedBy": "Lotte Moors"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2022-02-10T10:26:43.284Z",
+  "title": "Our top picks for February",
+  "introduction": "February: the month of love, snow, and more Wheelhouse top picks. Discover what we thought was worth listing this month.",
+  "image": "/assets/erol-ahmed-d3ptf3r_hwy-unsplash.jpg",
+  "description": "February: the month of love, snow, and more Wheelhouse top picks. Discover what we thought was worth listing this month.",
+  "slot": "See you next month!"
+}

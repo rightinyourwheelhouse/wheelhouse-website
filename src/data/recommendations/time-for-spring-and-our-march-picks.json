@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "title": "Burr Tools",
+      "description": "Each year for Christmas, I receive puzzles from my uncle. This year, he gifted us a year-puzzle. It permanently sits on the morning table and consists of several pieces that should form a cube when put together. This one, in particular, is a TIC (Turning Interlocking Cubes), which is by nature very difficult to solve. My uncle sent me a neat little software that can effectively simulate solving such puzzles. It's free, and it looks impressive too! Still, I haven't given up on trying to solve it myself.",
+      "url": "http://burrtools.sourceforge.net/",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "free-for.dev",
+      "url": "https://free-for.dev/",
+      "description": "A curated list of many tools that are (partly) free for developers. Good news: there are a lot!",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "SQLite Viewer",
+      "url": "https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer",
+      "description": "A simple SQLite viewer for Visual Studio Code, so I don't need to switch apps anymore when developing. ",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Flycut",
+      "url": "https://github.com/TermiT/Flycut",
+      "description": "Have you ever been in a situation where you need to move different parts of a text to separate files? Or you want to paste something but accidentally hit **⌘ + C** instead of **⌘ + V**? Thanks to **Flycut,** those problems could be a thing of the past because it lets you access your clipboard history.",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "title": "remix.run",
+      "url": "https://remix.run/",
+      "description": "We started using remix for an internal project, and I have entered the hype train. This was Daren's pick last month, and he even wrote a blog about it. Join the hype train!",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "What The Range",
+      "url": "https://www.whattherange.com/elektrische-auto",
+      "description": "I recently started to look at EVs. This website helps me determine how much the actual range is for the vehicle I'm interested in. It shows all different kinds of data, like the cost of the car, the range in different seasons, and how fast it goes from 0km-120km. It can also compare the different cars in the same price range. So you can get the most out of your money.",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "Nature of Code",
+      "author": "Daniel Schiffman",
+      "url": "https://natureofcode.com/",
+      "description": "A book (written by Daniel Schiffman) that serves as a good starting point if you'd be interested in writing simulations based on nature's unpredictable evolutionary and emergent properties. The book manages to break down multiple phenomena into small comprehendible pieces, so you'll quickly be able to experiment with your concepts. The examples in the book are made with 'Processing,' a java library used for visual arts. Luckily, [a youtube playlist](https://www.youtube.com/watch?v=70MQ-FugwbI&list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM) created by the man himself covers the same material as in the book with p5.js for all javascript enthusiasts!",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "Figma Walker plugin",
+      "url": "https://www.figma.com/community/plugin/732773762837487095",
+      "description": "When a Design System is getting larger, I always struggle to find the correct component (endless scrolling through the pages, guessing the correct name). This plugin makes it really easy to search a certain page. Combining this with a mac shortcut (I use command + shift + f -> same as searching in Webstorm) and it works like magic. 🙏🏼",
+      "pickedBy": "Aagje Reynders"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2022-03-18T08:40:36.048Z",
+  "title": "Time for Spring and our March picks",
+  "introduction": "Springtime. New beginnings, new picks. Here's our list of things we love, get inspired by, and learn from.",
+  "image": "/assets/car1.png",
+  "description": "Another season, another list of top picks.",
+  "slot": "See you next month!"
+}

@@ -1,0 +1,66 @@
+{
+  "live": true,
+  "date": "2022-04-12T11:47:09.656Z",
+  "title": "Some Easter eggs a.k.a. April top picks",
+  "author": "Wheelhouse",
+  "image": "/assets/pexels-antoni-shkraba-6679641.jpg",
+  "description": "Want to know how to take cold showers, eat the right Easter eggs, and avoid crappy Bluetooth speakers? Find out in our April top picks.",
+  "introduction": "Want to know how to take cold showers, eat the right Easter eggs, and avoid crappy Bluetooth speakers? Find out in our April top picks. Here's our list of things we love, get inspired by, and learn from.",
+  "items": [
+    {
+      "title": "Big Ball of Mud",
+      "url": "http://www.laputan.org/mud/",
+      "description": "‘Big Ball of Mud’ is an issue most development teams will encounter at some point during their project cycle. This paper of 1997 gives you some insights on the subject, explains how to improve certain aspects, and reveals how to prevent/delay technical debt.",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "LifeAt",
+      "url": "https://lifeat.io",
+      "description": "LifeAt is a fun virtual workspace with different backgrounds/streams/lo-fi playlists. You can add a to-do list, timer, some music… This is definitely something for me, as I like to have something to look at while working. You can also share your workroom with someone else (I never tried it, though). It’s still pretty new with only a few features, but hopefully, they will expand their options.",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Rings of Saturn",
+      "url": "https://store.steampowered.com/app/846030/V_Rings_of_Saturn/",
+      "description": "This game! There is something so captivating about dodging ringoids a 100m/s, knowing that one wrong move could end in a disaster. While playing, I felt the passion of the developer. The game is still actively being developed with frequent updates detailed in a nice devlog.\n\nAt the start of March, the games' demo was unlocked to be essentially the full game because the developer rather wanted people to \"spend their money on something important and help someone in need.\"",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Yuri Artiukh",
+      "url": "https://www.youtube.com/user/flintyara",
+      "description": "I like to experiment with three.js, and this youtube channel helps me a lot. All of his video’s are livestreams. Yuri goes in-depth on how some visuals are created, which he does entertainingly. Fun fact: after every successful live stream, he drinks a glass of wine! 🍷 \n\nThe live streams definitely give me a better understanding of what you need to make the visuals stunning and interactive.",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "Audio Technica AT-LP120XBT-USB",
+      "url": "https://www.audio-technica.com/en-eu/at-lp120xbt-usb",
+      "description": "I am a sucker for high-quality audio. Nothing grinds my gears as much as listening to my favorite music from a crappy Bluetooth speaker from ‘Den Aldi.’ There is only one source of audio that completely satisfies my audio needs, and that is **vinyl**. This is why I finally bought a turntable. It offers high-quality audio and ease of use in a beautiful but affordable retro package.",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "title": "Refactoring UI",
+      "url": "https://www.refactoringui.com/",
+      "description": "A great book with a lot of styling tips for developers. Made by Adam Wathan & Steve Schoger. After the success of this book, they made TailwindCSS.",
+      "author": "Adam Wathan & Steve Schoger",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "Wim Hof",
+      "description": "I have been taking cold showers since the beginning of the year. WHAT do you say? A COLD SHOWER? WHY? This is where the Wim Hof method comes into play. Check it out!",
+      "url": "https://www.youtube.com/watch?v=6xpOD9SyksY",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "PO-33 K.O!",
+      "url": "https://teenage.engineering/store/po-33/",
+      "description": "Bought this for a dear friend of mine's birthday. It's bordering on a gimmick and a fully functional sampler. It's insane what can be done with it. 16 step sequencer with BPM and Swing. 16 sound banks over which you can record, 16 patterns, and the option to loop a sequence of them. 16 effects that make live remixing an actual thing. All of that fits in your hand, pocket, and runs off of 2 AA batteries. Has a line-in and out too. Teenage engineering has not disappointed me thus far.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Eggsplanation",
+      "url": "https://eggsplanation.be",
+      "description": "No more disappointments opening Easter eggs! On this Belgian 'eggsplanation' website, you can fill in the brand, the color, and the pattern of your chocolate egg, resulting in the exact flavor. This way, you can always make sure you'll have the best egg in your basket. Happy Easter! 😉",
+      "pickedBy": "Daphné Vermeiren"
+    }
+  ]
+}

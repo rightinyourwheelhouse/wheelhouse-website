@@ -23,10 +23,12 @@ qAndA:
 
       ![](/assets/20220226_222211.jpeg "Board game")
   - q: Where do you like to travel?
-    a: Going to Japan is still on my bucket list. Exploring the culture and the
+    a: >-
+      Going to Japan is still on my bucket list. Exploring the culture and the
       different types of food. Of course, I watched too much anime so that is
-      probably the reason why I’m looking forward to visiting it. The trip is
-      planned now we hope that Corona will rise again when we want to go.
+      probably the reason why I’m looking forward to visiting it. \
+
+      The trip is planned now, we hope that Corona won't rise again when we want to go.
   - q: What do you do when you’re not coding?
     a: >-
       I like to cook/brew/bake anything which fascinates me. It started with

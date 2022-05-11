@@ -4,8 +4,8 @@ visible: true
 name: Gilles Pelegrin
 role: Full stack developer
 description: Full stack developer that loves to discuss any random IT
-  topic.  And having a fun time while working together as a team.
-image: /assets/gilleshoodje.png
+  topic.  And having a fun time while working together as a team
+image: /assets/gilles.png
 detailImage:
   image: /assets/_dsc1839.jpg
   movingPicture: /assets/_dsc1839.jpg

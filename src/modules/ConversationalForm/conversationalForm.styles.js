@@ -3,16 +3,7 @@ import styled from 'styled-components';
 
 import breakpoints from '~styles/breakpoints';
 
-export const Container = styled.section`
-  margin: 4rem 0;
-  margin-bottom: 6rem;
-  padding-bottom: 6rem;
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    margin: 10rem 0 10rem 0;
-    padding-bottom: 10rem;
-  }
-`;
+export const Container = styled.section``;
 
 export const Title = styled.p`
   font-weight: 900;
@@ -65,6 +56,7 @@ export const Textarea = styled.textarea`
   padding-left: 1rem;
   padding-top: 1rem;
   color: #000000;
+  font-family: var(--font-family);
 
   @media screen and (min-width: ${breakpoints.tiny}) {
     width: 25rem;
@@ -145,9 +137,9 @@ export const RafCartoon = styled(GatsbyImage)`
 
   @media screen and (min-width: 1156px) {
     display: inline;
-    width: 20rem;
+    width: 15rem;
     position: absolute;
-    top: -20rem;
+    top: -22rem;
     right: 0;
   }
 `;
@@ -157,9 +149,9 @@ export const RoelCartoon = styled(GatsbyImage)`
 
   @media screen and (min-width: 1156px) {
     display: inline;
-    width: 23rem;
+    width: 15rem;
     position: absolute;
-    top: -24rem;
+    top: -30rem;
     right: 0;
   }
 `;
@@ -171,8 +163,8 @@ export const AagjeCartoon = styled(GatsbyImage)`
     display: inline;
     width: 28rem;
     position: absolute;
-    top: -18rem;
-    right: 4rem;
+    top: -24rem;
+    right: 0rem;
   }
 `;
 
@@ -181,10 +173,10 @@ export const WardCartoon = styled(GatsbyImage)`
 
   @media screen and (min-width: 1156px) {
     display: inline;
-    width: 23rem;
+    width: 19rem;
     position: absolute;
-    top: -24rem;
-    right: 6rem;
+    top: -28rem;
+    right: 0rem;
   }
 `;
 
@@ -193,10 +185,10 @@ export const OlivierCartoon = styled(GatsbyImage)`
 
   @media screen and (min-width: 1156px) {
     display: inline;
-    width: 23rem;
+    width: 18rem;
     position: absolute;
     top: -24rem;
-    right: 6rem;
+    right: 4rem;
   }
   cursor: pointer;
   transition-property: all;

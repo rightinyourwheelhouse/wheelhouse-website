@@ -17,7 +17,16 @@ import Navigation from '~modules/Navigation';
 
 function Office({
   data: {
-    officesJson: { address, description, howToReach, mail, name, phone, image },
+    officesJson: {
+      street,
+      city,
+      description,
+      howToReach,
+      mail,
+      name,
+      phone,
+      image,
+    },
   },
 }) {
   return (
@@ -38,7 +47,9 @@ function Office({
                   <br />
                   <a href={`tel:${phone}`}>{phone}</a>
                 </p>
-                <p>{address}</p>
+                <p>
+                  {street}, {city}
+                </p>
               </div>
               <div>
                 <ReactMarkdown>{description}</ReactMarkdown>
@@ -64,7 +75,8 @@ function Office({
 Office.propTypes = {
   data: PropTypes.shape({
     officesJson: PropTypes.shape({
-      address: PropTypes.string,
+      city: PropTypes.string,
+      street: PropTypes.string,
       description: PropTypes.string,
       howToReach: PropTypes.string,
       image: PropTypes.shape({}),
@@ -79,7 +91,8 @@ export const query = graphql`
   query ($id: String!) {
     officesJson(id: { eq: $id }) {
       name
-      address
+      street
+      city
       mail
       phone
       description

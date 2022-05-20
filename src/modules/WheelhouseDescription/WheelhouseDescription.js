@@ -13,13 +13,6 @@ function WheelhouseDescription() {
         products. We are strong believers of cultivating a culture of supportive
         learning and knowledge exchange.
       </p>
-      <p>
-        We provide technical design and development of unique web applications
-        for a variety of customers. We guide your organization from front-end to
-        back-end. More specifically, we design a middleware architecture that
-        fully fits the needs of your application through front-end frameworks
-        and back-end technologies.
-      </p>
     </WheelhouseDescriptionContainer>
   );
 }

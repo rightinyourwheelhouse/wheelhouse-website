@@ -45,7 +45,6 @@ qAndA:
       matter. But if I had to choose I would go to Angular because this one I
       have the most experience with.
 openSourceProject:
-  repos_links:
-    - https://github.com/rightinyourwheelhouse/wheelhouse-website
+  repos_links: []
 showPickedBy: true
 ---

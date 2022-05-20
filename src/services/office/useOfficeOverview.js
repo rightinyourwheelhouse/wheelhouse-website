@@ -9,7 +9,8 @@ const query = graphql`
       edges {
         node {
           name
-          address
+          street
+          city
           phone
           mail
         }

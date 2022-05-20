@@ -1,6 +1,7 @@
 {
   "name": "Kortrijk",
-  "address": "Nijverheidskaai 3, 8500 Kortrijk",
+  "street": "Nijverheidskaai 3",
+  "city": "8500 Kortrijk",
   "mail": "hello@wheelhouse.be",
   "phone": "+32479559012",
   "description": "Our office in Kortrijk is located in the center of Kortrijk. It's about 2 minutes away from a bus stop and there is sufficient parking near.",

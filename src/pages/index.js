@@ -5,7 +5,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button from '~components/Button';
-import Card from '~components/Card';
 import Content from '~components/Content';
 import {
   Section,
@@ -14,6 +13,7 @@ import {
 } from '~components/layoutComponents';
 import Seo from '~components/SEO';
 import SubTitle from '~components/SubTitle';
+import Summary from '~components/Summary';
 import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
@@ -28,7 +28,8 @@ import WheelhouseDescription from '~modules/WheelhouseDescription';
 import WorkingAtmosphereHorizontal from '~modules/WorkingAtmosphereHorizontal';
 
 import colors from '~styles/colors';
-import spacing from '~styles/spacing';
+
+import WheelhouseClients from '../modules/WheelhouseClients';
 
 const ImageContainer = styled.div`
   --height: 350px;
@@ -38,6 +39,11 @@ const ImageContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+
+  div {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 function IndexPage({
@@ -58,6 +64,53 @@ function IndexPage({
           <Content>
             <WheelhouseDescription />
           </Content>
+        </Container>
+      </Section>
+
+      <Section background={colors.backgroundPrimary100}>
+        <Container>
+          <ContrastColor color={colors.backgroundPrimary100}>
+            <TwoColumns>
+              <div>
+                <Summary
+                  title="What we do"
+                  items={[
+                    { label: 'Think about UX' },
+                    { label: 'Coach and code' },
+                    { label: 'Love clean code' },
+                    { label: 'Bring added value with design' },
+                    { label: 'Make existing teams stronger' },
+                    { label: 'Turn spaghetti into code' },
+                  ]}
+                />
+              </div>
+              <div>
+                <Summary
+                  title="What we don't do"
+                  items={[
+                    { disabled: true, label: 'Make false promises' },
+                    { disabled: true, label: 'Give up' },
+                    {
+                      disabled: true,
+                      label: 'Make plans for world domination',
+                    },
+                    { disabled: true, label: 'Quick and dirty' },
+                    { disabled: true, label: 'Prototyping' },
+                    {
+                      disabled: true,
+                      label: 'Leave unfinished burgers behind',
+                    },
+                  ]}
+                />
+              </div>
+            </TwoColumns>
+          </ContrastColor>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <WheelhouseClients />
         </Container>
       </Section>
 
@@ -116,16 +169,6 @@ function IndexPage({
           >
             See our insights
           </Button>
-        </Container>
-        <Container offset={spacing.large}>
-          <Card>
-            <h2>Javascript expertise</h2>
-            <p>
-              Wheelhouse works alongside your team to help strengthen your
-              business. We share our knowledge to help your project go to the
-              next level.
-            </p>
-          </Card>
         </Container>
       </Section>
 

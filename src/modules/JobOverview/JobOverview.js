@@ -16,7 +16,7 @@ import {
 } from './jobOverview.styles';
 
 function JobOverview({ current, title, subTitle }) {
-  const jobs = useJobOverview({ count: 2, current });
+  const jobs = useJobOverview({ count: 3, current });
 
   if (!jobs || jobs.length === 0) {
     return null;

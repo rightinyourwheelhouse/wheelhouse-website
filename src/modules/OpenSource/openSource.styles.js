@@ -17,5 +17,13 @@ export const OpenSourceContainer = styled.div`
 
   a {
     text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.1rem;
+    font-weight: 400;
   }
+`;
+
+export const Cta = styled.div`
+  font-size: var(--font-size-default);
+  padding: var(--spacing-default);
 `;

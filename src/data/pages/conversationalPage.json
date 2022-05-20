@@ -12,10 +12,10 @@
       "title": "Welcome",
       "blocks": [
         {
-          "title": "Hi! We are Wheelhouse"
+          "text": "Want to get in touch for a job or internship?"
         },
         {
-          "text": "Hi! At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!"
+          "text": "At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!"
         }
       ],
       "previousBtn": false,

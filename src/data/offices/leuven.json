@@ -1,6 +1,7 @@
 {
   "name": "Leuven",
-  "address": "Gaston Geenslaan 11 B4, 3001 Leuven",
+  "street": "Gaston Geenslaan 11 B4",
+  "city": "3001 Leuven",
   "mail": "hello@wheelhouse.be",
   "phone": "+32479559012",
   "description": "Our office in Leuven is located in the Arenberg Wetenschapspark. It's about 50 meters away from a bus stop and there is sufficient parking near.",

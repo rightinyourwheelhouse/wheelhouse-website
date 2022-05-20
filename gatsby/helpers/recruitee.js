@@ -1,3 +1,5 @@
+import { DefautCareers } from './defautCareers';
+
 require('dotenv').config();
 const axios = require('axios');
 
@@ -52,7 +54,9 @@ export async function getRecruiteeData(
       }),
   );
 
-  wheelhouseData.forEach(
+  const allCareers = wheelhouseData.concat(DefautCareers);
+
+  allCareers.forEach(
     async ({ city, id, slug, requirements, description, title }) => {
       const data = {
         city,

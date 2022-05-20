@@ -1,7 +1,9 @@
 /* eslint-disable react/no-danger */
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
+
+import styled from 'styled-components';
 
 import Content from '~components/Content';
 import {
@@ -14,13 +16,14 @@ import SubTitle from '~components/SubTitle';
 
 import Layout from '~layouts/default';
 
-import ApplyForm from '~modules/ApplyForm';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import OpenSource from '~modules/OpenSource';
 import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
+
+import Button from '../components/Button';
 
 function Career({
   data: {
@@ -48,32 +51,43 @@ function Career({
               <SubTitle>{city}</SubTitle>
               <h1>{title}</h1>
               <Content>
-                <div dangerouslySetInnerHTML={{ __html: description }} />
+                <CareerContent>
+                  <div dangerouslySetInnerHTML={{ __html: description }} />
+                </CareerContent>
               </Content>
             </article>
           </ContrastColor>
         </Container>
       </Section>
 
-      <Section>
-        <Container>
-          <SubTitle>career</SubTitle>
-          <h2>Your foundations</h2>
-          <Content>
-            <div dangerouslySetInnerHTML={{ __html: requirements }} />
-          </Content>
-        </Container>
-      </Section>
+      {requirements ? (
+        <Section>
+          <Container>
+            <SubTitle>career</SubTitle>
+            <h2>Your foundations</h2>
+            <Content>
+              <div dangerouslySetInnerHTML={{ __html: requirements }} />
+            </Content>
+          </Container>
+        </Section>
+      ) : (
+        ''
+      )}
 
       <WorkingAtmosphereGallery />
 
       <Section>
         <Container>
-          <Content>
-            <SubTitle>Apply</SubTitle>
-            <h2>Do we have your attention?</h2>
-            <ApplyForm vacancy={`${title} at ${city}`} />
-          </Content>
+          <SubTitle>Apply</SubTitle>
+          <h2>Do we have your attention?</h2>
+          <p>
+            Interested what you see? We would love to have a conversation with
+            you.
+          </p>
+          <Button to="/conversational" as={Link}>
+            {' '}
+            Let&apos;s talk{' '}
+          </Button>
         </Container>
       </Section>
 
@@ -117,6 +131,16 @@ export const query = graphql`
       requirements
       title
     }
+  }
+`;
+
+const CareerContent = styled.div`
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.1rem;
+    font-weight: 400;
+  }
   }
 `;
 

@@ -7,6 +7,9 @@ import ConversationalOverview from '~components/ConversationalOverview';
 
 import * as S from './conversationalForm.styles';
 
+import SubTitle from '../../components/SubTitle/SubTitle';
+import { Disclaimer } from '../ApplyForm/applyForm.styles';
+
 function ConversationalForm({ questions }) {
   const [questionStatus, setQuestionStatus] = useState(1);
   const [portfolioItems, setPortfolioItems] = useState(1);
@@ -141,7 +144,8 @@ function ConversationalForm({ questions }) {
                     : { transition: 'all 0.2s ease-in', opacity: 0 }
                 }
               >
-                <S.Title>{question.blocks[0].title}</S.Title>
+                <SubTitle>Contact</SubTitle>
+                <h2>Apply now</h2>
                 <S.Text>{question.blocks[0].text}</S.Text>
               </div>
 
@@ -339,6 +343,10 @@ function ConversationalForm({ questions }) {
                     previousBtn={question.previousBtn}
                   />
                 )}
+                <Disclaimer>
+                  Not looking for a job but want to collaborate? Contact us via{' '}
+                  <a href="mailto:hello@wheelhouse.be"> hello@wheelhouse.be</a>
+                </Disclaimer>
               </div>
             </S.Container>
           );

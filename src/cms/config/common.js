@@ -76,7 +76,7 @@ export const openSourceProject = {
       widget: 'list',
       summary: 'repo_links',
       max: 5,
-      min: 1,
+      min: 0,
       field: {
         label: 'Repo link',
         name: 'repo_link',

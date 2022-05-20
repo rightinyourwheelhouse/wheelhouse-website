@@ -34,6 +34,9 @@ function Footer() {
                   <p>
                     <a href="mailto:hello@wheelhouse.be">hello@wheelhouse.be</a>
                   </p>
+                  <p>
+                    <a href="tel:+32479559012">+32479559012</a>
+                  </p>
                   <RaccoonsBlock>
                     <p>part of</p>
                     <a
@@ -78,14 +81,8 @@ function Footer() {
                           {title}
                         </Link>
                       ))}
-                      <a
-                        href="https://brainhouse.be"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        Internships
-                      </a>
                       <Link to="/careers">Careers</Link>
+                      <Link to="/conversational">Contact</Link>
                       <a
                         href="https://github.com/rightinyourwheelhouse/wheelhouse-website"
                         target="_blank"
@@ -99,10 +96,10 @@ function Footer() {
               </div>
             </TwoColumns>
 
-            {offices.map(({ address, phone }, i) => (
+            {offices.map(({ street, city }, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <p key={i}>
-                {address} <a href={`tel:${phone}`}>{phone}</a>
+                {street}, {city}
               </p>
             ))}
             <p className="disclaimer">

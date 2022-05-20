@@ -1,6 +1,7 @@
 {
   "name": "Ghent",
-  "address": "Gaston Crommelaan 8, 9050 Ghent",
+  "street": "Gaston Crommelaan 8",
+  "city": "9050 Ghent",
   "mail": "hello@wheelhouse.be",
   "phone": "+32479559012",
   "description": "",

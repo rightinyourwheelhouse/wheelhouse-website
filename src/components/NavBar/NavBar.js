@@ -100,26 +100,26 @@ function NavBar({
             baseHoverColor={baseHoverColor}
           >
             <Item className="visible-small">
-              <Link to="/">Home</Link>
+              <Link activeClassName="active-link" to="/">
+                Home
+              </Link>
             </Item>
             {items.map(({ href, title }) => (
               <Item key={title}>
-                <Link to={href}>{title}</Link>
+                <Link activeClassName="active-link" to={href}>
+                  {title}
+                </Link>
               </Item>
             ))}
             <Item>
-              <a
-                href="https://brainhouse.be"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Internships
-              </a>
-            </Item>
-            <Item>
-              <Link to="/careers">
+              <Link activeClassName="active-link" to="/careers">
                 {careerCount > 0 && <Badge>{careerCount}</Badge>}
                 Careers
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/conversational" activeClassName="active-link">
+                Contact
               </Link>
             </Item>
             <Item>

@@ -180,10 +180,9 @@ export const ItemsContent = styled.div`
 
   &:not(:first-of-type) {
     margin-top: 130px;
-      @media screen and (min-width: ${breakpoints.medium}) {
-        margin-top: 0;
-      }
-    &
+    @media screen and (min-width: ${breakpoints.medium}) {
+      margin-top: 0;
+    }
   }
 
   @media screen and (min-width: ${breakpoints.medium}) {
@@ -257,6 +256,12 @@ export const ItemsContent = styled.div`
       }
     }
 
+    .active-link {
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 0.3rem;
+    }
+
     a {
       font-weight: 900;
       color: var(--color-text-primary-900);
@@ -291,17 +296,13 @@ export const ItemsContent = styled.div`
       &:hover {
         color: var(--color-primary);
 
-        @media screen and (min-width: ${breakpoints.medium}) {
-          color: ${({ baseHoverColor }) => baseHoverColor};
-        }
-
         span:not(.label) {
-          background: ${({ baseHoverColor }) => baseHoverColor};
-          color: ${({ baseBackgroundColor }) => baseBackgroundColor};
+          background: var(--color-primary);
+          color: var(--color-text-primary-100);
         }
 
         svg path {
-          fill: ${({ baseHoverColor }) => baseHoverColor};
+          fill: var(--color-primary);
         }
       }
     }

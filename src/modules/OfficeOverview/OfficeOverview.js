@@ -8,6 +8,8 @@ import { useOfficeOverview } from '~services/office/useOfficeOverview';
 
 import { OfficeItemContainer } from './officeOverview.styles';
 
+import Button from '../../components/Button';
+
 function OfficeOverview() {
   const offices = useOfficeOverview();
 
@@ -18,17 +20,20 @@ function OfficeOverview() {
 
       <OfficeItemContainer>
         <ThreeColumns>
-          {offices.map(({ name, address, slug, mail, phone }) => (
+          {offices.map(({ name, street, city, slug, mail, phone }) => (
             <Card key={name}>
-              <Link to={`/offices/${slug}`} key={slug}>
-                <h3>{name}</h3>
-                <p>{address}</p>
-              </Link>
+              <h3>{name}</h3>
+              <p>
+                {street} <br /> {city}
+              </p>
               <p>
                 <a href={`mailto:${mail}`}>{mail}</a>
                 <br />
                 <a href={`tel:${phone}`}>{phone}</a>
               </p>
+              <Button to={`/offices/${slug}`} as={Link} key={slug}>
+                How to get there
+              </Button>
             </Card>
           ))}
         </ThreeColumns>

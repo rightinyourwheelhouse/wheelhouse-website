@@ -5,7 +5,7 @@ import Button from '~components/Button';
 
 import Github from '~images/github.svg';
 
-import { OpenSourceContainer } from './openSource.styles';
+import { Cta, OpenSourceContainer } from './openSource.styles';
 
 const OpenSource = () => (
   <OpenSourceContainer>
@@ -22,11 +22,12 @@ const OpenSource = () => (
       target="_blank"
       rel="noreferrer nofollow"
     >
-      Check it out
+      Check our Github
     </Button>
-    <p>
-      Or check out the <Link to="/projects"> projects from our wheelies </Link>
-    </p>
+    <Cta>
+      Or take a look at the{' '}
+      <Link to="/projects"> projects from our wheelies </Link>
+    </Cta>
   </OpenSourceContainer>
 );
 

@@ -31,18 +31,9 @@ export const List = styled.div`
     height: 0rem;
   }
 
-  > * {
-    flex: 0 0 var(--itemWidth);
-
-    &.portrait {
-      flex: 0 0 var(--portraitWidth);
-    }
-  }
-
   img,
   > div {
     height: 100%;
-    flex-basis: auto;
     width: auto;
     min-width: var(--itemWidth);
 

@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "title": "Getting Things Done ",
+      "author": "David Allen",
+      "description": "There are many books and methods about productivity. And each person has ways that work or don't work for them. The method described in this book is the method that works best for me.",
+      "pickedBy": "Daren Malfait"
+    },
+    {
+      "title": "Bionic Reading",
+      "description": "\\\nRecently i stumbled upon Bionic Reading and found it pretty interesting, this way of reading revises texts so that the most concise parts of words are highlighted. This guides the eye over the text and the brain remembers previously learned words more quickly. I thought about how you may implement this on the web when handling long sections of text, because everybody knows users don’t read text when it’s long and boring.\n\n![Example bionic reading](/assets/bionic-reading-example.jpeg \"Example bionic reading\")",
+      "pickedBy": "Jasper Vermeulen"
+    },
+    {
+      "description": "If you build an application you need to adapt your stack to the needs of the product.\\\nDon't build a bunker when all you had to do is build a shed",
+      "pickedBy": "Gilles Pelegrin",
+      "title": "Something to think about "
+    },
+    {
+      "url": "https://twitter.com/jaffathecake/status/1524782819431555074",
+      "title": "Page transition API",
+      "description": "Last month Google introduced page transitions. Looking forward to try this out in new web applications.",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "title": "A link site",
+      "url": "https://alexuslab.com/link-site/",
+      "description": "A pure client-side website/web app that is stored in a link instead of on a server, which has the advantage of being accessible without an internet connection. My speculation is that most of the websites of small businesses could be stored this way and could have a great environmental impact as we could eliminate a lot of wasted energy on a large number of servers. We just need better browser support and a different kind of search engine to see this becoming a realisation I guess.",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "url": "https://github.com/okonet/lint-staged",
+      "title": "Lint-staged",
+      "description": "I love Pre-commit hooks 😌  but I hate when they take longer than 30 seconds [](https://emojipedia.org/pouting-face/)😡\\\nWith lint-staged you can run your hooks on only the files you changed in this commit. This is particularly nice if you have the habit of separating your local changes into different commits. Or like to commit only a specific piece of code and still have linting errors in another.",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Lottiefiles",
+      "description": "Recently I was made aware of a performant and time-saving way of integrating intricate animations into a webpage. Instead of spending hours on hours animating your SVG’s with CSS, designers can create an animation in After Effects and export it as a Lottiefile using a plugin. It outputs a JSON file that describes the animation and can be used in your favorite framework.",
+      "url": "https://lottiefiles.com/",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "url": "https://tonyfadell.com/the-book",
+      "description": "I’m reading build: an unorthodox guide to making things worth making by Tony Fadell. Tony has years of experience at Apple and is one of the founders of Nest: learning thermostat. This book is everything Tony has learned, every explosive failure, every unexpected success, every team he’s built and the product he’s dreamed up. This book is a must-read for almost everyone tech-related: designers, developers, and product engineers.",
+      "title": "An unorthodox guide to making things worth making",
+      "author": "Tony Fadell",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "description": "In my free time, I'm experimenting with native apps. So I stumbled on Capacitor. This is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web. Representing the next evolution of Hybrid apps, Capacitor creates Web Native apps, providing a modern native container approach for teams who want to build web-first without sacrificing full access to native SDKs when they need it.",
+      "url": "https://capacitorjs.com/",
+      "title": "Capacitor",
+      "pickedBy": "Wout Salembier"
+    },
+    {
+      "title": "Inclusive Communication",
+      "author": "Hanan Challouki",
+      "url": "https://hananchallouki.com/",
+      "description": "I started reading Inclusive Communication. It's an interesting book breaking down every aspect of inclusivity. What is it, why is it important, and how to reach an inclusive audience. I already know a lot about this topic, but this book helps me to be able to explain it better with clear examples and straightforward definitions.",
+      "pickedBy": "Aagje Reynders"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": false,
+  "date": "2022-06-07T06:06:17.541Z",
+  "title": "Our 10 picks for June",
+  "introduction": "Time is going fast, it's already June! Let's see what the Wheelies have in store for this month. Each month, we pick one thing we love and put it into a list. This list might give you some insight into how people at Wheelhouse think and what intrigues us.",
+  "image": "/assets/freestocks-ofadd5o8hpk-unsplash.jpg",
+  "description": "Time is going fast, it's already June! Let's see what the Wheelies have in store for this month.",
+  "slot": "Photo by [freestocks](https://unsplash.com/@freestocks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+}

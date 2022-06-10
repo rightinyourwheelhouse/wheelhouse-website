@@ -15,6 +15,7 @@ function Button({
   children,
   color,
   colorHover,
+  disabled,
   as: Element,
   full,
   ...props
@@ -27,11 +28,12 @@ function Button({
       backgroundHover={backgroundHover}
       border={border}
       borderHover={borderHover}
+      disables={disabled}
       className={classnames({
         full,
       })}
     >
-      <Element className="btn" {...props}>
+      <Element disabled={disabled} className="btn" {...props}>
         {children}
       </Element>
     </ButtonContainer>

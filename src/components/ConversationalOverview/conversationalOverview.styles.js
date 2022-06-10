@@ -54,6 +54,6 @@ export const OverviewButton = styled.button`
   font-weight: 500;
 
   &:hover {
-    opacity: 0.4;
+    transform: translateY(-2px);
   }
 `;

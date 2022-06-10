@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
@@ -23,7 +23,7 @@ import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
-import Button from '../components/Button';
+import ApplyForm from '../modules/ApplyForm';
 
 function Career({
   data: {
@@ -78,16 +78,11 @@ function Career({
 
       <Section>
         <Container>
-          <SubTitle>Apply</SubTitle>
-          <h2>Do we have your attention?</h2>
-          <p>
-            Interested what you see? We would love to have a conversation with
-            you.
-          </p>
-          <Button to="/conversational" as={Link}>
-            {' '}
-            Let&apos;s talk{' '}
-          </Button>
+          <Content>
+            <SubTitle>Apply</SubTitle>
+            <h2>Do we have your attention?</h2>
+            <ApplyForm vacancy={`${title} at ${city}`} />
+          </Content>
         </Container>
       </Section>
 

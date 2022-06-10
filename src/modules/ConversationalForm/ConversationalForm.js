@@ -1,132 +1,112 @@
 import { Link } from '@reach/router';
-import React, { useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import React, { useCallback, useState } from 'react';
 
 import Button from '~components/Button';
 import ConversationalButtons from '~components/ConversationalButtons';
 import ConversationalOverview from '~components/ConversationalOverview';
 
+import Input from '~components/form/Input';
+
 import * as S from './conversationalForm.styles';
 
+import FileUpload from '../../components/form/FileUpload';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import { Disclaimer } from '../ApplyForm/applyForm.styles';
+import validationSchema from '../ApplyForm/validationSchema';
 
 function ConversationalForm({ questions }) {
   const [questionStatus, setQuestionStatus] = useState(1);
   const [portfolioItems, setPortfolioItems] = useState(1);
-
-  const [portfolioLink1, setPortfolioLink1] = useState('');
-  const [portfolioLink2, setPortfolioLink2] = useState('');
-  const [portfolioLink3, setPortfolioLink3] = useState('');
-
-  const [intervieweePhone, setIntervieweePhone] = useState('');
-  const [intervieweeMail, setIntervieweeMail] = useState('');
-
-  const [cv, setCv] = useState([]);
-
-  const [interviewee, setInterviewee] = useState({});
-
-  const [loaderOne, setLoaderOne] = useState(false);
-  const [loaderTwo, setLoaderTwo] = useState(false);
-  const [loaderThree, setLoaderThree] = useState(false);
 
   const [error, setError] = useState('');
 
   const RECRUITEE_API_PATH = `https://raccoons.recruitee.com/api/offers`;
   const APPLICATION = `javascript-engineer`;
 
-  useEffect(() => {
-    setLoaders();
-    setError('');
-  }, [questionStatus]);
+  const setFile = useCallback(
+    files => {
+      setFieldValue('file', files[0]);
+    },
+    [setFieldValue],
+  );
 
-  function setLoaders() {
-    window.scrollTo(0, 0);
-    setLoaderOne(false);
-    setLoaderTwo(false);
-    setLoaderThree(false);
+  async function sendData(submittedValues) {
+    try {
+      const url = `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`;
 
-    setTimeout(() => {
-      setLoaderOne(true);
-    }, 500);
-    setTimeout(() => {
-      setLoaderTwo(true);
-    }, 1000);
-    setTimeout(() => {
-      setLoaderThree(true);
-    }, 1500);
-  }
-
-  function handleValueChange(e) {
-    const { name, value } = e.target;
-
-    setInterviewee(interviewee => ({
-      ...interviewee,
-      [name]: value,
-    }));
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    if (
-      interviewee.name &&
-      interviewee.expectations &&
-      interviewee.education &&
-      interviewee.experience &&
-      portfolioLink1 &&
-      interviewee.hobbies &&
-      intervieweePhone &&
-      intervieweeMail &&
-      cv &&
-      interviewee.insight
-    ) {
-      try {
-        const url = `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`;
-        const formdata = new FormData();
-        formdata.append(`candidate[name]`, interviewee.name);
-        formdata.append(`candidate[email]`, intervieweeMail);
-        formdata.append(`candidate[phone]`, intervieweePhone);
-        formdata.append(
-          `candidate[referrer]`,
-          `Wheelhouse Conversational Onboarding`,
-        );
-        if (cv) {
-          formdata.append(`candidate[cv]`, cv || ``);
-        }
-        formdata.append(
-          `candidate[cover_letter]`,
-          `
-            Expectations? ${interviewee.expectations},
-            Education? ${interviewee.education},
-            Experience? ${interviewee.experience},
-            Hobbies? ${interviewee.hobbies},
-            Insight? ${interviewee.insight},
-            Portfolio? ${portfolioLink1}, ${portfolioLink2}, ${portfolioLink3}
-          `,
-        );
-
-        const result = await fetch(url, {
-          body: formdata,
-          method: `POST`,
-        });
-        if (result.ok) {
-          console.info('Submitted');
-          setQuestionStatus(questionStatus + 1);
-        } else {
-          setError('Conversation could not be submitted.');
-        }
-      } catch (error) {
-        console.error(error);
+      const formdata = new FormData();
+      formdata.append(`candidate[name]`, submittedValues.name);
+      formdata.append(`candidate[email]`, submittedValues.email);
+      formdata.append(`candidate[phone]`, submittedValues.phone);
+      formdata.append(
+        `candidate[referrer]`,
+        `Wheelhouse Conversational Onboarding`,
+      );
+      if (submittedValues.file) {
+        formdata.append(`candidate[cv]`, submittedValues.file || ``);
       }
-    } else {
-      setError('It seems like you forgot to fill in some things!');
+      formdata.append(
+        `candidate[cover_letter]`,
+        `
+            Expectations? ${submittedValues.expectations},
+            Hobbies? ${submittedValues.hobbies},
+            Insight? ${submittedValues.insight},
+            Portfolio? ${submittedValues.website1}, ${submittedValues.website2}, ${submittedValues.website3}
+          `,
+      );
+
+      const result = await fetch(url, {
+        body: formdata,
+        method: `POST`,
+      });
+      if (result.ok) {
+        console.info('Submitted');
+        setQuestionStatus(questionStatus + 1);
+      } else {
+        setError('Conversation could not be submitted.');
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
+  const {
+    handleSubmit,
+    handleChange,
+    values,
+    errors,
+    touched,
+    handleBlur,
+    setFieldValue,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      file: null,
+      name: '',
+      website1: '',
+      website2: '',
+      website3: '',
+      phone: '',
+      expectations: '',
+      hobbies: '',
+    },
+    onSubmit: async (submittedValues, actions) => {
+      try {
+        sendData(submittedValues);
+        actions.resetForm();
+      } catch (error) {
+        setError('Conversation could not be submitted.');
+      } finally {
+        actions.setSubmitting(false);
+      }
+    },
+    validationSchema,
+  });
+
   return (
     <div>
-      <form method="post" onSubmit={e => handleSubmit(e)}>
-        {questions.map(question => {
+      <form method="post" onSubmit={handleSubmit}>
+        {questions.map((question, index) => {
           return (
             <S.Container
               key={question.id}
@@ -136,142 +116,210 @@ function ConversationalForm({ questions }) {
                   : { display: 'none' }
               }
             >
-              {question.id === 13 && <S.ErrorText>{error}</S.ErrorText>}
-              <div
-                style={
-                  loaderOne
-                    ? { transition: 'all 0.2s ease-in', opacity: 1 }
-                    : { transition: 'all 0.2s ease-in', opacity: 0 }
-                }
-              >
-                <SubTitle>Contact</SubTitle>
+              {question.id === 11 && <S.ErrorText>{error}</S.ErrorText>}
+              <div>
+                {index !== 0 ? (
+                  <SubTitle>
+                    step {index} of {questions.length - 1}
+                  </SubTitle>
+                ) : (
+                  <SubTitle>Contact</SubTitle>
+                )}
+
                 <h2>Apply now</h2>
                 <S.Text>{question.blocks[0].text}</S.Text>
               </div>
 
-              <div
-                style={
-                  loaderTwo
-                    ? { transition: 'all 0.2s ease-in', opacity: 1 }
-                    : { transition: 'all 0.2s ease-in', opacity: 0 }
-                }
-              >
+              <div>
                 {question.blocks[1].text && (
                   <S.Text>{question.blocks[1].text}</S.Text>
                 )}
 
                 {question.blocks[1].input === 'input' ? (
-                  <S.Input
+                  <Input
                     name={question.blocks[1].name}
-                    onChange={e => handleValueChange(e)}
-                    placeholder={question.blocks[1].placeholder}
+                    id={question.blocks[1].name}
+                    label={question.blocks[1].placeholder}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={
+                      touched[question.blocks[1].name] &&
+                      errors[question.blocks[1].name]
+                    }
+                    value={values[question.blocks[1].name]}
+                    valid={
+                      touched[question.blocks[1].name] &&
+                      !errors[question.blocks[1].name]
+                    }
                   />
                 ) : question.blocks[1].input === 'textarea' ? (
                   <S.Textarea
                     name={question.blocks[1].name}
-                    onChange={e => handleValueChange(e)}
+                    id={question.blocks[1].name}
+                    label={question.blocks[1].placeholder}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={
+                      touched[question.blocks[1].name] &&
+                      errors[question.blocks[1].name]
+                    }
+                    value={values[question.blocks[1].name]}
+                    valid={
+                      touched[question.blocks[1].name] &&
+                      !errors[question.blocks[1].name]
+                    }
                     placeholder={question.blocks[1].placeholder}
                   />
                 ) : question.blocks[1].input === 'portfolio' ? (
                   <>
                     <S.ButtonWrapper>
-                      <S.Button
+                      <Button
                         onClick={() => setPortfolioItems(portfolioItems + 1)}
                         disabled={portfolioItems === 3}
                       >
                         +
-                      </S.Button>
-                      <S.Button
+                      </Button>
+                      <Button
                         onClick={() => setPortfolioItems(portfolioItems - 1)}
                         disabled={portfolioItems === 1}
                       >
                         -
-                      </S.Button>
+                      </Button>
                     </S.ButtonWrapper>
-                    <S.Input
+                    <div
                       style={
                         portfolioItems >= 1
                           ? { marginBottom: '1rem', display: 'block' }
                           : { marginBottom: '1rem', display: 'none' }
                       }
-                      name={question.blocks[1].name}
-                      onChange={e => {
-                        setPortfolioLink1(e.currentTarget.value);
-                      }}
-                      placeholder="Link"
-                    />
-                    <S.Input
+                    >
+                      <Input
+                        name={question.blocks[1].names[0]}
+                        id={question.blocks[1].names[0]}
+                        label="I want to share "
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={
+                          touched[question.blocks[1].names[0]] &&
+                          errors[question.blocks[1].names[0]]
+                        }
+                        value={values[question.blocks[1].names[0]]}
+                        valid={
+                          touched[question.blocks[1].names[0]] &&
+                          !errors[question.blocks[1].names[0]]
+                        }
+                      />
+                    </div>
+
+                    <div
                       style={
                         portfolioItems >= 2
                           ? { marginBottom: '1rem', display: 'block' }
                           : { marginBottom: '1rem', display: 'none' }
                       }
-                      name={question.blocks[1].name}
-                      onChange={e => {
-                        setPortfolioLink2(e.currentTarget.value);
-                      }}
-                      placeholder="Link"
-                    />
-                    <S.Input
+                    >
+                      <Input
+                        name={question.blocks[1].names[1]}
+                        id={question.blocks[1].names[1]}
+                        label="You  need to check out "
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={
+                          touched[question.blocks[1].names[1]] &&
+                          errors[question.blocks[1].names[1]]
+                        }
+                        value={values[question.blocks[1].names[1]]}
+                        valid={
+                          touched[question.blocks[1].names[1]] &&
+                          !errors[question.blocks[1].names[1]]
+                        }
+                      />
+                    </div>
+
+                    <div
                       style={
                         portfolioItems >= 3
                           ? { marginBottom: '1rem', display: 'block' }
                           : { marginBottom: '1rem', display: 'none' }
                       }
-                      name={question.blocks[1].name}
-                      onChange={e => {
-                        setPortfolioLink3(e.currentTarget.value);
-                      }}
-                      placeholder="Link"
-                    />
+                    >
+                      <Input
+                        name={question.blocks[1].names[2]}
+                        id={question.blocks[1].names[2]}
+                        label="I am proud of "
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={
+                          touched[question.blocks[1].names[2]] &&
+                          errors[question.blocks[1].names[2]]
+                        }
+                        value={values[question.blocks[1].names[2]]}
+                        valid={
+                          touched[question.blocks[1].names[2]] &&
+                          !errors[question.blocks[1].names[2]]
+                        }
+                      />
+                    </div>
                   </>
                 ) : question.blocks[1].input === 'contact' ? (
                   <>
-                    <S.Input
-                      name={question.blocks[1].name}
-                      onChange={e => {
-                        setIntervieweePhone(e.currentTarget.value);
-                      }}
-                      placeholder="Phone"
+                    <Input
+                      name={question.blocks[1].names[0]}
+                      id={question.blocks[1].names[0]}
+                      label="My phone number is "
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={
+                        touched[question.blocks[1].names[0]] &&
+                        errors[question.blocks[1].names[0]]
+                      }
+                      value={values[question.blocks[1].names[0]]}
+                      valid={
+                        touched[question.blocks[1].names[0]] &&
+                        !errors[question.blocks[1].names[0]]
+                      }
                     />
                     <S.TextSM>And</S.TextSM>
-                    <S.Input
-                      name={question.blocks[1].name}
-                      onChange={e => {
-                        setIntervieweeMail(e.currentTarget.value);
-                      }}
-                      placeholder="Mail"
+                    <Input
+                      name={question.blocks[1].names[1]}
+                      id={question.blocks[1].names[1]}
+                      label="My email address is "
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={
+                        touched[question.blocks[1].names[1]] &&
+                        errors[question.blocks[1].names[1]]
+                      }
+                      value={values[question.blocks[1].names[1]]}
+                      valid={
+                        touched[question.blocks[1].names[1]] &&
+                        !errors[question.blocks[1].names[1]]
+                      }
                     />
                   </>
                 ) : question.blocks[1].input === 'cv' ? (
-                  <input
-                    type="file"
-                    accept="application/pdf"
+                  <FileUpload
+                    error={
+                      touched[question.blocks[1].name] &&
+                      errors[question.blocks[1].name]
+                    }
                     name={question.blocks[1].name}
-                    onChange={e => {
-                      setCv(e.target.files[0]);
-                    }}
+                    value={values[question.blocks[1].name]}
+                    id="file"
+                    label="My resume"
+                    onChange={setFile}
+                    onBlur={handleBlur}
+                    valid={
+                      touched[question.blocks[1].name] &&
+                      !errors[question.blocks[1].name]
+                    }
                   />
                 ) : (
                   <p />
                 )}
               </div>
 
-              <div
-                style={
-                  loaderThree
-                    ? {
-                        transition: 'all 0.2s ease-in',
-                        opacity: 1,
-                        position: 'relative',
-                      }
-                    : {
-                        transition: 'all 0.2s ease-in',
-                        opacity: 0,
-                        position: 'relative',
-                      }
-                }
-              >
+              <div style={{ position: 'relative' }}>
                 {question.cartoon === 'rafael' ? (
                   <S.RafCartoon
                     image={question?.image?.childImageSharp?.gatsbyImageData}
@@ -300,27 +348,23 @@ function ConversationalForm({ questions }) {
                 ) : (
                   <p />
                 )}
-                {question.id === 13 ? (
+                {question.id === 10 ? (
                   <>
                     <ConversationalOverview
-                      name={interviewee.name}
-                      expectations={interviewee.expectations}
-                      education={interviewee.education}
-                      experience={interviewee.experience}
-                      hobbies={interviewee.hobbies}
-                      cv={cv.name}
-                      insight={interviewee.insight}
-                      phone={intervieweePhone}
-                      mail={intervieweeMail}
-                      portfolioLink1={portfolioLink1}
-                      portfolioLink2={portfolioLink2}
-                      portfolioLink3={portfolioLink3}
+                      name={values.name}
+                      expectations={values.expectations}
+                      hobbies={values.hobbies}
+                      cv={values.file?.name}
+                      phone={values.phone}
+                      mail={values.email}
+                      portfolioLink1={values.website1}
+                      portfolioLink2={values.website2}
+                      portfolioLink3={values.website3}
                     />
                     <S.Wrapper>
                       <S.BackButton
                         onClick={() => {
                           setQuestionStatus(questionStatus - 1);
-                          setLoaders();
                         }}
                       >
                         Go back
@@ -328,7 +372,7 @@ function ConversationalForm({ questions }) {
                       <Button type="submit">Submit</Button>
                     </S.Wrapper>
                   </>
-                ) : question.id === 14 ? (
+                ) : question.id === 11 ? (
                   <S.Wrapper>
                     <Link to="/">
                       <Button>Go home</Button>
@@ -336,17 +380,16 @@ function ConversationalForm({ questions }) {
                   </S.Wrapper>
                 ) : (
                   <ConversationalButtons
-                    loader={setLoaders}
                     onChange={setQuestionStatus}
                     nextBtnText={question.nextBtnText}
                     value={questionStatus}
                     previousBtn={question.previousBtn}
+                    disabled={
+                      values[question?.blocks[1].name] === '' ||
+                      errors[question?.blocks[1].name]
+                    }
                   />
                 )}
-                <Disclaimer>
-                  Not looking for a job but want to collaborate? Contact us via{' '}
-                  <a href="mailto:hello@wheelhouse.be"> hello@wheelhouse.be</a>
-                </Disclaimer>
               </div>
             </S.Container>
           );

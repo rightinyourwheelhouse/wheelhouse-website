@@ -15,7 +15,7 @@
           "text": "Want to get in touch for a job or internship?"
         },
         {
-          "text": "At Wheelhouse, we help you develop your talents so that you can build a high-quality career path. So let’s talk if you’re interested!"
+          "text": "At Wheelhouse, we help you develop your talents to build a high-quality career path. So let’s talk if you’re interested!"
         }
       ],
       "previousBtn": false,
@@ -28,12 +28,12 @@
       "title": "Name",
       "blocks": [
         {
-          "text": "Before we start, can we get your full name?"
+          "text": "Before we start, what is your full name?"
         },
         {
           "input": "input",
           "name": "name",
-          "placeholder": "Your name"
+          "placeholder": "My name is "
         }
       ],
       "previousBtn": true,
@@ -47,7 +47,7 @@
           "text": "Nice to meet you! Let’s talk Wheelhouse first:"
         },
         {
-          "text": "We are a group of JavaScript experts and consultants. We’re looking for people that fit into our family vibe, people with an open mind, who like to try out new things! Like these new strange conversational forms. So if you are interested we would like to know you a little better!"
+          "text": "We are a group of JavaScript consultants. We’re looking for people who fit into our community, who have an open mind and like to try out new things! Like these new strange conversational forms. So if you are interested, we would like to get to know you better!"
         }
       ],
       "previousBtn": true,
@@ -60,7 +60,7 @@
       "title": "Expectations",
       "blocks": [
         {
-          "text": "Now, we are interested in what you are looking for in a job. How do you see yourself in Wheelhouse?"
+          "text": "Now, we are interested in what you are looking for in a job. So, how do you see yourself in Wheelhouse?"
         },
         {
           "input": "textarea",
@@ -73,64 +73,30 @@
     },
     {
       "id": 5,
-      "title": "Education",
-      "blocks": [
-        {
-          "text": "Cool! How about your educational background, where and what did you study?"
-        },
-        {
-          "input": "textarea",
-          "name": "education",
-          "placeholder": "I studied..."
-        }
-      ],
-      "previousBtn": true,
-      "nextBtnText": "Next",
-      "image": "/assets/ward-cartoon.png",
-      "cartoon": "ward"
-    },
-    {
-      "id": 6,
-      "title": "Experience",
-      "blocks": [
-        {
-          "text": "Sweet. Have you already used your knowledge, with other words do you have any experience?"
-        },
-        {
-          "input": "textarea",
-          "name": "experience",
-          "placeholder": "I have done..."
-        }
-      ],
-      "previousBtn": true,
-      "nextBtnText": "Next"
-    },
-    {
-      "id": 7,
       "title": "Portfolio",
       "blocks": [
         {
-          "text": "One thing we really like is seeing new stuff! Do you have a portfolio (GitHub, website, ...) that you are proud of?"
+          "text": "One thing we like is seeing new stuff! Do you have a portfolio (GitHub, website, ...) that you are willing to share?"
         },
         {
           "input": "portfolio",
-          "name": "portfolio"
+          "names": ["website1", "website2", "website3"]
         }
       ],
       "previousBtn": true,
       "nextBtnText": "Next"
     },
     {
-      "id": 8,
+      "id": 6,
       "title": "Hobbies",
       "blocks": [
         {
-          "text": "Now do you have any hobbies? Tech related or not, we’re interested!"
+          "text": "We love getting to know you better. What do you do in your free time?"
         },
         {
           "input": "textarea",
           "name": "hobbies",
-          "placeholder": "Fishing, ice skating, hockey..."
+          "placeholder": "Painting, reading, badminton,..."
         }
       ],
       "previousBtn": true,
@@ -139,14 +105,45 @@
       "cartoon": "aagje"
     },
     {
-      "id": 9,
+      "id": 7,
       "title": "About Wheelhouse",
       "blocks": [
         {
-          "text": "Interesting..., we like escape rooms, cars, cosplay, games, ... you could say we’re pretty diverse..."
+          "text": "Interesting! We like escape rooms, cooking, plants, cosplay, games, and much more. So, you could say we’re pretty diverse."
         },
         {
-          "text": "I’m starting to have the feeling that we start to know each other pretty well!"
+          "text": "I’m starting to feel that we are getting to know each other pretty well!"
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 8,
+      "title": "Contact",
+      "blocks": [
+        {
+          "text": "After sending this form, we want to reach out to you. So leave your contact information here."
+        },
+        {
+          "input": "contact",
+          "names": ["phone","email"]
+        }
+      ],
+      "previousBtn": true,
+      "nextBtnText": "Next"
+    },
+    {
+      "id": 9,
+      "title": "CV",
+      "blocks": [
+        {
+          "text": "Alright! Last question, then you can go back to what you were doing!"
+        },
+        {
+          "text": "Do you have a CV? We like getting an overview of your previous experiences and your current skillset. You can upload your CV in pdf format.",
+          "input": "cv",
+          "name": "file"
         }
       ],
       "previousBtn": true,
@@ -154,60 +151,13 @@
     },
     {
       "id": 10,
-      "title": "Contact",
-      "blocks": [
-        {
-          "text": "If we want to contact you, via which way can we do this?"
-        },
-        {
-          "input": "contact",
-          "name": "contact"
-        }
-      ],
-      "previousBtn": true,
-      "nextBtnText": "Next"
-    },
-    {
-      "id": 11,
-      "title": "CV",
-      "blocks": [
-        {
-          "text": "Alright! 2 more questions. Then you can go back to what you were doing!"
-        },
-        {
-          "text": "Do you have a CV? We like seeing a CV because it gives us a good overview of all your specialties! You can upload your CV in pdf format!",
-          "input": "cv",
-          "name": "cv"
-        }
-      ],
-      "previousBtn": true,
-      "nextBtnText": "Next"
-    },
-    {
-      "id": 12,
-      "title": "About Wheelhouse",
-      "blocks": [
-        {
-          "text": "Lastly what do you think about Wheelhouse? What attracted you to have this conversation with us or check out our website?"
-        },
-        {
-          "input": "textarea",
-          "name": "insight",
-          "placeholder": "I think that..."
-        }
-      ],
-      "previousBtn": true,
-      "nextBtnText": "Next"
-    },
-    {
-      "id": 13,
       "title": "Confirmation",
       "blocks": [
         {
-          "text": "Alright! Thank you so much for your attention! It was a pleasure."
+          "text": "Please confirm your answers down below."
         },
         {
-          "text": "If you want us to reach out to you, please confirm by submitting this conversation. You may also choose not to. It’s all up to you!"
+          "text": "Make sure your contact information is correct. Otherwise, we won't be able to get in touch."
         }
       ],
       "previousBtn": true,
@@ -216,7 +166,7 @@
       "cartoon": "olivier"
     },
     {
-      "id": 14,
+      "id": 11,
       "title": "Confirmation",
       "blocks": [
         {

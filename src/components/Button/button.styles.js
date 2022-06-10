@@ -43,15 +43,15 @@ export const ButtonContainer = styled.div`
       color: var(--foreground);
       transition: all 0.3s;
     }
+
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 
   &.full {
     width: 100%;
     display: block;
-  }
-
-  &:disabled {
-    opacity: 0.7;
   }
 `;
 

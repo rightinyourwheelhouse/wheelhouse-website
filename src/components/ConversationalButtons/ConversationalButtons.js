@@ -9,7 +9,7 @@ function ConversationalButtons({
   nextBtnText,
   onChange,
   value,
-  loader,
+  disabled,
 }) {
   return (
     <S.Wrapper>
@@ -17,7 +17,6 @@ function ConversationalButtons({
         <S.BackButton
           onClick={() => {
             onChange(value - 1);
-            loader();
           }}
           type="button"
         >
@@ -27,9 +26,9 @@ function ConversationalButtons({
       <Button
         onClick={() => {
           onChange(value + 1);
-          loader();
         }}
         type="button"
+        disabled={disabled}
       >
         {nextBtnText}
       </Button>

@@ -30,28 +30,13 @@ export const ErrorText = styled.p`
   }
 `;
 
-export const Input = styled.input`
-  width: 100%;
-  height: 4rem;
-  padding-left: 1rem;
-  border: 0.15rem solid #87b09a;
-  border-radius: 0.6rem;
-  font-size: 1rem;
-
-  @media screen and (min-width: ${breakpoints.tiny}) {
-    width: 25rem;
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 30rem;
-  }
-`;
+export const Input = styled.input``;
 
 export const Textarea = styled.textarea`
   width: 100%;
   height: 10rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid #96baa7;
+  border-radius: var(--rounded-corners);
+  border: 2px solid var(--color-text-primary-900);
   font-size: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;
@@ -64,33 +49,6 @@ export const Textarea = styled.textarea`
 
   @media screen and (min-width: ${breakpoints.medium}) {
     width: 30rem;
-  }
-`;
-
-export const Button = styled.button`
-  align-items: center;
-  background: #96baa7;
-  border-radius: 6px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Montserrat, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  line-height: 1.1rem;
-  padding: 16px 32px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-
-  &:hover {
-    border: 1px solid transparant;
-    transform: translateY(-2px);
   }
 `;
 
@@ -107,17 +65,9 @@ export const BackButton = styled.button`
 export const ButtonWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.4rem;
   margin-bottom: 1.2rem;
 
-  width: 100%;
-  @media screen and (min-width: ${breakpoints.tiny}) {
-    width: 25rem;
-  }
-
-  @media screen and (min-width: ${breakpoints.medium}) {
-    width: 30rem;
-  }
+  width: 11rem;
 `;
 
 export const TextSM = styled.p`

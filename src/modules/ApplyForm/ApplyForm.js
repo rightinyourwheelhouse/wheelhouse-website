@@ -8,7 +8,7 @@ import Stack from '~components/Stack';
 
 import { encode } from '~utils/form';
 
-import { Fieldset, Disclaimer, FormContainer } from './applyForm.styles';
+import { Fieldset, FormContainer } from './applyForm.styles';
 import validationSchema from './validationSchema';
 
 const ERROR = 'ERROR';
@@ -148,7 +148,6 @@ function ApplyForm({ vacancy }) {
           </p>
         </div>
       )}
-      <Disclaimer>Your data will be used to get in touch with you.</Disclaimer>
     </form>
   );
 }

@@ -6,11 +6,8 @@ import * as S from './conversationalOverview.styles';
 function ConversationalOverview({
   name,
   expectations,
-  education,
-  experience,
   hobbies,
   cv,
-  insight,
   phone,
   mail,
   portfolioLink1,
@@ -67,24 +64,12 @@ function ConversationalOverview({
             <S.OverviewText>{expectations}</S.OverviewText>
           </div>
           <div>
-            <S.OverviewLabel>Education:</S.OverviewLabel>
-            <S.OverviewText>{education}</S.OverviewText>
-          </div>
-          <div>
-            <S.OverviewLabel>Experience:</S.OverviewLabel>
-            <S.OverviewText>{experience}</S.OverviewText>
-          </div>
-          <div>
             <S.OverviewLabel>Hobbies:</S.OverviewLabel>
             <S.OverviewText>{hobbies}</S.OverviewText>
           </div>
           <div>
             <S.OverviewLabel>Cv:</S.OverviewLabel>
             <S.OverviewText>{cv}</S.OverviewText>
-          </div>
-          <div>
-            <S.OverviewLabel>Insight:</S.OverviewLabel>
-            <S.OverviewText>{insight}</S.OverviewText>
           </div>
           <div>
             <S.OverviewLabel>Contact:</S.OverviewLabel>

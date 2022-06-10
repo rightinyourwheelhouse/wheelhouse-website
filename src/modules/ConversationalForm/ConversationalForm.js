@@ -23,13 +23,6 @@ function ConversationalForm({ questions }) {
   const RECRUITEE_API_PATH = `https://raccoons.recruitee.com/api/offers`;
   const APPLICATION = `javascript-engineer`;
 
-  const setFile = useCallback(
-    files => {
-      setFieldValue('file', files[0]);
-    },
-    [setFieldValue],
-  );
-
   async function sendData(submittedValues) {
     try {
       const url = `${RECRUITEE_API_PATH}/${APPLICATION}/candidates`;
@@ -102,6 +95,13 @@ function ConversationalForm({ questions }) {
     },
     validationSchema,
   });
+
+  const setFile = useCallback(
+      files => {
+        setFieldValue('file', files[0]);
+      },
+      [setFieldValue],
+  );
 
   return (
     <div>

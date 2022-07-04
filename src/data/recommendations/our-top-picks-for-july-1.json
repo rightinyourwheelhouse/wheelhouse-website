@@ -1,0 +1,47 @@
+{
+  "live": false,
+  "date": "2022-07-04T06:32:18.322Z",
+  "author": "Wheelhouse",
+  "items": [
+    {
+      "description": "Learned about this awesome mini-series which explains the basics of functors and monoids. A design pattern/concept which is used in Functional Programming.",
+      "url": "https://www.youtube.com/watch?v=pgq-Pfg6ul4&list=PLORgiZG0dpd9sS0baeoH3lTC16ZZYSXeW ",
+      "title": "Functors and monoids",
+      "pickedBy": "Gilles Pelegrin"
+    },
+    {
+      "description": "TrainAsONE is an AI-powered running app that constantly adjusts your training plan according to you, your data and your goals. I’ve tried starting to run with an app like Start To Run a couple of times already, but always got injured after a couple of weeks because of it. Until now this way of running bears better results!",
+      "title": "TrainAsONE",
+      "url": "https://www.trainasone.com/",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "description": "Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.",
+      "title": "Radix Primitives",
+      "pickedBy": "Wout Salembier",
+      "url": "https://www.radix-ui.com/"
+    },
+    {
+      "description": "While the synth community is going crazy over ‘The Mother of All Decks’ for the Swedish House Mafia, something different caught my eye. Here’s the Doodlestation, and it is possibly the quirkiest thing I’ve seen in the modular landscape. Incredible design, extreme quirkiness and even a Theremin. The rainbow vomiting dude on the circular screen just totally makes this thing completely strange and quirky.",
+      "pickedBy": "Rafaël Mindreau",
+      "title": "The Doodlestation",
+      "url": "https://www.youtube.com/watch?v=wC5qX3ECciY"
+    },
+    {
+      "description": "Last month I tried Fresh, a new web framework. Fresh is built for speed, reliability and simplicity. By default, it does not ship any JavaScript to the client.",
+      "url": "https://fresh.deno.dev/",
+      "title": "Fresh",
+      "pickedBy": "Ward Poel"
+    },
+    {
+      "url": "https://toools.design/",
+      "title": "Toools.design",
+      "description": "Toools.design has a collection of useful design resources and tools. Are you tired of looking for inspiration on Dribble or maybe searching for some free illustrations or icons? Then check out the other sites listed on the website.",
+      "pickedBy": "Aagje Reynders"
+    }
+  ],
+  "title": "Our top picks for July",
+  "description": "Ready for summer vacation? We have some picks ready for you. ",
+  "introduction": "Want to improve your knowledge on the holidays? We got some interesting tutorials, new frameworks and a very cool synthesizer. Each month, we each pick one thing we love and put it into a list.\n\nThis list might give you some insight into the Wheelhouse crew. We hope we've shared something useful or inspiring for you! Definitely let us know what your \"top\" top pick was. 🤓",
+  "image": "/assets/ec8e1680-e808-11ec-a7f6-a70871eeae48.cf.jpg"
+}

@@ -11,6 +11,7 @@ import teamPage from './config/pages/teamPage';
 import employees from './employees';
 import offices from './offices';
 import picks from './picks';
+import cases from "./cases";
 
 CMS.init({
   config: {
@@ -29,6 +30,7 @@ CMS.init({
       },
       { ...employees },
       { ...offices },
+      { ...cases },
       { ...picks },
     ],
     load_config_file: true,

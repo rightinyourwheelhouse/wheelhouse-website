@@ -8,17 +8,31 @@ export const CardContainer = styled.div`
   color: ${({ foreground }) => foreground};
   display: flex;
   flex-direction: column;
-  padding: 35px 20px 8px 14px;
+  padding: 32px 20px;
   width: 100%;
   overflow: hidden;
-
-  h2 {
-    font-size: 2rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  height: 200px;
+  justify-content: space-between;
+  transition: all 0.3s;
+  &:hover{
+    transform: scale(1.02);
   }
 
+  h2 {
+    font-size: 3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  h3{
+
+  }
   @media screen and (min-width: ${breakpoints.medium}) {
-    padding: 40px;
+    padding: 52px 32px;
+    height: 400px;
+    h2{
+      width: 40%;
+    }
   }
 `;

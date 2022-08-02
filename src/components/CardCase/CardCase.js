@@ -2,18 +2,18 @@ import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
 import colors from '~styles/colors';
+import {CardContainer} from "./cardCase.style";
 
-import { CardContainer } from './cardcareers.style';
 
-function CardCareers({ background, children, foreground }) {
+function CardCase({ background, children, foreground }) {
   return (
-    <CardContainer background={background} foreground={foreground}>
-      {children}
-    </CardContainer>
+      <CardContainer background={background} foreground={foreground}>
+        {children}
+      </CardContainer>
   );
 }
 
-CardCareers.propTypes = {
+CardCase.propTypes = {
   background: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.node,
@@ -23,9 +23,9 @@ CardCareers.propTypes = {
   foreground: PropTypes.string,
 };
 
-CardCareers.defaultProps = {
+CardCase.defaultProps = {
   background: colors.backgroundPrimary800,
   foreground: colors.textPrimary900,
 };
 
-export default memo(CardCareers);
+export default memo(CardCase);

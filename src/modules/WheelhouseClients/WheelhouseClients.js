@@ -9,12 +9,15 @@ import {
 import SubTitle from '../../components/SubTitle';
 
 import ThreeColumns from '../../components/ThreeColumns';
+import Content from "../../components/Content";
 
 function WheelhouseClients() {
   return (
     <WheelhouseClientsContainer>
-      <SubTitle>What we do</SubTitle>
-      <h2> Meet our clients</h2>
+      <Content>
+        <SubTitle>What we do</SubTitle>
+        <h2> Meet our clients</h2>
+      </Content>
       <ThreeColumns>
         <ImageContainer>
           <a

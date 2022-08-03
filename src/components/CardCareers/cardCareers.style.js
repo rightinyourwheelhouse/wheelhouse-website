@@ -14,7 +14,7 @@ export const CardContainer = styled.div`
   height: 200px;
   justify-content: space-between;
   transition: all 0.3s;
-  &:hover{
+  &:hover {
     transform: scale(1.02);
   }
 
@@ -25,13 +25,12 @@ export const CardContainer = styled.div`
     width: 100%;
   }
 
-  h3{
-
+  h3 {
   }
   @media screen and (min-width: ${breakpoints.medium}) {
     padding: 52px 32px;
     height: 400px;
-    h2{
+    h2 {
       width: 40%;
     }
   }

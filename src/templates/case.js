@@ -9,62 +9,46 @@ import Content from '~components/Content';
 import { Section, Container } from '~components/layoutComponents';
 import Seo from '~components/SEO';
 import SubTitle from '~components/SubTitle';
-import TwoColumns from '~components/TwoColumns';
 
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
 
+import AuthorInfo from '../components/AuthorInfo';
+import ImageTitle from '../components/ImageTitle';
+import Share from '../components/Share';
+
+const isWindowContext = typeof window !== 'undefined';
+
 function Case({
   data: {
-    casesJson: {
-      street,
-      city,
-      description,
-      howToReach,
-      mail,
-      name,
-      phone,
-      image,
-    },
+    casesJson: { title, body, image, company },
   },
 }) {
+  const time = `${Math.ceil(body.length / 5 / 180)} min`;
+  const url = isWindowContext && window.location.href;
+
   return (
     <Layout>
-      <Seo title={`Wheelhouse office in ${name}`} description={description} />
+      <Seo title={`${title}`} description={body} />
 
       <Navigation />
 
       <Section>
+        <ImageTitle
+          image={
+            <GatsbyImage image={image?.childImageSharp?.gatsbyImageData} />
+          }
+        >
+          <SubTitle>Case</SubTitle>
+          <h1>{title}</h1>
+          <AuthorInfo author={company} readTime={time}>
+            <Share url={url} />
+          </AuthorInfo>
+        </ImageTitle>
         <Container>
-          <SubTitle>{Office}</SubTitle>
-          <h1>{`Wheelhouse ${name}`}</h1>
           <Content>
-            <TwoColumns>
-              <div>
-                <p>
-                  <a href={`mailto:${mail}`}>{mail}</a>
-                  <br />
-                  <a href={`tel:${phone}`}>{phone}</a>
-                </p>
-                <p>
-                  {street}, {city}
-                </p>
-              </div>
-              <div>
-                <ReactMarkdown>{description}</ReactMarkdown>
-              </div>
-            </TwoColumns>
-          </Content>
-          <GatsbyImage
-            image={image?.childImageSharp?.gatsbyImageData}
-            alt={`${name} office`}
-          />
-          <Content>
-            <h2>How to reach us</h2>
-            <div>
-              <ReactMarkdown>{howToReach}</ReactMarkdown>
-            </div>
+            <ReactMarkdown>{body}</ReactMarkdown>
           </Content>
         </Container>
       </Section>
@@ -75,14 +59,10 @@ function Case({
 Case.propTypes = {
   data: PropTypes.shape({
     casesJson: PropTypes.shape({
-      city: PropTypes.string,
-      street: PropTypes.string,
-      description: PropTypes.string,
-      howToReach: PropTypes.string,
       image: PropTypes.shape({}),
-      mail: PropTypes.string,
-      name: PropTypes.string,
-      phone: PropTypes.string,
+      title: PropTypes.string,
+      body: PropTypes.string,
+      company: PropTypes.string,
     }),
   }).isRequired,
 };
@@ -90,13 +70,9 @@ Case.propTypes = {
 export const query = graphql`
   query ($id: String!) {
     casesJson(id: { eq: $id }) {
-      name
-      street
-      city
-      mail
-      phone
-      description
-      howToReach
+      title
+      body
+      company
       image {
         ...fluidImage
       }

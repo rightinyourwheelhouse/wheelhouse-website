@@ -28,7 +28,7 @@ export default async function createPages({
         edges {
           node {
             id
-            name
+            title
           }
         }
       }
@@ -99,8 +99,8 @@ export default async function createPages({
     });
   });
 
-  allCasesJson.edges.forEach(({ node: { id, name } }) => {
-    const slug = toKebab(name);
+  allCasesJson.edges.forEach(({ node: { id, title } }) => {
+    const slug = toKebab(title);
 
     createPage({
       component: path.resolve('src/templates/case.js'),

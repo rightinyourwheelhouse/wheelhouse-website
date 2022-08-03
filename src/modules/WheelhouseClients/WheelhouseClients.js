@@ -6,10 +6,10 @@ import {
   WheelhouseClientsContainer,
 } from './wheelhouseClients.styles';
 
+import Content from '../../components/Content';
 import SubTitle from '../../components/SubTitle';
 
 import ThreeColumns from '../../components/ThreeColumns';
-import Content from "../../components/Content";
 
 function WheelhouseClients() {
   return (

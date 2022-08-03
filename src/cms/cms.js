@@ -1,6 +1,7 @@
 /* eslint-disable sort-keys */
 import CMS from 'netlify-cms-app';
 
+import cases from './cases';
 import backend from './config/backend';
 import blogPage from './config/pages/blogPage';
 import careersPage from './config/pages/careersPage';
@@ -11,7 +12,6 @@ import teamPage from './config/pages/teamPage';
 import employees from './employees';
 import offices from './offices';
 import picks from './picks';
-import cases from "./cases";
 
 CMS.init({
   config: {

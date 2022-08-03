@@ -97,10 +97,10 @@ function ConversationalForm({ questions }) {
   });
 
   const setFile = useCallback(
-      files => {
-        setFieldValue('file', files[0]);
-      },
-      [setFieldValue],
+    files => {
+      setFieldValue('file', files[0]);
+    },
+    [setFieldValue],
   );
 
   return (

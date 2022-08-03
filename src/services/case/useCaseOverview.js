@@ -8,11 +8,13 @@ const query = graphql`
     allCasesJson {
       edges {
         node {
-          name
-          street
-          city
-          phone
-          mail
+          title
+          backgroundColor
+          color
+          company
+          banner {
+            ...fluidImage
+          }
         }
       }
     }
@@ -27,7 +29,7 @@ export function useCaseOverview() {
   const cases = useMemo(() => {
     const nodes = edges.map(({ node }) => ({
       ...node,
-      slug: toKebab(node.name),
+      slug: toKebab(node.title),
     }));
 
     return nodes;

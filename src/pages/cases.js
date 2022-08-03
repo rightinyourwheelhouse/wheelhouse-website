@@ -1,4 +1,5 @@
-import {graphql, Link} from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -8,41 +9,61 @@ import Seo from '~components/SEO';
 import Layout from '~layouts/default';
 
 import Navigation from '~modules/Navigation';
-import WheelhouseClients from "../modules/WheelhouseClients/WheelhouseClients";
-import CaseCard from "../components/CardCase";
-import {useCaseOverview} from "../services/case/useCaseOverview";
-import Button from "../components/Button/Button";
+
+import CaseCard from '../components/CardCase';
+import { ImageContainer } from '../components/ImageTitle/imageTitle.styles';
+import WheelhouseClients from '../modules/WheelhouseClients/WheelhouseClients';
+import { useCaseOverview } from '../services/case/useCaseOverview';
 
 function CasesPage({
- data: {
-   pagesJson: { seo },
+  data: {
+    pagesJson: { seo },
   },
- }) {
+}) {
   const cases = useCaseOverview();
   return (
-      <Layout>
-        <Seo title={seo.title} description={seo.description} image={seo.image} />
+    <Layout>
+      <Seo title={seo.title} description={seo.description} image={seo.image} />
 
-        <Navigation />
+      <Navigation />
 
-        <Section>
-          <Container>
-            <WheelhouseClients />
-          </Container>
-        </Section>
-        <Section>
-          <Container>
-              {cases.map(({ name, street, city, slug, mail, phone }) => (
-                  <CaseCard background={"linear-gradient(83deg, rgba(59,6,163,1) 0%, rgba(25,0,74,1) 100%)"} foreground={"#fff"} key={name}>
-                      <h2>{name}</h2>
-                      <Link to={`/cases/${slug}`} key={slug}>
-                          <h3>Read more</h3>
-                      </Link>
-                  </CaseCard>
-              ))}
-          </Container>
-        </Section>
-      </Layout>
+      <Section>
+        <Container>
+          <WheelhouseClients />
+        </Container>
+      </Section>
+      <Container>
+        {cases.map(
+          ({ title, company, backgroundColor, banner, color, slug }) => (
+            <div key={title}>
+              <Link to={`/cases/${slug}`} key={slug}>
+                <CaseCard
+                  background={backgroundColor}
+                  foreground={color}
+                  key={title}
+                >
+                  <div className="body">
+                    <div>
+                      <span>{company}</span>
+                      <h2>{title}</h2>
+                    </div>
+                    <h3>Read more</h3>
+                  </div>
+                  <ImageContainer>
+                    {banner && (
+                      <GatsbyImage
+                        image={banner?.childImageSharp?.gatsbyImageData}
+                        alt={title}
+                      />
+                    )}
+                  </ImageContainer>
+                </CaseCard>
+              </Link>
+            </div>
+          ),
+        )}
+      </Container>
+    </Layout>
   );
 }
 

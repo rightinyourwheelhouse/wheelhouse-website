@@ -4,22 +4,26 @@ export default {
   fields: [
     {
       create: true,
-      label: 'Name',
-      name: 'name',
+      label: 'Title',
+      name: 'title',
     },
 
     {
-      label: 'Address',
-      name: 'address',
+      label: 'BackgroundColor',
+      name: 'backgroundColor',
       widget: 'string',
     },
 
     {
-      label: 'Mail',
-      name: 'mail',
+      label: 'Color',
+      name: 'color',
       widget: 'string',
     },
-
+    {
+      label: 'Company',
+      name: 'company',
+      widget: 'string',
+    },
     {
       label: 'Phone',
       name: 'phone',
@@ -27,21 +31,20 @@ export default {
     },
 
     {
-      label: 'Description',
-      name: 'description',
+      label: 'Body',
+      name: 'body',
       required: false,
-      widget: 'markdown',
-    },
-
-    {
-      label: 'How to reach',
-      name: 'howToReach',
       widget: 'markdown',
     },
 
     {
       label: 'image',
       name: 'image',
+      widget: 'image',
+    },
+    {
+      label: 'banner',
+      name: 'banner',
       widget: 'image',
     },
   ],

@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "url": "https://soundcloud.com/iamcarista",
+      "title": "CARISTA",
+      "description": "During the Gentse feesten I had a great time at Boomtown. I particularly liked the closing act of the free stage. Carista performed an amazing mix of genres that really got me moving. I really needed a good party and she delivered!",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "The two-minute rule",
+      "description": "In David Allen’s Getting Things Done, you can find a simple, yet effective, rule against procrastination. Often, small things add up: at work, but also at home. Think of tiny tasks: send mom a message; clean your desk; responding to an email... We often put them off until the list of chores feels insurmountable. Allen’s rule is simple: if you can do it in less than two minutes, you should do it at the moment it’s defined. No more procrastination.",
+      "url": "https://gettingthingsdone.com/books/",
+      "pickedBy": "Daphné Vermeiren"
+    },
+    {
+      "title": "The Right Brain and the Unconscious",
+      "url": "",
+      "description": "![Book: The right brain and the unconcious](/assets/the-right-brain-and-the-unconscious.png \"The right brain and the unconcious\")\n\n\\\nI don't read enough, but when I do, it needs to really motivate me to keep on reading. This book has quite possibly changed my way of thinking entirely on human behaviour and understanding much better how the right brain - or what most people refer to as the unconsciousness - works. It is a psychological and neurological journey through the brain, and explains many aspects of our growth and lives in great detail. You needn't any prior knowledge, yet this book manages to teach you A LOT about the brain and behavioural psychology. Thanks to this book I've managed to understand myself and my focus a lot better while playing difficult music on piano and violin.",
+      "author": "Dr. R. Joseph",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Puella Magi Madoka Magica",
+      "description": "Last week I watched this fantastic anime about magical girls on Netflix. Even though I am late to the party (since it’s an anime from 2011), I still want to recommend watching it. Without spoiling the story, there is more about the story than you would suspect from a cutesy magical girls series. Also, the soundtrack is amazing.",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "description": "![Boardgame Everdell](/assets/everdell.png \"Everdell\")\n\nThis month I got this awesome board game from my girlfriend for my birthday.\\\nBy finding unique and magical creatures you can build your own town. The game follows the seasons and after each season you got more workers to make your town even bigger. In the end, you should count all the points coupled with your town + coins you found on your path. I'm still learning to understand the small details of the game and of course the tactics.",
+      "pickedBy": "Gilles Pelegrin",
+      "title": "Everdell"
+    },
+    {
+      "url": "https://bun.sh/",
+      "title": "Bun",
+      "description": "Bun is a new, modern all-in-one JavaScript runtime like Node or Deno. It includes a bundler, transpiler, task runner and an npm client out of the box. I'm curious to test out Bun!",
+      "pickedBy": "Ward Poel"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2022-08-03T06:50:48.012Z",
+  "title": "Get ready for August, we have some picks for you!",
+  "tags": [
+    "javascript",
+    "picks",
+    "agency"
+  ],
+  "introduction": "Summer is already halfway, but we are still going strong with our monthly picks. This month we are back again with a lot of various topics. Are you feeling inspired when you check them out, because we sure are!",
+  "image": "/assets/brooke-lark-8beth4vkhli-unsplash-1-.jpg",
+  "description": "Summer is already halfway, but we are still going strong with our monthly picks.",
+  "slot": "See you next month!\n\nPhoto by Brooke Lark"
+}

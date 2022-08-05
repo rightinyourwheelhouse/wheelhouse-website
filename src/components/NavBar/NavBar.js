@@ -112,6 +112,11 @@ function NavBar({
               </Item>
             ))}
             <Item>
+              <Link activeClassName="active-link" to="/cases">
+                Cases
+              </Link>
+            </Item>
+            <Item>
               <Link activeClassName="active-link" to="/careers">
                 {careerCount > 0 && <Badge>{careerCount}</Badge>}
                 Careers

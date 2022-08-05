@@ -6,6 +6,7 @@ import {
   WheelhouseClientsContainer,
 } from './wheelhouseClients.styles';
 
+import Content from '../../components/Content';
 import SubTitle from '../../components/SubTitle';
 
 import ThreeColumns from '../../components/ThreeColumns';
@@ -13,8 +14,10 @@ import ThreeColumns from '../../components/ThreeColumns';
 function WheelhouseClients() {
   return (
     <WheelhouseClientsContainer>
-      <SubTitle>What we do</SubTitle>
-      <h2> Meet our clients</h2>
+      <Content>
+        <SubTitle>What we do</SubTitle>
+        <h2> Meet our clients</h2>
+      </Content>
       <ThreeColumns>
         <ImageContainer>
           <a

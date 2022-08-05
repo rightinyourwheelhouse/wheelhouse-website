@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 
 import colors from '~styles/colors';
 
-import { CardContainer } from './cardcareers.style';
+import { CardContainer } from './cardCareers.style';
 
 function CardCareers({ background, children, foreground }) {
   return (

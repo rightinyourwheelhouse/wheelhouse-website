@@ -52,9 +52,9 @@ function ConversationalPage({
               <Disclaimer>
                 Want to try our conversational onboarding?
                 <a
-                    onClick={() => {
-                      setIsConversational(prevCheck => !prevCheck);
-                    }}
+                  onClick={() => {
+                    setIsConversational(prevCheck => !prevCheck);
+                  }}
                 >
                   {' '}
                   Let&apos;s talk

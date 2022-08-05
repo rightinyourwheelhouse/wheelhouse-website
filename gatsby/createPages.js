@@ -24,6 +24,14 @@ export default async function createPages({
           }
         }
       }
+      allCasesJson {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
       allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
         edges {
           node {
@@ -64,6 +72,7 @@ export default async function createPages({
     allRecommendationsJson,
     allCareer,
     allOfficesJson,
+    allCasesJson,
     allFeedBlog,
     allEmployees,
   } = data;
@@ -87,6 +96,16 @@ export default async function createPages({
       component: path.resolve('src/templates/office.js'),
       context: { id },
       path: `/offices/${slug}`,
+    });
+  });
+
+  allCasesJson.edges.forEach(({ node: { id, title } }) => {
+    const slug = toKebab(title);
+
+    createPage({
+      component: path.resolve('src/templates/case.js'),
+      context: { id },
+      path: `/cases/${slug}`,
     });
   });
 

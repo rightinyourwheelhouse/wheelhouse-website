@@ -1,1 +1,1 @@
-export { default } from './CardCareers';
+export { default } from './cardCareers';

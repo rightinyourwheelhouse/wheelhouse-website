@@ -38,6 +38,13 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: "gatsby-remark-embed-video",
+            options: {
+              width: 800,
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
           // gatsby-remark-relative-images must go before gatsby-remark-images
           {
             resolve: `gatsby-remark-relative-images`,

@@ -25,12 +25,6 @@ export default {
       widget: 'string',
     },
     {
-      label: 'Phone',
-      name: 'phone',
-      widget: 'string',
-    },
-
-    {
       label: 'Body',
       name: 'body',
       required: false,

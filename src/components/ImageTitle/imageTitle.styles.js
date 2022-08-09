@@ -42,7 +42,6 @@ export const ContentContainer = styled.div`
   span {
     @media screen and (min-width: ${breakpoints.large}) {
       font-size: 1.3vw;
-      max-width: 95%;
     }
   }
   h1 {

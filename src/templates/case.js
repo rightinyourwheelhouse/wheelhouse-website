@@ -48,7 +48,7 @@ function Case({
         </ImageTitle>
         <Container>
           <Content>
-            <ReactMarkdown>{body}</ReactMarkdown>
+            <ReactMarkdown className="markdown">{body}</ReactMarkdown>
           </Content>
         </Container>
       </Section>

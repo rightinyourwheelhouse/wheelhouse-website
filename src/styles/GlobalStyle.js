@@ -77,6 +77,11 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 
+  .markdown a {
+    text-decoration: underline;
+    color: var(--color-text-primary-800);
+  }
+  
   a {
     text-decoration: none;
     color: var(--color-text-primary-800);

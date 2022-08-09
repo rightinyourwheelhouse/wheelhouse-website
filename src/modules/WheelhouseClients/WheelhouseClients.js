@@ -1,3 +1,4 @@
+import Link from 'gatsby-link';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { memo } from 'react';
 
@@ -33,13 +34,13 @@ function WheelhouseClients() {
           </a>
         </ImageContainer>
         <ImageContainer>
-          <a href="https://dexxter.be/" target="_blank" rel="noreferrer">
+          <Link to="/cases/elevating-dexxter-the-first-belgian-accounting-app-for-student-and-part-time-entrepreneurs">
             <StaticImage
               objectFit="contain"
               src="../../images/logos/logo-dexxter.png"
               alt="logo van Dexxter"
             />
-          </a>
+          </Link>
         </ImageContainer>
         <ImageContainer>
           <a href="https://hallar.io/" target="_blank" rel="noreferrer">

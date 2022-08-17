@@ -1,10 +1,11 @@
 {
-  "name": "Kortrijk",
   "street": "Nijverheidskaai 3",
+  "howToReach": "### by public transport\n\nOur offices are located roughly 5 kilometers from the Kontich-Lint railway station (located at Stationsplein, Kontich).\n\nYou can take bus 130, 132 or 135 to Kontich Edegemsesteenweg. The bus ride takes about 10 minutes after that it's still a 1km walk to the office.\n\n### by car\n\nOn the E19 highway, take exit 7 (Kontich). \n\nYou can just keep following the road until you reach De Villermontstraat turn right, and then take the first left to the Veldkant.",
   "city": "8500 Kortrijk",
-  "mail": "hello@wheelhouse.be",
+  "name": "Kontich",
   "phone": "+32479559012",
-  "description": "Our office in Kortrijk is located in the center of Kortrijk. It's about 2 minutes away from a bus stop and there is sufficient parking near.",
-  "howToReach": "### by public transport\nOur offices are located roughly 2 kilometers from the Kortrijk railway station (located at Stationsplein, Kortrijk).\n\nYou can take bus 60 to Kortrijk Meensepoort . The bus ride takes about 5 minutes.\n\n### by car\nOn the E17 highway, take exit 2 (Kortrijk). \n\nYou can just keep following the road until you come accross the first roundabout, go right. When you reach the Beheerstraat turn left, lastly when you cross the Leie you can take the first right and your destination will be on the left.",
-  "image": "/assets/kortrijk.png"
+  "address": "Veldkant 33a Kontich ",
+  "mail": "hello@wheelhouse.be",
+  "image": "/assets/1626452358255.jpeg",
+  "description": "There is a lot of parking space available. At the designated spaces, there are signs indicating 'Cronos Group', the umbrella group above Wheelhouse - you can park your car somewhere around our headquarters."
 }

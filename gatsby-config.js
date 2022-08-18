@@ -7,6 +7,8 @@ const {
   COMPANY_DESCRIPTION,
 } = require('./src/data/company');
 
+require('dotenv').config();
+
 module.exports = {
   plugins: [
     {
@@ -34,6 +36,17 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-transformer-json',
+    {
+      resolve: `gatsby-source-hubspot`,
+      options: {
+        apiKey: process.env.HUBSPOT_API_KEY,
+        key: process.env.HUBSPOT_API_KEY,
+        filters: {
+          limit: 999999,
+          state: 'PUBLISHED',
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -99,13 +112,6 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
     'gatsby-plugin-styled-components',
-    {
-      options: {
-        name: 'Blog',
-        url: 'https://blog.raccoons.be/rss/32013',
-      },
-      resolve: 'gatsby-source-rss-feeds',
-    },
     {
       options: {
         rule: {

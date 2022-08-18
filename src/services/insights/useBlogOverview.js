@@ -5,24 +5,32 @@ import { toKebab } from '~utils/string';
 
 const query = graphql`
   query {
-    allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
+    allBlogs: allHubspotPost(
+      filter: {
+        state: { eq: "PUBLISHED" }
+        topics: { elemMatch: { slug: { eq: "wheelhouse" } } }
+      }
+    ) {
       edges {
         node {
           id
+          author {
+            name
+          }
+          published
           title
-          pubDate
-          link
-          content {
-            encoded
-          }
-          creator
-          enclosure {
-            url
-          }
+          summary
+          published
+          url
+          body
           image {
-            extension
+            publicURL
             childImageSharp {
-              gatsbyImageData(width: 800)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+              )
             }
           }
         }
@@ -33,7 +41,7 @@ const query = graphql`
 
 export function useBlogOverview({ count = null, current = null }) {
   const {
-    allFeedBlog: { edges },
+    allBlogs: { edges },
   } = useStaticQuery(query);
 
   const items = useMemo(() => {
@@ -42,20 +50,19 @@ export function useBlogOverview({ count = null, current = null }) {
         ({
           node: {
             id,
-            creator: author,
+            author: { name },
             title,
-            content: { encoded },
-            pubDate,
+            body,
             image,
+            published,
           },
         }) => {
-          const readTime = `${Math.ceil(encoded.length / 5 / 180)} min`;
+          const readTime = `${Math.ceil(body.length / 5 / 180)} min`;
           const url = `/insights/${toKebab(title)}`;
-          const date = new Date(pubDate).toString();
 
           return {
-            author,
-            date,
+            author: name,
+            date: new Date(published),
             id,
             image,
             readTime,

@@ -6,12 +6,12 @@ export async function importBlogImages(node, { createNode }, store, cache) {
     internal: { type },
   } = node;
 
-  if (type !== 'FeedBlog') {
+  if (type !== 'HubspotPost') {
     return;
   }
 
   const {
-    enclosure: { url },
+    feature_image: { url },
   } = node;
 
   const fileNode = await createRemoteFileNode({

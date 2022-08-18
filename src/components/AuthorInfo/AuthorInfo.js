@@ -15,14 +15,7 @@ import {
   WrittenBy,
 } from './authorInfo.styles';
 
-function AuthorInfo({
-  author,
-  children,
-  date,
-  full = false,
-  readTime,
-  pickedBy,
-}) {
+function AuthorInfo({ author, children, full = false, pickedBy }) {
   const Wrapper = children ? TwoColumns : 'div';
   const { image, role, showPickedBy, slug, visible } =
     useTeam({ includeInvisible: true, name: author }) || {};
@@ -50,9 +43,7 @@ function AuthorInfo({
             <div>
               {full && !pickedBy && <WrittenBy>Written by</WrittenBy>}
               <Title full={full}>{author}</Title>
-              {date && readTime && !full && (
-                <Description>{`${date} · ${readTime}`}</Description>
-              )}
+
               {full && role && <Description>{role}</Description>}
             </div>
           </MainContentContainer>
@@ -66,7 +57,6 @@ function AuthorInfo({
 
 AuthorInfo.defaultProps = {
   children: null,
-  date: null,
   full: false,
   pickedBy: false,
   readTime: null,

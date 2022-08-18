@@ -32,14 +32,6 @@ export default async function createPages({
           }
         }
       }
-      allFeedBlog(filter: { categories: { eq: "Wheelhouse" } }) {
-        edges {
-          node {
-            id
-            title
-          }
-        }
-      }
       allCareer {
         edges {
           node {
@@ -65,6 +57,34 @@ export default async function createPages({
           }
         }
       }
+      allBlogs: allHubspotPost(
+        filter: {
+          state: { eq: "PUBLISHED" }
+          topics: { elemMatch: { slug: { eq: "wheelhouse" } } }
+        }
+      ) {
+        edges {
+          node {
+            id
+            title
+            author {
+              name
+            }
+            topics {
+              name
+            }
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FULL_WIDTH
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -73,8 +93,8 @@ export default async function createPages({
     allCareer,
     allOfficesJson,
     allCasesJson,
-    allFeedBlog,
     allEmployees,
+    allBlogs,
   } = data;
 
   // recommendations
@@ -118,8 +138,7 @@ export default async function createPages({
     });
   });
 
-  // blog
-  allFeedBlog.edges.forEach(({ node: { id, title } }) => {
+  allBlogs.edges.forEach(({ node: { id, title } }) => {
     const slug = toKebab(title);
     createPage({
       component: path.resolve('src/templates/blog.js'),

@@ -36,6 +36,9 @@ Install node_modules with `npm install`.
 2. Update all the `xxxxxx` values, here's where to find each:
   #### Website
   - `RECRUITEE_TOKEN` - You can find this in your recruitee profile settings (or ask a collegue)
+  - `HUBSPOT_API_KEY`: This can be found in hubspot
+  - `HUBSPOT_ANALYTICS`: This can be found in hubspot
+
 
 4. (initial deployment). Fill in the Website values on Netlify.
 
@@ -70,6 +73,8 @@ Your site is now running at `http://localhost:8000`!
 This is setup to work seamlessly with Netlify. **Add these website `.env` variables to the Netlify Project**
 
 `RECRUITEE_TOKEN`
+`HUBSPOT_API_KEY`
+`HUBSPOT_ANALYTICS`
 
 ## 📑 Repo structure
 

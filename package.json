@@ -45,7 +45,7 @@
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-remark-relative-source": "0.0.5",
     "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-source-rss-feeds": "^1.0.4",
+    "gatsby-source-rss-feeds": "^1.0.5",
     "gatsby-transformer-json": "^3.14.0",
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
@@ -117,5 +117,8 @@
     "serve": "gatsby serve",
     "start": "gatsby clean && npm run develop",
     "validate": "npm run lint --silent"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

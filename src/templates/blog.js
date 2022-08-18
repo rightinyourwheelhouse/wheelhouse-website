@@ -8,7 +8,7 @@ import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
 import xml from 'highlight.js/lib/languages/xml';
 import PropTypes from 'prop-types';
-import React, { memo, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import AuthorInfo from '~components/AuthorInfo';
 import Content from '~components/Content';
@@ -40,18 +40,18 @@ hljs.registerLanguage('scss', scss);
 
 function Blog({
   data: {
-    feedBlog: {
+    hubspotPost: {
       id,
-      creator,
-      isoDate,
+      author: { name },
+      summary,
       title,
-      link,
-      content: { encoded },
+      body,
+      url: link,
       image,
     },
   },
 }) {
-  const time = `${Math.ceil(encoded.length / 5 / 180)} min`;
+  const time = `${Math.ceil(body.length / 5 / 180)} min`;
   const url = isWindowContext && window.location.href;
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function Blog({
     <Layout>
       <Seo
         title={`${title}`}
-        description={getHtmlExcerpt(encoded)}
+        description={getHtmlExcerpt(summary)}
         image={image}
         url={url}
         article
@@ -90,13 +90,13 @@ function Blog({
         >
           <SubTitle>Blog</SubTitle>
           <h1>{title}</h1>
-          <AuthorInfo author={creator} date={isoDate} readTime={time}>
+          <AuthorInfo author={name} readTime={time}>
             <Share url={url} />
           </AuthorInfo>
         </ImageTitle>
         <Container>
           <Content>
-            <div dangerouslySetInnerHTML={{ __html: encoded }} />
+            <div dangerouslySetInnerHTML={{ __html: body }} />
           </Content>
         </Container>
       </Section>
@@ -130,15 +130,15 @@ function Blog({
 
 Blog.propTypes = {
   data: PropTypes.shape({
-    feedBlog: PropTypes.shape({
-      content: PropTypes.shape({
-        encoded: PropTypes.string,
+    hubspotPost: PropTypes.shape({
+      body: PropTypes.any,
+      author: PropTypes.shape({
+        name: PropTypes.string,
       }),
-      creator: PropTypes.string,
+      summary: PropTypes.string,
       id: PropTypes.string,
       image: PropTypes.shape({}),
-      isoDate: PropTypes.string,
-      link: PropTypes.string,
+      url: PropTypes.string,
       title: PropTypes.string,
     }),
   }).isRequired,
@@ -146,15 +146,15 @@ Blog.propTypes = {
 
 export const query = graphql`
   query ($id: String!) {
-    feedBlog(id: { eq: $id }) {
+    hubspotPost(id: { eq: $id }) {
       id
-      creator
-      isoDate(formatString: "D MMM YYYY")
-      title
-      link
-      content {
-        encoded
+      author {
+        name
       }
+      title
+      body
+      url
+      summary
       image {
         childImageSharp {
           gatsbyImageData(width: 1200)
@@ -167,4 +167,4 @@ export const query = graphql`
   }
 `;
 
-export default memo(Blog);
+export default Blog;

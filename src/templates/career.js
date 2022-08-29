@@ -19,11 +19,12 @@ import Layout from '~layouts/default';
 import JobOverview from '~modules/JobOverview';
 import Navigation from '~modules/Navigation';
 import OpenSource from '~modules/OpenSource';
-import WorkingAtmosphereGallery from '~modules/WorkingAtmosphereGallery';
 
 import colors from '~styles/colors';
 
+import CardDiversity from '../components/CardDiversity';
 import ApplyForm from '../modules/ApplyForm';
+import WorkingAtmosphereHorizontal from '../modules/WorkingAtmosphereHorizontal';
 
 function Career({
   data: {
@@ -68,13 +69,17 @@ function Career({
             <Content>
               <div dangerouslySetInnerHTML={{ __html: requirements }} />
             </Content>
+            <CardDiversity />
           </Container>
         </Section>
       ) : (
-        ''
+        <Section>
+          <Container>
+            <CardDiversity />
+          </Container>
+        </Section>
       )}
-
-      <WorkingAtmosphereGallery />
+      <WorkingAtmosphereHorizontal />
 
       <Section>
         <Container>

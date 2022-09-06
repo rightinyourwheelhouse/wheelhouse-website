@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "title": "Flyway",
+      "author": "",
+      "url": "https://flywaydb.org/",
+      "description": "Awesome tool to migrate your DB gradually.\\\nPerfect for creating a history of your schemas and all you need to know is some SQL.",
+      "pickedBy": "Gilles Pelegrin"
+    },
+    {
+      "title": "Sam Selikoff",
+      "url": "https://twitter.com/samselikoff",
+      "description": "Sam is a JavaScript developer who experiments with frameworks, libraries, ... and blogs/talks about it on his website, twitter or YouTube. Lately he has been experimenting with Framer Motion, very interesting and educational.",
+      "pickedBy": "Jasper Vermeulen"
+    },
+    {
+      "description": "Apparently, you can label loops in javascript. [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)I’ve never seen it being used before in real-life examples and I’m not sure why you’d want to use it anyway. But I’m sure this could be a nifty trick to confuse the heck out of your colleagues next time you’ll have to write a loop.",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label",
+      "title": "Labeling loops",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "Charisma Myth ",
+      "author": "Olivia Fox Cabane",
+      "description": "I think this is, so far, the best book I have read this year. Olivia talks about how you can become more charismatic. She explains how charisma works and how it is perceived. The book also covers interesting exercises that are easy to try.\\\nI am trying to read every day, so I might share some other books in the future!",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "description": "Hakim is a Swedish frontend developer, he creates a lot of cool stuff. Make sure to check out his portfolio. I like his (Focusss) form focus inputs.",
+      "url": "https://hakim.se/",
+      "title": "Hakim El Hattab",
+      "pickedBy": "Ward Poel"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": false,
+  "date": "2022-09-06T11:14:31.393Z",
+  "title": "Back to school, September picks ",
+  "tags": [
+    "javascript",
+    "picks",
+    "agency"
+  ],
+  "introduction": "School is back, but so are we with another round of picks! We have been doing this for two years and will continue to do so. We are back with some book recommendations, interesting people and cool tech tips.",
+  "image": "/assets/towfiqu-barbhuiya-5u6bz2tyhx8-unsplash.jpg",
+  "description": "The beginning of a new school year, for us the beginning of another year of picks! ",
+  "slot": "We see you next month! \n\nPhoto by [Towfiqu barbhuiya](https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/school?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+}

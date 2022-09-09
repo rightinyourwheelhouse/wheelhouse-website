@@ -1,1 +1,1 @@
-export { default } from './cardDiversity';
+export { default } from './CardDiversity';

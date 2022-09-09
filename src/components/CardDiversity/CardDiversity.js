@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import CardCareers from '../CardCareers/cardCareers';
+import CardCareers from '../CardCareers/CardCareers';
 
 function CardDiversity() {
   return (

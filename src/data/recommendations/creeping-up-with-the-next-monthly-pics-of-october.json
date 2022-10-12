@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "title": "Beyerdynamic DT 770 PRO",
+      "url": "https://europe.beyerdynamic.com/dt-770-pro.html",
+      "description": "These headphones have become a staple in the industry. With a frequency response of 5 Hz to 35 000 Hz, replaceable components, comfortable fit, at an affordable price point that comes as no surprise. The only drawback of this headphone is the form factor because it is not foldable and quite large. This is of no concern to me because, for the most part, I use it while I code.",
+      "pickedBy": "Jaimy Schatteman"
+    },
+    {
+      "description": "Time for some shameless self-promotion! My pick for this month is JSValley — a meetup for JavaScript developers in Belgium. For this month’s edition, Wheelhouse is hosting the meetup at our headquarters in Leuven on October 19th. Our JavaScript Engineer Ward Poel will give an introduction to Vite; Brecht Carlier (Intigriti) will talk about secure web sessions. If you want to gain some insights and meet up with other JS developers, this is the place to be. You can still register for our event, but be quick!",
+      "title": "JSValley",
+      "url": "http://www.jsvalley.be/",
+      "pickedBy": "Olivier De Wit"
+    },
+    {
+      "title": "NVIDIA RTX Remix ",
+      "url": "https://www.nvidia.com/en-us/geforce/rtx-remix/",
+      "description": "It seems when a piece of software has `Remix` in the name, it is bound to be a great product. This platform will be an awesome tool for game modders, because it will be very easy to grab assets from classic games and easily adjust them. There will be features like AI texture upscaling, and ways to better illuminate the environments, so you can even add raytracing to your scenes. Awesome stuff, can’t wait for it to be available!",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "WEMO",
+      "url": "https://www.wemo.com/",
+      "description": "Wemo is a company that offers smart home products. You can connect the devices to your smartphone and control your home from a distance. At our home it’s used to control the water flow so we can automate watering the plants ![:smile:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f604@2x.png)",
+      "pickedBy": "Lotte Moors"
+    },
+    {
+      "title": "openapi-client-axios",
+      "description": "You don't have to implement your own client when integrating with an API that provides OpenAPI documentation.",
+      "url": "https://www.npmjs.com/package/openapi-client-axios",
+      "pickedBy": "Roel Goossens"
+    },
+    {
+      "title": "Really Good Emails",
+      "url": "https://reallygoodemails.com",
+      "description": "As a marketer, I often send out e-mails: think of newsletters, registrations for events, or other announcements. When inspiration is low and creativity needs a little push, I check out [reallygoodemails.com](http://reallygoodemails.com/), the Dribbble of e-mailmarketing. You get a variety of examples of (you probably already guessed it) really good emails.",
+      "pickedBy": "Daphné Vermeiren"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": false,
+  "date": "2022-10-12T12:53:34.821Z",
+  "title": "Creeping up with the next monthly pics of October! ",
+  "tags": [
+    "javascript",
+    "picks",
+    "agency"
+  ],
+  "introduction": "This month, we share some cool stuff we recently discovered: a cool headset, a smart home watering system, a Javascript meetup,... This way, you get to know the things that intrigue us, help us, or teach us. Hopefully, you discovered something new too. Enjoy our October picks!",
+  "image": "/assets/paige-cody-29j0kkj2fbg-unsplash.jpg",
+  "description": "Fall started, Halloween is creeping up, it's time for the next picks. ",
+  "slot": "Photo by [Paige Cody](https://unsplash.com/@paige_cody?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/halloween?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
+}

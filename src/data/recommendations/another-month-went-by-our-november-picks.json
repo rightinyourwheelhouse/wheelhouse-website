@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "Plex Media Server",
+      "url": "https://www.plex.tv/",
+      "description": "Plex Media Server makes it easy to set up a streaming service/media hub on an old computer you have laying around. If you have a tv with a WebOS based system, it’s very easy to download the Plex app and locally stream or view the files stored on the server. Remote accessibility is also possible, so you can even share your files with friends and family!",
+      "pickedBy": "Jeroen Gunster"
+    },
+    {
+      "title": "Vinted",
+      "url": "https://www.vinted.be/",
+      "description": "I started selling stuff on Vinted this month and I am blown away by how easy it is. Vinted takes care of all shipping and payment, so you don't have to figure out how much the shipping costs will be and if you ever will receive the payment from the buyer. The buyer pays the price or makes an offer. After this is accepted, Vinted will keep the money until the package arrives safe and well. Just make sure you have some good boxes to ship it! \n\nIt's also international, so you aren't limited to buyers in your country. It's incredible to give products a second life while still getting some money for it (without too much of a burden like selling on FaceBook or 2dehands.be).",
+      "pickedBy": "Aagje Reynders"
+    },
+    {
+      "title": "Music For Programming",
+      "url": "http://musicforprogramming.net/",
+      "description": "For literally years, I've been following Datassette's collection of Music For Programming sets. You'd think this is music for any programmer, but strangely enough this is a collection of out-of-the-box - mainly ambient - sets that are actually just my thing.\n\nI might have posted about this before, but recently it has been redesigned and I kind of like the aesthetic of it. It also includes an actual working ASCII spectrum analyser.\n\nThese podcasts have been around since 2009 and are not everyone's pick. Still, includes some pretty impressive selections that - at least to me - are starting to attain a legendary status.",
+      "pickedBy": "Rafaël Mindreau"
+    },
+    {
+      "title": "Ahrefs",
+      "url": "https://ahrefs.com/",
+      "description": "As a marketing manager, keeping SEO in mind is important. As there are a lot of SEO tools out there, I have tried and tested many of them. Ahrefs really did stand out to me. It lets you check any URL’s top organic keywords, while also estimating how much traffic a competitor receives for any given search term. You can also identify a site’s top-performing content and sources of backlinks.\n\nIt's amazing to analyze your own website and those of your competitors.",
+      "pickedBy": "Daphné Vermeiren"
+    }
+  ],
+  "author": "Wheelhouse",
+  "live": true,
+  "date": "2022-11-10T09:10:09.133Z",
+  "title": "Another month went by - Our November picks",
+  "introduction": "This month, we share some cool stuff we recently discovered. This way, you get to know the things that intrigue us, help us, or teach us. Hopefully, you discover something new too. Enjoy our November picks!",
+  "image": "/assets/pickofthemonth_grijptang.png",
+  "description": "Time for our top finds of the past month.",
+  "slot": "See you next month."
+}

@@ -19,12 +19,6 @@
       "pickedBy": "Olivier De Wit"
     },
     {
-      "url": "https://www.netlify.com/blog/2020/09/18/eleventy-and-vue-a-match-made-to-power-netlify.com/",
-      "title": "Eleventy and Vue, a match made to power Netlify.com",
-      "description": "Netlify talks about how they made their new website.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "url": "https://medium.com/@levon_t/java-vert-x-starter-guide-part-1-30cb050d68aa",
       "description": "On his new assignment, Roel's client works with Vert.X as their backend framework. This guide helped him get a good understanding of what Vert.X is about.",
       "title": "Java Vert.x Starter Guide - Part 1",
@@ -35,9 +29,7 @@
   "live": true,
   "date": "2020-10-05T13:36:16.307Z",
   "title": "Our 5 October picks ",
-  "tags": [
-    "picks"
-  ],
+  "tags": ["picks"],
   "introduction": "Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us. This time we're sharing our picks for october.",
   "image": "/assets/wheelhouse-picks-oktober.png",
   "description": "Each month we pick 1 thing we found very interesting and put it into a list. "

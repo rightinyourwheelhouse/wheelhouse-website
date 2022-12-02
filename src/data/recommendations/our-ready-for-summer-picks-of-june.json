@@ -7,12 +7,6 @@
       "pickedBy": "Olivier De Wit"
     },
     {
-      "title": "The Good Place",
-      "url": "https://www.netflix.com/title/80113701",
-      "description": "A good comedy series is hard to find. The Good Place absolutely nails it. The show has a good balance between comedy and a great story.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "Sli.dev",
       "url": "https://sli.dev",
       "description": "Sli.dev is a web-based slides maker and presenter. It's designed for developers, so they can write their content in Markdown and enables them to add interactive components. At the moment, they support Vue components. Hopefully, React components will follow soon!",

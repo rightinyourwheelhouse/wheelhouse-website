@@ -7,12 +7,6 @@
       "pickedBy": "Rafaël Mindreau"
     },
     {
-      "title": "free-for.dev",
-      "url": "https://free-for.dev/",
-      "description": "A curated list of many tools that are (partly) free for developers. Good news: there are a lot!",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "SQLite Viewer",
       "url": "https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer",
       "description": "A simple SQLite viewer for Visual Studio Code, so I don't need to switch apps anymore when developing. ",

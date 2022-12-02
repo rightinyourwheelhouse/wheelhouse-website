@@ -1,13 +1,6 @@
 {
   "items": [
     {
-      "author": "",
-      "pickedBy": "Daren Malfait",
-      "title": "PX to VW calculator",
-      "url": "https://web-development.space/tools/px-to-vw/",
-      "description": "Font sizing based on viewport width is great. Having a max size so it doesn't scale too much on wide screens is a good thing."
-    },
-    {
       "title": "Fastify.io",
       "url": "https://www.fastify.io/",
       "pickedBy": "Ward Poel",
@@ -42,9 +35,7 @@
   "live": true,
   "date": "2021-02-01T10:05:25.844Z",
   "title": "Our February top picks ❤️",
-  "tags": [
-    "picks"
-  ],
+  "tags": ["picks"],
   "introduction": "Oh, February, the month of ❤️. Valentine's day is around the corner and we are preparing ourselves by giving some love to the tools we absolutely adore. As you probably know, each month we pick one thing that intrigues us and we put it into the list of top picks! This list might give you some insight into how Wheelhouse loves. Let's dive in!",
   "image": "/assets/february-picks-wheelhouse.jpg",
   "description": "Oh February: the month of love. Time for our monthly picks of tools we absolutely adore."

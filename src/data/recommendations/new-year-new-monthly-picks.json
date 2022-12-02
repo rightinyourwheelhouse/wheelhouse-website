@@ -25,12 +25,6 @@
       "description": "One of my favourite hobbies is buying books and not reading them. Last month, I decided to not buy books anymore and actually read them. \nI installed goodreads a couple of years ago, but never used it until now. Goodreads is a book reviewing platform where you can track the books you read, wants to read or currently reading. Book nr 1 has already been devoured. 113 to go…."
     },
     {
-      "title": "Chocolatey",
-      "url": "https://chocolatey.org/",
-      "description": "Last month I built myself a new gaming pc and chocolatey was a big help to reinstall all my applications. It's a package manager (like npm), but for windows.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "Snowpack v3",
       "url": "https://www.snowpack.dev/posts/2020-12-03-snowpack-3-release-candidate",
       "description": "Snowpack v3 brings frontend development to another level. You can just skip the npm install step 😮. This can all be done with the new streaming package imports.",
@@ -41,9 +35,7 @@
   "live": true,
   "date": "2021-01-13T14:41:27.492Z",
   "title": "New year, new monthly picks",
-  "tags": [
-    "picks"
-  ],
+  "tags": ["picks"],
   "introduction": "To start the year off, we gathered our new picks for this month. Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us.",
   "image": "/assets/roel_resolutions.png",
   "description": "Every month we each pick the greatest thing that we found last month and share it with you"

@@ -23,21 +23,13 @@
       "url": "https://www.dansendeberen.be",
       "title": "Dansende beren",
       "pickedBy": "Olivier De Wit"
-    },
-    {
-      "title": "Epic React",
-      "url": "https://epicreact.dev",
-      "description": "This month I got introduced to Epic React. Wheelhouse gave me the opportunity to give it a try and holy it's amazing!",
-      "pickedBy": "Daren Malfait"
     }
   ],
   "author": "Wheelhouse",
   "live": true,
   "date": "2020-11-27T13:23:30.269Z",
   "title": "Our picks going into December",
-  "tags": [
-    "picks"
-  ],
+  "tags": ["picks"],
   "introduction": "These are some links that we found the most interesting going into december. Each month we pick 1 thing we found very interesting and put it into a list. This list might give you some insight in how Wheelhouse thinks and what intrigues us.",
   "image": "/assets/picks-december2020.png",
   "description": "Every month we each pick something that we would like to share to the world."

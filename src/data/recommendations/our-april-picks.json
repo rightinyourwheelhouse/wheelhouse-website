@@ -18,12 +18,6 @@
       "pickedBy": "Roel Goossens"
     },
     {
-      "title": "Git-tower",
-      "url": "https://www.git-tower.com/mac",
-      "description": "I've always been a visual minded person and having a git GUI with this much power is amazing.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "TailwindCSS' JIT compiler",
       "url": "https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css",
       "description": "TailwindCSS Just-In-Time (JIT) compiler is out! Instead of generating a massive CSS file in development, the JIT compiler compiles all of your CSS on-demand as you author your files. 🚀",

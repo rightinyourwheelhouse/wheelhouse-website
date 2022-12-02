@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "description": "Cron is new but has a lot of potentials. I think it's a great calendar app. It does not have a mobile version yet, so that's a bit of a bummer. The mac version is already great and will, without a doubt, still improve.",
-      "url": "https://cron.com/ ",
-      "title": "Cron",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "description": "Theatre.js is a JavaScript animation library with a GUI.\nIt animates the DOM, WebGL, and any other JavaScript variable. It can be a handy tool for creating animations. I personally use it for 3D scenes.",
       "title": "Theatre.js",
       "url": "https://www.theatrejs.com/",

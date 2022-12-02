@@ -23,12 +23,6 @@
       "url": "https://www.npmjs.com/package/react-sprout",
       "description": "Almost every React developer uses React Router for their applications. For all my side-projects, I use React Sprout: a suspense-ready router. React Sprout does also provides a method for data fetching.",
       "pickedBy": "Ward Poel"
-    },
-    {
-      "title": "fav.farm",
-      "url": "https://fav.farm/",
-      "description": "Get an SVG of an emoji. Not sure if it's useful, but it's cool. 😉",
-      "pickedBy": "Daren Malfait"
     }
   ],
   "author": "Wheelhouse",

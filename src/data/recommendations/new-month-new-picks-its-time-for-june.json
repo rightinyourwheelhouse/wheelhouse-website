@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "title": "Getting Things Done ",
-      "author": "David Allen",
-      "description": "There are many books and methods about productivity. And each person has ways that work or don't work for them. The method described in this book is the method that works best for me.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "Bionic Reading",
       "description": "\\\nRecently i stumbled upon Bionic Reading and found it pretty interesting, this way of reading revises texts so that the most concise parts of words are highlighted. This guides the eye over the text and the brain remembers previously learned words more quickly. I thought about how you may implement this on the web when handling long sections of text, because everybody knows users don’t read text when it’s long and boring.\n\n![Example bionic reading](/assets/bionic-reading-example.jpeg \"Example bionic reading\")",
       "pickedBy": "Jasper Vermeulen"

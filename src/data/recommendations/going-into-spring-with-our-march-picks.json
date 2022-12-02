@@ -19,12 +19,6 @@
       "pickedBy": "Rafaël Mindreau"
     },
     {
-      "title": "Wappalyzer",
-      "url": "https://www.wappalyzer.com/",
-      "description": "Instantly reveal the technology stack and contact details of any website, such as e-commerce platform, content management system, or marketing automation tools.",
-      "pickedBy": "Daren Malfait"
-    },
-    {
       "title": "Remotion",
       "url": "https://www.remotion.dev/",
       "description": "Remotion allows you to make your own MP4 videos with React. You can use web technologies like CSS, SVG, WebGL to make fancy motion graphics. I think that's really awesome for just a JavaScript library.",

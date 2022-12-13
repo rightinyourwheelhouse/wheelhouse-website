@@ -34,14 +34,14 @@ exports.sourceNodes = ({ actions, createNodeId }, configOptions) => {
   const filters = configOptions.filters
     ? queryString.stringify(configOptions.filters)
     : null;
-  const API_ENDPOINT_POST = `https://api.hubapi.com/content/api/v2/blog-posts?hapikey=${API_KEY}${
-    filters ? `&${filters}` : ''
+  const API_ENDPOINT_POST = `https://api.hubapi.com/content/api/v2/blog-posts${
+    filters ? `?${filters}` : ''
   }`;
   const topicFilters =
     configOptions.topics && configOptions.topics.filters
       ? queryString.stringify(configOptions.topics.filters)
       : null;
-  const API_ENDPOINT_TOPIC = `https://api.hubapi.com/blogs/v3/topics?hapikey=${API_KEY}&limit=50${
+  const API_ENDPOINT_TOPIC = `https://api.hubapi.com/blogs/v3/topics?limit=50${
     topicFilters ? `&${topicFilters}` : ''
   }`;
 
@@ -55,8 +55,12 @@ exports.sourceNodes = ({ actions, createNodeId }, configOptions) => {
   );
 
   let topics = [];
+  const headers = {
+    Authorization: `Bearer ${API_KEY}`,
+    'Content-Type': 'application/json',
+  };
 
-  return fetch(API_ENDPOINT_TOPIC)
+  return fetch(API_ENDPOINT_TOPIC, { headers })
     .then(response => response.json())
     .then(data => {
       topics = data.objects.map(topic => {
@@ -69,7 +73,7 @@ exports.sourceNodes = ({ actions, createNodeId }, configOptions) => {
       });
     })
     .then(() => {
-      return fetch(API_ENDPOINT_POST)
+      return fetch(API_ENDPOINT_POST, { headers })
         .then(response => response.json())
         .then(data => {
           const cleanData = data.objects.map(post => {

@@ -31,4 +31,4 @@ qAndA:
       ![The cutest dog you've ever seen](/assets/dog.png "Bolle")
 showPickedBy: true
 ---
-I’m Jasper, I am a digital designer and developer. I’m very interested in JavaScript and all the frameworks behind it, that’s why I joined Wheelhouse. During summer, you can find me on summer camps with Kazou!
+I’m Jasper, I am a digital designer and developer. I’m very interested in JavaScript and all the frameworks behind it, that’s why I joined Wheelhouse. During summer, you can find me on summer camps with Kazou.
